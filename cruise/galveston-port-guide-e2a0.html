@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galveston — Cruise Port Guide | Point Me to Paradise Travel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --aqua-pale: #C4E4E1;
+      --aqua-mist: #EAF3F2;
+      --aqua: #75AFB1;
+      --aqua-dark: #4F8A8C;
+      --sand-light: #F4F1E9;
+      --gold-whisper: #D6C8A8;
+      --white: #FFFFFF;
+      --paper: #FBFDFD;
+      --ink: #2B2420;
+      --ink-soft: #6B6359;
+      --line: #E5E9E8;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--paper);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.72;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 48px 28px 72px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(32px, 6vw, 52px);
+      font-weight: 700;
+      line-height: 1.13;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-top: 56px;
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--ink);
+      margin-top: 36px;
+      margin-bottom: 8px;
+    }
+
+    h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--aqua-dark);
+      margin-bottom: 8px;
+      letter-spacing: 0.02em;
+    }
+
+    .section-subhead {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 18px;
+      color: var(--ink-soft);
+      margin-bottom: 24px;
+      display: block;
+      line-height: 1.5;
+    }
+
+    p {
+      margin-bottom: 16px;
+      color: var(--ink);
+      font-weight: 400;
+    }
+
+    a {
+      color: var(--aqua-dark);
+      text-decoration: none;
+      border-bottom: 1px solid var(--aqua-pale);
+      transition: border-color 0.2s;
+    }
+    a:hover { border-color: var(--aqua); }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin: 40px 0;
+    }
+
+    /* Hero */
+    .pmtp-hero {
+      background-image: linear-gradient(180deg,
+        rgba(255,255,255,0.45),
+        rgba(196,228,225,0.62) 38%,
+        rgba(234,243,242,0.85) 75%,
+        rgba(251,253,253,0.98));
+      padding: 78px 32px 60px;
+      text-align: center;
+      margin: -48px -28px 32px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .pmtp-hero .eyebrow {
+      font-family: 'Playfair Display', serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--aqua-dark);
+      margin-bottom: 22px;
+    }
+
+    .pmtp-hero .divider {
+      width: 60px;
+      height: 1px;
+      background: var(--gold-whisper);
+      margin: 18px auto;
+    }
+
+    .pmtp-hero .tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 21px;
+      max-width: 620px;
+      margin: 0 auto;
+      color: var(--ink-soft);
+    }
+
+    /* Band blocks */
+    .pmtp-band {
+      background: var(--aqua-mist);
+      border-radius: 10px;
+      padding: 24px 28px;
+      margin: 28px 0;
+    }
+
+    /* Attraction cards */
+    .attraction {
+      border-left: 3px solid var(--aqua-pale);
+      padding-left: 20px;
+      margin: 32px 0;
+    }
+
+    .attraction-meta {
+      font-size: 13px;
+      color: var(--ink-soft);
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    .attraction h3 {
+      margin-top: 0;
+      margin-bottom: 4px;
+    }
+
+    .tip-tag {
+      display: inline-block;
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--aqua-dark);
+      background: var(--aqua-mist);
+      border-radius: 4px;
+      padding: 3px 10px;
+      margin-top: 10px;
+    }
+
+    .maps-link {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--aqua-dark);
+      border-bottom: 1px solid var(--aqua-pale);
+      margin-top: 6px;
+    }
+
+    /* Itinerary blocks */
+    .itinerary {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 26px 28px;
+      margin: 24px 0;
+    }
+
+    .itinerary h4 {
+      margin-bottom: 14px;
+    }
+
+    .itinerary-step {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 10px;
+      font-size: 15px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 18px;
+      color: var(--aqua);
+      min-width: 22px;
+      font-weight: 500;
+      padding-top: 1px;
+    }
+
+    /* Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14.5px;
+      margin: 20px 0;
+    }
+
+    th {
+      text-align: left;
+      padding: 10px 14px;
+      background: var(--aqua-mist);
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--aqua-dark);
+      border-bottom: 1px solid var(--aqua-pale);
+    }
+
+    td {
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      color: var(--ink);
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    /* Warning flag */
+    .flag {
+      background: #FDF8EE;
+      border-left: 3px solid var(--gold-whisper);
+      border-radius: 0 8px 8px 0;
+      padding: 14px 18px;
+      font-size: 14.5px;
+      margin: 18px 0;
+      color: var(--ink-soft);
+    }
+
+    .flag strong { color: var(--ink); }
+
+    /* Dining item */
+    .dining-item {
+      margin-bottom: 24px;
+    }
+
+    .dining-item h3 {
+      margin-top: 0;
+      margin-bottom: 4px;
+      font-size: 18px;
+    }
+
+    .dining-detail {
+      font-size: 13px;
+      color: var(--ink-soft);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    /* Section number decoration */
+    .section-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--aqua);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* Terminal badge */
+    .terminal-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      background: var(--aqua);
+      color: var(--white);
+      border-radius: 4px;
+      padding: 2px 8px;
+      margin-right: 6px;
+    }
+
+    /* Scroll fade animation */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .pmtp-hero { animation: fadeUp 0.7s ease both; }
+    h2 { animation: fadeUp 0.5s ease both; }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <div class="pmtp-hero">
+    <div class="eyebrow">Point Me to Paradise Travel</div>
+    <h1>Galveston, Texas</h1>
+    <div class="divider"></div>
+    <p class="tagline">Your ship is waiting. The island's got plenty to say before you board.</p>
+  </div>
+
+  <!-- INTRO / PORT OVERVIEW -->
+  <span class="section-num">Port Overview</span>
+  <h2>The Island Before the Ship</h2>
+  <span class="section-subhead">Most passengers drive past 150 years of Texas history just to stand in a boarding line — you don't have to.</span>
+
+  <p>Galveston sits about 50 miles southeast of downtown Houston on a thin barrier island, and it is the fourth busiest cruise homeport in the United States. The port processes nearly 3.9 million passenger movements a year. That's a lot of people who arrive, board, and never actually see Galveston — which is their loss.</p>
+
+  <p>Unlike ports where you're a mid-cruise visitor for six hours, Galveston is a homeport only. You're embarking or disembarking here. That means the time you spend on the island is entirely your own — before the ship, after the ship, or the night before everything begins. Use it.</p>
+
+  <div class="pmtp-band">
+    <h4>One thing worth knowing</h4>
+    <p>The Gulf water around Galveston runs green-brown from river sediment and natural currents — not a flaw, just the Gulf Coast's character. Set that expectation, enjoy it for what it is, and save your Caribbean white-sand comparisons for when you get there.</p>
+  </div>
+
+  <hr>
+
+  <!-- TERMINALS -->
+  <span class="section-num">Terminals</span>
+  <h2>Know Which Door You're Walking Through</h2>
+  <span class="section-subhead">Four terminals, four very different first impressions of the island.</span>
+
+  <p>Galveston operates four cruise terminals, and your terminal assignment matters more than most people realize. Always confirm yours with your cruise documents — don't assume.</p>
+
+  <div class="pmtp-band">
+    <h4>The walkability divide</h4>
+    <p>Terminals 25 and 28 sit close to the Strand Historic District and the working waterfront. Walk out the door and the island is immediately available to you. Terminal 10 — Royal Caribbean's private LEED Gold terminal on Pelican Island — sits across the ship channel. You'll need an Uber or shuttle to reach the main island. Terminal 16, the newest facility opened November 2025, is at the western end of the port area with a short rideshare to anywhere worth going.</p>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Terminal</th>
+        <th>Primary Lines</th>
+        <th>Walkable to Strand?</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="terminal-badge">T25</span> Terminal 25</td>
+        <td>Carnival, select Disney &amp; Princess</td>
+        <td>Yes — 5–10 min</td>
+        <td>Most central; closest to Pier 21 and Strand</td>
+      </tr>
+      <tr>
+        <td><span class="terminal-badge">T28</span> Terminal 28</td>
+        <td>Disney, Princess, select Carnival</td>
+        <td>Yes — 5–10 min</td>
+        <td>Directly across from T25</td>
+      </tr>
+      <tr>
+        <td><span class="terminal-badge">T10</span> Terminal 10</td>
+        <td>Royal Caribbean (Oasis-class)</td>
+        <td>No — Uber required</td>
+        <td>Pelican Island; Net-Zero Energy; first LEED Gold terminal in Texas; 10–15 min + ride to Strand</td>
+      </tr>
+      <tr>
+        <td><span class="terminal-badge">T16</span> Terminal 16</td>
+        <td>MSC Cruises, Norwegian</td>
+        <td>Short rideshare</td>
+        <td>Opened November 2025; $156M facility; two custom boarding bridges</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>One more thing worth knowing: every Galveston terminal is pier-side. No tendering, no water taxis, no timing your shore return around a wave pattern. You walk on and walk off.</p>
+
+  <p>Uber and Lyft have an official agreement with the Port of Galveston. Designated pickup and dropoff zones are marked at each terminal — follow the port signage and you'll find them easily.</p>
+
+  <hr>
+
+  <!-- DESTINATION HIGHLIGHTS -->
+  <span class="section-num">Where to Go</span>
+  <h2>What Galveston Actually Is</h2>
+  <span class="section-subhead">A city that was once the most prosperous port in Texas, flattened by a hurricane in 1900, and rebuilt into something stranger and more interesting than what came before.</span>
+
+  <!-- STRAND -->
+  <div class="attraction">
+    <div class="attraction-meta">Walkable from T25/T28 · 5–10 min · 1.5–3 hours</div>
+    <h3>The Strand Historic District</h3>
+    <p>Before the 1900 hurricane made Houston's rise inevitable, Galveston was called the "Wall Street of the South." The Strand is what that era left behind — a stretch of 19th-century iron-front commercial buildings running east–west between roughly 20th and 25th Streets, now designated a National Historic Landmark. Walk it at your own pace. The shops are eclectic — antiques, art, local boutiques — and the architecture tells you something about the city's ambitions before the storm.</p>
+    <p>Don't spend all your time on Strand Street itself. The parallel streets — Mechanic, Post Office — carry less foot traffic and a more grounded version of the neighborhood. The <strong>Galveston Arts Center</strong> runs rotating exhibitions, usually free or low admission. <strong>La King's Confectionery</strong> is a 1920s-era candy shop and soda fountain that has no business being as good as it is. <strong>Saengerfest Park</strong> has a giant outdoor chess set if you're traveling with kids. The <strong>Grand 1894 Opera House</strong> is worth at least a walk-by — one of the finer historic performance venues in Texas.</p>
+    <span class="tip-tag">Go slightly off-Strand</span>
+    <br><a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=The+Strand+Historic+District+Galveston+Texas" target="_blank">Open in Maps →</a>
+  </div>
+
+  <!-- PIER 21 -->
+  <div class="attraction">
+    <div class="attraction-meta">Walkable from T25/T28 · 5 min · Mix-and-match your time</div>
+    <h3>Pier 21 &amp; the Harbor District</h3>
+    <p>Just east of the Strand, this is Galveston's working waterfront in the process of becoming something worth visiting. The harbor views are honest — industrial cranes, container operations, the wide ship channel — with restaurants and tour boats running alongside it all. Willie G's has a patio where dolphins surface often enough that regulars barely bother to point anymore. Fisherman's Wharf has been open since 1940, and their bacon-wrapped shrimp kisses have become the kind of thing people plan around.</p>
+    <span class="tip-tag">Dolphins from the patio — no boat required</span>
+    <br><a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Pier+21+Galveston+Texas" target="_blank">Open in Maps →</a>
+  </div>
+
+  <!-- ELISSA -->
+  <div class="attraction">
+    <div class="attraction-meta">Pier 22 · Tue–Sun 10am–5:30pm · Adults ~$14 · 45 min–1.5 hours</div>
+    <h3>1877 Tall Ship Elissa &amp; Texas Seaport Museum</h3>
+    <p>There are three ships of her kind left in the world that still actively sail. The <em>Elissa</em> is one of them — a Scottish-built iron barque from 1877, rescued from a Greek scrapyard decades ago and now the Official Tall Ship of Texas and a National Historic Landmark at Pier 22. Standing next to something that old and still functional has a particular weight to it that photographs don't fully transmit.</p>
+    <p>The adjacent museum's immigration exhibit — "Ship to Shore" — traces Galveston's 19th-century role as a major U.S. port of entry, second only to Ellis Island. The stories are specific and grounded, and they give the waterfront context that a patio lunch alone wouldn't.</p>
+    <span class="tip-tag">Pair with the Seagull II harbor tour for a strong half-day</span>
+    <br><a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=1877+Tall+Ship+Elissa+Galveston+Texas" target="_blank">Open in Maps →</a>
+  </div>
+
+  <!-- DOLPHIN TOURS -->
+  <div class="attraction">
+    <div class="attraction-meta">Pier 21 · Walkable from T25/T28 · Adults ~$25 · 45 min–1 hour</div>
+    <h3>Dolphin &amp; Harbor Boat Tours</h3>
+    <p>Two operators run from Pier 21, and both are genuinely worth your time. <strong>Baywatch Dolphin Tours</strong> runs 45-minute tours in enclosed, climate-controlled boats — hourly from 10am to 9pm, family-friendly, leashed dogs welcome. Atlantic Bottlenose dolphins are a near-certain sighting. The captains tend toward entertaining and educational in roughly equal measure. The <strong>Seagull II</strong>, operated by the Texas Seaport Museum, runs one-hour historical harbor tours with dolphin sightings as part of the deal — and your ticket includes access to the Elissa.</p>
+    <div class="flag"><strong>Book Baywatch online in advance</strong> during summer weekends — they fill up, and the harbor doesn't hold extra boats in reserve.</div>
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Baywatch+Dolphin+Tours+Pier+21+Galveston" target="_blank">Open in Maps →</a>
+  </div>
+
+  <div class="pmtp-band">
+    <h4>The history walk</h4>
+    <p>Star Drug Store, established 1886, is Galveston's oldest pharmacy turned lunch counter. The chicken salad has a following. The building still looks like 1886, and the breakfast menu runs until it doesn't anymore — go early.</p>
+  </div>
+
+  <!-- BISHOP'S PALACE -->
+  <div class="attraction">
+    <div class="attraction-meta">1402 Broadway Ave · ~10 min Uber from port · Adults ~$14 · 45 min–1.5 hours</div>
+    <h3>Bishop's Palace</h3>
+    <p>If you have time for one indoor historic site, this is the one. Built between 1886 and 1893 by Galveston's premier Victorian-era architect Nicholas Clayton, the house sat through the 1900 hurricane without collapsing and became a symbol of what the city was capable of building. Inside: a hand-carved mahogany staircase that took three years to complete on its own, marble columns, stained glass, rare wood paneling, and period furnishings. The scale and the quality of the craftsmanship are genuinely surprising. Guided tours run hourly, Wednesday through Monday.</p>
+    <span class="tip-tag">If clients can only do one indoor historic site — this is it</span>
+    <br><a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Bishops+Palace+Galveston+Texas" target="_blank">Open in Maps →</a>
+  </div>
+
+  <!-- MOODY MANSION -->
+  <div class="attraction">
+    <div class="attraction-meta">2618 Broadway Ave · Near Bishop's Palace · Guided tours hourly · 1 hour</div>
+    <h3>Moody Mansion</h3>
+    <p>A 31-room Romanesque-style mansion built in 1895 and home to one of Galveston's most powerful founding families. Ballroom, private chapel, original furnishings, and a family story that runs through the city's entire modern history. It's a more intimate complement to Bishop's Palace — personal where the Palace is grand.</p>
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Moody+Mansion+Galveston+Texas" target="_blank">Open in Maps →</a>
+  </div>
+
+  <!-- RAILROAD MUSEUM -->
+  <div class="attraction">
+    <div class="attraction-meta">25th &amp; Strand Streets · Walkable · Open daily 10am–5pm · 45 min–1.5 hours</div>
+    <h3>Galveston Railroad Museum</h3>
+    <p>The former Santa Fe railroad depot, with life-sized passenger figures in the waiting room — the "People's Gallery" — each with a recorded conversation you can stop and listen to. It's quieter and more layered than it sounds. Vintage rail cars are open to board and explore, and on weekends a vintage caboose runs short Harborside Express rides. Right in the Strand walkable zone, easy to add without planning around it.</p>
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Galveston+Railroad+Museum+Texas" target="_blank">Open in Maps →</a>
+  </div>
+
+  <!-- OCEAN STAR -->
+  <div class="attraction">
+    <div class="attraction-meta">Pier 19 · 3 min walk from T25/T28 · Daily · ~1 hour</div>
+    <h3>Ocean Star Offshore Drilling Museum</h3>
+    <p>A retired jack-up drilling rig converted into a self-guided museum — three floors of exhibits on offshore oil and gas exploration, including scale models of Gulf platforms, remotely operated vehicles, and full drilling equipment. It sounds niche, and it is, and it's also surprisingly compelling for guests who weren't expecting to care about how Texas gets its oil. One of the most convenient stops from the port.</p>
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Ocean+Star+Offshore+Drilling+Museum+Galveston" target="_blank">Open in Maps →</a>
+  </div>
+
+  <!-- PLEASURE PIER -->
+  <div class="attraction">
+    <div class="attraction-meta">2501 Seawall Blvd · ~$15 Uber from port · All-day pass ~$29–$35 · 2–3 hours</div>
+    <h3>Galveston Island Historic Pleasure Pier</h3>
+    <p>A classic seaside amusement pier extending over the Gulf, with roller coasters, a Ferris wheel, carnival games, and Bubba Gump Shrimp — all with Gulf water underneath you. Best for families with kids or anyone who wants the feel of the waterfront without committing to a full beach day. Seasonal — rides are closed November through February, so verify before you plan around it.</p>
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Galveston+Island+Historic+Pleasure+Pier+Texas" target="_blank">Open in Maps →</a>
+  </div>
+
+  <!-- MOODY GARDENS -->
+  <div class="attraction">
+    <div class="attraction-meta">1 Hope Blvd · 10–15 min Uber · Combo ticket ~$65–$75 adult · Half day minimum</div>
+    <h3>Moody Gardens</h3>
+    <p>Three glass pyramids housing very different environments: the Aquarium Pyramid (penguins, sea otters, sharks), the Rainforest Pyramid (free-roaming animals from three continents in a lush tropical setting), and the Discovery Museum Pyramid with interactive science exhibits. Also on the property: a golf course, Palm Beach water park, zip line, and a hotel. It's a real commitment — budget 3–4 hours for the full experience, buy tickets online in advance, and factor ride time both ways. Works best for families or guests who aren't drawn to the beach.</p>
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Moody+Gardens+Galveston+Texas" target="_blank">Open in Maps →</a>
+  </div>
+
+  <!-- STEWART BEACH -->
+  <div class="attraction">
+    <div class="attraction-meta">6th St &amp; Seawall Blvd · Short Uber from port · Closed Nov–Feb · 2–4 hours</div>
+    <h3>Stewart Beach</h3>
+    <p>Galveston's most family-friendly beach — staffed with lifeguards in season, with umbrella and chair rentals, snack bars, changing rooms, volleyball courts, a waterslide, mini-golf, and a large human maze. No alcohol permitted. The Gulf water runs green-brown from sediment — that's the coast, not a deficiency. Set honest expectations and it's a comfortable, active beach day. Closed November through February.</p>
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Stewart+Beach+Galveston+Texas" target="_blank">Open in Maps →</a>
+  </div>
+
+  <!-- SEAWALL -->
+  <div class="attraction">
+    <div class="attraction-meta">Walkable via trolley or rideshare · Free to walk · Bike rentals available</div>
+    <h3>Seawall Boulevard</h3>
+    <p>Ten miles of elevated promenade built after the catastrophic 1900 hurricane — the engineering response to something that killed an estimated 6,000 to 12,000 people in a single day. Walking it now, with the Gulf to one side and restaurants and hotels to the other, the scale of what was built starts to settle in. Bike rentals are available along the boulevard if you want to cover more ground. East Beach, accessible near the seawall, is adults-only and permits alcohol — a different crowd, a different pace.</p>
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Seawall+Boulevard+Galveston+Texas" target="_blank">Open in Maps →</a>
+  </div>
+
+  <!-- STATE PARK -->
+  <div class="attraction">
+    <div class="attraction-meta">Western end of island · 15–20 min Uber · Best with a rental car · 2–3 hours minimum</div>
+    <h3>Galveston Island State Park</h3>
+    <p>Two thousand acres of beaches, wetlands, marshes, and dunes at the far western end of the island — about 10 miles from port. Four miles of nature trails, outstanding birding especially during migration, kayaking, and fishing. No lifeguards, no alcohol. This one requires a dedicated vehicle or a planned rideshare both ways. Too far for a tight port day, genuinely worth it if you have the time and inclination.</p>
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Galveston+Island+State+Park+Texas" target="_blank">Open in Maps →</a>
+  </div>
+
+  <hr>
+
+  <!-- DIY ITINERARIES -->
+  <span class="section-num">How to Spend Your Time</span>
+  <h2>Three Ways to Do a Galveston Day Right</h2>
+  <span class="section-subhead">Pick one. Do it fully. The island rewards the unhurried.</span>
+
+  <div class="pmtp-band">
+    <h4>Return timing — a non-negotiable</h4>
+    <p>If you're exploring the Seawall area, give yourself 60–90 minutes before all-aboard to safely return to the ship via Uber. On high-season Saturdays, surge pricing and longer wait times can stretch what you thought was a quick ride. Plan for the slow version, then be pleasantly surprised if it's faster.</p>
+  </div>
+
+  <div class="itinerary">
+    <h4>Half-Day — History &amp; Waterfront (3–4 hours)</h4>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--ink-soft);margin-bottom:16px;">Best for couples, solo travelers, anyone with a preference for depth over distance.</p>
+    <div class="itinerary-step"><span class="step-num">1</span><span>Walk from T25/T28 to Pier 21 — 5 minutes, straight along the harbor</span></div>
+    <div class="itinerary-step"><span class="step-num">2</span><span>Board the Seagull II Harbor Tour — 1 hour, dolphins and history included, Elissa access in the ticket</span></div>
+    <div class="itinerary-step"><span class="step-num">3</span><span>Spend an hour aboard the 1877 Elissa and through the Seaport Museum</span></div>
+    <div class="itinerary-step"><span class="step-num">4</span><span>Lunch at Willie G's or Fisherman's Wharf — 1 hour, harbor views, no rushing</span></div>
+    <div class="itinerary-step"><span class="step-num">5</span><span>Stroll the Strand for shops, La King's Confectionery, and whatever catches your eye</span></div>
+    <div class="itinerary-step"><span class="step-num">6</span><span>Walk or quick Uber back to the ship</span></div>
+  </div>
+
+  <div class="itinerary">
+    <h4>Half-Day — Beach &amp; Pier (3–4 hours)</h4>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--ink-soft);margin-bottom:16px;">Best for families, anyone who arrived on vacation the moment they left home.</p>
+    <div class="itinerary-step"><span class="step-num">1</span><span>Uber from terminal to Stewart Beach — about 10 minutes</span></div>
+    <div class="itinerary-step"><span class="step-num">2</span><span>Rent umbrella and chairs on arrival; give yourself 2–3 hours in the Gulf</span></div>
+    <div class="itinerary-step"><span class="step-num">3</span><span>Uber to Pleasure Pier for rides, Gulf views, and Bubba Gump — 1–2 hours</span></div>
+    <div class="itinerary-step"><span class="step-num">4</span><span>Uber back to the ship with 60–90 minutes to spare before all-aboard</span></div>
+  </div>
+
+  <div class="itinerary">
+    <h4>Full Day — Grand Galveston</h4>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--ink-soft);margin-bottom:16px;">Best for guests arriving the day before embarkation, or anyone with the luxury of time.</p>
+    <div class="itinerary-step"><span class="step-num">AM</span><span>Breakfast at Star Drug Store (Est. 1886) — the chicken salad, the old lunch counter, the whole experience</span></div>
+    <div class="itinerary-step"><span class="step-num">AM</span><span>Walk the East End Historic District — self-guided Victorian home walk through Galveston's most intact pre-1900 residential neighborhood</span></div>
+    <div class="itinerary-step"><span class="step-num">AM</span><span>Guided tour of Bishop's Palace — hourly departures; plan an hour or more</span></div>
+    <div class="itinerary-step"><span class="step-num">MID</span><span>Lunch at Shrimp 'N Stuff (since 1976) — gumbo made from scratch, shrimp breaded in-house, nothing frozen, very local</span></div>
+    <div class="itinerary-step"><span class="step-num">MID</span><span>The Strand — galleries, Galveston Arts Center, La King's Confectionery, whatever the afternoon brings</span></div>
+    <div class="itinerary-step"><span class="step-num">PM</span><span>Baywatch Dolphin Tour from Pier 21 — 45 minutes, book in advance</span></div>
+    <div class="itinerary-step"><span class="step-num">EVE</span><span>Dinner at Gaido's (Est. 1911) or Rudy &amp; Paco's — one is a Galveston institution, one is a Latin-influenced fine dining room; dress code enforced at Rudy &amp; Paco's dinner service</span></div>
+  </div>
+
+  <hr>
+
+  <!-- SHORE EXCURSIONS -->
+  <span class="section-num">Cruise Line Options</span>
+  <h2>Shore Excursions Worth Knowing About</h2>
+  <span class="section-subhead">A few of these are genuinely excellent. One requires timing you need to understand before you book.</span>
+
+  <div class="pmtp-band">
+    <h4>Space Center Houston — post-cruise, not pre-cruise</h4>
+    <p>NASA's official visitor center is 30–35 miles from port and doesn't open until 10am. Ships generally complete disembarkation by 9am. Factor the drive, the wait, and 3–4 hours at the facility itself — this works cleanly as a post-cruise excursion paired with an airport transfer, and it doesn't work cleanly as a rushed port-day activity. Royal Caribbean offers it as a disembarkation-day combo. If you're considering it as a mid-trip stop in Galveston, think carefully about the timing.</p>
+  </div>
+
+  <p><strong>Galveston City Tour</strong> — most cruise lines offer narrated bus tours covering the Strand, Seawall, historic homes, and port area. Usually 2–3 hours. A solid introduction for first-time Galveston visitors who want context without having to navigate independently.</p>
+
+  <p><strong>Schlitterbahn Waterpark</strong> — 33 water attractions on the island, about 15 minutes from port via rideshare. Boogie Bahn surf ride, wave pool, lazy river, swim-up bar. Verify open dates seasonally — it's a full-day commitment, and the timing works better as a pre-cruise overnight activity than a rushed boarding day.</p>
+
+  <p><strong>Moody Gardens Combo</strong> — the most popular cruise line family excursion; typically includes two pyramids with transportation managed. The cruise line version handles your return timing, which matters.</p>
+
+  <p><strong>Dolphin watching</strong> — available through cruise lines and bookable independently at Pier 21. The independent version is typically less expensive and more flexible.</p>
+
+  <hr>
+
+  <!-- DINING -->
+  <span class="section-num">Where to Eat</span>
+  <h2>Galveston at the Table</h2>
+  <span class="section-subhead">Gulf seafood, old Texas character, and a few surprises you won't find anywhere else.</span>
+
+  <h3 style="margin-top:28px;">Walking Distance from Terminals 25 &amp; 28</h3>
+
+  <div class="dining-item">
+    <h3>Fisherman's Wharf</h3>
+    <div class="dining-detail">2200 Harborside Dr · Harbor views · Lunch and dinner daily</div>
+    <p>Open since 1940, with harbor views and bacon-wrapped shrimp kisses that have developed a following. An OpenTable 2025 award winner for scenic outdoor dining. Ideal for a pre-boarding lunch or post-cruise meal when you're not ready for the day to end quite yet.</p>
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Fishermans+Wharf+Galveston+Texas" target="_blank">Open in Maps →</a>
+  </div>
+
+  <div class="dining-item">
+    <h3>Willie G's Seafood</h3>
+    <div class="dining-detail">Pier 21 · Upscale casual · Waterfront patio</div>
+    <p>Galveston's most acclaimed waterfront seafood spot, with a patio where dolphins surface often enough that locals have stopped reacting. The combination of quality, location, and harbor activity makes it hard to beat for a port-day meal.</p>
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Willie+G+Seafood+Pier+21+Galveston" target="_blank">Open in Maps →</a>
+  </div>
+
+  <div class="dining-item">
+    <h3>Shrimp 'N Stuff Downtown</h3>
+    <div class="dining-detail">216 23rd St · A local institution since 1976 · Casual and fast</div>
+    <p>Gumbo made from scratch. Shrimp breaded and peeled in-house. Nothing frozen. It's been running the same way for nearly 50 years and has no interest in changing. Affordable, fast, and genuinely local in a way that the harbor restaurants aren't quite.</p>
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Shrimp+N+Stuff+Downtown+Galveston" target="_blank">Open in Maps →</a>
+  </div>
+
+  <div class="dining-item">
+    <h3>Star Drug Store</h3>
+    <div class="dining-detail">Est. 1886 · Breakfast &amp; lunch only · Oldest drugstore in Texas</div>
+    <p>The lunch counter inside Galveston's oldest pharmacy. The chicken salad is the thing most people order, the building still looks like 1886, and the whole experience is authentically Galveston in a way that takes a minute to fully appreciate. Go for breakfast or early lunch — it's not a dinner spot.</p>
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Star+Drug+Store+Galveston+Texas" target="_blank">Open in Maps →</a>
+  </div>
+
+  <h3>Along the Seawall &amp; Broader Island</h3>
+
+  <div class="dining-item">
+    <h3>Gaido's Seafood</h3>
+    <div class="dining-detail">3800 Seawall Blvd · Est. 1911 · Four generations · Reservation recommended</div>
+    <p>One of the most respected seafood institutions on the Gulf Coast, run by the same family for over a century. Gulf red snapper, crab cakes, char-grilled oysters, white tablecloths. This is the dinner you plan around.</p>
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Gaidos+Seafood+Galveston+Texas" target="_blank">Open in Maps →</a>
+  </div>
+
+  <div class="dining-item">
+    <h3>Rudy &amp; Paco Restaurant &amp; Bar</h3>
+    <div class="dining-detail">2028 Post Office St · Fine dining · Central American–influenced · Dress code enforced at dinner</div>
+    <p>Gulf red snapper with Central American technique, crab cakes with chipotle cream, fine-dining service in a room that feels like it was designed for a longer evening. Top-rated consistently on TripAdvisor. No shorts for men or women at dinner — the dress code is enforced.</p>
+  </div>
+
+  <div class="dining-item">
+    <h3>Hearsay on The Strand</h3>
+    <div class="dining-detail">The Strand District · Elevated bar and restaurant · Lively</div>
+    <p>A cocktail bar and restaurant with genuine energy — popular with pre-cruise guests settling into vacation mode. A good choice if you want to eat in the Strand area without fully committing to fine dining.</p>
+  </div>
+
+  <div class="pmtp-band">
+    <h4>Two insider picks from locals</h4>
+    <p><strong>Maceo's Spice &amp; Import Co.</strong> — Italian food and deli with a historical Galveston Mafia connection. It's a genuine local oddity with a backstory worth knowing before you walk in. <strong>Galveston Island Brewing Co.</strong> — craft beer, outdoor seating, board games, and live music in the Strand area. Casual, unhurried, and easy to stay longer than you planned.</p>
+  </div>
+
+  <hr>
+
+  <!-- TRANSPORTATION -->
+  <span class="section-num">Getting Around</span>
+  <h2>Moving Through the Island</h2>
+  <span class="section-subhead">Galveston is manageable. Most of what you need costs less than you'd think to reach.</span>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Method</th>
+        <th>Cost</th>
+        <th>Best For</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Walking</strong></td>
+        <td>Free</td>
+        <td>Strand and Pier 21 from T25/T28 only</td>
+      </tr>
+      <tr>
+        <td><strong>Uber / Lyft</strong></td>
+        <td>$8–$20 most on-island trips</td>
+        <td>Seawall, Moody Gardens, Pleasure Pier — and all trips from T10</td>
+      </tr>
+      <tr>
+        <td><strong>Island Trolley</strong></td>
+        <td>$1 per ride (exact change)</td>
+        <td>Strand to Seawall; runs every ~30 minutes — does NOT stop at cruise terminals</td>
+      </tr>
+      <tr>
+        <td><strong>Taxi</strong></td>
+        <td>$15–$30 most local trips</td>
+        <td>Airport-style flat rates; consistent pricing</td>
+      </tr>
+      <tr>
+        <td><strong>Bike Rental</strong></td>
+        <td>~$15–$25/hr</td>
+        <td>Seawall Boulevard; the best way to cover it</td>
+      </tr>
+      <tr>
+        <td><strong>Rental Car</strong></td>
+        <td>Varies; Enterprise has Galveston location</td>
+        <td>Western end of island, State Park, full-day flexibility</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>From Houston Airports</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Route</th>
+        <th>Uber / Lyft (up to 4 pax)</th>
+        <th>Shared Shuttle (per person)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Houston Hobby (HOU)</td>
+        <td>~$65–$90</td>
+        <td>~$30–$40</td>
+      </tr>
+      <tr>
+        <td>Bush Intercontinental (IAH)</td>
+        <td>~$100–$150</td>
+        <td>~$40–$50</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>No direct public transit connects Houston airports to the Galveston port. The trolley is charming and does not serve cruise terminals — mention this to anyone who's heard about it and is counting on it.</p>
+
+  <div class="pmtp-band">
+    <h4>Buc-ee's, Texas City — a worthy detour</h4>
+    <p>On I-45, about 20 minutes from the port. The world's largest convenience store chain, with spotless restrooms, an absurd quantity of Texas snacks, and Beaver Nuggets. Worth the stop on your way to or from the port if you've never been — and worth recommending to visitors as a genuinely Texas experience.</p>
+  </div>
+
+  <hr>
+
+  <!-- PRACTICAL TIPS -->
+  <span class="section-num">Before You Go</span>
+  <h2>A Few Things That Make the Day Go Smoother</h2>
+  <span class="section-subhead">The stuff worth knowing before you need to know it.</span>
+
+  <p><strong>Sunscreen is non-negotiable.</strong> Gulf sun is intense in every season. Bring it regardless of the forecast.</p>
+
+  <p><strong>Terminal 10 passengers need a rideshare.</strong> If you're on Royal Caribbean, don't let anyone tell you to walk to the Strand — that's a different island than where you're standing. Use the designated pickup zone at the terminal and Uber your way over.</p>
+
+  <p><strong>No luggage storage at the port.</strong> Plan accordingly if you're arriving the morning of embarkation and want to explore before boarding.</p>
+
+  <p><strong>Downtown Galveston parking</strong> requires the Passport Parking app or coins at the meters. If anyone in your group is driving, mention this before they're standing in front of a meter with nothing but a credit card.</p>
+
+  <p><strong>Cell service and Uber availability</strong> are reliably good across the island.</p>
+
+  <p><strong>Book dolphin tours in advance</strong> for summer weekends. They sell out, and there's no standby list on the harbor.</p>
+
+  <h3>Seasonal Notes</h3>
+  <p><strong>Summer (June–August)</strong> is peak season: hot, humid, 95°F or above on a regular basis. Arrive early for the beach and make your restaurant reservations before you arrive. <strong>Spring (March–May)</strong> is the most pleasant window — mild temperatures, active calendar, good water conditions. Mardi Gras celebrations in February draw visitors from across Texas. <strong>Fall (September–November)</strong> is hurricane season; always verify with NOAA (nhc.noaa.gov) and your cruise line app before any port activity. <strong>Winter (December–February)</strong> runs cooler; some attractions including Stewart Beach and Schlitterbahn are closed, and morning fog in January and February can occasionally delay ship arrivals — not common, but worth knowing.</p>
+
+  <div class="flag">
+    <strong>What to skip for a tight port day:</strong> A day trip into downtown Houston (50+ miles each way, traffic is not your friend). Haak Winery in Santa Fe, Texas (20 miles inland, too far for a day that has a boarding time attached to it). Schlitterbahn as a same-day embarkation activity — it's a full commitment that pairs better with an overnight stay.
+  </div>
+
+  <hr>
+
+  <!-- FOOTER -->
+  <div style="background:var(--sand-light);margin-top:64px;padding:36px 28px;border-radius:12px;">
+    <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:500;">Christina Garcia</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink-soft);font-size:15px;margin-bottom:14px;">Senior Travel Advisor</div>
+    <div style="font-size:14px;margin-bottom:4px;"><a id="pmtpEmailLink" href="#"></a></div>
+    <div style="font-size:14px;margin-bottom:4px;">281-229-0862</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink-soft);font-size:14px;margin-top:14px;">Point Me to Paradise Travel</div>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div style="margin-top:28px;padding:22px 26px;background:var(--paper);border:1px solid var(--line);border-radius:8px;font-size:12.5px;line-height:1.7;color:var(--ink-soft);">
+    <span style="display:block;font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);margin-bottom:8px;">Important — please read</span>
+    This guide is provided for informational purposes only. Locations, hours, conditions, and recommendations can change without notice, and ocean, weather, trail, road, and travel conditions can shift quickly and unpredictably. Point Me to Paradise Travel, the advisor named in this guide, and the authors of this content are not liable for any injury, illness, loss, theft, or harm of any kind arising from your visit to any location or participation in any activity referenced here. By using this guide, you accept full personal responsibility for your own safety. Use your own judgment, verify current conditions before any activity, follow all posted warnings and local regulations, and consult qualified professionals — lifeguards, park rangers, licensed guides, medical providers — where appropriate.
+  </div>
+
+  <script>
+    (function(){
+      var l="christina", d="pointmetoparadise.com";
+      if(!l||!d) return;
+      var a = l + "\u0040" + d;
+      var el = document.getElementById("pmtpEmailLink");
+      if(el){ el.href = "mailto:" + a; el.textContent = a; }
+    })();
+  </script>
+
+</body>
+</html>
