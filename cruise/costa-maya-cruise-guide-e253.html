@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Costa Maya Cruise Port Guide — Point Me to Paradise Travel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --aqua-pale:#C4E4E1;
+      --aqua-mist:#EAF3F2;
+      --aqua:#75AFB1;
+      --aqua-dark:#4F8A8C;
+      --sand-light:#F4F1E9;
+      --warm-sand:#F5EFE4;
+      --gold-whisper:#D6C8A8;
+      --white:#FFFFFF;
+      --paper:#F9F6F1;
+      --ink:#2B2420;
+      --ink-soft:#6B6359;
+      --line:#E6DFD5;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      padding: 48px 28px 80px;
+    }
+
+    h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(26px, 5vw, 42px);
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.15;
+      margin-bottom: 0;
+    }
+
+    h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(20px, 4vw, 28px);
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-top: 52px;
+      margin-bottom: 6px;
+    }
+
+    h3 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(16px, 3vw, 20px);
+      font-weight: 600;
+      color: var(--ink);
+      margin-top: 32px;
+      margin-bottom: 8px;
+    }
+
+    h4 {
+      font-family: 'Fraunces', serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    p {
+      margin-bottom: 16px;
+      color: var(--ink);
+    }
+
+    a {
+      color: var(--aqua-dark);
+      text-decoration: none;
+      border-bottom: 1px solid var(--aqua-pale);
+      transition: border-color 0.15s;
+    }
+
+    a:hover {
+      border-color: var(--aqua-dark);
+    }
+
+    .cormorant-tag {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(16px, 3.2vw, 19px);
+      color: var(--ink-soft);
+      margin-bottom: 22px;
+      line-height: 1.4;
+    }
+
+    .section-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--aqua-dark);
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .pmtp-hero {
+      background-image: linear-gradient(180deg,rgba(255,255,255,0.45),rgba(196,228,225,0.55) 35%,rgba(245,239,228,0.80) 68%,rgba(249,246,240,0.97));
+      padding: clamp(40px,8vw,78px) 32px clamp(36px,6vw,60px);
+      text-align: center;
+      margin: -48px -28px 32px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .pmtp-band {
+      padding: 22px 24px;
+      border-radius: 10px;
+      margin: 28px 0;
+    }
+
+    .pmtp-band p { margin-bottom: 0; }
+
+    .warning-band {
+      background: #FFF8EE;
+      border: 1px solid #E8C97A;
+      border-radius: 10px;
+      padding: 22px 24px;
+      margin: 28px 0;
+    }
+
+    .warning-band h4 {
+      color: #8A6200;
+    }
+
+    .warning-band p {
+      margin-bottom: 0;
+      color: var(--ink);
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .tag {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--aqua-dark);
+      background: var(--aqua-mist);
+      border: 1px solid var(--aqua-pale);
+      border-radius: 4px;
+      padding: 3px 8px;
+    }
+
+    .tag.tag-warn {
+      color: #7A5800;
+      background: #FFF3D6;
+      border-color: #E8C97A;
+    }
+
+    .tag.tag-hist {
+      color: #5A3A22;
+      background: #F5EDE0;
+      border-color: var(--gold-whisper);
+    }
+
+    .maps-link {
+      display: inline-block;
+      margin-top: 10px;
+      margin-bottom: 4px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--aqua-dark);
+      background: var(--aqua-mist);
+      border: 1px solid var(--aqua-pale);
+      border-bottom: 1px solid var(--aqua-pale);
+      border-radius: 6px;
+      padding: 10px 16px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .maps-link:hover {
+      background: var(--aqua-pale);
+      border-color: var(--aqua);
+    }
+
+    .tip-box {
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      border-left: 2px solid var(--aqua);
+      padding: 8px 14px;
+      margin-top: 10px;
+      font-style: italic;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px;
+    }
+
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: var(--line);
+      margin: 40px 0;
+    }
+
+    .thin-divider {
+      width: 48px;
+      height: 1px;
+      background: var(--gold-whisper);
+      margin: 14px 0;
+    }
+
+    .entry-card {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 28px;
+      margin-bottom: 28px;
+    }
+
+    .entry-card:last-child {
+      border-bottom: none;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin: 16px 0 24px;
+    }
+
+    th {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 2px solid var(--line);
+    }
+
+    td {
+      padding: 10px 12px;
+      vertical-align: top;
+      border-bottom: 1px solid var(--line);
+      color: var(--ink);
+      line-height: 1.5;
+    }
+
+    tr:last-child td { border-bottom: none; }
+    tr:nth-child(even) td { background: rgba(234,243,242,0.35); }
+
+    .pmtp-footer {
+      background: var(--sand-light);
+      margin-top: 64px;
+      padding: 36px 28px;
+      border-radius: 12px;
+    }
+
+    .pmtp-disclaimer {
+      margin-top: 28px;
+      padding: 22px 26px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font-size: 12.5px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+    }
+
+    @media(max-width:640px){
+      body { font-size: 15px; padding: 24px 20px 60px; }
+      .pmtp-hero { padding: 44px 20px 36px; margin: -24px -20px 24px; }
+      .pmtp-band { padding: 18px 16px; }
+      h2 { font-size: 20px; }
+      h3 { font-size: 17px; }
+      .pmtp-footer { border-radius: 8px; padding: 24px 20px; }
+      table { font-size: 13px; }
+      th, td { padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="pmtp-hero" style="background-image:linear-gradient(180deg,rgba(255,255,255,0.45),rgba(196,228,225,0.55) 35%,rgba(245,239,228,0.80) 68%,rgba(249,246,240,0.97));padding:clamp(40px,8vw,78px) 32px clamp(36px,6vw,60px);text-align:center;margin:-48px -28px 32px;border-bottom:1px solid var(--line);">
+  <div style="font-family:Fraunces,serif;font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--aqua-dark);margin-bottom:22px;">Point Me to Paradise Travel</div>
+  <h1>Costa Maya, Mexico</h1>
+  <div style="width:60px;height:1px;background:var(--gold-whisper);margin:18px auto;"></div>
+  <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(17px,3.5vw,21px);max-width:620px;margin:0 auto;">Your cruise port guide — from the pier to the jungle ruins and back, with time to spare.</p>
+  <div style="margin-top:28px;border-radius:10px;overflow:hidden;box-shadow:0 4px 24px rgba(43,36,32,0.13);max-width:600px;margin-left:auto;margin-right:auto;">
+    <img src="https://runway-media-production.global.ssl.fastly.net/us/originals/2024/07/COSTA-MAYA_FACEBOOK_5.jpg" alt="Costa Maya, Mexico" style="width:100%;height:auto;display:block;" loading="lazy">
+  </div>
+</div>
+
+<div style="max-width:680px;margin:0 auto;padding:0 20px;">
+
+  <!-- URGENT NOTICE -->
+  <div class="warning-band">
+    <h4 style="margin-bottom:10px;">⚠ Port in Transition — Read This First</h4>
+    <p>Royal Caribbean Group took ownership of this port in July 2025 and is redeveloping it into a private resort called Perfect Day Mexico, expected to open in late 2027. Through 2026 and into 2027, you should expect construction activity and possible closures of in-port shops, restaurants, and attractions. <strong>The town of Mahahual, all beach clubs, and every excursion destination described in this guide are completely unaffected.</strong> If your ship docks here in 2026 or 2027, plan to head outside the port complex — that's where the real day is, anyway.</p>
+  </div>
+
+  <!-- PORT OVERVIEW -->
+  <h2>First Look: The Port</h2>
+  <span class="cormorant-tag">Costa Maya was built for cruise ships — and that's both its limitation and its advantage.</span>
+
+  <p>Your ship docks directly at a long T-shaped pier — no tender, no waiting offshore. The pier stretches about 1,115 feet, so you can walk to the terminal or hop the free trolley that loops continuously. When three or four ships are in port simultaneously, the trolley backs up; if you're mobile and it's not peak summer heat, the walk is manageable.</p>
+
+  <p>What you'll find at the end of the pier is a purpose-built cruise village: Mayan-motif architecture, a central square where Papantla Flyers perform, a large pool with a swim-up bar, the Aviarius bird walk suspended above the complex, a dolphin encounter facility, and rows of shops and restaurants. It reads more resort than town — because that's exactly what it is. The authentic Mexico is a $4 taxi ride away in Mahahual.</p>
+
+  <div style="border-radius:10px;overflow:hidden;box-shadow:0 3px 18px rgba(43,36,32,0.11);margin:24px 0 28px;">
+    <img src="https://cruisefever.net/wp-content/uploads/2023/01/Costa-Maya-cruise-port.jpg" alt="Costa Maya cruise port complex" style="width:100%;height:auto;display:block;" loading="lazy">
+  </div>
+
+  <div class="pmtp-band" style="background:var(--aqua-mist);">
+    <h4>Port Fast Facts</h4>
+    <p><strong>Docking:</strong> Direct pier — no tendering. Up to four ships at once. <strong>Language:</strong> English widely spoken throughout port and Mahahual. <strong>Currency:</strong> USD accepted almost everywhere; pesos are official. ATMs (both currencies) are in the port. Taxis and small vendors are cash-only — bring small bills. <strong>Safety:</strong> The port complex and Mahahual are considered safe for independent exploration during the day.</p>
+  </div>
+
+  <!-- IN-PORT -->
+  <h2>Inside the Port</h2>
+  <span class="cormorant-tag">You don't have to leave — but most of the interesting things happen when you do.</span>
+
+  <div style="border-radius:10px;overflow:hidden;box-shadow:0 3px 18px rgba(43,36,32,0.11);margin:20px 0 28px;">
+    <img src="https://solstis.tours/cdn-cgi/imagedelivery/VzYWRpJYIXLVGwr8vjyQnA/2e5d0643-8f8b-4238-966a-9f9b75082c00/public" alt="Inside the Costa Maya cruise port complex" style="width:100%;height:auto;display:block;" loading="lazy">
+  </div>
+
+  <div class="entry-card">
+    <div class="tag-row"><span class="tag">Port Walkable</span></div>
+    <h3>The Main Pool</h3>
+    <p>The centerpiece of the port complex is a large resort-style pool ringed with lounge chairs and backed by a swim-up bar. Chairs are complimentary. It's a genuinely comfortable place to spend a few hours if you've got a late departure or want a no-effort port day — reviewers consistently rate it well. A pair of flamingos can be spotted near the Aviarius entrance at no charge.</p>
+    <div style="border-radius:8px;overflow:hidden;box-shadow:0 3px 18px rgba(43,36,32,0.11);margin-top:14px;">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2b/81/0a/c0/caption.jpg?w=1200&h=-1&s=1" alt="Costa Maya port main pool and swim-up bar" style="width:100%;height:auto;display:block;" loading="lazy">
+    </div>
+  </div>
+
+  <div class="entry-card">
+    <div class="tag-row"><span class="tag">Port Walkable</span><span class="tag">Cultural Experience</span></div>
+    <h3>Danza de los Voladores</h3>
+    <p>In the central square, performers known as Papantla Flyers ascend a tall pole and descend in spinning spirals — a traditional ceremony with roots in Veracruz. It runs multiple times throughout the day and costs nothing to watch. Worth pausing for a few minutes even if you're heading straight out to an excursion.</p>
+    <div style="border-radius:8px;overflow:hidden;box-shadow:0 3px 18px rgba(43,36,32,0.11);margin-top:14px;">
+      <img src="https://cdn.shopify.com/s/files/1/0067/0433/2860/files/voladores_de_papantla_1_480x480.jpg?v=1689726239" alt="Danza de los Voladores — Papantla Flyers performance" style="width:100%;height:auto;display:block;" loading="lazy">
+    </div>
+  </div>
+
+  <div class="entry-card">
+    <div class="tag-row"><span class="tag">Port Walkable</span></div>
+    <h3>Aviarius — Bird Aviary</h3>
+    <p>Eight connected habitats suspended on rope bridges 20–30 feet above the port, accessible via a tall wooden staircase. You'll walk through enclosures housing owls, parrots, lovebirds, cardinals, and golden pheasants, with an aerial view of the dolphin pools below. Entry runs approximately $14 for adults and $12 for children (figures confirmed across multiple 2024–2025 reviews — verify on arrival). Not accessible for strollers, wheelchairs, or scooters.</p>
+    <div style="border-radius:8px;overflow:hidden;box-shadow:0 3px 18px rgba(43,36,32,0.11);margin-top:14px;margin-bottom:14px;">
+      <img src="https://static.wixstatic.com/media/728532_6c2691faa31a487d91dfda2ad2c50328~mv2.jpg/v1/fill/w_1000,h_563,al_c,q_85,usm_0.66_1.00_0.01/728532_6c2691faa31a487d91dfda2ad2c50328~mv2.jpg" alt="Aviarius bird aviary rope bridges at Costa Maya port" style="width:100%;height:auto;display:block;" loading="lazy">
+    </div>
+    <div class="tip-box">Save the larger seeds in your cup for the Blue Macaws near the exit — they're the best photo opportunity in the whole aviary.</div>
+  </div>
+
+  <div class="entry-card">
+    <div class="tag-row"><span class="tag">Port Walkable</span></div>
+    <h3>Dolphin Discovery</h3>
+    <p>Located behind the main pool, the dolphin encounter program offers either a poolside experience (approximately $120) or an in-water swim (approximately $140). Figures are from 2023–2024 sources — confirm current pricing at the facility.</p>
+    <div style="border-radius:8px;overflow:hidden;box-shadow:0 3px 18px rgba(43,36,32,0.11);margin-top:14px;">
+      <img src="https://media-cdn.tripadvisor.com/media/photo-s/11/a3/f3/d9/photo0jpg.jpg" alt="Dolphin Discovery at Costa Maya cruise port" style="width:100%;height:auto;display:block;" loading="lazy">
+    </div>
+  </div>
+
+  <div class="entry-card">
+    <div class="tag-row"><span class="tag">Port Walkable</span><span class="tag">Cultural Experience</span></div>
+    <h3>Kakaw Chocolate Factory & Tastings</h3>
+    <p>A short chocolate-making experience rooted in Mayan cacao traditions. The duty-free area also typically offers complimentary tequila and mezcal samples. Good for filling a short block of time without leaving the complex.</p>
+    <div style="border-radius:8px;overflow:hidden;box-shadow:0 3px 18px rgba(43,36,32,0.11);margin-top:14px;">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/be/ae/e3/cacao.jpg?w=1200&h=-1&s=1" alt="Kakaw Chocolate Factory cacao tasting at Costa Maya" style="width:100%;height:auto;display:block;" loading="lazy">
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- MAHAHUAL -->
+  <h2>Mahahual Village</h2>
+  <span class="cormorant-tag">A fishing village that wakes up when the ships arrive — relaxed, walkable, and a different world from the port.</span>
+
+  <div style="border-radius:10px;overflow:hidden;box-shadow:0 3px 18px rgba(43,36,32,0.11);margin:20px 0 28px;">
+    <img src="https://www.royalcaribbeanblog.com/sites/default/files/styles/500px/public/blog-images/DSC03504.jpg?itok=WV7-CNnY" alt="Mahahual village malecón and beachfront" style="width:100%;height:auto;display:block;" loading="lazy">
+  </div>
+
+  <p>The town of Mahahual sits about five minutes south of the port by taxi. A wide malecón runs from the lighthouse down through town, with the beach on one side and a string of restaurants, beach bars, and small shops on the other. It's compact enough to walk end-to-end in 20 minutes.</p>
+
+  <p>On a busy port day — and busy means up to four ships in simultaneously — the malecón fills with cruise passengers and the vendor energy picks up accordingly. If you don't have a beach club booked and you arrive without a plan, you'll spend the first ten minutes declining offers. If you do have something booked, walk directly there. The town is easy to navigate and English is widely spoken.</p>
+
+  <div class="pmtp-band" style="background:var(--warm-sand);">
+    <h4>Getting There</h4>
+    <p>Taxi from port to Mahahual: approximately $4–$5 per person, about 5–7 minutes. Cash only — agree on the fare before you get in. A one-way trolley runs from port to town for approximately $4/person, but local transport regulations require a taxi for the return trip. Golf cart rentals are available at the port exit for approximately $60–$75/day or by the hour. Electric bikes run approximately $20–$25/day.</p>
+  </div>
+
+  <p>Snorkeling along the Mesoamerican Barrier Reef — the world's second-largest coral reef system — is accessible directly from the town beach. Multiple Cruise Critic reviewers mention a low-cost snorkel area near the lighthouse; verify current availability on arrival. Beachfront massages are widely reported at approximately $20/hour.</p>
+
+  <p>One more thing: the port exit itself can be disorienting. The shopping area is designed to keep you circulating. Look for the transportation area signage toward the back of the complex to find your way to the taxi stand and the street outside.</p>
+
+  <div class="tip-box">If your ship stays late, Pizza Papi in Mahahual — wood-fired, funky décor, strong reviews — opens at 5 p.m. It's in the town proper, away from the beachfront crush, which means fewer cruise passengers and a quieter table.</div>
+
+  <a href="https://www.google.com/maps/search/?api=1&query=Mahahual+Costa%20Maya%2C%20Mexico" class="maps-link" target="_blank" rel="noopener">📍 Open Mahahual in Google Maps</a>
+
+  <div class="divider"></div>
+
+  <!-- BEACH CLUBS -->
+  <h2>Beach Clubs</h2>
+  <span class="cormorant-tag">The water here is calm and clear — the reef keeps it that way. The question is only which stretch of sand you want to claim.</span>
+
+  <div style="border-radius:10px;overflow:hidden;box-shadow:0 3px 18px rgba(43,36,32,0.11);margin:20px 0 28px;">
+    <img src="https://cdn11.bigcommerce.com/s-ej4ldt9tid/images/stencil/1000x570/products/1423/8444/Costa_Maya_Beach_Club_Hammock__76807.1774545598.jpg?c=3" alt="Beach club hammock on the Costa Maya coast" style="width:100%;height:auto;display:block;" loading="lazy">
+  </div>
+
+  <p>Almost the entire Costa Maya coastline runs alongside the Mesoamerican Barrier Reef, which means calm, shallow water and good snorkeling directly from the beach. The clubs closest to port are a five-minute taxi ride from Mahahual; the more secluded ones sit further south along largely undeveloped coast.</p>
+
+  <h3>In & Around Mahahual</h3>
+
+  <div class="entry-card">
+    <div class="tag-row"><span class="tag">Beach</span><span class="tag">DIY Friendly</span></div>
+    <h3>Pez Quadro Beach Club</h3>
+    <p>Directly on Mahahual beach, well-reviewed for easy access from port. Comfortable loungers, smooth sand, snorkeling gear, sea fishing, and massages on offer. Straightforward and reliable for a few hours of sun without overcomplicating the day.</p>
+    <div style="border-radius:8px;overflow:hidden;box-shadow:0 3px 18px rgba(43,36,32,0.11);margin-top:14px;margin-bottom:14px;">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2f/db/f7/fd/entrada-a-la-playa.jpg?w=1200&h=-1&s=1" alt="Pez Quadro Beach Club entrance, Mahahual" style="width:100%;height:auto;display:block;" loading="lazy">
+    </div>
+    <a href="https://www.google.com/maps/search/?api=1&query=Pez+Quadro+Beach+Club+Mahahual+Costa%20Maya%2C%20Mexico" class="maps-link" target="_blank" rel="noopener">📍 Pez Quadro Beach Club</a>
+  </div>
+
+  <div class="entry-card">
+    <div class="tag-row"><span class="tag">Beach</span><span class="tag">DIY Friendly</span></div>
+    <h3>El Faro Restaurant &amp; Beach Club</h3>
+    <p>Lounge chairs, shaded areas, snorkeling gear, water sports equipment, Wi-Fi, and showers. One of the more complete setups for a half-day beach stay within easy reach of port.</p>
+    <div style="border-radius:8px;overflow:hidden;box-shadow:0 3px 18px rgba(43,36,32,0.11);margin-top:14px;margin-bottom:14px;">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/28/68/26/d6/beach-club-club-de-playa.jpg?w=400&h=-1&s=1" alt="El Faro Restaurant and Beach Club, Mahahual" style="width:100%;height:auto;display:block;" loading="lazy">
+    </div>
+    <a href="https://www.google.com/maps/search/?api=1&query=El+Faro+Beach+Club+Mahahual+Costa%20Maya%2C%20Mexico" class="maps-link" target="_blank" rel="noopener">📍 El Faro Beach Club</a>
+  </div>
+
+  <div class="entry-card">
+    <div class="tag-row"><span class="tag">Beach</span><span class="tag">DIY Friendly</span></div>
+    <h3>Yaya Beach Club</h3>
+    <p>Recognizable by the sugar skull on the sign. Food options span Mexican, vegetarian, vegan, and Italian. Standard and deluxe packages cover food, drinks, and a lounger under shade.</p>
+    <div style="border-radius:8px;overflow:hidden;box-shadow:0 3px 18px rgba(43,36,32,0.11);margin-top:14px;margin-bottom:14px;">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/eb/25/3e/yaya-beach-entrance.jpg?w=1200&h=-1&s=1" alt="Yaya Beach Club entrance, Mahahual" style="width:100%;height:auto;display:block;" loading="lazy">
+    </div>
+    <a href="https://www.google.com/maps/search/?api=1&query=Yaya+Beach+Club+Mahahual+Costa%20Maya%2C%20Mexico" class="maps-link" target="_blank" rel="noopener">📍 Yaya Beach Club</a>
+  </div>
+
+  <div class="entry-card">
+    <div class="tag-row"><span class="tag">Beach</span><span class="tag">DIY Friendly</span></div>
+    <h3>Nacional Beach Club</h3>
+    <p>Positioned in the center of Mahahual town — the best choice if you want to pair beach time with a walk through the village. Colorful mosaics, thatched-roof bungalows, a tiny plunge pool, ceviche, tacos, and cocktails.</p>
+    <div style="border-radius:8px;overflow:hidden;box-shadow:0 3px 18px rgba(43,36,32,0.11);margin-top:14px;margin-bottom:14px;">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/15/a8/32/8a/nacional-beach-club-bungalows.jpg?w=900&h=500&s=1" alt="Nacional Beach Club thatched bungalows, Mahahual" style="width:100%;height:auto;display:block;" loading="lazy">
+    </div>
+    <a href="https://www.google.com/maps/search/?api=1&query=Nacional+Beach+Club+Mahahual+Costa%20Maya%2C%20Mexico" class="maps-link" target="_blank" rel="noopener">📍 Nacional Beach Club</a>
+  </div>
+
+  <div class="entry-card">
+    <div class="tag-row"><span class="tag">Beach</span><span class="tag">DIY Friendly</span></div>
+    <h3>Malecón 21</h3>
+    <p>A chic beach club and restaurant in the southern section of Mahahual. Light-colored décor with natural fibers and macramé, ocean views, and a calmer atmosphere than the town-center clubs.</p>
+    <div style="border-radius:8px;overflow:hidden;box-shadow:0 3px 18px rgba(43,36,32,0.11);margin-top:14px;margin-bottom:14px;">
+      <img src="https://image.arrivalguides.com/x/09/a491cdd3b79d86d04588b75b3f82e737.jpg" alt="Malecón 21 beach club, Mahahual" style="width:100%;height:auto;display:block;" loading="lazy">
+    </div>
+    <a href="https://www.google.com/maps/search/?api=1&query=Malecon+21+Mahahual+Costa%20Maya%2C%20Mexico" class="maps-link" target="_blank" rel="noopener">📍 Malecón 21</a>
+  </div>
+
+  <h3>Further South — Book in Advance</h3>
+
+  <div class="entry-card">
+    <div class="tag-row"><span class="tag">Beach</span><span class="tag">Private Tour Option</span><span class="tag warn">Book Ahead</span></div>
+    <h3>Maya Chan Beach ★</h3>
+    <p>The most consistently recommended beach club in Costa Maya, full stop. It's private and requires advance reservation — on busy port days, it fills completely. A glass-bottom kayak, snorkel gear, floaties, beach BBQ, and unlimited drinks are all included. The location is further south along the undeveloped coast, which means fewer vendors and longer stretches of sand. Expect approximately 15 minutes by taxi from port. TripAdvisor reviewers single out the service as unusually attentive.</p>
+    <div style="border-radius:8px;overflow:hidden;box-shadow:0 3px 18px rgba(43,36,32,0.11);margin-top:14px;margin-bottom:14px;">
+      <img src="https://costamayabeachresort.com/wp-content/uploads/2015/06/paradise-bg-1920x1080@2x.jpg" alt="Maya Chan Beach, Costa Maya" style="width:100%;height:auto;display:block;" loading="lazy">
+    </div>
+    <div class="tip-box">Summer visitors note that seaweed along the coastal road can be pungent on the drive in. Once at the beach, the smell disappears. Don't let it stop you from booking — winter and spring months have clear water all the way in.</div>
+    <a href="https://www.google.com/maps/search/?api=1&query=Maya+Chan+Beach+Club+Costa%20Maya%2C%20Mexico" class="maps-link" target="_blank" rel="noopener">📍 Maya Chan Beach</a>
+  </div>
+
+  <div class="entry-card">
+    <div class="tag-row"><span class="tag">Beach</span><span class="tag">Nature</span></div>
+    <h3>Hayhu Beach Club</h3>
+    <p>Quiet and secluded, positioned away from the cruise-passenger concentration. Kayaking, snorkeling, stand-up paddleboarding, and kiteboarding lessons are available. The restaurant covers Caribbean, vegetarian, seafood, and South American-style grilled meat.</p>
+    <div style="border-radius:8px;overflow:hidden;box-shadow:0 3px 18px rgba(43,36,32,0.11);margin-top:14px;margin-bottom:14px;">
+      <img src="https://www.shoreexcursioneer.com/imgs/costa_maya_hayhu_beach_and_jungle_romantic_getaway_for_couples_excursion_5175-52.jpg" alt="Hayhu Beach Club, Costa Maya" style="width:100%;height:auto;display:block;" loading="lazy">
+    </div>
+    <a href="https://www.google.com/maps/search/?api=1&query=Hayhu+Beach+Club+Mahahual+Costa%20Maya%2C%20Mexico" class="maps-link" target="_blank" rel="noopener">📍 Hayhu Beach Club</a>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- MAYAN RUINS -->
+  <h2>Mayan Ruins</h2>
+  <span class="cormorant-tag">Costa Maya sits closer to working archaeological sites than any other major cruise port in Mexico — and most passengers never make it to them.</span>
+
+  <div style="border-radius:10px;overflow:hidden;box-shadow:0 3px 18px rgba(43,36,32,0.11);margin:20px 0 28px;">
+    <img src="https://solstis.tours/cdn-cgi/imagedelivery/VzYWRpJYIXLVGwr8vjyQnA/a3f45b99-3b26-45bb-9041-90c43720fe00/public" alt="Mayan ruins near Costa Maya" style="width:100%;height:auto;display:block;" loading="lazy">
+  </div>
+
+  <div class="pmtp-band" style="background:var(--aqua-mist);">
+    <h4>Before You Go: Logistics</h4>
+    <p>Independent operators are not permitted inside the port facility. Your cruise line's excursion desk is the only option that operates within the complex. Third-party operators — often smaller, better-reviewed, and less expensive — meet passengers just outside the port gates, approximately one to two blocks from the exit. All three ruins sites below are accessed via air-conditioned vans with bilingual guides. Bring cash (USD or MXN) for site entrance fees and the on-site shopping areas. Credit cards are not accepted at the ruins.</p>
+  </div>
+
+  <div class="entry-card">
+    <div class="tag-row"><span class="tag">Historic Site</span><span class="tag">Nature</span><span class="tag">Cruise Excursion</span><span class="tag">Private Tour Option</span></div>
+    <h3>Chacchoben Ruins</h3>
+    <p>The first-time choice. About 43 miles from port — roughly one hour on Highway 307 — Chacchoben dates to around 1000 BC with its peak period between 300 and 900 AD. The main draw is the Gran Basamento, a pyramidal platform over 100 feet tall that rises clear of the tree canopy. The site still shows traces of original red paint on the stucco walls, which larger and more-visited sites have lost entirely. Howler monkeys, iguanas, and toucans appear regularly along the paths. The whole excursion runs approximately four hours port-to-port, with about 90 minutes on site.</p>
+    <p>Walk-in entrance is approximately 65 pesos (around $4 USD) for those going independently, though booking an organized tour is strongly recommended for cruise passengers to ensure a guaranteed return time.</p>
+    <div style="border-radius:8px;overflow:hidden;box-shadow:0 3px 18px rgba(43,36,32,0.11);margin-top:14px;margin-bottom:14px;">
+      <img src="https://www.shoreexcursionsgroup.com/img/tour/CACMRNSBCH-2.jpg" alt="Chacchoben Mayan ruins, Costa Maya" style="width:100%;height:auto;display:block;" loading="lazy">
+    </div>
+    <div class="tip-box">The Chacchoben + Bacalar Lagoon combo is the most popular pairing at this port — ruins in the morning, lagoon by boat in the afternoon. It works best if your ship gives you eight or more hours.</div>
+    <a href="https://www.google.com/maps/search/?api=1&query=Chacchoben+Ruins+Costa%20Maya%2C%20Mexico" class="maps-link" target="_blank" rel="noopener">📍 Chacchoben Ruins</a>
+  </div>
+
+  <div class="entry-card">
+    <div class="tag-row"><span class="tag">Historic Site</span><span class="tag">Nature</span><span class="tag">Cruise Excursion</span><span class="tag">Private Tour Option</span><span class="tag warn">8+ Hours in Port</span></div>
+    <h3>Kohunlich Ruins</h3>
+    <p>For those who want fewer crowds and a more immersive jungle setting. Kohunlich sits about 90 minutes from port and spreads across 21 acres of rainforest, with roughly 200 structures — most still unexcavated beneath the trees. The centerpiece is the Temple of the Masks: enormous carved stone faces, 1,500 years old, staring from the main pyramid walls. Walking here is mostly shaded, and some structures can still be climbed for tree-canopy views. Plan for 1 hour 45 minutes each way. Your ship needs to give you at least eight hours in port, and booking through an operator with a back-to-ship guarantee is essential.</p>
+    <div style="border-radius:8px;overflow:hidden;box-shadow:0 3px 18px rgba(43,36,32,0.11);margin-top:14px;margin-bottom:14px;">
+      <img src="https://www.locogringo.com/sites/default/files/uploads/cp-kohunlichruins_1.jpg" alt="Kohunlich Mayan ruins Temple of the Masks, Costa Maya" style="width:100%;height:auto;display:block;" loading="lazy">
+    </div>
+    <a href="https://www.google.com/maps/search/?api=1&query=Kohunlich+Ruins+Costa%20Maya%2C%20Mexico" class="maps-link" target="_blank" rel="noopener">📍 Kohunlich Ruins</a>
+  </div>
+
+  <div class="entry-card">
+    <div class="tag-row"><span class="tag">Historic Site</span><span class="tag">Nature</span><span class="tag">Cruise Excursion</span><span class="tag warn">9+ Hours in Port</span><span class="tag warn">Timing Risk</span></div>
+    <h3>Dzibanché Ruins</h3>
+    <p>Two hours from port and rarely visited. On most days you'll have the main temples to yourself. Founded around 300 BC, Dzibanché is the least-trafficked of the three sites — the Temple of the Captives and the Temple of the Owl can both still be climbed for wide views over unbroken jungle canopy. The drive makes this feasible only on long port days (nine or more hours). Book through your cruise line or an operator with a guaranteed return; this is not a DIY excursion.</p>
+    <div style="border-radius:8px;overflow:hidden;box-shadow:0 3px 18px rgba(43,36,32,0.11);margin-top:14px;margin-bottom:14px;">
+      <img src="https://www.locogringo.com/sites/default/files/ttd-featured/fi-dzibanche_1.jpg" alt="Dzibanché Mayan ruins, Quintana Roo" style="width:100%;height:auto;display:block;" loading="lazy">
+    </div>
+    <a href="https://www.google.com/maps/search/?api=1&query=Dzibanche+Ruins+Quintana+Roo+Mexico" class="maps-link" target="_blank" rel="noopener">📍 Dzibanché Ruins</a>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- BACALAR -->
+  <h2>Bacalar Lagoon</h2>
+  <span class="cormorant-tag">A freshwater lagoon of shifting blues — from pale aqua in the shallows to deep teal in the cenotes, with pirates' history underneath.</span>
+
+  <div style="border-radius:10px;overflow:hidden;box-shadow:0 3px 18px rgba(43,36,32,0.11);margin:20px 0 24px;">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPvvp2hMkj32z1QZIqLsvaoV0-JJ6L0l7tBQ&s" alt="Bacalar Lagoon seven colors, Quintana Roo" style="width:100%;height:auto;display:block;" loading="lazy">
+  </div>
+
+  <div class="tag-row" style="margin-bottom:16px;"><span class="tag">Nature</span><span class="tag">Cruise Excursion</span><span class="tag">Private Tour Option</span><span class="tag warn">7+ Hours in Port</span></div>
+
+  <p>Bacalar sits about 80–90 minutes from the port — close enough for a cruise day, far enough that you don't want to wing it. The "Lagoon of Seven Colors" is freshwater, recognized as a Pueblo Mágico by the Mexican government, and genuinely earns the name: shades shift from pale aqua to deep indigo depending on depth and time of day. Tours run on pontoon boats, stopping at the Pirate Channel for swimming and at cenotes for a look at the rare stromatolites — living microbial formations visible just beneath the surface, among the oldest life forms on earth.</p>
+
+  <div class="pmtp-band" style="background:var(--warm-sand);">
+    <h4>Two Things to Know Before You Book</h4>
+    <p><strong>Wednesdays:</strong> Boat tours on Bacalar Lagoon pause every Wednesday as part of a conservation initiative. If your port day falls on a Wednesday, boat-free alternatives — beach club visits, cenote experiences — are available instead. <strong>Sunscreen:</strong> Rinse off all sunscreen and lotions before entering the water. Many products contain chemicals harmful to the stromatolites and the lagoon's ecosystem.</p>
+  </div>
+
+  <p>Total excursion time is approximately five hours. Reviewers consistently report returning to port with one to two hours to spare. DIY is not recommended given the drive time and tight cruise schedules — book through a reputable local operator with a guaranteed return time.</p>
+
+  <a href="https://www.google.com/maps/search/?api=1&query=Bacalar+Lagoon+Mexico" class="maps-link" target="_blank" rel="noopener">📍 Bacalar Lagoon</a>
+
+  <div class="divider"></div>
+
+  <!-- TIMING TABLE -->
+  <h2>Excursion Timing at a Glance</h2>
+  <span class="cormorant-tag">How far things really are — and what your ship's schedule actually allows.</span>
+
+  <p>All times are approximate. Traffic, late docking, and unexpected delays can compress your buffer. Any excursion with a "Medium" or higher risk level should be booked through an operator offering a guaranteed return to ship.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Excursion</th>
+        <th>Drive Each Way</th>
+        <th>Min. Port Hours</th>
+        <th>Risk</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Mahahual town / beach</td>
+        <td>5–10 min</td>
+        <td>3 hrs</td>
+        <td>Low</td>
+      </tr>
+      <tr>
+        <td>Chacchoben Ruins</td>
+        <td>~50 min</td>
+        <td>5 hrs</td>
+        <td>Low–Medium</td>
+      </tr>
+      <tr>
+        <td>Bacalar Lagoon</td>
+        <td>~80–90 min</td>
+        <td>7 hrs</td>
+        <td>Medium</td>
+      </tr>
+      <tr>
+        <td>Kohunlich Ruins</td>
+        <td>~1.5–2 hrs</td>
+        <td>8 hrs</td>
+        <td>Medium–High</td>
+      </tr>
+      <tr>
+        <td>Dzibanché Ruins</td>
+        <td>~2 hrs</td>
+        <td>9+ hrs</td>
+        <td>High — guaranteed tour only</td>
+      </tr>
+      <tr>
+        <td>Xcalak Reef</td>
+        <td>~1 hr from Mahahual</td>
+        <td>8+ hrs</td>
+        <td>High — organized excursion only</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="tip-box">Your ship operates on its own clock — it may not match local Mexico time. Check your ship's posted departure time, not your phone, before every excursion.</div>
+
+  <div class="divider"></div>
+
+  <!-- PRACTICAL NOTES -->
+  <h2>What to Know</h2>
+  <span class="cormorant-tag">The logistics, so nothing sneaks up on you.</span>
+
+  <div class="pmtp-band" style="background:var(--aqua-mist);">
+    <h4>Money</h4>
+    <p>USD is accepted almost everywhere in the port and Mahahual; prices are often listed in both currencies. ATMs dispensing both pesos and dollars are in the port complex. Taxis, small vendors, and ruins shopping areas are cash-only — bring small bills in USD or MXN. Most established shops in the port take credit cards.</p>
+  </div>
+
+  <div class="pmtp-band" style="background:var(--warm-sand);">
+    <h4>Taxi Tips</h4>
+    <p>Agree on the fare before you get in. Have exact change or small bills. The vast majority of taxis in Quintana Roo do not accept cards. Costs are typically consistent — approximately $4–$5 per person to Mahahual — but some forum posts describe inflated pricing when passengers are rushing back to ship. Leave yourself enough buffer that you're never in that position.</p>
+  </div>
+
+  <div class="pmtp-band" style="background:var(--aqua-mist);">
+    <h4>Climate</h4>
+    <p>Hot and humid year-round, with daily temperatures typically running between the mid-70s and low 90s°F (24–33°C). The main cruise season (winter through spring) is drier and less humid. Hurricane season runs June through November. Bring sunscreen, a hat, and insect repellent for jungle excursions. Lightweight clothing and water shoes for beach days.</p>
+  </div>
+
+  <div class="pmtp-band" style="background:var(--warm-sand);">
+    <h4>Crowd Planning</h4>
+    <p>Costa Maya welcomed nearly 600 ship calls in 2024 — and can hold four ships at the pier simultaneously. On heavy days, Mahahual fills fast. Pre-book your beach club (especially Maya Chan, which requires it), and check your port day against the ship schedule before you arrive. The fewer ships in port, the calmer the whole experience.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- RECOMMENDED OPERATORS -->
+  <h2>Tour Operators Worth Knowing</h2>
+  <span class="cormorant-tag">These meet you outside the port gates — a short walk from the exit, and a meaningful step up from the bus-tour default.</span>
+
+  <p>Independent operators are not permitted inside the port facility. All of the following meet guests just outside the gates, approximately one to two blocks from the port exit. Prices from independent operators typically run lower than cruise-line excursion prices, with smaller groups and stronger local knowledge. All prices should be confirmed directly with the operator.</p>
+
+  <div class="entry-card">
+    <h3>The Native Choice</h3>
+    <p>Chacchoben and Kohunlich specialists with a kiosk just steps from the port entrance. Consistently strong reviews on Cruise Critic. Small van format, INAH-certified bilingual guides, back-to-ship guarantee.</p>
+    <p style="font-size:14px;color:var(--ink-soft);">chacchobenruins.com · thenativechoice.com</p>
+  </div>
+
+  <div class="entry-card">
+    <h3>Chac Ek Costa Maya</h3>
+    <p>Bacalar Lagoon specialists who coordinate directly with port schedules. Pontoon boat tours, bilingual guides, and strong reviewer feedback on Viator and TripAdvisor.</p>
+    <p style="font-size:14px;color:var(--ink-soft);">chacekcostamaya.mx</p>
+  </div>
+
+  <div class="entry-card">
+    <h3>Costa Maya Tourbase</h3>
+    <p>A multi-excursion booking platform with curated local operators for ruins, Bacalar, beach clubs, and combination tours. Good for comparing options and reading detailed excursion guides before your port day.</p>
+    <p style="font-size:14px;color:var(--ink-soft);">costamayatourbase.com</p>
+  </div>
+
+  <div class="entry-card">
+    <h3>Shore Excursions Group / Shore Excursioneer</h3>
+    <p>International booking platforms offering a range of Costa Maya excursions, including private options, with guaranteed return-to-ship policies and 24/7 traveler support.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- SKIP -->
+  <h2>What to Skip</h2>
+  <span class="cormorant-tag">A few things that sound plausible but will cost you time, money, or your port day entirely.</span>
+
+  <div class="pmtp-band" style="background:var(--warm-sand);">
+    <h4>Lost Mayan Kingdom / Maya Water Park — Closed</h4>
+    <p>This adventure and water park has closed as part of Royal Caribbean's acquisition of the port. It will eventually become part of Perfect Day Mexico's Loco Waterpark. Do not book or plan around it.</p>
+  </div>
+
+  <div class="pmtp-band" style="background:var(--aqua-mist);">
+    <h4>Tulum, Cancún, or Playa del Carmen — Too Far</h4>
+    <p>Costa Maya is far south of the Riviera Maya corridor. Tulum alone is roughly a three-hour drive each way. These are not realistic port-day destinations. Any tour pitching them should be declined immediately.</p>
+  </div>
+
+  <div class="pmtp-band" style="background:var(--warm-sand);">
+    <h4>Unbooked Beach Clubs on Busy Days</h4>
+    <p>Showing up without a reservation — especially at Maya Chan — means you may not get in. On days with multiple ships, the best clubs fill by mid-morning. Book before your cruise departs.</p>
+  </div>
+
+  <div class="pmtp-band" style="background:var(--aqua-mist);">
+    <h4>DIY Bacalar or Dzibanché</h4>
+    <p>The drive times on both make independent, unguided visits genuinely risky for cruise passengers. The timing math is too tight without a guaranteed return. Use an operator for these.</p>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="pmtp-footer">
+    <div style="font-family:Fraunces,serif;font-size:20px;font-weight:600;">Andrea Gunter</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink-soft);font-size:15px;margin-bottom:14px;">Travel Advisor</div>
+    <div style="font-size:14px;margin-bottom:4px;"><a id="pmtpEmailLink" href="#" style="border-bottom:none;"></a></div>
+    <div style="font-size:14px;margin-bottom:4px;">409-789-3579</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink-soft);font-size:14px;margin-top:14px;">Point Me to Paradise Travel</div>
+  </div>
+
+  <div class="pmtp-disclaimer">
+    <span style="display:block;font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);margin-bottom:8px;">Important — please read</span>
+    This guide is provided for informational purposes only. Locations, hours, conditions, and recommendations can change without notice, and ocean, weather, trail, road, and travel conditions can shift quickly and unpredictably. Point Me to Paradise Travel, the advisor named in this guide, and the authors of this content are not liable for any injury, illness, loss, theft, or harm of any kind arising from your visit to any location or participation in any activity referenced here. By using this guide, you accept full personal responsibility for your own safety. Use your own judgment, verify current conditions before any activity, follow all posted warnings and local regulations, and consult qualified professionals — lifeguards, park rangers, licensed guides, medical providers — where appropriate.
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var l="andrea",d="pointmetoparadise.com";
+  if(!l||!d)return;
+  var a=l+"\u0040"+d;
+  var el=document.getElementById("pmtpEmailLink");
+  if(el){el.href="mailto:"+a;el.textContent=a;}
+})();
+</script>
+
+</body>
+</html>
