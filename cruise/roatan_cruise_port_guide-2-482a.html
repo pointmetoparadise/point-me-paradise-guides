@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roatán, Honduras — Cruise Port Guide | Point Me to Paradise Travel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --aqua-pale:#C4E4E1;
+      --aqua-mist:#EAF3F2;
+      --aqua:#75AFB1;
+      --aqua-dark:#4F8A8C;
+      --sand-light:#F4F1E9;
+      --warm-sand:#F5EFE4;
+      --gold-whisper:#D6C8A8;
+      --white:#FFFFFF;
+      --paper:#F9F6F1;
+      --ink:#2B2420;
+      --ink-soft:#6B6359;
+      --line:#E6DFD5;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+
+    .page-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 48px 28px 72px;
+    }
+
+    /* HERO */
+    .pmtp-hero {
+      background-image:
+        linear-gradient(180deg,
+          rgba(255,255,255,0.18) 0%,
+          rgba(196,228,225,0.38) 30%,
+          rgba(245,239,228,0.82) 62%,
+          rgba(249,246,240,0.98) 100%
+        ),
+        url('https://www.galvestoncruises.com/wp-content/uploads/2025/07/Mahogany-Bay-in-Roatan-Honduras-800x600-1.jpg');
+      background-size: cover;
+      background-position: center 40%;
+      padding: clamp(40px,8vw,78px) 32px clamp(36px,6vw,60px);
+      text-align: center;
+      margin: -48px -28px 40px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .pmtp-eyebrow {
+      font-family: 'Fraunces', serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--aqua-dark);
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(26px,5vw,42px);
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.18;
+      margin-bottom: 18px;
+    }
+
+    .hero-rule {
+      width: 60px;
+      height: 1px;
+      background: var(--gold-whisper);
+      margin: 18px auto;
+    }
+
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(17px,3.5vw,21px);
+      color: var(--ink-soft);
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    /* TYPOGRAPHY */
+    h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(20px,4vw,28px);
+      font-weight: 600;
+      color: var(--ink);
+      margin: 48px 0 6px;
+      line-height: 1.25;
+    }
+
+    .section-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(15px,2.8vw,17px);
+      color: var(--ink-soft);
+      margin-bottom: 22px;
+      display: block;
+    }
+
+    h3 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(16px,3vw,20px);
+      font-weight: 600;
+      color: var(--ink);
+      margin: 32px 0 10px;
+      line-height: 1.3;
+    }
+
+    h4 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--aqua-dark);
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 16px;
+      color: var(--ink);
+    }
+
+    a {
+      color: var(--aqua-dark);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    a:hover { color: var(--aqua); }
+
+    strong {
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin: 40px 0;
+    }
+
+    /* BANDS */
+    .pmtp-band {
+      padding: 22px 24px;
+      border-radius: 10px;
+      margin: 28px 0;
+    }
+
+    .pmtp-band--aqua { background: var(--aqua-mist); }
+    .pmtp-band--sand { background: var(--warm-sand); }
+    .pmtp-band--gold { background: #F0EDE3; border: 1px solid var(--gold-whisper); }
+
+    .pmtp-band h4 { margin-bottom: 8px; }
+    .pmtp-band p { margin-bottom: 0; font-size: 15px; }
+    .pmtp-band p + p { margin-top: 10px; }
+
+    /* TAGS */
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 8px 0 14px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--aqua-dark);
+      background: var(--aqua-mist);
+      border: 1px solid var(--aqua-pale);
+      border-radius: 20px;
+      padding: 3px 10px;
+    }
+
+    .tag--warn {
+      color: #7A5C2E;
+      background: #FBF5E9;
+      border-color: var(--gold-whisper);
+    }
+
+    /* MAPS LINK */
+    .maps-link {
+      display: inline-block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--aqua-dark);
+      background: var(--aqua-mist);
+      border: 1px solid var(--aqua-pale);
+      border-radius: 6px;
+      padding: 8px 14px;
+      text-decoration: none;
+      margin: 8px 0 14px;
+      letter-spacing: 0.01em;
+    }
+
+    .maps-link:hover {
+      background: var(--aqua-pale);
+      color: var(--aqua-dark);
+    }
+
+    /* TIMING TABLE */
+    .timing-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin: 20px 0;
+    }
+
+    .timing-table th {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--aqua-dark);
+      background: var(--aqua-mist);
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--aqua-pale);
+    }
+
+    .timing-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      color: var(--ink);
+    }
+
+    .timing-table tr:last-child td { border-bottom: none; }
+
+    .timing-table tr:nth-child(even) td { background: rgba(244,241,233,0.45); }
+
+    .risk-low { color: #3A7A50; font-weight: 600; }
+    .risk-med { color: #7A6A2E; font-weight: 600; }
+    .risk-high { color: #8B3A2A; font-weight: 600; }
+
+    /* DIVIDER */
+    .section-rule {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 44px 0 0;
+    }
+
+    .section-rule::before,
+    .section-rule::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--line);
+    }
+
+    .section-rule-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--gold-whisper);
+      flex-shrink: 0;
+    }
+
+    /* PORT CARDS */
+    .port-card {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 24px;
+      margin: 20px 0;
+      background: var(--white);
+    }
+
+    .port-card-header {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--aqua-dark);
+      margin-bottom: 8px;
+    }
+
+    .port-card h3 { margin-top: 0; }
+
+    /* EXCURSION ENTRIES */
+    .excursion-entry {
+      border-top: 1px solid var(--line);
+      padding: 28px 0;
+    }
+
+    .excursion-entry:first-of-type { border-top: none; padding-top: 0; }
+
+    /* WARNING BLOCK */
+    .warn-block {
+      background: #FBF5E9;
+      border: 1px solid var(--gold-whisper);
+      border-left: 3px solid #C5A84A;
+      border-radius: 6px;
+      padding: 14px 16px;
+      margin: 14px 0;
+      font-size: 14px;
+      color: #5C4A20;
+    }
+
+    .warn-block strong { color: #5C4A20; }
+
+    /* AVOID BLOCK */
+    .avoid-block {
+      background: #FDF3F1;
+      border: 1px solid #E8C4BC;
+      border-left: 3px solid #C47060;
+      border-radius: 6px;
+      padding: 14px 16px;
+      margin: 14px 0;
+      font-size: 14px;
+      color: #5C2820;
+    }
+
+    /* FOOTER */
+    .pmtp-footer {
+      background: var(--sand-light);
+      margin-top: 64px;
+      padding: 36px 28px;
+      border-radius: 12px;
+    }
+
+    .pmtp-footer-name {
+      font-family: 'Fraunces', serif;
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 2px;
+    }
+
+    .pmtp-footer-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--ink-soft);
+      font-size: 15px;
+      margin-bottom: 14px;
+    }
+
+    .pmtp-footer-contact {
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .pmtp-footer-contact a { color: var(--aqua-dark); }
+
+    .pmtp-footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--ink-soft);
+      font-size: 14px;
+      margin-top: 14px;
+    }
+
+    .pmtp-disclaimer {
+      margin-top: 28px;
+      padding: 22px 26px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font-size: 12.5px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+    }
+
+    .pmtp-disclaimer-label {
+      display: block;
+      font-weight: 600;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    @media(max-width:640px) {
+      body { font-size: 15px; }
+      .pmtp-hero { padding: 44px 20px 36px; margin: -24px -20px 24px; }
+      .pmtp-band { padding: 18px 16px; }
+      h2 { font-size: 20px; }
+      h3 { font-size: 17px; }
+      .pmtp-footer { border-radius: 8px; padding: 24px 20px; }
+      .timing-table { font-size: 12px; }
+      .timing-table th, .timing-table td { padding: 7px 8px; }
+      .maps-link { display: block; text-align: center; min-font-size: 14px; padding: 10px 14px; }
+      .port-card { padding: 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page-wrap">
+
+  <!-- HERO -->
+  <div class="pmtp-hero">
+    <div class="pmtp-eyebrow">Point Me to Paradise Travel</div>
+    <h1>Roatán, Honduras<br>Cruise Port Guide</h1>
+    <div class="hero-rule"></div>
+    <p class="hero-tagline">One island, two ports, and a reef that starts where the sand ends — here's how to spend the day well.</p>
+  </div>
+
+  <!-- KNOW YOUR PORT -->
+  <div class="section-rule"><div class="section-rule-dot"></div></div>
+  <h2>Know Your Port Before You Dock</h2>
+  <span class="section-sub">Where your ship ties up changes everything about your day.</span>
+
+  <p>Roatán has two cruise ports on its southern shore, about five miles apart. Carnival Corporation passengers use Mahogany Bay; everyone else — Royal Caribbean, Norwegian, Celebrity, Virgin Voyages, MSC — uses the Port of Roatán at Coxen Hole. Both are pier facilities, so no tendering. But they offer very different first impressions and logistical starting points.</p>
+
+  <div class="port-card" style="padding:0;overflow:hidden;">
+    <div style="padding:24px 24px 0;">
+      <div class="port-card-header">Port 1 — Carnival · Princess · Holland America</div>
+      <h3 style="margin-top:0;">Mahogany Bay Cruise Center</h3>
+    </div>
+    <div style="width:100%;height:210px;background-image:url('https://cruiseradio.net/wp-content/uploads/2024/06/Mahogany-Bay-15.jpg');background-size:cover;background-position:center 55%;margin:14px 0 0;" role="img" aria-label="Mahogany Bay Cruise Center"></div>
+    <div style="padding:0 24px 24px;">
+    <div class="tag-row">
+      <span class="tag">Pier — no tender</span>
+      <span class="tag">Walkable in-complex</span>
+      <span class="tag">Private Beach</span>
+    </div>
+    <p>This is a polished, Carnival-owned complex — 20 acres of curated experience with duty-free shopping, restaurants, and the Magical Flying Chair chairlift ferrying passengers to Mahogany Beach. The lift costs $14 for adults, $8 for children over 3, and includes all-day beach access. Snorkel gear, loungers, and cabanas are available to rent. If you prefer to walk, the beach is about 10 minutes on foot.</p>
+    <p>Two ATMs sit near the Tourist Information Booth — one dispenses lempiras, one US dollars. The craft market carries work from over a dozen local artisans. Shops include Del Sol, Diamonds International, Pirana Joe, and Silver Sun Roatán. The complex is pleasant and orderly, but it functions more as an extension of the ship than as Roatán itself. Venture out for the real island.</p>
+    <div class="pmtp-band pmtp-band--aqua" style="margin-top:18px;">
+      <h4>Name change coming</h4>
+      <p>Mahogany Bay is being rebranded as Isla Tropicale as part of a 2026 renovation — new pool with swim-up bar, beach club, and peninsula cabanas. If you're reading this guide after mid-2026, confirm which name your cruise documentation uses.</p>
+    </div>
+    </div><!-- /inner padding -->
+  </div>
+
+  <div class="port-card" style="padding:0;overflow:hidden;">
+    <div style="padding:24px 24px 0;">
+      <div class="port-card-header">Port 2 — Royal Caribbean · NCL · Celebrity · Virgin · MSC</div>
+      <h3 style="margin-top:0;">Port of Roatán — Town Center (Coxen Hole)</h3>
+    </div>
+    <div style="width:100%;height:210px;background-image:url('https://thumbs.dreamstime.com/b/top-view-port-town-center-coxen-hole-roatan-honduras-april-top-view-port-town-center-coxen-hole-253150557.jpg');background-size:cover;background-position:center 45%;margin:14px 0 0;" role="img" aria-label="Port of Roatán Town Center, Coxen Hole"></div>
+    <div style="padding:0 24px 24px;">
+    <div class="tag-row">
+      <span class="tag">Pier — no tender</span>
+      <span class="tag">Transport hub</span>
+      <span class="tag">DIY Friendly</span>
+    </div>
+    <p>The gates open into a compact plaza with duty-free shops, restaurants with outdoor seating, and the taxi dispatch immediately to your left. From here, the walkable town of Coxen Hole is just outside — a short stroll past a liquor store and a handful of local shops. Be honest with yourself about the town: beyond the port gates there's limited tourist infrastructure, and vendors will approach you actively. A confident "no thank you" works fine.</p>
+    <p>Coxen Hole is better understood as your launchpad than your destination. Taxis are lined up and ready; most operators meet passengers right outside the gate.</p>
+    </div><!-- /inner padding -->
+  </div>
+
+  <!-- GETTING AROUND -->
+  <div class="section-rule"><div class="section-rule-dot"></div></div>
+  <h2>Getting Around the Island</h2>
+  <span class="section-sub">No rideshare, no buses — just taxis, water taxis, and the occasional scooter.</span>
+
+  <p>There is no Uber or Lyft on Roatán. Taxis are your primary option and operate on a zone-based fare structure. Agree on the price and currency before you get in. Shared taxis (colectivos) exist but are not recommended for cruise passengers on a tight return schedule.</p>
+
+  <div class="pmtp-band pmtp-band--sand">
+    <h4>Taxi zones from Mahogany Bay</h4>
+    <p><strong>Zone A</strong> — Coxen Hole &amp; French Harbour: $20 per cab (up to 4 passengers)<br>
+    <strong>Zone B</strong> — French Cay, Sandy Bay: $10 per person (min. 2 passengers)<br>
+    <strong>Zone C</strong> — West End &amp; West Bay: $15 per person (min. 2 passengers)<br>
+    <strong>Zone D</strong> — Oak Ridge &amp; Punta Gorda: $15 per person (min. 2 passengers)<br>
+    <strong>Zone E</strong> — Diamond Rock, Camp Bay: $20 per person (min. 2 passengers)</p>
+  </div>
+
+  <p>Water taxis connect West End Village and West Bay Beach for around $3 one way and run until sunset. If you're doing a West End morning and West Bay afternoon, this is the smoothest link between the two.</p>
+
+  <!-- PORT DAY PLANNING — TIMING TABLE -->
+  <div class="section-rule"><div class="section-rule-dot"></div></div>
+  <h2>Port Day Planning: Timing at a Glance</h2>
+  <span class="section-sub">Drive times are approximate — traffic, stops, and road conditions vary.</span>
+
+  <table class="timing-table">
+    <thead>
+      <tr>
+        <th>Excursion / Area</th>
+        <th>From Mahogany Bay</th>
+        <th>From Coxen Hole</th>
+        <th>Return Risk</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Mahogany Beach (in-terminal)</td>
+        <td>Walk</td>
+        <td>—</td>
+        <td class="risk-low">None</td>
+      </tr>
+      <tr>
+        <td>Daniel Johnson's Sanctuary</td>
+        <td>~15 min</td>
+        <td>~25 min</td>
+        <td class="risk-low">Low</td>
+      </tr>
+      <tr>
+        <td>West End Village</td>
+        <td>~30 min</td>
+        <td>~15 min</td>
+        <td class="risk-med">Low–Medium</td>
+      </tr>
+      <tr>
+        <td>West Bay Beach</td>
+        <td>~35 min</td>
+        <td>~25 min</td>
+        <td class="risk-med">Low–Medium</td>
+      </tr>
+      <tr>
+        <td>Dolphin Encounter (Sandy Bay)</td>
+        <td>~20 min</td>
+        <td>~15 min</td>
+        <td class="risk-low">Low</td>
+      </tr>
+      <tr>
+        <td>Little French Key</td>
+        <td>~25 min</td>
+        <td>~20 min</td>
+        <td class="risk-med">Low–Medium</td>
+      </tr>
+      <tr>
+        <td>Jonesville Mangrove Tunnel</td>
+        <td>~50–60 min</td>
+        <td>~45 min</td>
+        <td class="risk-high">High — guided only</td>
+      </tr>
+      <tr>
+        <td>Punta Gorda / Garifuna Village</td>
+        <td>~55–65 min</td>
+        <td>~50 min</td>
+        <td class="risk-high">High — guided only</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="warn-block">
+    <strong>East side rule:</strong> Any excursion east of French Harbour — Oak Ridge, Jonesville, Punta Gorda — requires a vetted operator with a written back-to-ship guarantee. These are hour-plus drives each way. Don't improvise them.
+  </div>
+
+  <!-- WHERE TO GO -->
+  <div class="section-rule"><div class="section-rule-dot"></div></div>
+  <h2>Where to Go</h2>
+  <span class="section-sub">Roatán's best experiences range from shore to jungle canopy — most are doable without booking through the ship.</span>
+
+  <!-- WEST BAY BEACH -->
+  <div class="excursion-entry">
+    <h3>West Bay Beach</h3>
+    <div class="tag-row">
+      <span class="tag">Beach</span>
+      <span class="tag">DIY Friendly</span>
+      <span class="tag">Cruise Excursion</span>
+      <span class="tag">Private Tour Option</span>
+    </div>
+    <div style="width:100%;height:220px;background-image:url('https://www.islandhouseroatan.com/wp-content/uploads/2025/04/west-bay-beach-about-01.webp');background-size:cover;background-position:center 60%;border-radius:8px;margin:14px 0 18px;" role="img" aria-label="West Bay Beach, Roatán"></div>
+    <p>This is the beach people are picturing when they get excited about Roatán. White sand, calm water, and a coral reef that starts just a short swim from shore — angelfish, parrotfish, and the occasional sea turtle visible in the shallows. If you're docking at Mahogany Bay and want to snorkel, this is where you come: Mahogany Beach doesn't have reef access, so West Bay is the answer.</p>
+    <p>The beach is public and free — no admission charge. If you want a lounge chair and restroom access, buy a drink or a meal at one of the beachside restaurants and you're covered. Budget at least 3–4 hours for a satisfying visit once you account for the ~35-minute drive each way from Mahogany Bay (~25 min from Coxen Hole).</p>
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=West+Bay+Beach+Roatán+Island%2C+Honduras" target="_blank" rel="noopener">View on Google Maps</a>
+    <div class="pmtp-band pmtp-band--aqua">
+      <h4>Practical tip</h4>
+      <p>Combine West Bay with a West End morning for a full day: taxi to West End, browse the village and grab a baleada, then take the $3 water taxi south to West Bay for the afternoon. Return by taxi to port.</p>
+    </div>
+  </div>
+
+  <!-- WEST END VILLAGE -->
+  <div class="excursion-entry">
+    <h3>West End Village</h3>
+    <div class="tag-row">
+      <span class="tag">DIY Friendly</span>
+      <span class="tag">Cultural Experience</span>
+      <span class="tag">Nature</span>
+    </div>
+    <div style="width:100%;height:220px;background-image:url('https://images.squarespace-cdn.com/content/v1/5e59cc476fe14d05ec2257fe/1585116550991-6LV67Y7J0YH808WS1RBA/D5DE92A4-4EC6-400A-AC7D-6450945EE538.jpg');background-size:cover;background-position:center 50%;border-radius:8px;margin:14px 0 18px;" role="img" aria-label="West End Village, Roatán"></div>
+    <p>West End is where Roatán's local character actually lives. One main road runs along the waterfront, lined with dive shops, bars, restaurants, and small boutiques — everything walkable, nothing polished. Half Moon Bay sits at the center of the village, with reef about 200 meters offshore and gear rental available from multiple operators along the beach. It's one of the more accessible snorkeling spots on the island.</p>
+    <p>Eat here. The conch soup and tapado — a seafood stew with plantains and tropical root vegetables — are standards. Honduran beers Port Royal and Salva Vida are cold and inexpensive. Baleadas (flour tortillas with beans, cheese, and egg) from street-side spots run around $2–4 and will hold you through an afternoon on the reef. The Roatán Chocolate Factory on West End Road offers free samples of locally-made chocolate and rum cakes.</p>
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=West+End+Village+Roatán+Island%2C+Honduras" target="_blank" rel="noopener">View on Google Maps</a>
+    <div class="pmtp-band pmtp-band--sand">
+      <h4>Practical tip</h4>
+      <p>West End is about 10–15 minutes from Coxen Hole and 20–25 minutes from Mahogany Bay. Budget 2–3 hours here; pair with West Bay via water taxi for a full day without doubling back to port mid-afternoon.</p>
+    </div>
+  </div>
+
+  <!-- DANIEL JOHNSON'S -->
+  <div class="excursion-entry">
+    <h3>Daniel Johnson's Monkey &amp; Sloth Hangout</h3>
+    <div class="tag-row">
+      <span class="tag">Cruise Excursion</span>
+      <span class="tag">Private Tour Option</span>
+      <span class="tag">Nature</span>
+    </div>
+    <div style="width:100%;height:220px;background-image:url('https://monkeyandslothhangout.com/site/wp-content/uploads/2017/01/slide01-1024x680-2.jpeg');background-size:cover;background-position:center 45%;border-radius:8px;margin:14px 0 18px;" role="img" aria-label="Daniel Johnson's Monkey and Sloth Hangout, Roatán"></div>
+    <p>This small, family-run sanctuary in French Cay — about 15 minutes from Mahogany Bay — is consistently the most-mentioned stop on any Roatán shore day. Capuchin monkeys, scarlet macaws, Amazon parrots, and sloths in a relaxed, uncrowded setting. The handlers know the animals by name, and the visit feels personal rather than performative.</p>
+    <p>It's typically paired with a zip line, ATV run, snorkel, or chocolate factory visit — most operators bundle these into a half-day combo. Return-to-port timing is low-risk from either port.</p>
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Daniel+Johnson+Monkey+Sloth+Hangout+Roatán+Island%2C+Honduras" target="_blank" rel="noopener">View on Google Maps</a>
+    <div class="warn-block">
+      <strong>2025 update:</strong> As of April 1, 2025, new government wildlife protection measures prohibit holding sloths. You can observe them up close and take photos, but hands-on interaction with sloths is no longer permitted. Capuchin monkeys, macaws, and parrots still allow direct interaction.
+    </div>
+  </div>
+
+  <!-- ZIP LINE & ATV -->
+  <div class="excursion-entry">
+    <h3>Zip Line &amp; ATV Adventure</h3>
+    <div class="tag-row">
+      <span class="tag">Cruise Excursion</span>
+      <span class="tag">Private Tour Option</span>
+      <span class="tag">Nature</span>
+    </div>
+    <div style="width:100%;height:220px;background-image:url('https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/13/2c/b6/80.jpg');background-size:cover;background-position:center 50%;border-radius:8px;margin:14px 0 18px;" role="img" aria-label="Zip line adventure, Roatán"></div>
+    <p>The zip line course runs 16 lines across 24 platforms and 3 suspension bridges — canopy views in every direction, with the Caribbean flickering through the tree cover below. ATV routes take you through local communities and up to hilltop overlooks. Both are typically offered as combos with Daniel Johnson's and a beach stop by operators like Bodden Tours and Roatan Tucan Adventures.</p>
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Mayan+Jungle+Zipline+Roatán+Island%2C+Honduras" target="_blank" rel="noopener">View on Google Maps</a>
+    <div class="pmtp-band pmtp-band--aqua">
+      <h4>Before you book</h4>
+      <p>Weight limits apply: typically 295 lbs for zip line, 350 lbs for ATV. Minimum age for solo ATV driving is generally 12–16 depending on the operator. Confirm the return-to-ship guarantee in writing before paying.</p>
+    </div>
+  </div>
+
+  <!-- REEF SNORKELING BOAT TOURS -->
+  <div class="excursion-entry">
+    <h3>Reef Snorkeling — Guided Boat Tours</h3>
+    <div class="tag-row">
+      <span class="tag">Cruise Excursion</span>
+      <span class="tag">Private Tour Option</span>
+      <span class="tag">Nature</span>
+    </div>
+    <div style="width:100%;height:220px;background-image:url('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/8c/00/14/caption.jpg?w=1200&h=-1&s=1');background-size:cover;background-position:center 50%;border-radius:8px;margin:14px 0 18px;" role="img" aria-label="Reef snorkeling, Roatán"></div>
+    <p>Roatán sits along the Mesoamerican Barrier Reef, the second-largest coral reef system in the world. A guided boat snorkel in the West Bay area runs 45 minutes to an hour in the water, with the option of the calmer inside reef — colorful corals, turtles, schools of fish — or the open-water side where the wall drops into deep blue. Multiple operators stage outside both ports; reputable ones include a back-to-ship guarantee as a standard booking condition.</p>
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Sandy+Bay+West+End+Marine+Reserve+Roatán+Island%2C+Honduras" target="_blank" rel="noopener">View on Google Maps</a>
+    <div class="pmtp-band pmtp-band--sand">
+      <h4>Practical tip</h4>
+      <p>If you're snorkeling independently at West Bay beach, you can wade directly into the reef from shore — no boat needed. Rental gear is available at multiple spots along the beach.</p>
+    </div>
+  </div>
+
+  <!-- SCUBA DIVING -->
+  <div class="excursion-entry">
+    <h3>Scuba Diving — Anthony's Key / West Bay Divers</h3>
+    <div class="tag-row">
+      <span class="tag">Cruise Excursion</span>
+      <span class="tag">Private Tour Option</span>
+      <span class="tag">Nature</span>
+    </div>
+    <div style="width:100%;height:220px;background-image:url('https://media.q4launch.website/uploads/sites/77/2024/01/6.jpg');background-size:cover;background-position:center 50%;border-radius:8px;margin:14px 0 18px;" role="img" aria-label="Scuba diving, Roatán"></div>
+    <p>Roatán is serious dive territory. The Sandy Bay-West End Marine Reserve covers 8 miles of coastline and 38 distinct dive sites reachable within 15 minutes by boat. Anthony's Key Resort in Sandy Bay has been a certified diver's base for over 50 years; West Bay Divers at West Bay Beach is frequently cited as the go-to operator for cruise passengers. Discover Scuba resort courses are available for non-certified divers wanting a first experience.</p>
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Anthony%27s+Key+Resort+Sandy+Bay+Roatán+Island%2C+Honduras" target="_blank" rel="noopener">View on Google Maps</a>
+    <div class="warn-block">
+      <strong>Timing:</strong> A two-tank dive with transit is a full port-day commitment. If your ship has an early departure, confirm the dive schedule against your all-aboard time before booking.
+    </div>
+  </div>
+
+  <!-- DOLPHIN ENCOUNTER -->
+  <div class="excursion-entry">
+    <h3>Dolphin Encounter — Anthony's Key Resort</h3>
+    <div class="tag-row">
+      <span class="tag">Cruise Excursion</span>
+      <span class="tag">Private Tour Option</span>
+    </div>
+    <div style="width:100%;height:220px;background-image:url('https://media.q4launch.website/uploads/sites/77/2024/01/Dolphin-Cover.jpg');background-size:cover;background-position:center 50%;border-radius:8px;margin:14px 0 18px;" role="img" aria-label="Dolphin encounter at Anthony's Key Resort, Roatán"></div>
+    <p>The Roatán Institute for Marine Sciences at Anthony's Key runs dolphin encounters in a natural sea lagoon — not a performance pool. Atlantic Bottlenose Dolphins swim freely and interactions are on the dolphins' terms, guided by trainers and marine biologists. Multiple program levels are available: waist-deep wade-in encounter, snorkel swim in the lagoon, and a certified-dive option that takes you 60 feet down alongside the pod. Encounter times run at 8:30 am, 10:00 am, 1:00 pm, and 3:00 pm.</p>
+    <p>Pricing varies by program and operator — verify current rates directly with Anthony's Key or through your tour operator before your trip, as posted prices change. About 15 minutes from Coxen Hole, 20 from Mahogany Bay.</p>
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Anthony%27s+Key+Resort+Roatán+Island%2C+Honduras" target="_blank" rel="noopener">View on Google Maps</a>
+    <div class="pmtp-band pmtp-band--aqua">
+      <h4>A note on dolphin programs</h4>
+      <p>If you have reservations about captive marine mammal programs, research Anthony's Key's approach before booking. The encounters are structured around the animals' comfort and take place in an open sea-lagoon, but opinions vary on the ethics of such programs — that's a call worth making consciously.</p>
+    </div>
+  </div>
+
+  <!-- LITTLE FRENCH KEY -->
+  <div class="excursion-entry">
+    <h3>Little French Key — Private Island</h3>
+    <div class="tag-row">
+      <span class="tag">Cruise Excursion</span>
+      <span class="tag">Private Tour Option</span>
+      <span class="tag">Beach</span>
+      <span class="tag">Nature</span>
+    </div>
+    <div style="width:100%;height:220px;background-image:url('https://images.squarespace-cdn.com/content/v1/64173ba2e660917db55bc504/e09a45d7-0242-4edd-a161-ddf604ae2fed/DJI_0138.jpg');background-size:cover;background-position:center 50%;border-radius:8px;margin:14px 0 18px;" role="img" aria-label="Little French Key, Roatán"></div>
+    <p>A privately owned island in French Harbor, accessible by short boat transfer, Little French Key is consistently the most-booked tour on the island. The lagoon between Little French Key and the nearby Fantasy Island Beach Resort offers some of the clearest shallow water on Roatán's south coast — excellent for snorkeling without the open-water boat ride. On land: horseback riding, zip-lining, jet-skiing, kayaking, a swim-up bar, and an animal rescue center that houses previously abused wildlife.</p>
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Little+French+Key+Roatán+Island%2C+Honduras" target="_blank" rel="noopener">View on Google Maps</a>
+  </div>
+
+  <!-- GUMBALIMBA PARK -->
+  <div class="excursion-entry">
+    <h3>Gumbalimba Park</h3>
+    <div class="tag-row">
+      <span class="tag">Cruise Excursion</span>
+      <span class="tag">Private Tour Option</span>
+      <span class="tag">Nature</span>
+    </div>
+    <div style="width:100%;height:220px;background-image:url('https://images.squarespace-cdn.com/content/v1/5900c898d2b8571036307517/1573604009312-RO5FBUBRDMGUHSQXCSK1/IMG_0269.JPG');background-size:cover;background-position:center 40%;border-radius:8px;margin:14px 0 18px;" role="img" aria-label="Gumbalimba Park, Roatán"></div>
+    <p>A botanical park near West Bay with free-flying macaws and Capuchin monkeys in a garden setting. Frequently offered by cruise lines as a packaged shore excursion. The animal encounter experience is similar to Daniel Johnson's — compare what's currently included and at what price before choosing between them.</p>
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Gumbalimba+Park+Roatán+Island%2C+Honduras" target="_blank" rel="noopener">View on Google Maps</a>
+  </div>
+
+  <!-- EAST SIDE -->
+  <div class="excursion-entry">
+    <h3>Jonesville Mangrove Tunnel &amp; Oak Ridge</h3>
+    <div class="tag-row">
+      <span class="tag">Cruise Excursion</span>
+      <span class="tag">Private Tour Option</span>
+      <span class="tag">Nature</span>
+      <span class="tag">Cultural Experience</span>
+      <span class="tag--warn tag">Far from Port</span>
+    </div>
+    <div style="width:100%;height:220px;background-image:url('https://media-cdn.tripadvisor.com/media/attractions-splice-spp-720x480/07/0c/b7/0d.jpg');background-size:cover;background-position:center 50%;border-radius:8px;margin:14px 0 18px;" role="img" aria-label="Jonesville Mangrove Tunnel, Roatán"></div>
+    <p>On the island's east end, a motorized cayuco navigates a Caribbean channel past stilt houses and water-access-only tiki bars, then ducks into the Jonesville mangrove tunnel — a dense green canopy of tangled roots, barely wide enough for the boat, alive with birds and the sounds of the lagoon. Oak Ridge was built over the water, one of the Caribbean's more unusual fishing villages, with family names that trace back to the island's pirate era. This is the Roatán that doesn't reach for cruise passengers.</p>
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Jonesville+Mangrove+Tunnel+Roatán+Island%2C+Honduras" target="_blank" rel="noopener">View on Google Maps</a>
+    <div class="warn-block">
+      <strong>Timing:</strong> This is 50–60 minutes from Mahogany Bay and 45 minutes from Coxen Hole — each way. Only book this with a vetted guided operator who provides a written back-to-ship guarantee. Don't improvise it independently on a short port day.
+    </div>
+  </div>
+
+  <!-- PUNTA GORDA -->
+  <div class="excursion-entry">
+    <h3>Punta Gorda — Garifuna Village</h3>
+    <div class="tag-row">
+      <span class="tag">Cruise Excursion</span>
+      <span class="tag">Private Tour Option</span>
+      <span class="tag">Cultural Experience</span>
+      <span class="tag--warn tag">Far from Port</span>
+    </div>
+    <div style="width:100%;height:220px;background-image:url('https://images.squarespace-cdn.com/content/v1/5e59cc476fe14d05ec2257fe/60a5aa84-2a48-45ea-97a2-83fbcf88d955/garifuna+festival+1.jpeg');background-size:cover;background-position:center 35%;border-radius:8px;margin:14px 0 18px;" role="img" aria-label="Garifuna cultural festival, Punta Gorda, Roatán"></div>
+    <p>Founded in 1797 by the Garifuna people and officially designated a National Monument, Punta Gorda is Roatán's oldest continuous settlement and the cultural heart of the Garifuna community in Honduras. The women dress in bright, layered colors; traditional Punta music and drumming performances offer a genuine welcome. The local dish is Machuca — mashed plantain in coconut soup — and the herbal drink Guífity is the traditional hospitality offering. It's not set up for cruise crowds, which is exactly what makes it worth the drive.</p>
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Punta+Gorda+Garifuna+Village+Roatán+Island%2C+Honduras" target="_blank" rel="noopener">View on Google Maps</a>
+    <div class="pmtp-band pmtp-band--sand">
+      <h4>Best combined with</h4>
+      <p>Punta Gorda and Jonesville are geographically close and almost always paired in the same east-side excursion. Either add both or leave both — splitting them doesn't save meaningful time and adds complexity to your return window.</p>
+    </div>
+    <div class="warn-block">
+      <strong>Timing:</strong> 55–65 minutes from Mahogany Bay, 50 from Coxen Hole. Guided operator with back-to-ship guarantee required.
+    </div>
+  </div>
+
+  <!-- PRACTICAL TIPS -->
+  <div class="section-rule"><div class="section-rule-dot"></div></div>
+  <h2>Practical Tips for the Port Day</h2>
+  <span class="section-sub">The small details — currency, timing, clothing — are the difference between a smooth day and a stressful one.</span>
+
+  <div class="pmtp-band pmtp-band--aqua">
+    <h4>Money</h4>
+    <p>US dollars are widely accepted and often preferred. Most menus and prices you'll encounter are in USD. The official currency is the Honduran Lempira, but paying a USD-priced bill in lempiras can cost you more after conversion — pay in the currency the bill is written in. Carry small bills: $1s, $5s, $10s. Many vendors won't break a $50 or $100. ATMs are available at both ports.</p>
+  </div>
+
+  <div class="pmtp-band pmtp-band--sand">
+    <h4>Time zones</h4>
+    <p>Roatán does not observe Daylight Saving Time. It tracks with US Central Standard Time in winter — one hour behind US Central in summer. Many ships stay on "ship time," which may differ from local time. Set your phone to local time and know your all-aboard time in both zones before you disembark.</p>
+  </div>
+
+  <div class="pmtp-band pmtp-band--aqua">
+    <h4>What to wear — and what not to</h4>
+    <p>Leave all camouflage clothing on the ship. Wearing military-style camouflage as a civilian in Honduras is illegal and can result in confiscation, heavy fines, and a police interrogation. This applies to camo shorts, shirts, hats, and bags. It's enforced.</p>
+  </div>
+
+  <div class="pmtp-band pmtp-band--sand">
+    <h4>Vendor pressure</h4>
+    <p>Expect active solicitation at both ports, particularly at Coxen Hole. Tour operators and taxi drivers will approach you the moment you clear the gates. Pre-booking excursions before you arrive eliminates most of this friction. A calm, direct "no thank you" is all you need — locals are accustomed to it and generally respectful of it.</p>
+  </div>
+
+  <div class="pmtp-band pmtp-band--aqua">
+    <h4>Leave on the ship</h4>
+    <p>Expensive jewelry, large amounts of cash, and your original passport. Keep a photo of your passport on your phone. Take only what you're comfortable losing.</p>
+  </div>
+
+  <div class="pmtp-band pmtp-band--sand">
+    <h4>No rideshare</h4>
+    <p>There is no Uber or Lyft on Roatán. Taxis are the only on-demand ground transport option. Always agree on the fare and currency before getting in. The U.S. State Department specifically advises against local public buses — stick to licensed taxis.</p>
+  </div>
+
+  <!-- SAFETY -->
+  <div class="section-rule"><div class="section-rule-dot"></div></div>
+  <h2>A Word on Safety</h2>
+  <span class="section-sub">Roatán's reputation among cruise passengers is generally positive — but context matters.</span>
+
+  <p>Honduras carries a U.S. State Department Level 3 "Reconsider Travel" advisory, and that's worth knowing. However, the advisory's primary concern is the Gracias a Dios Department on the eastern mainland — a region geographically and logistically remote from Roatán. The State Department itself notes that the Bay Islands, including Roatán, are better policed and have a higher concentration of resources than mainland areas.</p>
+  <p>A recent InsureMyTrip study ranked Roatán third among the safest cruise port destinations worldwide. In 2024 alone, the island received over 1.7 million cruise visitors without notable incident patterns at the port level. That said, petty theft and opportunistic crime can occur anywhere, particularly in the immediate vicinity of Coxen Hole. The standard precautions — don't flash valuables, stay in known tourist areas, use pre-vetted operators — apply here as they do throughout the Caribbean.</p>
+
+  <div class="pmtp-band pmtp-band--gold">
+    <h4>Always verify before you travel</h4>
+    <p>Travel advisories can change between when this guide was written and when you travel. Check <a href="https://travel.state.gov" target="_blank" rel="noopener">travel.state.gov</a> for the current Honduras advisory before your trip.</p>
+  </div>
+
+  <!-- AVOID -->
+  <div class="section-rule"><div class="section-rule-dot"></div></div>
+  <h2>What to Skip</h2>
+  <span class="section-sub">A few things that sound easy and aren't.</span>
+
+  <div class="avoid-block">
+    <strong>Wandering far from Coxen Hole on foot.</strong> The town beyond the port gates has limited tourist infrastructure and active vendor pressure. Walk out for the experience if you're curious, but don't treat Coxen Hole as a destination.
+  </div>
+  <div class="avoid-block">
+    <strong>Booking excursions from strangers outside the port.</strong> Use cruise-line excursions or operators you've vetted in advance. The back-to-ship guarantee is the key condition — verify it in writing.
+  </div>
+  <div class="avoid-block">
+    <strong>East-side DIY without a guide.</strong> Oak Ridge, Jonesville, and Punta Gorda are excellent — but only with a reliable operator who knows your departure time and has a track record. The drive is too long to improvise.
+  </div>
+  <div class="avoid-block">
+    <strong>Local public buses.</strong> The State Department advises against them. Taxis only.
+  </div>
+  <div class="avoid-block">
+    <strong>Any camouflage clothing.</strong> See the note above — this is a legal issue, not a fashion one.
+  </div>
+
+  <!-- FOOTER -->
+  <div class="pmtp-footer">
+    <div class="pmtp-footer-name">Andrea Gunter</div>
+    <div class="pmtp-footer-title">Travel Advisor</div>
+    <div class="pmtp-footer-contact"><a id="pmtpEmailLink" href="#"></a></div>
+    <div class="pmtp-footer-contact">4097893579</div>
+    <div class="pmtp-footer-brand">Point Me to Paradise Travel</div>
+  </div>
+
+  <div class="pmtp-disclaimer">
+    <span class="pmtp-disclaimer-label">Important — please read</span>
+    This guide is provided for informational purposes only. Locations, hours, conditions, and recommendations can change without notice, and ocean, weather, trail, road, and travel conditions can shift quickly and unpredictably. Point Me to Paradise Travel, the advisor named in this guide, and the authors of this content are not liable for any injury, illness, loss, theft, or harm of any kind arising from your visit to any location or participation in any activity referenced here. By using this guide, you accept full personal responsibility for your own safety. Use your own judgment, verify current conditions before any activity, follow all posted warnings and local regulations, and consult qualified professionals — lifeguards, park rangers, licensed guides, medical providers — where appropriate.
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var l="andrea",d="pointmetoparadise.com";
+  if(!l||!d)return;
+  var a=l+"\u0040"+d;
+  var el=document.getElementById("pmtpEmailLink");
+  if(el){el.href="mailto:"+a;el.textContent=a;}
+})();
+</script>
+
+</body>
+</html>
