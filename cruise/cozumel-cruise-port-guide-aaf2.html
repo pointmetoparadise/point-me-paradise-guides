@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cozumel Cruise Port Guide — Point Me to Paradise Travel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --aqua-pale:#C4E4E1;
+      --aqua-mist:#EAF3F2;
+      --aqua:#75AFB1;
+      --aqua-dark:#4F8A8C;
+      --sand-light:#F4F1E9;
+      --warm-sand:#F5EFE4;
+      --gold-whisper:#D6C8A8;
+      --white:#FFFFFF;
+      --paper:#F9F6F1;
+      --ink:#2B2420;
+      --ink-soft:#6B6359;
+      --line:#E6DFD5;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      padding: 48px 28px;
+    }
+
+    h1 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(26px,5vw,42px);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--ink);
+    }
+
+    h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(20px,4vw,28px);
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 6px;
+      margin-top: 56px;
+    }
+
+    h3 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(16px,3vw,20px);
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 10px;
+      margin-top: 36px;
+    }
+
+    h4 {
+      font-family: 'Fraunces', serif;
+      font-size: 15px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--aqua-dark);
+      margin-bottom: 8px;
+    }
+
+    p { margin-bottom: 16px; }
+
+    a {
+      color: var(--aqua-dark);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    a:hover { color: var(--ink); }
+
+    .subhead {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(16px,3vw,19px);
+      color: var(--ink-soft);
+      margin-bottom: 28px;
+      display: block;
+      line-height: 1.5;
+    }
+
+    .pmtp-hero {
+      position: relative;
+      background-image: url('https://thisiscozumel.com/images/guide/thumbs/cruise-terminals-in-cozumel.jpg');
+      background-size: cover;
+      background-position: center 40%;
+      padding: clamp(40px,8vw,78px) 32px clamp(36px,6vw,60px);
+      text-align: center;
+      margin: -48px -28px 32px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .pmtp-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg,rgba(255,255,255,0.30) 0%,rgba(196,228,225,0.45) 30%,rgba(245,239,228,0.82) 62%,rgba(249,246,240,0.97) 100%);
+      pointer-events: none;
+    }
+
+    .pmtp-hero > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .pmtp-label {
+      font-family: 'Fraunces', serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--aqua-dark);
+      margin-bottom: 22px;
+    }
+
+    .pmtp-divider {
+      width: 60px;
+      height: 1px;
+      background: var(--gold-whisper);
+      margin: 18px auto;
+    }
+
+    .pmtp-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(17px,3.5vw,21px);
+      max-width: 620px;
+      margin: 0 auto;
+      color: var(--ink-soft);
+    }
+
+    .pmtp-band {
+      border-radius: 10px;
+      padding: 22px 24px;
+      margin: 28px 0;
+      border: 1px solid var(--line);
+    }
+
+    .pmtp-band p:last-child { margin-bottom: 0; }
+
+    .band-aqua { background: var(--aqua-mist); }
+    .band-sand { background: var(--warm-sand); }
+
+    .pmtp-card {
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 22px 24px;
+      margin-bottom: 24px;
+      background: var(--white);
+    }
+
+    .pmtp-card p:last-child { margin-bottom: 0; }
+
+    .tag {
+      display: inline-block;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 20px;
+      margin: 0 3px 6px 0;
+      line-height: 1.8;
+    }
+
+    .tag-water { background: var(--aqua-mist); color: var(--aqua-dark); }
+    .tag-walk  { background: #E8F4EC; color: #3A7A4E; }
+    .tag-culture { background: #F4EFE6; color: #7A5C38; }
+    .tag-nature { background: #ECF4E8; color: #456B3A; }
+    .tag-caution { background: #FEF3E8; color: #A05A28; }
+    .tag-avoid { background: #FDEAEA; color: #922B2B; }
+
+    .maps-link {
+      display: inline-block;
+      font-size: 13.5px;
+      font-weight: 500;
+      padding: 10px 18px;
+      background: var(--aqua-pale);
+      color: var(--aqua-dark);
+      border-radius: 6px;
+      text-decoration: none;
+      margin: 8px 0 12px;
+      border: 1px solid var(--aqua);
+    }
+
+    .maps-link:hover { background: var(--aqua); color: var(--white); }
+
+    .tip-box {
+      background: var(--gold-whisper);
+      background: rgba(214,200,168,0.22);
+      border-left: 3px solid var(--gold-whisper);
+      border-radius: 0 6px 6px 0;
+      padding: 12px 16px;
+      font-size: 14px;
+      color: var(--ink-soft);
+      margin: 12px 0 16px;
+    }
+
+    .tip-box strong { color: var(--ink); }
+
+    .warn-box {
+      background: rgba(255,244,236,0.7);
+      border-left: 3px solid #D48B5A;
+      border-radius: 0 6px 6px 0;
+      padding: 12px 16px;
+      font-size: 14px;
+      color: var(--ink-soft);
+      margin: 12px 0 16px;
+    }
+
+    .warn-box strong { color: #A05A28; }
+
+    .taxi-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      font-size: 14.5px;
+      margin: 16px 0 24px;
+    }
+
+    .taxi-row {
+      display: contents;
+    }
+
+    .taxi-row > span {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .taxi-row:last-child > span {
+      border-bottom: none;
+    }
+
+    .taxi-row > span:nth-child(2) {
+      text-align: right;
+      font-weight: 600;
+      color: var(--aqua-dark);
+      background: var(--aqua-mist);
+      border-left: 1px solid var(--line);
+    }
+
+    .taxi-head > span {
+      padding: 9px 16px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      background: var(--warm-sand);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .taxi-head > span:nth-child(2) {
+      border-left: 1px solid var(--line);
+      background: var(--warm-sand);
+      color: var(--ink-soft);
+      font-weight: 600;
+    }
+
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin: 48px 0 0;
+    }
+
+    .pier-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+      margin: 24px 0;
+    }
+
+    .pier-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 18px 16px;
+    }
+
+    .pier-card .pier-name {
+      font-family: 'Fraunces', serif;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .pier-card .pier-lines {
+      font-size: 12px;
+      color: var(--ink-soft);
+      margin-bottom: 8px;
+    }
+
+    .pier-card .pier-note {
+      font-size: 13px;
+      color: var(--ink);
+    }
+
+    .pier-badge {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 12px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .badge-green { background: #E8F4EC; color: #3A7A4E; }
+    .badge-blue { background: var(--aqua-mist); color: var(--aqua-dark); }
+
+    .pmtp-footer {
+      background: var(--sand-light);
+      margin-top: 64px;
+      padding: 36px 28px;
+      border-radius: 12px;
+    }
+
+    .pmtp-footer .footer-name {
+      font-family: 'Fraunces', serif;
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .pmtp-footer .footer-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--ink-soft);
+      font-size: 15px;
+      margin-bottom: 14px;
+    }
+
+    .pmtp-footer .footer-contact {
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+
+    .pmtp-footer .footer-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--ink-soft);
+      font-size: 14px;
+      margin-top: 14px;
+    }
+
+    .pmtp-disclaimer {
+      margin-top: 28px;
+      padding: 22px 26px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font-size: 12.5px;
+      line-height: 1.7;
+      color: var(--ink-soft);
+    }
+
+    .pmtp-disclaimer .disclaimer-label {
+      display: block;
+      font-weight: 600;
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    @media(max-width:640px) {
+      body { font-size: 15px; }
+      .pmtp-hero { padding: 44px 20px 36px; margin: -24px -20px 24px; }
+      .pmtp-band { padding: 18px 16px; }
+      h2 { font-size: 20px; }
+      h3 { font-size: 17px; }
+      .pmtp-footer { border-radius: 8px; padding: 24px 20px; }
+      .pier-grid { grid-template-columns: 1fr; }
+      .maps-link { display: block; text-align: center; min-font-size: 14px; padding: 12px 18px; }
+    }
+  </style>
+</head>
+<body>
+<div style="max-width:680px;margin:0 auto;padding:0 20px;">
+
+  <!-- HERO -->
+  <div class="pmtp-hero">
+    <div class="pmtp-label">Point Me to Paradise Travel</div>
+    <h1>Cozumel</h1>
+    <div class="pmtp-divider"></div>
+    <p class="pmtp-tagline">Your cruise port day guide — the reef, the beach clubs, the ruins, and how to get back to the ship on time.</p>
+  </div>
+
+
+  <!-- YOUR PIER MATTERS -->
+  <h2>Your Pier Matters Before Anything Else</h2>
+  <span class="subhead">Where your ship docks shapes everything from your first ten minutes to your taxi budget.</span>
+
+  <div style="margin:18px 0 22px;border-radius:10px;overflow:hidden;border:1px solid var(--line);line-height:0;">
+    <img src="https://www.cruzely.com/wp-content/uploads/puerta-maya-pier.jpg" alt="Puerta Maya cruise pier, Cozumel" style="width:100%;height:auto;display:block;max-height:320px;object-fit:cover;object-position:center 55%;">
+  </div>
+
+  <p>Cozumel has three cruise piers, all on the island's western shoreline, and they are not interchangeable. Check your cruise line's app or daily newsletter the night before — knowing your pier changes how you plan your morning.</p>
+
+  <div class="pier-grid">
+    <div class="pier-card">
+      <div class="pier-badge badge-green">Port Walkable</div>
+      <div class="pier-name">Punta Langosta</div>
+      <div class="pier-lines">Norwegian · Disney · Oceania · smaller lines</div>
+      <div class="pier-note">You step off and you're downtown. Five-minute walk to Benito Juárez Park. No taxi needed to start your day.</div>
+    </div>
+    <div class="pier-card">
+      <div class="pier-badge badge-blue">~$10 taxi downtown</div>
+      <div class="pier-name">International Pier (SSA)</div>
+      <div class="pier-lines">Royal Caribbean · Celebrity</div>
+      <div class="pier-note">About 2 miles south of downtown. Modern terminal with its own shops, but downtown San Miguel is worth the quick cab.</div>
+    </div>
+    <div class="pier-card">
+      <div class="pier-badge badge-blue">~$10 taxi downtown</div>
+      <div class="pier-name">Puerta Maya</div>
+      <div class="pier-lines">Carnival · Princess · Holland America</div>
+      <div class="pier-note">Adjacent to SSA, operated by Carnival Corporation. A well-stocked terminal, but the same short taxi ride opens up the whole island.</div>
+    </div>
+  </div>
+
+  <div class="pmtp-band band-aqua">
+    <h4>On Crowds and Timing</h4>
+    <p>Cozumel handled over 4.5 million cruise passengers in 2024 — when three or four ships dock simultaneously, downtown San Miguel can feel like a crowded airport gate. Head out early or, if you dock mid-morning, push past the pier shopping area and into the side streets. Midday is the peak. Sundays tend to be the quietest day of the week overall.</p>
+  </div>
+
+  <div class="tip-box">
+    <strong>Time zone alert:</strong> Cozumel operates on Eastern Standard Time year-round — it does not observe daylight saving time. This does not always match your ship's posted time. Confirm local vs. ship time before booking any independent excursion.
+  </div>
+
+  <!-- THE WATER -->
+  <hr class="section-divider">
+  <h2>The Water: Reefs, Snorkeling, and Diving</h2>
+  <span class="subhead">Jacques Cousteau called these reefs among the most beautiful in the world. That reputation still holds.</span>
+
+  <p>The real draw here has always been underwater. Cozumel sits along the Mesoamerican Barrier Reef — the second-largest coral reef system on the planet — and the clarity of the water, often visible to 200 feet, is hard to overstate. Most port days give you enough time for one solid half-day excursion in the water, so choose deliberately.</p>
+
+  <h3>Three-Reef Snorkel Tour: Palancar, Columbia, and El Cielo</h3>
+  <span class="tag tag-water">Water</span>
+  <span class="tag tag-walk">DIY Friendly</span>
+
+  <div style="margin:14px 0 20px;border-radius:10px;overflow:hidden;border:1px solid var(--line);line-height:0;">
+    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/50/90/45/caption.jpg?w=1200&h=-1&s=1" alt="Snorkeling at Palancar and El Cielo reefs, Cozumel" style="width:100%;height:auto;display:block;max-height:300px;object-fit:cover;object-position:center center;">
+  </div>
+
+  <p>The classic Cozumel snorkel tour visits three sites in a single 4-hour outing. You'll spend roughly 30–45 minutes drifting through Palancar Reef and Columbia Reef — where the coral formations run deep and sea turtles and eagle rays are routine sightings — before finishing at El Cielo, a shallow sandy sandbar covered in starfish. It's a gentle drift, not a hard swim, but the currents are real: always snorkel with a life vest and stay close to your guide. Tours depart from Marina Fonatur/ASIPONA, 5–10 minutes by taxi from SSA or Puerta Maya, about 15 minutes from Punta Langosta. Book the 10am departure for the most comfortable schedule.
+
+  <a href="https://www.google.com/maps/search/?api=1&query=Palancar+Reef+Cozumel" class="maps-link">Palancar Reef on Google Maps</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=El+Cielo+Cozumel" class="maps-link">El Cielo (starfish sandbar)</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Marina+ASIPONA+Cozumel" class="maps-link">Marina ASIPONA (departure point)</a>
+
+  <div class="tip-box">
+    <strong>Book in advance.</strong> Tour operators list on Viator and at cozumel-tours.com. A small marine fee is typically payable in cash on the day — bring a modest amount in pesos or dollars.
+  </div>
+
+  <h3>Scuba Diving</h3>
+  <span class="tag tag-water">Water</span>
+
+  <div style="margin:14px 0 20px;border-radius:10px;overflow:hidden;border:1px solid var(--line);line-height:0;">
+    <img src="https://diveparadise.com/wp-content/uploads/2019/05/Cozumel-Scuba-Diving.jpg" alt="Scuba diving at Cozumel reefs" style="width:100%;height:auto;display:block;max-height:300px;object-fit:cover;object-position:center center;">
+  </div>
+
+  <p>If you're certified, a guided drift dive here is worth planning your entire cruise itinerary around. Dozens of shops operate near all three piers. Non-certified divers can book an introductory experience. For the National Marine Park dive sites, note that sunscreen is not permitted in the water — wear a rash guard instead.</p>
+
+  <h3>Glass-Bottom Boat Tours</h3>
+  <span class="tag tag-water">Water</span>
+
+  <div style="margin:14px 0 20px;border-radius:10px;overflow:hidden;border:1px solid var(--line);line-height:0;">
+    <img src="https://media.tacdn.com/media/attractions-splice-spp-674x446/12/62/42/42.jpg" alt="Glass-bottom boat tour, Cozumel" style="width:100%;height:auto;display:block;max-height:300px;object-fit:cover;object-position:center center;">
+  </div>
+
+  <p>A solid choice if you'd rather stay dry. Glass-bottom boats run over the shallow reef sections and occasionally stop for optional snorkeling breaks. Available through operators near all piers.</p>
+
+  <div class="pmtp-band band-sand">
+    <h4>A Note on Reef Safety</h4>
+    <p>Cozumel's drift currents produce spectacular underwater visibility but can catch inexperienced swimmers off guard. The currents at Palancar and Columbia can run 1–2 knots — faster than most people swim. Look for operators who provide a pre-departure safety briefing, mandatory life vests, and a guide-to-snorkeler ratio of roughly 1:8 or better. Step away from any boat that feels rushed or disorganized before you even get in the water.</p>
+  </div>
+
+
+  <!-- BEACH CLUBS -->
+  <hr class="section-divider">
+  <h2>The Beach Club Decision</h2>
+  <span class="subhead">The real question isn't which beach club — it's what kind of day you want to have.</span>
+
+  <p>All four main clubs sit along the same 3-kilometer stretch of the southern hotel zone, about 15–25 minutes by taxi from any pier. The west-facing beaches here are calm, warm, and clear. The clubs handle transportation logistics well; taxis know exactly where to go. Book in advance on busy ship days — popular clubs genuinely sell out.</p>
+
+  <div class="pmtp-card">
+    <h3 style="margin-top:0;">Nachi Cocom</h3>
+    <span class="tag tag-water">Beach</span>
+    <span class="tag tag-walk">Quiet &amp; Intimate</span>
+    <div style="margin:12px 0 18px;border-radius:8px;overflow:hidden;border:1px solid var(--line);line-height:0;">
+      <img src="https://cozumelcruiseexcursions.com/wp-content/uploads/2016/07/CozumelBeachPalapa.jpg" alt="Beach palapa at Nachi Cocom, Cozumel" style="width:100%;height:auto;display:block;max-height:260px;object-fit:cover;object-position:center center;">
+    </div>
+    <p>Nachi Cocom enforces a strict daily cap of 130 guests. That number sounds clinical until you're sitting under a palapa that's yours, with a server who knows your drink order, and a beach that doesn't feel like a theme park exit. The all-inclusive pass (around $69 per adult, verify at booking) covers unlimited drinks, a four-course lunch, pool, jacuzzi, hammocks, and lockers. It is small and deliberately unhurried. Best for couples, anyone who wants to actually decompress, or passengers doing this port for the third time and ready for a quieter version of it.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Nachi+Cocom+Beach+Club+Cozumel" class="maps-link">Nachi Cocom on Google Maps</a>
+    <div class="tip-box">
+      <strong>Book directly</strong> at cozumelnachicocom.com for the best rate. Note the cancellation policy — the deposit is non-refundable unless your ship skips the port entirely. Even Mr. Sancho's next door sells out on peak days; book Nachi months ahead for busy itineraries.
+    </div>
+    <p style="font-size:14px;color:var(--ink-soft);margin-bottom:0;"><em>Taxi from Puerta Maya: ~$20 USD one way (cab fare, per research; verify posted rates at port).</em></p>
+  </div>
+
+  <div class="pmtp-card">
+    <h3 style="margin-top:0;">Mr. Sancho's</h3>
+    <span class="tag tag-water">Beach</span>
+    <span class="tag tag-culture">Party-Friendly</span>
+    <div style="margin:12px 0 18px;border-radius:8px;overflow:hidden;border:1px solid var(--line);line-height:0;">
+      <img src="https://mrsanchos.com/wp-content/uploads/2024/06/MS-8-1.webp" alt="Mr. Sancho's Beach Club, Cozumel" style="width:100%;height:auto;display:block;max-height:260px;object-fit:cover;object-position:center center;">
+    </div>
+    <p>Mr. Sancho's is the loud, full-energy option — 450-person capacity, multiple pools, an Aqua Park of inflatables (around $12 extra), parasailing, jet skiing, horseback riding, and a buffet that keeps pace with the rest of the scene. The all-inclusive pass runs around $60 per adult. You'll know immediately whether this is your place or not. Best for groups, cruise-party types, or families whose kids need something to climb on in the water.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Mr+Sanchos+Beach+Club+Cozumel" class="maps-link">Mr. Sancho's on Google Maps</a>
+    <p style="font-size:14px;color:var(--ink-soft);margin-bottom:0;"><em>Taxi from Puerta Maya: ~$20 USD one way.</em></p>
+  </div>
+
+  <div class="pmtp-card">
+    <h3 style="margin-top:0;">Paradise Beach</h3>
+    <span class="tag tag-water">Beach</span>
+    <span class="tag tag-walk">Family-Friendly</span>
+    <div style="margin:12px 0 18px;border-radius:8px;overflow:hidden;border:1px solid var(--line);line-height:0;">
+      <img src="https://www.tripsavvy.com/thmb/JrXcB5rbVTEpidqTy6D6aTpJ_Qk=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/paradise_beach_cozumel-889b22c1f37541c48c0816a925bb5f1e.jpg" alt="Paradise Beach, Cozumel" style="width:100%;height:auto;display:block;max-height:260px;object-fit:cover;object-position:center center;">
+    </div>
+    <p>A middle ground between Nachi Cocom's quiet and Mr. Sancho's volume. Paradise Beach offers either an all-inclusive pass (around $64) or a low entry fee with minimum spend — useful if you're not planning to eat much. The Fun Pass (roughly $20 extra) adds kayaks, snorkel gear, paddleboards, water slides, and inflatables. As of spring 2024, the kitchen got a new chef and the food improved noticeably.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Paradise+Beach+Cozumel" class="maps-link">Paradise Beach on Google Maps</a>
+    <p style="font-size:14px;color:var(--ink-soft);margin-bottom:0;"><em>Taxi from Puerta Maya: ~$18 USD one way.</em></p>
+  </div>
+
+  <div class="pmtp-card">
+    <h3 style="margin-top:0;">Playa Mia Grand Beach Park</h3>
+    <span class="tag tag-water">Beach</span>
+    <span class="tag tag-culture">Activity-Heavy</span>
+    <div style="margin:12px 0 18px;border-radius:8px;overflow:hidden;border:1px solid var(--line);line-height:0;">
+      <img src="https://thisiscozumel.com/images/stories/news/cozumel-playa-mia-03.jpg" alt="Playa Mia Grand Beach Park, Cozumel" style="width:100%;height:auto;display:block;max-height:260px;object-fit:cover;object-position:center center;">
+    </div>
+    <p>The most resort-like of the four options: water slides, a floating obstacle course, kayaks, paddle boats, multiple swimming areas, lounge chairs, and optional lunch and open-bar packages. Works well as a ship-organized excursion because the logistics are managed for you.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Playa+Mia+Beach+Park+Cozumel" class="maps-link">Playa Mia on Google Maps</a>
+    <p style="font-size:14px;color:var(--ink-soft);margin-bottom:0;"><em>Taxi from Puerta Maya: ~$25 USD one way.</em></p>
+  </div>
+
+  <div class="pmtp-band band-aqua">
+    <h4>The Taxi Hack Worth Knowing</h4>
+    <p>Cozumel taxis charge by the car, not per person. If you're traveling as a pair and spot another couple at the pier heading to the same beach club, share the cab — you'll each pay roughly half. Arrange it before approaching the taxi stand. Also: confirm your fare in pesos before you get in. Drivers will quote you in dollars; pesos almost always work out cheaper. Don't pay until you arrive.</p>
+  </div>
+
+
+  <!-- ADVENTURES & EXCURSIONS -->
+  <hr class="section-divider">
+  <h2>Active Days: Jeeps, ATVs, and the Island Beyond the Beach</h2>
+  <span class="subhead">Cozumel is a small island on a map and a surprisingly full one on the ground.</span>
+
+  <div style="margin:18px 0 22px;border-radius:10px;overflow:hidden;border:1px solid var(--line);line-height:0;">
+    <img src="https://thisiscozumel.com/tours/packageimages/resized/mobile/dune-buggy-tour-cozumel.jpg" alt="Dune buggy tour, Cozumel" style="width:100%;height:auto;display:block;max-height:320px;object-fit:cover;object-position:center center;">
+  </div>
+
+  <h3>Private Jeep Tour</h3>
+  <span class="tag tag-culture">Private Tour</span>
+  <span class="tag tag-nature">Island Loop</span>
+
+  <p>The private Jeep tour is consistently the highest-rated active option on the island, and for a straightforward reason: a good guide knows your ship's departure time, drives to it, and builds the day around it. A typical full loop covers San Gervasio ruins, a tequila tasting, Punta Sur's lighthouse, and a snorkeling stop — usually 5–7 hours. Operators meet at all three cruise piers. Book through Viator or directly with a local operator; reviews consistently note guides who proactively monitor ship timing.</p>
+
+  <div class="tip-box">
+    <strong>For families or groups of four:</strong> Private Jeep tours are priced per vehicle, not per person. A group of four pays the same as a couple, making the per-person cost competitive with ship excursions.
+  </div>
+
+  <h3>ATV Tour to Jade Cavern Cenote</h3>
+  <span class="tag tag-nature">Adventure</span>
+  <span class="tag tag-culture">Private Tour</span>
+
+  <div style="margin:14px 0 20px;border-radius:10px;overflow:hidden;border:1px solid var(--line);line-height:0;">
+    <img src="https://images.trvl-media.com/localexpert/46370494/ef39aca8-4c67-42ee-8f30-69ab75a54240.jpg?impolicy=resizecrop&rw=1005&rh=565" alt="ATV tour to Jade Cavern Cenote, Cozumel" style="width:100%;height:auto;display:block;max-height:300px;object-fit:cover;object-position:center center;">
+  </div>
+
+  <p>A popular combination: ATV ride through the jungle interior to Jade Cavern (Cenote Chempita), snorkeling, a stop at Punta Sur, and tequila tasting. Minimum age to drive is typically 18; children ride as passengers. Duration runs 4–6 hours depending on the operator's route. Available as a fully private tour with several well-established local operators.</p>
+
+  <a href="https://www.google.com/maps/search/?api=1&query=Jade+Cavern+Cenote+Cozumel" class="maps-link">Jade Cavern Cenote on Google Maps</a>
+
+  <div class="pmtp-band band-sand">
+    <h4>On Scooters and Golf Carts</h4>
+    <p>Both are available near all three piers. Scooter accidents are the leading cause of tourist injury on the island — the roads look manageable until they aren't. A golf cart is the more sensible choice for casual exploration around the hotel zone and downtown. If you're comfortable on a scooter in foreign traffic and this is your priority, that's your call — just build extra time into your return schedule and leave a wide margin before all-aboard.</p>
+  </div>
+
+  <div class="warn-box">
+    <strong>East coast swimming:</strong> The east-facing beaches — including Playa Chen Rio — are far less crowded and considerably less expensive for food and drinks. They're also rockier and subject to strong open-water currents. Swimming there is not recommended unless you're with a local guide who knows current conditions that day. Visit the east side for the scenery and a cold beer at Punta Morena; don't count on getting in the water.
+  </div>
+
+
+  <!-- CULTURE & HISTORY -->
+  <hr class="section-divider">
+  <h2>Ruins, Culture, and the Island's Other Side</h2>
+  <span class="subhead">Cozumel has a long history before the first cruise ship ever docked here.</span>
+
+  <div style="margin:18px 0 22px;border-radius:10px;overflow:hidden;border:1px solid var(--line);line-height:0;">
+    <img src="https://www.royalcaribbean.com/media-assets/pmc/content/dam/shore-x/cozumel-czm/y8mu-tulum-mayan-ruins-and-the-frida-kahlo-immersive-experience/Y8MU-Tulum-Mayan-Ruins-and-the-Frida-Kahlo-Immersive-Experience-mayan-Ruins.jpg?w=1440" alt="Mayan ruins, Cozumel region" style="width:100%;height:auto;display:block;max-height:320px;object-fit:cover;object-position:center 40%;">
+  </div>
+
+  <h3>San Gervasio Mayan Ruins</h3>
+  <span class="tag tag-culture">Historic Site</span>
+  <span class="tag tag-walk">DIY Friendly</span>
+
+  <div style="margin:14px 0 20px;border-radius:10px;overflow:hidden;border:1px solid var(--line);line-height:0;">
+    <img src="https://ventanasalmarcozumel.com/wp-content/uploads/2023/02/SAN-GERVASIO-MAYAN-RUINS.jpg" alt="San Gervasio Mayan Ruins, Cozumel" style="width:100%;height:auto;display:block;max-height:300px;object-fit:cover;object-position:center center;">
+  </div>
+
+  <p>San Gervasio was a pilgrimage center dedicated to Ixchel, the Mayan goddess of fertility — women were expected to make the journey here at least once in their lives. The site is the island's largest and most significant archaeological zone, set among jungle and stone paths. It's small compared to the mainland ruins, but it's quiet, well-signed, and gives you a genuine sense of the island's pre-cruise-industry identity. A hired guide on-site costs around $20 and is worth it.</p>
+
+  <a href="https://www.google.com/maps/search/?api=1&query=San+Gervasio+Ruins+Cozumel" class="maps-link">San Gervasio on Google Maps</a>
+
+  <div class="tip-box">
+    <strong>Timing:</strong> A DIY taxi trip to San Gervasio and back runs roughly 2.5–3 hours total. With an early start (6+ hours in port), you can combine it with a beach club afternoon. More commonly, San Gervasio is included as one stop on a private Jeep tour.
+  </div>
+
+  <h3>Punta Sur Eco Beach Park</h3>
+  <span class="tag tag-nature">Nature</span>
+  <span class="tag tag-caution">Far From Port</span>
+
+  <div style="margin:14px 0 20px;border-radius:10px;overflow:hidden;border:1px solid var(--line);line-height:0;">
+    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/f6/a8/be/caption.jpg?w=800&h=800&s=1" alt="Punta Sur Eco Beach Park, Cozumel" style="width:100%;height:auto;display:block;max-height:300px;object-fit:cover;object-position:center 35%;">
+  </div>
+
+  <p>Cozumel's largest ecological reserve covers the island's southern tip. At the Faro Celarain lighthouse — the best elevated vantage point on the island — you can look back north and see exactly how the island lies. Boat tours run through mangrove lagoons where crocodiles live alongside herons and other wading birds. The El Caracol Mayan ruins and a small Navigation Museum are also on-site. Located 30 minutes by taxi from any pier.</p>
+
+  <a href="https://www.google.com/maps/search/?api=1&query=Punta+Sur+Eco+Beach+Park+Cozumel" class="maps-link">Punta Sur on Google Maps</a>
+
+  <div class="warn-box">
+    <strong>Timing caution:</strong> As a standalone DIY trip from port, Punta Sur is tight. It's best visited as part of an organized Jeep tour where the guide manages return timing. If you go independently, build a 90-minute buffer before all-aboard.
+  </div>
+
+  <h3>Chankanaab Adventure Beach Park</h3>
+  <span class="tag tag-water">Beach</span>
+  <span class="tag tag-nature">Park</span>
+
+  <div style="margin:14px 0 20px;border-radius:10px;overflow:hidden;border:1px solid var(--line);line-height:0;">
+    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1b/7d/ec/51/caption.jpg?w=1200&h=-1&s=1" alt="Chankanaab Adventure Beach Park, Cozumel" style="width:100%;height:auto;display:block;max-height:300px;object-fit:cover;object-position:center center;">
+  </div>
+
+  <p>Chankanaab is best understood as a self-contained day resort with a reef attached. Admission covers swimming, a sea lion show, botanical gardens, a crocodile exhibit, and beach chairs. Zip lines, Dolphin Discovery, and glass-bottom kayaks cost extra. It's commercially run and designed for cruise passengers — convenient, well-organized, and not especially wild. About 15 minutes by taxi from Puerta Maya.</p>
+
+  <a href="https://www.google.com/maps/search/?api=1&query=Chankanaab+Park+Cozumel" class="maps-link">Chankanaab on Google Maps</a>
+
+  <h3>Discover Mexico Park</h3>
+  <span class="tag tag-culture">Cultural Experience</span>
+
+  <div style="margin:14px 0 20px;border-radius:10px;overflow:hidden;border:1px solid var(--line);line-height:0;">
+    <img src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/07/71/e0/b1.jpg" alt="Discover Mexico Park, Cozumel" style="width:100%;height:auto;display:block;max-height:300px;object-fit:cover;object-position:center center;">
+  </div>
+
+  <p>An interactive cultural park showcasing Mexican art, music, and food. The centerpiece is the Danza de los Voladores — the Dance of the Flyers — in which performers spin from the top of a 100-foot pole. The aerial ceremony is recognized by UNESCO as an Intangible Cultural Heritage. A short taxi ride from all piers; can be combined with a beach afternoon.</p>
+
+  <a href="https://www.google.com/maps/search/?api=1&query=Discover+Mexico+Park+Cozumel" class="maps-link">Discover Mexico Park on Google Maps</a>
+
+  <div class="warn-box">
+    <strong>On Chichen Itza from Cozumel:</strong> It's possible — it is not recommended for independent travelers. The trip involves a ferry crossing plus roughly three hours of bus in each direction. The odds of missing your ship if anything goes sideways are real. If Chichen Itza is the reason you booked this cruise, take the ship's organized excursion, which guarantees a return regardless of delays.
+  </div>
+
+
+  <!-- SAN MIGUEL & DOWNTOWN -->
+  <hr class="section-divider">
+  <h2>Downtown San Miguel</h2>
+  <span class="subhead">The port shopping area and the actual town are two different places.</span>
+
+  <div style="margin:18px 0 22px;border-radius:10px;overflow:hidden;border:1px solid var(--line);line-height:0;">
+    <img src="https://www.celebritycruises.com/blog/content/uploads/2024/04/san-miguel-de-cozumel-downtown-1024x681.jpg" alt="Downtown San Miguel de Cozumel" style="width:100%;height:auto;display:block;max-height:320px;object-fit:cover;object-position:center center;">
+  </div>
+
+  <p>San Miguel is a working Mexican town of about 100,000 people that happens to have a very large cruise industry layered on top of it. The Malecón runs along the waterfront from Punta Langosta south toward the other piers; Benito Juárez Park is the central gathering point a five-minute walk from the dock. The shopping and souvenir options get notably better — and cheaper — once you move a block or two inland from the waterfront. The pier shopping complexes are consistently reported as overpriced compared to San Miguel's interior streets.</p>
+
+  <a href="https://www.google.com/maps/search/?api=1&query=San+Miguel+de+Cozumel" class="maps-link">San Miguel de Cozumel on Google Maps</a>
+
+  <p>Near Punta Langosta, Playa San Juan is a short walk north — known for stingrays that drift just offshore. Paddleboarding, chocolate workshops, and open-water snorkeling are available along this stretch.</p>
+
+  <div class="pmtp-band band-aqua">
+    <h4>If You Only Have an Hour Downtown</h4>
+    <p>Walk the Malecón south from Punta Langosta, cut left at Benito Juárez Park, and browse the craft market stalls one block inland. Buy vanilla, spices, and local chocolate here rather than at the pier. Most vendors accept dollars but quote in pesos — paying in pesos usually saves 10–15% compared to the posted dollar price. ATMs are available near the main square.</p>
+  </div>
+
+
+  <!-- TAXI FARES -->
+  <hr class="section-divider">
+  <h2>Getting Around: Taxi Fares at a Glance</h2>
+  <span class="subhead">Cozumel taxis are fixed-rate, government-regulated, and staffed by drivers who have done this route a thousand times.</span>
+
+  <p>Fares below are from Puerta Maya, based on research data. Fares from SSA are similar; Punta Langosta is slightly different given its downtown location. Verify against the posted rate card at your pier's taxi stand on the day — prices are posted.</p>
+
+  <div class="taxi-grid">
+    <div class="taxi-row taxi-head">
+      <span>Destination</span>
+      <span>~Fare (1–4 passengers)</span>
+    </div>
+    <div class="taxi-row">
+      <span>Downtown San Miguel</span>
+      <span>$10 USD</span>
+    </div>
+    <div class="taxi-row">
+      <span>Chankanaab Park</span>
+      <span>$15 USD</span>
+    </div>
+    <div class="taxi-row">
+      <span>Paradise Beach</span>
+      <span>$18 USD</span>
+    </div>
+    <div class="taxi-row">
+      <span>Mr. Sancho's / Nachi Cocom</span>
+      <span>$20 USD</span>
+    </div>
+    <div class="taxi-row">
+      <span>Playa Mia / Iberostar area</span>
+      <span>$25 USD</span>
+    </div>
+    <div class="taxi-row">
+      <span>Palancar Beach</span>
+      <span>$30 USD</span>
+    </div>
+  </div>
+
+  <div class="tip-box">
+    <strong>Peso vs. dollar:</strong> Confirm fare in pesos before getting in. Don't pay until you arrive. Use the official taxi stands at each pier, not approaches from the street.
+  </div>
+
+
+  <!-- PRACTICAL TIPS -->
+  <hr class="section-divider">
+  <h2>Before You Leave the Ship</h2>
+  <span class="subhead">A short checklist that the research says actually matters.</span>
+
+  <div class="pmtp-band band-sand">
+    <h4>Reef-Safe Sunscreen Is Not Optional Here</h4>
+    <p>Chemical sunscreen — anything with oxybenzone or octinoxate — is banned on the island, and use of any sunscreen is prohibited while diving inside the National Marine Park. Bring mineral sunscreen from home (zinc oxide or titanium dioxide); availability on-island is inconsistent and prices are high. A rash guard is the most practical solution for long water days.</p>
+  </div>
+
+  <div class="pmtp-band band-aqua">
+    <h4>Water, Heat, and Your Feet</h4>
+    <p>Drink bottled water only — do not drink from the tap. Sealed bottles only; ice at established beach clubs and restaurants is generally purified but use judgment at roadside stands. The heat here surprises people who were fine on a Northern European itinerary last summer — carry more water than you think you need. Bring water shoes: the west coast shoreline is largely ironshore (jagged limestone reef), not sandy beach.</p>
+  </div>
+
+  <div class="pmtp-band band-sand">
+    <h4>Safety and the State Department</h4>
+    <p>The U.S. State Department gives Quintana Roo a Level 2 advisory — the same level applied to France, Germany, and most of Western Europe. Within the state, Cozumel consistently reports the lowest crime rate of any major tourist hub. The practical risks on a port day are sunburn, dehydration, scooter accidents, and ocean currents — not crime. Pre-booking with vetted operators (rather than accepting solicitations near the pier) is the right call for both safety and value.</p>
+  </div>
+
+  <h3>Return-to-Ship Timing</h3>
+  <p>Be back at your pier 45–60 minutes before all-aboard, not at all-aboard. Factor in the taxi wait. A good private tour guide will track this for you — it's worth asking explicitly at the start of the day: "What time do we need to be back at the pier?" Set a watch alarm, not just a phone timer.</p>
+
+  <div class="tip-box">
+    <strong>Mosquito protection:</strong> Dengue fever and chikungunya are present in Cozumel. Pack insect repellent and apply it on-island, especially if you're visiting green areas like San Gervasio or Punta Sur.
+  </div>
+
+  <div class="tip-box">
+    <strong>On starfish at El Cielo:</strong> Do not pick them up. Starfish breathe through their outer skin and can suffocate from handling. Your guide will say this at the briefing; take it seriously.
+  </div>
+
+
+  <!-- PIER LINKS -->
+  <hr class="section-divider">
+  <h2>Your Pier Locations</h2>
+  <span class="subhead">Tap to open in Maps before you're on the island.</span>
+
+  <a href="https://www.google.com/maps/search/?api=1&query=Punta+Langosta+Pier+Cozumel" class="maps-link">Punta Langosta Pier</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=International+Pier+SSA+Cozumel" class="maps-link">International Pier (SSA)</a>
+  <a href="https://www.google.com/maps/search/?api=1&query=Puerta+Maya+Cruise+Terminal+Cozumel" class="maps-link">Puerta Maya Terminal</a>
+
+
+  <!-- FOOTER -->
+  <div class="pmtp-footer">
+    <div class="footer-name">Andrea</div>
+    <div class="footer-title">Travel Advisor</div>
+    <div class="footer-contact"><a id="pmtpEmailLink" href="#"></a></div>
+    <div class="footer-contact">409-789-3579</div>
+    <div class="footer-brand">Point Me to Paradise Travel</div>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div class="pmtp-disclaimer">
+    <span class="disclaimer-label">Important — please read</span>
+    This guide is provided for informational purposes only. Locations, hours, conditions, and recommendations can change without notice, and ocean, weather, trail, road, and travel conditions can shift quickly and unpredictably. Point Me to Paradise Travel, the advisor named in this guide, and the authors of this content are not liable for any injury, illness, loss, theft, or harm of any kind arising from your visit to any location or participation in any activity referenced here. By using this guide, you accept full personal responsibility for your own safety. Use your own judgment, verify current conditions before any activity, follow all posted warnings and local regulations, and consult qualified professionals — lifeguards, park rangers, licensed guides, medical providers — where appropriate.
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var l="andrea.paradiseplanner",d="gmail.com";
+  if(!l||!d)return;
+  var a=l+"\u0040"+d;
+  var el=document.getElementById("pmtpEmailLink");
+  if(el){el.href="mailto:"+a;el.textContent=a;}
+})();
+</script>
+</body>
+</html>
