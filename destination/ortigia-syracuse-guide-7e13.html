@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ortigia, Syracuse — Point Me to Paradise Travel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --aqua-pale:#C4E4E1;
+  --aqua-mist:#EAF3F2;
+  --aqua:#75AFB1;
+  --aqua-dark:#4F8A8C;
+  --sand-light:#F4F1E9;
+  --warm-sand:#F5EFE4;
+  --gold-whisper:#D6C8A8;
+  --white:#FFFFFF;
+  --paper:#F9F6F1;
+  --ink:#2B2420;
+  --ink-soft:#6B6359;
+  --line:#E6DFD5;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'DM Sans',sans-serif;
+  font-size:16px;
+  line-height:1.75;
+  font-weight:400;
+}
+a{color:var(--aqua-dark);text-decoration:none;}
+a:hover{text-decoration:underline;}
+h1{font-family:'Fraunces',serif;font-size:clamp(26px,5vw,42px);font-weight:700;line-height:1.1;color:var(--ink);}
+h2{font-family:'Fraunces',serif;font-size:clamp(20px,4vw,28px);font-weight:600;line-height:1.2;color:var(--ink);margin:0 0 6px;}
+h3{font-family:'Fraunces',serif;font-size:clamp(16px,3vw,20px);font-weight:600;color:var(--ink);margin:0 0 6px;}
+h4{font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 10px;}
+p{margin:0 0 14px;}
+p:last-child{margin-bottom:0;}
+.cormorant{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink-soft);}
+.section-tagline{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(17px,3.5vw,21px);color:var(--ink-soft);margin:0 0 28px;line-height:1.55;}
+
+.pmtp-hero{
+  background-image:linear-gradient(180deg,rgba(255,255,255,0.45),rgba(196,228,225,0.55) 35%,rgba(245,239,228,0.80) 68%,rgba(249,246,240,0.97));
+  padding:clamp(40px,8vw,78px) 32px clamp(36px,6vw,60px);
+  text-align:center;
+  margin:-48px -28px 0;
+  border-bottom:1px solid var(--line);
+}
+.pmtp-hero-kicker{
+  font-family:'Fraunces',serif;
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:0.22em;
+  text-transform:uppercase;
+  color:var(--aqua-dark);
+  margin-bottom:22px;
+}
+.pmtp-hero h1{margin-bottom:0;}
+.pmtp-hero-rule{width:60px;height:1px;background:var(--gold-whisper);margin:18px auto;}
+.pmtp-hero-tagline{
+  font-family:'Cormorant Garamond',serif;
+  font-style:italic;
+  font-size:clamp(17px,3.5vw,21px);
+  max-width:620px;
+  margin:0 auto;
+  color:var(--ink-soft);
+  line-height:1.55;
+}
+
+.pmtp-band{
+  padding:40px 28px;
+  border-radius:10px;
+  margin-bottom:28px;
+}
+.pmtp-band--aqua{background:var(--aqua-mist);}
+.pmtp-band--sand{background:var(--warm-sand);}
+
+.tag{
+  display:inline-block;
+  font-size:10px;
+  font-weight:600;
+  letter-spacing:0.13em;
+  text-transform:uppercase;
+  padding:3px 9px;
+  border-radius:3px;
+  margin-bottom:8px;
+}
+.tag--must{background:var(--aqua);color:#fff;}
+.tag--gem{background:var(--gold-whisper);color:#4a3c28;}
+.tag--local{background:var(--aqua-pale);color:var(--aqua-dark);}
+.tag--practical{background:var(--line);color:var(--ink-soft);}
+.tag--avoid{background:#f5e8e4;color:#7a3828;border:1px solid #e0c4bc;}
+
+.maps-link{
+  display:inline-block;
+  font-size:13px;
+  font-weight:500;
+  color:var(--aqua-dark);
+  border:1px solid var(--aqua);
+  border-radius:4px;
+  padding:7px 14px;
+  margin:10px 0 4px;
+  background:transparent;
+  transition:background 0.15s,color 0.15s;
+  cursor:pointer;
+}
+.maps-link:hover{background:var(--aqua);color:#fff;text-decoration:none;}
+
+.entry{margin-bottom:32px;padding-bottom:32px;border-bottom:1px solid var(--line);}
+.entry:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+
+.tip{
+  background:var(--aqua-mist);
+  border-left:3px solid var(--aqua);
+  border-radius:0 4px 4px 0;
+  padding:10px 14px;
+  font-size:14px;
+  margin-top:10px;
+  color:var(--ink-soft);
+}
+
+.season-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0 0;}
+.season-card{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:14px 16px;}
+.season-card-name{font-family:'Fraunces',serif;font-size:15px;font-weight:600;margin-bottom:4px;}
+.season-card-rating{display:flex;gap:4px;margin-bottom:8px;}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--line);}
+.dot--on{background:var(--aqua);}
+.season-card p{font-size:13px;color:var(--ink-soft);line-height:1.6;margin:0;}
+
+.avoid-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:8px;}
+.avoid-card{background:#fdf7f5;border:1px solid #e8d0c8;border-left:3px solid #c07060;border-radius:0 6px 6px 0;padding:14px 16px;}
+.avoid-card h3{color:#7a3828;font-size:16px;margin-bottom:6px;}
+.avoid-card p{font-size:14px;color:var(--ink-soft);margin:0;}
+
+.practical-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:8px;}
+.practical-card{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:16px 18px;}
+.practical-card h3{font-size:16px;margin-bottom:8px;}
+.practical-card p,.practical-card li{font-size:14px;color:var(--ink-soft);line-height:1.65;}
+.practical-card ul{list-style:none;padding:0;}
+.practical-card li{padding:3px 0;display:flex;align-items:baseline;gap:6px;}
+.practical-card li::before{content:'·';color:var(--aqua);flex-shrink:0;}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.gems-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.gem-card{background:var(--paper);border:1px solid var(--line);border-top:3px solid var(--aqua);border-radius:0 0 8px 8px;padding:16px 18px;}
+.gem-card h3{font-size:16px;margin-bottom:6px;}
+.gem-card p{font-size:14px;color:var(--ink-soft);margin:0;}
+
+.food-note{
+  background:var(--warm-sand);
+  border:1px solid var(--gold-whisper);
+  border-radius:8px;
+  padding:18px 20px;
+  margin-top:28px;
+}
+.food-note h4{margin-bottom:12px;}
+.food-note ul{list-style:none;padding:0;}
+.food-note li{font-size:14px;color:var(--ink-soft);padding:3px 0;border-bottom:1px solid var(--line);display:flex;gap:8px;align-items:baseline;}
+.food-note li:last-child{border-bottom:none;}
+.food-note li::before{content:'–';color:var(--aqua);flex-shrink:0;}
+
+.pmtp-footer{
+  background:var(--sand-light);
+  margin-top:64px;
+  padding:36px 28px;
+  border-radius:12px;
+}
+.pmtp-disclaimer{
+  margin-top:28px;
+  padding:22px 26px;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:8px;
+  font-size:12.5px;
+  line-height:1.7;
+  color:var(--ink-soft);
+}
+
+@media(max-width:640px){
+  body{font-size:15px;}
+  .pmtp-hero{padding:44px 20px 36px;margin:-24px -20px 24px;}
+  .pmtp-band{padding:18px 16px;}
+  h2{font-size:20px;}
+  h3{font-size:17px;}
+  .pmtp-footer{border-radius:8px;padding:24px 20px;}
+  .season-grid{grid-template-columns:1fr 1fr;}
+  .avoid-grid{grid-template-columns:1fr;}
+  .practical-grid{grid-template-columns:1fr 1fr;}
+  .two-col{grid-template-columns:1fr;}
+  .gems-grid{grid-template-columns:1fr;}
+  .maps-link{display:block;text-align:center;min-height:44px;line-height:44px;padding:0 14px;}
+}
+@media(max-width:420px){
+  .practical-grid{grid-template-columns:1fr;}
+  .season-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div style="max-width:680px;margin:0 auto;padding:48px 28px 48px;">
+
+<!-- HERO -->
+<div class="pmtp-hero">
+  <div class="pmtp-hero-kicker">Point Me to Paradise Travel</div>
+  <h1>Ortigia, Syracuse</h1>
+  <div class="pmtp-hero-rule"></div>
+  <p class="pmtp-hero-tagline">A limestone island where Greek gods and Baroque architects fought over the same real estate — and both left their mark.</p>
+</div>
+
+<!-- HERO IMAGE -->
+<img
+  src="https://images.squarespace-cdn.com/content/v1/5f9af6090c0a7348fa94da7e/1607119042632-TE7V9IFMOWFAJPXJKWFY/DJI_0024.jpg"
+  alt="Aerial view of Syracuse and Ortigia island with Mount Etna in the background"
+  style="width:100%;max-height:460px;object-fit:cover;border-radius:0;display:block;margin-bottom:32px;"
+  loading="lazy"
+  onerror="this.style.display='none'"
+/>
+
+<!-- ORIENTATION -->
+<h2>Orientation &amp; Character</h2>
+<p class="section-tagline">An island within an island, where 2,700 years of history share the same narrow lane.</p>
+
+<p>Ortigia (say it: <em>or-TEE-jah</em>) is the old city — a limestone island barely a kilometre long, connected to mainland Syracuse by two bridges and inscribed as a UNESCO World Heritage Site since 2005. Greek temples became Christian cathedrals here. Arab street grids survive under Baroque facades. You can walk north to south in twenty minutes, but you'll find yourself doing it again the next morning for entirely different reasons.</p>
+
+<p>The wider city of Syracuse sits on the mainland, where the Neapolis Archaeological Park holds Sicily's finest Greek ruins — including a 16,000-seat theatre still used for live performances today. Most travellers base themselves on Ortigia and treat Neapolis as a half-day excursion, which is exactly the right approach.</p>
+
+<p>Ortigia is not a preserved relic. Locals live here, children ride bikes through the piazzas, the fish market operates at full voice every morning until around 1:30 pm, and restaurants fill with people eating actual dinner at 9 pm. The history and the present occupy the same narrow lane simultaneously — which is most of the point.</p>
+
+<div class="pmtp-band pmtp-band--sand">
+  <h4>Getting Here &amp; Getting Around</h4>
+  <p>Catania Fontanarossa airport (CTA) is about an hour away. The Interbus service from Catania to Syracuse is direct and faster than the train — take it. If you're arriving by train, the station is on the mainland; it's a short walk or taxi ride to the island bridges. By car: the Autostrada A18/A19 connects to Syracuse. Ortigia is a traffic limited zone (ZTL) — drive onto it without a permit and a fine arrives by post weeks later. Leave the car in the large Talete car park at the island's northern entrance and walk in from there.</p>
+  <p style="margin:0;">Once you're on Ortigia, you won't need a vehicle. Everything is on foot. For the Neapolis Archaeological Park on the mainland, it's a 30–40 minute walk or you can catch the 105 bus, which runs a circular route every 25 minutes for €1.20 per journey. Always verify current fares directly.</p>
+</div>
+
+<!-- SIGHTS -->
+<h2>Top Sights &amp; Experiences</h2>
+<p class="section-tagline">Start at the bridge, follow the honey-coloured stone, and let the island lead you south.</p>
+
+
+<div class="entry">
+  <span class="tag tag--must">Must Do</span>
+  <h3>Temple of Apollo</h3>
+<img
+  src="https://www.orminatours.com/wp-content/uploads/2025/06/Italy-Sicily-Syracuse-Temple-of-Apollo-scaled.webp"
+  alt="Temple of Apollo, Ortigia — the oldest Doric temple in Sicily"
+  style="width:100%;max-height:320px;object-fit:cover;border-radius:8px;display:block;margin:0 0 20px;"
+  loading="lazy"
+  onerror="this.style.display='none'"
+/>
+  <p>Cross the Ponte Umbertino onto Ortigia and the first thing you encounter is the oldest Doric temple in Sicily, built around 565 BC. It has been a Byzantine church, an Arab mosque, a Norman basilica, and a Spanish military barracks — each civilisation adding or stripping a layer. What remains is ruined but resonant: massive limestone drums on the grass, the original Greek dedication still carved into the foundation. There's no better introduction to the way this island works.</p>
+  <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Temple+of+Apollo+Ortigia%2C%20Syracuse" target="_blank" rel="noopener">Open in Google Maps</a>
+</div>
+
+<div class="entry">
+  <span class="tag tag--must">Must Do</span>
+  <h3>Piazza del Duomo &amp; the Cathedral</h3>
+<img
+  src="https://static.wixstatic.com/media/90c037_efba6a1acb224acf9d347c41249e1f37~mv2.jpg/v1/fill/w_544,h_362,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/90c037_efba6a1acb224acf9d347c41249e1f37~mv2.jpg"
+  alt="Piazza del Duomo, Ortigia, Syracuse"
+  style="width:100%;max-height:320px;object-fit:cover;border-radius:8px;display:block;margin:0 0 14px;"
+  loading="lazy"
+  onerror="this.style.display='none'"
+/>
+  <p>The piazza is the centre of gravity of Ortigia — a gently concave stage framed by Baroque palaces, all in the same pale limestone. The Cathedral is the main event: its 18th-century facade opens onto a building that is genuinely a 5th-century BC Greek Temple of Athena. The Doric columns from that original temple still frame the nave inside and jut from the exterior walls. You're not looking at a building that was built to look old — you're looking at a building that is old, repurposed, and still in daily use. A small fee gets you inside; it's worth it. Santa Lucia alla Badia on the same piazza holds Caravaggio's <em>Burial of St. Lucy</em>, painted here in 1608 — currently housed nearby, so confirm the location before visiting.</p>
+  <div class="tip">Restaurants facing the piazza directly carry a tourist premium. Walk one or two streets back and you'll find the same quality at meaningfully lower prices.</div>
+  <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Piazza+del+Duomo+Ortigia%2C%20Syracuse" target="_blank" rel="noopener">Open in Google Maps</a>
+</div>
+
+<div class="entry">
+  <span class="tag tag--must">Must Do</span>
+  <h3>Fonte Aretusa</h3>
+<img
+  src="https://eydueoreztr.exactdn.com/wp-content/uploads/2016/03/Fonte-Aretusa-di-Siracusa-930x620-1.jpg"
+  alt="Fonte Aretusa, Ortigia — freshwater spring surrounded by papyrus on the waterfront"
+  style="width:100%;max-height:320px;object-fit:cover;border-radius:8px;display:block;margin:0 0 20px;"
+  loading="lazy"
+  onerror="this.style.display='none'"
+/>
+  <p>Walk south from Piazza del Duomo to the waterfront and you'll find a shallow basin of fresh water pushing up beside the sea, ringed by papyrus and animated by ducks. The myth: the nymph Arethusa was bathing in a river in Greece when the river god Alpheus took a liking to her. Artemis transformed her into a spring; Alpheus followed as a river underground. They've been here together ever since. No entry fee — it's open air on the promenade, and at sunset the limestone buildings behind it catch the last light in a way that rewards staying put with a drink.</p>
+  <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Fonte+Aretusa+Ortigia%2C%20Syracuse" target="_blank" rel="noopener">Open in Google Maps</a>
+</div>
+
+<div class="entry">
+  <span class="tag tag--must">Must Do</span>
+  <h3>Castello Maniace</h3>
+<img
+  src="https://www.gpsmycity.com/img/gd_sight/62356.jpg"
+  alt="Castello Maniace — Frederick II's 13th-century fortress at the southern tip of Ortigia"
+  style="width:100%;max-height:320px;object-fit:cover;border-radius:8px;display:block;margin:0 0 20px;"
+  loading="lazy"
+  onerror="this.style.display='none'"
+/>
+  <p>Frederick II built this fortress between 1232 and 1240 at the southernmost tip of Ortigia, where the island juts into the Ionian Sea. Named after the Byzantine general who took Syracuse from the Arabs in 1038, it's a substantial square mass with a decorated portal and views across the Gulf of Syracuse in three directions. Walk the ramparts and then look back at the island from the water — the castle reads even better on the boat tour.</p>
+  <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Castello+Maniace+Ortigia%2C%20Syracuse" target="_blank" rel="noopener">Open in Google Maps</a>
+</div>
+
+<div class="entry">
+  <span class="tag tag--must">Must Do</span>
+  <h3>Neapolis Archaeological Park</h3>
+<img
+  src="https://www.hermes-sicily.com/images/parco-archeologico-siracusa_4018m.jpg"
+  alt="Neapolis Archaeological Park, Syracuse — Greek theatre and ruins"
+  style="width:100%;max-height:320px;object-fit:cover;border-radius:8px;display:block;margin:0 0 14px;"
+  loading="lazy"
+  onerror="this.style.display='none'"
+/>
+  <p>This is where mainland Syracuse earns its place on the itinerary. The 5th-century BC Greek theatre — 16,000-seat capacity, hewn directly from the hillside — is one of the best-preserved classical theatres anywhere in Italy, and it's still used for performances. The INDA (Instituto Nazionale del Dramma Antico) stages classical Greek drama here annually in May and June; if your dates overlap, book tickets before you arrive. Nearby: the Ear of Dionysius, a 23-metre cave with acoustics so acute that a whisper becomes a roar, and a 2nd-century Roman amphitheatre. Give yourself at least 2–3 hours. Hours are approximately 8:30 am–7:30 pm in summer, with earlier closures outside that period — verify pricing and hours directly before visiting, as both change seasonally.</p>
+  <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Neapolis+Archaeological+Park+Syracuse" target="_blank" rel="noopener">Open in Google Maps</a>
+</div>
+
+
+<div class="entry">
+  <span class="tag tag--must">Must Do</span>
+  <h3>Boat Tour &amp; Sea Caves</h3>
+<img
+  src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/03/1c/c8/caption.jpg?w=1200&h=-1&s=1"
+  alt="Boat tour around Ortigia island and sea caves, Syracuse"
+  style="width:100%;max-height:320px;object-fit:cover;border-radius:8px;display:block;margin:0 0 20px;"
+  loading="lazy"
+  onerror="this.style.display='none'"
+/>
+  <p>Seeing Ortigia from the water reframes the whole island. Boats depart from near the main harbour entrance and circumnavigate the island, passing the Castello Maniace, Fonte Aretusa, the old port, and the seafront promenades, before heading to the sea caves on Syracuse's north coast. The caves go in deep enough for stalactites, corals, and shapes locals have been naming for generations — the Ear of Dionysius cave, the heart-shaped Lovers' Cave, the Doves Cave. Most tours include a swim stop in summer. Book through your accommodation or at the harbour; multiple operators run these throughout the day.</p>
+  <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Boat+Tours+Ortigia+Syracuse" target="_blank" rel="noopener">Open in Google Maps</a>
+</div>
+
+<div class="entry">
+  <span class="tag tag--gem">Hidden Gem</span>
+  <h3>La Giudecca &amp; the Mikveh</h3>
+<img
+  src="https://sicily-holiday.com/images/images/siracusa/SIC-san-giovannello_130637HDR.jpg"
+  alt="La Giudecca — the ancient Jewish quarter of Ortigia, Syracuse"
+  style="width:100%;max-height:320px;object-fit:cover;border-radius:8px;display:block;margin:0 0 20px;"
+  loading="lazy"
+  onerror="this.style.display='none'"
+/>
+  <p>Ortigia's Jewish quarter was occupied from the 6th century until the expulsion of 1492 and is one of the island's most rewarding detours. Above ground, wander without a plan: flower-draped courtyards, ancient doors worn smooth, Hebrew inscriptions still legible on some walls. Below the Alla Giudecca hotel, 18 metres underground, lie three ritual baths — mikveh — fed by natural spring water and among the most intact examples in Europe. Access is guided only (approximately 30 minutes), photography is prohibited inside, and booking must be made through the Alla Giudecca hotel. Worth every step of the 48-stair descent.</p>
+  <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Giudecca+Jewish+Quarter+Ortigia%2C%20Syracuse" target="_blank" rel="noopener">Open in Google Maps</a>
+</div>
+
+<div class="entry" style="border-bottom:none;margin-bottom:0;padding-bottom:0;">
+  <span class="tag tag--local">Local Favourite</span>
+  <h3>Piazza Archimede &amp; the Lungomare</h3>
+<img
+  src="https://images.trvl-media.com/place/4912/1b6288a2-ffe2-422f-8757-38e62292849a.jpg"
+  alt="Piazza Archimede and the lungomare promenade, Ortigia"
+  style="width:100%;max-height:320px;object-fit:cover;border-radius:8px;display:block;margin:0 0 20px;"
+  loading="lazy"
+  onerror="this.style.display='none'"
+/>
+  <p>Piazza Archimede honours Syracuse's most famous citizen — Archimedes was born here in 287 BC — though the central fountain depicts Diana (Artemis), mythological protector of Ortigia. It's a natural stopping point between the Temple of Apollo and Piazza del Duomo, and a good place for a mid-morning coffee. From here, or from anywhere along the island's edge, you can pick up the lungomare: a palm-lined promenade that rings the entire island. The western side looks over the Porto Grande, the vast harbour that held off the Athenian fleet in 413 BC. The eastern side faces open Ionian Sea. The stretch near Fonte Aretusa at dusk is the island at its quietest and most itself.</p>
+  <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Piazza+Archimede+Ortigia%2C%20Syracuse" target="_blank" rel="noopener">Open in Google Maps</a>
+</div>
+
+<!-- FOOD & DRINK -->
+<h2 style="margin-top:44px;">Food &amp; Drink</h2>
+<p class="section-tagline">The market sets the table. Follow the queue to find the rest.</p>
+
+<img
+  src="https://i.guim.co.uk/img/media/02b3af8b479e7493989529b197bfe4e9a958d6db/0_297_6016_3611/master/6016.jpg?width=465&dpr=1&s=none&crop=none"
+  alt="Sicilian food and market produce, Ortigia Syracuse"
+  style="width:100%;max-height:340px;object-fit:cover;border-radius:8px;display:block;margin:0 0 24px;"
+  loading="lazy"
+  onerror="this.style.display='none'"
+/>
+
+<div class="entry">
+  <span class="tag tag--must">Must Do</span>
+  <h3>Mercato di Ortigia</h3>
+  <p>Open every morning until around 1:30 pm, the market is where the food energy of Ortigia concentrates. Prawns the colour of sunset, ricotta salata, the pear-shaped provola dei Nebrodi, blood oranges in season, bright vegetables, caponata sold by the jar. Even if you're not cooking, come to taste and watch. The market runs several blocks and includes prepared-food stalls — this is also where you find the island's most famous sandwichmaker.</p>
+  <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Mercato+di+Ortigia%2C%20Syracuse" target="_blank" rel="noopener">Open in Google Maps</a>
+</div>
+
+<div class="entry">
+  <span class="tag tag--must">Must Do</span>
+  <h3>Caseificio Borderi</h3>
+  <p>At the market's end, follow the queue. Andrea Borderi assembles panini with the confidence of someone who has been doing this for decades and doesn't need your input: local Ragusano cheese, smoked prosciutto, grilled aubergine, sun-dried tomatoes, arugula, fresh mozzarella, olive oil, all packed into bread that holds together without question. The sandwiches are enormous — splitting one is entirely reasonable. Panini typically run around €8. You can sit (small coperto charge) or take yours to the nearby bridge. Don't try to customise. Let him work.</p>
+  <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Caseificio+Borderi+Ortigia%2C%20Syracuse" target="_blank" rel="noopener">Open in Google Maps</a>
+</div>
+
+<div class="entry">
+  <span class="tag tag--local">Local Favourite</span>
+  <h3>Ranieri</h3>
+  <p>Consistently cited as one of Ortigia's best seafood restaurants, with attentive service, thoughtful wine guidance, and cooking that honours its ingredients without overworking them. Tables are set along a piazza surrounded by Baroque facades. Book ahead — it fills quickly on weekend evenings.</p>
+  <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Ristorante+Ranieri+Ortigia+Syracuse" target="_blank" rel="noopener">Open in Google Maps</a>
+</div>
+
+<div class="entry">
+  <span class="tag tag--local">Local Favourite</span>
+  <h3>Cod da Saretta</h3>
+  <p>No reservations, a menu that changes with the catch, outdoor seating on a narrow side street. Food tour guides send their clients here and come back themselves. Simple, very fresh fish and pasta at reasonable prices. Arrive early for the better outdoor tables — the interior has no air conditioning. Expect to wait in summer evenings.</p>
+  <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Cod+da+Saretta+Ortigia+Syracuse" target="_blank" rel="noopener">Open in Google Maps</a>
+</div>
+
+<div class="entry">
+  <span class="tag tag--gem">Hidden Gem</span>
+  <h3>Timilia</h3>
+  <p>Dinner only, closed Mondays. Via Tommaso Gargallo, 24. Timilia specialises in <em>pinsa</em> — the ancient predecessor to pizza, with a lighter, crispier base — alongside one of Ortigia's most serious craft beer lists, many produced locally. Recommended by a local bar owner, which is about as reliable an endorsement as this island offers.</p>
+  <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Timilia+Restaurant+Ortigia+Syracuse" target="_blank" rel="noopener">Open in Google Maps</a>
+</div>
+
+<div class="entry" style="border-bottom:none;margin-bottom:0;padding-bottom:0;">
+  <span class="tag tag--local">Local Favourite</span>
+  <h3>Pane di Mare</h3>
+  <p>A fish fast-food bar with outdoor seating, usually packed with locals on weekend lunchtimes. Antipasti platters, small sandwiches, fried sardines, and the signature cones of fried fish. Casual, quick, honest — the right first meal after arriving tired and hungry.</p>
+  <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Pane+di+Mare+Ortigia+Syracuse" target="_blank" rel="noopener">Open in Google Maps</a>
+</div>
+
+<div class="food-note">
+  <h4>What to Order</h4>
+  <ul>
+    <li>Pasta alla Norma — aubergine, tomato, ricotta salata</li>
+    <li>Pasta con le sarde — sardines, fennel, breadcrumbs</li>
+    <li>Arancini — fried rice balls, everywhere and always good</li>
+    <li>Scacciate — Sicilian stuffed flatbread</li>
+    <li>Caponata — sweet-sour aubergine stew; buy a jar to take home</li>
+    <li>Granita con brioche — breakfast. Not optional.</li>
+    <li>Cannoli — ricotta-filled shells; Sicilians put pistachio on everything including this</li>
+    <li>Gamberoni — local prawns, simply done</li>
+  </ul>
+  <p style="margin-top:14px;font-size:14px;color:var(--ink-soft);">The <em>coperto</em> — a cover charge of a few euros per person — is standard in Syracuse. It covers the linen, settings, and bread. It is not a scam. Restaurants don't open for dinner until 7:30–8 pm; showing up at 6 pm gets you a puzzled look and an empty room. Any whole fish listed at a price "per etto" (per 100g) will cost significantly more than the listed figure — ask the estimated weight before the kitchen weighs it.</p>
+</div>
+
+<!-- HIDDEN GEMS -->
+<h2 style="margin-top:44px;">Hidden Gems &amp; Local Tips</h2>
+<p class="section-tagline">What the piazza doesn't put on a sign.</p>
+
+<img
+  src="https://www.golivegotravel.nl/wp-content/uploads/2025/09/Ortigia-center-8-min.jpg"
+  alt="Ortigia historic centre streets and architecture"
+  style="width:100%;max-height:340px;object-fit:cover;border-radius:8px;display:block;margin:0 0 24px;"
+  loading="lazy"
+  onerror="this.style.display='none'"
+/>
+
+<div class="gems-grid">
+
+  <div class="gem-card">
+    <span class="tag tag--gem">Hidden Gem</span>
+    <h3>Arrive Before the Market</h3>
+    <p>Ortigia at sunrise belongs to almost nobody. The piazzas are empty, the light on the limestone is amber, the Fonte Aretusa reflects unbroken. The market stalls are just setting up. Set the alarm once and go.</p>
+  </div>
+
+  <div class="gem-card">
+    <span class="tag tag--local">Local Favourite</span>
+    <h3>The Passeggiata</h3>
+    <p>Don't plan anything for the two hours around sunset. Pour a Nero d'Avola, find a bench on the lungomare near Fonte Aretusa, and watch the entire island do what Sicilians have done every evening for centuries: walk slowly, talk loudly, and refuse to be anywhere else. The island comes into its own after 8 pm.</p>
+  </div>
+
+  <div class="gem-card">
+    <span class="tag tag--gem">Hidden Gem</span>
+    <h3>Opera dei Pupi</h3>
+    <img
+      src="https://static.wixstatic.com/media/21814b_852437d09cf44d45b2503bb809c38af1~mv2.png/v1/fill/w_544,h_338,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/21814b_852437d09cf44d45b2503bb809c38af1~mv2.png"
+      alt="Opera dei Pupi — traditional Sicilian puppet theatre, Ortigia"
+      style="width:100%;max-height:200px;object-fit:cover;border-radius:6px;display:block;margin:8px 0 10px;"
+      loading="lazy"
+      onerror="this.style.display='none'"
+    />
+    <p>Sicilian puppet theatre is a UNESCO Intangible Cultural Heritage tradition. Ortigia has a working theatre performing the full repertoire — Norman knights, Saracen warriors, epic battles with armoured marionettes half a metre tall. Easy to overlook; consistently memorable once you're inside. The adjacent museum has the artefacts.</p>
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Opera+dei+Pupi+Syracuse" target="_blank" rel="noopener">Open in Google Maps</a>
+  </div>
+
+  <div class="gem-card">
+    <span class="tag tag--gem">Hidden Gem</span>
+    <h3>Night Walking Tour</h3>
+    <img
+      src="https://media-cdn.tripadvisor.com/media/attractions-splice-spp-674x446/0b/f1/14/42.jpg"
+      alt="Night walking tour of Ortigia, Syracuse"
+      style="width:100%;max-height:200px;object-fit:cover;border-radius:6px;display:block;margin:8px 0 10px;"
+      loading="lazy"
+      onerror="this.style.display='none'"
+    />
+    <p>Several operators — including well-reviewed guides on Airbnb Experiences — run evening walking tours of Ortigia covering the mythology, the layered civilisations, and the stories the buildings don't put on plaques. Doing this early in your stay reframes everything you see for the rest of the trip.</p>
+  </div>
+
+  <div class="gem-card">
+    <span class="tag tag--gem">Hidden Gem</span>
+    <h3>Hypogeum of Piazza del Duomo</h3>
+    <img
+      src="https://mediaim.expedia.com/localexpert/1074612/b42c1160-9029-477f-a625-e86f34d8f795.jpg?impolicy=resizecrop&rw=500&rh=280"
+      alt="Hypogeum underground tunnels beneath Piazza del Duomo, Ortigia"
+      style="width:100%;max-height:200px;object-fit:cover;border-radius:6px;display:block;margin:8px 0 10px;"
+      loading="lazy"
+      onerror="this.style.display='none'"
+    />
+    <p>Directly beneath the great piazza lie tunnels used as air raid shelters in World War II, and deeper still, ancient cisterns carved from the same limestone used above. Access has been intermittent due to ongoing renovations — verify current status through your hotel or the tourist office before planning a visit.</p>
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Ipogeo+Piazza+Duomo+Ortigia%2C%20Syracuse" target="_blank" rel="noopener">Open in Google Maps</a>
+  </div>
+
+  <div class="gem-card">
+    <span class="tag tag--local">Local Favourite</span>
+    <h3>U'Sicilianu, Giudecca</h3>
+    <img
+      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5OCSFzldBDcg1NJ3peQviFUrb1m82sWBD6Q&s"
+      alt="U'Sicilianu restaurant in the Giudecca quarter, Ortigia"
+      style="width:100%;max-height:200px;object-fit:cover;border-radius:6px;display:block;margin:8px 0 10px;"
+      loading="lazy"
+      onerror="this.style.display='none'"
+    />
+    <p>A tiny kitchen in the Jewish Quarter serving arancini, scacciate, lasagne, and melanzane parmigiana with none of the performance of the tourist-circuit restaurants. Generous portions, reasonable prices, genuine welcome. Look for it in the Giudecca's back streets.</p>
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=U+Sicilianu+Ortigia+Syracuse" target="_blank" rel="noopener">Open in Google Maps</a>
+  </div>
+
+  <div class="gem-card">
+    <span class="tag tag--practical">Practical</span>
+    <h3>Day Trip: Noto</h3>
+<img
+    src="https://www.orminatours.com/wp-content/uploads/2025/04/Italy-Sicily-Panoramic-view-of-Noto-old-town-and-Noto-Cathedral.webp"
+    alt="Panoramic view of Noto old town and Cathedral, day trip from Ortigia"
+    style="width:100%;max-height:200px;object-fit:cover;border-radius:6px;display:block;margin:8px 0 10px;"
+    loading="lazy"
+    onerror="this.style.display='none'"
+  />
+    <p>Thirty minutes south by car or train. Noto is arguably the most cohesively Baroque town in Europe — rebuilt entirely after the 1693 earthquake in a single unified style. A half-day from Ortigia is easy. Go in late afternoon; the light on the cathedral facade at golden hour makes the journey.</p>
+  </div>
+
+  <div class="gem-card">
+    <span class="tag tag--practical">Practical</span>
+    <h3>Swimming &amp; Beaches</h3>
+<img
+    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPcAX0OpscasBfeWgbLj2Ui0Pxs_FFXDHa2A&s"
+    alt="Swimming and beaches near Ortigia, Syracuse"
+    style="width:100%;max-height:200px;object-fit:cover;border-radius:6px;display:block;margin:8px 0 10px;"
+    loading="lazy"
+    onerror="this.style.display='none'"
+  />
+    <p>Ortigia itself has accessible swimming off the eastern rocky coastline along the Alfeo promenade. For proper sandy beaches, Fontane Bianche is about 20 minutes south by car or bus — clear, shallow Ionian water. For snorkelling, the Plemmirio Marine Protected Area is the best option in the area.</p>
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Fontane+Bianche+Beach+Syracuse" target="_blank" rel="noopener">Open in Google Maps</a>
+  </div>
+
+</div>
+
+<!-- SHOPPING -->
+<div class="pmtp-band pmtp-band--aqua" style="margin-top:28px;">
+  <h4>Shopping &amp; Markets</h4>
+<img
+  src="https://c8.alamy.com/comp/2MMWPX6/the-ortigia-market-syracuse-sicily-italy-2MMWPX6.jpg"
+  alt="Ortigia market, Syracuse — fresh produce and local specialties"
+  style="width:100%;max-height:260px;object-fit:cover;border-radius:8px;display:block;margin:0 0 10px;"
+  loading="lazy"
+  onerror="this.style.display='none'"
+/>
+  <p>The Mercato di Ortigia (open every morning until around 1:30 pm) is the best place to buy local cheeses, olives, fresh fish, seasonal produce, and prepared Sicilian specialties. At the market's edge, <strong>Fratelli Burgio</strong> specialises in quality Sicilian salumi, jarred preserves, cheese, caponata, and crudo — the most honest edible souvenirs on the island. For ceramics, linen, and artisan food products, Via della Maestranza and Via Cavour are Ortigia's main shopping streets. Look for local ceramics, almond products, and wine from the area around Syracuse and the Val di Noto.</p>
+</div>
+
+<!-- PRACTICAL -->
+<h2 style="margin-top:44px;">Practical Information</h2>
+<p class="section-tagline">Everything you need before you cross the bridge.</p>
+
+<h4 style="margin-bottom:12px;">Best Time to Visit</h4>
+<div class="season-grid">
+  <div class="season-card">
+    <div class="season-card-name">Spring</div>
+    <div class="season-card-rating">
+      <div class="dot dot--on"></div><div class="dot dot--on"></div><div class="dot dot--on"></div><div class="dot dot--on"></div><div class="dot dot--on"></div>
+    </div>
+    <p>April–June. Warm without the heat assault of August, crowds manageable, almond blossoms in early spring. Greek theatre season runs May–June. Best overall window.</p>
+  </div>
+  <div class="season-card">
+    <div class="season-card-name">Summer</div>
+    <div class="season-card-rating">
+      <div class="dot dot--on"></div><div class="dot dot--on"></div><div class="dot dot--on"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+    <p>July–August. Peak heat (30°C+), peak crowds, peak prices. The sea is at its best. Book accommodation months ahead — the island fills completely.</p>
+  </div>
+  <div class="season-card">
+    <div class="season-card-name">Autumn</div>
+    <div class="season-card-rating">
+      <div class="dot dot--on"></div><div class="dot dot--on"></div><div class="dot dot--on"></div><div class="dot dot--on"></div><div class="dot"></div>
+    </div>
+    <p>September–October. Heat softens, crowds thin noticeably, sea still swimmable into October. Food festivals and fresh season produce.</p>
+  </div>
+  <div class="season-card">
+    <div class="season-card-name">Winter</div>
+    <div class="season-card-rating">
+      <div class="dot dot--on"></div><div class="dot dot--on"></div><div class="dot dot--on"></div><div class="dot"></div><div class="dot"></div>
+    </div>
+    <p>November–March. Mild (often 15–18°C), atmospheric, crowd-free. Some restaurants and sites reduce hours. December skies are often clear and blue.</p>
+  </div>
+</div>
+
+<h4 style="margin-top:28px;margin-bottom:12px;">How Many Days</h4>
+<div class="practical-grid">
+  <div class="practical-card">
+    <h3>1 Day</h3>
+    <p>Key sights on Ortigia only — the Temple of Apollo, Piazza del Duomo, Fonte Aretusa, and the lungomare. Tight but doable.</p>
+  </div>
+  <div class="practical-card">
+    <h3>2–3 Nights</h3>
+    <p>The sweet spot. Ortigia plus Neapolis Archaeological Park, a boat tour around the island, and a day trip to Noto.</p>
+  </div>
+  <div class="practical-card">
+    <h3>4–5 Nights</h3>
+    <p>Adds beach time, slower wandering, and day trips deeper into the Val di Noto. The island rewards people who slow down.</p>
+  </div>
+</div>
+
+<div class="pmtp-band pmtp-band--sand" style="margin-top:28px;">
+  <h4>Cultural Notes</h4>
+  <ul style="list-style:none;padding:0;">
+    <li style="padding:4px 0;font-size:15px;border-bottom:1px solid var(--line);display:flex;gap:8px;"><span style="color:var(--aqua);flex-shrink:0;">·</span> Dress modestly for cathedral visits — shoulders and knees covered.</li>
+    <li style="padding:4px 0;font-size:15px;border-bottom:1px solid var(--line);display:flex;gap:8px;"><span style="color:var(--aqua);flex-shrink:0;">·</span> Restaurants don't open for dinner until 7:30–8 pm. Many shops close 1–4 pm for riposo.</li>
+    <li style="padding:4px 0;font-size:15px;border-bottom:1px solid var(--line);display:flex;gap:8px;"><span style="color:var(--aqua);flex-shrink:0;">·</span> English is widely spoken in tourist areas. English-speaking tourist police patrol Ortigia in summer.</li>
+    <li style="padding:4px 0;font-size:15px;border-bottom:1px solid var(--line);display:flex;gap:8px;"><span style="color:var(--aqua);flex-shrink:0;">·</span> Italy is broadly welcoming to LGBTQ+ travellers. No specific issues reported in Ortigia.</li>
+    <li style="padding:4px 0;font-size:15px;display:flex;gap:8px;"><span style="color:var(--aqua);flex-shrink:0;">·</span> EU citizens: carry your EHIC/GHIC card. Italian universal healthcare means any public hospital will treat you regardless of insurance. Emergency: 112. Medical: 118.</li>
+  </ul>
+</div>
+
+<!-- WHAT TO AVOID -->
+<h2 style="margin-top:44px;">What to Avoid</h2>
+<p class="section-tagline">The honest edit — things that cost time, money, or both.</p>
+
+<div class="avoid-grid">
+  <div class="avoid-card">
+    <span class="tag tag--avoid">Avoid</span>
+    <h3>Eating on Piazza del Duomo</h3>
+    <p>Piazza-facing restaurants charge a significant premium for the view. Walk one block in any direction and you're in genuine eating territory at half the price for identical food.</p>
+  </div>
+  <div class="avoid-card">
+    <span class="tag tag--avoid">Avoid</span>
+    <h3>Driving onto Ortigia</h3>
+    <p>Ortigia is a ZTL zone. Unauthorised entry results in a fine that arrives by post weeks later — by which point it's very difficult to contest. Park in the Talete car park and walk in.</p>
+  </div>
+  <div class="avoid-card">
+    <span class="tag tag--avoid">Avoid</span>
+    <h3>Unlicensed Tour Guides</h3>
+    <p>You'll be approached near the bridges and the Duomo. Quality is variable and prices are not. Licenced guides and well-reviewed Airbnb Experiences operators make a real difference to what you actually understand about this place.</p>
+  </div>
+  <div class="avoid-card">
+    <span class="tag tag--avoid">Avoid</span>
+    <h3>Arriving in August Without Bookings</h3>
+    <p>The island is small and fills completely in peak summer. Showing up in July or August without pre-booked accommodation means spending significantly more for something significantly worse.</p>
+  </div>
+  <div class="avoid-card">
+    <span class="tag tag--avoid">Avoid</span>
+    <h3>Unverified Fish Pricing</h3>
+    <p>Whole fish priced "per etto" (per 100g) will cost far more than the listed figure suggests. Always ask the estimated weight before the kitchen weighs it. Legal practice — but it catches people out constantly.</p>
+  </div>
+  <div class="avoid-card">
+    <span class="tag tag--avoid">Avoid</span>
+    <h3>Red Flags at the Beaches</h3>
+    <p>Beaches south of Syracuse — including Fontane Bianche and Arenella — fly red flags during rough conditions. These are enforced. The Ionian Sea develops strong currents quickly. Check the flag before entering the water.</p>
+  </div>
+</div>
+
+<div class="pmtp-band pmtp-band--aqua" style="margin-top:28px;">
+  <h4>The Archaeological Museum — Check Before You Go</h4>
+  <p>The Regional Archaeological Museum Paolo Orsi on the mainland is worth visiting when it's fully operational — it puts the ruins of Neapolis into vivid context. As of late 2024 it was reportedly undergoing renovations with limited access and a confusing layout. Verify its current status through the tourist office before making it a fixed part of your plans.</p>
+</div>
+
+<!-- FOOTER -->
+<div class="pmtp-footer">
+  <div style="font-family:'Fraunces',serif;font-size:20px;font-weight:600;">Andrea Gunter</div>
+  <div style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink-soft);font-size:15px;margin-bottom:14px;">Travel Advisor</div>
+  <div style="font-size:14px;margin-bottom:4px;"><a id="pmtpEmailLink" href="#"></a></div>
+  <div style="font-size:14px;margin-bottom:4px;">409-789-3579</div>
+  <div style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink-soft);font-size:14px;margin-top:14px;">Point Me to Paradise Travel</div>
+</div>
+
+<div class="pmtp-disclaimer">
+  <span style="display:block;font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);margin-bottom:8px;">Important — please read</span>
+  This guide is provided for informational purposes only. Locations, hours, conditions, and recommendations can change without notice, and ocean, weather, trail, road, and travel conditions can shift quickly and unpredictably. Point Me to Paradise Travel, the advisor named in this guide, and the authors of this content are not liable for any injury, illness, loss, theft, or harm of any kind arising from your visit to any location or participation in any activity referenced here. By using this guide, you accept full personal responsibility for your own safety. Use your own judgment, verify current conditions before any activity, follow all posted warnings and local regulations, and consult qualified professionals — lifeguards, park rangers, licensed guides, medical providers — where appropriate.
+</div>
+
+</div><!-- end max-width wrapper -->
+
+<script>
+(function(){
+  var l="andrea",d="pointmetoparadise.com";
+  if(!l||!d)return;
+  var a=l+"\u0040"+d;
+  var el=document.getElementById("pmtpEmailLink");
+  if(el){el.href="mailto:"+a;el.textContent=a;}
+})();
+</script>
+</body>
+</html>
