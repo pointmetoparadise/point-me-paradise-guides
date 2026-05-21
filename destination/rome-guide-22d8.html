@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rome — Point Me to Paradise Travel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --aqua-pale:#C4E4E1;
+    --aqua-mist:#EAF3F2;
+    --aqua:#75AFB1;
+    --aqua-dark:#4F8A8C;
+    --sand-light:#F4F1E9;
+    --warm-sand:#F5EFE4;
+    --gold-whisper:#D6C8A8;
+    --white:#FFFFFF;
+    --paper:#F9F6F1;
+    --ink:#2B2420;
+    --ink-soft:#6B6359;
+    --line:#E6DFD5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--paper); color: var(--ink); font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+  .outer { max-width: 680px; margin: 0 auto; padding: 0 28px 64px; }
+  h1 { font-family: 'Fraunces', serif; font-size: clamp(40px, 8vw, 68px); font-weight: 700; color: #fff; line-height: 1.0; text-shadow: 0 2px 20px rgba(0,0,0,0.45); letter-spacing: -0.01em; }
+  h2 { font-family: 'Fraunces', serif; font-size: clamp(20px,4vw,28px); font-weight: 600; color: var(--ink); line-height: 1.2; margin-bottom: 4px; }
+  h3 { font-family: 'Fraunces', serif; font-size: clamp(16px,3vw,20px); font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+  h4 { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+  .subhead { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(15px,3vw,18px); color: var(--ink-soft); margin-bottom: 24px; display: block; }
+  p { margin-bottom: 14px; color: var(--ink-soft); }
+  p:last-child { margin-bottom: 0; }
+  a { color: var(--aqua-dark); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .section-label { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--aqua-dark); margin-bottom: 10px; display: block; }
+  .divider { border: none; border-top: 1px solid var(--line); margin: 32px 0; }
+  .pmtp-hero { position: relative; width: calc(100% + 56px); margin: 0 -28px 40px; height: clamp(400px, 58vw, 580px); overflow: hidden; }
+  .pmtp-hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center 35%; display: block; }
+  .pmtp-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.04) 0%, rgba(0,0,0,0.10) 25%, rgba(0,0,0,0.38) 60%, rgba(30,20,12,0.80) 100%); }
+  .pmtp-hero-content { position: absolute; bottom: 0; left: 0; right: 0; padding: clamp(28px,6vw,52px) clamp(24px,5vw,44px) clamp(32px,6vw,48px); }
+  .pmtp-hero-eyebrow { font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.24em; text-transform: uppercase; color: var(--aqua-pale); margin-bottom: 16px; display: block; }
+  .pmtp-hero-rule { width: 48px; height: 1px; background: var(--gold-whisper); margin: 16px 0; }
+  .pmtp-hero-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(17px, 3.4vw, 22px); color: rgba(255,255,255,0.86); display: block; text-shadow: 0 1px 10px rgba(0,0,0,0.32); max-width: 500px; line-height: 1.4; }
+  .sec-photo { width: calc(100% + 56px); margin: 28px -28px 32px; height: clamp(190px, 40vw, 310px); overflow: hidden; position: relative; }
+  .sec-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block; }
+  .sec-photo-cap { position: absolute; bottom: 0; left: 0; right: 0; padding: 12px 20px 10px; background: linear-gradient(transparent, rgba(30,20,12,0.60)); font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 12.5px; color: rgba(255,255,255,0.85); letter-spacing: 0.03em; }
+  .entry-photo { width: 100%; height: clamp(170px, 32vw, 240px); object-fit: cover; object-position: center; border-radius: 6px; display: block; margin: 10px 0 14px; }
+  .pmtp-band { border-radius: 10px; padding: 26px 24px; margin-bottom: 20px; }
+  .pmtp-band-aqua { background: var(--aqua-mist); }
+  .pmtp-band-sand { background: var(--warm-sand); }
+  .entry { margin-bottom: 30px; padding-bottom: 30px; border-bottom: 1px solid var(--line); }
+  .entry:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .entry-tip { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 15px; color: var(--aqua-dark); margin-top: 10px; margin-bottom: 0; }
+  .map-link { display: inline-block; font-size: 12px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--aqua-dark); border: 1px solid var(--aqua); border-radius: 3px; padding: 4px 10px; margin-top: 8px; margin-bottom: 2px; white-space: nowrap; }
+  .map-link:hover { background: var(--aqua-pale); text-decoration: none; }
+  .avoid-block { background: #fdf5f4; border-left: 3px solid #b03a2e; border-radius: 0 6px 6px 0; padding: 16px 20px; margin-bottom: 16px; }
+  .avoid-block h4 { color: #8b2a21; margin-bottom: 4px; }
+  .avoid-block p { color: var(--ink-soft); font-size: 14.5px; margin-bottom: 0; }
+  .tag { display: inline-block; font-size: 9px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; padding: 3px 8px; border-radius: 3px; vertical-align: middle; margin-left: 4px; }
+  .tag-do    { background: var(--aqua-dark); color: #fff; }
+  .tag-local { background: var(--warm-sand); color: var(--ink); border: 1px solid var(--gold-whisper); }
+  .tag-gem   { background: var(--ink); color: var(--gold-whisper); }
+  .tag-prac  { background: var(--aqua-pale); color: var(--aqua-dark); }
+  .tag-avoid { background: #b03a2e; color: #fff; }
+  .season-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 2px; border-radius: 6px; overflow: hidden; margin: 16px 0 22px; border: 1px solid var(--line); }
+  .season-cell { background: var(--paper); padding: 12px 10px; text-align: center; }
+  .season-cell.peak { background: var(--aqua-pale); }
+  .season-cell .s-name { font-family: 'Fraunces', serif; font-size: 13px; font-weight: 600; color: var(--ink); display: block; margin-bottom: 3px; }
+  .season-cell .s-note { font-size: 11px; color: var(--ink-soft); line-height: 1.4; }
+  .info-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+  .info-card { background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 18px 16px; }
+  .info-card .ic-label { font-size: 9px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--aqua-dark); margin-bottom: 10px; display: block; }
+  .info-card p, .info-card li { font-size: 13.5px; color: var(--ink-soft); margin-bottom: 5px; }
+  .info-card ul { padding-left: 16px; }
+  .info-card strong { color: var(--ink); }
+  .nbhd-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 20px; }
+  .nbhd-card { background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 18px 16px; }
+  .nbhd-card h4 { font-size: 16px; margin-bottom: 3px; }
+  .nbhd-card .nbhd-vibe { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 13px; color: var(--aqua-dark); display: block; margin-bottom: 8px; }
+  .nbhd-card p { font-size: 13px; color: var(--ink-soft); margin-bottom: 6px; }
+  .pmtp-footer { background: var(--sand-light); margin-top: 64px; padding: 36px 28px; border-radius: 12px; }
+  .pmtp-disclaimer { margin-top: 28px; padding: 22px 26px; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; font-size: 12.5px; line-height: 1.7; color: var(--ink-soft); }
+  @media(max-width:640px){
+    body { font-size: 15px; }
+    .outer { padding: 0 20px 48px; }
+    .pmtp-hero { width: calc(100% + 40px); margin: 0 -20px 28px; height: clamp(280px,72vw,400px); }
+    .sec-photo { width: calc(100% + 40px); margin-left: -20px; margin-right: -20px; }
+    .pmtp-band { padding: 18px 16px; }
+    h2 { font-size: 20px; } h3 { font-size: 17px; }
+    .pmtp-footer { border-radius: 8px; padding: 24px 20px; }
+    .info-pair, .nbhd-grid { grid-template-columns: 1fr; }
+    .season-grid { grid-template-columns: repeat(2,1fr); }
+    .map-link { font-size: 13px; padding: 8px 12px; display: block; text-align: center; }
+  }
+</style>
+</head>
+<body>
+<div class="outer">
+
+  <div class="pmtp-hero">
+    <img class="pmtp-hero-img" src="https://www.italyperfect.com/g/photos/upload/sml_845543004-1590582528-ip-info-rome.jpg" alt="Rome, Italy" />
+    <div class="pmtp-hero-overlay"></div>
+    <div class="pmtp-hero-content">
+      <span class="pmtp-hero-eyebrow">Point Me to Paradise Travel</span>
+      <h1>Rome</h1>
+      <div class="pmtp-hero-rule"></div>
+      <span class="pmtp-hero-tagline">Layered, loud, and utterly unhurried about impressing you.</span>
+    </div>
+  </div>
+
+  <span class="section-label">01 — Orientation &amp; Character</span>
+  <h2>How to Read the City</h2>
+  <span class="subhead">Rome doesn't organise itself for your convenience — learn its logic and it opens up immediately.</span>
+  <p>Rome is built on and around seven hills, with the Tiber River curving through the west. The great ancient and Renaissance landmarks — the Colosseum, the Forums, the Pantheon, Piazza Navona — sit on the east bank. The Vatican and Trastevere occupy the west. Think of the city in three daily anchors: <strong>Ancient Rome</strong> (Colosseum to Capitoline Hill), <strong>Vatican Rome</strong> (St. Peter's and the Museums), and the <strong>Centro Storico</strong> (the Pantheon–Navona–Trevi corridor). Most major sights sit within 15–20 minutes of each other on foot. Your best transport is your feet.</p>
+  <div class="pmtp-band pmtp-band-aqua">
+    <h4>One navigational note worth keeping</h4>
+    <p style="margin-bottom:0;">Street-number logic in the centro is its own system. Odd and even numbers can run on the same side and then switch. Use a map app, not house numbers, when hunting a specific address.</p>
+  </div>
+  <a href="https://www.google.com/maps/search/?api=1&query=Historic+Centre+Rome" class="map-link" target="_blank">↗ Map: Historic Centre</a>
+  <div class="divider"></div>
+  <h3>The Neighbourhoods</h3>
+  <div class="nbhd-grid">
+    <div class="nbhd-card">
+      <h4>Centro Storico <span class="tag tag-do">Do It</span></h4>
+      <span class="nbhd-vibe">Navona · Pantheon · Campo de' Fiori</span>
+      <p>Baroque fountains, cobbled lanes, espresso bars where Romans have stood for a century. Tourist-heavy, yes, but irreplaceable. A strong first-time base.</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=Centro+Storico+Rome" class="map-link" target="_blank">↗ Map</a>
+    </div>
+    <div class="nbhd-card">
+      <h4>Monti <span class="tag tag-local">Local</span></h4>
+      <span class="nbhd-vibe">Bohemian · vintage · the locals' side of the Colosseum</span>
+      <p>Rome's oldest <em>rione</em>. Ivy-draped ochre buildings, craft beer bars, vintage boutiques, and the social fountain-square of Piazza della Madonna dei Monti.</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=Monti+neighbourhood+Rome" class="map-link" target="_blank">↗ Map</a>
+    </div>
+    <div class="nbhd-card">
+      <h4>Trastevere <span class="tag tag-do">Do It</span></h4>
+      <span class="nbhd-vibe">Cobblestones · ivy · late nights</span>
+      <p>Locals still live here — proudly — though the central lanes are tourist-thick by 8 pm. Excellent restaurants and bars. Better for dinner than for sleeping next to.</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=Trastevere+Rome" class="map-link" target="_blank">↗ Map</a>
+    </div>
+    <div class="nbhd-card">
+      <h4>Testaccio <span class="tag tag-local">Local</span></h4>
+      <span class="nbhd-vibe">Working-class · market · offal &amp; wine</span>
+      <p>The old slaughterhouse district, now Rome's most authentic food neighbourhood. Home to the covered Testaccio Market and some of the city's most respected trattorias.</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=Testaccio+Rome" class="map-link" target="_blank">↗ Map</a>
+    </div>
+    <div class="nbhd-card">
+      <h4>Prati <span class="tag tag-prac">Practical</span></h4>
+      <span class="nbhd-vibe">Wide boulevards · boutiques · Vatican adjacent</span>
+      <p>Middle-class, genuinely Roman, a short walk to St. Peter's. Via Cola di Rienzo is a serious shopping street. Better hotel value than the Centro Storico.</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=Prati+Rome" class="map-link" target="_blank">↗ Map</a>
+    </div>
+    <div class="nbhd-card">
+      <h4>Aventine &amp; Ostiense <span class="tag tag-gem">Off-Path</span></h4>
+      <span class="nbhd-vibe">Posh quiet · street art · keyhole views</span>
+      <p>Aventine Hill is a residential enclave with garden terraces and the famous Knights of Malta keyhole. Ostiense below holds Rome's best contemporary street art.</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=Aventine+Hill+Rome" class="map-link" target="_blank">↗ Map</a>
+    </div>
+    <div class="nbhd-card">
+      <h4>Coppedè <span class="tag tag-gem">Off-Path</span></h4>
+      <span class="nbhd-vibe">Art Nouveau · Neo-Gothic · surreal</span>
+      <p>A concentrated cluster of fantastical architecture designed 1913–1927. Art Nouveau, Neo-Gothic, and Baroque colliding in one fever dream. Almost nobody goes here.</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=Quartiere+Coppede+Rome" class="map-link" target="_blank">↗ Map</a>
+    </div>
+    <div class="nbhd-card">
+      <h4>San Lorenzo <span class="tag tag-local">Local</span></h4>
+      <span class="nbhd-vibe">Student energy · cheap eats · La Sapienza</span>
+      <p>Home to Rome's biggest university and the city's most unfiltered nightlife. Trattorias that charge fair prices. Not polished — that's the point.</p>
+      <a href="https://www.google.com/maps/search/?api=1&query=San+Lorenzo+Rome" class="map-link" target="_blank">↗ Map</a>
+    </div>
+  </div>
+
+  <div style="margin-top:20px;background:var(--paper);border:2px solid var(--aqua);border-radius:6px;padding:22px 20px;">
+    <h4 style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:var(--ink);margin-bottom:4px;">Esquilino — <em style="font-family:'Cormorant Garamond',serif;font-weight:400;color:var(--aqua-dark);">Your Home Base</em> <span class="tag tag-prac">Your Hotel</span></h4>
+    <span style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:13px;color:var(--aqua-dark);display:block;margin-bottom:12px;">Multicultural · well-connected · more Rome than you'd expect</span>
+    <img src="https://images3.bovpg.net/r/back/uk/sale/3b09eb5314af4c.jpg" alt="Esquilino neighbourhood, Rome" style="width:100%;height:200px;object-fit:cover;object-position:center;border-radius:4px;display:block;margin-bottom:14px;" />
+    <p style="font-size:13.5px;color:var(--ink-soft);margin-bottom:10px;">One of Rome's original seven hills, Esquilino sits just south of Termini Station and centres on Piazza Vittorio Emanuele II — one of the city's largest squares, ringed with 19th-century porticoed architecture. It has a reputation that's rougher than its reality: this is a lived-in, genuinely multicultural neighbourhood with layers of history that most visitors never stop to notice.</p>
+    <p style="font-size:13.5px;color:var(--ink-soft);margin-bottom:10px;">The neighbourhood's standout landmark is the <strong>Basilica di Santa Maria Maggiore</strong>, one of Rome's four great papal basilicas, with 5th-century mosaics that rank among the oldest in the city. It's a 10-minute walk from most hotels in the area and almost always less crowded than the Vatican. Pope Francis, breaking with centuries of tradition, chose to be buried here — the basilica has seen a quiet surge in visitors since 2025 as a result. Also worth a detour: the <strong>Church of Santa Prassede</strong>, a block away, with Byzantine mosaics that stop most people in their tracks.</p>
+    <p style="font-size:13.5px;color:var(--ink-soft);margin-bottom:10px;">The <strong>Nuovo Mercato Esquilino</strong>, tucked behind Piazza Vittorio, is Rome's most genuinely international market — spices, imported produce, and ingredients from dozens of countries alongside Italian staples. Arrive on a weekday morning before 1 pm. The surrounding streets hold some of the best and most affordable ethnic food in Rome: Chinese, Ethiopian, South Asian, and Middle Eastern restaurants operating well outside tourist pricing.</p>
+    <p style="font-size:13.5px;color:var(--ink-soft);margin-bottom:10px;">For something unmistakably Roman: <strong>Palazzo del Freddo di Giovanni Fassi</strong> (Via Principe Eugenio, 65) has been serving gelato since 1880 and moved to its current palace in 1928. Generations of Romans have queued here. Unlike most gelaterias it has actual seating, and the <em>sampietrino</em> — a chocolate recreation of Rome's cobblestones — is the thing to order.</p>
+    <p style="font-size:13.5px;color:var(--ink-soft);margin-bottom:14px;"><strong>Location advantage:</strong> Termini Station puts the entire city on your doorstep. Metro Line A (Termini or Repubblica stops) connects you to the Spanish Steps, Trevi Fountain corridor, and Vatican in under 15 minutes. Metro Line B reaches the Colosseum in two stops. The neighbourhood itself is walkable to Monti in 10 minutes and to the Colosseum in about 25.</p>
+    <p style="font-size:13px;color:var(--ink-soft);font-style:italic;margin-bottom:14px;"><strong>Honest note:</strong> The blocks immediately around Termini station can feel chaotic and attract petty crime — stay alert at night, keep bags close, and stick to well-lit streets. Two or three blocks away from the station, the neighbourhood settles down considerably.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Esquilino+Rome" class="map-link" target="_blank">↗ Map: Esquilino</a>
+    <a href="https://www.google.com/maps/search/?api=1&query=Santa+Maria+Maggiore+Rome" class="map-link" target="_blank" style="margin-left:6px;">↗ Santa Maria Maggiore</a>
+    <a href="https://www.google.com/maps/search/?api=1&query=Palazzo+del+Freddo+Fassi+Rome" class="map-link" target="_blank" style="margin-left:6px;">↗ Palazzo del Freddo</a>
+  </div>
+
+  <hr class="divider">
+
+  <span class="section-label">02 — Top Sights &amp; Experiences</span>
+  <h2>The Non-Negotiables</h2>
+  <span class="subhead">These are the reason Rome has been on every itinerary for three centuries — and they earn it.</span>
+
+  <div class="entry">
+    <h3>The Colosseum + Roman Forum + Palatine Hill <span class="tag tag-do">Do It</span></h3>
+    <img src="https://visit-rome-in-italy.global.ssl.fastly.net/pics/ancient-rome/colosseum/colosseum-arena-rome-italy-38.jpg" alt="The Colosseum arena, Rome" class="entry-photo" />
+    <p>One ticket, three sites, half a day minimum. The Colosseum is the anchor — genuinely staggering at any hour — but the Roman Forum and Palatine Hill are what give it weight. You'll walk mosaic floors that Augustus himself walked and look out over the Circus Maximus from the hilltop. Allow 3–4 hours for all three together.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Colosseum+Rome" class="map-link" target="_blank">↗ Map: Colosseum</a>
+    <p class="entry-tip">Book online weeks ahead — lines reach 500+ people within 30 minutes of opening in peak season. Combined ticket valid two days. Entry around €18 at time of research — verify at coopculture.it.</p>
+  </div>
+
+  <div class="entry">
+    <h3>Vatican Museums + Sistine Chapel + St. Peter's <span class="tag tag-do">Do It</span></h3>
+    <img src="https://images3.bovpg.net/r/back/uk/sale/3b09eb5314af4c.jpg" alt="St. Peter's Basilica at dusk, Vatican City" class="entry-photo" />
+    <p>The Vatican Museums hold one of the largest art collections on earth. Michelangelo's Sistine Chapel ceiling is different in person — the scale and density no photograph conveys. Don't rush past the Raphael Rooms on the way through. St. Peter's Basilica is free to enter; the dome climb costs a modest fee and delivers some of the best views in the city.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Vatican+Museums+Rome" class="map-link" target="_blank">↗ Map: Vatican Museums</a>
+    <p class="entry-tip">Book exclusively through museivaticani.va — third-party sellers charge double or sell fakes. Covered knees and shoulders required. St. Peter's interior access was modified during the 2025 Jubilee year; confirm current conditions before you arrive.</p>
+  </div>
+
+  <div class="entry">
+    <h3>The Pantheon <span class="tag tag-do">Do It</span></h3>
+    <img src="https://www.learnreligions.com/thmb/q41tKYaPMiGyNYTtlRxEouU5JgY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/pantheon--rome--italy-870287362-5a87671b6bf06900375c06f2.jpg" alt="The Pantheon, Rome" class="entry-photo" />
+    <p>Continuously in use since 125 CE, the Pantheon is the best-preserved ancient building on earth. The unreinforced concrete dome — still the world's largest — and the oculus cut perfectly into its crown remain engineering marvels. Raphael is buried here. Go first thing in the morning before the square fills up; entry now requires a timed slot booked online.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Pantheon+Rome" class="map-link" target="_blank">↗ Map: The Pantheon</a>
+    <p class="entry-tip">Experience it as a pause. Stand under the oculus and look up for a full minute. The tourists who rush through miss what they came for.</p>
+  </div>
+
+  <div class="entry">
+    <h3>Galleria Borghese <span class="tag tag-do">Do It</span></h3>
+    <img src="https://lp-cms-production.s3.amazonaws.com/public/2023-06/shutterstockRF362231132.jpg" alt="Galleria Borghese, Rome" class="entry-photo" />
+    <p>A villa in Villa Borghese park holding Bernini sculptures and paintings by Caravaggio, Raphael, and Titian in the rooms where Cardinal Scipione Borghese originally placed them. Entry is strictly limited — two-hour timed visits only, which creates a genuinely intimate encounter with works that would be mobbed anywhere else.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Galleria+Borghese+Rome" class="map-link" target="_blank">↗ Map: Galleria Borghese</a>
+    <p class="entry-tip">Book as far in advance as possible — slots go fast. The surrounding gardens are free and a good midday retreat from the heat.</p>
+  </div>
+
+  <div class="entry">
+    <h3>Trevi Fountain <span class="tag tag-do">Do It</span></h3>
+    <img src="https://romesite.com/images/fontana_di_trevi_rome.webp" alt="Trevi Fountain, Rome" class="entry-photo" />
+    <p>Nicola Salvi's Baroque fountain is the largest in Rome, and watching Oceanus preside over horses surging out of the palazzo wall never fully loses its charge — even through the crowds. Free to visit. One coin ensures your return, two brings romance, three leads to marriage. Toss right-handed over your left shoulder.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Trevi+Fountain+Rome" class="map-link" target="_blank">↗ Map: Trevi Fountain</a>
+    <p class="entry-tip">Arrive before 7:30 am or after 10 pm — midday is a press of bodies. Especially atmospheric at night when the floodlights take over.</p>
+  </div>
+
+  <div class="entry">
+    <h3>Piazza Navona <span class="tag tag-do">Do It</span></h3>
+    <img src="https://d1c96a4wcgziwl.cloudfront.net/f6f0rome4.png" alt="Piazza Navona, Rome" class="entry-photo" />
+    <p>Built over an ancient Roman stadium — the elongated oval shape still visible from above. Three fountains anchor the square; the centrepiece is Bernini's Fountain of the Four Rivers, representing four continents. Street performers, outdoor cafés, golden-hour light. Free to visit; best in the evening as the daytime density thins.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Piazza+Navona+Rome" class="map-link" target="_blank">↗ Map: Piazza Navona</a>
+  </div>
+
+  <div class="entry">
+    <h3>Castel Sant'Angelo <span class="tag tag-do">Do It</span></h3>
+    <img src="https://www.italia.it/content/dam/tdh/en/destinations/lazio/roma/museo-nazionale-di-castel-santangelo/media/20220216160029-castel-sant-angelo-museo-nazionale-di-castel-santangelo-roma-lazio-shutterstock-1816452401.jpg" alt="Castel Sant'Angelo, Rome" class="entry-photo" />
+    <p>Emperor Hadrian's mausoleum, later a papal fortress and refuge. The rooftop terrace delivers solid views over the Tiber and the city. Quieter than the Vatican and well worth combining on the same day. Plan about an hour.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Castel+Sant+Angelo+Rome" class="map-link" target="_blank">↗ Map: Castel Sant'Angelo</a>
+  </div>
+
+  <div class="entry">
+    <h3>Capitoline Museums <span class="tag tag-do">Do It</span></h3>
+    <img src="https://colosseumrometickets.com/wp-content/uploads/2018/08/Capitoline-hill-Campidoglio-is-one-of-the-Seven-Hills-of-Rome-Italy.-Rome-architecture-and-landmark.-View-of-the-Capitoline-Hill..jpg" alt="Capitoline Hill and Museums, Rome" class="entry-photo" />
+    <p>The world's oldest public museums. The original Marcus Aurelius bronze, the Dying Gaul, and direct terrace views down to the Roman Forum. Plan two hours. Consistently overlooked, which makes it one of the better crowd-light experiences in the city centre.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Capitoline+Museums+Rome" class="map-link" target="_blank">↗ Map: Capitoline Museums</a>
+  </div>
+
+  <hr class="divider">
+
+  <span class="section-label">03 — Food &amp; Drink</span>
+  <h2>What to Eat, and Where</h2>
+  <span class="subhead">Roman food is not complicated. It is precise. Those are not the same thing.</span>
+
+  <div class="pmtp-band pmtp-band-sand">
+    <h4>The Roman canon — order all four before you leave</h4>
+    <p><strong>Cacio e pepe:</strong> Pecorino Romano, black pepper, pasta water — simpler and harder than it looks. <strong>Carbonara:</strong> egg yolk, Pecorino, guanciale — no cream, ever. <strong>Amatriciana:</strong> guanciale, tomato, Pecorino. <strong>Gricia:</strong> guanciale and Pecorino, no tomato — the foundation the others were built on.</p>
+    <p style="margin-bottom:0;">Beyond pasta: <strong>supplì</strong> (fried rice balls, €2–3), <strong>carciofi alla giudia</strong> (whole fried artichokes), <strong>porchetta</strong> (herb-roasted pork, best at markets), <strong>pizza al taglio</strong> (sold by weight, eaten standing).</p>
+  </div>
+
+  <div class="pmtp-band pmtp-band-aqua" style="margin-bottom:20px;">
+    <h4>Dining rhythm — commit to it</h4>
+    <p style="margin-bottom:0;">Breakfast 7–10 am · Lunch 12:30–3 pm · Aperitivo 6–9 pm · Dinner 7:30 pm (locals eat 8:30 pm+). Don't arrive expecting quick service — arrive expecting to linger. Menus with photos near monuments: keep walking. Book popular spots 2–3 weeks ahead.</p>
+  </div>
+
+  <div class="entry">
+    <h3>Felice a Testaccio <span class="tag tag-local">Local</span></h3>
+    <p>Open since 1936. A waiter finishes mixing your cacio e pepe directly at your table until every tonnarello is coated. Retro checkered floors, unmistakably local atmosphere. Book well in advance. Via Mastro Giorgio, 29, Testaccio.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Felice+a+Testaccio+Rome" class="map-link" target="_blank">↗ Map</a>
+    <p class="entry-tip">Research prices: cacio e pepe around €14–22. Verify current hours and reservations before you go.</p>
+  </div>
+
+  <div class="entry">
+    <h3>Roma Sparita <span class="tag tag-local">Local</span></h3>
+    <p>The late Anthony Bourdain championed this Trastevere trattoria for its cacio e pepe, which arrives in a crispy, golden bowl made entirely of Parmigiano-Reggiano. One of the more theatrical presentations in a city not known for theatrics. Piazza di Santa Cecilia, outdoor seating year-round.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Roma+Sparita+Trastevere" class="map-link" target="_blank">↗ Map</a>
+  </div>
+
+  <div class="entry">
+    <h3>Da Enzo al 29 <span class="tag tag-local">Local</span></h3>
+    <p>One of Trastevere's most consistent trattorias — silky, peppery cacio e pepe, strong carbonara, no-nonsense Roman cooking. Via dei Vascellari, 29. Book ahead; it doesn't take walk-ins easily.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Da+Enzo+al+29+Rome" class="map-link" target="_blank">↗ Map</a>
+  </div>
+
+  <div class="entry">
+    <h3>Roscioli <span class="tag tag-local">Local</span></h3>
+    <p>Both a serious deli counter and a proper restaurant. Aged Pecorino for extra depth in the cacio e pepe, tonnarelli for the right texture. Also excellent for cheese, charcuterie, and wine. Via dei Giubbonari, near Campo de' Fiori. Reservations essential.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Roscioli+Rome" class="map-link" target="_blank">↗ Map</a>
+  </div>
+
+  <div class="entry">
+    <h3>Testaccio Market <span class="tag tag-do">Do It</span></h3>
+    <p>Rome's finest covered market: fresh pasta, artisan cheeses, supplì, seasonal produce, and street food vendors. Lunch here — €8–15 — beats most restaurant meals in the tourist centre. Open Monday–Saturday mornings.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Testaccio+Market+Rome" class="map-link" target="_blank">↗ Map</a>
+  </div>
+
+  <div class="entry">
+    <h3>Pizzarium Bonci <span class="tag tag-gem">Off-Path</span></h3>
+    <p>Gabriele Bonci's pizza laboratory in Prati. Light, airy Roman-style dough sold by weight with seasonal toppings. Unlike anything in the tourist centre. Via della Meloria, 43. Research price: €6–10.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Pizzarium+Bonci+Rome" class="map-link" target="_blank">↗ Map</a>
+  </div>
+
+  <div class="entry">
+    <h3>Jewish Ghetto — Carciofi alla Giudia <span class="tag tag-do">Do It</span></h3>
+    <p>Rome's Jewish community has been here for over 2,000 years — the oldest in Europe. Whole fried artichokes, baccalà, and particular cacio e pepe variations. Nonna Betta and Ba'Ghetto are both well-regarded. Research price: €20–35 per person.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Jewish+Ghetto+Rome" class="map-link" target="_blank">↗ Map</a>
+  </div>
+
+  <div class="pmtp-band pmtp-band-aqua">
+    <h4>Coffee — how Romans do it</h4>
+    <p>Stand at the bar; it costs less than sitting. Order a <em>caffè</em> (espresso), drink it in two sips, leave. A cappuccino after noon marks you as a tourist immediately. In summer, <em>granita di caffè</em> is essential. Sciascia Caffè 1919 in Prati is a historic institution.</p>
+    <p style="margin-bottom:0;"><em>Bar breakfast (espresso + cornetto): roughly €2–4. Sitting at a terrace near the Pantheon: expect to pay notably more.</em></p>
+  </div>
+
+  <div class="pmtp-band pmtp-band-sand" style="margin-top:20px;">
+    <h4>Gelato — what's real</h4>
+    <p style="margin-bottom:0;">Artisanal gelato sits in covered metal pans — not mounded in neon piles. Gelateria Torcè (Viale dell'Arte, EUR district) has won Gambero Rosso awards. Avoid any gelateria within sight of a monument that doesn't use covered pans.</p>
+  </div>
+
+  <hr class="divider">
+
+  <span class="section-label">04 — Outdoor &amp; Nature</span>
+  <h2>Parks, Hills, Ancient Roads</h2>
+  <span class="subhead">Rome is greener than its reputation — the parks and hilltops offer something the monuments cannot.</span>
+
+  <div class="entry">
+    <h3>Villa Borghese <span class="tag tag-do">Do It</span></h3>
+    <img src="https://www.stefanorometours.com/upload/CONF100/20230827/Temple_of_Aesculapius_and_the_Lake_Borghese_Gardens_Rome_shore_excursions_from_Civitavecchia.jpg" alt="Villa Borghese gardens and lake, Rome" class="entry-photo" />
+    <p>Rome's answer to Central Park: a sprawling hilltop garden with umbrella pines, a small rowing lake (~€3 for 20 min), bike rentals (~€12/hr), and the Galleria Borghese at its heart. Gardens are free. Good midday retreat from the heat. The Pincio terrace delivers city views worth the walk up.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Villa+Borghese+Rome" class="map-link" target="_blank">↗ Map</a>
+  </div>
+
+  <div class="entry">
+    <h3>Via Appia Antica — The Appian Way <span class="tag tag-gem">Off-Path</span></h3>
+    <img src="https://www.walksofitaly.com/blog/wp-content/uploads/2023/09/14902404537_1aef2f22b5_kres.jpg" alt="Via Appia Antica, Rome" class="entry-photo" />
+    <p>Ancient Rome's most important road, flanked by umbrella pines, tomb ruins, and the Catacombs of San Callixtus and San Sebastiano. On Sundays the road closes to traffic — this is the day to go, on foot or rented bike. Haunting, quiet, and genuinely removed from the tourist circuits.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Via+Appia+Antica+Rome" class="map-link" target="_blank">↗ Map</a>
+    <p class="entry-tip">The paving stones are original — gorgeous but uneven. Bring water and shoes with grip.</p>
+  </div>
+
+  <div class="entry">
+    <h3>Giardino degli Aranci + Aventine Hill <span class="tag tag-gem">Off-Path</span></h3>
+    <img src="https://www.walksinsiderome.com/uploads/2019/06/the_fortress_of_orage_garden.jpg" alt="Giardino degli Aranci, Aventine Hill, Rome" class="entry-photo" />
+    <p>A small terraced garden on Aventine Hill with a scenic terrace overlooking the Tiber and St. Peter's dome. Free, uncrowded, at its best in late afternoon. Pair with the Aventine Keyhole nearby and the adjacent Rose Garden — particularly in April–May bloom.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Giardino+degli+Aranci+Rome" class="map-link" target="_blank">↗ Map</a>
+  </div>
+
+  <div class="entry">
+    <h3>Villa Doria Pamphilj <span class="tag tag-local">Local</span></h3>
+    <img src="https://www.turismoroma.it/sites/default/files/Villa%20Doria%20Pamphilj2.jpg" alt="Villa Doria Pamphilj park, Rome" class="entry-photo" />
+    <p>Rome's largest public park — 184 hectares of gardens, fountains, and the 17th-century Casino del Bel Respiro. Frequented by Romans running, picnicking, and walking dogs. Almost no tourists. Open sunrise to sunset, free.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Villa+Doria+Pamphilj+Rome" class="map-link" target="_blank">↗ Map</a>
+  </div>
+
+  <div class="entry">
+    <h3>Janiculum Hill (Gianicolo) at Sunset <span class="tag tag-gem">Off-Path</span></h3>
+    <img src="https://www.cityrometours.com/upload/CONF93/20230404/janiculum-hill-rome.jpg" alt="Janiculum Hill panoramic view, Rome" class="entry-photo" />
+    <p>The best panoramic view of Rome. Not one of the official seven hills — it's actually higher than most of them — and the Gianicolo offers a complete sweep of domes and spires. Locals know this is where you watch the sunset. A cannon fires every day at noon; don't be startled if you're nearby.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Gianicolo+Hill+Rome" class="map-link" target="_blank">↗ Map</a>
+  </div>
+
+  <div class="entry">
+    <h3>Parco degli Acquedotti <span class="tag tag-gem">Off-Path</span></h3>
+    <img src="https://colosseumandvaticantours.com/wp-content/uploads/2023/10/parco-degli-acquedotti-rome.jpeg" alt="Parco degli Acquedotti, Rome" class="entry-photo" />
+    <p>Ancient Roman aqueducts marching across a suburban meadow — one of the most unexpectedly cinematic landscapes in the city. Popular with locals for sunset walks and picnics; almost never on tourist itineraries. Southeast Rome, reachable by metro (Subaugusta). Free.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Parco+degli+Acquedotti+Rome" class="map-link" target="_blank">↗ Map</a>
+  </div>
+
+  <hr class="divider">
+
+  <span class="section-label">05 — Shopping &amp; Markets</span>
+  <h2>Where Romans Actually Buy Things</h2>
+  <span class="subhead">The best Rome shopping happens where the tour groups don't.</span>
+
+  <div class="entry">
+    <h3>Porta Portese Flea Market <span class="tag tag-local">Local</span></h3>
+    <img src="https://www.turismoroma.it/sites/default/files/Porta%20Portese%20foto%20Monkey%201920x1080.jpg" alt="Porta Portese flea market, Rome" class="entry-photo" />
+    <p>Sundays only, 6 am until around 2 pm. Trastevere's southern edge transforms into Rome's largest flea market: antiques, vintage clothing, vinyl records, and genuine rubbish to sort through. A Sunday ritual for Romans since 1945. Come early for the best finds.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Porta+Portese+Market+Rome" class="map-link" target="_blank">↗ Map</a>
+    <p class="entry-tip">Watch your wallet — markets concentrate pickpockets. Keep bags zipped and in front of you.</p>
+  </div>
+
+  <div class="entry">
+    <h3>Campo de' Fiori Market <span class="tag tag-do">Do It</span></h3>
+    <img src="https://www.bagsandfruits.com/cms/wp-content/uploads/2017/11/mercato-campo-dei-fiori.jpg" alt="Campo de' Fiori market, Rome" class="entry-photo" />
+    <p>Rome's oldest market, in this location since 1869. Monday–Saturday mornings: fresh produce, spices, olive oils, gourmet goods, and flowers. The square becomes a bar and restaurant hub by evening. Primarily a food market — not a souvenir hunt.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Campo+de+Fiori+Market+Rome" class="map-link" target="_blank">↗ Map</a>
+  </div>
+
+  <div class="entry">
+    <h3>Monti — Independent Boutiques &amp; Vintage <span class="tag tag-local">Local</span></h3>
+    <img src="https://static.independent.co.uk/2022/10/17/12/iStock-1336226056.jpg?width=1200&height=630&fit=crop" alt="Monti neighbourhood boutiques, Rome" class="entry-photo" />
+    <p>Rome's best neighbourhood for independent shopping: vintage clothing, handcrafted jewellery, local designers, artisanal leather goods. Concentrated on Via del Boschetto and Via Leonina. The real alternative to the tourist-oriented boutiques near the Spanish Steps.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Monti+shopping+Rome" class="map-link" target="_blank">↗ Map</a>
+  </div>
+
+  <div class="entry">
+    <h3>Via Cola di Rienzo — Prati <span class="tag tag-prac">Practical</span></h3>
+    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/45/d9/2d/gelateria-la-romana-roma.jpg?w=900&h=500&s=1" alt="Via Cola di Rienzo, Prati, Rome" class="entry-photo" />
+    <p>Prati's broad shopping avenue: major Italian brands, accessible boutiques, and gourmet food shops — Castroni is essential for fine Italian provisions. Frequented by locals, not tour groups.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Via+Cola+di+Rienzo+Rome" class="map-link" target="_blank">↗ Map</a>
+  </div>
+
+  <div class="entry">
+    <h3>Via Condotti &amp; the Tridente — Luxury <span class="tag tag-prac">Practical</span></h3>
+    <img src="https://image-tc.galaxy.tf/wijpeg-asjs4qpl38v98jwfan5931abj/via-condotti-rome-1.jpg?width=1920" alt="Via Condotti luxury shopping street, Rome" class="entry-photo" />
+    <p>Gucci, Prada, Valentino, Bulgari — the luxury flagship mile runs from the Spanish Steps down Via Condotti. Even if it's beyond your budget, the window displays and 19th-century architecture justify a walk.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Via+Condotti+Rome" class="map-link" target="_blank">↗ Map</a>
+  </div>
+
+  <div class="entry">
+    <h3>Via Margutta — Art Galleries &amp; Antiques <span class="tag tag-gem">Off-Path</span></h3>
+    <img src="https://www.romeing.it/wp-content/uploads/2025/09/cento-pittori-via-margutta.jpg" alt="Via Margutta art galleries, Rome" class="entry-photo" />
+    <p>A picturesque lane near Piazza di Spagna lined with small galleries, artists' studios, and antique shops. Audrey Hepburn's character lived here in <em>Roman Holiday</em>. Quieter and more atmospheric than the surrounding luxury district.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Via+Margutta+Rome" class="map-link" target="_blank">↗ Map</a>
+  </div>
+
+  <hr class="divider">
+
+  <span class="section-label">06 — What Most Visitors Miss</span>
+  <h2>The Discoveries</h2>
+  <span class="subhead">Rome rewards anyone willing to look through a keyhole, descend a staircase, or step into an unmarked courtyard.</span>
+
+  <div class="entry">
+    <h3>The Aventine Keyhole <span class="tag tag-gem">Off-Path</span></h3>
+    <img src="https://artwewonderful.com/wp-content/uploads/2021/04/the-aventine-keyhole-rome.jpg" alt="The Aventine Keyhole view of St Peter's, Rome" class="entry-photo" />
+    <p>At Piazza dei Cavalieri di Malta on Aventine Hill: a green gate belonging to the Priory of the Knights of Malta. Look through the keyhole and a perfectly framed view of St. Peter's dome appears through a tunnel of manicured garden trees. Free. There's usually a short line. Twenty seconds of pure, inexplicable delight.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Piazza+dei+Cavalieri+di+Malta+Rome" class="map-link" target="_blank">↗ Map</a>
+  </div>
+
+  <div class="entry">
+    <h3>Galleria Doria Pamphilj <span class="tag tag-gem">Off-Path</span></h3>
+    <img src="https://www.doriapamphilj.it/wp-content/uploads/2019/01/Galleria-degli-Specchi.jpg" alt="Galleria Doria Pamphilj mirrored gallery, Rome" class="entry-photo" />
+    <p>A private art collection inside a grandiose palace on Via del Corso. Velázquez's portrait of Pope Innocent X, Caravaggio's <em>Rest on the Flight into Egypt</em>, Bernini sculptures, and a mirrored gallery where the rooms feel infinite. Intimate in a way the Vatican Museums cannot be.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Galleria+Doria+Pamphilj+Rome" class="map-link" target="_blank">↗ Map</a>
+  </div>
+
+  <div class="entry">
+    <h3>Basilica di San Clemente — The Lasagna Church <span class="tag tag-gem">Off-Path</span></h3>
+    <img src="https://www.romesightseeing.net/media/bahn3yx3/basilica-of-san-clemente.jpg?anchor=center&mode=crop&width=1200" alt="Basilica di San Clemente, Rome" class="entry-photo" />
+    <p>Near the Colosseum, this church descends through three distinct layers: a 12th-century basilica above, a 4th-century basilica below, and at the bottom a 1st-century Roman house and a functioning Mithraic temple. You can hear an underground stream rushing through the lowest level. Consistently undervisited.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Basilica+di+San+Clemente+Rome" class="map-link" target="_blank">↗ Map</a>
+  </div>
+
+  <div class="entry">
+    <h3>Palazzo Spada — Borromini's Optical Illusion <span class="tag tag-gem">Off-Path</span></h3>
+    <img src="https://anamericaninrome.com/wp-content/uploads/2016/03/Galleria-Spada-7-1024x683.jpg" alt="Palazzo Spada Borromini corridor illusion, Rome" class="entry-photo" />
+    <p>Baroque architect Francesco Borromini used forced perspective to make a 9-metre corridor appear nearly four times longer. Easy to pair with Campo de' Fiori nearby.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Palazzo+Spada+Rome" class="map-link" target="_blank">↗ Map</a>
+  </div>
+
+  <div class="entry">
+    <h3>San Luigi dei Francesi — Free Caravaggio <span class="tag tag-gem">Off-Path</span></h3>
+    <img src="https://rometravelogues.com/wp-content/uploads/2024/05/churches-in-rome-with-caravaggio-paintings.jpg" alt="San Luigi dei Francesi church with Caravaggio paintings, Rome" class="entry-photo" />
+    <p>A church near Piazza Navona with three Caravaggio paintings in the Contarelli Chapel — the St. Matthew cycle, completed 1599–1600. Free to enter. One of the most significant works in European art, accessible to anyone who walks through the door. Bring coins for the light-box timer.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=San+Luigi+dei+Francesi+Rome" class="map-link" target="_blank">↗ Map</a>
+  </div>
+
+  <div class="entry">
+    <h3>Galleria Sciarra — Art Nouveau Courtyard <span class="tag tag-gem">Off-Path</span></h3>
+    <img src="https://www.journeystoitaly.com/wp-content/uploads/2024/01/galleria-sciarra-rome.jpeg" alt="Galleria Sciarra Art Nouveau courtyard, Rome" class="entry-photo" />
+    <p>Off Via Marco Minghetti, steps from the Trevi Fountain: an Art Nouveau courtyard with ironwork, stained glass, and painted frescoes. Now a private office building, but the courtyard is open to the public. Keep your voice low and look up. Almost nobody knows this is here.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Galleria+Sciarra+Rome" class="map-link" target="_blank">↗ Map</a>
+  </div>
+
+  <div class="pmtp-band pmtp-band-aqua">
+    <h4>Free First Sunday museums</h4>
+    <p style="margin-bottom:0;">On the first Sunday of every month, all state-run museums and archaeological sites offer free entry — including the Colosseum and Palatine Hill. Crowds are significant; arrive early. Check the official MIBAC list for current participating locations.</p>
+  </div>
+
+  <div class="pmtp-band pmtp-band-sand" style="margin-top:20px;">
+    <h4>The nasoni — Rome's free drinking fountains</h4>
+    <p style="margin-bottom:0;">Rome has over 2,500 <em>nasoni</em> — small cast-iron street fountains with clean municipal water. Fill your bottle; skip paying for plastic. When you find one with two holes, cover one — the other shoots a jet upward for easy drinking. Saves €3–5 a day.</p>
+  </div>
+
+  <hr class="divider">
+
+  <span class="section-label">07 — Practical Information</span>
+  <h2>Timing, Money, Movement</h2>
+  <span class="subhead">Rome rewards the prepared traveller and is less forgiving of the careless one.</span>
+
+  <h3 style="margin-bottom:12px;">Best Time to Visit</h3>
+  <div class="season-grid">
+    <div class="season-cell peak"><span class="s-name">Spring</span><span class="s-note">Apr–May<br>★★★★★</span></div>
+    <div class="season-cell"><span class="s-name">Summer</span><span class="s-note">Jun–Aug<br>★★★</span></div>
+    <div class="season-cell peak"><span class="s-name">Autumn</span><span class="s-note">Sep–Oct<br>★★★★★</span></div>
+    <div class="season-cell"><span class="s-name">Winter</span><span class="s-note">Nov–Mar<br>★★★★</span></div>
+  </div>
+
+  <div class="pmtp-band pmtp-band-sand" style="margin-bottom:20px;">
+    <p style="margin-bottom:0;">April–May and September–October are the sweet spots: 18–25°C, manageable crowds, everything open. Summer means 28–35°C and maximum density, though the longest days compensate. August sees Romans evacuate — local restaurants close for 2–4 weeks. Winter offers 30–40% lower hotel prices and shorter lines; November and January are genuinely underrated.</p>
+  </div>
+
+  <h3 style="margin-bottom:16px;">How Many Days</h3>
+  <div class="pmtp-band pmtp-band-aqua" style="margin-bottom:20px;">
+    <p>3–4 days covers the main sights without rushing. Five days is where Rome stops feeling like a checklist. Seven days lets you actually live in it.</p>
+    <p style="margin-bottom:0;"><strong>Day 1:</strong> Ancient Rome — Colosseum, Forum, Palatine Hill, Capitoline Museums<br>
+    <strong>Day 2:</strong> Vatican — Museums, Sistine Chapel, St. Peter's, Castel Sant'Angelo<br>
+    <strong>Day 3:</strong> Centro Storico — Pantheon, Navona, Campo de' Fiori, Trastevere evening<br>
+    <strong>Day 4+:</strong> Galleria Borghese, off-path discoveries, Appian Way, Testaccio food circuit</p>
+  </div>
+
+  <div class="info-pair">
+    <div class="info-card">
+      <span class="ic-label">Getting There</span>
+      <p><strong>FCO Fiumicino</strong> — 35–45 min from centre.</p>
+      <ul>
+        <li><strong>Leonardo Express:</strong> 32-min train to Termini. Best value.</li>
+        <li><strong>Taxi:</strong> Fixed fare ~€55 (official white taxis only).</li>
+        <li><strong>By train:</strong> Florence ~1.5 hr · Naples ~1 hr · Venice ~3.5 hr</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <span class="ic-label">Getting Around</span>
+      <p><strong>Walking</strong> — most centro sights 15–20 min apart.</p>
+      <ul>
+        <li><strong>Metro A &amp; B:</strong> Vatican → Ottaviano; Steps → Spagna. Single ~€1.50. 7-day ~€24.</li>
+        <li><strong>Bus:</strong> Extensive but slow. Avoid Bus 64.</li>
+        <li><strong>Taxis:</strong> Official white taxis or FreeNow only.</li>
+        <li><strong>Car:</strong> Do not drive in the city centre.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="info-pair">
+    <div class="info-card">
+      <span class="ic-label">Budget Benchmarks</span>
+      <ul>
+        <li>Budget: ~€80–120/day</li>
+        <li>Mid-range: ~€170–255/day</li>
+        <li>Comfort: €300+/day</li>
+      </ul>
+      <p><strong>Hidden costs:</strong> Tourist tax €3–7/night · Coperto €2–4 · Audio guides €5–8. Book 3–4 months ahead for spring/autumn.</p>
+    </div>
+    <div class="info-card">
+      <span class="ic-label">Cash &amp; Cards</span>
+      <p>Carry €50–100 cash. Taxis frequently refuse cards. Markets and small trattorias often cash-only.</p>
+      <p>Use bank ATMs only — skimming devices documented at standalone tourist-zone machines. Always shield your PIN.</p>
+    </div>
+  </div>
+
+  <div class="info-pair">
+    <div class="info-card">
+      <span class="ic-label">Cultural Notes</span>
+      <ul>
+        <li>Covered shoulders and knees for all churches and the Vatican</li>
+        <li>Do not sit on the Spanish Steps — fines enforced</li>
+        <li>Espresso at the bar costs less than at a table</li>
+        <li>Midday closures 1–4 pm at smaller shops</li>
+        <li>Cappuccino after noon marks you as a tourist</li>
+        <li>Tipping not mandatory; rounding up is appreciated</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <span class="ic-label">Book These in Advance</span>
+      <ul>
+        <li><strong>Colosseum:</strong> coopculture.it</li>
+        <li><strong>Vatican Museums:</strong> museivaticani.va only</li>
+        <li><strong>Galleria Borghese:</strong> 2-hr timed slots — book early</li>
+        <li><strong>Pantheon:</strong> Timed slot required online</li>
+      </ul>
+      <p>No tickets in April–October = 90-min to 2-hr lines. Security adds 15–25 min on top.</p>
+    </div>
+  </div>
+
+  <div class="info-pair">
+    <div class="info-card">
+      <span class="ic-label">Useful Apps</span>
+      <ul>
+        <li><strong>Google Maps</strong> — download offline before arriving</li>
+        <li><strong>ATAC Roma</strong> — public transport</li>
+        <li><strong>TheFork</strong> — restaurant reservations</li>
+        <li><strong>FreeNow</strong> — legitimate taxi booking</li>
+        <li><strong>Google Translate</strong> — camera mode for menus</li>
+        <li><strong>Omio</strong> — intercity trains</li>
+        <li><strong>WhatsApp</strong> — how Italians communicate</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <span class="ic-label">Language Basics</span>
+      <p><strong>Grazie</strong> — thank you<br>
+      <strong>Prego</strong> — you're welcome<br>
+      <strong>Un caffè, per favore</strong> — an espresso, please<br>
+      <strong>Il conto, per favore</strong> — the bill, please<br>
+      <strong>Dov'è…?</strong> — Where is…?</p>
+      <p>Most central staff speak English. A few words of Italian go a long way outside the tourist core.</p>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <span class="section-label">08 — What to Avoid</span>
+  <h2>Traps, Scams, and Honest Caveats</h2>
+  <span class="subhead">Rome is generous to those who pay attention — these are the situations where people stop paying attention.</span>
+
+  <div class="avoid-block">
+    <h4>Restaurants adjacent to major monuments <span class="tag tag-avoid">Avoid</span></h4>
+    <p>Any restaurant within eyeline of the Colosseum, Trevi Fountain, Pantheon, or Vatican is charging a monument premium for average food. If someone is standing outside calling you in and waving a menu, keep walking. Two streets back, prices drop and quality improves.</p>
+  </div>
+  <div class="avoid-block">
+    <h4>Bus 64 — Termini to Vatican <span class="tag tag-avoid">Avoid</span></h4>
+    <p>Locally nicknamed the "wallet express," this route is Rome's most notorious pickpocket corridor. Metro Line A (Termini → Ottaviano) is safer, faster, and only marginally less convenient.</p>
+  </div>
+  <div class="avoid-block">
+    <h4>Unlicensed taxis and airport touts <span class="tag tag-avoid">Avoid</span></h4>
+    <p>Unlicensed drivers prey on jet-lagged arrivals at Fiumicino. Only use official white taxis with the "TAXI" logo and an active meter. Fixed legal fare from FCO to central Rome is currently around €55 — confirm before getting in.</p>
+  </div>
+  <div class="avoid-block">
+    <h4>Third-party Vatican ticket sellers <span class="tag tag-avoid">Avoid</span></h4>
+    <p>Sellers outside the Vatican charge double or sell fake vouchers not honoured at the door. Book exclusively through museivaticani.va. No exceptions.</p>
+  </div>
+  <div class="avoid-block">
+    <h4>The "free gift" — roses, bracelets, petitions <span class="tag tag-avoid">Avoid</span></h4>
+    <p>Someone approaches and offers a flower, a woven bracelet, or asks you to sign a petition. The moment you accept or engage, aggressive demands for cash follow. Decline firmly and keep moving.</p>
+  </div>
+  <div class="avoid-block">
+    <h4>Ticket machine "helpers" <span class="tag tag-avoid">Avoid</span></h4>
+    <p>Scammers loiter near metro ticket machines and offer unsolicited help. While they assist you, a companion pickpockets you. Ask a uniformed staff member at the nearby booth if you need help.</p>
+  </div>
+  <div class="avoid-block">
+    <h4>August in the tourist core <span class="tag tag-avoid">Avoid</span></h4>
+    <p>Many local trattorias close for 2–4 weeks in August. Tourist-area restaurants stay open and exploit the gap. Orient yourself toward Testaccio, Prati, or San Lorenzo if you visit in August.</p>
+  </div>
+  <div class="avoid-block">
+    <h4>Arriving at peak-season sights without tickets <span class="tag tag-avoid">Avoid</span></h4>
+    <p>At the Colosseum or Vatican without pre-booked tickets in April–October: plan on a 90-minute to 2-hour line regardless of when you arrive. Security adds 15–25 minutes on top. The three non-negotiables: Colosseum, Vatican Museums, Galleria Borghese.</p>
+  </div>
+
+  <div class="pmtp-footer">
+    <div style="font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:var(--ink);">Andrea Gunter</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink-soft);font-size:15px;margin-bottom:14px;">Travel Advisor</div>
+    <div style="font-size:14px;margin-bottom:4px;"><a id="pmtpEmailLink" href="#" style="color:var(--aqua-dark);"></a></div>
+    <div style="font-size:14px;margin-bottom:4px;color:var(--ink-soft);">409-789-3579</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink-soft);font-size:14px;margin-top:14px;">Point Me to Paradise Travel</div>
+  </div>
+
+  <div class="pmtp-disclaimer">
+    <span style="display:block;font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);margin-bottom:8px;">Important — please read</span>
+    This guide is provided for informational purposes only. Locations, hours, conditions, and recommendations can change without notice, and ocean, weather, trail, road, and travel conditions can shift quickly and unpredictably. Point Me to Paradise Travel, the advisor named in this guide, and the authors of this content are not liable for any injury, illness, loss, theft, or harm of any kind arising from your visit to any location or participation in any activity referenced here. By using this guide, you accept full personal responsibility for your own safety. Use your own judgment, verify current conditions before any activity, follow all posted warnings and local regulations, and consult qualified professionals — lifeguards, park rangers, licensed guides, medical providers — where appropriate.
+  </div>
+
+</div>
+<script>(function(){var l="andrea",d="pointmetoparadise.com";var el=document.getElementById("pmtpEmailLink");if(el){el.href="mailto:"+l+"\u0040"+d;el.textContent=l+"\u0040"+d;}})()</script>
+</body>
+</html>
