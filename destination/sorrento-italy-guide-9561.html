@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorrento, Italy — Point Me to Paradise Travel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --aqua-pale:#C4E4E1;
+    --aqua-mist:#EAF3F2;
+    --aqua:#75AFB1;
+    --aqua-dark:#4F8A8C;
+    --sand-light:#F4F1E9;
+    --warm-sand:#F5EFE4;
+    --gold-whisper:#D6C8A8;
+    --white:#FFFFFF;
+    --paper:#F9F6F1;
+    --ink:#2B2420;
+    --ink-soft:#6B6359;
+    --line:#E6DFD5;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  a { color: var(--aqua-dark); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(26px,5vw,42px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(20px,4vw,28px);
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.2;
+    margin: 48px 0 6px;
+    padding-top: 8px;
+    border-top: 1px solid var(--line);
+  }
+
+  h3 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(16px,3vw,20px);
+    font-weight: 600;
+    color: var(--ink);
+    margin: 28px 0 6px;
+  }
+
+  h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0 0 8px;
+  }
+
+  .section-subhead {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(15px, 2.5vw, 18px);
+    color: var(--ink-soft);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  p {
+    margin-bottom: 16px;
+    color: var(--ink);
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  .pmtp-band {
+    margin: 32px -28px;
+    padding: 28px 28px;
+    border-radius: 0;
+  }
+
+  .pmtp-band h4 { margin-bottom: 10px; }
+
+  .pmtp-band p {
+    font-size: 15px;
+    margin-bottom: 0;
+  }
+
+  .place-entry {
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .place-entry:last-of-type {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .place-entry h3 {
+    margin-top: 0;
+    margin-bottom: 4px;
+  }
+
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .tag {
+    display: inline-block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 3px;
+    border: 1px solid;
+  }
+
+  .tag-must { border-color: var(--aqua-dark); color: var(--aqua-dark); background: rgba(79,138,140,0.07); }
+  .tag-local { border-color: #a08850; color: #7a6530; background: rgba(214,200,168,0.18); }
+  .tag-gem { border-color: var(--ink-soft); color: var(--ink-soft); background: rgba(107,99,89,0.07); }
+  .tag-avoid { border-color: #b06050; color: #8a3020; background: rgba(176,96,80,0.07); }
+  .tag-practical { border-color: var(--aqua); color: var(--aqua-dark); background: rgba(117,175,177,0.09); }
+
+  .map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    color: var(--aqua-dark);
+    border: 1px solid var(--aqua);
+    padding: 6px 13px 6px 10px;
+    border-radius: 4px;
+    margin: 8px 0 12px;
+    transition: background 0.15s;
+    text-decoration: none;
+  }
+
+  .map-link:hover { background: var(--aqua-mist); text-decoration: none; }
+
+  .tip-box {
+    background: var(--aqua-mist);
+    border-left: 3px solid var(--aqua);
+    padding: 11px 15px;
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-top: 12px;
+    border-radius: 0 4px 4px 0;
+    font-style: italic;
+  }
+
+  .avoid-entry {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .avoid-entry:last-child { border-bottom: none; }
+
+  .avoid-label {
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .avoid-body {
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  .avoid-icon {
+    font-size: 18px;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .practical-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 20px;
+  }
+
+  .practical-item {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 16px 18px;
+    border-radius: 6px;
+  }
+
+  .practical-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--aqua-dark);
+    margin-bottom: 6px;
+    display: block;
+  }
+
+  .practical-value {
+    font-size: 14px;
+    color: var(--ink);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .food-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 18px 0;
+  }
+
+  .food-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--gold-whisper);
+    padding: 14px 16px;
+    border-radius: 0 0 6px 6px;
+  }
+
+  .food-name {
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 5px;
+  }
+
+  .food-desc {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .daytrip-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 18px 0;
+  }
+
+  .daytrip-pill {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 10px 16px;
+    border-radius: 24px;
+    font-size: 13.5px;
+    color: var(--ink);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .daytrip-name {
+    font-weight: 600;
+    font-family: 'Fraunces', serif;
+    font-size: 14px;
+  }
+
+  .daytrip-how {
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+
+  .divider-gold {
+    width: 60px;
+    height: 1px;
+    background: var(--gold-whisper);
+    margin: 18px auto;
+    border: none;
+  }
+
+  .pmtp-footer {
+    background: var(--sand-light);
+    margin-top: 64px;
+    padding: 36px 28px;
+    border-radius: 12px;
+  }
+
+  .pmtp-disclaimer {
+    margin-top: 28px;
+    padding: 22px 26px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+
+  @media(max-width:640px){
+    body { font-size: 15px; }
+    .pmtp-hero { padding: 44px 20px 36px; margin: -24px -20px 24px; }
+    .pmtp-band { padding: 18px 16px; margin: 24px -20px; }
+    h2 { font-size: 20px; }
+    h3 { font-size: 17px; }
+    .pmtp-footer { border-radius: 8px; padding: 24px 20px; }
+    .practical-grid { grid-template-columns: 1fr; }
+    .food-grid { grid-template-columns: 1fr; }
+    .map-link { width: 100%; justify-content: center; padding: 10px 13px; font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+<div style="max-width:680px;margin:0 auto;padding:0 28px 60px;">
+
+  <!-- HERO -->
+  <div class="pmtp-hero" style="background-image:linear-gradient(180deg,rgba(255,255,255,0.45),rgba(196,228,225,0.55) 35%,rgba(245,239,228,0.80) 68%,rgba(249,246,240,0.97));padding:clamp(40px,8vw,78px) 32px clamp(36px,6vw,60px);text-align:center;margin:-48px -28px 32px;border-bottom:1px solid var(--line);">
+    <div style="font-family:Fraunces,serif;font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--aqua-dark);margin-bottom:22px;">Point Me to Paradise Travel</div>
+    <h1>Sorrento, Italy</h1>
+    <hr class="divider-gold" />
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(17px,3.5vw,21px);max-width:620px;margin:0 auto;color:var(--ink-soft);">Clifftop, lemon-scented, and unapologetically itself — the best base on the southern coast.</p>
+  </div>
+
+  <!-- HERO IMAGE — note: URL from research log; verify before publishing -->
+  <img src="https://cms-images.oliverstravels.com/app/uploads/2021/11/15162142/Sorrento-1.png" alt="Sorrento, Italy — clifftop town above the Bay of Naples" style="width:100%;max-height:460px;object-fit:cover;border-radius:0;display:block;margin-bottom:32px;" loading="lazy">
+
+  <!-- ORIENTATION -->
+  <h2>Orientation &amp; Character</h2>
+  <span class="section-subhead">Get the geography right on day one and the rest of the trip falls into place.</span>
+
+  <p>Sorrento sits about 50 kilometres south of Naples on the Sorrentine Peninsula, perched on cliffs above the Bay of Naples with the Amalfi Coast lining the opposite flank. The town is genuinely compact — you can walk every part of the historic centre in 20 minutes. What you can't walk to easily are the two marinas below the cliff edge, both requiring a steep descent or a bus. Everything else is flat, pedestrian-friendly, and dense enough to fill several days without covering the same ground twice.</p>
+
+  <p>Sorrento is tourist-forward and always has been. Its bones are genuinely old, its food is genuinely good, and its position above a bay watched over by Vesuvius is genuinely hard to beat. Capri, Positano, Amalfi, Pompeii, and Naples are all day-trip distance — making it the most practical base on the coast.</p>
+
+  <h3>The Neighbourhoods</h3>
+
+  <div class="place-entry">
+    <div class="tag-row"><span class="tag tag-must">Must Do</span></div>
+    <h3 style="margin-top:0;">Centro Storico &amp; Piazza Tasso</h3>
+    <a href="https://www.google.com/maps/search/?api=1&query=Piazza+Tasso+Sorrento%2C+Italy" class="map-link" target="_blank">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Open in Maps
+    </a>
+    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/c2/5d/ed/caption.jpg?w=800&h=800&s=1" alt="Centro Storico and Piazza Tasso, Sorrento" style="width:100%;max-height:320px;object-fit:cover;border-radius:8px;display:block;margin:0 0 16px;" loading="lazy">
+    <p>Piazza Tasso is the beating heart of Sorrento — the starting point for Corso Italia (the main pedestrian street, running east-west) and Via San Cesareo (the shopping lane, running south into the old town). Most hotels, cafés, and restaurants cluster within a five-minute radius. At night, the piazza fills with live music; pull up a chair, order a spritz, and watch the whole town pass. Arrive early morning to see it before the tour groups do.</p>
+  </div>
+
+  <div class="place-entry">
+    <div class="tag-row"><span class="tag tag-local">Local Favourite</span></div>
+    <h3 style="margin-top:0;">Marina Grande</h3>
+    <a href="https://www.google.com/maps/search/?api=1&query=Marina+Grande+Sorrento%2C+Italy" class="map-link" target="_blank">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Open in Maps
+    </a>
+    <img src="https://www.sorrentoreview.com/uploads/2/6/3/6/26365745/marina-grande-sorrento-6_orig.jpg" alt="Marina Grande, Sorrento — pastel waterfront and fishing boats" style="width:100%;max-height:320px;object-fit:cover;border-radius:8px;display:block;margin:0 0 16px;" loading="lazy">
+    <p>Despite the name, Marina Grande is the smaller, more intimate of Sorrento's two marinas — a former fishing village with pastel houses, bobbing wooden boats, and fishermen still mending nets at dawn. It has one of the few sandy beaches near town (dark volcanic sand), and its waterfront restaurants serve fish caught that morning. The walk down from Piazza della Vittoria takes about 10 minutes through quiet residential streets; aromas of Sunday lunch drift through open windows on the way.</p>
+    <div class="tip-box">A Cooperativa Tasso minibus runs between Piazza Tasso and Marina Grande every 30 minutes, 7:15am–7:30pm. Tickets €1.20, bought at any tabaccaio before you board — not available on the bus itself.</div>
+  </div>
+
+  <div class="place-entry">
+    <div class="tag-row"><span class="tag tag-practical">Practical</span></div>
+    <h3 style="margin-top:0;">Marina Piccola</h3>
+    <a href="https://www.google.com/maps/search/?api=1&query=Marina+Piccola+Sorrento%2C+Italy" class="map-link" target="_blank">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Open in Maps
+    </a>
+    <img src="https://img.marinas.com/v2/dbb356d4854cb0e42937dba1f6779dbac2ee33d16dad48c54c256efec89a41ea.jpg" alt="Marina Piccola, Sorrento — the main ferry and hydrofoil port" style="width:100%;max-height:320px;object-fit:cover;border-radius:8px;display:block;margin:0 0 16px;" loading="lazy">
+    <p>This is where the ferries leave: Capri, Naples, Positano, and Amalfi all depart from Marina Piccola. Use it logistically; linger elsewhere. On foot from Piazza Tasso it's about 100 steps down — or take the paid elevator (roughly €1 each way) from the piazza edge, which most visitors completely miss.</p>
+  </div>
+
+  <div class="pmtp-band" style="background:var(--aqua-mist);">
+    <h4>Getting Around</h4>
+    <p>The historic centre is walkable. For the marinas and outer neighbourhoods, use the EAV red-and-orange local buses or the SITA buses. Tickets are €1.20 and <strong>must be purchased in advance</strong> at a tabaccaio — you cannot buy them on board. If the tour-group crowd around Piazza Tasso gets to be too much, the hill neighbourhoods of Priora and Colli di San Pietro offer ridge views and breathing room, with buses back into town for dinner.</p>
+  </div>
+
+  <!-- TOP SIGHTS -->
+  <h2>Top Sights &amp; Experiences</h2>
+  <span class="section-subhead">Sorrento's best hours are spent on its cliff edges, in its quiet courtyards, and at the bottom of its ancient gorges.</span>
+
+  <div class="place-entry">
+    <div class="tag-row"><span class="tag tag-must">Must Do</span></div>
+    <h3 style="margin-top:0;">Chiostro di San Francesco</h3>
+    <a href="https://www.google.com/maps/search/?api=1&query=Chiostro+di+San+Francesco+Sorrento%2C+Italy" class="map-link" target="_blank">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Open in Maps
+    </a>
+    <img src="https://cdn.concreteplayground.com/content/uploads/2023/06/Chiostro-di-San-Francesco.-iStock.Balate-Dorin-1920x1440.jpg" alt="Chiostro di San Francesco, Sorrento — Gothic tufa arches and bougainvillea courtyard" style="width:100%;max-height:320px;object-fit:cover;border-radius:8px;display:block;margin:0 0 16px;" loading="lazy">
+    <p>Five minutes from Piazza Tasso, this 14th-century cloister is the best free hour you'll spend in Sorrento. Gothic arches of soft tufa stone frame a quiet inner courtyard of bougainvillea and climbing greenery; in summer the space hosts civil weddings and chamber music concerts. Above the cloister, a small photography gallery (Galleria Raffaele Celentano) shows candid black-and-white work by a contemporary local photographer — almost nobody goes up the stairs, which makes it worth the extra five minutes.</p>
+    <div class="tip-box">The cloister sits immediately adjacent to Villa Comunale; combine both in a single morning loop before the heat builds.</div>
+  </div>
+
+  <div class="place-entry">
+    <div class="tag-row"><span class="tag tag-must">Must Do</span></div>
+    <h3 style="margin-top:0;">Villa Comunale — Clifftop Views</h3>
+    <a href="https://www.google.com/maps/search/?api=1&query=Villa+Comunale+Sorrento%2C+Italy" class="map-link" target="_blank">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Open in Maps
+    </a>
+    <p>A public garden perched at the sheer cliff edge, free to enter, with views across the Bay of Naples to Vesuvius — the marinas below, ships moving through the gulf, the islands in the distance. The terrace at sunset is as good as anything on the coast. Come in the evening when the heat has dropped and the light is warm.</p>
+  </div>
+
+  <div class="place-entry">
+    <div class="tag-row"><span class="tag tag-must">Must Do</span></div>
+    <h3 style="margin-top:0;">Museo Correale di Terranova</h3>
+    <a href="https://www.google.com/maps/search/?api=1&query=Museo+Correale+di+Terranova+Sorrento%2C+Italy" class="map-link" target="_blank">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Open in Maps
+    </a>
+    <img src="https://www.museocorreale.it/core/wp-content/uploads/2023/11/museo-correale-sorrento.jpg" alt="Museo Correale di Terranova, Sorrento — 18th-century villa and gardens" style="width:100%;max-height:320px;object-fit:cover;border-radius:8px;display:block;margin:0 0 16px;" loading="lazy">
+    <p>An 18th-century villa with 24 exhibition rooms of Neapolitan paintings, porcelain, furniture, and archaeological finds. The gardens have sea views worth the entrance fee alone. From April through October the museum hosts Opera e Lirica concerts — check schedules locally and book ahead if you're here in that window.</p>
+  </div>
+
+  <div class="place-entry">
+    <div class="tag-row"><span class="tag tag-gem">Local Gem</span></div>
+    <h3 style="margin-top:0;">Vallone dei Mulini — Valley of the Mills</h3>
+    <a href="https://www.google.com/maps/search/?api=1&query=Vallone+dei+Mulini+Sorrento%2C+Italy" class="map-link" target="_blank">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Open in Maps
+    </a>
+    <img src="https://sorrentolimo.com/wp-content/uploads/2024/12/The-Vallone-dei-Mulini-A-Hidden-Oasis-in-the-Heart-of-Sorrento.jpg" alt="Vallone dei Mulini, Sorrento — ancient mill ruins swallowed by ferns and mosses" style="width:100%;max-height:320px;object-fit:cover;border-radius:8px;display:block;margin:0 0 16px;" loading="lazy">
+    <p>A volcanic gorge carved 37,000 years ago sits hidden immediately behind Piazza Tasso — and most visitors miss it entirely. Medieval flour mills built from the 13th century onwards once ground grain here; when the piazza was constructed in 1866 the valley was cut off from the sea and gradually consumed by rare ferns and mosses that now form a self-generated microclimate at the bottom. The silence down there is a genuinely odd contrast to the crowds 50 metres away. Currently accessible via street-level overlooks on Via Fuorimura; check locally for any updated access to the valley floor, where rehabilitation work has been ongoing.</p>
+  </div>
+
+  <div class="place-entry">
+    <div class="tag-row"><span class="tag tag-gem">Local Gem</span></div>
+    <h3 style="margin-top:0;">Sedile Dominova</h3>
+    <a href="https://www.google.com/maps/search/?api=1&query=Sedile+Dominova+Sorrento%2C+Italy" class="map-link" target="_blank">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Open in Maps
+    </a>
+    <img src="https://www.sorrentoreview.com/uploads/2/6/3/6/26365745/sedile-dominova-sorrento-8_orig.jpg" alt="Sedile Dominova, Sorrento — 15th-century frescoed noble hall" style="width:100%;max-height:320px;object-fit:cover;border-radius:8px;display:block;margin:0 0 16px;" loading="lazy">
+    <p>A 15th-century noble meeting hall tucked into a street corner near Via San Cesareo — frescoed vault, tiled dome, aristocratic stonework. Today it functions as a social club for local men. You can peer in through the open loggia; the whole stop takes five minutes and virtually no tourist bothers.</p>
+  </div>
+
+  <div class="place-entry">
+    <div class="tag-row"><span class="tag tag-local">Local Favourite</span></div>
+    <h3 style="margin-top:0;">Museo Bottega della Tarsia Lignea</h3>
+    <a href="https://www.google.com/maps/search/?api=1&query=Museo+Bottega+Tarsia+Lignea+Sorrento%2C+Italy" class="map-link" target="_blank">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Open in Maps
+    </a>
+    <img src="https://www.sorrentoreview.com/uploads/2/6/3/6/26365745/museo-bottega-della-tarsia-lignea-sorrento-17_orig.jpg" alt="Museo Bottega della Tarsia Lignea, Sorrento — intarsia inlaid wood workshop and museum" style="width:100%;max-height:320px;object-fit:cover;border-radius:8px;display:block;margin:0 0 16px;" loading="lazy">
+    <p>Housed in an 18th-century palazzo on Via San Nicola, this museum documents intarsia — Sorrento's tradition of inlaid wood mosaic that has been practiced here since the 19th century. Historical pieces, 19th-century furniture, and the full craft story, without the commercial theatre of the tourist showrooms. If you plan to buy intarsia, come here first.</p>
+  </div>
+
+  <div class="pmtp-band" style="background:var(--warm-sand);">
+    <h4>Marina Grande for the morning</h4>
+    <p>While most visitors stay up in the centro storico, the walk down to Marina Grande — past neighbourhoods where kids play and the smell of lunch drifts through open windows — is itself part of the experience. The beach club serves fish caught daily, and the waterfront restaurants are substantially more honest in price than anything on Piazza Tasso. Go for lunch and take the bus back up the hill.</p>
+  </div>
+
+  <!-- FOOD -->
+  <h2>Food &amp; Drink</h2>
+  <span class="section-subhead">The kitchen here sits at the intersection of fishing boats, lemon groves, and Naples — the birthplace of pizza 50 kilometres north.</span>
+
+  <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/20/ae/13/ec/caption.jpg?w=1200&h=-1&s=1" alt="Food and drink in Sorrento — local seafood and lemon dishes" style="width:100%;max-height:320px;object-fit:cover;border-radius:8px;display:block;margin:0 0 20px;" loading="lazy">
+
+  <p>Sorrento's position puts it within an hour of both buffalo mozzarella farms and open water. The lemons grown on the terraced hillsides above town — the Limone di Sorrento, an IGP-protected variety grown under centuries-old chestnut-pole pergolas — are enormous, thick-skinned, intensely fragrant, and the basis of everything from the pasta to the dessert to the digestivo. The sfusato amalfitano lemon is unlike any variety you've tasted elsewhere; peeling one in your hotel room perfumes the whole floor.</p>
+
+  <h3>Dishes to Order</h3>
+  <div class="food-grid">
+    <div class="food-card">
+      <div class="food-name">Gnocchi alla Sorrentina</div>
+      <p class="food-desc">Potato gnocchi baked with San Marzano tomato, fior di latte mozzarella, and basil. The town's most-ordered dish, and deservedly so.</p>
+    </div>
+    <div class="food-card">
+      <div class="food-name">Spaghetti al Limone</div>
+      <p class="food-desc">Pasta dressed with lemon juice, lemon-scented olive oil, butter, and parsley. Find it on handwritten menus away from the piazza — not where photographs line the windows.</p>
+    </div>
+    <div class="food-card">
+      <div class="food-name">Spaghetti alle Vongole</div>
+      <p class="food-desc">Clams, white wine, garlic, olive oil. The 50-metre proximity to open water is your quality guarantee; order it at Marina Grande.</p>
+    </div>
+    <div class="food-card">
+      <div class="food-name">Delizia al Limone</div>
+      <p class="food-desc">A lemon-shaped sponge filled with limoncello cream, invented by a pastry chef in nearby Sant'Agnello in the 1970s — now the coast's most requested dessert.</p>
+    </div>
+    <div class="food-card">
+      <div class="food-name">Frittura di Paranza</div>
+      <p class="food-desc">Mixed fried seafood from street-side friggitorie, eaten from a paper cone with a squeeze of lemon. Tiny fry shops tucked between Corso Italia and the old harbour.</p>
+    </div>
+    <div class="food-card">
+      <div class="food-name">Mozzarella di Bufala</div>
+      <p class="food-desc">Buffalo farms in Paestum and Caserta are within an hour's drive. The fior di latte (cow's milk) version is the local standard for cooking; the bufala is for eating cold.</p>
+    </div>
+  </div>
+
+  <h3>Where to Eat</h3>
+
+  <div class="place-entry">
+    <div class="tag-row"><span class="tag tag-local">Local Favourite</span></div>
+    <h3 style="margin-top:0;">Trattoria da Emilia</h3>
+    <a href="https://www.google.com/maps/search/?api=1&query=Trattoria+da+Emilia+Marina+Grande+Sorrento+Italy" class="map-link" target="_blank">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Open in Maps — Marina Grande
+    </a>
+    <p>A waterfront seafood table at Marina Grande. Fresh catch, honest prices, local clientele. Order whatever the sea gave them that morning rather than choosing from the menu by name.</p>
+  </div>
+
+  <div class="place-entry">
+    <div class="tag-row"><span class="tag tag-must">Must Do</span></div>
+    <h3 style="margin-top:0;">O'Parrucchiano La Favorita</h3>
+    <a href="https://www.google.com/maps/search/?api=1&query=O+Parrucchiano+La+Favorita+Sorrento+Italy" class="map-link" target="_blank">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Open in Maps — Centro Storico
+    </a>
+    <p>The historic restaurant credited with inventing cannelloni, set under a canopy of lemon and citrus trees. Theatrical, yes — the garden dining room is part of the experience — but the kitchen earns it. Book in advance in summer.</p>
+  </div>
+
+  <div class="place-entry">
+    <div class="tag-row"><span class="tag tag-must">Must Do</span></div>
+    <h3 style="margin-top:0;">Ristorante Il Buco</h3>
+    <a href="https://www.google.com/maps/search/?api=1&query=Ristorante+Il+Buco+Sorrento+Italy" class="map-link" target="_blank">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Open in Maps — Centro Storico
+    </a>
+    <p>Michelin-starred, creative, and firmly rooted in the local larder. The splurge option for the trip — worth it for a special evening.</p>
+  </div>
+
+  <div class="place-entry">
+    <div class="tag-row"><span class="tag tag-local">Local Favourite</span></div>
+    <h3 style="margin-top:0;">Limonoro — Via San Cesareo 49</h3>
+    <a href="https://www.google.com/maps/search/?api=1&query=Limonoro+Via+San+Cesareo+Sorrento+Italy" class="map-link" target="_blank">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Open in Maps — Via San Cesareo
+    </a>
+    <p>Limoncello made on the premises, the traditional way — along with lemon-infused olive oil, lemon biscuits, and lemon chocolate. Skip the generic bottles near the port; come here and taste before you buy.</p>
+  </div>
+
+  <div class="place-entry">
+    <div class="tag-row"><span class="tag tag-gem">Local Gem</span></div>
+    <h3 style="margin-top:0;">La Limonaia</h3>
+    <a href="https://www.google.com/maps/search/?api=1&query=La+Limonaia+Sorrento+Italy" class="map-link" target="_blank">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Open in Maps — Centro Storico
+    </a>
+    <p>A restaurant set inside an 8,000 sqm working citrus grove in the city centre — the menu changes with whatever the garden produces that season. Also offers cooking classes and lemon grove tours. One of the more genuinely unusual dining experiences in town.</p>
+  </div>
+
+  <div class="pmtp-band" style="background:var(--aqua-mist);">
+    <h4>Wine worth knowing</h4>
+    <p>Look for Penisola Sorrentina D.O.C. — some experts compare it to Beaujolais in character, and it pairs well with the lighter seafood dishes. Greco di Tufo, from slightly further afield in Campania, is the better call with heavier sauces and grilled fish.</p>
+  </div>
+
+  <!-- OUTDOOR -->
+  <h2>Outdoor &amp; Nature</h2>
+  <span class="section-subhead">The coast here is old — Roman old — and it rewards the people willing to walk a little.</span>
+
+  <div class="place-entry">
+    <div class="tag-row"><span class="tag tag-must">Must Do</span><span class="tag tag-gem">Local Gem</span></div>
+    <h3 style="margin-top:0;">Bagni della Regina Giovanna</h3>
+    <a href="https://www.google.com/maps/search/?api=1&query=Bagni+della+Regina+Giovanna+Sorrento+Italy" class="map-link" target="_blank">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Open in Maps — Capo di Sorrento
+    </a>
+    <img src="https://www.italia.it/content/dam/tdh/en/interests/campania/bagni-della-regina-giovanna-campania/media/20210304102117-bagni-della-regina-giovanna.jpg" alt="Bagni della Regina Giovanna, Sorrento — natural rock pool and arch on the Cape of Sorrento" style="width:100%;max-height:320px;object-fit:cover;border-radius:8px;display:block;margin:0 0 16px;" loading="lazy">
+    <p>Not a beach in the conventional sense: a natural swimming pool enclosed by limestone cliffs and connected to the open sea through a rock arch, with the ruins of a 1st-century BC Roman villa (Villa Pollio Felice) on the rock above. Named for Queen Giovanna d'Angiò, who is said to have made somewhat scandalous use of it between 1371 and 1435. The water is clear, the setting is extraordinary, and it has been drawing swimmers for more than two thousand years.</p>
+    <p>About 3.5 km from the centre. Walk Via Capo westward (40–50 minutes total), or take the SITA or EAV bus toward Massa Lubrense and ask for "Capo di Sorrento" — a five-minute ride. From the road, follow the sign for Ruderi della Villa Romana and take the stone path down (15–20 minutes).</p>
+    <div class="tip-box">The site gets packed between 11am and 4pm in summer. Arrive by 8:30am for near-silence, or after 5:30pm for the sunset over open water — the better reward. No facilities on site: bring water, food, and rubber-soled shoes. The Roman stones are slippery when wet.</div>
+  </div>
+
+  <h3>Day Trips</h3>
+  <p>Sorrento's real value is as a base. These are the day trips worth organising before you arrive:</p>
+
+  <div class="daytrip-row">
+    <div class="daytrip-pill">
+      <span class="daytrip-name">Capri</span>
+      <span class="daytrip-how">Ferry · ~30 min from Marina Piccola</span>
+    </div>
+    <div class="daytrip-pill">
+      <span class="daytrip-name">Positano</span>
+      <span class="daytrip-how">Ferry · ~1 hr, or SITA bus</span>
+    </div>
+    <div class="daytrip-pill">
+      <span class="daytrip-name">Pompeii</span>
+      <span class="daytrip-how">Circumvesuviana train · ~40 min</span>
+    </div>
+    <div class="daytrip-pill">
+      <span class="daytrip-name">Amalfi</span>
+      <span class="daytrip-how">Ferry · ~1.5 hr, or bus</span>
+    </div>
+    <div class="daytrip-pill">
+      <span class="daytrip-name">Naples</span>
+      <span class="daytrip-how">Train · ~70 min, or ferry · ~45 min</span>
+    </div>
+  </div>
+
+  <p style="font-size:13.5px;color:var(--ink-soft);">Schedules change seasonally — verify ferry and train times with operators before your trip. Capri ferries in particular fill up fast in July and August; buy tickets in advance.</p>
+
+  <div class="pmtp-band" style="background:var(--warm-sand);">
+    <h4>Peninsula hiking</h4>
+    <p>The Path of the Gods (Sentiero degli Dei) and the trails to Baia di Leranto and Punta Campanella are the peninsula's headline hikes, both accessible from Sorrento by bus or car. Plan a full day for either — the research here doesn't go into full trail detail, so verify current trail conditions and access locally before heading out.</p>
+  </div>
+
+  <!-- SHOPPING -->
+  <h2>Shopping &amp; Markets</h2>
+  <span class="section-subhead">The further you walk from Piazza Tasso along Via San Cesareo, the more interesting the shops become.</span>
+
+  <p>Via San Cesareo and its continuation Via Fuoro form the main shopping artery — a narrow pedestrian lane dense with artisan shops and outdoor kiosks. The shops near the piazza lean heavily tourist; the further south you walk, the more you find actual workshops, ceramic studios, and family-run producers.</p>
+
+  <h3>Worth Buying</h3>
+
+  <div class="place-entry">
+    <div class="tag-row"><span class="tag tag-local">Local Craft</span></div>
+    <h3 style="margin-top:0;">Intarsia — Inlaid Wood</h3>
+    <p>Sorrento has been the centre of this craft since the 19th century. Intarsia involves building intricate designs and scenes from a mosaic of different woods — the result is somewhere between marquetry and painting. Large tourist showrooms (Gargiulo &amp; Januzzi on Piazza Tasso) do live demonstrations, but many of the objects produced for the souvenir market are far below the craft's actual standard. Buy directly from the workshop where the piece was made, not from resellers near the port. The Museo Bottega della Tarsia Lignea (see Sights) is the right place to calibrate your eye before spending anything.</p>
+  </div>
+
+  <div class="place-entry">
+    <div class="tag-row"><span class="tag tag-gem">Local Gem</span></div>
+    <h3 style="margin-top:0;">Terrerosse · Via Fuoro 73</h3>
+    <a href="https://www.google.com/maps/search/?api=1&query=Via+Fuoro+73+Sorrento+Italy" class="map-link" target="_blank">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Open in Maps
+    </a>
+    <p>Individual handicrafts inspired by local landscapes and myths — ceramics with fish designs, small affordable bowls that fit in a carry-on. A long way from the mass-produced items on the same street.</p>
+  </div>
+
+  <p>Other things genuinely worth buying: handmade sandals (several cobblers on Via San Cesareo make them to measure in a few hours); proper limoncello from producers who make it on site; bright lemon-motif ceramics from actual workshops; local food products including D.O.P. olive oil, nocillo (walnut liqueur), and Pasta di Gragnano, considered among the best pasta in the region.</p>
+
+  <div class="pmtp-band" style="background:var(--aqua-mist);">
+    <h4>A word on limoncello</h4>
+    <p>The Limone di Sorrento IGP designation means the lemons come from this specific peninsula and are grown to specific standards. Limoncello bottles that don't mention provenance or production method — especially those sold near the ferry terminal — typically have nothing to do with the local tradition. Buy from producers who name their source and make it on site; Limonoro (Via San Cesareo 49) and I Giardini di Cataldo are both cited locally as reliable.</p>
+  </div>
+
+  <!-- PRACTICAL -->
+  <h2>Planning Your Trip</h2>
+  <span class="section-subhead">Three days covers the town; four gives you room for the coast; five lets you do it properly.</span>
+
+  <div class="practical-grid">
+    <div class="practical-item">
+      <span class="practical-label">Best Time</span>
+      <p class="practical-value">April–June and September–October. Average highs 18°C in April, 26°C in June. Summer exceeds 30°C and is the most crowded period. November–March is cheapest but some restaurants close.</p>
+    </div>
+    <div class="practical-item">
+      <span class="practical-label">How Many Days</span>
+      <p class="practical-value">3–4 days minimum to cover the town and one day trip. Five days for Capri, Pompeii, and an Amalfi coast town without rushing.</p>
+    </div>
+    <div class="practical-item">
+      <span class="practical-label">Getting There</span>
+      <p class="practical-value">Fly into Naples (NAP). Circumvesuviana train to Sorrento: ~70 min, cheapest option. Ferry from Naples: ~45 min. Private transfer: most comfortable.</p>
+    </div>
+    <div class="practical-item">
+      <span class="practical-label">Costs <span style="font-weight:400;font-size:11px;">(verify on arrival)</span></span>
+      <p class="practical-value">Mid-range hotels typically €80–120/night. Espresso at a bar under €2. Restaurant mains €15–30. Bus tickets €1.20 — buy at a tabaccaio before boarding.</p>
+    </div>
+    <div class="practical-item">
+      <span class="practical-label">Beaches</span>
+      <p class="practical-value">Most beach clubs charge a fee. A small free public beach exists between the two marinas — it gets crowded. Marina Grande has one of the few sandy stretches near town.</p>
+    </div>
+    <div class="practical-item">
+      <span class="practical-label">Local Rhythm</span>
+      <p class="practical-value">Lunch 1–3pm. Dinner from 8pm. Restaurants close around 3–4pm. Dress modestly for churches. The evening passeggiata along Corso Italia (from ~7pm) is a genuine local ritual — join it rather than eat through it.</p>
+    </div>
+  </div>
+
+  <!-- WHAT TO AVOID -->
+  <h2>What to Avoid</h2>
+  <span class="section-subhead">A few decisions made in the first hour can define the whole trip — here's what to sidestep.</span>
+
+  <div class="avoid-entry">
+    <span class="avoid-icon">—</span>
+    <div>
+      <div class="avoid-label">Restaurants directly on Piazza Tasso</div>
+      <p class="avoid-body">Every Italian dish on one menu, none of them done particularly well. You're paying for the view. Walk two streets in any direction and the food immediately improves.</p>
+    </div>
+  </div>
+
+  <div class="avoid-entry">
+    <span class="avoid-icon">—</span>
+    <div>
+      <div class="avoid-label">Generic limoncello near the ferry terminal</div>
+      <p class="avoid-body">Bottles with no stated origin and no producer name. Real Limone di Sorrento carries an IGP designation and a provenance. The price difference is small; the quality difference is not.</p>
+    </div>
+  </div>
+
+  <div class="avoid-entry">
+    <span class="avoid-icon">—</span>
+    <div>
+      <div class="avoid-label">Cheap intarsia from tourist resellers</div>
+      <p class="avoid-body">Much of what's sold near the port and along Via San Cesareo bears little resemblance to the actual craft. Buy directly from the workshop where the piece was made — the museum is the best place to calibrate what good work looks like.</p>
+    </div>
+  </div>
+
+  <div class="avoid-entry">
+    <span class="avoid-icon">—</span>
+    <div>
+      <div class="avoid-label">Driving the Amalfi Coast yourself in July and August</div>
+      <p class="avoid-body">The roads are single-lane in places, crowded with coaches, and genuinely stressful for even experienced drivers in peak season. Ferries and organised day trips are faster, more comfortable, and leave the driving to someone who does it every day.</p>
+    </div>
+  </div>
+
+  <div class="avoid-entry">
+    <span class="avoid-icon">—</span>
+    <div>
+      <div class="avoid-label">Arriving without advance bookings in summer</div>
+      <p class="avoid-body">Capri ferries sell out. Popular restaurants fill. Lines for buses can be long even in October; in July and August they compound significantly. Ferries to Capri and day-trip tours should be booked before you leave home.</p>
+    </div>
+  </div>
+
+  <div class="avoid-entry">
+    <span class="avoid-icon">—</span>
+    <div>
+      <div class="avoid-label">Bagni della Regina Giovanna between 11am and 4pm in summer</div>
+      <p class="avoid-body">The site is small. The midday hours bring maximum crowds to a space that deserves quiet. Go at 8:30am or after 5:30pm — either way you'll have a different experience entirely.</p>
+    </div>
+  </div>
+
+  <div class="pmtp-band" style="background:var(--warm-sand);">
+    <h4>One more thing</h4>
+    <p>Sorrento works better as a base than a destination in isolation. If you're only here to see Sorrento itself, two days is probably enough — the town is genuinely charming but compact. The real case for staying four or five nights is the day trip network: Capri, Pompeii, the Amalfi towns, and Naples are all different worlds, all reachable in under an hour, and all substantially easier from here than from anywhere else on the coast.</p>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="pmtp-footer">
+    <div style="font-family:'Fraunces',serif;font-size:20px;font-weight:600;">Andrea Gunter</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink-soft);font-size:15px;margin-bottom:14px;">Travel Advisor</div>
+    <div style="font-size:14px;margin-bottom:4px;"><a id="pmtpEmailLink" href="#"></a></div>
+    <div style="font-size:14px;margin-bottom:4px;">[Phone]</div>
+    <div style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink-soft);font-size:14px;margin-top:14px;">Point Me to Paradise Travel</div>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div class="pmtp-disclaimer">
+    <span style="display:block;font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);margin-bottom:8px;">Important — please read</span>
+    This guide is provided for informational purposes only. Locations, hours, conditions, and recommendations can change without notice, and ocean, weather, trail, road, and travel conditions can shift quickly and unpredictably. Point Me to Paradise Travel, the advisor named in this guide, and the authors of this content are not liable for any injury, illness, loss, theft, or harm of any kind arising from your visit to any location or participation in any activity referenced here. By using this guide, you accept full personal responsibility for your own safety. Use your own judgment, verify current conditions before any activity, follow all posted warnings and local regulations, and consult qualified professionals — lifeguards, park rangers, licensed guides, medical providers — where appropriate.
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var l="andrea",d="pointmetoparadise.com";
+  if(!l||!d)return;
+  var a=l+"\u0040"+d;
+  var el=document.getElementById("pmtpEmailLink");
+  if(el){el.href="mailto:"+a;el.textContent=a;}
+})();
+</script>
+</body>
+</html>
