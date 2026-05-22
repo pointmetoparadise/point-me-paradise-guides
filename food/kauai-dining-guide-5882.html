@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kauaʻi Dining Guide | Point Me to Paradise Travel</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --aqua: #B1E6E0;
+    --teal: #75AFB1;
+    --gold: #DAC396;
+    --cream: #E9DEC0;
+    --navy: #162D42;
+    --white: #FAFAF8;
+    --text: #2C3E35;
+    --muted: #6B7E78;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'DM Sans', sans-serif; background-color: var(--white); color: var(--text); font-size: 15px; line-height: 1.7; }
+
+  .header { background-color: var(--navy); padding: 48px 40px 40px; text-align: center; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 70% 30%, rgba(177,230,224,0.12) 0%, transparent 60%), radial-gradient(ellipse at 20% 80%, rgba(218,195,150,0.08) 0%, transparent 50%); }
+  .header-inner { position: relative; z-index: 1; }
+  .agency-name { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase; color: var(--aqua); margin-bottom: 16px; opacity: 0.85; }
+  .header h1 { font-family: 'Cormorant Garamond', serif; font-size: 50px; font-weight: 300; color: var(--white); letter-spacing: 1px; line-height: 1.15; margin-bottom: 6px; }
+  .header h1 em { font-style: italic; color: var(--gold); font-weight: 300; }
+  .header-sub { font-family: 'DM Sans', sans-serif; font-size: 13px; color: rgba(233,222,192,0.65); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 14px; }
+  .header-divider { width: 60px; height: 1px; background: linear-gradient(to right, transparent, var(--gold), transparent); margin: 20px auto 0; }
+
+  .intro-strip { background-color: var(--cream); padding: 22px 40px; text-align: center; border-bottom: 1px solid rgba(117,175,177,0.2); }
+  .intro-strip p { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 400; color: var(--navy); font-style: italic; max-width: 760px; margin: 0 auto; line-height: 1.6; }
+
+  .legend { display: flex; justify-content: center; gap: 28px; flex-wrap: wrap; padding: 18px 40px; background: #f5f5f2; border-bottom: 1px solid #e0ddd5; }
+  .legend-item { display: flex; align-items: center; gap: 7px; font-size: 12px; color: var(--muted); font-weight: 500; letter-spacing: 0.5px; }
+  .badge { display: inline-flex; align-items: center; padding: 3px 9px; border-radius: 20px; font-size: 10px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; white-space: nowrap; }
+  .badge-required { background: var(--navy); color: var(--aqua); }
+  .badge-recommended { background: var(--teal); color: var(--white); }
+  .badge-resort { background: var(--gold); color: var(--navy); }
+  .badge-walkin { background: #e0ddd5; color: var(--muted); }
+
+  main { max-width: 900px; margin: 0 auto; padding: 50px 30px 80px; }
+
+  .region { margin-bottom: 60px; }
+  .region-header { display: flex; align-items: center; gap: 16px; margin-bottom: 28px; padding-bottom: 14px; border-bottom: 2px solid var(--aqua); }
+  .region-icon { width: 36px; height: 36px; background: var(--navy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; }
+  .region-title { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 500; color: var(--navy); letter-spacing: 0.5px; }
+  .region-subtitle { font-size: 12px; color: var(--teal); font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; margin-top: 1px; }
+
+  .restaurant-card { background: #fff; border: 1px solid #e8e5de; border-radius: 8px; margin-bottom: 20px; overflow: hidden; transition: box-shadow 0.2s ease; }
+  .restaurant-card:hover { box-shadow: 0 4px 20px rgba(22,45,66,0.08); }
+
+  .card-header { padding: 20px 24px 16px; display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; border-bottom: 1px solid #f0ece4; }
+  .card-title-group { flex: 1; }
+  .card-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--navy); line-height: 1.2; margin-bottom: 4px; }
+  .card-location { font-size: 12px; color: var(--muted); font-weight: 400; letter-spacing: 0.3px; }
+  .card-location strong { color: var(--teal); font-weight: 500; }
+  .card-badges { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; flex-shrink: 0; }
+
+  .card-body { padding: 18px 24px 20px; }
+  .card-description { font-size: 14.5px; color: var(--text); line-height: 1.75; margin-bottom: 16px; }
+
+  .card-highlights { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 14px; }
+  .highlight-tag { background: #f0ece4; color: var(--navy); font-size: 11px; padding: 3px 10px; border-radius: 20px; font-weight: 500; }
+
+  .card-footer { display: flex; align-items: flex-start; gap: 16px; padding-top: 14px; border-top: 1px solid #f0ece4; flex-wrap: wrap; }
+
+  .card-details { flex: 1; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; }
+  .detail-item { display: flex; flex-direction: column; gap: 2px; }
+  .detail-label { font-size: 10px; font-weight: 600; letter-spacing: 1.2px; text-transform: uppercase; color: var(--teal); }
+  .detail-value { font-size: 13px; color: var(--text); font-weight: 400; }
+
+  /* RESERVE BUTTON */
+  .reserve-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--navy);
+    color: var(--aqua);
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 0.2s, color 0.2s;
+    flex-shrink: 0;
+    align-self: flex-start;
+  }
+  .reserve-btn:hover { background: var(--teal); color: var(--white); }
+  .reserve-btn.call-btn { background: #f0ece4; color: var(--navy); }
+  .reserve-btn.call-btn:hover { background: var(--gold); color: var(--navy); }
+  .reserve-btn svg { width: 12px; height: 12px; flex-shrink: 0; }
+
+  .advisory { background: linear-gradient(135deg, #fff8ee, #fdf3e3); border: 1px solid rgba(218,195,150,0.5); border-left: 3px solid var(--gold); border-radius: 6px; padding: 12px 16px; margin-bottom: 14px; font-size: 13px; color: #6B5B35; line-height: 1.55; }
+  .advisory strong { color: #4A3B1F; }
+
+  .walkin-card { background: linear-gradient(135deg, #f5f5f2, #f0ece4); border: 1px solid #e0ddd5; border-radius: 8px; padding: 20px 24px; margin-bottom: 20px; display: flex; gap: 16px; align-items: flex-start; }
+  .walkin-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
+  .walkin-content { flex: 1; }
+  .walkin-name { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 600; color: var(--navy); margin-bottom: 5px; }
+  .walkin-desc { font-size: 13.5px; color: var(--muted); line-height: 1.65; }
+
+  .booking-section { margin-top: 60px; padding-top: 40px; border-top: 2px solid var(--aqua); }
+  .booking-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 500; color: var(--navy); margin-bottom: 6px; }
+  .booking-section .section-sub { font-size: 13px; color: var(--muted); margin-bottom: 24px; letter-spacing: 0.3px; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead tr { background: var(--navy); color: var(--aqua); }
+  thead th { padding: 11px 14px; text-align: left; font-weight: 600; font-size: 10.5px; letter-spacing: 1px; text-transform: uppercase; }
+  tbody tr:nth-child(even) { background: #f8f6f2; }
+  tbody tr:hover { background: #f0ece4; }
+  tbody td { padding: 10px 14px; border-bottom: 1px solid #ece8e0; vertical-align: middle; color: var(--text); }
+  tbody td:first-child { font-weight: 500; color: var(--navy); }
+  .urgency-high { color: #c0392b; font-weight: 600; }
+  .urgency-med { color: #d68910; font-weight: 600; }
+  .urgency-low { color: var(--teal); font-weight: 500; }
+  .tbl-link { display: inline-flex; align-items: center; gap: 5px; background: var(--navy); color: var(--aqua); padding: 5px 12px; border-radius: 4px; font-size: 11px; font-weight: 600; text-decoration: none; letter-spacing: 0.5px; white-space: nowrap; }
+  .tbl-link:hover { background: var(--teal); color: #fff; }
+  .tbl-link.call { background: #f0ece4; color: var(--navy); }
+  .tbl-link.call:hover { background: var(--gold); }
+
+  footer { background: var(--navy); color: rgba(177,230,224,0.6); text-align: center; padding: 28px 40px; font-size: 12px; letter-spacing: 0.5px; line-height: 1.8; }
+  footer strong { color: var(--aqua); }
+
+  .sub-section-label { font-size: 10.5px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--teal); margin: 30px 0 14px; padding-bottom: 6px; border-bottom: 1px dashed rgba(117,175,177,0.35); }
+
+  @media (max-width: 600px) {
+    .header h1 { font-size: 34px; }
+    main { padding: 32px 18px 60px; }
+    .card-header { flex-direction: column; }
+    .card-badges { flex-direction: row; }
+    .card-footer { flex-direction: column; }
+    .reserve-btn { width: 100%; justify-content: center; }
+    .legend { gap: 12px; }
+    thead th, tbody td { padding: 8px 10px; font-size: 11px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-inner">
+    <div class="agency-name">Point Me to Paradise Travel</div>
+    <h1>Reserve First. <em>Arrive Ready.</em></h1>
+    <div class="header-sub">A Kauaʻi Dining Guide — The Tables Worth Planning For</div>
+    <div class="header-divider"></div>
+  </div>
+</div>
+
+<div class="intro-strip">
+  <p>Kauaʻi's dining scene rewards those who plan ahead. The island's best restaurants are small, seasonal, and in high demand — the tables worth sitting at are rarely available on a whim. Reserve early, reserve often, and let the food be part of the adventure.</p>
+</div>
+
+<div class="legend">
+  <div class="legend-item"><span class="badge badge-required">Reservation Required</span> — must book in advance</div>
+  <div class="legend-item"><span class="badge badge-recommended">Reservation Recommended</span> — walk-ins possible but risky</div>
+  <div class="legend-item"><span class="badge badge-resort">Resort Dining</span> — hotel restaurant, open to all guests</div>
+</div>
+
+<main>
+
+<!-- ══════════════════════ NORTH SHORE ══════════════════════ -->
+<div class="region">
+  <div class="region-header">
+    <div class="region-icon">🌿</div>
+    <div>
+      <div class="region-title">North Shore</div>
+      <div class="region-subtitle">Princeville · Hanalei · Hāʻena</div>
+    </div>
+  </div>
+
+  <div class="sub-section-label">1 Hotel Hanalei Bay — Princeville</div>
+
+  <!-- 1 KITCHEN -->
+  <div class="restaurant-card">
+    <div class="card-header">
+      <div class="card-title-group">
+        <div class="card-name">1 Kitchen</div>
+        <div class="card-location"><strong>Princeville</strong> · 1 Hotel Hanalei Bay · Open to the public</div>
+      </div>
+      <div class="card-badges"><span class="badge badge-recommended">Reservation Recommended</span><span class="badge badge-resort">Resort Dining</span></div>
+    </div>
+    <div class="card-body">
+      <div class="card-highlights"><span class="highlight-tag">Farm-to-Table</span><span class="highlight-tag">Hanalei Bay Views</span><span class="highlight-tag">Breakfast · Lunch · Dinner</span><span class="highlight-tag">Michelin Key Property</span></div>
+      <p class="card-description">The signature restaurant of the Michelin Key–awarded 1 Hotel Hanalei Bay, 1 Kitchen sources ingredients from handpicked local purveyors — Blue Ocean Mariculture shrimp, Pono Farms produce, Hanalei Coffee Roasters — weaving Kauaʻi's agricultural story into every plate. The setting, perched above the bay, makes it one of the most scenic dining rooms on the island for any meal of the day.</p>
+      <div class="card-footer">
+        <div class="card-details">
+          <div class="detail-item"><div class="detail-label">Hours</div><div class="detail-value">Breakfast, Lunch & Dinner daily</div></div>
+          <div class="detail-item"><div class="detail-label">Location</div><div class="detail-value">5520 Ka Haku Rd, Princeville</div></div>
+          <div class="detail-item"><div class="detail-label">Dress</div><div class="detail-value">Resort casual</div></div>
+        </div>
+        <a class="reserve-btn" href="https://www.1hotels.com/hanalei-bay/taste/1-kitchen" target="_blank">Reserve →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- WELINA TERRACE -->
+  <div class="restaurant-card">
+    <div class="card-header">
+      <div class="card-title-group">
+        <div class="card-name">Welina Terrace Lounge</div>
+        <div class="card-location"><strong>Princeville</strong> · 1 Hotel Hanalei Bay</div>
+      </div>
+      <div class="card-badges"><span class="badge badge-recommended">Reservation Recommended</span><span class="badge badge-resort">Resort Dining</span></div>
+    </div>
+    <div class="card-body">
+      <div class="card-highlights"><span class="highlight-tag">Sunset Cocktails</span><span class="highlight-tag">Sushi Bar</span><span class="highlight-tag">Panoramic Bay Views</span></div>
+      <p class="card-description">Sweeping views of Hanalei Bay and the dramatic Nāpali ridgeline unfold from this open-air lounge — one of the great sunset perches on the North Shore. Request a front table well in advance. The sushi menu is tight and well-executed; the craft cocktails lean tropical without being cliché.</p>
+      <div class="card-footer">
+        <div class="card-details">
+          <div class="detail-item"><div class="detail-label">Location</div><div class="detail-value">5520 Ka Haku Rd, Princeville</div></div>
+          <div class="detail-item"><div class="detail-label">Tip</div><div class="detail-value">Request a front bay-view table</div></div>
+        </div>
+        <a class="reserve-btn" href="https://www.1hotels.com/hanalei-bay/taste/welina-terrace-lounge" target="_blank">Reserve →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-section-label">Hanalei Town</div>
+
+  <!-- BAR ACUDA -->
+  <div class="restaurant-card">
+    <div class="card-header">
+      <div class="card-title-group">
+        <div class="card-name">Bar Acuda</div>
+        <div class="card-location"><strong>Hanalei</strong> · 5-5161 Kuhio Hwy</div>
+      </div>
+      <div class="card-badges"><span class="badge badge-required">Reservation Required</span></div>
+    </div>
+    <div class="card-body">
+      <div class="card-highlights"><span class="highlight-tag">Mediterranean Tapas</span><span class="highlight-tag">Locally Sourced</span><span class="highlight-tag">Outstanding Wine List</span><span class="highlight-tag">Tue – Sat Only</span></div>
+      <p class="card-description">The North Shore's most coveted dinner reservation — and deservedly so. Chef-owners Hanna and Kenny Uddifa run a tight, brilliantly executed tapas program out of a small, warm room in Hanalei. The menu changes with the season; regulars return for the local cucumber salad, lamb riblets, honeycomb plate with Humboldt Fog, house-made pasta specials, and the unforgettable lilikoi cheesecake. The wine list — weighted toward Rhône varietals and small-production European bottles — is exceptional for a restaurant this size on an island this remote.</p>
+      <div class="advisory"><strong>Reserve exactly 30 days in advance</strong> — that's when the booking window opens on Resy. Turn on cancellation alerts if your dates show full. Bar seating (21+) is first come, first served. Tuesday through Saturday only.</div>
+      <div class="card-footer">
+        <div class="card-details">
+          <div class="detail-item"><div class="detail-label">Hours</div><div class="detail-value">Dinner only · Tue–Sat · 5:30–9:30pm</div></div>
+          <div class="detail-item"><div class="detail-label">Phone</div><div class="detail-value">(808) 855-7802</div></div>
+        </div>
+        <a class="reserve-btn" href="https://resy.com/cities/hanalei-hi-hi/venues/bar-acuda" target="_blank">Reserve on Resy →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- AMA -->
+  <div class="restaurant-card">
+    <div class="card-header">
+      <div class="card-title-group">
+        <div class="card-name">AMA Restaurant</div>
+        <div class="card-location"><strong>Hanalei</strong> · 5-5161 Kuhio Hwy · Adjacent to Bar Acuda</div>
+      </div>
+      <div class="card-badges"><span class="badge badge-recommended">Reservation Recommended</span></div>
+    </div>
+    <div class="card-body">
+      <div class="card-highlights"><span class="highlight-tag">Japanese Noodles & Ramen</span><span class="highlight-tag">Tropical Cocktails</span><span class="highlight-tag">Fire Pit Seating</span><span class="highlight-tag">Mountain Views</span></div>
+      <p class="card-description">From the same team behind Bar Acuda, AMA brings a more casual, convivial energy to the Hanalei dining scene — ramen, donburi rice bowls, steamed buns, and craft cocktails in an open-air space with a fire pit and mountain backdrop. The vibe is lively without being loud, and the menu gives families and non-tapas lovers a wonderful alternative. A fire pit table at dusk is one of the North Shore's most relaxed pleasures.</p>
+      <div class="card-footer">
+        <div class="card-details">
+          <div class="detail-item"><div class="detail-label">Hours</div><div class="detail-value">Wed–Sat · Dinner 5–9pm</div></div>
+          <div class="detail-item"><div class="detail-label">Phone</div><div class="detail-value">(808) 826-9452</div></div>
+          <div class="detail-item"><div class="detail-label">Tip</div><div class="detail-value">Request grass-side fire pit seating</div></div>
+        </div>
+        <a class="reserve-btn call-btn" href="tel:+18088269452" target="_blank">📞 Call to Reserve</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- POSTCARDS -->
+  <div class="restaurant-card">
+    <div class="card-header">
+      <div class="card-title-group">
+        <div class="card-name">Postcards Café</div>
+        <div class="card-location"><strong>Hanalei</strong> · 5-5075 Kuhio Hwy · Plantation cottage</div>
+      </div>
+      <div class="card-badges"><span class="badge badge-recommended">Reservation Recommended</span></div>
+    </div>
+    <div class="card-body">
+      <div class="card-highlights"><span class="highlight-tag">Global Fine Dining</span><span class="highlight-tag">Ocean-to-Table</span><span class="highlight-tag">Organic Ingredients</span><span class="highlight-tag">Tue – Sat Only</span></div>
+      <p class="card-description">Tucked into a charming 1860s plantation cottage on the edge of Hanalei, Postcards is one of the North Shore's best fine dining secrets. Chef Javier Melendez draws from his global travels — French and Japanese technique layered with flavors from Asia, Africa, and the Caribbean — all grounded in organic, locally sourced ingredients. Wagyu NY strip, coriander-crusted ahi, tuna on watermelon with chili and jalapeño, grilled octopus, chèvre cheesecake. The screened porch catches the last of the Hanalei sunset beautifully.</p>
+      <div class="card-footer">
+        <div class="card-details">
+          <div class="detail-item"><div class="detail-label">Hours</div><div class="detail-value">Dinner only · Tue–Sat · 5–9pm</div></div>
+          <div class="detail-item"><div class="detail-label">Tip</div><div class="detail-value">Book the first seating for the sunset view</div></div>
+        </div>
+        <a class="reserve-btn call-btn" href="tel:+18088261191">📞 (808) 826-1191</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-section-label">Princeville</div>
+
+  <!-- HAPPY TALK -->
+  <div class="restaurant-card">
+    <div class="card-header">
+      <div class="card-title-group">
+        <div class="card-name">Happy Talk Lounge</div>
+        <div class="card-location"><strong>Princeville</strong> · 5380 Honoiki Rd · Hanalei Bay Resort</div>
+      </div>
+      <div class="card-badges"><span class="badge badge-recommended">Reservation Recommended</span></div>
+    </div>
+    <div class="card-body">
+      <div class="card-highlights"><span class="highlight-tag">Best Sunset Views on North Shore</span><span class="highlight-tag">Live Music Nightly</span><span class="highlight-tag">Open-Air Dining</span><span class="highlight-tag">Family-Friendly</span></div>
+      <p class="card-description">Three walls open to the trade winds, unobstructed sightlines across Hanalei Bay to the silhouette of Makana (Bali Hai) — Happy Talk earns its OpenTable "Most Scenic View" award every single evening. The menu satisfies rather than dazzles: Volcano Poke, Kalua Pork Tacos, fresh catch, and the Happy Talk Smash Burger. Come for cocktails at sunset; stay for live music every night.</p>
+      <div class="card-footer">
+        <div class="card-details">
+          <div class="detail-item"><div class="detail-label">Hours</div><div class="detail-value">Daily · 3–9pm</div></div>
+          <div class="detail-item"><div class="detail-label">Tip</div><div class="detail-value">Arrive 5:30–6pm for best sunset light</div></div>
+        </div>
+        <a class="reserve-btn" href="https://www.happytalklounge.com" target="_blank">Reserve →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-section-label">Hāʻena — Far North Shore</div>
+
+  <!-- OPAKAPAKA -->
+  <div class="restaurant-card">
+    <div class="card-header">
+      <div class="card-title-group">
+        <div class="card-name">Opakapaka Grill & Bar</div>
+        <div class="card-location"><strong>Hāʻena</strong> · Hanalei Colony Resort · End of the road</div>
+      </div>
+      <div class="card-badges"><span class="badge badge-recommended">Reservation Recommended</span><span class="badge badge-resort">Resort Dining</span></div>
+    </div>
+    <div class="card-body">
+      <div class="card-highlights"><span class="highlight-tag">Only Oceanside Dining on North Shore</span><span class="highlight-tag">Fresh Local Seafood</span><span class="highlight-tag">Live Music</span></div>
+      <p class="card-description">Named after a prized Hawaiian reef fish, Opakapaka sits right on the water at the Hanalei Colony Resort — the last stop before Nāpali closes the road. Wide-open oceanfront windows frame an uninterrupted Pacific view. Locally sourced seafood, steaks, and fresh produce anchor the menu. A natural choice for travelers spending the day at Haena State Park and Kee Beach.</p>
+      <div class="advisory"><strong>Not on OpenTable.</strong> Call directly to reserve. Walk-ins accepted, but tables fill during dinner rush.</div>
+      <div class="card-footer">
+        <div class="card-details">
+          <div class="detail-item"><div class="detail-label">Hours</div><div class="detail-value">Lunch, Happy Hour & Dinner daily</div></div>
+        </div>
+        <a class="reserve-btn call-btn" href="tel:+18083784425">📞 (808) 378-4425</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- DOLPHIN WALKIN -->
+  <div class="walkin-card">
+    <div class="walkin-icon">⚓</div>
+    <div class="walkin-content">
+      <div class="walkin-name">The Dolphin Restaurant — Hanalei <span class="badge badge-walkin" style="font-size:10px; vertical-align:middle; margin-left:8px;">First Come, First Served</span></div>
+      <div class="walkin-desc">A Hanalei institution since the 1970s. The Dolphin does not take reservations — arrive before 6pm for the best chance at a table in the riverside dining room or a seat in the world-class sushi lounge. Known for the freshest local seafood, Kailani Farms organic greens, and a serene Hanalei River setting that hasn't changed in 50 years. <strong>Worth the wait. Arrive early.</strong></div>
+    </div>
+  </div>
+
+</div><!-- end north shore -->
+
+<!-- ══════════════════════ EAST SIDE ══════════════════════ -->
+<div class="region">
+  <div class="region-header">
+    <div class="region-icon">🌅</div>
+    <div>
+      <div class="region-title">East Side</div>
+      <div class="region-subtitle">Kapaʻa · Līhuʻe</div>
+    </div>
+  </div>
+
+  <!-- AINA KAUAI -->
+  <div class="restaurant-card">
+    <div class="card-header">
+      <div class="card-title-group">
+        <div class="card-name">Āina Kauaʻi</div>
+        <div class="card-location"><strong>Kapaʻa</strong> · 4-985 Kuhio Hwy</div>
+      </div>
+      <div class="card-badges"><span class="badge badge-required">Reservation Required</span></div>
+    </div>
+    <div class="card-body">
+      <div class="card-highlights"><span class="highlight-tag">Kaiseki Tasting Menu</span><span class="highlight-tag">14 Seats Only</span><span class="highlight-tag">Thu & Sat Only</span><span class="highlight-tag">Hale ʻAina Best Restaurant 2023–2025</span></div>
+      <p class="card-description">The most celebrated dining experience on Kauaʻi — and one of the most intimate tasting menus in all of Hawaiʻi. Chef Mitch Muroff seats just 14 guests per evening, executing a nine-course kaiseki tasting menu that layers Japanese technique over the island's seasonal harvest. Every course arrives simultaneously, plated in real time in full view. The beverage program centers on premium sake, Japanese whisky, and local spirits. This is not a dinner — it's a ceremony.</p>
+      <div class="advisory"><strong>No modifications. No substitutions. No cancellations.</strong> Dietary restrictions must be emailed before booking. Thursday and Saturday only, one seating per night.</div>
+      <div class="card-footer">
+        <div class="card-details">
+          <div class="detail-item"><div class="detail-label">Hours</div><div class="detail-value">Thu & Sat only · 6pm seating</div></div>
+          <div class="detail-item"><div class="detail-label">Dietary Email</div><div class="detail-value">eat@ainakauai.com</div></div>
+          <div class="detail-item"><div class="detail-label">Tip</div><div class="detail-value">Arrive at 5:30 for the cocktail window</div></div>
+        </div>
+        <a class="reserve-btn" href="https://www.opentable.com/r/aina-kauai-restaurant-kapaa" target="_blank">Reserve on OpenTable →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HUALANI'S -->
+  <div class="restaurant-card">
+    <div class="card-header">
+      <div class="card-title-group">
+        <div class="card-name">Hualani's at Timbers Kauaʻi</div>
+        <div class="card-location"><strong>Līhuʻe</strong> · 3770 Alaʻoli Way · Open to the public</div>
+      </div>
+      <div class="card-badges"><span class="badge badge-recommended">Reservation Recommended</span><span class="badge badge-resort">Resort Dining</span></div>
+    </div>
+    <div class="card-body">
+      <div class="card-highlights"><span class="highlight-tag">Oceanfront Farm-to-Table</span><span class="highlight-tag">On-Site Organic Farm</span><span class="highlight-tag">Breakfast · Lunch · Dinner</span><span class="highlight-tag">OpenTable Diners' Choice 2024</span></div>
+      <p class="card-description">Perched above Nawiliwili Bay at Timbers Kauaʻi, Hualani's is an OpenTable Diners' Choice winner for Best Overall, Best Food, Best Ambiance, and Best Service. The kitchen draws directly from The Farm at Hōkūala — the resort's on-site organic farm — plus local fishermen, ranchers, and artisan producers. Deeply seasonal, deeply Kauaʻi. Signature dishes: lobster tempura, filet mignon, whole fried fish, and the legendary lilikoi cheesecake. Whale sightings from the terrace in season. Complimentary valet. Perfect first or last night given proximity to Līhuʻe airport.</p>
+      <div class="card-footer">
+        <div class="card-details">
+          <div class="detail-item"><div class="detail-label">Hours</div><div class="detail-value">Breakfast 8–10am · Lunch 11am–3pm · Dinner 4:45–8:15pm daily</div></div>
+          <div class="detail-item"><div class="detail-label">Tip</div><div class="detail-value">First Sat each month: hula show 5:30–6:15pm</div></div>
+        </div>
+        <a class="reserve-btn" href="https://www.opentable.com/r/hualanis-lihue" target="_blank">Reserve on OpenTable →</a>
+      </div>
+    </div>
+  </div>
+</div><!-- end east side -->
+
+<!-- ══════════════════════ SOUTH SHORE ══════════════════════ -->
+<div class="region">
+  <div class="region-header">
+    <div class="region-icon">🌊</div>
+    <div>
+      <div class="region-title">South Shore</div>
+      <div class="region-subtitle">Poʻipū · Kōloa</div>
+    </div>
+  </div>
+
+  <div class="sub-section-label">Grand Hyatt Kauaʻi Resort & Spa — Poʻipū · 1571 Poipu Rd</div>
+
+  <!-- TIDEPOOLS -->
+  <div class="restaurant-card">
+    <div class="card-header">
+      <div class="card-title-group">
+        <div class="card-name">Tidepools</div>
+        <div class="card-location"><strong>Poʻipū</strong> · Grand Hyatt Kauaʻi</div>
+      </div>
+      <div class="card-badges"><span class="badge badge-required">Reservation Required</span><span class="badge badge-resort">Resort Dining</span></div>
+    </div>
+    <div class="card-body">
+      <div class="card-highlights"><span class="highlight-tag">Top 100 Hotel Restaurants in America — 2025</span><span class="highlight-tag">Koi Lagoon Setting</span><span class="highlight-tag">Thatched Bungalows</span><span class="highlight-tag">Keiki Menu Available</span></div>
+      <p class="card-description">The most romantic restaurant setting on Kauaʻi — thatched-roof bungalows floating above a koi-filled lagoon at the base of a waterfall. Named one of the Top 100 Hotel Restaurants in America by OpenTable in 2025. The modern Hawaiian menu: Island-style poke, seared Hawaiian ahi, veal meatballs, and prime center-cut filets. Note anniversaries or special occasions in the reservation — the team is known for thoughtful touches.</p>
+      <div class="card-footer">
+        <div class="card-details">
+          <div class="detail-item"><div class="detail-label">Hours</div><div class="detail-value">Dinner nightly</div></div>
+          <div class="detail-item"><div class="detail-label">Parking</div><div class="detail-value">Free valet for diners</div></div>
+          <div class="detail-item"><div class="detail-label">Tip</div><div class="detail-value">Request overwater bungalow table</div></div>
+        </div>
+        <a class="reserve-btn" href="https://www.opentable.com/tidepools-grand-hyatt-kauai" target="_blank">Reserve on OpenTable →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEVENSON'S -->
+  <div class="restaurant-card">
+    <div class="card-header">
+      <div class="card-title-group">
+        <div class="card-name">Stevenson's Library</div>
+        <div class="card-location"><strong>Poʻipū</strong> · Grand Hyatt Kauaʻi</div>
+      </div>
+      <div class="card-badges"><span class="badge badge-recommended">Reservation Recommended</span><span class="badge badge-resort">Resort Dining</span></div>
+    </div>
+    <div class="card-body">
+      <div class="card-highlights"><span class="highlight-tag">Sushi & Spirits</span><span class="highlight-tag">Whiskey · Cognac · Port</span><span class="highlight-tag">Lanai Seating</span></div>
+      <p class="card-description">The Grand Hyatt's sushi destination — expertly crafted rolls and sashimi paired with one of Kauaʻi's most extensive selections of whiskey, cognac, and port. The warm, koa-panelled "library" atmosphere is refined and intimate. Popular with both resort guests and non-guests alike, making an advance reservation the smart move.</p>
+      <div class="card-footer">
+        <div class="card-details">
+          <div class="detail-item"><div class="detail-label">Hours</div><div class="detail-value">5:30–9:15pm · Last kitchen orders 9:45pm</div></div>
+          <div class="detail-item"><div class="detail-label">Tip</div><div class="detail-value">Request lanai seating — limited, worth it</div></div>
+        </div>
+        <a class="reserve-btn" href="https://www.opentable.com/r/stevensons-library-koloa" target="_blank">Reserve on OpenTable →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ILIMA TERRACE -->
+  <div class="restaurant-card">
+    <div class="card-header">
+      <div class="card-title-group">
+        <div class="card-name">Ilima Terrace</div>
+        <div class="card-location"><strong>Poʻipū</strong> · Grand Hyatt Kauaʻi · Breakfast & Lunch</div>
+      </div>
+      <div class="card-badges"><span class="badge badge-recommended">Reservation Recommended</span><span class="badge badge-resort">Resort Dining</span></div>
+    </div>
+    <div class="card-body">
+      <div class="card-highlights"><span class="highlight-tag">Breakfast Buffet</span><span class="highlight-tag">Holiday Special Buffets</span><span class="highlight-tag">Ocean & Pool Views</span></div>
+      <p class="card-description">The Grand Hyatt's casual dining anchor with beautiful views and a broad breakfast buffet. Holiday buffets — Thanksgiving, Christmas, Easter, Mother's Day — are especially popular and sell out. A natural choice for families wanting an easy, scenic start to the day on property.</p>
+      <div class="card-footer">
+        <div class="card-details">
+          <div class="detail-item"><div class="detail-label">Tip</div><div class="detail-value">Holiday buffets sell out — book as early as possible</div></div>
+        </div>
+        <a class="reserve-btn" href="https://www.opentable.com/ilima-terrace-grand-hyatt-kauai" target="_blank">Reserve on OpenTable →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- BEACHSIDE PRIVATE DINNER -->
+  <div class="restaurant-card">
+    <div class="card-header">
+      <div class="card-title-group">
+        <div class="card-name">Beachside Private Dinner for Two</div>
+        <div class="card-location"><strong>Poʻipū</strong> · Grand Hyatt Kauaʻi · Exclusive Experience</div>
+      </div>
+      <div class="card-badges"><span class="badge badge-required">Reservation Required</span><span class="badge badge-resort">Resort Dining</span></div>
+    </div>
+    <div class="card-body">
+      <div class="card-highlights"><span class="highlight-tag">Private Butler</span><span class="highlight-tag">4-Course Candlelit Dinner</span><span class="highlight-tag">Beachfront Under the Stars</span><span class="highlight-tag">Honeymoons & Anniversaries</span></div>
+      <p class="card-description">An exclusive four-course dinner served on the shoreline under the stars, with a private butler and candlelight as the moon rises over the cliffs. A once-in-a-trip experience with very limited nightly availability. Book at the time of your hotel reservation for the best chance.</p>
+      <div class="card-footer">
+        <div class="card-details">
+          <div class="detail-item"><div class="detail-label">Tip</div><div class="detail-value">Book at time of hotel reservation — extremely limited</div></div>
+        </div>
+        <a class="reserve-btn call-btn" href="tel:+18087421234">📞 (808) 742-1234 ext. 54</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="sub-section-label">Poʻipū & Kōloa — Independent Restaurants</div>
+
+  <!-- BEACH HOUSE -->
+  <div class="restaurant-card">
+    <div class="card-header">
+      <div class="card-title-group">
+        <div class="card-name">Beach House Restaurant</div>
+        <div class="card-location"><strong>Poʻipū</strong> · 5022 Lawai Rd · Oceanfront</div>
+      </div>
+      <div class="card-badges"><span class="badge badge-required">Reservation Required</span></div>
+    </div>
+    <div class="card-body">
+      <div class="card-highlights"><span class="highlight-tag">Hale ʻAina Best Restaurant — 20+ Years</span><span class="highlight-tag">Wine Spectator Award</span><span class="highlight-tag">Iconic Sunset Views</span><span class="highlight-tag">Pacific Rim Cuisine</span></div>
+      <p class="card-description">Kauaʻi's most iconic dining address — a Hale ʻAina Award winner for over 20 consecutive years, set directly on the South Shore's wave-washed shoreline. Macadamia nut–crusted mahi mahi, Thai coconut crab cakes, wasabi-crusted fish with passion-fruit beurre blanc, and a signature Monkeypod Mai Tai to start. Watching the sun sink into the Pacific from a lawn table here is a Kauaʻi rite of passage. Sunset seating goes first — book it early. Lawn lounge seating available first-come, first-served with full menu and service.</p>
+      <div class="card-footer">
+        <div class="card-details">
+          <div class="detail-item"><div class="detail-label">Hours</div><div class="detail-value">Daily from 3:30pm · Happy Hour 3:30–4:30pm</div></div>
+          <div class="detail-item"><div class="detail-label">Tip</div><div class="detail-value">Request the patio table nearest the ocean; ideal for anniversaries</div></div>
+        </div>
+        <a class="reserve-btn" href="https://www.opentable.com/r/beach-house-restaurant-kauai-koloa-2" target="_blank">Reserve on OpenTable →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- RED SALT -->
+  <div class="restaurant-card">
+    <div class="card-header">
+      <div class="card-title-group">
+        <div class="card-name">Red Salt at Koʻa Kea Resort</div>
+        <div class="card-location"><strong>Poʻipū</strong> · 2251 Poipu Rd · Koʻa Kea Resort</div>
+      </div>
+      <div class="card-badges"><span class="badge badge-recommended">Reservation Recommended</span><span class="badge badge-resort">Resort Dining</span></div>
+    </div>
+    <div class="card-body">
+      <div class="card-highlights"><span class="highlight-tag">Pacific Rim Fine Dining</span><span class="highlight-tag">Chef's Table Available</span><span class="highlight-tag">Monthly Paʻina Tasting Dinners</span><span class="highlight-tag">Weekend Brunch</span></div>
+      <p class="card-description">Tucked inside the intimate Koʻa Kea boutique resort, Red Salt is one of Kauaʻi's most quietly excellent restaurants. Inspired by Kauaʻi's sacred ʻalaea red salt, Chef Noelani Planas (trained under Joel Robuchon and Wolfgang Puck) brings a sophisticated Pacific Rim lens to local ingredients. The monthly "Dinner Paʻina Series" — a multi-course tasting dinner in a private oceanfront cabana with sommelier wine pairings — is an exceptional special-occasion experience. Sushi bar select evenings (walk-in only).</p>
+      <div class="card-footer">
+        <div class="card-details">
+          <div class="detail-item"><div class="detail-label">Hours</div><div class="detail-value">Breakfast & Dinner daily · Weekend Brunch</div></div>
+          <div class="detail-item"><div class="detail-label">Parking</div><div class="detail-value">Complimentary valet</div></div>
+          <div class="detail-item"><div class="detail-label">Tip</div><div class="detail-value">Ask about the Paʻina tasting dinner series for special occasions</div></div>
+        </div>
+        <a class="reserve-btn" href="https://www.opentable.com/red-salt-at-koa-kea-resort" target="_blank">Reserve on OpenTable →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MERRIMAN'S -->
+  <div class="restaurant-card">
+    <div class="card-header">
+      <div class="card-title-group">
+        <div class="card-name">Merriman's Poipu</div>
+        <div class="card-location"><strong>Poʻipū</strong> · The Shops at Kukuiʻula</div>
+      </div>
+      <div class="card-badges"><span class="badge badge-recommended">Reservation Recommended</span></div>
+    </div>
+    <div class="card-body">
+      <div class="card-highlights"><span class="highlight-tag">Hawaii Regional Cuisine Pioneer</span><span class="highlight-tag">90% Locally Sourced</span><span class="highlight-tag">Mountain & Sunset Views</span></div>
+      <p class="card-description">Chef-owner Peter Merriman is one of the founding fathers of Hawaii Regional Cuisine — a genuine champion of local farmers, ranchers, and fishermen. His Poipu outpost occupies a gracious, open-air plantation-era setting with views of the mauka mountains and the Kukuiʻula sunset. Happy Hour (4–5pm) at the bar draws locals in the know; the full dinner menu is available at bar seats for walk-ins.</p>
+      <div class="card-footer">
+        <div class="card-details">
+          <div class="detail-item"><div class="detail-label">Hours</div><div class="detail-value">Dinner daily from 5pm · Happy Hour 4–5pm (bar only)</div></div>
+          <div class="detail-item"><div class="detail-label">Opens</div><div class="detail-value">60 days in advance at 12am HST</div></div>
+          <div class="detail-item"><div class="detail-label">Tip</div><div class="detail-value">Bar seats the full menu — good walk-in backup option</div></div>
+        </div>
+        <a class="reserve-btn" href="https://www.opentable.com/r/merrimans-kauai-koloa" target="_blank">Reserve on OpenTable →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- RUMFIRE -->
+  <div class="restaurant-card">
+    <div class="card-header">
+      <div class="card-title-group">
+        <div class="card-name">RumFire Poipu Beach</div>
+        <div class="card-location"><strong>Poʻipū</strong> · Sheraton Kauaʻi Resort · Oceanfront</div>
+      </div>
+      <div class="card-badges"><span class="badge badge-recommended">Reservation Recommended</span><span class="badge badge-resort">Resort Dining</span></div>
+    </div>
+    <div class="card-body">
+      <div class="card-highlights"><span class="highlight-tag">180° Ocean Views</span><span class="highlight-tag">Kauaʻi's Largest Rum Collection</span><span class="highlight-tag">Locally Sourced Menu</span></div>
+      <p class="card-description">Every seat faces the ocean — 180-degree views of Poipu Beach and the coastline are the house's most consistent feature. Locally sourced menu with a global influence, and a cocktail program built around Kauaʻi's most extensive rum collection. Works equally well for a full dinner or just sunset cocktails and appetizers. Request Table 53 — a portion of that table's check goes to local charities.</p>
+      <div class="card-footer">
+        <div class="card-details">
+          <div class="detail-item"><div class="detail-label">Location</div><div class="detail-value">Sheraton Kauaʻi Resort, Poipu Rd</div></div>
+          <div class="detail-item"><div class="detail-label">Tip</div><div class="detail-value">Request Table 53 — supports local charities</div></div>
+        </div>
+        <a class="reserve-btn" href="https://www.yelp.com/biz/rumfire-poipu-beach-koloa" target="_blank">Reserve on Yelp →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- EATING HOUSE 1849 -->
+  <div class="restaurant-card">
+    <div class="card-header">
+      <div class="card-title-group">
+        <div class="card-name">Eating House 1849</div>
+        <div class="card-location"><strong>Poʻipū</strong> · The Shops at Kukuiʻula</div>
+      </div>
+      <div class="card-badges"><span class="badge badge-recommended">Reservation Recommended</span></div>
+    </div>
+    <div class="card-body">
+      <div class="card-highlights"><span class="highlight-tag">James Beard Award Winner Chef Roy Yamaguchi</span><span class="highlight-tag">Hawaii Plantation Era Fusion</span><span class="highlight-tag">Craft Cocktails</span></div>
+      <p class="card-description">Named after one of Hawaiʻi's first restaurants — a plantation-era gathering place for workers of every culture — Eating House 1849 channels that multicultural spirit through the celebrated lens of James Beard Award–winning chef Roy Yamaguchi. Bold, playful Hawaiian regional fusion: Japan, Portugal, the Philippines, and old Hawaiʻi, all woven into dishes that feel simultaneously nostalgic and alive. A reliably excellent choice for groups.</p>
+      <div class="card-footer">
+        <div class="card-details">
+          <div class="detail-item"><div class="detail-label">Tip</div><div class="detail-value">Groups of 5+ require a credit card hold and 24-hr cancellation notice</div></div>
+        </div>
+        <a class="reserve-btn" href="https://www.opentable.com/r/eating-house-1849-koloa" target="_blank">Reserve on OpenTable →</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- LA SPEZIA -->
+  <div class="restaurant-card">
+    <div class="card-header">
+      <div class="card-title-group">
+        <div class="card-name">La Spezia Restaurant & Wine Bar</div>
+        <div class="card-location"><strong>Old Kōloa Town</strong> · 5492 Koloa Rd</div>
+      </div>
+      <div class="card-badges"><span class="badge badge-recommended">Reservation Recommended</span></div>
+    </div>
+    <div class="card-body">
+      <div class="card-highlights"><span class="highlight-tag">Voted Kauaʻi's Best Italian Restaurant</span><span class="highlight-tag">House-Made Pasta</span><span class="highlight-tag">Excellent Wine Selection</span><span class="highlight-tag">Cozy Bistro</span></div>
+      <p class="card-description">A beloved local institution in the heart of Old Kōloa Town — the kind of restaurant that makes an island feel like a place people actually live. The handmade pasta earns devoted repeat visitors: Nonna's lasagna Bolognese, short rib ravioli, Fettuccini Calabrese. House-made focaccia, hanger steak with Gorgonzola polenta, seared pork with capers. Warm, candlelit, genuinely unpretentious. Make a reservation; this one gets away from people who don't plan ahead. Max party of 8.</p>
+      <div class="card-footer">
+        <div class="card-details">
+          <div class="detail-item"><div class="detail-label">Hours</div><div class="detail-value">Dinner Tue–Sat · 5–9pm</div></div>
+          <div class="detail-item"><div class="detail-label">Phone</div><div class="detail-value">(808) 742-8824</div></div>
+          <div class="detail-item"><div class="detail-label">Tip</div><div class="detail-value">Max party 8; small kitchen — plan accordingly</div></div>
+        </div>
+        <a class="reserve-btn" href="https://www.laspeziakauai.com/reservations" target="_blank">Reserve →</a>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end south shore -->
+
+<!-- ══════════════════════ BOOKING TABLE ══════════════════════ -->
+<div class="booking-section">
+  <h2>Quick Booking Reference</h2>
+  <p class="section-sub">All restaurants organized by how urgently you need to act — book from the top down.</p>
+  <table>
+    <thead>
+      <tr><th>Restaurant</th><th>Area</th><th>How Far Ahead</th><th>Book Now</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Āina Kauaʻi</td><td>Kapaʻa</td><td class="urgency-high">4–6+ weeks</td><td><a class="tbl-link" href="https://www.opentable.com/r/aina-kauai-restaurant-kapaa" target="_blank">OpenTable →</a></td></tr>
+      <tr><td>Bar Acuda</td><td>Hanalei</td><td class="urgency-high">Exactly 30 days</td><td><a class="tbl-link" href="https://resy.com/cities/hanalei-hi-hi/venues/bar-acuda" target="_blank">Resy →</a></td></tr>
+      <tr><td>AMA Restaurant</td><td>Hanalei</td><td class="urgency-high">Book early / call</td><td><a class="tbl-link call" href="tel:+18088269452">📞 Call</a></td></tr>
+      <tr><td>Beach House Restaurant</td><td>Poʻipū</td><td class="urgency-high">3–4 weeks</td><td><a class="tbl-link" href="https://www.opentable.com/r/beach-house-restaurant-kauai-koloa-2" target="_blank">OpenTable →</a></td></tr>
+      <tr><td>Beachside Dinner for Two (Grand Hyatt)</td><td>Poʻipū</td><td class="urgency-high">At hotel booking</td><td><a class="tbl-link call" href="tel:+18087421234">📞 (808) 742-1234 ext. 54</a></td></tr>
+      <tr><td>Tidepools (Grand Hyatt)</td><td>Poʻipū</td><td class="urgency-med">2–3 weeks</td><td><a class="tbl-link" href="https://www.opentable.com/tidepools-grand-hyatt-kauai" target="_blank">OpenTable →</a></td></tr>
+      <tr><td>Merriman's Poipu</td><td>Poʻipū</td><td class="urgency-med">Opens 60 days at midnight</td><td><a class="tbl-link" href="https://www.opentable.com/r/merrimans-kauai-koloa" target="_blank">OpenTable →</a></td></tr>
+      <tr><td>Postcards Café</td><td>Hanalei</td><td class="urgency-med">1–2 weeks</td><td><a class="tbl-link call" href="tel:+18088261191">📞 (808) 826-1191</a></td></tr>
+      <tr><td>Hualani's (Timbers Kauaʻi)</td><td>Līhuʻe</td><td class="urgency-med">1–2 weeks</td><td><a class="tbl-link" href="https://www.opentable.com/r/hualanis-lihue" target="_blank">OpenTable →</a></td></tr>
+      <tr><td>Red Salt at Koʻa Kea</td><td>Poʻipū</td><td class="urgency-med">1–2 weeks</td><td><a class="tbl-link" href="https://www.opentable.com/red-salt-at-koa-kea-resort" target="_blank">OpenTable →</a></td></tr>
+      <tr><td>Stevenson's Library (Grand Hyatt)</td><td>Poʻipū</td><td class="urgency-med">1–2 weeks</td><td><a class="tbl-link" href="https://www.opentable.com/r/stevensons-library-koloa" target="_blank">OpenTable →</a></td></tr>
+      <tr><td>1 Kitchen (1 Hotel)</td><td>Princeville</td><td class="urgency-low">1 week</td><td><a class="tbl-link" href="https://www.1hotels.com/hanalei-bay/taste/1-kitchen" target="_blank">1hotels.com →</a></td></tr>
+      <tr><td>Welina Terrace (1 Hotel)</td><td>Princeville</td><td class="urgency-low">1 week</td><td><a class="tbl-link" href="https://www.1hotels.com/hanalei-bay/taste/welina-terrace-lounge" target="_blank">1hotels.com →</a></td></tr>
+      <tr><td>Happy Talk Lounge</td><td>Princeville</td><td class="urgency-low">Few days out</td><td><a class="tbl-link" href="https://www.happytalklounge.com" target="_blank">Website →</a></td></tr>
+      <tr><td>Eating House 1849</td><td>Poʻipū</td><td class="urgency-low">Few days – 1 week</td><td><a class="tbl-link" href="https://www.opentable.com/r/eating-house-1849-koloa" target="_blank">OpenTable →</a></td></tr>
+      <tr><td>La Spezia</td><td>Kōloa</td><td class="urgency-low">Few days – 1 week</td><td><a class="tbl-link" href="https://www.laspeziakauai.com/reservations" target="_blank">Website →</a></td></tr>
+      <tr><td>RumFire (Sheraton)</td><td>Poʻipū</td><td class="urgency-low">Few days out</td><td><a class="tbl-link" href="https://www.yelp.com/biz/rumfire-poipu-beach-koloa" target="_blank">Yelp →</a></td></tr>
+      <tr><td>Ilima Terrace (Grand Hyatt)</td><td>Poʻipū</td><td class="urgency-low">Advance for holidays</td><td><a class="tbl-link" href="https://www.opentable.com/ilima-terrace-grand-hyatt-kauai" target="_blank">OpenTable →</a></td></tr>
+      <tr><td>Opakapaka Grill & Bar</td><td>Hāʻena</td><td class="urgency-low">Call ahead</td><td><a class="tbl-link call" href="tel:+18083784425">📞 (808) 378-4425</a></td></tr>
+      <tr><td>The Dolphin — Hanalei</td><td>Hanalei</td><td><em>No reservations taken</em></td><td><em>Walk-in — arrive before 6pm</em></td></tr>
+    </tbody>
+  </table>
+</div>
+
+</main>
+
+<footer>
+  <strong>Point Me to Paradise Travel</strong><br>
+  Curated by your advisor · All reservations subject to availability · Restaurant hours and policies may change seasonally — always confirm directly before your visit.
+</footer>
+
+</body>
+</html>
