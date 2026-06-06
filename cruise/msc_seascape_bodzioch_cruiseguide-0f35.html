@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MSC Seascape — Western Caribbean | Bodzioch Family</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#E9DEC0;
+    --sand:#DAC396;
+    --teal:#75AFB1;
+    --teal-light:#9AD0CE;
+    --mint:#C4E4E1;
+    --ink:#2f4f4a;
+    --ink-soft:#5a6b66;
+    --paper:#ffffff;
+    --bg:#f4efe6;
+    --shadow:0 6px 24px rgba(47,79,74,.07);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Jost',sans-serif;
+    color:var(--ink-soft);
+    background:var(--bg);
+    line-height:1.7;
+    font-weight:300;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:860px;margin:0 auto;padding:0 22px;}
+
+  /* ---------- Icons ---------- */
+  .ico{width:20px;height:20px;flex:none;stroke:var(--teal);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+  .ico-sm{width:17px;height:17px;}
+
+  /* ---------- Display type ---------- */
+  h1,h2,h3,.display{font-family:'Cormorant Garamond',serif;color:var(--ink);font-weight:600;line-height:1.12;}
+  .eyebrow{font-family:'Jost',sans-serif;font-weight:600;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--sand);}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    text-align:center;
+    padding:64px 22px 56px;
+    background:linear-gradient(180deg, #ece5d6, var(--bg));
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;left:50%;bottom:0;transform:translateX(-50%);
+    width:120px;height:2px;background:linear-gradient(90deg,transparent,var(--sand),transparent);
+  }
+  .logo-mark{display:inline-flex;align-items:center;justify-content:center;gap:14px;margin-bottom:30px;}
+  .logo-globe{
+    width:58px;height:58px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, var(--mint), var(--teal) 75%);
+    position:relative;box-shadow:var(--shadow);flex:none;display:flex;align-items:center;justify-content:center;
+  }
+  .logo-globe svg{width:28px;height:28px;stroke:#fff;fill:none;stroke-width:1.6;}
+  .logo-globe::after{content:"";position:absolute;inset:-7px;border-radius:50%;border:1px solid var(--sand);opacity:.7;}
+  .logo-text{text-align:left;}
+  .logo-text .co{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;letter-spacing:.12em;color:var(--ink);line-height:1;}
+  .logo-text .sub{font-family:'Jost',sans-serif;font-size:.62rem;letter-spacing:.42em;text-transform:uppercase;color:var(--teal);}
+
+  .hero .family{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.35rem;color:var(--ink-soft);margin-bottom:6px;}
+  .hero h1{font-size:clamp(2.4rem,6vw,3.6rem);font-weight:700;margin-bottom:14px;}
+  .hero .route{color:var(--teal);font-weight:500;letter-spacing:.04em;font-size:1.05rem;}
+  .hero .dates{color:var(--ink-soft);font-weight:500;letter-spacing:.05em;margin-top:4px;}
+
+  /* ---------- Cabins ---------- */
+  .cabins{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:40px 0 12px;background:var(--paper);border:1px solid #e6ddcb;border-radius:14px;overflow:hidden;box-shadow:var(--shadow);}
+  .cabin{padding:24px 28px;}
+  .cabin + .cabin{border-left:1px solid #ece5d6;}
+  .cabin .num{font-weight:600;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);}
+  .cabin .type{font-family:'Cormorant Garamond',serif;font-size:1.45rem;color:var(--ink);font-weight:600;margin:4px 0;}
+  .cabin .conf{font-size:.85rem;color:var(--ink-soft);letter-spacing:.03em;}
+
+  /* ---------- Sections ---------- */
+  section{padding:46px 0;border-top:1px solid #e6ddcb;}
+  section:first-of-type{border-top:none;}
+  .sec-head{margin-bottom:26px;}
+  .sec-head .eyebrow{display:block;margin-bottom:6px;}
+  .sec-head h2{font-size:clamp(1.8rem,4vw,2.4rem);}
+
+  /* ---------- Itinerary table ---------- */
+  .itin{width:100%;border-collapse:collapse;background:var(--paper);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);}
+  .itin th{
+    background:var(--teal);color:#fff;text-align:left;
+    font-family:'Jost',sans-serif;font-weight:600;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;
+    padding:12px 14px;
+  }
+  .itin td{padding:13px 14px;border-top:1px solid #ece5d6;font-size:.92rem;vertical-align:top;}
+  .itin .day{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;color:var(--teal);width:40px;}
+  .itin .port{font-weight:500;color:var(--ink);}
+  .itin .note{display:block;font-size:.78rem;color:var(--ink-soft);font-weight:300;}
+  .itin tr.sea td{color:var(--ink-soft);font-style:italic;background:#faf7f0;}
+  .itin tr.sea .day{color:#bcae93;font-style:normal;}
+  .port-warning{margin-top:14px;font-size:.85rem;font-style:italic;color:var(--ink-soft);display:flex;gap:9px;align-items:flex-start;}
+  .port-warning svg{margin-top:3px;}
+
+  /* ---------- Cards / callouts ---------- */
+  .card{background:var(--paper);border:1px solid #e6ddcb;border-radius:12px;padding:24px 26px;box-shadow:var(--shadow);margin-top:18px;}
+  .block{margin-top:26px;}
+  .block-title{font-family:'Cormorant Garamond',serif;font-size:1.3rem;color:var(--ink);font-weight:600;display:flex;align-items:center;gap:11px;margin-bottom:8px;}
+  .block p{margin-bottom:6px;}
+  ul.tight{list-style:none;margin:10px 0 0;}
+  ul.tight li{position:relative;padding-left:20px;margin-bottom:5px;font-size:.94rem;}
+  ul.tight li::before{content:"–";position:absolute;left:0;color:var(--sand);font-weight:600;}
+  .label{font-weight:600;color:var(--ink);}
+
+  .package{background:var(--paper);border:1px solid #e6ddcb;border-radius:12px;padding:22px 26px;box-shadow:var(--shadow);margin-top:18px;border-left:4px solid var(--teal-light);}
+  .package h3{font-size:1.2rem;color:var(--teal);font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:10px;}
+  .package .grat{font-size:.82rem;font-style:italic;color:var(--ink-soft);margin-top:10px;padding-top:10px;border-top:1px solid #ece5d6;}
+
+  .dinner-time{font-family:'Cormorant Garamond',serif;font-size:3.4rem;font-weight:700;color:var(--teal);line-height:1;margin:6px 0 12px;}
+
+  /* ---------- Theme nights grid ---------- */
+  .themes{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#e6ddcb;border:1px solid #e6ddcb;border-radius:12px;overflow:hidden;margin:14px 0;box-shadow:var(--shadow);}
+  .themes div{background:var(--paper);padding:16px 12px;text-align:center;font-weight:500;color:var(--ink);font-size:.92rem;display:flex;align-items:center;justify-content:center;gap:8px;}
+  .themes svg{stroke:var(--teal);}
+
+  .tip{background:#efe8da;border-left:4px solid var(--sand);border-radius:0 12px 12px 0;padding:20px 24px;margin-top:18px;}
+  .tip .tip-title{font-weight:600;letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;color:var(--teal);margin-bottom:8px;display:flex;align-items:center;gap:9px;}
+
+  .gateway{background:var(--paper);border:1px solid #e6ddcb;border-radius:14px;text-align:center;padding:36px 28px;margin-top:30px;box-shadow:var(--shadow);}
+  .gateway h2{font-size:clamp(1.6rem,4vw,2.2rem);margin-bottom:12px;}
+  .gateway p{color:var(--ink-soft);max-width:560px;margin:0 auto 14px;}
+  .gateway .store{font-weight:600;color:var(--teal);letter-spacing:.04em;font-size:.95rem;}
+
+  /* ---------- Sign off ---------- */
+  .signoff{text-align:center;padding:50px 22px 40px;}
+  .signoff .congrats{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:700;color:var(--ink);margin-bottom:8px;display:flex;align-items:center;justify-content:center;gap:12px;}
+  .signoff .excited{color:var(--ink-soft);margin-bottom:20px;}
+  .signoff .advisor{font-weight:600;color:var(--ink);font-size:1.05rem;}
+  .signoff .contact{font-size:.9rem;color:var(--teal);margin-top:4px;}
+  .signoff .contact a{color:var(--teal);}
+
+  a{color:var(--teal);text-decoration-color:var(--sand);}
+
+  @media (max-width:640px){
+    .cabins{grid-template-columns:1fr;}
+    .cabin + .cabin{border-left:none;border-top:1px solid #ece5d6;}
+    .themes{grid-template-columns:1fr;}
+    .logo-text .co{font-size:1.25rem;}
+    .itin th,.itin td{padding:9px 8px;font-size:.82rem;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero">
+  <div class="logo-mark">
+    <div class="logo-globe">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polygon points="12,7 14,12 12,17 10,12" fill="#fff" stroke="none"/><polygon points="12,7 13,11 12,12 11,11" fill="rgba(0,0,0,.15)" stroke="none"/><circle cx="12" cy="12" r="1" fill="#fff" stroke="none"/></svg>
+    </div>
+    <div class="logo-text">
+      <div class="co">POINT ME TO PARADISE LLC</div>
+      <div class="sub">Travel Agency</div>
+    </div>
+  </div>
+  <div class="family">Brian, Heidi, Joel &amp; Levi Bodzioch</div>
+  <h1>MSC Seascape — Western Caribbean</h1>
+  <div class="route">7 Nights | Galveston, Texas</div>
+  <div class="dates">July 5 – July 12, 2026</div>
+
+  <div class="wrap">
+    <div class="cabins">
+      <div class="cabin">
+        <div class="num">Cabin 11162</div>
+        <div class="type">Balcony Stateroom</div>
+        <div class="conf">Confirmation: 72776814</div>
+      </div>
+      <div class="cabin">
+        <div class="num">Cabin 11156</div>
+        <div class="type">Balcony Stateroom</div>
+        <div class="conf">Confirmation: 72776921</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- ===================== ITINERARY ===================== -->
+<section>
+  <div class="sec-head">
+    <span class="eyebrow">Your Itinerary</span>
+    <h2>7 Nights at Sea</h2>
+  </div>
+  <table class="itin">
+    <thead>
+      <tr><th>Day</th><th>Date</th><th>Port</th><th>Arrives</th><th>Departs</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="day">1</td><td>Sun, Jul 5</td>
+        <td class="port">Galveston, Texas<span class="note">Embarkation — check-in opens 11:00 AM</span></td>
+        <td>—</td><td>5:00 PM</td>
+      </tr>
+      <tr class="sea"><td class="day">2</td><td>Mon, Jul 6</td><td>Day at Sea</td><td>Enjoy the ship!</td><td></td></tr>
+      <tr class="sea"><td class="day">3</td><td>Tue, Jul 7</td><td>Day at Sea</td><td>Enjoy the ship!</td><td></td></tr>
+      <tr><td class="day">4</td><td>Wed, Jul 8</td><td class="port">Costa Maya, Mexico</td><td>8:00 AM</td><td>6:00 PM</td></tr>
+      <tr><td class="day">5</td><td>Thu, Jul 9</td><td class="port">Isla de Roatán, Honduras</td><td>8:00 AM</td><td>4:00 PM</td></tr>
+      <tr><td class="day">6</td><td>Fri, Jul 10</td><td class="port">Cozumel, Mexico</td><td>8:00 AM</td><td>4:00 PM</td></tr>
+      <tr class="sea"><td class="day">7</td><td>Sat, Jul 11</td><td>Day at Sea</td><td>Enjoy the ship!</td><td></td></tr>
+      <tr><td class="day">8</td><td>Sun, Jul 12</td><td class="port">Galveston, Texas — Return</td><td>7:00 AM</td><td>—</td></tr>
+    </tbody>
+  </table>
+  <p class="port-warning">
+    <svg class="ico ico-sm" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><path d="M12 7v13M5 12a7 7 0 0 0 14 0M3 12h2M19 12h2"/></svg>
+    Port days: plan to be back onboard at least 30 minutes before each departure time. The ship will not wait.
+  </p>
+</section>
+
+<!-- ===================== EMBARKATION DAY ===================== -->
+<section>
+  <div class="sec-head">
+    <span class="eyebrow">Embarkation Day</span>
+    <h2>Getting on the Ship</h2>
+  </div>
+
+  <div class="block">
+    <div class="block-title">
+      <svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      Check-in opens at 11:00 AM
+    </div>
+    <p>The Galveston cruise terminal opens for MSC check-in at 11:00 AM. When you arrive at the port, porters will be outside to take your checked luggage — hand it off to them and it will be delivered directly to your cabin. Hold onto your carry-on backpack and anything you need for Day 1, as your checked bags may not arrive at your stateroom until mid-afternoon.</p>
+  </div>
+
+  <div class="card">
+    <div class="block-title">
+      <svg class="ico" viewBox="0 0 24 24"><path d="M8 7V5a4 4 0 0 1 8 0v2M5 7h14l-1 13H6L5 7zM9 11v3M15 11v3"/></svg>
+      Pack an embarkation day backpack — your advisor's #1 tip
+    </div>
+    <p>Your checked luggage may not arrive at your cabin until mid-afternoon. Pack a carry-on backpack with everything you'll want for Day 1 so you can head straight to the pool the moment you board.</p>
+    <p class="label" style="margin-top:10px;">What to pack:</p>
+    <ul class="tight">
+      <li>All medications</li>
+      <li>Swimsuit &amp; cover-up</li>
+      <li>Phone, charger &amp; earbuds</li>
+      <li>Sunscreen</li>
+      <li>Cruise documents &amp; ID</li>
+      <li>Change of clothes</li>
+      <li>Book, tablet or headphones</li>
+    </ul>
+    <p style="margin-top:14px;"><span class="label">Bonus tip:</span> This same backpack doubles as your overnight bag on the last night. Set your main luggage out for the porters, keep essentials in the backpack, and walk off the ship the next morning completely stress-free.</p>
+  </div>
+</section>
+
+<!-- ===================== PACKAGES ===================== -->
+<section>
+  <div class="sec-head">
+    <span class="eyebrow">What's Included</span>
+    <h2>Your Packages</h2>
+  </div>
+
+  <div class="package">
+    <h3>
+      <svg class="ico ico-sm" viewBox="0 0 24 24"><path d="M6 9h12l-1 11H7L6 9zM9 9V6a3 3 0 0 1 6 0v3"/></svg>
+      Premium Extra Drink Package
+    </h3>
+    <ul class="tight">
+      <li>Specialty coffee, tea &amp; hot drinks</li>
+      <li>Soft drinks &amp; energy drinks</li>
+      <li>Juices, smoothies &amp; protein shakes</li>
+      <li>Still &amp; sparkling water (AQUA by MSC)</li>
+      <li>Non-alcoholic beers, wines &amp; cocktails</li>
+      <li>Extensive draught &amp; bottled beer selection</li>
+      <li>Premium wine &amp; sparkling wine by the glass</li>
+      <li>Premium spirits, liqueurs, cocktails &amp; mixed drinks</li>
+      <li>Curated savings on premium wine &amp; Champagne bottles</li>
+    </ul>
+    <p class="grat">Beverage gratuities are included with this package.</p>
+  </div>
+
+  <div class="package">
+    <h3>
+      <svg class="ico ico-sm" viewBox="0 0 24 24"><path d="M6 9h12l-1 11H7L6 9zM9 9V6a3 3 0 0 1 6 0v3"/></svg>
+      Minors Drink Package
+    </h3>
+    <ul class="tight">
+      <li>Coffee, tea, and assorted hot drinks</li>
+      <li>Soft drinks, energy drinks, juices &amp; smoothies</li>
+      <li>Still &amp; sparkling water (AQUA by MSC)</li>
+      <li>Non-alcoholic cocktails</li>
+    </ul>
+    <p class="grat">Beverage gratuities are included with this package.</p>
+  </div>
+
+  <div class="package">
+    <h3>
+      <svg class="ico ico-sm" viewBox="0 0 24 24"><path d="M5 13a10 10 0 0 1 14 0M8.5 16.5a5 5 0 0 1 7 0M12 20h.01M2 9a16 16 0 0 1 20 0"/></svg>
+      Browse Package — 2 Devices, Full Voyage
+    </h3>
+    <ul class="tight">
+      <li>Web browsing, email &amp; messenger apps (WhatsApp, iMessage, etc.)</li>
+      <li>Covers 2 devices simultaneously for the full 7 nights</li>
+      <li>Unlimited data — no caps or throttling</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== DINING ===================== -->
+<section>
+  <div class="sec-head">
+    <span class="eyebrow">Dining</span>
+    <h2>Main Dining Room</h2>
+  </div>
+  <div class="card">
+    <div class="block-title">
+      <svg class="ico" viewBox="0 0 24 24"><path d="M4 3v7a2 2 0 0 0 4 0V3M6 10v11M17 3c-1.5 0-2.5 2-2.5 5s1 4 2.5 4M17 12v9"/></svg>
+      Your assigned dinner time
+    </div>
+    <div class="dinner-time">5:30 PM</div>
+    <p>Your stateroom key card will tell you which main dining room you've been assigned to — there are several on the Seascape. If you'd like to add specialty dining that wasn't pre-booked with us, you can reserve it once onboard through the MSC for Me app.</p>
+  </div>
+
+  <div class="block">
+    <div class="block-title">
+      <svg class="ico" viewBox="0 0 24 24"><path d="M5 3v8a3 3 0 0 0 6 0V3M8 11v10M19 3c-2 0-3 3-3 6s1 4 3 4M19 13v8"/></svg>
+      Specialty dining onboard
+    </div>
+    <p>If you'd like to treat yourselves to a special night out, the Seascape has five specialty restaurants, all grouped together on Deck 8 so they're easy to browse before you decide. They carry an additional cost — you can order à la carte, choose a set Dining Experience menu, or buy a specialty dining package — and reservations are made once onboard through the app or at the hostess stand in the specialty area.</p>
+    <ul class="tight">
+      <li><span class="label">Butcher's Cut</span> — a classic American-style steakhouse with premium cuts of beef, seafood, and an extensive wine list.</li>
+      <li><span class="label">Kaito Sushi Bar</span> — sushi, sashimi, and Japanese specialties served à la carte.</li>
+      <li><span class="label">Kaito Teppanyaki</span> — a tableside experience where the chefs cook right in front of you.</li>
+      <li><span class="label">Ocean Cay</span> — a seafood-focused restaurant with Mediterranean and coastal European dishes.</li>
+      <li><span class="label">HOLA! Tacos &amp; Cantina</span> — Mexican-inspired street food with tacos, burritos, and house-made salsas.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== ENTERTAINMENT ===================== -->
+<section>
+  <div class="sec-head">
+    <span class="eyebrow">Entertainment &amp; Theme Nights</span>
+    <h2>What to Expect Onboard</h2>
+  </div>
+
+  <div class="block">
+    <div class="block-title">
+      <svg class="ico" viewBox="0 0 24 24"><path d="M3 5h18M5 5v8a7 7 0 0 0 14 0V5M9 19h6M12 19v-2"/></svg>
+      Broadway-style theatre shows
+    </div>
+    <p>MSC does not allow show reservations before sailing. Once onboard, open the MSC for Me app to browse the entertainment schedule and grab your seats — shows fill up fast, so check early!</p>
+  </div>
+
+  <div class="block">
+    <div class="block-title">
+      <svg class="ico" viewBox="0 0 24 24"><path d="M5 19l4-12 7 7-12 5zM14 8l2-2M16 4l1 3 3 1-3 1-1 3-1-3-3-1 3-1 1-3z"/></svg>
+      Theme nights — start planning your outfits now!
+    </div>
+    <p>The Seascape runs themed evenings throughout the voyage. Here's the lineup for this sailing:</p>
+    <div class="themes">
+      <div><svg class="ico ico-sm" viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2 2M16.4 16.4l2 2M18.4 5.6l-2 2M7.6 16.4l-2 2"/></svg>Glow Party</div>
+      <div><svg class="ico ico-sm" viewBox="0 0 24 24"><path d="M4 9l3 8h10l3-8-5 3-3-5-3 5-5-3z"/></svg>Gala Night</div>
+      <div><svg class="ico ico-sm" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 5c2 0 4 1 4 3M12 19c-2 0-4-1-4-3M5 12c0-2 1-4 3-4M19 12c0 2-1 4-3 4"/></svg>Tropical Night</div>
+      <div><svg class="ico ico-sm" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M9 13l-1 7 4-2 4 2-1-7"/></svg>White Night</div>
+      <div><svg class="ico ico-sm" viewBox="0 0 24 24"><circle cx="12" cy="6" r="2"/><path d="M12 8v6M9 11l3-1 3 1M9 20l3-6 3 6"/></svg>60s / 70s / 80s Bash</div>
+      <div><svg class="ico ico-sm" viewBox="0 0 24 24"><path d="M5 9c2-3 12-3 14 0M4 9h16l-1 2H5L4 9zM7 11v3M17 11v3M7 14c1 2 9 2 10 0"/></svg>Boot Scootin' Country</div>
+    </div>
+    <p>Don't miss the <span class="label">MSC Talent Show</span> either — always one of the most fun nights of the cruise!</p>
+    <p style="margin-top:8px;display:flex;align-items:flex-start;gap:9px;">
+      <svg class="ico ico-sm" viewBox="0 0 24 24" style="margin-top:3px;"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10c.5.6 1 1.4 1 2h6c0-.6.5-1.4 1-2a6 6 0 0 0-4-10z"/></svg>
+      <span>Follow <span class="label">@cruisewithryanrose</span> for a sneak peek at what's coming — he's an incredible cruise director who shares great content about life onboard.</span>
+    </p>
+  </div>
+
+  <div class="block">
+    <div class="block-title">
+      <svg class="ico" viewBox="0 0 24 24"><path d="M3 16c2-2 4-2 6 0s4 2 6 0 4-2 6 0M3 20c2-2 4-2 6 0s4 2 6 0 4-2 6 0M8 9a2 2 0 1 0 0-4 2 2 0 0 0 0 4zM10 9l4 4M6 13l4-2"/></svg>
+      Pool areas &amp; open-air sports
+    </div>
+    <p>Multiple pools, hot tubs, and outdoor sports facilities throughout the voyage — no reservations needed.</p>
+  </div>
+
+  <div class="block">
+    <div class="block-title">
+      <svg class="ico" viewBox="0 0 24 24"><path d="M6 8v8M18 8v8M4 10v4M20 10v4M6 12h12"/></svg>
+      Panoramic gym &amp; fitness classes
+    </div>
+    <p>A fully equipped gym with floor-to-ceiling ocean views, plus daily fitness classes. Check the MSC for Me app for the daily schedule.</p>
+  </div>
+
+  <div class="block">
+    <div class="block-title">
+      <svg class="ico" viewBox="0 0 24 24"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5L12 3z"/></svg>
+      Activities for all ages
+    </div>
+    <p>Programming for adults, teens, children, and infants runs morning into evening — it's all inside the app, updated daily.</p>
+  </div>
+</section>
+
+<!-- ===================== ONBOARD TOOLS ===================== -->
+<section>
+  <div class="sec-head">
+    <span class="eyebrow">Your Onboard Tools</span>
+    <h2>MSC for Me App &amp; Wristbands</h2>
+  </div>
+
+  <div class="block">
+    <div class="block-title">
+      <svg class="ico" viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/></svg>
+      Download the MSC for Me app before you leave home
+    </div>
+    <p>Search MSC for Me in the App Store or Google Play and download it now. Once you board and connect to the ship's Wi-Fi, the app loads your personal sailing — every show, event, dining option, bar special, kids' activity, fitness class, and evening performance, all in one place, updated daily. Do not leave home without it.</p>
+  </div>
+
+  <div class="block">
+    <div class="block-title">
+      <svg class="ico" viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M9 7V4h6v3M9 17v3h6v-3"/></svg>
+      MSC for Me wristbands (optional, highly recommended)
+    </div>
+    <p>Waterproof bands that replace your cruise card for cabin access, onboard purchases, and muster check-in. Perfect for pool days. Typically, $14–$15 each or $21–$30 for a multi-pack — pick them up onboard.</p>
+    <p style="margin-top:8px;"><span class="label">Important:</span> You'll still need your physical cruise card when leaving and re-boarding the ship in port. The wristband does not work at gangway security.</p>
+  </div>
+
+  <div class="block">
+    <div class="block-title">
+      <svg class="ico" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg>
+      Booking shows &amp; specialty dining onboard
+    </div>
+    <p>Show reservations and specialty dining open once you're on the ship — all managed through the MSC for Me app. Check it early and often, especially for shows, as popular ones fill up fast.</p>
+  </div>
+</section>
+
+<!-- ===================== ADVISOR TIPS ===================== -->
+<section>
+  <div class="sec-head">
+    <span class="eyebrow">Advisor Tips</span>
+    <h2>From Your Travel Advisor</h2>
+  </div>
+
+  <div class="tip">
+    <div class="tip-title">
+      <svg class="ico ico-sm" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10c.5.6 1 1.4 1 2h6c0-.6.5-1.4 1-2a6 6 0 0 0-4-10z"/></svg>
+      Pro Tip — Keep Your Room Cool
+    </div>
+    <p>Your cabin's lights and A/C only run when a card is inserted into the slot near the door. Bring an old gift card, hotel key, or any similar-sized card from home and leave it in the slot while you're out — your room stays cool and ready when you return. Small thing, big difference on a hot Caribbean sailing!</p>
+  </div>
+
+  <div class="tip">
+    <div class="tip-title">
+      <svg class="ico ico-sm" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10c.5.6 1 1.4 1 2h6c0-.6.5-1.4 1-2a6 6 0 0 0-4-10z"/></svg>
+      Pro Tip — The Backpack Works Both Ways
+    </div>
+    <p>On your last night onboard, set your main luggage outside your cabin door for the porters to carry off the ship. Keep just the essentials in your embarkation day backpack — you'll use it as your overnight bag and walk off the ship the next morning without any juggling required.</p>
+  </div>
+
+  <div class="tip">
+    <div class="tip-title">
+      <svg class="ico ico-sm" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10c.5.6 1 1.4 1 2h6c0-.6.5-1.4 1-2a6 6 0 0 0-4-10z"/></svg>
+      Pro Tip — Pack a Little Heat
+    </div>
+    <p>MSC is an Italian line, so the cooking leans toward traditional European seasoning — flavorful, but milder than what many of us are used to back home. If you like your food with more of a kick, tuck a small shaker of Tony Chachere's Cajun seasoning into your bag. A little dash at the table is an easy way to make any dish taste just the way you like it.</p>
+  </div>
+
+  <div class="gateway">
+    <h2>The MSC for Me App Is Your Gateway to Fun</h2>
+    <p>Every show time, theme night, trivia game, poolside event, kids' activity, dining reservation, fitness class, and evening performance is inside the app — updated live, all day, every day of your sailing. Download it now and make the most of every single moment at sea.</p>
+    <div class="store">Search "MSC for Me" | App Store &amp; Google Play</div>
+  </div>
+</section>
+
+</div><!-- /wrap -->
+
+<!-- ===================== SIGN OFF ===================== -->
+<div class="signoff">
+  <div class="congrats">
+    Congratulations, Bodzioch family — you're going on a cruise!
+  </div>
+  <div class="excited">We are so excited for you. Questions before you sail? Your advisor is just a call or text away.</div>
+  <div class="advisor">Christina Garcia | Point Me to Paradise Travel</div>
+  <div class="contact"><a href="mailto:christina@pointmetoparadise.com">christina@pointmetoparadise.com</a> · 281-229-0862</div>
+</div>
+
+</body>
+</html>
