@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<title>Gardiner, MT &amp; Yellowstone — Point Me to Paradise Travel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --aqua-pale:#C4E4E1;
+    --aqua-mist:#EAF3F2;
+    --aqua:#75AFB1;
+    --aqua-dark:#4F8A8C;
+    --sand-light:#F4F1E9;
+    --warm-sand:#F5EFE4;
+    --gold-whisper:#D6C8A8;
+    --white:#FFFFFF;
+    --paper:#F9F6F1;
+    --ink:#2B2420;
+    --ink-soft:#6B6359;
+    --line:#E6DFD5;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .pmtp-wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 48px 28px 0;
+  }
+
+  /* HERO */
+  .pmtp-hero {
+    background-image: linear-gradient(180deg,rgba(255,255,255,0.45),rgba(196,228,225,0.55) 35%,rgba(245,239,228,0.80) 68%,rgba(249,246,240,0.97));
+    padding: clamp(40px,8vw,78px) 32px clamp(36px,6vw,60px);
+    text-align: center;
+    margin: -48px -28px 32px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .pmtp-hero-eyebrow {
+    font-family: 'Fraunces', serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--aqua-dark);
+    margin-bottom: 22px;
+  }
+
+  .pmtp-hero h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(26px,5vw,42px);
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.15;
+    margin-bottom: 0;
+  }
+
+  .pmtp-hero-rule {
+    width: 60px;
+    height: 1px;
+    background: var(--gold-whisper);
+    margin: 18px auto;
+  }
+
+  .pmtp-hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(17px,3.5vw,21px);
+    color: var(--ink-soft);
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  /* HERO PHOTO */
+  .pmtp-hero-photo {
+    width: 100%;
+    max-height: 460px;
+    object-fit: cover;
+    border-radius: 0;
+    display: block;
+    margin-bottom: 32px;
+  }
+
+  /* TYPOGRAPHY */
+  h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(20px,4vw,28px);
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 6px;
+    line-height: 1.2;
+  }
+
+  .pmtp-subhead {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: clamp(15px,2.8vw,18px);
+    color: var(--ink-soft);
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  h3 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(16px,3vw,20px);
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 6px;
+    margin-top: 28px;
+  }
+
+  h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--aqua-dark);
+    margin-bottom: 6px;
+  }
+
+  p { margin-bottom: 16px; color: var(--ink); }
+  p:last-child { margin-bottom: 0; }
+
+  /* SECTION DIVIDER */
+  .pmtp-section {
+    margin-bottom: 48px;
+  }
+
+  .pmtp-section-rule {
+    width: 40px;
+    height: 2px;
+    background: var(--aqua);
+    margin-bottom: 20px;
+  }
+
+  /* SECTION IMAGES */
+  .pmtp-section-img {
+    width: 100%;
+    max-height: 320px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin: 0 0 20px;
+  }
+
+  /* BANDS */
+  .pmtp-band {
+    background: var(--aqua-mist);
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+  }
+
+  .pmtp-band-sand {
+    background: var(--warm-sand);
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin-bottom: 16px;
+  }
+
+  .pmtp-band p, .pmtp-band-sand p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin-bottom: 0;
+  }
+
+  /* ENTRY BLOCKS */
+  .pmtp-entry {
+    border-top: 1px solid var(--line);
+    padding: 24px 0;
+  }
+
+  .pmtp-entry:first-of-type { border-top: none; padding-top: 8px; }
+
+  .pmtp-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+  }
+
+  .tag-must { background: var(--aqua-pale); color: var(--aqua-dark); }
+  .tag-local { background: #FFF0DC; color: #7a5200; }
+  .tag-gem { background: #E6F2E6; color: #2e6b2e; }
+  .tag-practical { background: #EEEAFF; color: #4a3a8a; }
+  .tag-avoid { background: #FFE8E8; color: #8a2020; }
+  .tag-winter { background: #E4EEF5; color: #2a5070; }
+
+  .pmtp-entry p {
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+  }
+
+  .pmtp-tip {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--aqua-dark);
+    margin-bottom: 10px;
+    padding-left: 12px;
+    border-left: 2px solid var(--aqua);
+  }
+
+  /* MAPS */
+  .pmtp-map {
+    display: inline-block;
+    background: var(--white);
+    border: 1px solid var(--aqua);
+    color: var(--aqua-dark);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    margin-top: 4px;
+    transition: background 0.15s;
+  }
+
+  .pmtp-map:hover { background: var(--aqua-mist); }
+
+  /* PRACTICAL GRID */
+  .pmtp-practical-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .pmtp-info-cell {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 16px;
+  }
+
+  .pmtp-info-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--aqua-dark);
+    margin-bottom: 4px;
+  }
+
+  .pmtp-info-value {
+    font-family: 'Fraunces', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .pmtp-info-detail {
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+
+  /* AVOID */
+  .pmtp-avoid {
+    border-left: 3px solid #c05050;
+    background: #FFF5F5;
+    border-radius: 0 8px 8px 0;
+    padding: 16px 18px;
+    margin-bottom: 14px;
+  }
+
+  .pmtp-avoid h4 {
+    color: #8a2020;
+    margin-bottom: 6px;
+  }
+
+  .pmtp-avoid p {
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+
+  /* FOOTER */
+  .pmtp-footer {
+    background: var(--sand-light);
+    margin-top: 64px;
+    padding: 36px 28px;
+    border-radius: 12px;
+  }
+
+  .pmtp-footer-name {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+
+  .pmtp-footer-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 15px;
+    margin-bottom: 14px;
+  }
+
+  .pmtp-footer-contact {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 4px;
+  }
+
+  .pmtp-footer-contact a { color: var(--aqua-dark); text-decoration: none; }
+
+  .pmtp-footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 14px;
+    margin-top: 14px;
+  }
+
+  /* DISCLAIMER */
+  .pmtp-disclaimer {
+    margin-top: 28px;
+    padding: 22px 26px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    font-size: 12.5px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin-bottom: 40px;
+  }
+
+  .pmtp-disclaimer-label {
+    display: block;
+    font-weight: 600;
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  /* RESPONSIVE */
+  @media(max-width:640px){
+    body { font-size: 15px; }
+    .pmtp-hero { padding: 44px 20px 36px; margin: -24px -20px 24px; }
+    .pmtp-band, .pmtp-band-sand { padding: 18px 16px; }
+    h2 { font-size: 20px; }
+    h3 { font-size: 17px; }
+    .pmtp-footer { border-radius: 8px; padding: 24px 20px; }
+    .pmtp-practical-grid { grid-template-columns: 1fr; }
+    .pmtp-map { display: block; text-align: center; width: 100%; }
+    .pmtp-wrap { padding: 24px 20px 0; }
+  }
+</style>
+</head>
+<body>
+<div class="pmtp-wrap">
+
+  <!-- HERO -->
+  <div class="pmtp-hero">
+    <div class="pmtp-hero-eyebrow">Point Me to Paradise Travel</div>
+    <h1>Gardiner, Montana<br>&amp; Yellowstone</h1>
+    <div class="pmtp-hero-rule"></div>
+    <p class="pmtp-hero-tagline">The only town in America where America's first national park begins at the end of the street.</p>
+  </div>
+
+  <!-- HERO IMAGE -->
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Roosevelt_Arch_%282021-08-09%29,_01.jpg/1280px-Roosevelt_Arch_%282021-08-09%29,_01.jpg"
+    alt="Roosevelt Arch at the North Entrance to Yellowstone National Park, Gardiner Montana"
+    class="pmtp-hero-photo"
+    loading="lazy"
+  >
+
+  <!-- ORIENTATION -->
+  <div class="pmtp-section">
+    <h2>The Town</h2>
+    <span class="pmtp-subhead">A working gateway town, not a resort — and that's exactly the point.</span>
+    <div class="pmtp-section-rule"></div>
+
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Bison_with_the_Town_of_Gardiner_%2832230359216%29.jpg/1280px-Bison_with_the_Town_of_Gardiner_%2832230359216%29.jpg"
+      alt="Bison grazing near the town of Gardiner Montana with the Absaroka Mountains behind"
+      class="pmtp-section-img"
+      loading="lazy"
+    >
+
+    <p>Gardiner sits at the confluence of the Gardner and Yellowstone rivers in Park County, Montana, tucked between the Absaroka Mountains and the sagebrush flats of Paradise Valley. Population hovers around 800. The Roosevelt Arch — cornerstone laid by Theodore Roosevelt himself in 1903 — marks the literal edge of town, which puts you one minute from Yellowstone's North Entrance the moment you step outside your door. No other community in the country has that.</p>
+
+    <p>The commercial spine is Park Street: one compact strip of outfitters, diners, and bars that have been serving park workers since before the arch existed. Walkable end to end in under 15 minutes. What Gardiner lacks in resort polish it makes up for in proximity and year-round access — this is the only Yellowstone entrance that never closes.</p>
+
+    <div class="pmtp-band">
+      <h4>Getting There</h4>
+      <p>Fly into Bozeman Yellowstone International (BZN), about 90 minutes north on US-89. No public transit connects to Gardiner — a rental car is effectively required. The drive south through Paradise Valley is one of the finest scenic corridors in Montana and reason enough to route through here.</p>
+    </div>
+
+    <div class="pmtp-band-sand">
+      <h4>Getting Around Inside the Park</h4>
+      <p>Your own vehicle is the right tool. The Grand Loop Road links all major sites; Lamar Valley is northeast via Tower Junction; Mammoth Hot Springs is 6 miles south. Guided tours from Gardiner outfitters handle the parking frustration at peak-season sites and put expert eyes on the landscape for you.</p>
+    </div>
+  </div>
+
+  <!-- TOP SIGHTS -->
+  <div class="pmtp-section">
+    <h2>What to See</h2>
+    <span class="pmtp-subhead">The Greater Yellowstone Ecosystem is on your doorstep — use it deliberately.</span>
+    <div class="pmtp-section-rule"></div>
+
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/A_summer_day_in_Lamar_Valley._%28bdbd75f7-280a-410e-a9ed-64bc334fa7e8%29.jpg/1280px-A_summer_day_in_Lamar_Valley._%28bdbd75f7-280a-410e-a9ed-64bc334fa7e8%29.jpg"
+      alt="Wide panorama of Lamar Valley in Yellowstone National Park on a summer day"
+      class="pmtp-section-img"
+      loading="lazy"
+    >
+
+    <div class="pmtp-entry">
+      <span class="pmtp-tag tag-must">Must Do</span>
+      <h3>Roosevelt Arch</h3>
+      <p>The arch has marked Yellowstone's North Entrance since 1903. Its cornerstone was laid by Theodore Roosevelt, with a time capsule sealed inside — a Bible, a photo of Roosevelt, and local newspapers. Overhead, carved in basalt: <em>"For the Benefit and Enjoyment of the People."</em> That line comes from the 1872 legislation that created the park. Come at sunrise for the best light and the fewest people.</p>
+      <a class="pmtp-map" href="https://www.google.com/maps/search/?api=1&query=Roosevelt+Arch+Gardiner+MT" target="_blank">Open in Maps</a>
+    </div>
+
+    <div class="pmtp-entry">
+      <span class="pmtp-tag tag-must">Must Do</span>
+      <h3>Lamar Valley</h3>
+      <p>Called the American Serengeti, and not without reason. This northeast corridor is Yellowstone's premier wildlife theater: bison herds that practically fill your windshield, grizzlies working the slopes above Soda Butte Creek, pronghorn moving through the sage. Wolves — reintroduced from Canada in 1995 — are spotted here more reliably than almost anywhere else on the planet. Pull into any roadside turnout, set up binoculars, and wait. Dawn and dusk are non-negotiable. Winter sightings are the highest probability of any season.</p>
+      <p class="pmtp-tip">Wolf sightings are real but not guaranteed — even seasoned locals go weeks between them. Come for the bison and the landscape, and let the wolf be a bonus.</p>
+      <a class="pmtp-map" href="https://www.google.com/maps/search/?api=1&query=Lamar+Valley+Yellowstone" target="_blank">Open in Maps</a>
+    </div>
+
+    <div class="pmtp-entry">
+      <span class="pmtp-tag tag-must">Must Do</span>
+      <h3>Mammoth Hot Springs Terraces</h3>
+      <p>Six miles south of Gardiner, Mammoth's travertine terraces are unlike anything else in Yellowstone — and unlike anything else on Earth. Hot water saturated with calcium carbonate has been building cascading limestone shelves for thousands of years, the flows constantly redirecting as passages shift. Walk the Upper and Lower Terrace boardwalks past Liberty Cap, Palette Spring, and Minerva Terrace. The resident elk herd that treats the village as a personal lawn adds an unexpected layer of entertainment.</p>
+      <a class="pmtp-map" href="https://www.google.com/maps/search/?api=1&query=Mammoth+Hot+Springs+Yellowstone" target="_blank">Open in Maps</a>
+    </div>
+
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Palette_Spring_terraces_and_Devil%27s_Thumb_%28Mammoth_Hot_Springs,_Yellowstone_National_Park%29_2021-08-09,_01.jpg/1280px-Palette_Spring_terraces_and_Devil%27s_Thumb_%28Mammoth_Hot_Springs,_Yellowstone_National_Park%29_2021-08-09,_01.jpg"
+      alt="Palette Spring travertine terraces at Mammoth Hot Springs, Yellowstone National Park"
+      class="pmtp-section-img"
+      loading="lazy"
+      style="margin-top:8px;"
+    >
+
+    <div class="pmtp-entry">
+      <span class="pmtp-tag tag-must">Must Do</span>
+      <h3>Boiling River</h3>
+      <p>One of only two legal swimming spots in all of Yellowstone. Superheated geothermal water spills into the cold Gardiner River at a confluence about 3 miles south of the North Entrance; a flat 400-meter walk from the trailhead brings you there. Position yourself between the streams to find the temperature that suits you. Check current access before going — flooding periodically closes the site. No alcohol permitted on site.</p>
+      <p class="pmtp-tip">This spot is popular on summer afternoons. Go early morning for a quieter experience and better light.</p>
+      <a class="pmtp-map" href="https://www.google.com/maps/search/?api=1&query=Boiling+River+Yellowstone+National+Park" target="_blank">Open in Maps</a>
+    </div>
+
+    <div class="pmtp-entry">
+      <span class="pmtp-tag tag-must">Must Do</span>
+      <h3>Tower Fall &amp; Petrified Tree</h3>
+      <p>A 132-foot waterfall at the eastern edge of the northern range, just west of Lamar Valley at Tower Junction. Pair it with the Petrified Tree trailhead a few minutes' drive away — a 50-million-year-old redwood trunk standing upright in volcanic ash, perfectly preserved, a detail so improbable it reads like a prop from a film set.</p>
+      <a class="pmtp-map" href="https://www.google.com/maps/search/?api=1&query=Tower+Fall+Yellowstone" target="_blank">Open in Maps</a>
+    </div>
+
+    <div class="pmtp-entry">
+      <span class="pmtp-tag tag-gem">Local Find</span>
+      <h3>Old Gardiner Road</h3>
+      <p>A 5-mile unpaved historic stagecoach route connecting Gardiner to Mammoth Hot Springs, bypassing the main highway entirely. It runs along the ridgeline used by Yellowstone's earliest visitors, and during spring and fall migration you'll share it with bighorn sheep, bison, mule deer, elk, and pronghorn. High-clearance vehicle recommended.</p>
+      <p class="pmtp-tip">Best in May and October when animal movement is highest. Not suitable for low-clearance sedans.</p>
+      <a class="pmtp-map" href="https://www.google.com/maps/search/?api=1&query=Old+Gardiner+Road+Yellowstone" target="_blank">Open in Maps</a>
+    </div>
+
+    <div class="pmtp-entry">
+      <span class="pmtp-tag tag-local">Local Favorite</span>
+      <h3>Yellowstone Heritage &amp; Research Center</h3>
+      <p>Gardiner's understated intellectual anchor. The NPS's major archive for Yellowstone holds over 720,000 museum objects, 30 historic vehicles, and one of the largest collections of park records and periodicals in the Service. Free admission. Absorbing for anyone interested in the park's human and natural history — and consistently uncrowded.</p>
+      <a class="pmtp-map" href="https://www.google.com/maps/search/?api=1&query=Yellowstone+Heritage+Research+Center+Gardiner+MT" target="_blank">Open in Maps</a>
+    </div>
+
+    <div class="pmtp-entry">
+      <span class="pmtp-tag tag-local">Local Favorite</span>
+      <h3>Gardiner Historic Walking Tour</h3>
+      <p>Offered Tuesday and Thursday evenings at 5pm, June through September, by Yellowstone Gateway Museum volunteers. Starts in the small park opposite Roosevelt Arch; runs about 90 minutes with multiple stops. Covers Gardiner's prehistory, the Northern Pacific Railroad's role, mining history, and the characters who shaped the town. Free, worth the time.</p>
+      <a class="pmtp-map" href="https://www.google.com/maps/search/?api=1&query=Yellowstone+Gateway+Museum+Gardiner+MT" target="_blank">Open in Maps</a>
+    </div>
+  </div>
+
+  <!-- FOOD & DRINK -->
+  <div class="pmtp-section">
+    <h2>Where to Eat &amp; Drink</h2>
+    <span class="pmtp-subhead">Small-town honest — generous portions, bison on most menus, and a bar that earns its keep.</span>
+    <div class="pmtp-section-rule"></div>
+
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Gardiner_yellowstone_river.jpg/1024px-Gardiner_yellowstone_river.jpg"
+      alt="The Yellowstone River flowing through Gardiner Montana"
+      class="pmtp-section-img"
+      loading="lazy"
+    >
+
+    <div class="pmtp-entry">
+      <span class="pmtp-tag tag-local">Local Favorite</span>
+      <h3>The Corral Drive-In</h3>
+      <p>Reportedly the longest-standing business in Gardiner. The move is the bison burger — simple, built on locally sourced ingredients, priced honestly. Outdoor seating, cash-friendly, the full western casual experience. Locals bring every first-time visitor here.</p>
+      <a class="pmtp-map" href="https://www.google.com/maps/search/?api=1&query=The+Corral+Gardiner+MT" target="_blank">Open in Maps</a>
+    </div>
+
+    <div class="pmtp-entry">
+      <span class="pmtp-tag tag-must">Must Do</span>
+      <h3>Iron Horse Bar &amp; Grille</h3>
+      <p>Patio dining directly on the Yellowstone River, mountain views included. Elk nachos and bison meatloaf are the crowd favorites; the mulberry margaritas are an unexpected regional touch. The interior is historic western — oddities and memorabilia covering every surface. Best for evening drinks and watching the light go off the hills.</p>
+      <p class="pmtp-tip">Request the patio when you call ahead — the riverside seating is a different experience from the interior.</p>
+      <a class="pmtp-map" href="https://www.google.com/maps/search/?api=1&query=Iron+Horse+Bar+Grille+Gardiner+MT" target="_blank">Open in Maps</a>
+    </div>
+
+    <div class="pmtp-entry">
+      <span class="pmtp-tag tag-must">Must Do</span>
+      <h3>Wonderland Cafe &amp; Lodge</h3>
+      <p>Consistently the top-rated dinner option in town. The menu leans regional New American: elk chili, Wonderland burger, Montana ranch ribeye, lake trout. The bar carries imported reds, whites, and sparklings. Arrive early in summer — there will be a wait if you don't.</p>
+      <a class="pmtp-map" href="https://www.google.com/maps/search/?api=1&query=Wonderland+Cafe+Lodge+Gardiner+MT" target="_blank">Open in Maps</a>
+    </div>
+
+    <div class="pmtp-entry">
+      <span class="pmtp-tag tag-gem">Local Find</span>
+      <h3>Yellowstone Perk</h3>
+      <p>The best breakfast burrito in Gardiner by repeat-visitor consensus. Lattes and americanos done properly. On Park Street, no frills, opens early enough to fuel a pre-dawn wildlife run into the park. Budget-friendly relative to its neighbors.</p>
+      <a class="pmtp-map" href="https://www.google.com/maps/search/?api=1&query=Yellowstone+Perk+Gardiner+MT" target="_blank">Open in Maps</a>
+    </div>
+
+    <div class="pmtp-entry">
+      <span class="pmtp-tag tag-gem">Local Find</span>
+      <h3>Sagebrushers &amp; Savages</h3>
+      <p>Located inside the Super 8, which sounds unpromising until you taste the espresso. Drinks use Ghost Town Coffee roasted in Bozeman; breakfast sandwiches are built on Montana eggs, Olive Branch pork from Bridger, and croissants made with ancient-grain Kamut flour from Fort Benton. The coffee ice cubes in iced drinks are a genuine detail worth noticing. Indoor, open since 2024.</p>
+      <a class="pmtp-map" href="https://www.google.com/maps/search/?api=1&query=Sagebrushers+Savages+Gardiner+MT" target="_blank">Open in Maps</a>
+    </div>
+
+    <div class="pmtp-entry">
+      <span class="pmtp-tag tag-local">Day Trip</span>
+      <h3>Chico Hot Springs Resort — Dining Room</h3>
+      <p>About 30 miles north on US-89, in Pray, Montana. Chico grows much of its produce in onsite gardens and a year-round greenhouse; the dining room is legitimately one of the finest restaurants in this part of the state. Plan a soak in the outdoor mineral pools before or after dinner. Day passes available — verify pricing directly, as it changes.</p>
+      <p class="pmtp-tip">Chico also has live local bands on weekends and a bar worth lingering in. Works as a half-day escape when the park is socked in with afternoon weather.</p>
+      <a class="pmtp-map" href="https://www.google.com/maps/search/?api=1&query=Chico+Hot+Springs+Resort+Pray+MT" target="_blank">Open in Maps</a>
+    </div>
+  </div>
+
+  <!-- OUTDOOR & NATURE -->
+  <div class="pmtp-section">
+    <h2>Getting Outside</h2>
+    <span class="pmtp-subhead">The activities here are the point — everything else is logistics.</span>
+    <div class="pmtp-section-rule"></div>
+
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Image-American_bison_rests_at_hot_spring_in_yellowstone_national_park_1.jpg/1280px-Image-American_bison_rests_at_hot_spring_in_yellowstone_national_park_1.jpg"
+      alt="American bison resting at a hot spring in Yellowstone National Park"
+      class="pmtp-section-img"
+      loading="lazy"
+    >
+
+    <div class="pmtp-entry">
+      <span class="pmtp-tag tag-must">Must Do</span>
+      <h3>Guided Wildlife Safari — Lamar Valley</h3>
+      <p>The early-morning guided wildlife tour from Gardiner into Lamar Valley is the single most efficient use of your time here. Outfitters like Yellowstone Safari Company and Montana Yellowstone Tours provide spotting scopes, know the current pack movements, and explain what you're watching. Tours typically depart at 4:30–5am. Yes, that early. Yes, it's worth it.</p>
+      <a class="pmtp-map" href="https://www.google.com/maps/search/?api=1&query=Yellowstone+Safari+Company+Gardiner+MT" target="_blank">Open in Maps</a>
+    </div>
+
+    <div class="pmtp-entry">
+      <span class="pmtp-tag tag-must">Must Do</span>
+      <h3>Yellowstone River Rafting</h3>
+      <p>Multiple outfitters run half-day and full-day trips on the Yellowstone — the longest undammed river in the lower 48. The stretch through Yankee Jim Canyon hits Class III whitewater; calmer floats are available for families. Eagles, osprey, and deer are regular sightings from the water. Book ahead in summer.</p>
+      <a class="pmtp-map" href="https://www.google.com/maps/search/?api=1&query=Yellowstone+River+Rafting+Gardiner+MT" target="_blank">Open in Maps</a>
+    </div>
+
+    <div class="pmtp-entry">
+      <span class="pmtp-tag tag-must">Must Do</span>
+      <h3>Hiking: Beaver Pond Loop &amp; Bunsen Peak</h3>
+      <p>Both trails are accessible from Mammoth and offer wildlife-rich terrain with noticeably fewer crowds than Old Faithful–area routes. The Beaver Pond Loop (5 miles) runs through elk and waterfowl habitat. Bunsen Peak (4.2 miles, moderate) gives panoramic views of Gardiner and Paradise Valley. Carry bear spray — this is grizzly country.</p>
+      <a class="pmtp-map" href="https://www.google.com/maps/search/?api=1&query=Beaver+Pond+Loop+Mammoth+Yellowstone" target="_blank">Open in Maps</a>
+    </div>
+
+    <div class="pmtp-entry">
+      <span class="pmtp-tag tag-gem">Local Find</span>
+      <h3>Slough Creek Trail</h3>
+      <p>Wolf watchers with spotting scopes are a regular sight at the Slough Creek trailhead at dawn. The creek drainage is one of the most reliable places to observe the Junction Butte pack in action, especially in late autumn and winter. The trail follows the creek through open meadow — one of Yellowstone's more serene backcountry corridors.</p>
+      <a class="pmtp-map" href="https://www.google.com/maps/search/?api=1&query=Slough+Creek+Trailhead+Yellowstone" target="_blank">Open in Maps</a>
+    </div>
+
+    <div class="pmtp-entry">
+      <span class="pmtp-tag tag-gem">Local Find</span>
+      <h3>Trout Lake Trail</h3>
+      <p>A 1.2-mile loop in the Lamar corridor — short enough to feel like a warmup, but it reliably delivers mountain reflections and one of the park's best spots for watching river otters. Far less trafficked than the main Lamar pullouts. Worth the short detour for photographers.</p>
+      <a class="pmtp-map" href="https://www.google.com/maps/search/?api=1&query=Trout+Lake+Trail+Yellowstone" target="_blank">Open in Maps</a>
+    </div>
+
+    <div class="pmtp-entry">
+      <span class="pmtp-tag tag-local">Local Favorite</span>
+      <h3>Horseback Riding — Wilderness Connection</h3>
+      <p>Top-rated local outfitter running rides on private ranch land — no road traffic, no crowd pressure. Guides are experienced, horses are well-matched to rider level. One of the few operators permitted for horseback tours inside Yellowstone National Park itself.</p>
+      <a class="pmtp-map" href="https://www.google.com/maps/search/?api=1&query=Wilderness+Connection+Gardiner+MT" target="_blank">Open in Maps</a>
+    </div>
+
+    <div class="pmtp-entry">
+      <span class="pmtp-tag tag-gem">Local Find</span>
+      <h3>Yellowstone Hot Springs</h3>
+      <p>A lesser-known soak about 10 minutes north of Gardiner, above the Yellowstone River with mountain views in every direction. The facility has 4,000 square feet of mineral pools — one large pool with two smaller pools inside it, plus a kneipp walk. No alcohol; picnicking on site is welcome. Day pass pricing was roughly $15–20 per person when last reported — verify current rates directly.</p>
+      <a class="pmtp-map" href="https://www.google.com/maps/search/?api=1&query=Yellowstone+Hot+Springs+Gardiner+MT" target="_blank">Open in Maps</a>
+    </div>
+
+    <div class="pmtp-entry">
+      <span class="pmtp-tag tag-winter">Winter Only</span>
+      <h3>Snowcoach Tours into the Interior</h3>
+      <p>Winter is when Yellowstone's character changes completely — and Gardiner's year-round entrance is the key. Snowcoach tours (roughly mid-December through early March) run to Old Faithful, the Grand Canyon of the Yellowstone, and Mammoth. Yellowstone Vacation Tours operates from Gardiner; private and custom trips are available. Wolf sightings in Lamar Valley peak in winter.</p>
+      <a class="pmtp-map" href="https://www.google.com/maps/search/?api=1&query=Yellowstone+Vacation+Tours+Gardiner+MT" target="_blank">Open in Maps</a>
+    </div>
+
+    <div class="pmtp-entry">
+      <span class="pmtp-tag tag-gem">Local Find</span>
+      <h3>Bear Creek Trail to Knox Lake</h3>
+      <p>Starts above Gardiner and Jardine on the edge of the Absaroka-Beartooth Wilderness. Four miles of steady climbing to a turquoise mountain lake at the base of Castle and Monitor Peaks — excellent brook trout fishing if you carry a rod. Virtually unknown to park day-trippers. High-clearance vehicle required to reach the trailhead.</p>
+      <a class="pmtp-map" href="https://www.google.com/maps/search/?api=1&query=Bear+Creek+Trail+Jardine+MT" target="_blank">Open in Maps</a>
+    </div>
+  </div>
+
+  <!-- SHOPPING -->
+  <div class="pmtp-section">
+    <h2>Shopping</h2>
+    <span class="pmtp-subhead">No national chains, no resort boutiques — just locally owned stores and the supplies you actually need.</span>
+    <div class="pmtp-section-rule"></div>
+
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Bison_grazing_near_the_North_Entrance_on_a_spring_morning_%2841456197594%29.jpg/1280px-Bison_grazing_near_the_North_Entrance_on_a_spring_morning_%2841456197594%29.jpg"
+      alt="Bison grazing near the North Entrance to Yellowstone National Park on a spring morning"
+      class="pmtp-section-img"
+      loading="lazy"
+    >
+
+    <div class="pmtp-entry">
+      <span class="pmtp-tag tag-local">Local Favorite</span>
+      <h3>Park Street Shops</h3>
+      <p>Walk the town's single commercial corridor for outfitters stocking serious outdoor gear — bear spray, trekking poles, base layers — alongside galleries of wildlife photography and western art. Montana-made gifts that don't read like airport merchandise. Most shops are staffed by people who actually live here.</p>
+      <a class="pmtp-map" href="https://www.google.com/maps/search/?api=1&query=Park+Street+Gardiner+Montana" target="_blank">Open in Maps</a>
+    </div>
+
+    <div class="pmtp-entry">
+      <span class="pmtp-tag tag-practical">Practical</span>
+      <h3>Gardiner Market</h3>
+      <p>Stock up here before multi-day park visits. Fresh produce and basics, limited selection, but it's the only in-town grocery option. Good for lunch supplies, snacks, and anything you forgot to pack before leaving home.</p>
+      <a class="pmtp-map" href="https://www.google.com/maps/search/?api=1&query=Gardiner+Market+Gardiner+MT" target="_blank">Open in Maps</a>
+    </div>
+
+    <div class="pmtp-entry">
+      <span class="pmtp-tag tag-practical">Practical</span>
+      <h3>Chamber of Commerce Visitor Center — 216 Park St</h3>
+      <p>Beyond the maps and brochures: a bear spray vending machine (rental and purchase), and staff who maintain genuinely up-to-date dining hours in a town where seasonal closures are real. Ask where the staff go on their days off — you'll get better advice than any website provides. Bathrooms open until midnight.</p>
+      <a class="pmtp-map" href="https://www.google.com/maps/search/?api=1&query=Gardiner+Chamber+Commerce+216+Park+St+Gardiner+MT" target="_blank">Open in Maps</a>
+    </div>
+  </div>
+
+  <!-- LOCAL TIPS -->
+  <div class="pmtp-section">
+    <h2>What the Regulars Know</h2>
+    <span class="pmtp-subhead">The details that don't show up until your second or third visit.</span>
+    <div class="pmtp-section-rule"></div>
+
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Bison_and_calves_in_Lamar_Valley_%2854663648481%29.jpg/1280px-Bison_and_calves_in_Lamar_Valley_%2854663648481%29.jpg"
+      alt="Bison cows and calves grazing in Lamar Valley, Yellowstone National Park in summer"
+      class="pmtp-section-img"
+      loading="lazy"
+    >
+
+    <div class="pmtp-band">
+      <h4>Wolf Watching — The Real Picture</h4>
+      <p>The Junction Butte pack is regularly active in Lamar Valley; the Wapiti Lake pack works the Mammoth–Old Faithful corridor. The Lamar Canyon pack now numbers just a couple of animals. Winter is peak season — activity surges, crowds thin. Bring a spotting scope or rent one from a Gardiner outfitter. Even seasoned locals go weeks between sightings. Patience and pre-dawn positioning are the whole strategy.</p>
+    </div>
+
+    <div class="pmtp-band-sand">
+      <h4>Backroads Move: East River Road</h4>
+      <p>On the drive between Gardiner and Livingston — whether you're heading to or from BZN — take East River Road instead of Highway 89. It adds about 15 minutes and gives you a ground-level river perspective of Paradise Valley that the highway entirely misses.</p>
+    </div>
+
+    <div class="pmtp-band">
+      <h4>Go Early, Go Late — Skip the Middle</h4>
+      <p>Peak congestion at major sites runs roughly 9am to 3pm, when day-trippers flood in and parking lots at Grand Prismatic and Old Faithful fill by 10am. Wildlife is most active at dawn and dusk, which conveniently sidesteps the worst of the crowd pressure. Staying in Gardiner puts you positioned to enter the park before almost anyone else.</p>
+    </div>
+
+    <div class="pmtp-band-sand">
+      <h4>Bear Spray: Carry It, Know How to Use It</h4>
+      <p>Every trail in and around Gardiner is grizzly and black bear country. Bear spray is the most effective deterrent available. The Chamber of Commerce visitor center at 216 Park Street has a vending machine — rental and purchase. Practice the draw before you hit the trail. This isn't precautionary language; it's the actual advice locals give.</p>
+    </div>
+
+    <div class="pmtp-band">
+      <h4>Don't Default to Summer</h4>
+      <p>September and October bring elk rut, quieter roads, and a park that breathes again after the summer crush. January and February offer the rarest wildlife viewing in North America and near-empty lodging in Gardiner. The year-round North Entrance is an advantage most visitors never use.</p>
+    </div>
+  </div>
+
+  <!-- PRACTICAL -->
+  <div class="pmtp-section">
+    <h2>Plan It Right</h2>
+    <span class="pmtp-subhead">The numbers and details worth knowing before you go.</span>
+    <div class="pmtp-section-rule"></div>
+
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/View_of_Gardiner%2C_MT_from_Sepulcher_Mountain.jpg/1280px-View_of_Gardiner%2C_MT_from_Sepulcher_Mountain.jpg"
+      alt="View of Gardiner Montana from Sepulcher Mountain in summer, with the Absaroka Mountains and Paradise Valley"
+      class="pmtp-section-img"
+      loading="lazy"
+    >
+
+    <div class="pmtp-practical-grid">
+      <div class="pmtp-info-cell">
+        <div class="pmtp-info-label">Best Months</div>
+        <div class="pmtp-info-value">May, Sept–Oct</div>
+        <div class="pmtp-info-detail">Balance of weather and thinner crowds. Jan–Feb for peak wolf watching and near-empty park.</div>
+      </div>
+      <div class="pmtp-info-cell">
+        <div class="pmtp-info-label">Busiest / Avoid</div>
+        <div class="pmtp-info-value">July</div>
+        <div class="pmtp-info-detail">Parking lots fill by 10am; bison jams can halt traffic for an hour. No timed-entry system in place.</div>
+      </div>
+      <div class="pmtp-info-cell">
+        <div class="pmtp-info-label">Recommended Stay</div>
+        <div class="pmtp-info-value">3–5 nights</div>
+        <div class="pmtp-info-detail">2 nights minimum for Lamar Valley + Mammoth. 4–5 to add Old Faithful, Grand Canyon of Yellowstone, Paradise Valley.</div>
+      </div>
+      <div class="pmtp-info-cell">
+        <div class="pmtp-info-label">Park Entry Fee</div>
+        <div class="pmtp-info-value">$35 / vehicle</div>
+        <div class="pmtp-info-detail">Valid 7 days. America the Beautiful annual pass ($80) covers all national parks. International visitors pay an additional $100/person surcharge effective January 2026.</div>
+      </div>
+      <div class="pmtp-info-cell">
+        <div class="pmtp-info-label">Nearest Airport</div>
+        <div class="pmtp-info-value">BZN — Bozeman</div>
+        <div class="pmtp-info-detail">~90 minutes north via US-89. Rental car required; no public transit to Gardiner.</div>
+      </div>
+      <div class="pmtp-info-cell">
+        <div class="pmtp-info-label">North Entrance</div>
+        <div class="pmtp-info-value">Open Year-Round</div>
+        <div class="pmtp-info-detail">Only Yellowstone entrance open all 12 months. Mammoth Visitor Center is also open year-round.</div>
+      </div>
+      <div class="pmtp-info-cell">
+        <div class="pmtp-info-label">Cell Service</div>
+        <div class="pmtp-info-value">Spotty in Park</div>
+        <div class="pmtp-info-detail">Gardiner town has coverage. Download offline maps before entering Yellowstone.</div>
+      </div>
+      <div class="pmtp-info-cell">
+        <div class="pmtp-info-label">Wildlife Distances</div>
+        <div class="pmtp-info-value">25 yd / 100 yd</div>
+        <div class="pmtp-info-detail">25 yards minimum from bison, elk, deer. 100 yards from bears and wolves. Legally enforced; bison have injured more people in Yellowstone than any other animal.</div>
+      </div>
+    </div>
+
+    <div class="pmtp-band-sand">
+      <h4>Reservations</h4>
+      <p>No timed-entry reservations are required to enter Yellowstone as of 2025–2026. You can arrive at any entrance with a valid pass and drive in. Lodging and campground reservations inside the park, however, fill months in advance for summer — book those early or plan to base yourself in Gardiner.</p>
+    </div>
+  </div>
+
+  <!-- WHAT TO AVOID -->
+  <div class="pmtp-section">
+    <h2>What to Avoid</h2>
+    <span class="pmtp-subhead">The honest word on what goes wrong for unprepared visitors.</span>
+    <div class="pmtp-section-rule"></div>
+
+    <div class="pmtp-avoid">
+      <h4>Getting Too Close to Wildlife</h4>
+      <p>Bison goring incidents happen every year — almost always because someone walked too close for a photo. If the animal is watching you and shifting its posture, you are already too close. The legal minimum is 25 yards from bison, elk, and deer; 100 yards from bears and wolves.</p>
+    </div>
+
+    <div class="pmtp-avoid">
+      <h4>Arriving at Grand Prismatic or Old Faithful at Midday</h4>
+      <p>Parking fills by 9–10am in peak season. Without a timed-entry system, you either arrive before 8am or you accept sitting in a queue for an hour. Plan major thermal sites as early-morning or late-afternoon destinations.</p>
+    </div>
+
+    <div class="pmtp-avoid">
+      <h4>Skipping Bear Spray on Hikes</h4>
+      <p>This is grizzly country. Every hiking trail in and around Gardiner carries real encounter risk. Bear spray is available at the Chamber vending machine, gear shops on Park Street, and park visitor centers. Carry it; know how to deploy it.</p>
+    </div>
+
+    <div class="pmtp-avoid">
+      <h4>Relying on In-Park Dining for All Meals</h4>
+      <p>Park food services at Mammoth and elsewhere run long lines, limited options, and prices that rarely match the quality. Stock supplies in Gardiner before entering each day — the town's market and cafes are meaningfully better.</p>
+    </div>
+
+    <div class="pmtp-avoid">
+      <h4>Driving the Interior Without Checking Road Status</h4>
+      <p>Seasonal closures, bison jams, and wildlife-related road blocks are real. Check nps.gov/yell and the current conditions page before leaving. In winter, interior roads are closed to wheeled vehicles; snowcoach is the only option beyond the northern range.</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="pmtp-footer">
+    <div class="pmtp-footer-name">Andrea Gunter</div>
+    <div class="pmtp-footer-title">Travel Advisor</div>
+    <div class="pmtp-footer-contact"><a id="pmtpEmailLink" href="#"></a></div>
+    <div class="pmtp-footer-contact">409-789-3579</div>
+    <div class="pmtp-footer-brand">Point Me to Paradise Travel</div>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <div class="pmtp-disclaimer">
+    <span class="pmtp-disclaimer-label">Important — please read</span>
+    This guide is provided for informational purposes only. Locations, hours, conditions, and recommendations can change without notice, and ocean, weather, trail, road, and travel conditions can shift quickly and unpredictably. Point Me to Paradise Travel, the advisor named in this guide, and the authors of this content are not liable for any injury, illness, loss, theft, or harm of any kind arising from your visit to any location or participation in any activity referenced here. By using this guide, you accept full personal responsibility for your own safety. Use your own judgment, verify current conditions before any activity, follow all posted warnings and local regulations, and consult qualified professionals — lifeguards, park rangers, licensed guides, medical providers — where appropriate.
+  </div>
+
+</div>
+
+<script>
+(function(){
+  var l = "andrea";
+  var d = "pointmetoparadise.com";
+  if(!l||!d) return;
+  var a = l + "\u0040" + d;
+  var el = document.getElementById("pmtpEmailLink");
+  if(el){ el.href = "mailto:" + a; el.textContent = a; }
+})();
+</script>
+</body>
+</html>
