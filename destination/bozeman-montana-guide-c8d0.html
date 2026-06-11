@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bozeman, Montana — Point Me to Paradise Travel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --aqua-pale:#C4E4E1; --aqua-mist:#EAF3F2; --aqua:#75AFB1; --aqua-dark:#4F8A8C;
+    --sand-light:#F4F1E9; --warm-sand:#F5EFE4; --gold-whisper:#D6C8A8;
+    --white:#FFFFFF; --paper:#F9F6F1; --ink:#2B2420; --ink-soft:#6B6359; --line:#E6DFD5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; font-size: 16px; line-height: 1.75; color: var(--ink); background: var(--paper); }
+  .page-wrap { max-width: 680px; margin: 0 auto; padding: 48px 28px 80px; }
+  h1 { font-family: 'Fraunces', serif; font-size: clamp(26px,5vw,42px); font-weight: 700; color: var(--ink); line-height: 1.15; }
+  h2 { font-family: 'Fraunces', serif; font-size: clamp(20px,4vw,28px); font-weight: 600; color: var(--ink); margin: 52px 0 6px; padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+  h3 { font-family: 'Fraunces', serif; font-size: clamp(16px,3vw,20px); font-weight: 600; color: var(--ink); margin: 32px 0 10px; }
+  .section-subhead { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(15px,2.5vw,18px); color: var(--ink-soft); margin-bottom: 24px; display: block; }
+  p { color: var(--ink); margin-bottom: 14px; }
+  a { color: var(--aqua-dark); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .pmtp-hero { background-image: linear-gradient(180deg,rgba(255,255,255,0.45),rgba(196,228,225,0.55) 35%,rgba(245,239,228,0.80) 68%,rgba(249,246,240,0.97)); padding: clamp(40px,8vw,78px) 32px clamp(36px,6vw,60px); text-align: center; margin: -48px -28px 32px; border-bottom: 1px solid var(--line); }
+  .pmtp-hero .eyebrow { font-family: 'Fraunces', serif; font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--aqua-dark); margin-bottom: 22px; }
+  .pmtp-hero .gold-rule { width: 60px; height: 1px; background: var(--gold-whisper); margin: 18px auto; }
+  .pmtp-hero .tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(17px,3.5vw,21px); max-width: 620px; margin: 0 auto; color: var(--ink-soft); }
+
+  .hero-img { width: 100%; max-height: 460px; object-fit: cover; display: block; margin-bottom: 32px; }
+  .section-img { width: 100%; max-height: 320px; object-fit: cover; border-radius: 8px; display: block; margin: 0 0 20px; }
+
+  .quick-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px,1fr)); gap: 10px; margin: 28px 0 40px; }
+  .fact-card { background: var(--white); border: 1px solid var(--line); border-radius: 10px; padding: 14px 12px; text-align: center; }
+  .fact-card .val { font-family: 'Fraunces', serif; font-size: 1.25rem; font-weight: 700; color: var(--aqua-dark); }
+  .fact-card .lbl { font-size: 0.75rem; color: var(--ink-soft); margin-top: 3px; }
+
+  .entry { background: var(--white); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; margin-bottom: 12px; }
+  .entry-head { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px; margin-bottom: 6px; }
+  .entry-name { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 600; color: var(--ink); }
+  .map-link { font-size: 0.8rem; color: var(--aqua-dark); padding: 4px 0; }
+  .entry p { font-size: 0.9rem; color: var(--ink-soft); margin-bottom: 0; line-height: 1.65; }
+
+  .tag { display: inline-block; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 2px 8px; border-radius: 20px; }
+  .tag-do { background: #E4F0EE; color: var(--aqua-dark); }
+  .tag-local { background: #FEF4E6; color: #7A4500; }
+  .tag-find { background: #EEF0F8; color: #4A4A8A; }
+  .tag-practical { background: var(--aqua-mist); color: var(--aqua-dark); }
+
+  .pmtp-band { border-radius: 10px; padding: 22px 24px; margin: 20px 0; }
+  .pmtp-band h4 { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+  .pmtp-band p { font-size: 0.9rem; color: var(--ink-soft); margin-bottom: 0; line-height: 1.65; }
+
+  .tip-box { background: #FFFBF0; border-left: 3px solid #EFAD50; border-radius: 0 8px 8px 0; padding: 14px 16px; margin: 16px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.65; }
+  .tip-box strong { color: #6A3C00; display: block; margin-bottom: 4px; font-size: 0.85rem; }
+  .avoid-box { background: #FFF5F5; border-left: 3px solid #D94848; border-radius: 0 8px 8px 0; padding: 14px 16px; margin: 10px 0; font-size: 0.9rem; color: var(--ink); line-height: 1.65; }
+  .avoid-box strong { color: #8B2020; display: block; margin-bottom: 4px; font-size: 0.85rem; }
+
+  .itinerary-day { background: var(--white); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; margin-bottom: 12px; }
+  .itinerary-day h4 { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 600; color: var(--aqua-dark); margin-bottom: 8px; }
+  .itinerary-day p { font-size: 0.9rem; color: var(--ink-soft); margin-bottom: 0; }
+
+  .section-rule { width: 40px; height: 2px; background: var(--aqua-pale); margin: 8px 0 20px; border-radius: 2px; }
+
+  .pmtp-footer { background: var(--sand-light); margin-top: 64px; padding: 36px 28px; border-radius: 12px; }
+  .pmtp-footer .advisor-name { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 600; color: var(--ink); }
+  .pmtp-footer .advisor-title { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--ink-soft); font-size: 15px; margin-bottom: 14px; }
+  .pmtp-footer .contact-line { font-size: 14px; color: var(--ink); margin-bottom: 4px; }
+  .pmtp-footer .brand-name { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--ink-soft); font-size: 14px; margin-top: 14px; }
+
+  .pmtp-disclaimer { margin-top: 28px; padding: 22px 26px; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; font-size: 12.5px; line-height: 1.7; color: var(--ink-soft); }
+  .pmtp-disclaimer .disclaimer-head { display: block; font-weight: 600; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); margin-bottom: 8px; }
+
+  @media (max-width: 640px) {
+    body { font-size: 15px; }
+    .page-wrap { padding: 24px 20px 60px; }
+    .pmtp-hero { padding: 44px 20px 36px; margin: -24px -20px 24px; }
+    .pmtp-band { padding: 18px 16px; }
+    h2 { font-size: 20px; } h3 { font-size: 17px; }
+    .pmtp-footer { border-radius: 8px; padding: 24px 20px; }
+    .quick-facts { grid-template-columns: repeat(2,1fr); }
+  }
+</style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <div class="pmtp-hero">
+    <div class="eyebrow">Point Me to Paradise Travel</div>
+    <h1>Bozeman, Montana</h1>
+    <div class="gold-rule"></div>
+    <p class="tagline">Five mountain ranges, one walkable downtown, and enough adventure to outlast any itinerary you bring.</p>
+  </div>
+
+  <!-- Hero: Main Street Bozeman summer — MD5-computed URL: 0/06/ -->
+  <img class="hero-img" loading="lazy"
+    src="https://upload.wikimedia.org/wikipedia/commons/0/06/Main_St%2C_Bozeman%2C_Montana_%281%29.JPG"
+    alt="Bozeman's historic red-brick Main Street on a sunny summer afternoon">
+
+  <div class="quick-facts">
+    <div class="fact-card"><div class="val">4,820 ft</div><div class="lbl">Elevation</div></div>
+    <div class="fact-card"><div class="val">~56,000</div><div class="lbl">Population</div></div>
+    <div class="fact-card"><div class="val">90 min</div><div class="lbl">Drive to Yellowstone</div></div>
+    <div class="fact-card"><div class="val">3–5 days</div><div class="lbl">Ideal stay</div></div>
+    <div class="fact-card"><div class="val">11+</div><div class="lbl">Craft breweries</div></div>
+    <div class="fact-card"><div class="val">No sales tax</div><div class="lbl">Montana perk</div></div>
+  </div>
+
+  <h2>Orientation &amp; Character</h2>
+  <div class="section-rule"></div>
+  <span class="section-subhead">Bozeman is what Colorado mountain towns used to be — and it knows it's on borrowed time.</span>
+
+  <!-- Bozeman from Saddle Peak — green summer Gallatin Valley — MD5: f/fc/ -->
+  <img class="section-img" loading="lazy"
+    src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Bozeman%2C_MT_from_Saddle_Peak_in_the_Bridger_Mountains%2C_Montana%2C_USA.jpg"
+    alt="Bozeman and the green summer Gallatin Valley from Saddle Peak in the Bridger Mountains">
+
+  <p>Bozeman sits in the broad Gallatin Valley at the foot of five mountain ranges — the Bridgers, Gallatins, Madisons, Tobacco Roots, and Spanish Peaks — creating one of the most scenically positioned college towns in America. It's one of the fastest-growing towns in the country right now, but downtown still rewards an unhurried afternoon: preserved 19th-century red-brick storefronts, world-class dinosaur fossils a few blocks from the bar where locals argue about powder days.</p>
+
+  <p>The town's character emerges from a collision: fourth-generation cattle ranchers in Stetsons, Montana State University students, Hollywood transplants, environmental advocates, and craft beer artisans sharing the same walkable blocks. Progressive but unpretentious, outdoorsy but intellectually curious. That tension is the whole appeal.</p>
+
+  <div class="pmtp-band" style="background:var(--aqua-mist);">
+    <h4>Getting Around</h4>
+    <p>Downtown is walkable, but you'll want a car for trailheads, Big Sky, and Yellowstone — without one, you're seeing a fraction of the place. Streamline Bus serves the metro area at no cost. Bird scooters cover downtown. Avoid left turns on busy Main Street sections without lead arrows — use the one-way streets to come around. Locals notice, and the backups are real.</p>
+  </div>
+
+  <h3>Neighborhoods at a Glance</h3>
+  <div class="entry">
+    <div class="entry-head"><span class="entry-name">Downtown / Main Street</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Downtown+Bozeman+Main+Street" target="_blank">View on map</a></div>
+    <p>The walkable core. Preserved red-brick buildings alongside modern boutiques, galleries, and farm-to-table restaurants — roughly 700 listings on the National Register of Historic Places.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="entry-name">Northeast Bozeman</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Northeast+Bozeman+Montana" target="_blank">View on map</a></div>
+    <p>The trendiest emerging area — an eclectic artist community anchored by the Cannery District, with breweries and indie restaurants pulling more traffic every season.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="entry-name">South Side / University District</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=South+Bozeman+Montana+State+University" target="_blank">View on map</a></div>
+    <p>Historic homes on large lots with mature trees, many on the National Register. Walking distance to MSU, the Museum of the Rockies, and the Main Street to Mountains trail network.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="entry-name">Cannery District</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Cannery+District+Bozeman+Montana" target="_blank">View on map</a></div>
+    <p>Converted industrial complex now home to boutiques, food vendors, and creative businesses. Worth a half-hour wander.</p>
+  </div>
+
+  <h2>Top Sights &amp; Experiences</h2>
+  <div class="section-rule"></div>
+  <span class="section-subhead">The biggest T-Rex skull ever found is two blocks from your craft beer. That's Bozeman in one sentence.</span>
+
+  <!-- Gallatin State Bank Building — summer street scene — MD5: b/be/ -->
+  <img class="section-img" loading="lazy"
+    src="https://upload.wikimedia.org/wikipedia/commons/b/be/Gallatin_State_Bank_Building%2C_Main_Street_and_Tracy_Avenue%2C_Bozeman%2C_MT.jpg"
+    alt="Classic Bozeman architecture at Main Street and Tracy Avenue on a summer day">
+
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-do">Don't Miss</span><span class="entry-name">Museum of the Rockies</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Museum+of+the+Rockies+Bozeman" target="_blank">View on map</a></div>
+    <p>Affiliated with Montana State University and the Smithsonian, this museum holds one of the largest dinosaur fossil collections on Earth — including the largest T-Rex skull ever found. Also a Planetarium and a Living History Farm. Budget 2–3 hours. Adults typically $20, children $12.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-do">Don't Miss</span><span class="entry-name">Hyalite Canyon Recreation Area</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Hyalite+Canyon+Bozeman+Montana" target="_blank">View on map</a></div>
+    <p>Twenty to twenty-five minutes south of downtown. Summer brings hiking, mountain biking, paddleboarding on the reservoir, and seven or more waterfalls. Palisade Falls (1.2-mile round trip) is accessible to the overlook.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-do">Don't Miss</span><span class="entry-name">The M Trail (Baldy Mountain)</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=M+Trail+Bozeman+Montana" target="_blank">View on map</a></div>
+    <p>Iconic hike to an "M" built by MSU students over a century ago. Views of Bridger Canyon and the full Gallatin Valley. Go early — no shade and it heats fast. Dogs welcome.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-do">Don't Miss</span><span class="entry-name">Bridger Bowl Ski Area</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Bridger+Bowl+Bozeman+Montana" target="_blank">View on map</a></div>
+    <p>Sixteen miles north — outstanding skiing with far fewer crowds and significantly lower prices than Big Sky. The MSU community skis here; the local atmosphere is genuine.</p>
+  </div>
+
+  <!-- Lone Mountain Big Sky in summer — MD5: b/bd/ -->
+  <img class="section-img" loading="lazy"
+    src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Lone_Mountian%2C_Big_Sky%2C_MT.jpg"
+    alt="Lone Mountain and Big Sky, Montana — green alpine meadows and rocky summer summit">
+
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-local">Local Favorite</span><span class="entry-name">Big Sky Resort</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Big+Sky+Resort+Montana" target="_blank">View on map</a></div>
+    <p>Forty-five miles south — the largest ski area in the US by acreage. Year-round: ziplining, hiking Lone Mountain, bungee trampolines, mountain biking. Pricier than Bridger Bowl, but the scale is staggering.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-local">Local Favorite</span><span class="entry-name">Emerson Center for the Arts &amp; Culture</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Emerson+Center+Arts+Bozeman" target="_blank">View on map</a></div>
+    <p>A converted school turned arts hub with galleries, studios, and performance spaces. The center of Bozeman's creative scene. Free outdoor ice rink from Christmas through February.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-find">Worth Finding</span><span class="entry-name">American Computer &amp; Robotics Museum</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=American+Computer+Museum+Bozeman" target="_blank">View on map</a></div>
+    <p>Often overlooked, but genuinely engaging — tracing the arc from abacus to modern robotics. Strong option for a rainy afternoon.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-find">Worth Finding</span><span class="entry-name">Gallatin County Pioneer Museum</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Gallatin+County+Pioneer+Museum+Bozeman" target="_blank">View on map</a></div>
+    <p>Inside the old county jail (in use until 1982). Local history through law enforcement, military service, and daily pioneer life. Niche but fascinating.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-practical">Practical</span><span class="entry-name">Bozeman Hot Springs</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Bozeman+Hot+Springs+Montana" target="_blank">View on map</a></div>
+    <p>Twelve natural hot-spring-fed pools from 59°F to 106°F. Perfect after a hard day on the trail. West of downtown, short drive required.</p>
+  </div>
+
+  <div class="pmtp-band" style="background:var(--warm-sand);">
+    <h4>Dawn Balloon Flight Over the Gallatin Valley</h4>
+    <p>Hot air balloon companies operate over the valley in summer — seeing Bozeman from 10,000 feet at sunrise, surrounded by five mountain ranges, is an experience few visitors plan for and most remember for years. Book ahead; they fill fast.</p>
+  </div>
+
+  <h2>Food &amp; Drink</h2>
+  <div class="section-rule"></div>
+  <span class="section-subhead">For a town this size, the culinary ambition is genuinely unexpected — and the craft beer scene is among the best in the Mountain West.</span>
+
+  <h3>Breakfast &amp; Brunch</h3>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-do">Don't Miss</span><span class="entry-name">Jam!</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Jam+Bozeman+Montana" target="_blank">View on map</a></div>
+    <p>The definitive Bozeman breakfast — rustic, cozy, excellent coffee. Expect a wait on weekends; it's earned.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-local">Local Favorite</span><span class="entry-name">Western Café</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Western+Cafe+Bozeman+Montana" target="_blank">View on map</a></div>
+    <p>A true institution — diner-style, classic American, a nostalgia hit. Home-cooked meals that give you a taste of the old Bozeman.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-find">Worth Finding</span><span class="entry-name">Vienne Café</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Vienne+Cafe+Bozeman+Montana" target="_blank">View on map</a></div>
+    <p>Less crowded than Jam! and beloved by locals who don't want to wait. Strong pastries, now open for dinner too.</p>
+  </div>
+
+  <h3>Lunch &amp; Casual</h3>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-local">Local Favorite</span><span class="entry-name">Pickle Barrel</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Pickle+Barrel+Bozeman+Montana" target="_blank">View on map</a></div>
+    <p>Legendary sandwiches, often larger than any single person can reasonably manage. A Bozeman classic.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-do">Don't Miss</span><span class="entry-name">SHINE Beer Sanctuary</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=SHINE+Beer+Sanctuary+Bozeman+Montana" target="_blank">View on map</a></div>
+    <p>Beloved for tacos and a serious beer selection. Lively atmosphere that draws both locals and returning visitors.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-local">Local Favorite</span><span class="entry-name">Colombo's Pizza</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Colombo%27s+Pizza+Bozeman+Montana" target="_blank">View on map</a></div>
+    <p>Old-school local goodie. Less talked about in visitor guides but locals keep returning.</p>
+  </div>
+
+  <h3>Dinner</h3>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-do">Don't Miss</span><span class="entry-name">J.W. Heist Steakhouse</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=JW+Heist+Bozeman+Montana" target="_blank">View on map</a></div>
+    <p>The definitive upscale Bozeman dinner. Award-winning wine list; duck confit and wild mushroom risotto are highlights. Worth the splurge.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-do">Don't Miss</span><span class="entry-name">Blackbird Kitchen</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Blackbird+Kitchen+Bozeman+Montana" target="_blank">View on map</a></div>
+    <p>Rustic charm meets modern twist. A consistent local and visitor favorite on Main Street.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-find">Worth Finding</span><span class="entry-name">Shan Restaurant</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Shan+Restaurant+Bozeman+Montana" target="_blank">View on map</a></div>
+    <p>A James Beard semi-finalist merging Chinese and Thai flavors. Relaxed but upscale, already building a national reputation.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-find">Worth Finding</span><span class="entry-name">Izakaya Three Fish (Omakase)</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Izakaya+Three+Fish+Bozeman+Montana" target="_blank">View on map</a></div>
+    <p>A genuinely exceptional omakase experience. Book well in advance. A destination meal hidden in a Montana mountain town.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-find">Worth Finding</span><span class="entry-name">Little Star Diner</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Little+Star+Diner+Bozeman+Montana" target="_blank">View on map</a></div>
+    <p>Farm-to-table, vegetable-forward, house-made pasta, ever-changing menu. Intimate and sustainable.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-local">Local Favorite</span><span class="entry-name">Revelry Plates + Pours</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Revelry+Bozeman+Montana" target="_blank">View on map</a></div>
+    <p>Downtown pizza, wine, and craft beer on North Tracy off Main. Locals recommend the Japan Chicken appetizer followed by the Brussels Caesar.</p>
+  </div>
+
+  <div class="pmtp-band" style="background:var(--aqua-mist);">
+    <h4>Happy Hour Strategy</h4>
+    <p>Most downtown spots run happy hour 3–6 PM daily. Many of Bozeman's best meals can be had at happy hour prices — a genuine budget play in a city where dinner tabs add up fast.</p>
+  </div>
+
+  <h3>Breweries &amp; Bars</h3>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-do">Don't Miss</span><span class="entry-name">Mountains Walking Brewery</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Mountains+Walking+Brewery+Bozeman" target="_blank">View on map</a></div>
+    <p>Locals swear by it — small-batch, creative beers. The top brewery recommendation across every source. Go here first.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-local">Local Favorite</span><span class="entry-name">MAP Brewing</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=MAP+Brewing+Bozeman+Montana" target="_blank">View on map</a></div>
+    <p>Rooftop deck, mountain views, excellent beers. Frequently cited for the setting as much as the pints.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-local">Local Favorite</span><span class="entry-name">Bozeman Brewing Company</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Bozeman+Brewing+Company+Montana" target="_blank">View on map</a></div>
+    <p>One of Montana's oldest craft breweries. Classic Montana taproom atmosphere and a downtown anchor.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-find">Worth Finding</span><span class="entry-name">New Ventures Brewing</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=New+Ventures+Brewing+Bozeman+Montana" target="_blank">View on map</a></div>
+    <p>Less crowded than Mountains Walking and equally good. Also try 406 Brewing and Bridger Brewing.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-local">Local Favorite</span><span class="entry-name">Plonk Wine Bar</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Plonk+Bozeman+Montana" target="_blank">View on map</a></div>
+    <p>A Main Street institution with a great terrace. The wine-focused alternative to the brewery scene.</p>
+  </div>
+
+  <h3>Coffee</h3>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-do">Don't Miss</span><span class="entry-name">Treeline Coffee Roasters</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Treeline+Coffee+Bozeman+Montana" target="_blank">View on map</a></div>
+    <p>Consistently voted Montana's finest coffee. Specialty roasts, serious espresso craft. Multiple locations.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-find">Worth Finding</span><span class="entry-name">La Camionnette (at Ferguson Farm Market)</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=La+Camionnette+Bozeman+Montana" target="_blank">View on map</a></div>
+    <p>A charming café inside the Market at Ferguson Farm. Pair it with the boutique shopping next door.</p>
+  </div>
+
+  <h2>Outdoor &amp; Nature</h2>
+  <div class="section-rule"></div>
+  <span class="section-subhead">The mountains aren't backdrop here — they're the main event, within striking distance of downtown all four seasons.</span>
+
+  <!-- Sunrise over Gallatin Range — summer green — MD5: d/da/ -->
+  <img class="section-img" loading="lazy"
+    src="https://upload.wikimedia.org/wikipedia/commons/d/da/Sunrise_over_Gallatin_Range_Bozeman.jpg"
+    alt="Summer sunrise panorama over the green Gallatin Range from Bozeman">
+
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-do">Don't Miss</span><span class="entry-name">Fly Fishing — Madison, Gallatin &amp; Yellowstone Rivers</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Gallatin+River+Bozeman+Montana" target="_blank">View on map</a></div>
+    <p>Three blue-ribbon trout rivers within easy reach. The Gallatin flows through a dramatic canyon south of town. Guided trips run roughly $80+ for a half-day — Gallatin River Guides is frequently recommended.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-do">Don't Miss</span><span class="entry-name">Main Street to the Mountains Trail Network</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Main+Street+to+Mountains+Trail+Bozeman" target="_blank">View on map</a></div>
+    <p>100+ miles of connected trails from downtown into the Gallatin National Forest. Cherry River Trail (flat, 1.3 miles) is easy; Leverich Canyon Trail (steady climb, panoramic views) is the reward hike.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-do">Don't Miss</span><span class="entry-name">Yellowstone National Park (Day Trip)</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Yellowstone+National+Park+North+Entrance+Gardiner+Montana" target="_blank">View on map</a></div>
+    <p>Ninety minutes south via US-89 through Paradise Valley. North Entrance at Gardiner → Lamar Valley for wolves, bison, bears. Book well in advance for summer.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-local">Local Favorite</span><span class="entry-name">Gallatin Canyon (Highway 191 South)</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Gallatin+Canyon+Montana+Highway+191" target="_blank">View on map</a></div>
+    <p>One of Montana's most spectacular river canyons. Hiking, rock climbing, rafting — Storm Castle and Indian Ridge are solid trail options. Watch for wildlife after dusk.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-local">Local Favorite</span><span class="entry-name">Beartrap Canyon Wilderness</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Beartrap+Canyon+Montana" target="_blank">View on map</a></div>
+    <p>Outstanding hiking in a dramatic river canyon. Less trafficked than Hyalite. Whitewater kayaking on the Madison River here as well.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-practical">Practical</span><span class="entry-name">Crosscut Mountain Sports Center</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Crosscut+Mountain+Sports+Bozeman+Montana" target="_blank">View on map</a></div>
+    <p>Nordic skiing and snowshoeing hub with groomed trails. The accessible winter alternative when downhill crowds or Big Sky prices feel like too much.</p>
+  </div>
+
+  <div class="pmtp-band" style="background:var(--warm-sand);">
+    <h4>Day Trip: Chico Hot Springs</h4>
+    <p>Sixty miles via Paradise Valley — a classic Montana ranch resort with natural hot springs. Combine it with a Yellowstone day for a two-day loop through some of the most cinematic landscape in the American West.</p>
+  </div>
+
+  <h2>Shopping &amp; Markets</h2>
+  <div class="section-rule"></div>
+  <span class="section-subhead">Bozeman's downtown retail is genuinely local — no chain-store strip masquerading as character.</span>
+
+  <!-- Cannery District aerial — MD5: 1/11/ -->
+  <img class="section-img" loading="lazy"
+    src="https://upload.wikimedia.org/wikipedia/commons/1/11/Cannery_District_Aerial_Image.jpg"
+    alt="Aerial view of the Cannery District in Bozeman — converted industrial creative hub">
+
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-do">Don't Miss</span><span class="entry-name">Downtown Main Street Boutiques</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Downtown+Bozeman+Shopping+Main+Street" target="_blank">View on map</a></div>
+    <p>Montana Gift Corral, Revolvr Menswear, Meridian Boutique, Hey Day — all locally owned. The downtown shopping strip is the real thing, not a curated imitation.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-do">Don't Miss</span><span class="entry-name">Bozeman Farmers' Market (Year-Round)</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Bozeman+Farmers+Market+Montana" target="_blank">View on map</a></div>
+    <p>Bozeman runs year-round farmers' markets — a rarity in Montana's climate. Fresh local produce, artisan goods, genuine community energy.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-local">Local Favorite</span><span class="entry-name">Market at Ferguson Farm</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Market+at+Ferguson+Farm+Bozeman+Montana" target="_blank">View on map</a></div>
+    <p>Salchicha and Catch boutiques alongside La Camionnette coffee. A charming off-Main shopping destination.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-find">Worth Finding</span><span class="entry-name">ReCouture Consignment</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=ReCouture+Consignment+Bozeman+Montana" target="_blank">View on map</a></div>
+    <p>High-end consignment — described by locals as the best in Bozeman for serious thrifters.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-practical">Practical</span><span class="entry-name">Bob Ward's Outdoors</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Bob+Wards+Bozeman+Montana" target="_blank">View on map</a></div>
+    <p>Near Target — all Montana outdoor essentials at better prices than downtown gear shops. Buy bear spray here; you can't fly with it and the airport has a disposal station.</p>
+  </div>
+
+  <h2>Local Tips &amp; Day Trips</h2>
+  <div class="section-rule"></div>
+  <span class="section-subhead">The things worth knowing before you walk out the door.</span>
+
+  <!-- Outside Bozeman MT — summer foothills — MD5: 6/65/ -->
+  <img class="section-img" loading="lazy"
+    src="https://upload.wikimedia.org/wikipedia/commons/6/65/Outside_Bozeman_MT_%283679468318%29.jpg"
+    alt="Summer view of Bozeman and the surrounding Gallatin Valley foothills">
+
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-find">Worth Finding</span><span class="entry-name">Story Mill Community Park</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Story+Mill+Community+Park+Bozeman" target="_blank">View on map</a></div>
+    <p>A converted historic grain mill turned urban park. Trails, mountain views, and a distinctly off-tourist-radar community atmosphere.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-find">Worth Finding</span><span class="entry-name">Ponderosa Social Club</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Ponderosa+Social+Club+Bozeman+Montana" target="_blank">View on map</a></div>
+    <p>A locals-loved bar with one of Bozeman's best outdoor patios. Less known than the brewery scene but deeply local in character.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="tag tag-find">Worth Finding</span><span class="entry-name">Live from the Divide</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Live+from+the+Divide+Bozeman+Montana" target="_blank">View on map</a></div>
+    <p>The non-obvious live music venue beyond the Elm and the Rialto. Check what's on before your trip.</p>
+  </div>
+  <div class="tip-box">
+    <strong>Day Trip: Nevada City &amp; Virginia City</strong>
+    An hour and a half away — authentic gold rush towns with staged gunfights and real 19th-century buildings. A surprisingly transporting experience most visitors never make time for.
+  </div>
+
+  <h2>Planning Essentials</h2>
+  <div class="section-rule"></div>
+  <span class="section-subhead">The practical notes that will save you a headache once you're here.</span>
+
+  <h3>When to Go</h3>
+  <div class="entry">
+    <div class="entry-head"><span class="entry-name">Summer — June through September</span></div>
+    <p>Peak season — best conditions for hiking, fishing, and Yellowstone. Sweet Pea Festival in early August pushes downtown rooms to $400/night. Book 3–6 months ahead.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="entry-name">Winter — December through March</span></div>
+    <p>Prime ski season at Bridger Bowl and Big Sky. Quieter downtown. Montana cold snaps are real — pack serious layers.</p>
+  </div>
+  <div class="entry">
+    <div class="entry-head"><span class="entry-name">Shoulder Seasons — April–May, October–November</span></div>
+    <p>Cheapest rates ($80/night vs. $200+ summer) and fewer crowds. Weather is famously unpredictable — pack for all four seasons in one day.</p>
+  </div>
+
+  <h3>Suggested Itinerary</h3>
+  <div class="itinerary-day"><h4>Day 1</h4><p>Downtown Bozeman, Museum of the Rockies, Main Street walk. Dinner at Shan or Blackbird Kitchen. Evening at Mountains Walking Brewery or Plonk.</p></div>
+  <div class="itinerary-day"><h4>Day 2</h4><p>Hyalite Canyon or the M Trail. Afternoon: MAP Brewing rooftop or Emerson Center. Evening: J.W. Heist for a splurge, or happy hour crawl downtown.</p></div>
+  <div class="itinerary-day"><h4>Day 3</h4><p>Yellowstone day trip via US-89 through Paradise Valley. North Entrance at Gardiner → Lamar Valley. Full day — leave early, return late.</p></div>
+  <div class="itinerary-day"><h4>Days 4–5</h4><p>Big Sky Resort day. Fly fishing on the Gallatin with a guide. Or Chico Hot Springs via Paradise Valley. Optional: Nevada City &amp; Virginia City.</p></div>
+
+  <h3>Budget Notes</h3>
+  <p>Chain hotel rooms roughly $80 in March, $200+ in July. Bison burger ~$18; craft beer $5–6/pint. Whitewater rafting ~$80; mountain bike rental $40–50/day. No state sales tax, but 8% local accommodation tax applies. Big Sky adds 3% resort tax.</p>
+
+  <div class="pmtp-band" style="background:var(--aqua-mist);">
+    <h4>Weather, Altitude &amp; Wildlife</h4>
+    <p>Pack for all conditions even in summer. At 4,820 feet, alcohol hits harder and dehydration creeps up — drink water all day. Bear spray is essential for backcountry. Mosquitoes and ticks are real May–September. Summer afternoon thunderstorms above treeline are common and fast-moving; descend if the sky darkens on a ridge.</p>
+  </div>
+
+  <h3>Getting There</h3>
+  <div class="entry">
+    <div class="entry-head"><span class="entry-name">Bozeman Yellowstone International Airport (BZN)</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Bozeman+Yellowstone+International+Airport" target="_blank">View on map</a></div>
+    <p>Direct flights from 24+ destinations in summer including Boston and NYC. Fifteen minutes to downtown. Rent a car — essential for anything beyond walking Main Street.</p>
+  </div>
+
+  <h2>What to Avoid</h2>
+  <div class="section-rule"></div>
+  <span class="section-subhead">A few things that will quietly ruin your trip if you don't know about them in advance.</span>
+
+  <div class="avoid-box"><strong>Left turns on busy downtown sections</strong> — use the one-way streets to come around. Creates real backups.</div>
+  <div class="avoid-box"><strong>Coming without a car</strong> — most of what makes Bozeman worth the trip is 15–45 minutes from downtown by car.</div>
+  <div class="avoid-box"><strong>July–August without reservations</strong> — hotel prices double or triple. Plan 3–6 months ahead.</div>
+  <div class="avoid-box"><strong>Treating Bozeman as a pass-through to Yellowstone</strong> — most visitors who do this regret it. Give the town at minimum one full day.</div>
+  <div class="avoid-box"><strong>Underestimating altitude and weather</strong> — summer afternoon thunderstorms above treeline are common and fast-moving.</div>
+  <div class="avoid-box"><strong>Driving Highway 191 at dusk or after dark without full attention</strong> — genuine collision risk with deer, elk, and moose.</div>
+  <div class="avoid-box"><strong>Defaulting to chain restaurants</strong> — the local scene is exceptional and comparably priced.</div>
+  <div class="avoid-box"><strong>Assuming Big Sky is automatically the better ski day</strong> — Bridger Bowl (cheaper, less crowded, more local) is often the stronger choice.</div>
+
+  <div class="pmtp-band" style="background:var(--warm-sand);">
+    <h4>A Note on Growth</h4>
+    <p>Bozeman is one of the fastest-growing towns in America. The recommendations here reflect the city as of 2025–2026. Verify hours and current status before arriving, especially for smaller local spots.</p>
+  </div>
+
+  <div class="pmtp-footer">
+    <div class="advisor-name">Andrea Gunter</div>
+    <div class="advisor-title">Travel Advisor</div>
+    <div class="contact-line"><a id="pmtpEmailLink" href="#"></a></div>
+    <div class="contact-line">409-789-3579</div>
+    <div class="brand-name">Point Me to Paradise Travel</div>
+  </div>
+
+  <div class="pmtp-disclaimer">
+    <span class="disclaimer-head">Important — please read</span>
+    This guide is provided for informational purposes only. Locations, hours, conditions, and recommendations can change without notice, and ocean, weather, trail, road, and travel conditions can shift quickly and unpredictably. Point Me to Paradise Travel, the advisor named in this guide, and the authors of this content are not liable for any injury, illness, loss, theft, or harm of any kind arising from your visit to any location or participation in any activity referenced here. By using this guide, you accept full personal responsibility for your own safety. Use your own judgment, verify current conditions before any activity, follow all posted warnings and local regulations, and consult qualified professionals — lifeguards, park rangers, licensed guides, medical providers — where appropriate.
+  </div>
+
+</div>
+<script>
+(function(){
+  var l="andrea", d="pointmetoparadise.com";
+  var el=document.getElementById("pmtpEmailLink");
+  if(el){el.href="mailto:"+l+"\u0040"+d; el.textContent=l+"\u0040"+d;}
+})();
+</script>
+</body>
+</html>
