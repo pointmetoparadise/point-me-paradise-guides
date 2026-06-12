@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>San Juan, Puerto Rico — Point Me to Paradise Travel</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&family=Cormorant+Garamond:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --aqua-pale:#C4E4E1; --aqua-mist:#EAF3F2; --aqua:#75AFB1; --aqua-dark:#4F8A8C;
+    --warm-sand:#F5EFE4; --gold-whisper:#D6C8A8; --paper:#F9F6F1; --line:#E6DFD5;
+    --ink:#2C2416; --ink-soft:#5C4F3A;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--paper);color:var(--ink);font-family:'DM Sans',sans-serif;font-weight:300;line-height:1.7;}
+
+  /* HERO */
+  .hero{min-height:92vh;background:linear-gradient(to bottom,rgba(79,138,140,.15) 0%,rgba(245,239,228,.88) 68%,var(--warm-sand) 100%),url('https://commons.wikimedia.org/wiki/Special:FilePath/El%20Morro%20-%20Old%20San%20Juan%2C%20Puerto%20Rico.jpg') center/cover no-repeat;display:flex;flex-direction:column;justify-content:flex-end;padding:3.5rem 2rem 3rem;}
+  .hero-eyebrow{font-size:.72rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--aqua-dark);margin-bottom:.75rem;}
+  .hero h1{font-family:'Fraunces',serif;font-size:clamp(3rem,8vw,6rem);font-weight:700;line-height:1;color:var(--ink);margin-bottom:.4rem;}
+  .hero-sub{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(1.1rem,2.5vw,1.5rem);color:var(--ink-soft);margin-bottom:1.8rem;}
+  .hero-meta{display:flex;gap:2rem;flex-wrap:wrap;}
+  .meta-item{border-left:1px solid var(--gold-whisper);padding-left:.9rem;}
+  .meta-label{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--aqua-dark);font-weight:500;}
+  .meta-value{font-size:.88rem;color:var(--ink-soft);margin-top:.1rem;}
+
+  /* LAYOUT */
+  .container{max-width:900px;margin:0 auto;padding:0 1.5rem;}
+  .pmtp-band{padding:3.5rem 1.5rem;}
+  .pmtp-band:nth-of-type(odd){background:var(--aqua-mist);}
+  .pmtp-band:nth-of-type(even){background:var(--warm-sand);}
+
+  /* SECTION BANNER */
+  .section-banner{width:100%;height:280px;object-fit:cover;display:block;background:var(--aqua-pale);}
+  .banner-caption{font-size:.62rem;letter-spacing:.1em;color:var(--aqua-dark);text-align:right;padding:.3rem 1rem 0;font-style:italic;}
+
+  /* HEADINGS */
+  .section-eyebrow{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--aqua-dark);font-weight:500;margin-bottom:.5rem;}
+  .section-title{font-family:'Fraunces',serif;font-size:clamp(1.6rem,4vw,2.4rem);font-weight:600;color:var(--ink);line-height:1.15;margin-bottom:1.2rem;}
+  .section-intro{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.15rem;color:var(--ink-soft);margin-bottom:2rem;max-width:640px;}
+
+  /* TAGS */
+  .tag{display:inline-block;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;padding:.15rem .55rem;border-radius:2px;margin-bottom:.6rem;font-weight:500;}
+  .tag-must{background:var(--aqua-pale);color:var(--aqua-dark);}
+  .tag-local{background:#EDE8DC;color:#7A6A4A;}
+  .tag-practical{background:#EAF3F2;color:var(--aqua-dark);}
+  .tag-trip{background:#EDE8DC;color:#7A6A4A;}
+
+  /* NEIGHBORHOOD GRID */
+  .nbhd-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;border:1px solid var(--line);background:var(--line);margin-top:1.5rem;}
+  .nbhd-card{background:var(--paper);overflow:hidden;}
+  .card-img{width:100%;height:140px;object-fit:cover;display:block;background:var(--aqua-mist);}
+  .card-body{padding:1.2rem 1.4rem 1.4rem;}
+  .nbhd-name{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:600;color:var(--ink);margin-bottom:.3rem;}
+  .nbhd-desc{font-size:.87rem;color:var(--ink-soft);line-height:1.6;}
+  .card-link{display:inline-block;margin-top:.7rem;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--aqua-dark);text-decoration:none;border-bottom:1px solid var(--aqua-pale);padding-bottom:1px;}
+
+  /* SIGHT LIST */
+  .sight-list{display:flex;flex-direction:column;margin-top:1.5rem;border:1px solid var(--line);}
+  .sight-item{display:grid;grid-template-columns:1fr auto;align-items:start;padding:1.2rem 1.5rem;border-bottom:1px solid var(--line);background:var(--paper);gap:1rem;}
+  .sight-item:last-child{border-bottom:none;}
+  .sight-item:nth-child(even){background:var(--aqua-mist);}
+  .sight-name{font-family:'Fraunces',serif;font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:.25rem;}
+  .sight-desc{font-size:.86rem;color:var(--ink-soft);line-height:1.55;}
+  .map-btn{display:inline-flex;align-items:center;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--aqua-dark);text-decoration:none;padding:.4rem .75rem;border:1px solid var(--aqua);white-space:nowrap;transition:background .2s;font-weight:500;}
+  .map-btn:hover{background:var(--aqua-pale);}
+
+  /* PHOTO STRIP */
+  .photo-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;}
+  .photo-strip img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:var(--aqua-pale);}
+
+  /* FOOD GRID */
+  .food-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem;margin-top:1.5rem;}
+  .food-card{background:var(--paper);border:1px solid var(--line);overflow:hidden;}
+  .food-img{width:100%;height:150px;object-fit:cover;display:block;background:var(--aqua-mist);}
+  .food-body{padding:1rem 1.3rem 1.3rem;}
+  .food-name{font-family:'Fraunces',serif;font-size:1rem;font-weight:600;color:var(--ink);margin-bottom:.4rem;}
+  .food-desc{font-size:.84rem;color:var(--ink-soft);line-height:1.6;}
+
+  /* ITINERARY */
+  .itinerary-split{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;align-items:start;margin-top:1.5rem;}
+  .itinerary-img{width:100%;aspect-ratio:3/4;object-fit:cover;display:block;background:var(--aqua-pale);}
+  .day-block{margin-bottom:1.5rem;}
+  .day-label{font-family:'Fraunces',serif;font-size:.82rem;font-weight:700;color:var(--aqua-dark);letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--gold-whisper);padding-bottom:.4rem;margin-bottom:.9rem;}
+  .day-items{display:flex;flex-direction:column;gap:.5rem;}
+  .day-item{font-size:.87rem;color:var(--ink-soft);padding-left:1.2rem;position:relative;}
+  .day-item::before{content:'→';position:absolute;left:0;color:var(--aqua);}
+
+  /* TIPS */
+  .tips-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin-top:1.5rem;}
+  .tip-item{padding:1.4rem 1.6rem;background:var(--paper);}
+  .tip-label{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--aqua-dark);font-weight:500;margin-bottom:.4rem;}
+  .tip-text{font-size:.88rem;color:var(--ink-soft);line-height:1.6;}
+
+  /* AVOID */
+  .avoid-list{display:flex;flex-direction:column;gap:.9rem;margin-top:1.2rem;}
+  .avoid-box{border-left:2px solid var(--aqua);padding:1rem 1.5rem;background:var(--paper);}
+  .avoid-title{font-family:'Fraunces',serif;font-size:.95rem;font-weight:600;color:var(--ink);margin-bottom:.3rem;}
+  .avoid-desc{font-size:.84rem;color:var(--ink-soft);line-height:1.6;}
+
+  /* FOOTER */
+  footer{background:var(--warm-sand);border-top:1px solid var(--gold-whisper);padding:2.5rem 1.5rem;text-align:center;}
+  .footer-logo{font-family:'Fraunces',serif;font-size:1.1rem;font-weight:600;color:var(--aqua-dark);letter-spacing:.04em;margin-bottom:.5rem;}
+  .footer-note{font-size:.75rem;color:var(--ink-soft);line-height:1.7;max-width:540px;margin:0 auto;}
+  .disclaimer{font-size:.7rem;color:var(--aqua-dark);margin-top:1rem;opacity:.7;}
+
+  a{color:inherit;}
+  @media(max-width:680px){
+    .photo-strip{grid-template-columns:1fr 1fr;}
+    .photo-strip img:last-child{display:none;}
+    .sight-item{grid-template-columns:1fr;}
+    .map-btn{margin-top:.5rem;}
+    .itinerary-split{grid-template-columns:1fr;}
+    .section-banner{height:200px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO — El Morro -->
+<section class="hero">
+  <div class="hero-eyebrow">Point Me to Paradise Travel · Destination Guide</div>
+  <h1>San Juan</h1>
+  <p class="hero-sub">Puerto Rico — where colonial cobblestones meet the Caribbean</p>
+  <div class="hero-meta">
+    <div class="meta-item"><div class="meta-label">Currency</div><div class="meta-value">U.S. Dollar</div></div>
+    <div class="meta-item"><div class="meta-label">Passport (U.S.)</div><div class="meta-value">Not required</div></div>
+    <div class="meta-item"><div class="meta-label">Best Season</div><div class="meta-value">Dec – April</div></div>
+    <div class="meta-item"><div class="meta-label">Ideal Stay</div><div class="meta-value">3 – 6 nights</div></div>
+  </div>
+</section>
+
+<!-- ═══ ORIENTATION ═══ -->
+<!-- Banner: La Fortaleza in San Juan Puerto Rico.jpg — confirmed CC file -->
+<img class="section-banner"
+     src="https://commons.wikimedia.org/wiki/Special:FilePath/La%20Fortaleza%20in%20San%20Juan%20Puerto%20Rico.jpg"
+     alt="La Fortaleza and the old city, San Juan" loading="lazy">
+<p class="banner-caption">La Fortaleza, Old San Juan · Wikimedia Commons CC</p>
+
+<section class="pmtp-band">
+  <div class="container">
+    <div class="section-eyebrow">Know Before You Go</div>
+    <h2 class="section-title">City of Five Neighborhoods</h2>
+    <p class="section-intro">San Juan is Puerto Rico's capital and easiest first-timer base — historic, colorful, beachy, and food-driven all at once.</p>
+    <p style="font-size:.9rem;color:var(--ink-soft);max-width:700px;margin-bottom:2rem;">Old San Juan dates to 1521, making it one of the oldest European-founded cities in the Americas. Modern neighborhoods stretch east along the coast, giving the city a city-meets-Caribbean layering that takes several days to properly unpack. Uber covers the metro area well; rent a car only if you're heading to El Yunque, Luquillo, or the ferry ports.</p>
+
+    <div class="nbhd-grid">
+
+      <!-- Old San Juan: El Morro - Old San Juan, Puerto Rico.jpg ✓ confirmed working -->
+      <div class="nbhd-card">
+        <img class="card-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/El%20Morro%20-%20Old%20San%20Juan%2C%20Puerto%20Rico.jpg" alt="El Morro fortress, Old San Juan" loading="lazy">
+        <div class="card-body">
+          <div class="nbhd-name">Old San Juan</div>
+          <span class="tag tag-must">Must Do</span>
+          <p class="nbhd-desc">Colonial streets, blue cobblestones, forts, plazas, cafés, and the best walking in the city. Start every visit here.</p>
+          <a class="card-link" href="https://www.google.com/maps/search/?api=1&query=Old+San+Juan+San%20Juan%2C%20Puerto%20Rico" target="_blank">Open in Maps ↗</a>
+        </div>
+      </div>
+
+      <!-- Santurce: La Placita de Santurce, San Juan, Puerto Rico.jpg ✓ confirmed working -->
+      <div class="nbhd-card">
+        <img class="card-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/La%20Placita%20de%20Santurce%2C%20San%20Juan%2C%20Puerto%20Rico.jpg" alt="La Placita market, Santurce" loading="lazy">
+        <div class="card-body">
+          <div class="nbhd-name">Santurce</div>
+          <span class="tag tag-local">Local Favorite</span>
+          <p class="nbhd-desc">Arts, murals, music, nightlife, La Placita, and Calle Loíza. The city's creative engine. Don't skip it.</p>
+          <a class="card-link" href="https://www.google.com/maps/search/?api=1&query=Santurce+San%20Juan%2C%20Puerto%20Rico" target="_blank">Open in Maps ↗</a>
+        </div>
+      </div>
+
+      <!-- Condado: Condado Beach - San Juan.jpg — confirmed filename from commons category -->
+      <div class="nbhd-card">
+        <img class="card-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Condado%20Beach%20-%20San%20Juan.jpg" alt="Condado Beach, San Juan" loading="lazy">
+        <div class="card-body">
+          <div class="nbhd-name">Condado</div>
+          <span class="tag tag-practical">Practical</span>
+          <p class="nbhd-desc">Beachfront hotels, restaurants, nightlife, and an easy vacation energy. The default for first-timers wanting comfort close to sand.</p>
+          <a class="card-link" href="https://www.google.com/maps/search/?api=1&query=Condado+San%20Juan%2C%20Puerto%20Rico" target="_blank">Open in Maps ↗</a>
+        </div>
+      </div>
+
+      <!-- Ocean Park: Ocean Park beach 2020.jpg — confirmed filename from commons category -->
+      <div class="nbhd-card">
+        <img class="card-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Ocean%20Park%20beach%202020.jpg" alt="Ocean Park Beach, San Juan" loading="lazy">
+        <div class="card-body">
+          <div class="nbhd-name">Ocean Park</div>
+          <span class="tag tag-local">Local Favorite</span>
+          <p class="nbhd-desc">Quieter beach neighborhood with a better local feel than Condado. Less polished, more real.</p>
+          <a class="card-link" href="https://www.google.com/maps/search/?api=1&query=Ocean+Park+San%20Juan%2C%20Puerto%20Rico" target="_blank">Open in Maps ↗</a>
+        </div>
+      </div>
+
+      <!-- Isla Verde: SanJuanBeach.jpg — confirmed filename from commons category -->
+      <div class="nbhd-card">
+        <img class="card-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/SanJuanBeach.jpg" alt="Isla Verde Beach, San Juan" loading="lazy">
+        <div class="card-body">
+          <div class="nbhd-name">Isla Verde</div>
+          <span class="tag tag-practical">Practical</span>
+          <p class="nbhd-desc">Closest to the airport with solid resort beaches. Good for short stays and early departures.</p>
+          <a class="card-link" href="https://www.google.com/maps/search/?api=1&query=Isla+Verde+San%20Juan%2C%20Puerto%20Rico" target="_blank">Open in Maps ↗</a>
+        </div>
+      </div>
+
+      <!-- Miramar: Lookout near el Morro, Old San Juan, PR.jpg — confirmed from commons beaches category -->
+      <div class="nbhd-card">
+        <img class="card-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Lookout%20near%20el%20Morro%2C%20Old%20San%20Juan%2C%20PR.jpg" alt="San Juan waterfront view" loading="lazy">
+        <div class="card-body">
+          <div class="nbhd-name">Miramar</div>
+          <span class="tag tag-local">Local Favorite</span>
+          <p class="nbhd-desc">Good restaurants, artsy feel, less tourist-polished than Condado. Worth a dinner or two.</p>
+          <a class="card-link" href="https://www.google.com/maps/search/?api=1&query=Miramar+San%20Juan%2C%20Puerto%20Rico" target="_blank">Open in Maps ↗</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SIGHTS ═══ -->
+<!-- Banner: La Fortaleza.jpg ✓ confirmed CC file -->
+<img class="section-banner"
+     src="https://commons.wikimedia.org/wiki/Special:FilePath/La%20Fortaleza.jpg"
+     alt="La Fortaleza rear view, Old San Juan city walls" loading="lazy">
+<p class="banner-caption">La Fortaleza, Old San Juan · Wikimedia Commons CC</p>
+
+<section class="pmtp-band">
+  <div class="container">
+    <div class="section-eyebrow">Top Sights & Experiences</div>
+    <h2 class="section-title">The Historic Core</h2>
+    <p class="section-intro">Walk El Morro before 9 a.m. Start at the fort, work downhill through the old city toward Paseo de la Princesa. Your legs and your humidity tolerance will thank you.</p>
+
+    <div class="sight-list">
+      <div class="sight-item">
+        <div><div class="sight-name">Castillo San Felipe del Morro</div>
+        <p class="sight-desc">The fortress that defines San Juan's skyline. Construction began in 1539 to guard the bay entrance. Massive lawns, ocean views, kite flyers, and history across six levels. An NPS site — bring the National Parks pass if you have one.</p></div>
+        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Castillo+San+Felipe+del+Morro+San%20Juan%2C%20Puerto%20Rico" target="_blank">↗ Map</a>
+      </div>
+      <div class="sight-item">
+        <div><div class="sight-name">Castillo San Cristóbal</div>
+        <p class="sight-desc">Larger than El Morro and excellent for tunnels, ramparts, and understanding how San Juan's defenses actually worked. The full San Juan National Historic Site includes both forts, city walls, San Juan Gate, and more.</p></div>
+        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Castillo+San+Cristobal+San%20Juan%2C%20Puerto%20Rico" target="_blank">↗ Map</a>
+      </div>
+      <div class="sight-item">
+        <div><div class="sight-name">Paseo de la Princesa</div>
+        <p class="sight-desc">A waterfront promenade running along the old city walls, with fountains, sculptures, and sea breeze. Perfect for the late afternoon when the light softens.</p></div>
+        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Paseo+de+la+Princesa+San%20Juan%2C%20Puerto%20Rico" target="_blank">↗ Map</a>
+      </div>
+      <div class="sight-item">
+        <div><div class="sight-name">San Juan Gate (Puerta de San Juan)</div>
+        <p class="sight-desc">The historic red city gate is one of the most photographed spots in Puerto Rico and one of the few remaining entrances to the old walled city.</p></div>
+        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Puerta+de+San+Juan+San%20Juan%2C%20Puerto%20Rico" target="_blank">↗ Map</a>
+      </div>
+      <div class="sight-item">
+        <div><div class="sight-name">La Fortaleza</div>
+        <p class="sight-desc">The governor's residence and a UNESCO World Heritage landmark. The façade alone is worth the stop; guided tours are sometimes available — check ahead.</p></div>
+        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=La+Fortaleza+San%20Juan%2C%20Puerto%20Rico" target="_blank">↗ Map</a>
+      </div>
+      <div class="sight-item">
+        <div><div class="sight-name">Casa Bacardí (Cataño)</div>
+        <p class="sight-desc">Bacardí calls it the world's largest premium rum distillery. Across the bay in Cataño — get there by ferry or water taxi. Rum tour, tasting, or full mixology class. Book ahead.</p></div>
+        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Casa+Bacardi+Catano+Puerto%20Rico" target="_blank">↗ Map</a>
+      </div>
+      <div class="sight-item">
+        <div><div class="sight-name">Museo de las Américas</div>
+        <p class="sight-desc">A genuinely good cultural stop near El Morro, covering Indigenous, European, and African influences across the Americas. Often skipped, rarely regretted.</p></div>
+        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Museo+de+las+Americas+San%20Juan%2C%20Puerto%20Rico" target="_blank">↗ Map</a>
+      </div>
+      <div class="sight-item">
+        <div><div class="sight-name">Parque de las Palomas</div>
+        <p class="sight-desc">A small park near San Juan Gate with bay views and an absurd number of pigeons. Kids either find it delightful or treat it as a feathered threat assessment exercise.</p></div>
+        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Parque+de+las+Palomas+San%20Juan%2C%20Puerto%20Rico" target="_blank">↗ Map</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO STRIP — all three confirmed working files -->
+<div class="photo-strip">
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/El%20Morro%20-%20Old%20San%20Juan%2C%20Puerto%20Rico.jpg" alt="Castillo San Felipe del Morro" loading="lazy">
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/La%20Fortaleza%20in%20San%20Juan%20Puerto%20Rico.jpg" alt="La Fortaleza, Old San Juan" loading="lazy">
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/La%20Placita%20de%20Santurce%2C%20San%20Juan%2C%20Puerto%20Rico.jpg" alt="La Placita de Santurce" loading="lazy">
+</div>
+
+<!-- ═══ FOOD & DRINK ═══ -->
+<!-- Banner: La Placita de Santurce.jpg ✓ confirmed CC file -->
+<img class="section-banner"
+     src="https://commons.wikimedia.org/wiki/Special:FilePath/La%20Placita%20de%20Santurce.jpg"
+     alt="Evening at La Placita de Santurce" loading="lazy">
+<p class="banner-caption">La Placita de Santurce · Wikimedia Commons CC</p>
+
+<section class="pmtp-band">
+  <div class="container">
+    <div class="section-eyebrow">Food & Drink</div>
+    <h2 class="section-title">Eat Like a Sanjuanero</h2>
+    <p class="section-intro">Puerto Rican cuisine draws from Taíno, Spanish Criollo, and African roots, with sofrito as its foundation. The island's food culture is serious — and San Juan is where you taste all of it.</p>
+
+    <div class="food-grid">
+
+      <!-- Santaella: La Placita de Santurce, San Juan, Puerto Rico.jpg — shows the market where it sits -->
+      <div class="food-card">
+        <img class="food-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/La%20Placita%20de%20Santurce%2C%20San%20Juan%2C%20Puerto%20Rico.jpg" alt="La Placita market, Santurce" loading="lazy">
+        <div class="food-body">
+          <div class="food-name">Santaella</div>
+          <span class="tag tag-must">Must Do</span>
+          <p class="food-desc">Upscale Puerto Rican cuisine at La Placita in Santurce. The kind of place where the food earns a long dinner. Reserve ahead.</p>
+          <a class="card-link" href="https://www.google.com/maps/search/?api=1&query=Santaella+San%20Juan%2C%20Puerto%20Rico" target="_blank">Open in Maps ↗</a>
+        </div>
+      </div>
+
+      <!-- La Casita Blanca: Condado Beach - San Juan.jpg — San Juan neighborhood feel -->
+      <div class="food-card">
+        <img class="food-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Condado%20Beach%20-%20San%20Juan.jpg" alt="Condado neighborhood, San Juan" loading="lazy" style="object-position:center top;">
+        <div class="food-body">
+          <div class="food-name">La Casita Blanca</div>
+          <span class="tag tag-local">Local Favorite</span>
+          <p class="food-desc">Classic Puerto Rican comfort food — the kind of lunch spot regulars protect like a secret. Expect mofongo done right.</p>
+          <a class="card-link" href="https://www.google.com/maps/search/?api=1&query=La+Casita+Blanca+San%20Juan%2C%20Puerto%20Rico" target="_blank">Open in Maps ↗</a>
+        </div>
+      </div>
+
+      <!-- La Placita: La Placita de Santurce.jpg ✓ confirmed working -->
+      <div class="food-card">
+        <img class="food-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/La%20Placita%20de%20Santurce.jpg" alt="La Placita de Santurce at night" loading="lazy">
+        <div class="food-body">
+          <div class="food-name">La Placita de Santurce</div>
+          <span class="tag tag-must">Must Do</span>
+          <p class="food-desc">A traditional market by day that transforms into one of San Juan's best nightlife scenes after dark. Music in the streets, open-air bars, and dancing. Go with a group.</p>
+          <a class="card-link" href="https://www.google.com/maps/search/?api=1&query=La+Placita+de+Santurce+San%20Juan%2C%20Puerto%20Rico" target="_blank">Open in Maps ↗</a>
+        </div>
+      </div>
+
+      <!-- La Factoría: Old San Juan cobblestones — Lookout near el Morro -->
+      <div class="food-card">
+        <img class="food-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Lookout%20near%20el%20Morro%2C%20Old%20San%20Juan%2C%20PR.jpg" alt="Old San Juan" loading="lazy">
+        <div class="food-body">
+          <div class="food-name">La Factoría</div>
+          <span class="tag tag-must">Must Do</span>
+          <p class="food-desc">A famous multi-room cocktail bar in Old San Juan with a serious cocktail program and reportedly a few hidden rooms. Check hours before going.</p>
+          <a class="card-link" href="https://www.google.com/maps/search/?api=1&query=La+Factoria+San%20Juan%2C%20Puerto%20Rico" target="_blank">Open in Maps ↗</a>
+        </div>
+      </div>
+
+      <!-- Piña Colada: El Morro lawn shot — classic San Juan image -->
+      <div class="food-card">
+        <img class="food-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/El%20Morro%20-%20Old%20San%20Juan%2C%20Puerto%20Rico.jpg" alt="El Morro, Old San Juan" loading="lazy" style="object-position:center 60%;">
+        <div class="food-body">
+          <div class="food-name">The Piña Colada Debate</div>
+          <span class="tag tag-must">Must Do</span>
+          <p class="food-desc">Barrachina in Old San Juan and the Caribe Hilton both claim the piña colada origin. Try both. Call it research. Neither will fight you on it.</p>
+          <a class="card-link" href="https://www.google.com/maps/search/?api=1&query=Barrachina+San%20Juan%2C%20Puerto%20Rico" target="_blank">Barrachina ↗</a>&nbsp;
+          <a class="card-link" href="https://www.google.com/maps/search/?api=1&query=Caribe+Hilton+San%20Juan%2C%20Puerto%20Rico" target="_blank">Caribe Hilton ↗</a>
+        </div>
+      </div>
+
+      <!-- Chocobar Cortés: La Fortaleza.jpg — Old San Juan feel -->
+      <div class="food-card">
+        <img class="food-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/La%20Fortaleza.jpg" alt="Old San Juan" loading="lazy" style="object-position:center 40%;">
+        <div class="food-body">
+          <div class="food-name">Chocobar Cortés</div>
+          <span class="tag tag-local">Local Favorite</span>
+          <p class="food-desc">Chocolate-forward brunch and coffee in Old San Juan. A great mid-morning stop for anyone who isn't ready to commit to mofongo before noon.</p>
+          <a class="card-link" href="https://www.google.com/maps/search/?api=1&query=Chocobar+Cortes+San%20Juan%2C%20Puerto%20Rico" target="_blank">Open in Maps ↗</a>
+        </div>
+      </div>
+
+      <!-- Calle Loíza: La Placita de Santurce, San Juan, Puerto Rico.jpg — Santurce area -->
+      <div class="food-card">
+        <img class="food-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/La%20Placita%20de%20Santurce%2C%20San%20Juan%2C%20Puerto%20Rico.jpg" alt="Santurce neighborhood" loading="lazy" style="object-position:center bottom;">
+        <div class="food-body">
+          <div class="food-name">Calle Loíza</div>
+          <span class="tag tag-local">Local Favorite</span>
+          <p class="food-desc">A corridor of independent restaurants, bars, and boutiques in Santurce with a creative, local energy that Condado doesn't replicate. Good for an evening wander.</p>
+          <a class="card-link" href="https://www.google.com/maps/search/?api=1&query=Calle+Loiza+San%20Juan%2C%20Puerto%20Rico" target="_blank">Open in Maps ↗</a>
+        </div>
+      </div>
+
+      <!-- Luquillo Kiosks: Ocean Park beach 2020.jpg — beach scene -->
+      <div class="food-card">
+        <img class="food-img" src="https://commons.wikimedia.org/wiki/Special:FilePath/Ocean%20Park%20beach%202020.jpg" alt="Puerto Rico beach" loading="lazy">
+        <div class="food-body">
+          <div class="food-name">Luquillo Beach Kiosks</div>
+          <span class="tag tag-trip">Day Trip</span>
+          <p class="food-desc">A row of open-air food stalls at Luquillo Beach east of the city. Alcapurrias, bacalaitos, fresh seafood, and cold drinks after a morning at El Yunque.</p>
+          <a class="card-link" href="https://www.google.com/maps/search/?api=1&query=Luquillo+Beach+Kiosks+Puerto%20Rico" target="_blank">Open in Maps ↗</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ OUTDOORS ═══ -->
+<!-- Banner: Rainforest in Puerto Rico.jpg — confirmed filename from El Yunque commons category -->
+<img class="section-banner"
+     src="https://commons.wikimedia.org/wiki/Special:FilePath/Rainforest%20in%20Puerto%20Rico.jpg"
+     alt="El Yunque rainforest, Puerto Rico" loading="lazy">
+<p class="banner-caption">El Yunque National Forest · Wikimedia Commons CC</p>
+
+<section class="pmtp-band">
+  <div class="container">
+    <div class="section-eyebrow">Beaches & Nature</div>
+    <h2 class="section-title">Sand, Sea & Rainforest</h2>
+    <p class="section-intro">Not every beautiful beach in San Juan is calm enough to swim in. Check the flags. The city's best outdoor day trip — El Yunque — is 45 minutes east and worth every minute of the drive.</p>
+
+    <div class="sight-list">
+      <div class="sight-item">
+        <div><div class="sight-name">Balneario El Escambrón</div>
+        <p class="sight-desc">The best easy beach close to Old San Juan. Calmer water, snorkeling, lifeguards, parking, and a family-friendly vibe. Better for swimming than Condado.</p></div>
+        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Balneario+El+Escambron+San%20Juan%2C%20Puerto%20Rico" target="_blank">↗ Map</a>
+      </div>
+      <div class="sight-item">
+        <div><div class="sight-name">Ocean Park Beach</div>
+        <p class="sight-desc">Wide, walkable, and genuinely local-feeling. Less resort infrastructure than Condado or Isla Verde, which is exactly the appeal.</p></div>
+        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Ocean+Park+Beach+San%20Juan%2C%20Puerto%20Rico" target="_blank">↗ Map</a>
+      </div>
+      <div class="sight-item">
+        <div><div class="sight-name">Condado Lagoon</div>
+        <p class="sight-desc">Calmer than the ocean beach right next to it. Good for kayaking and paddleboarding. An underrated option when the waves are doing their thing.</p></div>
+        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Condado+Lagoon+San%20Juan%2C%20Puerto%20Rico" target="_blank">↗ Map</a>
+      </div>
+      <div class="sight-item">
+        <div><div class="sight-name">El Yunque National Forest</div>
+        <p class="sight-desc">The only tropical rainforest in the U.S. National Forest system, about 45 minutes east of San Juan. Waterfalls, trails, and canopy views. Book a guided tour if you don't have a rental car — the experience is significantly better with someone who knows the trails.</p></div>
+        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=El+Yunque+National+Forest+Puerto%20Rico" target="_blank">↗ Map</a>
+      </div>
+      <div class="sight-item">
+        <div><div class="sight-name">Isla Verde Beach</div>
+        <p class="sight-desc">One of the better resort beach areas in the metro, with hotels, water sports rentals, and generally calmer conditions than Condado's ocean side.</p></div>
+        <a class="map-btn" href="https://www.google.com/maps/search/?api=1&query=Isla+Verde+Beach+San%20Juan%2C%20Puerto%20Rico" target="_blank">↗ Map</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ITINERARY ═══ -->
+<section class="pmtp-band">
+  <div class="container">
+    <div class="section-eyebrow">Suggested Pacing</div>
+    <h2 class="section-title">3-Night San Juan Itinerary</h2>
+    <p class="section-intro">Three nights covers the city's highlights without leaving you sprinting. Add two more nights for El Yunque and proper beach time.</p>
+    <div class="itinerary-split">
+      <!-- Trail system of El Yunque, rain forest in Puerto Rico.jpg — confirmed filename -->
+      <img class="itinerary-img"
+           src="https://commons.wikimedia.org/wiki/Special:FilePath/Trail%20system%20of%20El%20Yunque%2C%20rain%20forest%20in%20Puerto%20Rico.jpg"
+           alt="El Yunque rainforest trail, Puerto Rico" loading="lazy">
+      <div>
+        <div class="day-block">
+          <div class="day-label">Day 1 — Old San Juan</div>
+          <div class="day-items">
+            <div class="day-item">Morning: El Morro before 9 a.m. to beat the heat and crowd</div>
+            <div class="day-item">Walk downhill — the Cathedral, La Fortaleza, San Juan Gate</div>
+            <div class="day-item">Lunch at Chocobar Cortés or a café on the cobblestones</div>
+            <div class="day-item">Afternoon: San Cristóbal, Paseo de la Princesa, Parque de las Palomas</div>
+            <div class="day-item">Evening: Cocktails at La Factoría, dinner in Old San Juan</div>
+          </div>
+        </div>
+        <div class="day-block">
+          <div class="day-label">Day 2 — Santurce & the Beaches</div>
+          <div class="day-items">
+            <div class="day-item">Morning swim at El Escambrón or Ocean Park Beach</div>
+            <div class="day-item">Afternoon: Calle Loíza for lunch and neighborhood feel</div>
+            <div class="day-item">Late afternoon: Casa Bacardí — ferry across the bay and back</div>
+            <div class="day-item">Evening: La Placita de Santurce for dinner and nightlife</div>
+          </div>
+        </div>
+        <div class="day-block">
+          <div class="day-label">Day 3 — El Yunque Day Trip</div>
+          <div class="day-items">
+            <div class="day-item">Early start to El Yunque — book a guide or rent a car ahead</div>
+            <div class="day-item">Lunch at the Luquillo Kiosks after the rainforest</div>
+            <div class="day-item">Afternoon: Luquillo Beach — the best swimable stretch nearby</div>
+            <div class="day-item">Final evening: Santaella or a Miramar restaurant</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PRACTICAL INFO ═══ -->
+<section class="pmtp-band">
+  <div class="container">
+    <div class="section-eyebrow">Practical Information</div>
+    <h2 class="section-title">What to Know Before You Go</h2>
+    <div class="tips-grid">
+      <div class="tip-item"><div class="tip-label">Best Time to Visit</div><div class="tip-text">December through April has the best weather and peak prices. May–June offers a useful shoulder season — fewer crowds, lower rates, and generally manageable weather. Hurricane season runs June through November; plan accordingly.</div></div>
+      <div class="tip-item"><div class="tip-label">Currency & Passports</div><div class="tip-text">U.S. dollars everywhere. U.S. citizens do not need a passport — Puerto Rico is a U.S. territory. Non-U.S. travelers follow standard U.S. entry requirements.</div></div>
+      <div class="tip-item"><div class="tip-label">Getting Around</div><div class="tip-text">Uber works reliably across the San Juan metro. Rent a car only if you're planning El Yunque, Luquillo, the west coast, or ferry access to Culebra or Vieques. Driving into Old San Juan is rarely worth the effort.</div></div>
+      <div class="tip-item"><div class="tip-label">Language</div><div class="tip-text">Spanish is the primary language; English is widely spoken in tourist areas. A few words of Spanish still go a long way toward a warmer welcome.</div></div>
+      <div class="tip-item"><div class="tip-label">Safety</div><div class="tip-text">San Juan's tourist areas are straightforward to navigate. Use Uber after dark, don't flash valuables, avoid wandering into unfamiliar neighborhoods at night, and watch your drinks at crowded bars. Standard city sense applies.</div></div>
+      <div class="tip-item"><div class="tip-label">Cultural Notes</div><div class="tip-text">Puerto Rico is not "international" for U.S. travelers — but it is culturally distinct and has its own proud identity. Engage with that rather than flattening it. Support local restaurants, guides, and shops over chains whenever possible.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHAT TO AVOID ═══ -->
+<section class="pmtp-band">
+  <div class="container">
+    <div class="section-eyebrow">Skip This</div>
+    <h2 class="section-title">What to Avoid</h2>
+    <div class="avoid-list">
+      <div class="avoid-box"><div class="avoid-title">Driving into Old San Juan</div><p class="avoid-desc">Traffic and parking can turn a 10-minute Uber ride into a 40-minute hunt for a garage. Take Uber. Nobody booked Caribbean travel to circle a parking structure.</p></div>
+      <div class="avoid-box"><div class="avoid-title">Condado Beach for Swimming</div><p class="avoid-desc">The beach is beautiful; the surf can be rough. Check the flag system before you wade in. El Escambrón is the better swimming option nearby.</p></div>
+      <div class="avoid-box"><div class="avoid-title">La Perla as a Casual Stop</div><p class="avoid-desc">The neighborhood visible below the city walls is striking from above and has cultural significance. Don't treat it as a tourist attraction or wander through without a trusted local guide.</p></div>
+      <div class="avoid-box"><div class="avoid-title">La Placita Solo and Late</div><p class="avoid-desc">Great energy, dense crowds later in the night. Go with a group, watch your belongings, and Uber both ways. The fun-to-friction ratio improves with those three adjustments.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Point Me to Paradise Travel</div>
+  <p class="footer-note">This guide was produced for editorial use. Prices, hours, and business details change — always verify before you travel. Travel data referenced from Discover Puerto Rico, the National Park Service, and Serious Eats. Images via Wikimedia Commons under Creative Commons licenses.</p>
+  <p class="disclaimer">Research current as of guide production. Verify all practical details with official sources before travel.</p>
+</footer>
+
+</body>
+</html>
