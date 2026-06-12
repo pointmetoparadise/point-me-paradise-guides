@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Midtown Manhattan: Bryant Park, Herald Square & Garment District | Point Me to Paradise Travel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --aqua-pale:#C4E4E1;
+      --aqua-mist:#EAF3F2;
+      --aqua:#75AFB1;
+      --aqua-dark:#4F8A8C;
+      --sand-light:#F4F1E9;
+      --warm-sand:#F5EFE4;
+      --gold-whisper:#D6C8A8;
+      --white:#FFFFFF;
+      --paper:#F9F6F1;
+      --ink:#2B2420;
+      --ink-soft:#6B6359;
+      --line:#E6DFD5;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+    }
+    .outer-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 48px 28px 64px;
+    }
+    h1 { font-family: 'Fraunces', serif; font-size: clamp(26px,5vw,42px); font-weight: 700; color: var(--ink); line-height: 1.15; }
+    h2 { font-family: 'Fraunces', serif; font-size: clamp(20px,4vw,28px); font-weight: 600; color: var(--ink); margin: 56px 0 4px; line-height: 1.2; }
+    h3 { font-family: 'Fraunces', serif; font-size: clamp(16px,3vw,20px); font-weight: 600; color: var(--ink); margin: 32px 0 8px; }
+    h4 { font-family: 'Fraunces', serif; font-size: 15px; font-weight: 600; letter-spacing: 0.04em; color: var(--ink); margin-bottom: 6px; }
+    .section-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(15px,2.5vw,18px); color: var(--ink-soft); margin-bottom: 24px; display: block; }
+    p { margin-bottom: 16px; color: var(--ink); }
+    a { color: var(--aqua-dark); text-decoration: none; font-weight: 500; }
+    a:hover { text-decoration: underline; }
+    .maps-link { display: inline-block; margin: 10px 0 20px; padding: 10px 18px; background: var(--aqua-pale); border-radius: 6px; font-size: 14px; font-weight: 600; color: var(--aqua-dark); letter-spacing: 0.03em; }
+    .maps-link:hover { background: var(--aqua); color: var(--white); text-decoration: none; }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+    .tag { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 3px 9px; border-radius: 3px; background: var(--gold-whisper); color: var(--ink-soft); }
+    .tag.avoid { background: #F0E0DC; color: #7A3A30; }
+    .pmtp-band { border-radius: 8px; padding: 22px 24px; margin: 28px 0; border: 1px solid var(--line); }
+    .pmtp-band p { margin-bottom: 0; }
+    .divider { border: none; border-top: 1px solid var(--line); margin: 48px 0; }
+    .pmtp-hero { background-image: linear-gradient(180deg,rgba(255,255,255,0.45),rgba(196,228,225,0.55) 35%,rgba(245,239,228,0.80) 68%,rgba(249,246,240,0.97)); padding: clamp(40px,8vw,78px) 32px clamp(36px,6vw,60px); text-align: center; margin: -48px -28px 0; border-bottom: 1px solid var(--line); }
+    .pmtp-hero .eyebrow { font-family: 'Fraunces', serif; font-size: 11px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--aqua-dark); margin-bottom: 22px; }
+    .hero-rule { width: 60px; height: 1px; background: var(--gold-whisper); margin: 18px auto; }
+    .hero-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(17px,3.5vw,21px); max-width: 580px; margin: 0 auto; color: var(--ink-soft); }
+    .pmtp-footer { background: var(--sand-light); margin-top: 64px; padding: 36px 28px; border-radius: 12px; }
+    .pmtp-footer .advisor-name { font-family: 'Fraunces', serif; font-size: 20px; font-weight: 600; }
+    .pmtp-footer .advisor-title { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--ink-soft); font-size: 15px; margin-bottom: 14px; }
+    .pmtp-footer .contact-line { font-size: 14px; margin-bottom: 4px; }
+    .pmtp-footer .brand-tag { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--ink-soft); font-size: 14px; margin-top: 14px; }
+    .pmtp-disclaimer { margin-top: 28px; padding: 22px 26px; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; font-size: 12.5px; line-height: 1.7; color: var(--ink-soft); }
+    .pmtp-disclaimer .disclaimer-label { display: block; font-weight: 600; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); margin-bottom: 8px; }
+    .section-img { width: 100%; max-height: 320px; object-fit: cover; border-radius: 8px; display: block; margin: 0 0 20px; }
+    .hero-img { width: 100%; max-height: 460px; object-fit: cover; border-radius: 0; display: block; margin-bottom: 32px; }
+    @media(max-width:640px){
+      body { font-size: 15px; }
+      .pmtp-hero { padding: 44px 20px 36px; margin: -24px -20px 0; }
+      .pmtp-band { padding: 18px 16px; }
+      h2 { font-size: 20px; }
+      h3 { font-size: 17px; }
+      .pmtp-footer { border-radius: 8px; padding: 24px 20px; }
+      .outer-wrap { padding: 24px 20px 48px; }
+      .maps-link { display: block; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <div class="outer-wrap">
+
+    <!-- HERO -->
+    <div class="pmtp-hero">
+      <div class="eyebrow">Point Me to Paradise Travel</div>
+      <h1>Midtown Manhattan</h1>
+      <div class="hero-rule"></div>
+      <p class="hero-tagline">Bryant Park, Herald Square &amp; the Garment District — your neighborhood, decoded.</p>
+    </div>
+
+    <!-- HERO IMAGE: Bryant Park jeh.JPG — confirmed on Wikimedia Commons, CC-PD/self-published -->
+    <img class="hero-img"
+         src="https://commons.wikimedia.org/wiki/Special:FilePath/Bryant_Park_jeh.JPG"
+         alt="Bryant Park surrounded by Midtown Manhattan skyscrapers"
+         loading="lazy">
+
+    <!-- INTRO BAND -->
+    <div class="pmtp-band" style="background:var(--aqua-mist);">
+      <h4>Where you are</h4>
+      <p>The Executive Hotel Le Soleil puts you at 38 W 36th St, in Midtown Manhattan's Garment District — one of the most central positions in the entire city. Bryant Park, Macy's, the Empire State Building, Koreatown, Penn Station, and Times Square are all within walking distance. This guide covers every pocket of the neighborhood worth knowing, honestly.</p>
+    </div>
+
+    <!-- ═══ GARMENT DISTRICT ═══ -->
+    <h2>The Garment District</h2>
+    <span class="section-tagline">Your front door opens onto one of the most historically specific corners of Midtown.</span>
+
+    <div class="tag-row">
+      <span class="tag">Historic</span>
+      <span class="tag">Shopping</span>
+      <span class="tag">Popular</span>
+      <span class="tag">Crowded</span>
+    </div>
+
+    <p>The blocks around your hotel have been central to American fashion since the early 20th century, when this corridor became the country's garment manufacturing hub. It still carries that identity — showrooms, fabric shops, wholesale businesses, and fashion offices populate these streets. The iconic Button &amp; Needle sculpture at Seventh Avenue and 39th Street is worth a quick look as you head out each morning.</p>
+    <p>The visitor experience here is more convenient than charming. Office workers, delivery trucks, and weekday hustle define the energy. That's not a flaw — it means you're placed squarely in the working heart of Midtown, close to everything, rather than tucked into a quieter pocket you'd have to leave for every outing.</p>
+
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Garment+District+Midtown+Manhattan" target="_blank" rel="noopener">View on Google Maps</a>
+
+    <div class="pmtp-band" style="background:var(--warm-sand);">
+      <h4>Practical note</h4>
+      <p>Some blocks feel more commercial than cozy, especially after dark. For a prettier evening walk, head toward Bryant Park or Fifth Avenue rather than west toward the Penn Station blocks.</p>
+    </div>
+
+    <!-- ═══ BRYANT PARK ═══ -->
+    <h2>Bryant Park &amp; the Library District</h2>
+    <span class="section-tagline">The most useful exhale in Midtown — green, open, and genuinely pleasant.</span>
+
+    <div class="tag-row">
+      <span class="tag">Popular</span>
+      <span class="tag">Family Friendly</span>
+      <span class="tag">Historic</span>
+      <span class="tag">Crowded</span>
+    </div>
+
+    <p>Bryant Park sits behind the New York Public Library between Fifth and Sixth Avenues near 42nd Street. It delivers that specific city-park-surrounded-by-skyscrapers feeling that Midtown does better than almost anywhere else on Earth. Lawn chairs fill up fast at lunch, but mornings are calm, and the views toward the skyline from the park's edges are worth the short walk from your hotel.</p>
+    <p>The park runs seasonal programming year-round: outdoor movies in summer, a winter village with holiday shops, and ice skating when temperatures cooperate. The New York Public Library's main building, immediately next door, is one of the few Midtown interiors that rewards a slow visit — the Rose Main Reading Room especially.</p>
+
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Bryant+Park+Midtown+Manhattan" target="_blank" rel="noopener">View on Google Maps</a>
+
+    <div class="pmtp-band" style="background:var(--aqua-mist);">
+      <h4>Best timing</h4>
+      <p>Arrive before 10am to claim a chair with space around you. At lunch and on weekends, the park fills quickly — still worthwhile, just louder. If you're in town for the holidays, the winter village is genuinely festive.</p>
+    </div>
+
+    <!-- ═══ HERALD SQUARE ═══ -->
+    <h2>Herald Square</h2>
+    <span class="section-tagline">Less a neighborhood, more a convergence point — practical, busy, and impossible to miss.</span>
+
+    <!-- Macy's Herald Square August 2017 01.jpg — confirmed on Wikimedia Commons -->
+    <img class="section-img"
+         src="https://commons.wikimedia.org/wiki/Special:FilePath/Macy%27s_Herald_Square_August_2017_01.jpg"
+         alt="Macy's Herald Square flagship store on 34th Street"
+         loading="lazy">
+
+    <div class="tag-row">
+      <span class="tag">Shopping</span>
+      <span class="tag">Popular</span>
+      <span class="tag">Crowded</span>
+      <span class="tag">Practical</span>
+    </div>
+
+    <p>Herald Square is just south of your hotel, anchored by Macy's Herald Square — one of the city's most iconic department stores. This is not a "stroll through a charming neighborhood" situation. It's a shopping, transit, and landmark zone that moves fast and stays busy. The Empire State Building is close from here, and subway access is excellent.</p>
+    <p>If you need to grab basics, do a major shopping run, or orient yourself to the city on day one, Herald Square is useful and efficient. For a quieter, more atmospheric afternoon, you'll want to move on to other pockets in this guide.</p>
+
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Herald+Square+Midtown+Manhattan" target="_blank" rel="noopener">View on Google Maps</a>
+
+    <div class="pmtp-band" style="background:var(--warm-sand);">
+      <h4>Watch yourself in the crowds</h4>
+      <p>The blocks around 34th Street and Sixth Avenue stay congested throughout the day. Keep belongings close, especially near the store entrances and the subway stations.</p>
+    </div>
+
+    <!-- ═══ KOREATOWN ═══ -->
+    <h2>Koreatown</h2>
+    <span class="section-tagline">The best food within walking distance of the hotel — and not a tourist trap in sight.</span>
+
+    <!-- USA-NYC-Koreatown99.jpg — confirmed on Wikimedia Commons, Category:Koreatown, Manhattan -->
+    <img class="section-img"
+         src="https://commons.wikimedia.org/wiki/Special:FilePath/USA-NYC-Koreatown99.jpg"
+         alt="Koreatown street scene on West 32nd Street in Manhattan"
+         loading="lazy">
+
+    <div class="tag-row">
+      <span class="tag">Food District</span>
+      <span class="tag">Local Favorite</span>
+      <span class="tag">Nightlife</span>
+      <span class="tag">Popular</span>
+    </div>
+
+    <p>Koreatown centers on West 32nd Street between Fifth and Sixth Avenues, just a few blocks south of your hotel. The street is compact but dense — Korean BBQ restaurants, bakeries, karaoke spots, dessert cafés, and casual food halls stack on top of each other, and the kitchen lights stay on late. Vogue's food writers described it as a crawl through barbecue, tofu stew, dumplings, desserts, and bakeries, all in a few hundred feet.</p>
+    <p>If you eat one dinner within walking distance of the hotel, make it here. The energy is lively, the prices are generally more reasonable than the surrounding Midtown blocks, and the variety covers every appetite — from a solo late-night bowl of tofu stew to a full Korean BBQ spread with a group.</p>
+
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Koreatown+Manhattan+West+32nd+Street" target="_blank" rel="noopener">View on Google Maps</a>
+
+    <div class="pmtp-band" style="background:var(--aqua-mist);">
+      <h4>Reservations matter for BBQ</h4>
+      <p>The Korean BBQ restaurants fill up on weekends and Friday nights. If you have a party of four or more, call ahead or expect a wait. For solo dining or smaller groups on a weeknight, walk-ins usually work fine.</p>
+    </div>
+
+    <!-- ═══ TIMES SQUARE ═══ -->
+    <h2>Times Square &amp; the Theater District</h2>
+    <span class="section-tagline">Experience it once, especially at night — then go find somewhere better to eat.</span>
+
+    <!-- Times Square New York March 2022.jpg — confirmed on Wikimedia Commons, Category:Times_Square -->
+    <img class="section-img"
+         src="https://commons.wikimedia.org/wiki/Special:FilePath/Times_Square_New_York_March_2022.jpg"
+         alt="Times Square lights and billboards at night in New York City"
+         loading="lazy">
+
+    <div class="tag-row">
+      <span class="tag">Popular</span>
+      <span class="tag">Nightlife</span>
+      <span class="tag">Crowded</span>
+      <span class="tag">Family Friendly</span>
+    </div>
+
+    <p>Times Square is a short walk from your hotel, and the first time you see the full neon-and-billboard spectacle at night, it delivers. The Theater District runs from roughly West 41st to West 54th Streets, between Sixth and Eighth Avenues, with most Broadway houses clustered within that zone. If you're seeing a show, you'll know this neighborhood well by the end of your trip.</p>
+    <p>The honest note: if you're not seeing a show, Times Square rewards about 20 minutes of walking and looking, then sends you somewhere with better restaurants and more breathing room. The street performers, ticket sellers, and chain dining options are a tourist-economy ecosystem rather than anything particularly local. The area around Eighth Avenue and 42nd Street specifically can feel hectic at night — fine with awareness, but not the place for a meandering stroll.</p>
+
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Times+Square+Theater+District+Manhattan" target="_blank" rel="noopener">View on Google Maps</a>
+
+    <div class="pmtp-band" style="background:var(--warm-sand);">
+      <h4>For Broadway tickets</h4>
+      <p>The TKTS booth at Duffy Square (the north end of Times Square, 47th and Broadway) sells same-day discounted tickets. Lines form before the booth opens — worth it for flexibility if you haven't booked ahead.</p>
+    </div>
+
+    <!-- ═══ NOMAD ═══ -->
+    <h2>NoMad</h2>
+    <span class="section-tagline">The neighborhood south of your hotel where Midtown starts to feel like something worth lingering in.</span>
+
+    <div class="tag-row">
+      <span class="tag">Trendy</span>
+      <span class="tag">Food District</span>
+      <span class="tag">Local Favorite</span>
+      <span class="tag">Shopping</span>
+    </div>
+
+    <p>NoMad — North of Madison Square Park — occupies the upper 20s and lower 30s southeast of your hotel. Boutique hotels, rooftop bars, and polished restaurants have made it one of Manhattan's more stylish dining corridors over the past decade. The Flatiron NoMad district group describes the area as a crossroads of commercial and residential, uptown and downtown energy — which is a polite way of saying it's the place where Midtown starts feeling like a neighborhood worth exploring rather than just a transit zone.</p>
+    <p>This is the right direction for a nicer dinner, a rooftop drink before a show, or a couple's evening that doesn't involve neon signs and chain restaurants. Prices run higher here, but the quality follows.</p>
+
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=NoMad+neighborhood+Manhattan" target="_blank" rel="noopener">View on Google Maps</a>
+
+    <div class="pmtp-band" style="background:var(--aqua-mist);">
+      <h4>Easy route from the hotel</h4>
+      <p>Walk south on Fifth or Sixth Avenue, then cut east into the 20s. Madison Square Park is the natural gathering point — grab a coffee, find a bench, and use it as your base before dinner or a wander into Flatiron.</p>
+    </div>
+
+    <!-- ═══ FLATIRON ═══ -->
+    <h2>Flatiron District &amp; Madison Square Park</h2>
+    <span class="section-tagline">Architecture, a park, great food — and more manageable than almost anything north of 34th Street.</span>
+
+    <!-- Flatiron_Building_Madison_Square_Park.jpg — confirmed on Wikimedia Commons, CC BY-SA 3.0 -->
+    <img class="section-img"
+         src="https://commons.wikimedia.org/wiki/Special:FilePath/Flatiron_Building_Madison_Square_Park.jpg"
+         alt="Flatiron Building viewed from Madison Square Park"
+         loading="lazy">
+
+    <div class="tag-row">
+      <span class="tag">Historic</span>
+      <span class="tag">Popular</span>
+      <span class="tag">Shopping</span>
+      <span class="tag">Food District</span>
+    </div>
+
+    <p>The Flatiron District sits south of NoMad and makes an excellent easy half-day from your hotel. Madison Square Park anchors the neighborhood with green space and public art installations that rotate seasonally. The Flatiron Building itself — the 1902 triangular tower at the junction of Broadway, Fifth Avenue, and 23rd Street — is one of the city's most photographed structures. Eataly, the Italian food hall on Fifth Avenue, is worth a visit whether you're eating or just looking.</p>
+    <p>One practical heads-up: the Flatiron Building has been undergoing restoration work, and scaffolding has affected exterior photo conditions on some visits. Worth checking current status before you build your afternoon around the shot.</p>
+
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Flatiron+District+Madison+Square+Park+Manhattan" target="_blank" rel="noopener">View on Google Maps</a>
+
+    <div class="pmtp-band" style="background:var(--warm-sand);">
+      <h4>Suggested route from the hotel</h4>
+      <p>Hotel → Koreatown for lunch → walk south on Broadway → Madison Square Park → Flatiron Building → Eataly for an afternoon snack or early dinner. The whole loop takes about three hours at a relaxed pace.</p>
+    </div>
+
+    <!-- ═══ HUDSON YARDS ═══ -->
+    <h2>Hudson Yards</h2>
+    <span class="section-tagline">Sleek, modern, and genuinely unlike anything else in the city — take it or leave it.</span>
+
+    <!-- Hudson Yards 2018-07 west side jeh.jpg — confirmed in Wikimedia Commons category listing #94-1 -->
+    <img class="section-img"
+         src="https://commons.wikimedia.org/wiki/Special:FilePath/Hudson_Yards_2018-07_west_side_jeh.jpg"
+         alt="Hudson Yards skyline on the west side of Midtown Manhattan"
+         loading="lazy">
+
+    <div class="tag-row">
+      <span class="tag">Trendy</span>
+      <span class="tag">Shopping</span>
+      <span class="tag">Popular</span>
+      <span class="tag">Crowded</span>
+    </div>
+
+    <p>Hudson Yards occupies the far west side of Midtown, near 10th–12th Avenues and 30th–34th Streets. It's connected to the High Line at its northern edge, and the development includes Vessel (the climbable honeycomb sculpture), The Edge observation deck, The Shed arts center, high-end shopping, and an array of restaurants. The No. 7 subway opened a station here in 2015, making it far easier to reach from the rest of the city than its far-west location would suggest.</p>
+    <p>Visitors split on Hudson Yards fairly evenly. The clean modern design and dramatic views reward a visit; the corporate polish and high prices can feel removed from the rest of New York's texture. Worth an afternoon, especially if The Edge views interest you or you're connecting to the High Line.</p>
+
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Hudson+Yards+Manhattan" target="_blank" rel="noopener">View on Google Maps</a>
+
+    <div class="pmtp-band" style="background:var(--aqua-mist);">
+      <h4>Start here for the High Line</h4>
+      <p>The High Line elevated park begins near Hudson Yards and runs south through Chelsea to the Meatpacking District. Walking it south gives you a gradual shift from the modern development into older, more neighborhood-textured blocks — a satisfying contrast.</p>
+    </div>
+
+    <!-- ═══ CHELSEA ═══ -->
+    <h2>Chelsea</h2>
+    <span class="section-tagline">Galleries, a food hall, the High Line, and a neighborhood that actually has a personality.</span>
+
+    <!-- 2009_Mai_High_Line_Park_03.jpg — confirmed on Wikimedia Commons, Category:Benches on the High Line -->
+    <img class="section-img"
+         src="https://commons.wikimedia.org/wiki/Special:FilePath/2009_Mai_High_Line_Park_03.jpg"
+         alt="The High Line elevated park in Chelsea, New York City"
+         loading="lazy">
+
+    <div class="tag-row">
+      <span class="tag">Trendy</span>
+      <span class="tag">Local Favorite</span>
+      <span class="tag">Food District</span>
+      <span class="tag">Shopping</span>
+    </div>
+
+    <p>Chelsea sits southwest of your hotel and is one of the stronger neighborhood investments from your location. Visit Manhattan describes it as dynamic and creative, built around art galleries, boutiques, restaurants, nightlife, the High Line, and Chelsea Market. The gallery district — concentrated in West Chelsea around the 20s near the Hudson — is one of the densest collections of contemporary art spaces in the country, and most galleries are free to enter.</p>
+    <p>Chelsea Market, on Ninth Avenue between 15th and 16th Streets, is a converted factory turned food hall with some of the better quick-eat options in Midtown-adjacent Manhattan. The High Line enters Chelsea from Hudson Yards and deposits you near here at its southern end. Some blocks in West Chelsea feel industrial and quiet at night — fine, just not the place for a late solo wander.</p>
+
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Chelsea+Manhattan+neighborhood" target="_blank" rel="noopener">View on Google Maps</a>
+
+    <div class="pmtp-band" style="background:var(--warm-sand);">
+      <h4>Best for repeat NYC visitors</h4>
+      <p>If you've already done the standard Midtown sights, Chelsea and the High Line offer a more interesting afternoon. The gallery walk in West Chelsea costs nothing and rewards curiosity.</p>
+    </div>
+
+    <!-- ═══ HELL'S KITCHEN ═══ -->
+    <h2>Hell's Kitchen</h2>
+    <span class="section-tagline">The neighborhood west of Times Square with the restaurants Times Square wishes it had.</span>
+
+    <div class="tag-row">
+      <span class="tag">Food District</span>
+      <span class="tag">Local Favorite</span>
+      <span class="tag">Nightlife</span>
+      <span class="tag">Crowded</span>
+    </div>
+
+    <p>Hell's Kitchen runs west of Eighth Avenue toward the Hudson River, roughly parallel to the Theater District. In practice, it's where you go for dinner before or after a Broadway show when you don't want to pay tourist-district prices for mediocre food. The blocks around Ninth Avenue have genuine restaurant variety — Thai, Mexican, Italian, LGBTQ-friendly bars, wine spots — without the souvenir-shop surroundings of Times Square itself.</p>
+    <p>The blocks near Eighth Avenue and Port Authority can feel gritty, particularly later at night. The closer you stay to Ninth Avenue and the 40s and 50s, the more pleasant the experience.</p>
+
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Hell%27s+Kitchen+Manhattan" target="_blank" rel="noopener">View on Google Maps</a>
+
+    <div class="pmtp-band" style="background:var(--aqua-mist);">
+      <h4>Pre-theater dinner strategy</h4>
+      <p>Book a table in Hell's Kitchen rather than in Times Square proper. You'll be a short walk from most Broadway theaters, and the food will be notably better at similar or lower prices. Make a reservation — pre-curtain windows fill fast.</p>
+    </div>
+
+    <!-- ═══ PENN STATION ═══ -->
+    <h2>Penn Station &amp; Madison Square Garden</h2>
+    <span class="section-tagline">Use it when you need it, then keep moving.</span>
+
+    <div class="tag-row">
+      <span class="tag">Practical</span>
+      <span class="tag">Crowded</span>
+      <span class="tag avoid">Use for Transit Only</span>
+    </div>
+
+    <p>Penn Station sits just southwest of your hotel and handles Amtrak, LIRR, and NJ Transit — making it essential for getting in and out of the city if you're arriving by train. Moynihan Train Hall, the newer facility across Eighth Avenue, is considerably more pleasant than the old Penn Station concourse and worth knowing as your actual arrival point. Madison Square Garden sits above Penn Station and hosts major concerts and sports events.</p>
+    <p>Beyond transit and events, the streets immediately surrounding Penn Station are not where you want to linger. Use it when the schedule calls for it and route yourself toward better blocks afterward.</p>
+
+    <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Penn+Station+Madison+Square+Garden+Manhattan" target="_blank" rel="noopener">View on Google Maps</a>
+
+    <hr class="divider">
+
+    <!-- ═══ SUGGESTED ROUTES ═══ -->
+    <h2>Suggested Routes from the Hotel</h2>
+    <span class="section-tagline">Three walks worth your time, each with a distinct purpose.</span>
+
+    <h3>The Classic Midtown Arc</h3>
+    <p>Hotel → Bryant Park (morning coffee, lawn chair, library visit) → Fifth Avenue walk north → Grand Central Terminal → Rockefeller Center. Give yourself a half day. This is the route for first-timers who want the definitive Midtown experience without the Times Square chaos.</p>
+
+    <h3>The Food &amp; Neighborhood Loop</h3>
+    <p>Hotel → Koreatown for lunch → walk south on Broadway → NoMad → Madison Square Park → Flatiron Building → Eataly for a late afternoon snack. Three to four hours, low effort, high return.</p>
+
+    <h3>The West Side Walk</h3>
+    <p>Hotel → Hudson Yards (Edge if views are a priority) → High Line south through Chelsea → Chelsea Market for food → Ninth Avenue in Hell's Kitchen for dinner. Best as an afternoon-into-evening trip. Takes the better part of a day if you slow down.</p>
+
+    <div class="pmtp-band" style="background:var(--aqua-mist);">
+      <h4>Getting around</h4>
+      <p>Your hotel's location is genuinely walkable to most of these destinations. Use the subway for anything in Brooklyn, lower Manhattan, or uptown above 59th Street. Uber or Lyft make sense late at night or when you're dressed for a show and don't want to walk. The subway stations at 34th Street-Herald Square, Bryant Park/42nd Street, Times Square, and Penn Station are all within easy reach.</p>
+    </div>
+
+    <!-- ═══ WHAT TO SKIP ═══ -->
+    <h2>What to Skip or Watch Out For</h2>
+    <span class="section-tagline">Honest flags for the neighborhoods that don't quite earn their reputation with visitors.</span>
+
+    <div class="pmtp-band" style="background:var(--warm-sand);">
+      <h4>Eating in Times Square</h4>
+      <p>Fine for convenience, not for the food. The blocks immediately around Times Square are dominated by chain restaurants priced for captive tourist audiences. Koreatown, Hell's Kitchen, and NoMad are all close and considerably better options.</p>
+    </div>
+
+    <div class="pmtp-band" style="background:var(--aqua-mist);">
+      <h4>Penn Station streets, late at night</h4>
+      <p>The transit access is essential, but the surrounding blocks around Eighth Avenue aren't the place for a late-night stroll. Use Moynihan Train Hall as your reference point, then head east once you're out.</p>
+    </div>
+
+    <div class="pmtp-band" style="background:var(--warm-sand);">
+      <h4>Staying only in Midtown</h4>
+      <p>The hotel's central position makes it easy to stay comfortable within walking distance for the whole trip — but lower Manhattan neighborhoods like SoHo, Greenwich Village, and the West Village offer a very different experience of the city. If you have more than two days, the subway is fast and worth it.</p>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="pmtp-footer">
+      <div class="advisor-name">Andrea Gunter</div>
+      <div class="advisor-title">Travel Advisor</div>
+      <div class="contact-line"><a id="pmtpEmailLink" href="#"></a></div>
+      <div class="contact-line">409-789-3579</div>
+      <div class="brand-tag">Point Me to Paradise Travel</div>
+    </div>
+
+    <!-- DISCLAIMER -->
+    <div class="pmtp-disclaimer">
+      <span class="disclaimer-label">Important — please read</span>
+      This guide is provided for informational purposes only. Locations, hours, conditions, and recommendations can change without notice, and ocean, weather, trail, road, and travel conditions can shift quickly and unpredictably. Point Me to Paradise Travel, the advisor named in this guide, and the authors of this content are not liable for any injury, illness, loss, theft, or harm of any kind arising from your visit to any location or participation in any activity referenced here. By using this guide, you accept full personal responsibility for your own safety. Use your own judgment, verify current conditions before any activity, follow all posted warnings and local regulations, and consult qualified professionals — lifeguards, park rangers, licensed guides, medical providers — where appropriate.
+    </div>
+
+  </div>
+
+  <script>
+    (function(){
+      var l = "andrea", d = "pointmetoparadise.com";
+      if(!l || !d) return;
+      var a = l + "\u0040" + d;
+      var el = document.getElementById("pmtpEmailLink");
+      if(el){ el.href = "mailto:" + a; el.textContent = a; }
+    })();
+  </script>
+</body>
+</html>
