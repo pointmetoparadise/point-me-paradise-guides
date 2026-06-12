@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Midtown Manhattan Dining Guide — Point Me to Paradise Travel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --aqua-pale:#C4E4E1; --aqua-mist:#EAF3F2; --aqua:#75AFB1; --aqua-dark:#4F8A8C;
+      --sand-light:#F4F1E9; --warm-sand:#F5EFE4; --gold-whisper:#D6C8A8;
+      --white:#FFFFFF; --paper:#F9F6F1;
+      --ink:#2B2420; --ink-soft:#6B6359; --line:#E6DFD5;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background:var(--paper); color:var(--ink); font-family:"DM Sans",sans-serif; font-size:16px; line-height:1.75; padding:48px 28px; }
+    .pmtp-inner { max-width:680px; margin:0 auto; padding:0 20px; }
+    h1 { font-family:"Fraunces",serif; font-size:clamp(26px,5vw,42px); font-weight:700; color:var(--ink); line-height:1.2; }
+    h2 { font-family:"Fraunces",serif; font-size:clamp(20px,4vw,28px); font-weight:600; color:var(--ink); margin:48px 0 6px; line-height:1.25; }
+    h3 { font-family:"Fraunces",serif; font-size:clamp(16px,3vw,20px); font-weight:600; color:var(--ink); margin:32px 0 6px; }
+    h4 { font-family:"DM Sans",sans-serif; font-size:13px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--aqua-dark); margin-bottom:8px; }
+    p { margin-bottom:16px; }
+    a { color:var(--aqua-dark); text-decoration:none; border-bottom:1px solid var(--aqua-pale); transition:border-color .2s; }
+    a:hover { border-color:var(--aqua-dark); }
+    .tagline { font-family:"Cormorant Garamond",serif; font-style:italic; font-size:clamp(15px,2.5vw,18px); color:var(--ink-soft); margin-bottom:24px; display:block; }
+    .pmtp-hero { background-image:linear-gradient(180deg,rgba(255,255,255,.45),rgba(196,228,225,.55) 35%,rgba(245,239,228,.80) 68%,rgba(249,246,240,.97)); padding:clamp(40px,8vw,78px) 32px clamp(36px,6vw,60px); text-align:center; margin:-48px -28px 0; border-bottom:1px solid var(--line); }
+    .pmtp-hero-eyebrow { font-family:"Fraunces",serif; font-size:11px; font-weight:600; letter-spacing:.22em; text-transform:uppercase; color:var(--aqua-dark); margin-bottom:22px; }
+    .pmtp-hero-rule { width:60px; height:1px; background:var(--gold-whisper); margin:18px auto; }
+    .pmtp-hero-tagline { font-family:"Cormorant Garamond",serif; font-style:italic; font-size:clamp(17px,3.5vw,21px); max-width:620px; margin:0 auto; color:var(--ink-soft); }
+    .guide-img { width:100%; display:block; object-fit:cover; }
+    .guide-img.hero { max-height:460px; margin-bottom:32px; }
+    .guide-img.section { max-height:320px; border-radius:8px; margin:0 0 24px; }
+    .pmtp-band { border-radius:10px; padding:22px 24px; margin:20px 0; }
+    .pmtp-band.mist { background:var(--aqua-mist); }
+    .pmtp-band.sand { background:var(--warm-sand); }
+    .pmtp-band p:last-child { margin-bottom:0; }
+    .tag-row { display:flex; flex-wrap:wrap; gap:6px; margin:8px 0 14px; }
+    .tag { font-size:11px; font-weight:600; letter-spacing:.10em; text-transform:uppercase; background:var(--aqua-pale); color:var(--aqua-dark); padding:3px 10px; border-radius:20px; }
+    .tag.gold { background:var(--gold-whisper); color:var(--ink-soft); }
+    .maps-link { display:inline-block; margin:10px 0 4px; font-size:13px; font-weight:600; letter-spacing:.05em; color:var(--aqua-dark); background:var(--aqua-mist); padding:9px 18px; border-radius:6px; border:1px solid var(--aqua-pale); border-bottom:1px solid var(--aqua-pale); transition:background .2s,border-color .2s; }
+    .maps-link:hover { background:var(--aqua-pale); border-color:var(--aqua); }
+    .tip { font-size:13.5px; color:var(--ink-soft); border-left:2px solid var(--gold-whisper); padding-left:14px; margin:12px 0 20px; font-style:italic; }
+    .divider { width:100%; height:1px; background:var(--line); margin:52px 0 0; }
+    .qr-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:20px 0; }
+    .qr-card { background:var(--white); border:1px solid var(--line); border-radius:8px; padding:14px 16px; }
+    .qr-card h4 { margin-bottom:6px; font-size:11px; }
+    .qr-card p { font-size:13.5px; margin:0; color:var(--ink-soft); }
+    .pmtp-footer { background:var(--sand-light); margin-top:64px; padding:36px 28px; border-radius:12px; }
+    .pmtp-disclaimer { margin-top:28px; padding:22px 26px; background:var(--paper); border:1px solid var(--line); border-radius:8px; font-size:12.5px; line-height:1.7; color:var(--ink-soft); }
+    .pmtp-disclaimer span { display:block; font-weight:600; font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--ink); margin-bottom:8px; }
+    @media(max-width:640px){
+      body{font-size:15px;padding:24px 20px;}
+      .pmtp-hero{padding:44px 20px 36px;margin:-24px -20px 0;}
+      .pmtp-band{padding:18px 16px;}
+      h2{font-size:20px;}h3{font-size:17px;}
+      .maps-link{display:block;text-align:center;padding:10px 16px;}
+      .qr-grid{grid-template-columns:1fr;}
+      .pmtp-footer{border-radius:8px;padding:24px 20px;}
+    }
+  </style>
+</head>
+<body>
+<div class="pmtp-inner">
+
+<div class="pmtp-hero">
+  <div class="pmtp-hero-eyebrow">Point Me to Paradise Travel</div>
+  <h1>Where to Eat in Midtown Manhattan</h1>
+  <div class="pmtp-hero-rule"></div>
+  <p class="pmtp-hero-tagline">Old New York glamour, Koreatown late nights, and a few places worth crossing the street for — a dining guide for the blocks around Bryant Park and the Garment District.</p>
+</div>
+
+<img class="guide-img hero" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Keens_Steakhouse_%2854821833498%29.jpg/1280px-Keens_Steakhouse_%2854821833498%29.jpg" alt="Exterior of Keens Steakhouse on West 36th Street in Midtown Manhattan" loading="eager">
+
+<p>Midtown isn't one dining neighborhood — it's half a dozen stacked on top of each other. Within walking distance of the Bryant Park and Garment District area, you have classic New York steakhouses, a full block of Korean BBQ, pre-theater Italian that actually feeds you, and some of the most serious fine dining in the country. The challenge isn't finding a restaurant. It's not accidentally paying $32 for something you'll regret every time you think about New York. This guide helps you avoid that.</p>
+
+<div class="divider"></div>
+<h2>Start Here: The One Restaurant You Shouldn't Miss</h2>
+<span class="tagline">Some places survive a hundred years because they deserve to.</span>
+
+<img class="guide-img section" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Keens_Steakhouse_%28Manhattan%2C_New_York%29_001.jpg/1280px-Keens_Steakhouse_%28Manhattan%2C_New_York%29_001.jpg" alt="Historic exterior signage of Keens Steakhouse, founded 1885" loading="lazy">
+
+<h3>Keens Steakhouse</h3>
+<div class="tag-row"><span class="tag">Historic</span><span class="tag">Special Occasion</span><span class="tag gold">Reservations Needed</span><span class="tag">Local Favorite</span></div>
+<p>Keens opened in 1885, and the ceiling still holds the clay pipes of regulars going back generations. Dark wood, leather, portraits on the wall — this is old New York at its best. The mutton chop is legendary. The steaks are what you'd expect from a James Beard &#8220;America's Classic&#8221; recipient. The whiskey list is long. Come for a graduation dinner, a special occasion, or simply because you want a meal that earns its place in the memory.</p>
+<a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Keens+Steakhouse+New+York" target="_blank" rel="noopener">&#x1F4CD; View on Google Maps &mdash; 72 W 36th St</a>
+<div class="tip">The menu skews meat-heavy by design. Book ahead &mdash; this one fills up fast, and walking in for dinner is a long shot.</div>
+
+<div class="divider"></div>
+<h2>Breakfast: Get the Bagel Right</h2>
+<span class="tagline">New York mornings are no place for a continental breakfast tray.</span>
+
+<div class="pmtp-band mist">
+  <h4>Best Bagel &amp; Coffee &mdash; 225 W 35th St</h4>
+  <p>A solid casual breakfast within easy reach of the hotel. Bagel sandwiches are well-regarded, the coffee is honest, and the line moves. Don't dawdle &mdash; mornings get busy quickly.</p>
+  <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Best+Bagel+and+Coffee+225+W+35th+St+New+York" target="_blank" rel="noopener">&#x1F4CD; View on Google Maps</a>
+</div>
+
+<div class="pmtp-band sand">
+  <h4>Liberty Bagels Midtown &mdash; 260 W 35th St</h4>
+  <p>Another strong option a block away, with colorful bagels and plenty of cream cheese variations. Good for grab-and-go if you have a full sightseeing day ahead. Expect a line &mdash; this one gets tourist attention.</p>
+  <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Liberty+Bagels+Midtown+260+W+35th+St+New+York" target="_blank" rel="noopener">&#x1F4CD; View on Google Maps</a>
+</div>
+
+<div class="pmtp-band mist">
+  <h4>Angelina Bakery &mdash; Multiple Midtown Locations</h4>
+  <p>Multiple Midtown locations make this an easy coffee-and-pastry stop. Known for bomboloni and shareable sweets &mdash; better as a mid-morning treat than a full breakfast. Lines form for a reason, though it trends busy on weekends.</p>
+  <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Angelina+Bakery+Midtown+New+York" target="_blank" rel="noopener">&#x1F4CD; Find Nearest Location</a>
+</div>
+
+<div class="divider"></div>
+<h2>Koreatown: The Best Dinner Zone Near the Hotel</h2>
+<span class="tagline">W 32nd Street between Fifth and Sixth Avenue is compact, alive, and genuinely fun.</span>
+
+<img class="guide-img section" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/USA-NYC-Korea_Way.JPG/1280px-USA-NYC-Korea_Way.JPG" alt="Korea Way on West 32nd Street, the heart of Koreatown in Midtown Manhattan" loading="lazy">
+
+<p>This is one of the easiest areas to have a great dinner without overthinking it. Korean BBQ, tofu stew, dumplings, karaoke, bakeries, late-night food &mdash; all packed into a few blocks. The energy picks up at night and stays that way. Even if this is your first time at Korean BBQ, Koreatown is the right place to start.</p>
+
+<h3>Jongro BBQ</h3>
+<div class="tag-row"><span class="tag">Popular</span><span class="tag">Group Dining</span><span class="tag gold">Reservations Recommended</span></div>
+<p>One of the most popular Korean BBQ spots in Koreatown. You grill your own meat tableside, the banchan (small sides) keeps coming, and the atmosphere runs loud and lively. Strong choice for a fun dinner &mdash; especially if you're after that &#8220;we actually did something&#8221; feeling.</p>
+<a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Jongro+BBQ+22+W+32nd+St+New+York" target="_blank" rel="noopener">&#x1F4CD; View on Google Maps &mdash; 22 W 32nd St</a>
+<div class="tip">Waits are common without a reservation. Book ahead if you can.</div>
+
+<h3>Her Name Is Han</h3>
+<div class="tag-row"><span class="tag">Date Night</span><span class="tag">Local Favorite</span><span class="tag gold">Reservations Recommended</span></div>
+<p>A slightly more stylish, cozy Korean restaurant just south of the main Koreatown strip. Modern Korean comfort food in a warmer, quieter room &mdash; less touristy, more the kind of place locals actually go back to.</p>
+<a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Her+Name+Is+Han+17+E+31st+St+New+York" target="_blank" rel="noopener">&#x1F4CD; View on Google Maps &mdash; 17 E 31st St</a>
+
+<h3>Woorijip</h3>
+<div class="tag-row"><span class="tag">Casual</span><span class="tag">Budget-Friendly</span></div>
+<p>Cafeteria-style Korean with ready-to-go comfort food at excellent value. Not a destination dinner, but ideal for an affordable lunch or a low-key meal when schedules are tight. No reservations, no fuss.</p>
+<a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Woorijip+12+W+32nd+St+New+York" target="_blank" rel="noopener">&#x1F4CD; View on Google Maps &mdash; 12 W 32nd St</a>
+
+<div class="divider"></div>
+<h2>Pre-Theater &amp; Broadway-Area Dinners</h2>
+<span class="tagline">Convenient doesn't have to mean forgettable &mdash; if you know which block to be on.</span>
+
+<div class="pmtp-band sand">
+  <h4>Pre-Theater Timing</h4>
+  <p>For a 7:00 PM curtain, aim to sit down around 5:00&ndash;5:30 PM. For an 8:00 PM show, 5:30&ndash;6:00 PM works well. Midtown restaurants fill fast before Broadway, and kitchens know it.</p>
+</div>
+
+<h3>Carmine's Times Square</h3>
+<div class="tag-row"><span class="tag">Families</span><span class="tag">Groups</span><span class="tag gold">Reservations Needed</span></div>
+<p>Big, loud, family-style Italian where every dish arrives in portions meant for sharing. Yes, it's touristy. For families, groups, or picky eaters who just need massive bowls of pasta before a show, it delivers exactly what it promises.</p>
+<a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Carmine%27s+Italian+Restaurant+200+W+44th+St+New+York" target="_blank" rel="noopener">&#x1F4CD; View on Google Maps &mdash; 200 W 44th St</a>
+<div class="tip">Better value when you're sharing. Two people trying to tackle these portions alone end up with a lot of leftovers and no storage.</div>
+
+<h3>Tony's Di Napoli</h3>
+<div class="tag-row"><span class="tag">Families</span><span class="tag">Pre-Show</span><span class="tag gold">Reservations Recommended</span></div>
+<p>Family-style Italian near Times Square with the same shared-platter approach as Carmine's. Traveler ratings run consistently strong for theater-goers. Not a quiet dinner, but a reliable one for groups who want to eat well and make their curtain time.</p>
+<a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Tony%27s+Di+Napoli+147+W+43rd+St+New+York" target="_blank" rel="noopener">&#x1F4CD; View on Google Maps &mdash; 147 W 43rd St</a>
+
+<h3>Junior's Restaurant &amp; Cheesecake</h3>
+<div class="tag-row"><span class="tag">Families</span><span class="tag">Casual</span></div>
+<p>The cheesecake is the draw, and it earns the reputation. Junior's works as a comfortable pre- or post-show stop &mdash; classic comfort food and a slice of New York cheesecake that justifies the crowds around it.</p>
+<a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Junior%27s+Restaurant+1515+Broadway+New+York" target="_blank" rel="noopener">&#x1F4CD; View on Google Maps &mdash; 1515 Broadway</a>
+
+<div class="divider"></div>
+<h2>Bryant Park, Grand Central &amp; Rockefeller Center</h2>
+<span class="tagline">East of the tourist corridor, Midtown's dining gets more serious.</span>
+
+<img class="guide-img section" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Bryant_Park_Grill_2024.jpg/1280px-Bryant_Park_Grill_2024.jpg" alt="Bryant Park Grill with the New York Public Library in the background" loading="lazy">
+
+<h3>Bryant Park Grill</h3>
+<div class="tag-row"><span class="tag">Scenic Setting</span><span class="tag">Lunch</span><span class="tag gold">Reservations Recommended</span></div>
+<p>Tucked behind the New York Public Library with Bryant Park as its backdrop, this is the kind of spot where the setting does a lot of the work. The food is described as New American &mdash; solid and repeatable rather than destination-level. Come for lunch on a nice day when the park view earns its place on the bill.</p>
+<a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Bryant+Park+Grill+25+W+40th+St+New+York" target="_blank" rel="noopener">&#x1F4CD; View on Google Maps &mdash; 25 W 40th St</a>
+
+<h3>Gabriel Kreuther</h3>
+<div class="tag-row"><span class="tag">Special Occasion</span><span class="tag">Fine Dining</span><span class="tag gold">Reservations Required</span></div>
+<p>A two-Michelin-star French/Alsatian restaurant at Bryant Park &mdash; polished service, formal dining room, strong wine program. This is the graduation dinner choice for food-focused travelers who want a serious, elegant evening. Not casual, not quick, not budget-friendly, and unambiguously worth it for the right occasion.</p>
+<a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Gabriel+Kreuther+41+W+42nd+St+New+York" target="_blank" rel="noopener">&#x1F4CD; View on Google Maps &mdash; 41 W 42nd St</a>
+
+<h3>Le Rock</h3>
+<div class="tag-row"><span class="tag">Trendy</span><span class="tag">Date Night</span><span class="tag gold">Reservations Required</span></div>
+<p>A Parisian-inspired brasserie inside Rockefeller Center from the team behind Frenchette, with Art Deco surroundings and the kind of French brasserie dishes &mdash; steak frites, oysters, good cocktails &mdash; that make a stylish dinner feel effortless. Pricey and popular, so book ahead.</p>
+<a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Le+Rock+45+Rockefeller+Plaza+New+York" target="_blank" rel="noopener">&#x1F4CD; View on Google Maps &mdash; 45 Rockefeller Plaza</a>
+
+<div class="divider"></div>
+<h2>Quick Meals Worth Knowing About</h2>
+<span class="tagline">Sometimes the best meal of the day is a taco eaten standing up.</span>
+
+<div class="pmtp-band mist">
+  <h4>Los Tacos No. 1 &mdash; Multiple Midtown Locations</h4>
+  <p>Consistently praised for adobada, carne asada, and nopal tacos &mdash; one of the best fast meals in Midtown. Lines form, seating is limited, and it's worth both inconveniences.</p>
+  <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Los+Tacos+No+1+Midtown+New+York" target="_blank" rel="noopener">&#x1F4CD; Find Nearest Location</a>
+</div>
+
+<div class="pmtp-band sand">
+  <h4>Joe's Pizza &mdash; Multiple NYC Locations</h4>
+  <p>Not fancy &mdash; a classic New York slice, fast. Good for a quick lunch or a late-night snack when everyone just wants pizza and no one wants to wait for a table.</p>
+  <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Joe%27s+Pizza+Midtown+New+York" target="_blank" rel="noopener">&#x1F4CD; Find Nearest Location</a>
+</div>
+
+<div class="pmtp-band mist">
+  <h4>Friedman's Herald Square &mdash; 132 W 31st St</h4>
+  <p>A casual American option near the hotel, particularly useful if anyone in your group has gluten-free needs. Good for a low-pressure lunch or an easy dinner without fuss.</p>
+  <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Friedman%27s+132+W+31st+St+New+York" target="_blank" rel="noopener">&#x1F4CD; View on Google Maps</a>
+</div>
+
+<div class="pmtp-band sand">
+  <h4>Little Beet &mdash; Multiple Midtown Locations</h4>
+  <p>Fast-casual bowls, gluten-free friendly, vegetable-forward. Multiple Midtown locations. Not a memorable dinner, but reliable when schedules or diets demand it.</p>
+  <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Little+Beet+Midtown+New+York" target="_blank" rel="noopener">&#x1F4CD; Find Nearest Location</a>
+</div>
+
+<div class="divider"></div>
+<h2>If You're Going All In</h2>
+<span class="tagline">Midtown's fine dining tier holds some of the best restaurants in the country &mdash; use it for the right moment.</span>
+
+<img class="guide-img section" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Interior_of_Le_Bernardin.jpg/1280px-Interior_of_Le_Bernardin.jpg" alt="Elegant interior dining room at Le Bernardin, Midtown Manhattan" loading="lazy">
+
+<h3>Le Bernardin</h3>
+<div class="tag-row"><span class="tag">Seafood</span><span class="tag">Special Occasion</span><span class="tag gold">Reservations Required</span></div>
+<p>Three Michelin stars. Chef Eric Ripert. French technique applied to seafood with a precision and consistency that has held this restaurant among New York's best for decades. The service is formal, the room is elegant, and the price tag is significant. Book well in advance.</p>
+<a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Le+Bernardin+155+W+51st+St+New+York" target="_blank" rel="noopener">&#x1F4CD; View on Google Maps &mdash; 155 W 51st St</a>
+<div class="tip">Dress the part &mdash; this is a nicer-outfit restaurant, not a business-casual one.</div>
+
+<h3>The Modern</h3>
+<div class="tag-row"><span class="tag">MoMA</span><span class="tag">Special Occasion</span><span class="tag gold">Reservations Required</span></div>
+<p>Two Michelin stars inside the Museum of Modern Art, with views of the sculpture garden and a refined contemporary menu that rewards diners who slow down. Quieter and more intimate than much of Midtown's fine dining.</p>
+<a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=The+Modern+Restaurant+9+W+53rd+St+New+York" target="_blank" rel="noopener">&#x1F4CD; View on Google Maps &mdash; 9 W 53rd St</a>
+
+<div class="divider"></div>
+<h2>Stylish Rooms Worth the Scene</h2>
+<span class="tagline">Sometimes the setting is half the point &mdash; and these deliver.</span>
+
+<h3>La Grande Boucherie</h3>
+<div class="tag-row"><span class="tag">French Brasserie</span><span class="tag">Date Night</span><span class="tag gold">Reservations Needed</span></div>
+<p>A big, dramatic French brasserie with a gorgeous room and a menu of steak frites, seafood, and cocktails. Traveler reviews run strong, especially for pre-Broadway meals and girls' trips. Very popular and somewhat scene-y &mdash; book ahead and dress with intention.</p>
+<a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=La+Grande+Boucherie+145+W+53rd+St+New+York" target="_blank" rel="noopener">&#x1F4CD; View on Google Maps &mdash; 145 W 53rd St</a>
+
+<h3>The Polo Bar</h3>
+<div class="tag-row"><span class="tag">American Classic</span><span class="tag">Special Occasion</span><span class="tag gold">Reservations Required</span></div>
+<p>Ralph Lauren's polished, clubby American restaurant &mdash; leather, dark wood, the atmosphere of a private club that decided to let the public in. Reservations are notoriously difficult to get, and the price reflects what you're paying for: the full experience, not just the food.</p>
+<a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=The+Polo+Bar+1+E+55th+St+New+York" target="_blank" rel="noopener">&#x1F4CD; View on Google Maps &mdash; 1 E 55th St</a>
+
+<h3>Monkey Bar</h3>
+<div class="tag-row"><span class="tag">Old New York</span><span class="tag">Cocktails</span><span class="tag gold">Reservations Needed</span></div>
+<p>A classic New York supper club with murals, a jazzy atmosphere, and old-school glamour that hasn't been renovated into sterility. Good cocktails, the kind of room where you take your time.</p>
+<a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Monkey+Bar+60+E+54th+St+New+York" target="_blank" rel="noopener">&#x1F4CD; View on Google Maps &mdash; 60 E 54th St</a>
+
+<div class="divider"></div>
+<h2>The NoMad &amp; Flatiron Edge</h2>
+<span class="tagline">South of 34th Street, the dining gets a little quieter and a lot more local-feeling.</span>
+
+<div class="pmtp-band mist">
+  <h4>La Pecora Bianca NoMad &mdash; 1133 Broadway</h4>
+  <p>Bright, stylish Italian on Broadway &mdash; good pasta, wine, and a polished-casual atmosphere that works equally well for a solo dinner or a table of four. Less touristy than Theater District Italian. Reservations help at peak times.</p>
+  <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=La+Pecora+Bianca+1133+Broadway+New+York" target="_blank" rel="noopener">&#x1F4CD; View on Google Maps</a>
+</div>
+
+<div class="pmtp-band sand">
+  <h4>Ci Siamo &mdash; 440 W 33rd St</h4>
+  <p>Upscale Italian near Hudson Yards with house-made pastas and wood-fired cooking. Locals often recommend it when people ask for better Midtown-adjacent Italian. Reservations can be competitive &mdash; plan ahead.</p>
+  <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Ci+Siamo+440+W+33rd+St+New+York" target="_blank" rel="noopener">&#x1F4CD; View on Google Maps</a>
+</div>
+
+<div class="pmtp-band mist">
+  <h4>Eataly NYC Flatiron &mdash; 200 Fifth Ave</h4>
+  <p>Italian marketplace with restaurants, counters, coffee, gelato, wine, and shopping. More of an experience than a single meal &mdash; ideal for flexible groups and casual lunches. Very busy; reservations help for the sit-down restaurants inside.</p>
+  <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Eataly+200+Fifth+Ave+New+York" target="_blank" rel="noopener">&#x1F4CD; View on Google Maps</a>
+</div>
+
+<div class="divider"></div>
+<h2>Find Your Dinner in 30 Seconds</h2>
+<span class="tagline">The right restaurant for tonight depends on exactly one question: what does tonight need to be?</span>
+
+<div class="qr-grid">
+  <div class="qr-card"><h4>Graduation / Special Occasion</h4><p>Keens &middot; Le Rock &middot; La Grande Boucherie &middot; Gabriel Kreuther</p></div>
+  <div class="qr-card"><h4>Casual First Night</h4><p>La Pecora Bianca &middot; Jongro BBQ &middot; Los Tacos No. 1</p></div>
+  <div class="qr-card"><h4>Breakfast Near the Hotel</h4><p>Best Bagel &amp; Coffee &middot; Liberty Bagels &middot; Angelina Bakery</p></div>
+  <div class="qr-card"><h4>Pre-Broadway Dinner</h4><p>Tony's Di Napoli &middot; Carmine's &middot; La Grande Boucherie &middot; Junior's</p></div>
+  <div class="qr-card"><h4>The Full Splurge</h4><p>Le Bernardin &middot; The Modern &middot; Gabriel Kreuther</p></div>
+  <div class="qr-card"><h4>Most Local-Feeling Area</h4><p>Koreatown &mdash; W 32nd St between 5th &amp; 6th Ave</p></div>
+</div>
+
+<div class="divider"></div>
+<h2>Before You Go</h2>
+<span class="tagline">A few things worth knowing before you sit down.</span>
+
+<div class="pmtp-band sand"><h4>Reservations</h4><p>Book ahead for: Keens, Le Rock, Gabriel Kreuther, The Modern, Le Bernardin, La Grande Boucherie, Ci Siamo, The Polo Bar, and Monkey Bar. For fine dining, book as early as possible &mdash; some of these fill weeks out.</p></div>
+<div class="pmtp-band mist"><h4>Tipping</h4><p>Standard NYC dining tip for sit-down service runs 18&ndash;20%. Many restaurants now prompt for 20&ndash;25% on the payment screen &mdash; that's your call, not an obligation.</p></div>
+<div class="pmtp-band sand"><h4>Dress Code</h4><p>Most casual spots are fine in sightseeing clothes. For Le Bernardin, Gabriel Kreuther, The Modern, The Polo Bar, and Monkey Bar, treat it as a nicer-outfit evening.</p></div>
+<div class="pmtp-band mist"><h4>Getting Around at Night</h4><p>The hotel area is very walkable. After a late show, or for blocks near Penn Station or Port Authority, Uber is a perfectly reasonable call.</p></div>
+<div class="pmtp-band sand"><h4>The Times Square Rule</h4><p>Restaurants survive in Times Square because of location, not quality. Eat before or after your show slightly outside Times Square &mdash; then go enjoy the lights without letting dinner become the souvenir you regret.</p></div>
+
+<div class="pmtp-footer">
+  <div style="font-family:'Fraunces',serif;font-size:20px;font-weight:600;">Andrea Gunter</div>
+  <div style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink-soft);font-size:15px;margin-bottom:14px;">Travel Advisor</div>
+  <div style="font-size:14px;margin-bottom:4px;"><a id="pmtpEmailLink" href="#"></a></div>
+  <div style="font-size:14px;margin-bottom:4px;">409-789-3579</div>
+  <div style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink-soft);font-size:14px;margin-top:14px;">Point Me to Paradise Travel</div>
+</div>
+
+<div class="pmtp-disclaimer">
+  <span>Important &mdash; please read</span>
+  This guide is provided for informational purposes only. Locations, hours, conditions, and recommendations can change without notice. Point Me to Paradise Travel, the advisor named in this guide, and the authors of this content are not liable for any injury, illness, loss, theft, or harm of any kind arising from your visit to any location or participation in any activity referenced here. By using this guide, you accept full personal responsibility for your own safety.
+</div>
+
+</div>
+<script>
+(function(){
+  var l="andrea",d="pointmetoparadise.com";
+  var a=l+"\u0040"+d;
+  var el=document.getElementById("pmtpEmailLink");
+  if(el){el.href="mailto:"+a;el.textContent=a;}
+})();
+</script>
+</body>
+</html>
