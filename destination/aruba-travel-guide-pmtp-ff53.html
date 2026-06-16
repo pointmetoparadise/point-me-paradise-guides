@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aruba — Point Me to Paradise Travel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --aqua-pale:#C4E4E1;--aqua-mist:#EAF3F2;--aqua:#75AFB1;--aqua-dark:#4F8A8C;
+  --sand-light:#F4F1E9;--warm-sand:#F5EFE4;--gold-whisper:#D6C8A8;--white:#FFFFFF;--paper:#F9F6F1;
+  --ink:#2B2420;--ink-soft:#6B6359;--line:#E6DFD5;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.75;color:var(--ink);background:var(--paper);}
+a{color:var(--aqua-dark);text-decoration:none;}
+a:hover{text-decoration:underline;}
+h1,h2,h3{font-family:Fraunces,serif;font-weight:600;color:var(--ink);line-height:1.2;}
+h1{font-size:clamp(26px,5vw,42px);}
+h2{font-size:clamp(20px,4vw,28px);margin-bottom:4px;}
+h3{font-size:clamp(16px,3vw,20px);margin-bottom:6px;}
+h4{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--aqua-dark);margin-bottom:10px;}
+p{margin-bottom:1rem;}
+.cormorant{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(15px,2.8vw,18px);color:var(--ink-soft);line-height:1.5;display:block;margin-bottom:22px;}
+.pmtp-band{padding:22px 26px;border-radius:8px;margin:28px 0;}
+.pmtp-band p:last-child{margin-bottom:0;}
+.map-link{display:inline-block;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;color:var(--aqua-dark);border:1px solid var(--aqua);padding:10px 18px;border-radius:6px;margin-top:10px;transition:background 0.15s;}
+.map-link:hover{background:var(--aqua-pale);text-decoration:none;}
+.entry{padding:22px 0 6px;border-top:1px solid var(--line);}
+.divider{width:56px;height:1px;background:var(--gold-whisper);margin:16px 0 20px;}
+.tip{font-size:13.5px;color:var(--ink-soft);background:var(--sand-light);border-left:3px solid var(--aqua);padding:10px 14px;border-radius:0 6px 6px 0;margin-top:12px;}
+.tag{display:inline-block;font-family:'DM Sans',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:3px 8px;border-radius:3px;vertical-align:middle;margin-left:6px;}
+.tag-go{background:var(--aqua-pale);color:var(--aqua-dark);}
+.tag-local{background:#EDE8DC;color:#5C4D2E;}
+.tag-skip{background:#F5ECEC;color:#7A3030;}
+section{margin-bottom:52px;}
+@media(max-width:640px){
+  body{font-size:15px;}
+  .pmtp-hero{padding:44px 20px 36px;margin:-24px -20px 24px;}
+  .pmtp-band{padding:18px 16px;}
+  h2{font-size:20px;}
+  h3{font-size:17px;}
+  .pmtp-footer{border-radius:8px;padding:24px 20px;}
+  .map-link{display:block;text-align:center;}
+}
+</style>
+</head>
+<body>
+<div style="max-width:680px;margin:0 auto;padding:0 20px;">
+
+<div class="pmtp-hero" style="background-image:linear-gradient(180deg,rgba(255,255,255,0.45),rgba(196,228,225,0.55) 35%,rgba(245,239,228,0.80) 68%,rgba(249,246,240,0.97));padding:clamp(40px,8vw,78px) 32px clamp(36px,6vw,60px);text-align:center;margin:-48px -28px 32px;border-bottom:1px solid var(--line);">
+  <div style="font-family:Fraunces,serif;font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--aqua-dark);margin-bottom:22px;">Point Me to Paradise Travel</div>
+  <h1>Aruba</h1>
+  <div style="width:60px;height:1px;background:var(--gold-whisper);margin:18px auto;"></div>
+  <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(17px,3.5vw,21px);max-width:620px;margin:0 auto;">A desert island with the Caribbean's most reliably calm water — warm, safe, and worth knowing beyond the resort strip.</p>
+</div>
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Aruba_California_lighthouse.jpg/1280px-Aruba_California_lighthouse.jpg" alt="California Lighthouse rising above Aruba's desert northwest coast" style="width:100%;max-height:460px;object-fit:cover;border-radius:0;display:block;margin-bottom:32px;" loading="lazy">
+
+
+<!-- ORIENTATION -->
+<section id="orientation">
+  <h2>Orientation &amp; Character</h2>
+  <span class="cormorant">Aruba is not the Caribbean you expect — it's drier, safer, and more interesting than the brochure version.</span>
+
+  <p>The island sits 18 miles off the Venezuelan coast, far enough south to miss the hurricane belt entirely. That single geographic fact is worth more than it sounds: you can book August travel here without watching weather satellites all summer. The northeast trade winds blow steady and consistent year-round, keeping temperatures around 82°F and the humidity tolerable.</p>
+
+  <p>What surprises most first-time visitors is that Aruba is a desert. The interior — called the <em>mondi</em> — is scrubby, sun-baked terrain with towering cacti and divi-divi trees permanently bent southwest by the wind. The calm turquoise water that draws most visitors occupies the western shore. The north and east coasts face open Atlantic and are not for swimming. That divide between coasts shapes almost every decision you'll make on the island.</p>
+
+  <p>Culturally, the island is a blend of Dutch colonial governance, Spanish Caribbean flavor, indigenous Caquetío roots, and a working-class history tied to oil refining. The native language is <strong>Papiamento</strong> — a creole of Spanish, Portuguese, Dutch, and African languages — though English, Dutch, and Spanish are all widely spoken. You will have no trouble communicating anywhere on the island.</p>
+
+  <div class="pmtp-band" style="background:var(--aqua-mist);">
+    <h4>Getting Around</h4>
+    <p>Rent a car if you plan to see more than the resort corridor — it's the only practical way to reach Arikok National Park, San Nicolas, and the north coast. The Arubus public bus runs for about $2.60 per trip; a free trolley loops through central Oranjestad. The island is 21 miles end-to-end, roads are easy, and roundabouts handle most of the navigation. Taxis are available but get expensive quickly on longer routes.</p>
+  </div>
+
+  <h3 style="margin-top:28px;">The Six Zones</h3>
+  <div class="divider"></div>
+
+  <div class="entry">
+    <h3>Oranjestad <span class="tag tag-go">Go</span></h3>
+    <p>The capital. Colorful Dutch-colonial facades run along the harbor, and the free trolley loops through the main shopping and museum district. Daytime Oranjestad rewards a few hours of wandering — the Floating Market, the Royal Plaza's gold-domed facade, the small archaeological museum. Tuesday nights, Fort Zoutman fills with music and food for the weekly Bon Bini Festival.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Oranjestad+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="entry">
+    <h3>Palm Beach</h3>
+    <p>The high-rise hotel strip. Casinos, beach bars, watersports concessions, active nightlife — and the island's highest prices and densest crowds. If you want everything within walking distance and don't mind paying a premium for it, Palm Beach delivers. Plan to eat elsewhere, though. The resort restaurant corridor is expensive and largely interchangeable.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Palm+Beach+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="entry">
+    <h3>Eagle Beach <span class="tag tag-go">Go</span></h3>
+    <p>Wider and quieter than Palm Beach, just to the south. Low-rise hotels face the shore here, and the beach itself — TripAdvisor's third-ranked in the world as recently as 2026 — earns that rating. The two Fofoti trees at the water's edge are the most photographed objects on the island. Sea turtles nest here in season. Come at sunrise before the chairs fill.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Eagle+Beach+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+    <div class="tip">Eagle Beach is public and free. Parking is available in a lot nearby — no resort day pass required.</div>
+  </div>
+
+  <div class="entry">
+    <h3>Noord</h3>
+    <p>The residential district surrounding Palm Beach. Vacation rentals here run significantly cheaper than beachfront hotels, and local restaurants tucked into its streets offer better food at lower prices than anything on the resort strip. A practical base if you have a car.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Noord+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="entry">
+    <h3>San Nicolas <span class="tag tag-local">Worth the Drive</span></h3>
+    <p>Aruba's second city, 30 minutes south of Palm Beach. A former oil refinery town that has rebuilt itself through art — Forbes named it the Street Art Capital of the Caribbean. Most resort visitors never make it here. That's their loss: the murals are extraordinary, the energy is genuinely local, and Charlie's Bar alone justifies the drive.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=San+Nicolas+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="entry">
+    <h3>Savaneta <span class="tag tag-local">Local Favorite</span></h3>
+    <p>A quiet fishing village on the south coast. Its main draw is Zeerover — a counter-service seafood shack on a working fishing pier that locals consider the definitive eating experience on the island. Largely tourist-free and worth the 20-minute drive from Oranjestad.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Savaneta+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+</section>
+
+
+<!-- TOP SIGHTS -->
+<section id="sights">
+  <h2>Top Sights &amp; Experiences</h2>
+  <span class="cormorant">Beyond the western beaches, the island rewards anyone willing to drive ten minutes in any other direction.</span>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Aruba_Lighthouse_at_sunset_01.jpg/1280px-Aruba_Lighthouse_at_sunset_01.jpg" alt="California Lighthouse at sunset on Aruba's western coastline" style="width:100%;max-height:320px;object-fit:cover;border-radius:8px;display:block;margin:0 0 20px;" loading="lazy">
+
+  <div class="entry">
+    <h3>Eagle Beach <span class="tag tag-go">Go</span></h3>
+    <p>The widest stretch of sand on the island. The two Fofoti trees at the waterline lean southwest — bent by the same trade winds that shape every tree on Aruba — and they've anchored more photographs than any other spot on the island. The water is calm and clear. Sea turtles nest here in season. Arrive early before the palapas fill, or return in late afternoon when the light softens and the crowds thin.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Eagle+Beach+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="entry">
+    <h3>Arikok National Park <span class="tag tag-go">Go</span></h3>
+    <p>Nearly 20% of the island falls within this protected park. Inside you'll find ancient Arawak cave drawings, the Natural Pool at Conchi, towering cacti, limestone cliffs, and Mount Jamanota — Aruba's high point at 617 feet with 360-degree views from the top. Over 20 miles of marked trails run through the park; the Miralamar and Cunucu Arikok routes are the most accessible on foot. The desert sun offers no mercy from late morning onward — go early and bring more water than you think you'll need.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Arikok+National+Park+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+    <div class="tip">A small entrance fee supports conservation. Guided hikes can be arranged directly through the park at +297 585-1234. 4WD is required for some interior routes including Conchi.</div>
+  </div>
+
+  <div class="entry">
+    <h3>California Lighthouse <span class="tag tag-go">Go</span></h3>
+    <p>Built in 1916 on a limestone plateau at the island's northwest tip, named after the SS California — a steamship that wrecked on this coast in 1910. The lighthouse still operates. From the surrounding hilltop, the view covers the entire western shoreline, the sand dunes, and, on clear days, Venezuela. Sunset here is worth planning around. Open daily 9am–7pm; $5 admission.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=California+Lighthouse+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+    <div class="tip">Arashi Beach is a five-minute walk from the lighthouse — calm, shallow water and good snorkeling with far fewer people than Palm Beach.</div>
+  </div>
+
+  <div class="entry">
+    <h3>Fort Zoutman &amp; the Bon Bini Festival <span class="tag tag-go">Go</span></h3>
+    <p>Aruba's oldest standing structure, built in 1798. The small historical museum inside covers the island's colonial past and is worth an hour in the morning. Tuesday nights, the courtyard comes alive with the Bon Bini Festival — local music, dance, food stalls, and craft vendors. It runs every week, all year, at low or no admission. Don't let anything bump it off your schedule.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Fort+Zoutman+Oranjestad+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="entry">
+    <h3>Natural Pool — Conchi <span class="tag tag-go">Go</span></h3>
+    <p>A rock-rimmed swimming hole on Aruba's wild north coast, sheltered from the open Atlantic by a ring of volcanic boulders. The water inside is calm and warm; ten feet away, waves crash hard against the rocks. You can reach it only by 4WD or guided tour — which limits the crowds. Book a sunrise tour: cooler temperatures, smaller groups, and a real chance of having the pool entirely to yourselves for the first hour.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Natural+Pool+Conchi+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="entry">
+    <h3>Baby Beach <span class="tag tag-go">Go</span></h3>
+    <p>A circular, shallow lagoon on the southeastern tip of the island. The water is calm enough to wade out chest-deep and still see your feet. Snorkeling along the reef edge is excellent. The crowd here is mostly local families and a handful of visitors who bothered to make the 30-minute drive south — the vibe is unhurried and the setting is genuinely lovely.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Baby+Beach+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="entry">
+    <h3>San Nicolas Street Art</h3>
+    <p>Since the first Aruba Art Fair in 2016, muralists have covered the facades of San Nicolas with hundreds of large-scale works — lionfish, flamingos, Aruban faces, optical illusions that warp the building's geometry. Walking the streets here feels like moving through a constantly expanding outdoor gallery. Pick up a free tour map at the local tourism office, or simply wander. New work goes up every year at the fall fair.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=San+Nicolas+Street+Art+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+    <div class="tip">Start at the main square — the most significant murals are concentrated within a few walkable blocks.</div>
+  </div>
+
+  <div class="entry">
+    <h3>Ayo &amp; Casibari Rock Formations</h3>
+    <p>Giant boulders rising improbably from the flat desert interior. Ayo holds ancient Arawak petroglyphs carved into the rock faces. Casibari has a staircase you can climb for broad views across the island. Neither site requires more than 45 minutes, and they pair well together as a half-morning alongside Arikok.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Ayo+Rock+Formations+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="entry">
+    <h3>Flamingo Beach — Renaissance Island <span class="tag tag-local">Local Note</span></h3>
+    <p>Pink flamingos — not native to Aruba, but long established here — roam freely on the small private island attached to the Renaissance Resort in Oranjestad. Access is limited to resort guests or day-pass buyers. The setting is unusual enough to be genuinely interesting, not just photogenic.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Renaissance+Island+Aruba+Flamingo+Beach" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="entry">
+    <h3>Donkey Sanctuary Aruba <span class="tag tag-local">Local Favorite</span></h3>
+    <p>Donkeys were once the island's primary mode of transport. After an illness wiped out most of the population, this rescue sanctuary in Santa Cruz became their safe haven. You can walk among them in an enclosed area and hand-feed them from an approved porch. Bring apples or carrots. Genuinely charming and worth the hour it takes.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Donkey+Sanctuary+Aruba+Santa+Cruz" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="entry">
+    <h3>Aruba Aloe Factory &amp; Museum</h3>
+    <p>Before oil, aloe was Aruba's primary export — the island was once called the Island of Aloes. The factory tour walks you through the cutting room, testing lab, and processing floor, with samples at several stops. The attached store is the most reliable place on the island to buy aloe products. Allow an hour.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Aruba+Aloe+Factory+Museum" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="pmtp-band" style="background:var(--warm-sand);">
+    <h4>Carnival — February</h4>
+    <p>The largest event on the island's calendar. Multi-week celebrations build to the Grand Parade through Oranjestad — steel bands, elaborate costumes, floats. If your trip overlaps with Carnival, build your schedule around it rather than around anything else. Accommodation books out months in advance and rates spike significantly. If you're traveling specifically for Carnival, plan six months ahead.</p>
+  </div>
+</section>
+
+
+<!-- FOOD & DRINK -->
+<section id="food">
+  <h2>Food &amp; Drink</h2>
+  <span class="cormorant">Aruban cooking is a creole in the truest sense — centuries of Dutch, African, Spanish, and Latin American flavors that became something entirely their own.</span>
+
+  <p>The food here follows the island's history. Dutch colonial influence brought Gouda and dairy into a Caribbean kitchen already shaped by African stewing traditions and Spanish flavors drifting over from the Venezuelan coast. The oil-boom years of the early twentieth century added Indonesian and Latin American workers to the mix. The result is a cuisine you won't find replicated anywhere else.</p>
+
+  <div class="pmtp-band" style="background:var(--aqua-mist);">
+    <h4>Dishes Worth Knowing Before You Order</h4>
+    <p><strong>Keshi Yena</strong> is the national dish — a hollowed Gouda rind stuffed with spiced meat, olives, and raisins, then baked until the cheese melds into the filling. <strong>Pastechi</strong> are fried pastry pockets, Aruba's version of the empanada, filled with cheese, tuna, or chicken. <strong>Funchi</strong> is cornmeal polenta, the standard starch alongside fish stews. <strong>Pan Bati</strong> is a slightly sweet cornmeal flatbread. <strong>Carni Stoba</strong> is slow-braised beef, deeply savory; <strong>Calco Stoba</strong> is conch stew, briny and sweet, served over rice. Order grilled or fried red snapper with plantain and funchi whenever it appears on a menu. <strong>Sopi di Jambo</strong> is okra soup — an Afro-Caribbean dish that turns up across the island.</p>
+  </div>
+
+  <div class="entry">
+    <h3>Zeerover <span class="tag tag-local">Local Favorite</span></h3>
+    <p>On a working fishing pier in Savaneta, 20 minutes south of Oranjestad. This is counter-service seafood at its most honest: you walk up, order fish by the pound — whatever came off the boat that morning, wahoo or snapper or barracuda — and eat at a picnic table over the water while the fishing boats come and go. The menu changes daily. The experience doesn't. Wednesday through Sunday, 11am–9pm.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Zeerover+Restaurant+Savaneta+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+    <div class="tip">Bring cash. Arrive before noon on weekends or you'll wait. This is the most consistently recommended restaurant on the island by locals.</div>
+  </div>
+
+  <div class="entry">
+    <h3>Taste My Aruba</h3>
+    <p>A 100-year-old heritage house in downtown Oranjestad with an open-air courtyard. Owners Nathaly de Mey and chef Derwin Tromp build the menu around whatever was caught locally that day — the lobster pasta and ceviche are standouts. One of the few places on the island where the food and the setting feel genuinely matched to each other.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Taste+My+Aruba+Oranjestad" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="entry">
+    <h3>Gasparito Restaurant <span class="tag tag-go">Go</span></h3>
+    <p>Set in a restored cunucu — an Aruban country house — with candlelit tables and thick walls. The menu leans traditional: keshi yena, carni stoba, fresh seafood. This is the right choice for a proper sit-down dinner that tastes like Aruba rather than a generic Caribbean resort.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Gasparito+Restaurant+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="entry">
+    <h3>Pika's Corner <span class="tag tag-local">Local Favorite</span></h3>
+    <p>Near Palm Beach but cooking local. Carni stoba, calco stoba, and the house specialty: skewered meats — chicken, beef, shrimp, pork — served vertically on wooden platters. Open from breakfast through dinner, Monday through Saturday, 7:30am–10pm.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Pika%27s+Corner+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="entry">
+    <h3>Red Fish Aruba</h3>
+    <p>Founded by local fisherman Herby Merryweather. Steak-cut fish by the pound, conch stew, keshi yena, and a tres leches dessert that's earned its own following. Reviewers consistently mention the sangria and the generously sized portions.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Red+Fish+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="entry">
+    <h3>Charlie's Bar, San Nicolas <span class="tag tag-local">Local Favorite</span></h3>
+    <p>One of the most storied bars in the Caribbean. Decades of visitors have covered every wall and most of the ceiling with memorabilia — pennants, license plates, signed napkins, faded photographs. The food is secondary to the experience. Have a drink, look at the walls, and talk to whoever's sitting beside you.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Charlie%27s+Bar+San+Nicolas+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="entry">
+    <h3>Munchies Aruba</h3>
+    <p>The brunch option most visitors overlook. The zucchini waffle and "Webo Ockels" — a local egg preparation — are the signature dishes. Good coffee, a fun interior, and prices well below the resort-strip equivalent. Recently opened and already drawing consistent praise.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Munchies+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="pmtp-band" style="background:var(--warm-sand);">
+    <h4>Drinks</h4>
+    <p><strong>Coecoei</strong> is the local cactus liqueur — bright red and intensely sweet, it shows up in rum punches across the island. <strong>Balashi</strong> is the local lager, brewed with desalinated water; the Pilsner is the right order. The Ritz-Carlton's bar makes cocktails with Aruban aloe. One practical note: Aruba's tap water is produced by one of the largest desalination plants in the Western Hemisphere and meets WHO quality standards. Drink it freely.</p>
+  </div>
+</section>
+
+
+<!-- OUTDOOR & NATURE -->
+<section id="outdoor">
+  <h2>Outdoor &amp; Nature</h2>
+  <span class="cormorant">The calm western shore and the wild northeastern coast are essentially two different islands — each worth a day of your trip.</span>
+
+  <div class="entry">
+    <h3>Snorkeling — Arashi Beach &amp; Boca Catalina <span class="tag tag-go">Go</span></h3>
+    <p>The clearest water and most abundant reef fish on the island are in the north, around Arashi Beach and Boca Catalina. Baby Beach on the southeast tip is equally good and less visited. Bring your own gear if possible — rental sets from beach vendors vary considerably in quality.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Arashi+Beach+Aruba" target="_blank" class="map-link">Arashi Beach on Google Maps</a>
+  </div>
+
+  <div class="entry">
+    <h3>Scuba Diving — SS Antilla Wreck <span class="tag tag-go">Go</span></h3>
+    <p>The largest shipwreck in the Caribbean — a German cargo ship scuttled in 1940 — lies in roughly 60 feet of water off the northwest coast near Malmok. Accessible to both experienced divers and snorkelers who can cover the surface distance. Multiple operators run daily trips. If you dive, this is the one.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=SS+Antilla+Wreck+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="entry">
+    <h3>Windsurfing &amp; Kitesurfing — Fishermen's Huts <span class="tag tag-go">Go</span></h3>
+    <p>The stretch of beach north of Palm Beach near Hadicurari is a legitimate venue for competitive-level windsurfing. The northeast trade winds are strong, steady, and predictable; Aruba hosts the international Hi-Winds competition here every July. Lessons are available for beginners. Even if you have no interest in getting on a board, watching from the beach is worth a stop.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Hadicurari+Beach+Aruba+Fishermen+Huts" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="entry">
+    <h3>Catamaran Sailing</h3>
+    <p>Several operators run sunset sails out of Palm Beach — typically two to three hours, combining a reef snorkel stop with open-bar sailing on the return. They fill up in high season; book a day or two in advance.</p>
+  </div>
+
+  <div class="entry">
+    <h3>Hiking — Arikok National Park</h3>
+    <p>More than 20 miles of marked trails through desert terrain: cacti, dry riverbeds, limestone formations. The Miralamar and Cunucu Arikok trails are the most accessible on foot. At Mount Jamanota's summit you get an unobstructed view of the entire island. Start by 7am — the sun is severe from late morning onward, and there is almost no shade on the trail.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Arikok+National+Park+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="entry">
+    <h3>Fontein &amp; Quadirikiri Caves</h3>
+    <p>Inside Arikok, these caves hold ancient rock drawings left by the Arawak and Caquetío peoples. Bats live in both caves, which adds something to the atmosphere. Neither requires a long hike to reach, and the drawings are well worth examining up close.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Fontein+Cave+Arikok+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="entry">
+    <h3>Bubali Bird Sanctuary <span class="tag tag-local">Local Favorite</span></h3>
+    <p>Two freshwater lakes just inland from Eagle Beach that attract over 80 bird species — herons, flamingos, coots among them. Free to visit and best at dawn when the birds are active. Most visitors staying along Eagle Beach walk right past it without realizing it's there.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Bubali+Bird+Sanctuary+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="entry">
+    <h3>Bushiribana Gold Mill Ruins</h3>
+    <p>Nineteenth-century gold mill ruins on the north coast, set above the crashing Atlantic. A short walk from the parking area. The sea views are the real draw; the ruins themselves take about 20 minutes to take in.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Bushiribana+Gold+Mill+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="pmtp-band" style="background:var(--aqua-mist);">
+    <h4>Sunrise at Conchi — The Practical Version</h4>
+    <p>Multiple operators offer small-group guided sunrise hikes to the Natural Pool. The trail crosses open desert — punishing in the midday heat, entirely manageable at dawn. Small group sizes mean you may reach the pool before anyone else does. This is the one early morning the alarm is worth it.</p>
+  </div>
+</section>
+
+
+<!-- SHOPPING -->
+<section id="shopping">
+  <h2>Shopping &amp; Markets</h2>
+  <span class="cormorant">Aruba is a genuine duty-free port, and the savings on perfume, spirits, and jewelry are real.</span>
+
+  <div class="entry">
+    <h3>Caya G.F. Betico Croes — Main Street</h3>
+    <p>Oranjestad's main shopping corridor. Duty-free perfume, Dutch Delft pottery, Penha cosmetics (MAC, Lancôme, Chanel, Dior), Cuban cigars, Dutch cheeses and licorice, local aloe products, and jewelry. Best explored on foot in the morning before the cruise ships dock and the streets fill.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Caya+G.F.+Betico+Croes+Oranjestad+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="entry">
+    <h3>Royal Plaza Mall <span class="tag tag-go">Go</span></h3>
+    <p>The most-photographed building in Oranjestad — a pastel Dutch colonial facade with a gold dome right on the harbor. Three levels of boutiques, jewelry, and souvenir shops. The architecture alone is worth seeing even if you don't buy anything.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Royal+Plaza+Mall+Oranjestad+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="entry">
+    <h3>Cosecha — Oranjestad &amp; San Nicolas</h3>
+    <p>A government-backed platform selling certified authentic Aruban crafts and artwork. If you want a souvenir that was actually made on the island, this is the only reliably honest source. Locations in both Oranjestad and San Nicolas.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Cosecha+Oranjestad+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="entry">
+    <h3>Floating Market, Oranjestad <span class="tag tag-local">Local Favorite</span></h3>
+    <p>Venezuelan boats tied up at the harbor, selling fresh produce, fish, and spices directly off the deck. Lively and photogenic, this is everyday commerce rather than a staged market experience — and a good place to pick up cheap fruit or local spices.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Floating+Market+Oranjestad+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="entry">
+    <h3>Renaissance Marketplace</h3>
+    <p>Open-air waterfront complex in Oranjestad with restaurants, bars, and shops. More useful as a dining and evening destination than a shopping one — but Friday nights bring a local artisans' market, and live music runs on most evenings.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Renaissance+Marketplace+Oranjestad+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="pmtp-band" style="background:var(--warm-sand);">
+    <h4>What to Buy</h4>
+    <p>Aruba Aloe products are the island's most distinctive export — buy them at the factory store or at Cosecha for the widest selection. Dutch Gouda and Dutch licorice are genuinely good here and travel well. Coecoei liqueur makes an unusual and unmistakably Aruban gift. For anything presented as a locally made craft at a street stall in Oranjestad, ask directly where it was produced — most street vendor goods are imported.</p>
+  </div>
+</section>
+
+
+<!-- BEYOND THE RESORT STRIP -->
+<section id="beyond">
+  <h2>Beyond the Resort Strip</h2>
+  <span class="cormorant">The places that don't appear on the hotel activity board — and are better for it.</span>
+
+  <div class="entry">
+    <h3>Arashi Beach</h3>
+    <p>A five-minute drive from the California Lighthouse. Calm, shallow water, good snorkeling, and the lighthouse as a photographic backdrop. Far less visited than Palm Beach and considerably better for getting into the water without navigating a field of resort chairs.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Arashi+Beach+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="entry">
+    <h3>Mango Halto Beach</h3>
+    <p>A quiet beach south of the airport with coral formations beginning right off the shoreline. Bring your own snorkel gear. No concessions, no crowds. If underwater visibility is what you're after and you're willing to drive, this delivers.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Mango+Halto+Beach+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="entry">
+    <h3>Alto Vista Chapel</h3>
+    <p>A small yellow Catholic chapel on a windswept hilltop in the island's north. One of the oldest churches in Aruba. The drive up is easy; the view from the top is quiet and wide. Few visitors make the detour — which is exactly why it's worth taking.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Alto+Vista+Chapel+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="entry">
+    <h3>Boca Prins</h3>
+    <p>A dune-backed beach on Aruba's eastern coast inside Arikok Park. The surf here is too rough and the currents too unpredictable — this is not a swimming beach, and that's not a soft warning. Stay out of the water. But the landscape is unlike anything else on the island, and leatherback turtles nest along this stretch in season. Come to look.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Boca+Prins+Beach+Aruba" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="entry">
+    <h3>National Archaeological Museum, Oranjestad</h3>
+    <p>Schelpstraat 42. A small museum covering thousands of years of Caquetío history through interactive, bilingual exhibits. Most visitors walk right past it. Allow an hour and come before the cruise ship crowds hit the downtown streets in late morning.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=National+Archaeological+Museum+Aruba+Oranjestad" target="_blank" class="map-link">View on Google Maps</a>
+  </div>
+
+  <div class="pmtp-band" style="background:var(--aqua-mist);">
+    <h4>Local Knowledge Worth Having</h4>
+    <p>The divi-divi tree always points southwest, bent permanently by the trade winds — it functions as a compass anywhere on the island. During Easter week, local families camp overnight on Eagle Beach, a community tradition that has gone on for generations. Learn three phrases in Papiamento before you arrive: <em>Bon dia</em> (good morning), <em>Bon nochi</em> (good night), <em>Masha danki</em> (thank you very much). Locals notice and appreciate the effort.</p>
+  </div>
+</section>
+
+
+<!-- PRACTICAL -->
+<section id="practical">
+  <h2>Practical Information</h2>
+  <span class="cormorant">Everything worth knowing before you land.</span>
+
+  <table style="width:100%;border-collapse:collapse;font-size:15px;margin-top:4px;">
+    <tr style="border-top:1px solid var(--line);">
+      <td style="padding:14px 16px 14px 0;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-soft);width:120px;vertical-align:top;font-family:'DM Sans',sans-serif;">Best Time</td>
+      <td style="padding:14px 0;vertical-align:top;"><strong>December–April</strong> is high season: near-perfect weather, higher prices, fuller hotels. <strong>June–July</strong> works well for families on school schedules — weather holds and rates drop. Aruba sits outside the hurricane belt, making August lower-risk than most Caribbean alternatives even during storm season.</td>
+    </tr>
+    <tr style="border-top:1px solid var(--line);background:var(--warm-sand);">
+      <td style="padding:14px 16px 14px 0;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-soft);vertical-align:top;font-family:'DM Sans',sans-serif;">How Long</td>
+      <td style="padding:14px 0;vertical-align:top;"><strong>5–7 days</strong> is the right range. Three days covers the highlights if you're time-constrained. A week or more lets you slow down, explore the national park properly, and still have beach days to spare.</td>
+    </tr>
+    <tr style="border-top:1px solid var(--line);">
+      <td style="padding:14px 16px 14px 0;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-soft);vertical-align:top;font-family:'DM Sans',sans-serif;">Getting There</td>
+      <td style="padding:14px 0;vertical-align:top;">Queen Beatrix International Airport (AUA) in Oranjestad. Direct flights from Houston, Dallas, New York, Miami, and Atlanta, among other US cities. Most US travelers are looking at a 4–5 hour flight.</td>
+    </tr>
+    <tr style="border-top:1px solid var(--line);background:var(--warm-sand);">
+      <td style="padding:14px 16px 14px 0;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-soft);vertical-align:top;font-family:'DM Sans',sans-serif;">Currency</td>
+      <td style="padding:14px 0;vertical-align:top;">Aruban Florin (AWG), fixed at roughly 1.79 to the US dollar. <strong>US dollars are widely accepted</strong> and often preferred. Credit cards work almost everywhere. ATMs are readily available across the island.</td>
+    </tr>
+    <tr style="border-top:1px solid var(--line);">
+      <td style="padding:14px 16px 14px 0;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-soft);vertical-align:top;font-family:'DM Sans',sans-serif;">Language</td>
+      <td style="padding:14px 0;vertical-align:top;">Papiamento (native), Dutch (official), English and Spanish (widely spoken). English works reliably throughout the tourist zone and in most restaurants and shops.</td>
+    </tr>
+    <tr style="border-top:1px solid var(--line);background:var(--warm-sand);">
+      <td style="padding:14px 16px 14px 0;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-soft);vertical-align:top;font-family:'DM Sans',sans-serif;">Safety</td>
+      <td style="padding:14px 0;vertical-align:top;">One of the safest destinations in the Caribbean. Palm Beach, Eagle Beach, and the Oranjestad waterfront are well-patrolled. Standard urban caution applies in downtown Oranjestad after dark. Petty theft from unattended bags and rental car interiors is the primary reported risk — don't leave valuables visible in a parked car.</td>
+    </tr>
+    <tr style="border-top:1px solid var(--line);">
+      <td style="padding:14px 16px 14px 0;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-soft);vertical-align:top;font-family:'DM Sans',sans-serif;">Water &amp; Health</td>
+      <td style="padding:14px 0;vertical-align:top;">Tap water is safe. The island runs one of the largest desalination plants in the hemisphere and the water meets WHO standards. No malaria risk. The sun is intense at 12 degrees north of the equator — the trade winds make UV exposure easy to underestimate. Reef-safe SPF 50+ is not optional.</td>
+    </tr>
+    <tr style="border-top:1px solid var(--line);background:var(--warm-sand);">
+      <td style="padding:14px 16px 14px 0;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-soft);vertical-align:top;font-family:'DM Sans',sans-serif;">Tipping</td>
+      <td style="padding:14px 0;vertical-align:top;">Not mandatory, but 15–18% is standard at restaurants. Many hotels add service charges automatically — check the bill before adding more.</td>
+    </tr>
+    <tr style="border-top:1px solid var(--line);">
+      <td style="padding:14px 16px 14px 0;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-soft);vertical-align:top;font-family:'DM Sans',sans-serif;">Electricity</td>
+      <td style="padding:14px 0;vertical-align:top;">110V/60Hz — same as the US. No adaptor needed for American travelers.</td>
+    </tr>
+    <tr style="border-top:1px solid var(--line);background:var(--warm-sand);">
+      <td style="padding:14px 16px 14px 0;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-soft);vertical-align:top;font-family:'DM Sans',sans-serif;">Festivals</td>
+      <td style="padding:14px 0;vertical-align:top;"><strong>Carnival</strong> (February, multi-week) · <strong>Soul Beach Music Festival</strong> (May) · <strong>Aruba Hi-Winds</strong> (July) · <strong>Aruba Art Fair</strong> (September, San Nicolas) · <strong>Bon Bini Festival</strong> (every Tuesday, year-round at Fort Zoutman)</td>
+    </tr>
+    <tr style="border-top:1px solid var(--line);">
+      <td style="padding:14px 16px 14px 0;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-soft);vertical-align:top;font-family:'DM Sans',sans-serif;">Booking</td>
+      <td style="padding:14px 0;vertical-align:top;">If you're visiting December through March, book accommodation 3–6 months in advance. High-season hotels fill fast and rates are firm once inventory tightens. The Eagle Beach low-rise zone is quieter and tends to offer better value than Palm Beach while still delivering excellent beach access.</td>
+    </tr>
+  </table>
+</section>
+
+
+<!-- WHAT TO AVOID -->
+<section id="avoid">
+  <h2>What to Avoid</h2>
+  <span class="cormorant">A few things worth knowing before you arrive so you don't spend your first two days figuring them out.</span>
+
+  <div class="entry">
+    <h3 style="color:#7A3030;">Eating every meal on the Palm Beach strip <span class="tag tag-skip">Skip</span></h3>
+    <p>The resort restaurant corridor is expensive and largely interchangeable. You'll eat better and pay considerably less at a local spot in Noord, at Zeerover in Savaneta, or at almost anything in downtown Oranjestad.</p>
+  </div>
+
+  <div class="entry">
+    <h3 style="color:#7A3030;">Skipping San Nicolas entirely <span class="tag tag-skip">Skip</span></h3>
+    <p>Most resort visitors never make the 30-minute drive south. The murals justify the trip on their own. Add Charlie's Bar and Baby Beach to the same day and you have one of the better days you can spend on the island.</p>
+  </div>
+
+  <div class="entry">
+    <h3 style="color:#7A3030;">Buying "authentic crafts" from street vendors <span class="tag tag-skip">Skip</span></h3>
+    <p>Street vendors in Oranjestad frequently sell imported mass-produced goods as local work. If it matters to you that a souvenir was actually made in Aruba, go to Cosecha — it's government-certified and the selection is better.</p>
+  </div>
+
+  <div class="entry">
+    <h3 style="color:#7A3030;">Swimming on the north or east coast <span class="tag tag-skip">Skip</span></h3>
+    <p>The Atlantic-facing coastline has powerful, unpredictable currents, high waves, and sharp coral. These are not swimming conditions at any skill level. Go to look — the scenery is genuinely dramatic — but stay out of the water. All calm swimming beaches are on the western side of the island.</p>
+  </div>
+
+  <div class="entry">
+    <h3 style="color:#7A3030;">Approaching the Natural Bridge ruins <span class="tag tag-skip">Skip</span></h3>
+    <p>A significant section of Aruba's famous Natural Bridge collapsed in 2019. The remaining structure is unstable. The site is still worth visiting to see the coastline from a distance — do not approach or climb on the bridge itself.</p>
+  </div>
+
+  <div class="entry">
+    <h3 style="color:#7A3030;">Hiking to Conchi at midday <span class="tag tag-skip">Skip</span></h3>
+    <p>The trail to the Natural Pool runs through open desert with almost no shade. Midday in summer is genuinely punishing. Book a sunrise tour — cooler temperatures, smaller groups, and you'll likely arrive before the pool fills with other visitors.</p>
+  </div>
+
+  <div class="entry">
+    <h3 style="color:#7A3030;">Relying on taxis if you want to explore <span class="tag tag-skip">Skip</span></h3>
+    <p>Taxis work fine for short trips but get expensive quickly when the places worth seeing are spread across a 21-mile island. If you plan to visit Arikok, San Nicolas, Baby Beach, and the north coast, a rental car pays for itself within two days.</p>
+  </div>
+
+  <div class="entry">
+    <h3 style="color:#7A3030;">Underestimating the sun <span class="tag tag-skip">Skip</span></h3>
+    <p>The trade winds keep Aruba feeling cooler than it is. UV exposure at this latitude is intense, and you'll burn faster than you expect — including on overcast days. Reef-safe SPF 50+ is the right choice, not just a precaution.</p>
+  </div>
+
+  <div class="pmtp-band" style="background:var(--warm-sand);">
+    <h4>A Note on San Nicolas After Dark</h4>
+    <p>San Nicolas is worth visiting during the day and into the early evening. The neighborhood's risk profile at night is higher than in the resort zones — not alarming in absolute terms, but meaningfully different. If you're going after dark, go with others rather than solo and stay on the main commercial streets.</p>
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<div class="pmtp-footer" style="background:var(--sand-light);margin-top:64px;padding:36px 28px;border-radius:12px;">
+  <div style="font-family:Fraunces,serif;font-size:20px;font-weight:600;">Tabitha Garcia</div>
+  <div style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink-soft);font-size:15px;margin-bottom:14px;">Travel Advisor</div>
+  <div style="font-size:14px;margin-bottom:4px;"><a id="pmtpEmailLink" href="#"></a></div>
+  <div style="font-size:14px;margin-bottom:4px;">409.256.7453</div>
+  <div style="font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink-soft);font-size:14px;margin-top:14px;">Point Me to Paradise Travel</div>
+</div>
+
+<div class="pmtp-disclaimer" style="margin-top:28px;padding:22px 26px;background:var(--paper);border:1px solid var(--line);border-radius:8px;font-size:12.5px;line-height:1.7;color:var(--ink-soft);">
+  <span style="display:block;font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);margin-bottom:8px;">Important — please read</span>
+  This guide is provided for informational purposes only. Locations, hours, conditions, and recommendations can change without notice, and ocean, weather, trail, road, and travel conditions can shift quickly and unpredictably. Point Me to Paradise Travel, the advisor named in this guide, and the authors of this content are not liable for any injury, illness, loss, theft, or harm of any kind arising from your visit to any location or participation in any activity referenced here. By using this guide, you accept full personal responsibility for your own safety. Use your own judgment, verify current conditions before any activity, follow all posted warnings and local regulations, and consult qualified professionals — lifeguards, park rangers, licensed guides, medical providers — where appropriate.
+</div>
+
+<div style="height:48px;"></div>
+</div>
+
+<script>(function(){var l="tabitha",d="pointmetoparadise.com";if(!l||!d)return;var a=l+"\u0040"+d;var el=document.getElementById("pmtpEmailLink");if(el){el.href="mailto:"+a;el.textContent=a;}})()</script>
+</body>
+</html>
