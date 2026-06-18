@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Greens · MSC Seascape · Western Caribbean</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --aqua:#B1E6E0;
+  --aqua-soft:#C4E4E1;
+  --sand:#E9DEC0;
+  --gold:#DAC396;
+  --bronze:#C8975A;
+  --teal:#75AFB1;
+  --ink:#2C3A3D;
+  --ink-soft:#5A6A6C;
+  --paper:#FBF8F1;
+  --paper-2:#F4EEE0;
+  --line:rgba(44,58,61,.14);
+  --shadow:0 18px 50px -28px rgba(44,58,61,.45);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',system-ui,sans-serif;
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  font-weight:400;
+}
+.wrap{max-width:880px;margin:0 auto;padding:0 28px}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;
+  background:
+    radial-gradient(120% 80% at 85% 0%, rgba(177,230,224,.55) 0%, rgba(177,230,224,0) 55%),
+    radial-gradient(120% 90% at 0% 100%, rgba(218,195,150,.45) 0%, rgba(218,195,150,0) 50%),
+    linear-gradient(165deg,#FBF8F1 0%,#F4EEE0 100%);
+  border-bottom:1px solid var(--line);
+  overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background-image:
+    repeating-linear-gradient(90deg,transparent 0 38px,rgba(117,175,177,.05) 38px 39px);
+  pointer-events:none;
+}
+.hero-inner{position:relative;padding:74px 0 64px;z-index:1}
+.eyebrow{
+  font-family:'JetBrains Mono',monospace;
+  font-size:11px;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--bronze);margin-bottom:26px;
+}
+.crest{
+  display:inline-flex;align-items:center;gap:11px;
+  font-family:'JetBrains Mono',monospace;font-size:10.5px;
+  letter-spacing:.26em;text-transform:uppercase;color:var(--teal);
+  border:1px solid var(--line);border-radius:100px;
+  padding:8px 16px;margin-bottom:34px;background:rgba(255,255,255,.5);
+}
+.crest .dot{width:6px;height:6px;border-radius:50%;background:var(--aqua);box-shadow:0 0 0 4px rgba(177,230,224,.35)}
+h1.title{
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+  font-size:clamp(44px,8vw,82px);
+  line-height:.98;letter-spacing:-.01em;
+  color:var(--ink);
+}
+h1.title em{font-style:italic;color:var(--teal);font-weight:500}
+.subtitle{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(20px,3.4vw,28px);font-weight:400;font-style:italic;
+  color:var(--ink-soft);margin-top:14px;
+}
+.hero-meta{
+  display:flex;flex-wrap:wrap;gap:10px;margin-top:38px;
+}
+.chip{
+  font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;
+  background:rgba(255,255,255,.7);border:1px solid var(--line);
+  border-radius:8px;padding:9px 14px;color:var(--ink);
+}
+.chip b{color:var(--bronze);font-weight:500}
+
+/* ---------- ROUTE STRIP ---------- */
+.route{
+  background:var(--teal);color:#F4EEE0;padding:30px 0;
+}
+.route-line{display:flex;flex-wrap:wrap;align-items:center;gap:6px 4px;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.05em}
+.route-stop{display:flex;align-items:center;gap:9px;padding:7px 13px;background:rgba(255,255,255,.1);border-radius:7px}
+.route-stop .num{opacity:.6}
+.route-arrow{opacity:.45;padding:0 3px}
+.route strong{color:#fff;font-weight:500}
+
+/* ---------- SECTIONS ---------- */
+section{padding:64px 0}
+section + section{border-top:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;gap:0;margin-bottom:34px}
+.sec-num{
+  font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--bronze);
+  letter-spacing:.2em;padding-top:8px;flex-shrink:0;
+}
+h2{
+  font-family:'Cormorant Garamond',serif;font-weight:500;
+  font-size:clamp(30px,5vw,46px);line-height:1.04;letter-spacing:-.01em;
+}
+h2 em{font-style:italic;color:var(--teal)}
+.lede{font-size:17px;color:var(--ink-soft);max-width:64ch;margin-top:4px}
+
+h3{
+  font-family:'Cormorant Garamond',serif;font-weight:600;
+  font-size:25px;margin:34px 0 10px;color:var(--ink);
+}
+p{margin-bottom:16px;max-width:70ch}
+p strong{font-weight:600;color:var(--ink)}
+a{color:var(--teal);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+
+/* ---------- CARDS ---------- */
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:16px;
+  padding:28px 30px;margin:20px 0;box-shadow:var(--shadow);
+}
+.card.aqua{background:linear-gradient(160deg,#fff 0%,var(--aqua-soft) 130%)}
+.card.sand{background:linear-gradient(160deg,#fff 0%,var(--sand) 150%)}
+.card h3{margin-top:0}
+
+/* perk list */
+.perks{list-style:none;display:grid;gap:2px}
+.perks li{display:flex;gap:14px;padding:14px 0;border-bottom:1px dashed var(--line)}
+.perks li:last-child{border-bottom:none}
+.perks .mark{
+  flex-shrink:0;width:26px;height:26px;border-radius:8px;
+  background:var(--aqua);display:grid;place-items:center;
+  font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink);margin-top:2px;
+}
+.perks .mark.x{background:var(--sand)}
+.perks .txt b{display:block;font-weight:600;margin-bottom:2px}
+.perks .txt span{font-size:14.5px;color:var(--ink-soft)}
+
+/* step flow */
+.steps{counter-reset:step;display:grid;gap:0;margin-top:8px}
+.step{display:flex;gap:20px;padding:22px 0;border-bottom:1px solid var(--line);position:relative}
+.step:last-child{border-bottom:none}
+.step .si{
+  counter-increment:step;flex-shrink:0;
+  width:40px;height:40px;border-radius:50%;
+  border:1.5px solid var(--teal);color:var(--teal);
+  display:grid;place-items:center;font-family:'JetBrains Mono',monospace;
+  font-size:14px;background:var(--paper);
+}
+.step .si::before{content:counter(step,decimal-leading-zero)}
+.step .sc b{display:block;font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;margin-bottom:4px}
+.step .sc p{margin-bottom:0;font-size:15px;color:var(--ink-soft)}
+
+/* callout */
+.tip{
+  border-left:3px solid var(--bronze);background:var(--paper-2);
+  padding:18px 22px;border-radius:0 12px 12px 0;margin:20px 0;
+}
+.tip .label{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze);display:block;margin-bottom:7px}
+.tip p{margin-bottom:0;font-size:15px}
+.tip.flag{border-left-color:#B5654A;background:#FBEEE8}
+.tip.flag .label{color:#B5654A}
+
+/* port blocks */
+.port{margin:26px 0;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#fff;box-shadow:var(--shadow)}
+.port-top{padding:24px 28px 20px;background:linear-gradient(120deg,var(--aqua-soft),#fff)}
+.port-top .day{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;color:var(--bronze)}
+.port-top h3{margin:6px 0 2px;font-size:28px}
+.port-top .hrs{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:var(--ink-soft)}
+.port-body{padding:22px 28px 26px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin:4px 0 18px}
+.tag{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.08em;padding:5px 9px;border-radius:6px;background:var(--paper-2);color:var(--ink-soft);border:1px solid var(--line)}
+.tag.beach{background:#DDF0EE;color:#3C6E6B}
+.tag.exc{background:#F0E6CE;color:#8A6A2E}
+.maplink{font-family:'JetBrains Mono',monospace;font-size:12px}
+
+/* mini grid */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:8px}
+@media(max-width:640px){.grid2{grid-template-columns:1fr}}
+.mini{background:#fff;border:1px solid var(--line);border-radius:13px;padding:20px 22px}
+.mini b{display:block;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;margin-bottom:5px}
+.mini p{font-size:14.5px;color:var(--ink-soft);margin-bottom:0}
+
+/* table */
+.tbl{width:100%;border-collapse:collapse;margin:14px 0;font-size:14.5px;background:#fff;border:1px solid var(--line);border-radius:13px;overflow:hidden}
+.tbl th{background:var(--teal);color:#fff;text-align:left;padding:13px 16px;font-weight:500;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.tbl td{padding:13px 16px;border-top:1px solid var(--line);vertical-align:top}
+.tbl tr:nth-child(even) td{background:var(--paper)}
+
+/* footer */
+.foot{background:linear-gradient(160deg,#F4EEE0,#FBF8F1);border-top:1px solid var(--line);padding:54px 0 46px;text-align:center}
+.foot .mono{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal)}
+.foot h3{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:500;margin:14px 0 6px;color:var(--ink)}
+.foot p{margin:0 auto;color:var(--ink-soft);font-size:15px}
+.sig{margin-top:26px;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:21px;color:var(--bronze)}
+
+/* nav dots for print friendliness skipped */
+@media print{
+  body{background:#fff}
+  .card,.port,.mini,.tbl{box-shadow:none}
+  section{padding:34px 0}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-inner">
+    <div class="crest"><span class="dot"></span>Point Me to Paradise Travel · Curated for Ronnie &amp; Gloria</div>
+    <div class="eyebrow">Your Cruise Companion</div>
+    <h1 class="title">MSC <em>Seascape</em></h1>
+    <p class="subtitle">Seven nights through the Western Caribbean &mdash; in your suite, with the Aurea Experience</p>
+    <div class="hero-meta">
+      <span class="chip"><b>SAIL</b>&nbsp; Jul 12&ndash;19, 2026</span>
+      <span class="chip"><b>FROM</b>&nbsp; Galveston, TX</span>
+      <span class="chip"><b>STATEROOM</b>&nbsp; 10301 &middot; Premium Suite Aurea</span>
+      <span class="chip"><b>NIGHTS</b>&nbsp; 7</span>
+    </div>
+  </div>
+</header>
+
+<!-- ROUTE -->
+<div class="route">
+  <div class="wrap">
+    <div class="route-line">
+      <span class="route-stop"><span class="num">01</span><strong>Galveston</strong></span>
+      <span class="route-arrow">&rarr;</span>
+      <span class="route-stop"><span class="num">02&ndash;03</span>Sea Days</span>
+      <span class="route-arrow">&rarr;</span>
+      <span class="route-stop"><span class="num">04</span><strong>Costa Maya</strong></span>
+      <span class="route-arrow">&rarr;</span>
+      <span class="route-stop"><span class="num">05</span><strong>Roatán</strong></span>
+      <span class="route-arrow">&rarr;</span>
+      <span class="route-stop"><span class="num">06</span><strong>Cozumel</strong></span>
+      <span class="route-arrow">&rarr;</span>
+      <span class="route-stop"><span class="num">07&ndash;08</span>Sea Days</span>
+      <span class="route-arrow">&rarr;</span>
+      <span class="route-stop"><span class="num">09</span><strong>Galveston</strong></span>
+    </div>
+  </div>
+</div>
+
+<!-- WELCOME -->
+<section id="welcome">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><h2>Welcome <em>aboard</em></h2></div>
+    </div>
+    <p>It has been a while since the two of you last set sail, so consider this your full briefing &mdash; everything from the app on your phone to the moment you step off in Cozumel. MSC does a few things differently from the lines you may remember, and your Premium Suite Aurea changes how the week feels in some lovely, specific ways. We have laid it all out so nothing catches you off guard and the good surprises stay surprising.</p>
+    <p>The <strong>MSC Seascape</strong> is one of the newest, largest ships in the fleet &mdash; launched in 2022, carrying around 4,500 guests across nineteen decks, with a glass-walled promenade, a multi-story waterpark, and a quiet, adults-only world tucked up top that is largely yours this week. Your home aboard is <strong>cabin 10301</strong>, a Premium Suite Aurea on Deck 10 with a generous 14 m&sup2; balcony. Read this once before you pack, then keep it on your phone for the ports.</p>
+    <div class="tip">
+      <span class="label">First things first</span>
+      <p>Download the <strong>MSC for Me</strong> app today and complete web check-in. Both are free, both take about fifteen minutes, and both directly affect how smoothly your embarkation day in Galveston goes. Full walkthrough below.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AUREA -->
+<section id="aurea">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>Your <em>Aurea</em> experience</h2>
+        <p class="lede">Aurea is MSC's top experience tier. It is less a "room type" and more a layer of comfort that follows you around the ship all week. Here is exactly what it gives you &mdash; and, just as usefully, what it does not. Your suite adds a further layer on top, covered in the next section.</p>
+      </div>
+    </div>
+
+    <div class="card aqua">
+      <h3>What Aurea includes</h3>
+      <ul class="perks">
+        <li><span class="mark">✓</span><span class="txt"><b>Priority embarkation &amp; luggage drop-off</b><span>A faster, calmer start on day one in Galveston. How this actually works is explained in its own section below &mdash; it is the one perk people most often misunderstand.</span></span></li>
+        <li><span class="mark">✓</span><span class="txt"><b>Best balcony locations on the ship</b><span>Aurea cabins sit in the most desirable positions &mdash; mid-ship, higher decks, away from noise.</span></span></li>
+        <li><span class="mark">✓</span><span class="txt"><b>My Choice flexible dining</b><span>No fixed seating time. Arrive at the main dining room when it suits you, within service hours, and you'll be seated in a dedicated Aurea area. Perfect for lingering over a sunset before dinner.</span></span></li>
+        <li><span class="mark">✓</span><span class="txt"><b>Access to the exclusive Aurea Sun Deck</b><span>An adults-only top-deck retreat with its own bar and sun loungers, well away from the waterpark crowds. For the two of you, this is the quiet heart of the week.</span></span></li>
+        <li><span class="mark">✓</span><span class="txt"><b>Thermal Spa access for the whole cruise</b><span>The heated loungers, aromatic steam rooms, and sensory showers in the MSC Aurea Spa &mdash; included all week. Reserve a daily slot in the app or at the spa desk (more on this in the hidden-gems section). A genuine favorite among Aurea guests.</span></span></li>
+        <li><span class="mark">✓</span><span class="txt"><b>A welcome toast in your cabin</b><span>Sparkling wine and chocolate waiting on arrival (detailed in your suite benefits below).</span></span></li>
+        <li><span class="mark">✓</span><span class="txt"><b>Bathrobes, slippers &amp; a pillow menu</b><span>Plush robes for spa trips and a choice of pillows for a better night's sleep.</span></span></li>
+        <li><span class="mark">✓</span><span class="txt"><b>Spa treatment discount</b><span>10% off any spa treatment booked onboard (your suite package applies this to all treatments).</span></span></li>
+        <li><span class="mark">✓</span><span class="txt"><b>MSC Voyagers Club points</b><span>You earn loyalty points this sailing that unlock perks and discounts on future MSC cruises.</span></span></li>
+      </ul>
+    </div>
+
+    <div class="card sand">
+      <h3>What Aurea does <em>not</em> include &mdash; so there are no surprises</h3>
+      <ul class="perks">
+        <li><span class="mark x">!</span><span class="txt"><b>A drinks package is not included</b><span>This is the big one to know. Older guides and blog posts still say Aurea comes with free drinks &mdash; that benefit was removed back in 2022. Your only complimentary drinks are the welcome Prosecco. If you'd like unlimited beverages, a drink package is a separate add-on, and we are glad to price one for you before you sail (always cheaper pre-purchased than onboard).</span></span></li>
+        <li><span class="mark x">!</span><span class="txt"><b>No free spa treatments</b><span>Thermal area access is included; massages and facials are extra (with your Aurea discount).</span></span></li>
+        <li><span class="mark x">!</span><span class="txt"><b>No VIP line at Guest Services</b><span>Priority applies to embarkation day. Onboard, Guest Services is the standard queue for everyone.</span></span></li>
+      </ul>
+      <div class="tip" style="margin-bottom:0">
+        <span class="label">Our recommendation</span>
+        <p>If you'll have a cocktail with lunch and a glass of wine at dinner most days, a drink package usually pays for itself by mid-week. Tell us how you like to sip and we'll tell you which tier makes sense &mdash; or whether to skip it entirely.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUITE EXPERIENCE -->
+<section id="suite">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>Your <em>Suite</em> benefits</h2>
+        <p class="lede">You booked a suite <em>with</em> the Aurea Experience &mdash; so you receive everything in the Aurea section above, and then this suite-only layer on top. These are the touches that make the week feel genuinely elevated.</p>
+      </div>
+    </div>
+
+    <div class="card aqua">
+      <h3>On top of everything Aurea gives you</h3>
+      <ul class="perks">
+        <li><span class="mark">✓</span><span class="txt"><b>Priority tender &amp; disembarkation</b><span>Aurea alone gives priority on embarkation <em>day</em>; your suite extends priority to getting <em>off</em> the ship too &mdash; a faster, escorted exit on the final morning in Galveston, and first onto any tender boat should a port ever require one. (Your three stops &mdash; Costa Maya, Roatán, Cozumel &mdash; are all dockside piers, so you'll walk straight off; the tender priority is just there in your back pocket if weather ever changes that.)</span></span></li>
+        <li><span class="mark">✓</span><span class="txt"><b>24-hour room service, free delivery</b><span>Round-the-clock room service with no delivery charge. (Most individual food items carry an à la carte price &mdash; it's the <em>delivery</em> that's free, around the clock.) Pair it with your included in-cabin breakfast below for coffee and a pastry on the balcony at sunrise.</span></span></li>
+        <li><span class="mark">✓</span><span class="txt"><b>Free continental breakfast in the cabin</b><span>Delivered to 10301 at no charge &mdash; the gentlest possible start to a port morning.</span></span></li>
+        <li><span class="mark">✓</span><span class="txt"><b>In-suite espresso machine</b><span>Your own espresso in the room, amenities provided &mdash; no trek to the buffet for the first coffee of the day.</span></span></li>
+        <li><span class="mark">✓</span><span class="txt"><b>Premium minibar &mdash; first items included</b><span>Your minibar arrives stocked, with the first selection included. A nice in-room welcome the moment you walk in.</span></span></li>
+        <li><span class="mark">✓</span><span class="txt"><b>Welcome package: sparkling wine + chocolate</b><span>Waiting in the suite when you arrive &mdash; a proper toast to the start of the week.</span></span></li>
+        <li><span class="mark">✓</span><span class="txt"><b>Top Exclusive Solarium access</b><span>Free access to the adults-only Top Exclusive Solarium &mdash; the serene, sought-after sun retreat at the top of the ship, included in your fare.</span></span></li>
+        <li><span class="mark">✓</span><span class="txt"><b>Premium relaxation amenities</b><span>Bathrobe, slippers, and bespoke <strong>MED Bath</strong> bath products in the suite, plus a pillow menu &mdash; a clear step up from the standard line.</span></span></li>
+        <li><span class="mark">✓</span><span class="txt"><b>Complimentary ironing &mdash; 2 items</b><span>Two garments pressed per suite, handy for keeping something crisp for a specialty dinner or elegant night.</span></span></li>
+        <li><span class="mark">✓</span><span class="txt"><b>10% off all onboard spa treatments</b><span>Every massage or facial booked aboard comes with a 10% discount (thermal area access itself is already included).</span></span></li>
+        <li><span class="mark">✓</span><span class="txt"><b>One free cruise change</b><span>Built-in flexibility &mdash; you may change the date or destination once, up to 30 days before departure, for a new sailing within 90 days. Good peace of mind to have in your pocket.</span></span></li>
+      </ul>
+      <div class="tip" style="margin-bottom:0">
+        <span class="label">The short version</span>
+        <p>Aurea makes your <em>week</em> more comfortable; the suite makes your <em>room</em>, your <em>mornings</em>, and your <em>arrivals and departures</em> more comfortable. Together they're the most relaxed way to sail short of MSC's separate Yacht Club tier.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIORITY EMBARKATION (their question) -->
+<section id="priority">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>How your <em>priority embarkation</em> actually works</h2>
+        <p class="lede">You asked about this directly &mdash; good, because it is the most commonly misread Aurea perk. Here is the honest, practical version.</p>
+      </div>
+    </div>
+
+    <p>MSC assigns every guest a <strong>check-in time slot</strong> for embarkation day. Yours currently opens at <strong>12:30 PM</strong> &mdash; you'll see it confirmed during web check-in, and you can often choose from other available windows. Aurea priority does <strong>not</strong> mean you can show up whenever you like and walk straight on &mdash; that is the part people get wrong. What it <em>does</em> mean is this:</p>
+
+    <div class="grid2">
+      <div class="mini">
+        <b>A dedicated priority lane</b>
+        <p>Once you arrive at the terminal within your window, Aurea guests use a separate, faster check-in line &mdash; you skip the main queue.</p>
+      </div>
+      <div class="mini">
+        <b>Priority luggage drop</b>
+        <p>Your bags are handled with priority and tend to reach your cabin sooner than the general boarding wave.</p>
+      </div>
+      <div class="mini">
+        <b>Earlier, smoother boarding</b>
+        <p>Within the boarding sequence, Aurea is called ahead of standard Bella and Fantastica guests &mdash; so you're settling in while others are still in line.</p>
+      </div>
+      <div class="mini">
+        <b>Your slot still matters</b>
+        <p>Arrive <em>before</em> your slot opens and you may be asked to wait outside. Arrive <em>after</em> it closes and you risk being turned away. Aim to land right at the start of your window.</p>
+      </div>
+    </div>
+
+    <div class="tip">
+      <span class="label">The honest summary</span>
+      <p>Think of it as a fast pass <em>within</em> your assigned time, not a skip-the-clock pass. Pick the earliest comfortable check-in slot during web check-in, arrive right as it opens, and use the Aurea lane &mdash; that combination is what gives you the genuinely relaxed start. And because you're in a suite, that priority carries through to the <strong>other</strong> end too: first off at tender ports, and an escorted, faster exit on debarkation morning.</p>
+    </div>
+
+    <div class="tip flag">
+      <span class="label">One step above you</span>
+      <p>If you ever hear other guests breeze past with zero wait and a private lounge, that is <strong>MSC Yacht Club</strong> &mdash; a separate ship-within-a-ship tier above Aurea, with butlers and its own escort. Aurea is the priority experience for balcony guests; Yacht Club is its own world. Worth knowing the difference so the comparison doesn't surprise you at the terminal.</p>
+    </div>
+  </div>
+</section>
+
+<!-- APP + CHECK-IN -->
+<section id="app">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>The app, web check-in &amp; getting your boarding pass</h2>
+        <p class="lede">Do these steps now, from your couch. They turn embarkation day from stressful to effortless.</p>
+      </div>
+    </div>
+
+    <h3>The MSC for Me app</h3>
+    <p>This is your cruise in your pocket &mdash; free to download and free to use onboard with no internet package required. Before you sail it handles check-in, your security photo, and your terminal arrival time. Onboard it becomes your daily map, deck plan, dining and show booker, account tracker, and even a chat line to reach each other across the ship.</p>
+    <p class="maplink"><a href="https://apps.apple.com/us/app/-/id1221939391">↗ Download for iPhone (App Store)</a> &nbsp;·&nbsp; <a href="https://play.google.com/store/apps/details?id=com.msccruises.mscforme">↗ Download for Android (Google Play)</a></p>
+
+    <div class="card">
+      <h3 style="margin-top:0">Your pre-cruise checklist</h3>
+      <div class="steps">
+        <div class="step"><span class="si"></span><div class="sc"><b>Download "MSC for Me"</b><p>Search the App Store or Google Play. Create one MSC account and sign in &mdash; it links to your booking.</p></div></div>
+        <div class="step"><span class="si"></span><div class="sc"><b>Complete web check-in</b><p>Available from now until two days before you sail. Enter passport details, an emergency contact, and register a credit card to your cruise card so onboard charges run cashlessly. <a href="https://www.msccruisesusa.com/manage-booking/web-check-in">Start your online check-in here →</a></p></div></div>
+        <div class="step"><span class="si"></span><div class="sc"><b>Take your security photo</b><p>The app lets you snap the required embarkation photo in advance &mdash; one less thing to do at the terminal.</p></div></div>
+        <div class="step"><span class="si"></span><div class="sc"><b>Choose your terminal arrival slot</b><p>Pick your check-in window. As Aurea, choose the earliest one that's comfortable for your drive into Galveston.</p></div></div>
+        <div class="step"><span class="si"></span><div class="sc"><b>Download your boarding pass &amp; e-ticket</b><p>Once check-in is complete, save the boarding pass to the app (and your phone wallet). Screenshot it too &mdash; terminal Wi-Fi can be patchy.</p></div></div>
+        <div class="step"><span class="si"></span><div class="sc"><b>Browse and pre-book</b><p>Spa slots, specialty dining, and shore excursions can all be reserved in advance and often cost less than booking onboard. Drink packages and Wi-Fi are cheaper pre-cruise too. <a href="https://www.msccruisesusa.com/manage-booking/manage-your-booking">Manage your booking &amp; add essentials here →</a></p></div></div>
+      </div>
+    </div>
+
+    <div class="tip">
+      <span class="label">Good to know</span>
+      <p>Departure and arrival times shown in the app are <em>estimates</em> and can shift &mdash; your assigned check-in slot is the time that actually governs your day. Once your credit card is registered during check-in, changes have to be made at Guest Services onboard, so enter it carefully.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALVESTON DAY -->
+<section id="galveston">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>Embarkation day in <em>Galveston</em></h2>
+        <p class="lede">MSC Seascape sails from Galveston's brand-new Cruise Terminal 16 &mdash; a $151-million facility opened in late 2025 specifically for these sailings. Modern, spacious, and built for big ships.</p>
+      </div>
+    </div>
+
+    <h3>The shape of the day</h3>
+    <table class="tbl">
+      <tr><th>When</th><th>What's happening</th></tr>
+      <tr><td>~9:30 AM</td><td>Arrive in Galveston, park, shuttle to terminal if needed. Sunday departures can be busy &mdash; give yourself room. (Your check-in opens 12:30; you can arrive at the terminal area earlier and settle nearby, but won't enter before your window opens.)</td></tr>
+      <tr><td>12:30 PM &mdash; your slot</td><td>Hand off checked luggage to the porters (a few dollars per bag is the customary tip). Enter via the Aurea priority lane.</td></tr>
+      <tr><td>Check-in</td><td>Boarding pass, passports, and security photo &mdash; quick if you did the app steps. Through security and aboard.</td></tr>
+      <tr><td>Aboard</td><td>Head to lunch, then find the Top Exclusive Solarium and the spa to reserve your week. Bags arrive at the suite over the next few hours.</td></tr>
+      <tr><td>5:00 PM</td><td>Ship departs. Sail-away from a high deck &mdash; or your own balcony &mdash; is the proper way to start.</td></tr>
+    </table>
+
+    <div class="tip">
+      <span class="label">Your slot &mdash; one tip</span>
+      <p>Your check-in currently opens at <strong>12:30 PM</strong>. If you'd rather board earlier and start the day at a leisurely lunch aboard, log into web check-in and see whether an earlier window is available to select &mdash; slots can often be changed. Either way, arrive right as your chosen window opens and use the Aurea priority lane.</p>
+    </div>
+
+    <div class="tip">
+      <span class="label">Parking</span>
+      <p>Official port lots near the terminals run about $25/day with shuttle and porter service; private lots nearby are often cheaper. Reserve in advance either way, snap a photo of where you parked, and keep your essentials &mdash; medications, documents, a swimsuit &mdash; in a carry-on, since checked bags can take hours to reach the cabin.</p>
+    </div>
+
+    <div class="card sand">
+      <h3 style="margin-top:0">Save on your parking</h3>
+      <p style="margin-bottom:14px">Use code <strong style="font-family:'JetBrains Mono',monospace;letter-spacing:.05em;background:var(--paper);padding:3px 9px;border-radius:6px;border:1px solid var(--line)">SUMMERVIBES26</strong> when you reserve official Port of Galveston parking for a discount on your week.</p>
+      <a href="https://portofgalveston.com/" style="display:inline-block;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;background:var(--teal);color:#fff;text-decoration:none;padding:13px 22px;border-radius:9px">Plan your parking →</a>
+    </div>
+
+    <div class="tip">
+      <span class="label">Your embarkation-day backpack &mdash; the #1 tip</span>
+      <p>Your checked bags may not reach cabin 10301 until mid-afternoon, so pack a carry-on with everything you'll want for Day 1: <strong>all medications, swimsuits and cover-ups, sunscreen, phone + charger + earbuds, passports and cruise documents, a change of clothes, and something to read.</strong> Board, drop the backpack, and head straight to the pool while everyone else waits on luggage.</p>
+    </div>
+    <div class="tip">
+      <span class="label">It works both ways</span>
+      <p>That same backpack becomes your overnight bag on the last night: set your main luggage out for the porters, keep your essentials in the pack, and walk off the ship the next morning with nothing to juggle.</p>
+    </div>
+    <p class="maplink"><a href="https://www.google.com/maps/search/?api=1&query=Cruise+Terminal+16+Port+of+Galveston">📍 Cruise Terminal 16, Port of Galveston</a></p>
+  </div>
+</section>
+
+<!-- PORTS -->
+<section id="ports">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>Your three <em>ports of call</em></h2>
+        <p class="lede">Two sea days settle you in, then three back-to-back port days. Here is what each one is really like, who it suits, and the timing you must respect &mdash; the ship does not wait.</p>
+      </div>
+    </div>
+
+    <!-- COSTA MAYA -->
+    <div class="port">
+      <div class="port-top">
+        <span class="day">Day 4 · Wednesday Jul 15</span>
+        <h3>Costa Maya, Mexico</h3>
+        <span class="hrs">Arrive 8:00 AM · Aboard by ~5:30 PM · Depart 6:00 PM</span>
+      </div>
+      <div class="port-body">
+        <div class="tags">
+          <span class="tag beach">BEACH</span>
+          <span class="tag">HISTORIC SITE</span>
+          <span class="tag exc">CRUISE EXCURSION</span>
+          <span class="tag">CULTURAL</span>
+        </div>
+        <p>A purpose-built cruise village on Mexico's quiet southern Caribbean coast &mdash; not a city, but a manicured port complex of pools, shops, swim-up bars, and a saltwater lagoon, with the real Maya world just inland. The pace is gentler here than Cozumel; the water is glassy and warm.</p>
+        <h3>Worth your day</h3>
+        <p><strong>The port village itself</strong> is genuinely pleasant and entirely walkable from the ship &mdash; pools, a beach club, mariachi, and shopping without leaving the secure zone. Easy if you just want sun and a margarita. For more: <strong>Mahahual</strong>, a laid-back beach town with a barefoot malecón, is a short taxi away. The headline excursion is the <strong>Chacchoben ruins</strong> &mdash; a beautiful, jungle-wrapped Maya site about an hour inland.</p>
+        <div class="tip flag">
+          <span class="label">Timing flag</span>
+          <p>Chacchoben is roughly an hour each way. Lovely, but only book it as a <em>ship's</em> excursion &mdash; that way the ship waits for you if the bus runs late. An independent inland trip on a tight all-aboard is the kind of risk that ends with you watching the ship leave.</p>
+        </div>
+        <p class="maplink"><a href="https://www.google.com/maps/search/?api=1&query=Chacchoben+Ruins+Costa+Maya">📍 Chacchoben Ruins</a> &nbsp;·&nbsp; <a href="https://www.google.com/maps/search/?api=1&query=Mahahual+Beach+Costa+Maya">📍 Mahahual Malecón</a></p>
+      </div>
+    </div>
+
+    <!-- ROATAN -->
+    <div class="port">
+      <div class="port-top">
+        <span class="day">Day 5 · Thursday Jul 16</span>
+        <h3>Roatán, Honduras</h3>
+        <span class="hrs">Arrive 8:00 AM · Aboard by ~3:30 PM · Depart 4:00 PM</span>
+      </div>
+      <div class="port-body">
+        <div class="tags">
+          <span class="tag beach">BEACH</span>
+          <span class="tag">NATURE</span>
+          <span class="tag exc">CRUISE EXCURSION</span>
+        </div>
+        <p>The most naturally beautiful of your three stops &mdash; a lush island ringed by the world's second-largest barrier reef. The water is an absurd shade of turquoise and the snorkeling is some of the best in the Caribbean. This is your shortest port day, though, so plan tightly.</p>
+        <h3>Worth your day</h3>
+        <p><strong>West Bay Beach</strong> is the showpiece: powder sand, calm water, reef you can reach from shore. <strong>Roatán is one of the rare Caribbean ports where you can snorkel a world-class reef without a boat.</strong> Gentler options include the <strong>sloth and monkey sanctuary</strong> and a sleepy island drive. MSC's beach-break and snorkel excursions take the logistics off your plate.</p>
+        <div class="tip flag">
+          <span class="label">Timing flag — read this one</span>
+          <p>Your all-aboard here is around <strong>3:30 PM</strong> (4 PM departure) &mdash; one of your two short port days. Roatán is also a port where independent taxis and West Bay water taxis can run on island time. Given the tight window, a ship's excursion or a pre-arranged private guide who knows the all-aboard is the safer call. Keep an eye on the clock at the beach.</p>
+        </div>
+        <p class="maplink"><a href="https://www.google.com/maps/search/?api=1&query=West+Bay+Beach+Roatan">📍 West Bay Beach</a> &nbsp;·&nbsp; <a href="https://www.google.com/maps/search/?api=1&query=Daniel+Johnson+Sloth+Sanctuary+Roatan">📍 Sloth &amp; Monkey Sanctuary</a></p>
+      </div>
+    </div>
+
+    <!-- COZUMEL -->
+    <div class="port">
+      <div class="port-top">
+        <span class="day">Day 6 · Friday Jul 17</span>
+        <h3>Cozumel, Mexico</h3>
+        <span class="hrs">Arrive 8:00 AM · Aboard by ~3:30 PM · Depart 4:00 PM</span>
+      </div>
+      <div class="port-body">
+        <div class="tags">
+          <span class="tag beach">BEACH</span>
+          <span class="tag">DIY FRIENDLY</span>
+          <span class="tag exc">CRUISE EXCURSION</span>
+          <span class="tag">CULTURAL</span>
+        </div>
+        <p>The most developed and easygoing of your stops &mdash; an island that has welcomed cruisers for decades and makes independent exploring genuinely simple. You dock right at the pier; shops, bars, and dive shops begin where the gangway ends. Of the three, this is the one you can confidently DIY.</p>
+        <h3>Worth your day</h3>
+        <p>Steps from the ship: waterfront restaurants, tequila tastings, and the famous original <strong>margarita-and-guacamole</strong> spots. A short taxi reaches <strong>beach clubs</strong> like Paradise, Mr. Sancho's, or Nachi Cocom for a day pass with loungers, pool, and lunch. Cozumel is a legendary <strong>scuba and snorkel</strong> destination &mdash; the Palancar reef is bucket-list. History lovers can reach the small <strong>San Gervasio</strong> Maya ruins inland.</p>
+        <div class="tip">
+          <span class="label">DIY-friendly, with a caveat</span>
+          <p>Cozumel taxis are plentiful and the island is easy, so a self-made beach-club day works well here. Still mind the <strong>~3:30 PM all-aboard</strong> &mdash; it's earlier than the relaxed vibe suggests. Anything on the far side of the island (San Gervasio, the east-coast beaches) is better as a ship's tour to stay safely inside the window.</p>
+        </div>
+        <p class="maplink"><a href="https://www.google.com/maps/search/?api=1&query=Mr+Sanchos+Beach+Club+Cozumel">📍 Mr. Sancho's Beach Club</a> &nbsp;·&nbsp; <a href="https://www.google.com/maps/search/?api=1&query=San+Gervasio+Ruins+Cozumel">📍 San Gervasio Ruins</a> &nbsp;·&nbsp; <a href="https://www.google.com/maps/search/?api=1&query=Palancar+Reef+Cozumel">📍 Palancar Reef</a></p>
+      </div>
+    </div>
+
+    <div class="tip flag">
+      <span class="label">The golden rule of port days</span>
+      <p>"All aboard" is typically <strong>30&ndash;60 minutes before departure</strong>, and ship's clock can differ from shore time &mdash; always run on ship time. If you book through MSC, the ship waits for a late excursion. If you go independent, you alone own the risk. For Roatán and Cozumel especially, with their early afternoon departures, build in a generous cushion.</p>
+    </div>
+  </div>
+</section>
+
+<!-- HIDDEN GEMS -->
+<section id="gems">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>Hot tips &amp; <em>hidden gems</em></h2>
+        <p class="lede">The lesser-known things that make Aurea guests on Seascape feel like they're in on a secret.</p>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="mini"><b>Reserve the spa on day one</b><p>Your Thermal Area access is included all week, but slots are time-reserved. Book your daily window the moment you board &mdash; in the app or at the spa desk &mdash; before it fills.</p></div>
+      <div class="mini"><b>The Aurea Sun Deck is your sea-day haven</b><p>While the main pools roar on sea days, your adults-only top deck stays calm, with its own bar. This is where the week slows down.</p></div>
+      <div class="mini"><b>Pre-book specialty dining early</b><p>Seascape's specialty venues (steakhouse, sushi, the chocolate bar) book up. Reserve your favorites in the app before sailing, ideally for a port-day evening when the ship is quiet.</p></div>
+      <div class="mini"><b>My Choice = dinner with a view</b><p>Use your flexible dining to eat later on port days &mdash; come back aboard, shower, and dine at golden hour instead of rushing a fixed seating.</p></div>
+      <div class="mini"><b>Book excursions on your phone, onboard</b><p>The app handles excursion booking and shows your tickets &mdash; no need to queue at the shore-excursion desk.</p></div>
+      <div class="mini"><b>Sea-day spa pass demand</b><p>The thermal area is busiest on sea days. Your Aurea access means you're covered &mdash; but reserve those two sea-day slots first, as non-Aurea guests buy day passes that fill the room.</p></div>
+      <div class="mini"><b>Use the app chat to find each other</b><p>On a 4,500-guest ship you will lose each other. The in-app chat works without buying Wi-Fi &mdash; set it up on day one.</p></div>
+      <div class="mini"><b>Tip the porters, skip the stress</b><p>A few dollars per bag to the Galveston luggage porters keeps everything moving and your bags prioritized.</p></div>
+      <div class="mini"><b>The keycard A/C trick</b><p>Your cabin's lights and A/C only run when a card sits in the slot by the door. Bring an old gift card or hotel key from home, leave it in the slot when you're out, and you'll return to a cool room every time. Small thing, big difference on a hot Caribbean week.</p></div>
+      <div class="mini"><b>Consider an MSC for Me wristband</b><p>Waterproof bands (about $14&ndash;15 onboard) replace your cruise card for cabin access and purchases &mdash; ideal for pool days. One catch: they don't work at gangway security, so carry your physical card when getting off and back on in port.</p></div>
+      <div class="mini"><b>Pack a little heat</b><p>MSC is an Italian line, so the kitchen seasons milder than many of us are used to. If you like a kick, tuck a small shaker of Tony Chachere's in your bag &mdash; a dash at the table makes any dish taste like home.</p></div>
+    </div>
+
+    <div class="tip">
+      <span class="label">A note on drinks</span>
+      <p>Because Aurea no longer bundles a drink package, decide before you sail. Pre-purchased packages cost meaningfully less than buying onboard, and we can match the right tier to how you actually drink &mdash; or confirm that paying per-drink suits you better. Just say the word.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DINING & WIFI -->
+<section id="addons">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>Specialty dining &amp; <em>staying connected</em></h2>
+        <p class="lede">Your fare already includes the main dining rooms and the buffet &mdash; genuinely good, and plenty for the week. But Seascape has a handful of specialty restaurants worth a special evening, and these are cheaper booked now than onboard. Here's the real menu of options for your sailing.</p>
+      </div>
+    </div>
+
+    <div class="tip flag">
+      <span class="label">Time-sensitive</span>
+      <p>Several of these pre-cruise discounts are on a countdown &mdash; some show only a <strong>few days left</strong> at the discounted rate. If any appeal, it's worth booking before you sail; prices rise onboard. Just say the word and I'll add them to your booking for you.</p>
+    </div>
+
+    <h3>Specialty restaurants &mdash; pre-cruise prices</h3>
+    <p>All are à la carte per person, and conveniently grouped together on <strong>Deck 8</strong> so you can stroll past and browse before deciding. The struck-through figure is the onboard price; the second is your current pre-cruise rate.</p>
+    <table class="tbl">
+      <tr><th>Restaurant</th><th>What it is</th><th>Pre-cruise / person</th></tr>
+      <tr><td><strong>Hola! Tacos &amp; Cantina</strong></td><td>Lively Mexican &mdash; tacos, guacamole, margaritas. The fun, casual one.</td><td>$24.99 → <strong>$21.24</strong></td></tr>
+      <tr><td><strong>Kaito Sushi</strong></td><td>Fresh sushi and sashimi in a serene room. A lovely lighter evening.</td><td>$40 → <strong>$35.20</strong></td></tr>
+      <tr><td><strong>Ocean Cay Seafood</strong></td><td>Elevated seafood &mdash; the catch-of-the-day choice.</td><td>$45 → <strong>$38.25</strong></td></tr>
+      <tr><td><strong>Kaito Teppanyaki</strong></td><td>Theatrical hibachi grill, chef cooking at your table. Great for an occasion.</td><td>$55 → <strong>$46.75</strong></td></tr>
+      <tr><td><strong>Butcher's Cut</strong></td><td>American steakhouse &mdash; the marquee venue, prime cuts and a proper wine list.</td><td>$60 → <strong>$51.00</strong></td></tr>
+      <tr><td><strong>Butcher's Cut Chef's Table</strong></td><td>The premium steakhouse experience, multi-course and curated.</td><td>$79 → <strong>$69.00</strong></td></tr>
+    </table>
+
+    <div class="card aqua">
+      <h3 style="margin-top:0">The smart play: the 2-meal package</h3>
+      <p style="margin-bottom:10px">If you'd like to dine out more than once, the <strong>2 Specialty Dining Meals</strong> package runs <strong>$89 per person</strong> (down from $99) &mdash; meaningfully less than booking two of the pricier rooms separately. Pair, say, Butcher's Cut and Kaito Teppanyaki and the package more than pays for itself. A relaxed way to give yourselves two standout evenings across the week.</p>
+      <div class="tip" style="margin-bottom:0">
+        <span class="label">When to dine</span>
+        <p>Book your specialty nights for <em>port-day evenings</em> &mdash; the ship is quietest then, and after a beach day in Cozumel a steak at Butcher's Cut is a fine reward. Your My Choice flexible dining means no fixed time to work around.</p>
+      </div>
+    </div>
+
+    <h3>Staying connected &mdash; Wi-Fi</h3>
+    <p>First, the good news that saves you money: <strong>the MSC for Me app works free onboard</strong> with no package &mdash; deck maps, your account, dining and show bookings, and guest-to-guest chat all work without paying for internet. For many guests that's genuinely all they need.</p>
+    <p>If you want to browse the wider web or stream beyond the app, here are your sailing's current pre-cruise rates (per person, whole cruise):</p>
+    <table class="tbl">
+      <tr><th>Package</th><th>Pre-cruise / person</th></tr>
+      <tr><td>Browse &mdash; 1 device</td><td>$202.93 → <strong>$127.82</strong></td></tr>
+      <tr><td>Browse &amp; Stream &mdash; 1 device</td><td>$216.93 → <strong>$140.98</strong></td></tr>
+      <tr><td>Browse &mdash; 2 devices</td><td>$363.86 → <strong>$229.25</strong></td></tr>
+      <tr><td>Browse &amp; Stream &mdash; 2 devices</td><td>$391.86 → <strong>$254.73</strong></td></tr>
+    </table>
+    <div class="tip">
+      <span class="label">Our honest take</span>
+      <p>If you mainly want to check in with family, share a few photos, and find each other on the ship, the free app may be enough &mdash; you'll have Wi-Fi for messaging at most ports too. If one of you wants to stay genuinely online all week, a single <strong>Browse, 1-device</strong> package and a shared phone is the economical route. Tell me how connected you want to be and I'll point you to the right one &mdash; or none.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ENTERTAINMENT -->
+<section id="nights">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <h2>Theme nights &amp; <em>entertainment</em></h2>
+        <p class="lede">Half the fun of Seascape happens after dark. Here's the lineup for your sailing so you can pack a few outfits with intention &mdash; nothing elaborate, just enough to play along.</p>
+      </div>
+    </div>
+
+    <h3>This sailing's theme nights</h3>
+    <div class="grid2">
+      <div class="mini"><b>Gala Night</b><p>The dress-up evening &mdash; bring something elegant for a memorable dinner and photos.</p></div>
+      <div class="mini"><b>White Night</b><p>Everyone in white, often with a deck party. Pack a crisp white outfit each.</p></div>
+      <div class="mini"><b>Tropical Night</b><p>Bright colors and prints &mdash; lean into the Caribbean spirit.</p></div>
+      <div class="mini"><b>Glow Party</b><p>Neon and anything that catches the light. A fun, lively night.</p></div>
+      <div class="mini"><b>60s / 70s / 80s Bash</b><p>Throwback music and outfits &mdash; as much or as little costume as you like.</p></div>
+      <div class="mini"><b>Boot Scootin' Country</b><p>A Texas-friendly country night &mdash; denim and boots more than earn their place.</p></div>
+    </div>
+    <div class="tip">
+      <span class="label">Don't miss</span>
+      <p>The <strong>MSC Talent Show</strong> is reliably one of the most fun nights of the week. And for a sneak peek at onboard life before you sail, the cruise director community shares a lot online &mdash; ask me and I'll point you to current accounts.</p>
+    </div>
+
+    <h3>Broadway-style shows &amp; activities</h3>
+    <p>Seascape runs theatre shows most evenings, plus trivia, live music, pools and hot tubs, a panoramic gym with fitness classes, and programming all day. One important quirk: <strong>MSC doesn't allow show reservations before you sail.</strong> Once aboard, open the MSC for Me app, browse the schedule, and grab your seats early &mdash; the popular shows fill fast. Everything else (pools, gym, sports) is walk-up, no booking needed.</p>
+  </div>
+</section>
+
+<!-- DISEMBARK -->
+<section id="home">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><h2>Coming <em>home</em></h2></div>
+    </div>
+    <p>You return to Galveston the morning of <strong>Sunday, July 19</strong> (ship arrives 7:00 AM). The night before, you'll set out your tagged bags for collection (keep a carry-on with what you need for the morning). General disembarkation can take two to three hours at a port this size &mdash; but as suite guests you have <strong>priority disembarkation</strong>, so you're escorted off ahead of the general flow rather than waiting your turn. The app shows your timing. Clear U.S. customs, find your car or transfer, and you're on your way, hopefully already plotting the next one.</p>
+    <div class="tip">
+      <span class="label">Before you forget</span>
+      <p>Settle any onboard account questions at Guest Services the evening before, not the morning of &mdash; the last-morning queue is the longest of the week. And do leave a review of your week with us; it helps us make the next trip even better.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="wrap">
+    <span class="mono">Point Me to Paradise Travel</span>
+    <h3>Have the best week, Ronnie &amp; Gloria.</h3>
+    <p>Questions before you sail, or anything at all once you're aboard &mdash; we're a message away. This guide was made just for the two of you.</p>
+    <div class="sig">Bon voyage, with blessings &mdash; Christina</div>
+  </div>
+</footer>
+
+</body>
+</html>
