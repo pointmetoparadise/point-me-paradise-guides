@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dining Near Palm Beach — Point Me to Paradise Travel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --aqua-pale:#C4E4E1; --aqua-mist:#EAF3F2; --aqua:#75AFB1; --aqua-dark:#4F8A8C;
+    --sand-light:#F4F1E9; --warm-sand:#F5EFE4; --gold-whisper:#D6C8A8; --white:#FFFFFF; --paper:#F9F6F1;
+    --ink:#2B2420; --ink-soft:#6B6359; --line:#E6DFD5;
+  }
+  *{box-sizing:border-box;}
+  body{
+    background:var(--paper); color:var(--ink); margin:0; padding:48px 28px;
+    font-family:'DM Sans',sans-serif; font-size:16px; line-height:1.75;
+  }
+  h1,h2,h3{font-family:'Fraunces',serif; color:var(--ink); font-weight:600; line-height:1.25;}
+  h2{font-size:clamp(20px,4vw,28px); margin-top:56px; margin-bottom:6px;}
+  h3{font-size:clamp(16px,3vw,20px); margin-top:34px; margin-bottom:10px;}
+  p{margin:0 0 16px;}
+  a{color:var(--aqua-dark); text-decoration:none; border-bottom:1px solid var(--gold-whisper);}
+  a:hover{color:var(--ink);}
+  .section-tagline{
+    font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--ink-soft);
+    font-size:18px; margin:0 0 22px;
+  }
+  .pmtp-band{
+    border-radius:10px; padding:22px 26px; margin:22px 0; border:1px solid var(--line);
+  }
+  .pmtp-band h4{
+    font-family:'Fraunces',serif; font-size:15px; font-weight:600; margin:0 0 8px;
+    text-transform:uppercase; letter-spacing:0.06em; color:var(--aqua-dark);
+  }
+  .pmtp-band p{margin:0; font-size:15px;}
+  .tag{
+    display:inline-block; font-family:'DM Sans',sans-serif; font-size:11px; font-weight:600;
+    letter-spacing:0.04em; text-transform:uppercase; color:var(--aqua-dark);
+    background:var(--aqua-mist); border:1px solid var(--aqua-pale); border-radius:5px;
+    padding:3px 9px; margin:0 6px 6px 0;
+  }
+  .tag.caution{color:#7A5230; background:var(--gold-whisper); border-color:#C9B68F;}
+  .entry{
+    border-top:1px solid var(--line); padding-top:28px; margin-top:28px;
+  }
+  .entry:first-of-type{border-top:none; padding-top:0; margin-top:0;}
+  .meta-line{
+    font-size:14px; color:var(--ink-soft); margin:2px 0 14px;
+  }
+  .maps-link{
+    display:inline-block; font-family:'DM Sans',sans-serif; font-weight:600; font-size:14px;
+    color:var(--aqua-dark); background:var(--aqua-mist); border:1px solid var(--aqua-pale);
+    border-bottom:1px solid var(--aqua-pale); border-radius:7px; padding:10px 18px; margin:14px 0 12px;
+    text-decoration:none;
+  }
+  .maps-link:hover{background:var(--aqua-pale);}
+  .tip{
+    font-size:14.5px; color:var(--ink-soft); border-left:2px solid var(--gold-whisper);
+    padding-left:14px; margin-top:10px;
+  }
+  table{width:100%; border-collapse:collapse; font-size:14.5px; margin:18px 0;}
+  th,td{text-align:left; padding:10px 12px; border-bottom:1px solid var(--line); vertical-align:top;}
+  th{font-family:'Fraunces',serif; font-weight:600; font-size:13px; color:var(--aqua-dark); text-transform:uppercase; letter-spacing:0.04em;}
+  .pmtp-hero h1{margin:0;}
+  @media(max-width:640px){
+    body{font-size:15px; padding:24px 0;}
+    .pmtp-hero{padding:44px 20px 36px; margin:-24px -20px 24px;}
+    .pmtp-band{padding:18px 16px;}
+    h2{font-size:20px;}
+    h3{font-size:17px;}
+    .pmtp-footer{border-radius:8px; padding:24px 20px;}
+    table, thead, tbody, th, td, tr{display:block;}
+    th{display:none;}
+    td{border-bottom:none; padding:4px 0;}
+    tr{margin-bottom:16px; padding-bottom:12px; border-bottom:1px solid var(--line);}
+    td:first-child{font-family:'Fraunces',serif; font-weight:600; color:var(--ink);}
+    .maps-link{display:block; text-align:center;}
+  }
+</style>
+</head>
+<body>
+<div style="max-width:680px;margin:0 auto;padding:0 20px;">
+
+<div class="pmtp-hero" style="background-image:linear-gradient(180deg,rgba(255,255,255,0.45),rgba(196,228,225,0.55) 35%,rgba(245,239,228,0.80) 68%,rgba(249,246,240,0.97));padding:clamp(40px,8vw,78px) 32px clamp(36px,6vw,60px);text-align:center;margin:-48px -28px 32px;border-bottom:1px solid var(--line);">
+  <div style="font-family:Fraunces,serif;font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--aqua-dark);margin-bottom:22px;">Point Me to Paradise Travel</div>
+  <h1 style="font-size:clamp(26px,5vw,42px);">Where to Eat Near Palm Beach</h1>
+  <div style="width:60px;height:1px;background:var(--gold-whisper);margin:18px auto;"></div>
+  <p style="font-family:Cormorant Garamond,serif;font-style:italic;font-size:clamp(17px,3.5vw,21px);max-width:620px;margin:0 auto;">A guide to dining near the Hyatt Regency Aruba, from a five-minute walk to a deliberate excursion worth the taxi.</p>
+</div>
+
+<p>You're staying in the densest stretch of restaurants on the island. The Hyatt Regency sits on J.E. Irausquin Blvd, flanked by the Marriott, Holiday Inn, Playa Linda, and Riu — a ten to twenty minute walk in either direction covers dozens of places to eat, from sand-table fine dining to a German restaurant wedged into a strip mall next to Wendy's. A few of the island's most talked-about spots sit further south in Savaneta and Eagle Beach. Those are flagged clearly below, with what the taxi will cost you in time and money, so you can decide if they're worth the trip rather than assuming they're a stroll from your room.</p>
+
+<p>This guide is organized by what you're actually looking for on a given night — a splurge, a casual seafood dinner, a beach bar with a buffet, a quick bite — rather than alphabetically. Every entry below reflects what's actually been reported by people who've eaten there, including the parts that aren't flattering.</p>
+
+<div class="pmtp-band" style="background:var(--warm-sand);">
+  <h4>Before you go</h4>
+  <p>High season — mid-December through mid-April, plus Carnival and Easter — is when reservations matter most. A few of the most in-demand restaurants below can book out two to three weeks ahead during that window. Outside of high season, walk-ins are usually fine even at the nicer places. Two restaurants on this list don't take reservations at all, no matter the season — that's called out specifically where it applies.</p>
+</div>
+
+<h2>The Splurge Nights</h2>
+<p class="section-tagline">For the dinners you'll plan the rest of the day around.</p>
+
+<div class="entry">
+<h3>Atardi</h3>
+<div class="meta-line">Aruba Marriott Resort, Palm Beach · 5–10 min walk · $$$$</div>
+<span class="tag">Date Night</span><span class="tag">Special Occasion</span><span class="tag">Waterfront</span><span class="tag caution">Reservations Needed</span>
+<p>This is a nightly pop-up restaurant set directly on the sand at the Marriott — bare feet, string lights, and front-row sunset seating built into the concept rather than a happy accident. Reviews consistently single out the octopus and scallop appetizers and the filet mignon, and an unusually high share of guests thank specific servers by name, which suggests a well-trained floor team rather than a few good nights. It's open nightly for dinner from 6:00pm to 10:00pm, and the restaurant is cashless — cards and room charges only, so leave the cash for tipping elsewhere if you want to tip beyond what's billed.</p>
+<a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Atardi+Aruba+Marriott+Palm+Beach+near+Hyatt+Regency+Aruba+Resort+and+Casino">Open in Google Maps</a>
+<p class="tip">Book specifically for the 6–7pm window if watching the sunset from your table matters to you. It's an open-air beach setup, so weather is a real variable — staff are reportedly quick to relocate tables if a squall rolls through.</p>
+</div>
+
+<div class="entry">
+<h3>The Vue Rooftop</h3>
+<div class="meta-line">Noord, Palm Beach · ~10–15 min walk · $$$</div>
+<span class="tag">Date Night</span><span class="tag">Waterfront</span><span class="tag caution">Reservations Needed</span>
+<p>A second-story rooftop with a private elevator, panoramic sunset views, and a menu that swings from sushi-style tuna to whole red snapper and rack of lamb. The seafood, steak, and desserts get consistently strong marks for freshness, and the sunset view and atmosphere are what most reviews lead with. Several servers are mentioned by name across dozens of separate reviews, which is a decent sign of consistency rather than a few lucky nights. Some guests report it skews loud and more nightclub than restaurant later in the evening, and a few found the tab pricier than expected — about $180 for two with wine and dessert in one report.</p>
+<a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=The+Vue+Rooftop+Aruba+near+Hyatt+Regency+Aruba+Resort+and+Casino">Open in Google Maps</a>
+<p class="tip">Ask for sunset-facing seating when you reserve — tables can end up facing away from the water depending on assignment.</p>
+</div>
+
+<div class="entry">
+<h3>AZAR Open Fire Cuisine</h3>
+<div class="meta-line">Palm Beach · ~10–15 min walk · $$$$</div>
+<span class="tag">Date Night</span><span class="tag">Special Occasion</span><span class="tag caution">Reservations Needed</span>
+<p>A firewood-grill steakhouse with a Mediterranean and Latin lean, tucked down a side street off the main strip with distinct indoor and outdoor rooms, each with its own character. The picanha steak, short ribs, blue cheese salad, and a dulce de leche lava cake come up again and again in reviews as the dishes worth ordering. One Tripadvisor thread recommends sitting inside — the glass-enclosed outdoor section can run warm. Families with children under 12 should know AZAR restricts dining with kids after 7:30pm, so plan an earlier seating if that applies to you.</p>
+<a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=AZAR+Open+Fire+Cuisine+Aruba+Palm+Beach+near+Hyatt+Regency+Aruba+Resort+and+Casino">Open in Google Maps</a>
+<p class="tip">A few travelers mention the road there is unlit and unpaved in stretches — take a short taxi rather than walking after dark.</p>
+</div>
+
+<div class="pmtp-band" style="background:var(--aqua-mist);">
+  <h4>Worth the taxi</h4>
+  <p>Two more frequently-recommended restaurants sit outside comfortable walking distance — Screaming Eagle in Eagle Beach and Flying Fishbone in Savaneta. Both are detailed below in their own section, since they're better thought of as planned excursions than spontaneous dinners.</p>
+</div>
+
+<h2>Seafood, Closer to the Water</h2>
+<p class="section-tagline">Where the fish is the point, not the setting.</p>
+
+<div class="entry">
+<h3>Wacky Wahoo's</h3>
+<div class="meta-line">Noord, walkable from the Hyatt · 10–20 min walk · $$$</div>
+<span class="tag">Popular</span><span class="tag">Local Favorite</span><span class="tag caution">No Reservations</span>
+<p>One of the most talked-about restaurants on the island, and unusual for a tourist-strip address in that it's genuinely loved by repeat visitors and locals, not just first-timers. It's owned by a local fisherman, and the menu changes daily based on what he's caught — expect Caribbean classics like barracuda, conch, and a well-spiced Aruban fish soup. The catch, so to speak: no reservations, full stop, seating is first come first served, and wait times commonly run 30 to 60 minutes during peak hours. It's dinner only, 5:30 to 10:30pm Monday through Saturday, closed Sundays, with no automatic service charge — tipping is at your discretion. Most reviews are enthusiastic about portion size and freshness; a smaller group finds individual dishes, especially chicken, overpriced for what's served.</p>
+<a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Wacky+Wahoo%27s+Aruba+near+Hyatt+Regency+Aruba+Resort+and+Casino">Open in Google Maps</a>
+<p class="tip">Arrive 30 to 60 minutes before the 5:30pm opening and queue on the deck — that's the only way around the wait, since they don't take reservations at any time of year.</p>
+</div>
+
+<div class="entry">
+<h3>Hadicurari Restaurant</h3>
+<div class="meta-line">On the beach between Marriott Surf Club and Moomba Beach · 15–20 min walk · $$</div>
+<span class="tag">Waterfront</span><span class="tag">Families</span>
+<p>A casual beachfront spot built around an actual working fishermen's pier, where boats serving the restaurant also bring in catch for local buyers. Reviews are genuinely mixed here. Several call it a relaxed, reasonably priced standby for breakfast or sunset dinner, with the grilled wahoo getting consistent praise. Others find it inconsistent — one recent visitor described breakfast as "fine, nothing was bad, but nothing was memorable either, just a very mid meal," though they noted dinner looked livelier when they passed by later. A seafood buffet runs Friday through Sunday nights with Aruban specialties grilled to order.</p>
+<a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Hadicurari+Restaurant+Aruba+near+Hyatt+Regency+Aruba+Resort+and+Casino">Open in Google Maps</a>
+<p class="tip">Treat this as a solid value pick for the breezy beachfront setting and reasonable prices, not as a destination meal in its own right.</p>
+</div>
+
+<div class="entry">
+<h3>Pelican Nest Seafood Grill</h3>
+<div class="meta-line">Pelican Pier, Palm Beach · 10–15 min walk · $$$$</div>
+<span class="tag">Waterfront</span><span class="tag">Special Occasion</span>
+<p>Built entirely on stilts over the water at Pelican Pier, open since 1994, and a favorite of locals and tourists alike for that whole run. The draw is the setting as much as the menu — sunset views from every table, a wide range of fresh seafood, and the option to feed fish from your seat while you wait for your order. Crab cakes get specific, repeated praise across reviews. Given the over-water setting and the price point, this sits squarely in romantic or special-occasion territory rather than a casual Tuesday dinner.</p>
+<a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Pelican+Nest+Seafood+Grill+Aruba+near+Hyatt+Regency+Aruba+Resort+and+Casino">Open in Google Maps</a>
+</div>
+
+<h2>Beach Bars and Easy All-Day Spots</h2>
+<p class="section-tagline">For when the plan is more about the afternoon than the menu.</p>
+
+<div class="entry">
+<h3>MooMba Beach Bar &amp; Restaurant</h3>
+<div class="meta-line">Between the Marriott and Holiday Inn, Palm Beach · 10–15 min walk · $$</div>
+<span class="tag">Popular</span><span class="tag">Families</span><span class="tag">Waterfront</span>
+<p>The unofficial social hub of Palm Beach by day and a livelier beach-party scene by night, under oversized palapas right on the sand. It's consistently praised for the location and sunset views, with nightly live music adding to the draw, but the food itself gets more inconsistent marks — a popular breakfast buffet and a Friday all-you-can-eat BBQ buffet are the most reliably good options, while individual dinner plates vary more from one visit to the next.</p>
+<a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=MooMba+Beach+Bar+and+Restaurant+Aruba+near+Hyatt+Regency+Aruba+Resort+and+Casino">Open in Google Maps</a>
+<p class="tip">Good for a relaxed breakfast on the beach or a loud, fun dinner with live entertainment — not the choice if you want a quiet, food-focused meal, since the bar scene picks up after dark.</p>
+</div>
+
+<div class="entry">
+<h3>Bavaria German Restaurant</h3>
+<div class="meta-line">Palm Beach, next to Wendy's and KFC · 10–15 min walk · $$</div>
+<span class="tag">Local Favorite</span><span class="tag caution">Reservations Recommended In Season</span>
+<p>An unlikely but consistently beloved find: a genuine German restaurant set into a Palm Beach strip mall, serving crispy schnitzel, fall-apart sauerbraten, and a long list of European craft beers for anyone who's had enough piña coladas for the trip. The owner, repeatedly named Peter in reviews, is described as a fixture who personally recommends beer pairings — the kind of detail that points to a loyal, returning customer base rather than one-off tourist traffic. Dinner runs Monday through Saturday, roughly 5 to 9:30pm, closed Sundays. A small minority of reviews find the food underwhelming relative to the reputation, but the volume and consistency of praise across platforms (4.7 to 4.8 star averages) make this a safe, distinctive change of pace.</p>
+<a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Bavaria+German+Restaurant+Aruba+near+Hyatt+Regency+Aruba+Resort+and+Casino">Open in Google Maps</a>
+</div>
+
+<h2>Worth the Trip South</h2>
+<p class="section-tagline">Two restaurants that justify the taxi fare, with the honest cost of getting there.</p>
+
+<div class="entry">
+<h3>Screaming Eagle</h3>
+<div class="meta-line">Eagle Beach · 15–20 min walk, or a short taxi · $$$$</div>
+<span class="tag">Special Occasion</span><span class="tag caution">Reservations Needed</span>
+<p>A long-running fine-dining institution built around French-leaning seafood and meat, an extensive wine list with a dedicated sommelier, and a novelty "bed dining" seating option alongside conventional tables. Reviews are largely glowing on food and personalized service — repeat guests are often remembered by name — though a vocal minority feels the quality has slipped from its earlier peak years, with one recent reviewer noting the restaurant "used to be a high-end dining experience" and that "both the service and food are not what they were." Plenty of others still call it the best meal of their trip, so this is less a clear-cut recommendation than a place worth going into with calibrated expectations. It's a solid option for celiac or gluten-free diners — staff are described as knowledgeable even without a dedicated GF menu.</p>
+<a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Screaming+Eagle+Aruba+near+Hyatt+Regency+Aruba+Resort+and+Casino">Open in Google Maps</a>
+<p class="tip">Reserve ahead, especially in high season — and don't go in expecting the same experience every long-time visitor describes, since recent reports are more mixed than they once were.</p>
+</div>
+
+<div class="entry">
+<h3>Flying Fishbone</h3>
+<div class="meta-line">Savaneta · 20–30 min taxi each way, roughly $35–40 one way, not walkable · $$$$</div>
+<span class="tag">Special Occasion</span><span class="tag">Waterfront</span><span class="tag caution">Reservations Needed</span><span class="tag">Touristy But Worth It</span>
+<p>Aruba's original feet-in-the-water dining concept — tables set directly in the shallow surf, lit by submerged lights once the sun's down, with sand-side and covered-deck seating for anyone who'd rather keep their shoes on. It opened in 1977 as the first restaurant on the island to do this, and the fish comes from the fisherman's pier next door. The in-water tables are both the draw and the bottleneck — they're reserved well in advance, so request that seating by name when you book, and ask again in person on arrival, since at least one guest was told no water tables were available and then seated at one anyway after asking face to face. Food quality is consistently described as very good, with lobster, halibut, and seafood pasta as standouts, though a few reviewers flag oversalted fish.</p>
+<a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Flying+Fishbone+Savaneta+Aruba+near+Hyatt+Regency+Aruba+Resort+and+Casino">Open in Google Maps</a>
+<p class="tip">This is a deliberate excursion, not a casual walk-over dinner — budget the taxi cost and time accordingly, and bring sunscreen and sunglasses, since the waterside tables have no shade before sunset.</p>
+</div>
+
+<div class="pmtp-band" style="background:var(--warm-sand);">
+  <h4>One more for the adventurous</h4>
+  <p>Zeerovers, also in Savaneta, is a genuinely local fish market turned restaurant — fish and shrimp cleaned at the counter, sold by weight, fried on the spot, eaten at simple dock-side tables. It's cash only, closed Mondays, and open 11am to 9pm. Waits are unpredictable and sometimes run over an hour, and the catch of the day is occasionally barracuda, which carries a real risk of ciguatera poisoning according to at least one reviewer's account — ask what's being served before you commit if that concerns you. For a cheap, quick, photogenic lunch with real local color, it delivers. For a relaxed evening with guaranteed seating, it doesn't, and it's worth knowing that going in.</p>
+</div>
+
+<h2>Quick Bites and On-Property</h2>
+<p class="section-tagline">For the nights you don't want to go far.</p>
+
+<div class="pmtp-band" style="background:var(--aqua-mist);">
+  <h4>Right next door</h4>
+  <p>Paseo Herencia, the shopping plaza adjacent to the Hyatt, is built to echo Aruban architecture and culture, with retail, a cigar shop, and a few casual restaurants including Senor Frogs, Papillon, and Five Burgers. On property, Shoco serves Lavazza coffee, baked goods, salads, and sandwiches, plus Gelatissimo gelato — an easy, fast option without leaving the resort grounds.</p>
+</div>
+
+<div class="pmtp-band" style="background:var(--warm-sand);">
+  <h4>Without leaving the Hyatt</h4>
+  <p>For nights you'd rather stay in: Piccolo offers contemporary steaks with an open-concept kitchen, ShinSen serves sushi and sashimi in an intimate modern setting, Ruinas del Mar — inspired by the historic Bushiribana Gold Mill Ruins — blends Caribbean and Mediterranean dishes with fresh seafood, and Palms serves Caribbean-Mediterranean beachfront fare with kosher dairy and vegetarian options certified under Chabad of Aruba supervision. Worth knowing if dietary requirements are part of your planning — kosher dining is available right on property.</p>
+</div>
+
+<h2>Good to Know Before You Go</h2>
+<p class="section-tagline">The practical details that make the evening easier.</p>
+
+<div class="entry">
+<h3>Reservations</h3>
+<p>High season — mid-December through mid-April, plus Carnival and Easter — is when the popular restaurants book out, sometimes two to three weeks ahead. Outside that window, walk-ins are usually fine even at the nicer places. Two restaurants on this list, Wacky Wahoo's and Zeerovers, don't accept reservations at any time of year — arrival time is the only lever you have at either one.</p>
+</div>
+
+<div class="entry">
+<h3>Tipping</h3>
+<p>Tipping in Aruba typically runs 10 to 15 percent through an automatic service charge, or 15 to 20 percent when no service charge is added — close to U.S. norms. Because that service charge is usually pooled across staff rather than going directly to your server, local etiquette suggests adding an extra 5 to 10 percent in cash for someone who gave you genuinely attentive service. Check your bill before tipping again — some menus state clearly whether service is included, others don't.</p>
+</div>
+
+<div class="entry">
+<h3>Dress code</h3>
+<p>Casual island wear works almost everywhere, even after dark. A handful of the upscale spots above — AZAR, Screaming Eagle, The Vue Rooftop — lean smart-casual in the evening, meaning collared shirts and sundresses rather than swim trunks and flip-flops.</p>
+</div>
+
+<div class="entry">
+<h3>Cash versus card</h3>
+<p>Zeerovers is cash only. Most restaurants along the hotel strip take cards without issue, and a few resort restaurants, including Atardi, are cashless altogether — cards and room charges only.</p>
+</div>
+
+<h3>Reservations at a glance</h3>
+<table>
+<thead><tr><th>Restaurant</th><th>Reservations</th><th>How to book</th></tr></thead>
+<tbody>
+<tr><td>Screaming Eagle</td><td>Strongly recommended, 1–3 weeks ahead in season</td><td>Restaurant website or phone</td></tr>
+<tr><td>Flying Fishbone</td><td>Required for water-table seating, book well ahead</td><td>flyingfishbone.com/reservations</td></tr>
+<tr><td>Atardi</td><td>Strongly recommended, especially for 6–7pm sunset seating</td><td>Marriott resort dining line or OpenTable</td></tr>
+<tr><td>The Vue Rooftop</td><td>Recommended</td><td>reservationsthevuerooftop@gmail.com (groups of 10+) or OpenTable</td></tr>
+<tr><td>AZAR</td><td>Recommended</td><td>OpenTable or direct</td></tr>
+<tr><td>Bavaria</td><td>Recommended in high season</td><td>+297 586 8550</td></tr>
+<tr><td>Wacky Wahoo's</td><td>Not accepted — arrive 30–60 min before 5:30pm open</td><td>Walk-in only</td></tr>
+<tr><td>Zeerovers</td><td>Not accepted — expect a wait, cash only</td><td>Walk-in only</td></tr>
+<tr><td>Hadicurari</td><td>Recommended but often available walk-in</td><td>OpenTable or on arrival</td></tr>
+</tbody>
+</table>
+
+<div class="pmtp-footer" style="background:var(--sand-light);margin-top:64px;padding:36px 28px;border-radius:12px;">
+  <div style="font-family:Fraunces,serif;font-size:20px;font-weight:600;">Andrea Gunter</div>
+  <div style="font-family:Cormorant Garamond,serif;font-style:italic;color:var(--ink-soft);font-size:15px;margin-bottom:14px;">Travel Advisor</div>
+  <div style="font-size:14px;margin-bottom:4px;"><a id="pmtpEmailLink" href="#"></a></div>
+  <div style="font-size:14px;margin-bottom:4px;">4097893579</div>
+  <div style="font-family:Cormorant Garamond,serif;font-style:italic;color:var(--ink-soft);font-size:14px;margin-top:14px;">Point Me to Paradise Travel</div>
+</div>
+
+<div class="pmtp-disclaimer" style="margin-top:28px;padding:22px 26px;background:var(--paper);border:1px solid var(--line);border-radius:8px;font-size:12.5px;line-height:1.7;color:var(--ink-soft);">
+  <span style="display:block;font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);margin-bottom:8px;">Important — please read</span>
+  This guide is provided for informational purposes only. Locations, hours, conditions, and recommendations can change without notice, and ocean, weather, trail, road, and travel conditions can shift quickly and unpredictably. Point Me to Paradise Travel, the advisor named in this guide, and the authors of this content are not liable for any injury, illness, loss, theft, or harm of any kind arising from your visit to any location or participation in any activity referenced here. By using this guide, you accept full personal responsibility for your own safety. Use your own judgment, verify current conditions before any activity, follow all posted warnings and local regulations, and consult qualified professionals — lifeguards, park rangers, licensed guides, medical providers — where appropriate.
+</div>
+
+</div>
+
+<script>(function(){var l="andrea",d="pointmetoparadis.com";if(!l||!d)return;var a=l+"\u0040"+d;var el=document.getElementById("pmtpEmailLink");if(el){el.href="mailto:"+a;el.textContent=a;}})()</script>
+</body>
+</html>
