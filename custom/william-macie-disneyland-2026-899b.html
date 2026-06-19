@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Your Disneyland Guide · Point Me to Paradise Travel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --aqua-pale:#C4E4E1; --aqua-mist:#EAF3F2; --aqua:#75AFB1; --aqua-dark:#4F8A8C;
+  --sand:#ECE7DC; --sand-light:#F4F1E9; --gold-whisper:#D6C8A8; --gold-dark:#B89E6A;
+  --white:#FFFFFF; --paper:#FBFDFD; --ink:#2B2420; --ink-soft:#6B6359; --line:#E5E9E8;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{color-scheme:light;scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.65;font-weight:400;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Playfair Display',Georgia,serif;font-weight:500;line-height:1.18;color:var(--ink)}
+.wrap{max-width:880px;margin:0 auto;padding:0 24px}
+
+/* HERO */
+.hero{position:relative;
+  background-image:linear-gradient(180deg,rgba(255,255,255,0.55) 0%,rgba(196,228,225,0.72) 38%,rgba(234,243,242,0.88) 75%,rgba(251,253,253,0.98) 100%),url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSw1T7C0sN2w4CKKbA9GnIZJ-n-lw0upj0VkwNctKmYK50icgtM--ztZPQ&s=10');
+  background-size:cover;background-position:center;background-repeat:no-repeat;
+  padding:104px 24px 80px;text-align:center;border-bottom:1px solid var(--line);}
+.hero .mark{font-family:'DM Sans',sans-serif;font-size:12px;text-transform:uppercase;letter-spacing:0.26em;color:var(--aqua-dark);font-weight:600;margin-bottom:26px}
+.hero h1{font-size:clamp(40px,6vw,64px);font-weight:500;letter-spacing:-0.01em}
+.hero .hairline{width:60px;height:1px;background:var(--gold-whisper);margin:24px auto;border:0}
+.hero .subtitle{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink);font-size:clamp(19px,2.2vw,24px);max-width:600px;margin:0 auto 22px;line-height:1.5}
+.hero .sig{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:16px;color:var(--ink-soft)}
+
+/* OVERVIEW */
+.overview{background:var(--white);border-bottom:1px solid var(--line)}
+.overview-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;max-width:880px;margin:0 auto}
+.ov-item{padding:30px 18px;text-align:center;border-right:1px solid var(--line)}
+.ov-item:last-child{border-right:0}
+.ov-item svg{color:var(--aqua-dark);margin-bottom:10px}
+.ov-label{font-size:11px;text-transform:uppercase;letter-spacing:0.13em;color:var(--ink-soft);margin-bottom:4px}
+.ov-value{font-family:'Playfair Display',serif;font-size:16px;color:var(--ink)}
+
+/* SECTIONS */
+section.band{padding:62px 0}
+section.band.alt{background:var(--aqua-mist)}
+.kicker{font-size:11px;text-transform:uppercase;letter-spacing:0.18em;color:var(--aqua-dark);font-weight:600;margin-bottom:14px}
+.band h2{font-size:clamp(28px,4vw,38px);margin-bottom:6px}
+.section-sub{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink-soft);font-size:19px;margin-bottom:28px;line-height:1.45}
+.band h3{font-size:22px;margin:34px 0 12px}
+.band h4{font-size:18px;margin:24px 0 8px}
+.band p{margin-bottom:16px;font-size:16px;color:var(--ink)}
+.band p.lead{font-size:17.5px}
+.heading-flank{display:flex;align-items:center;justify-content:flex-start;gap:14px;margin-bottom:6px}
+.heading-flank svg{color:var(--aqua-dark);opacity:0.65;flex-shrink:0}
+
+.card{background:var(--white);border:1px solid var(--line);border-radius:8px;padding:28px 30px;margin:22px 0}
+.card.tinted{background:var(--sand-light);border-color:var(--sand)}
+.card h3{margin-top:0}.card h4{margin-top:0}
+
+.callout{background:var(--sand-light);border-left:3px solid var(--aqua-dark);padding:22px 26px;margin:24px 0;font-size:15.5px;line-height:1.7;border-radius:0 6px 6px 0}
+.callout strong{color:var(--aqua-dark)}
+.callout .co-label{display:block;font-size:11px;text-transform:uppercase;letter-spacing:0.16em;color:var(--aqua-dark);font-weight:600;margin-bottom:6px}
+.callout.warn{border-left-color:var(--gold-dark,#B89E6A);background:#FBF7EE}
+.callout.warn .co-label{color:#9A7B3A}
+
+ul.brand-list{list-style:none;margin:10px 0 20px}
+ul.brand-list li{position:relative;padding-left:26px;margin-bottom:11px;font-size:16px;line-height:1.55}
+ul.brand-list li::before{content:"";position:absolute;left:2px;top:9px;width:7px;height:7px;border-radius:50%;background:var(--aqua-dark)}
+
+.pull{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:23px;line-height:1.45;color:var(--ink);text-align:center;padding:20px 30px;margin:30px 0;border-top:1px solid var(--gold-whisper);border-bottom:1px solid var(--gold-whisper)}
+
+/* checklist */
+.check{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+.check:last-child{border-bottom:0}
+.check .ck{flex-shrink:0;width:26px;height:26px;border-radius:50%;background:var(--aqua-mist);display:flex;align-items:center;justify-content:center;color:var(--aqua-dark)}
+.check .ck-body h4{margin:0 0 3px;font-size:16px}
+.check .ck-body p{margin:0;font-size:14.5px;color:var(--ink-soft)}
+
+/* tips */
+.tip{display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)}
+.tip:last-child{border-bottom:0}
+.tip .tip-icon{flex-shrink:0;width:34px;height:34px;border-radius:50%;background:var(--aqua-mist);display:flex;align-items:center;justify-content:center;color:var(--aqua-dark)}
+.tip .tip-body h4{margin:0 0 4px;font-size:17px}
+.tip .tip-body p{margin:0;font-size:15px;color:var(--ink-soft)}
+
+/* timeline */
+.timeline{margin:22px 0}
+.tl-item{display:flex;gap:20px;padding:16px 0}
+.tl-marker{flex-shrink:0;min-width:74px;text-align:right;font-family:'Playfair Display',serif;font-size:14px;color:var(--aqua-dark);padding-top:2px}
+.tl-content{border-left:2px solid var(--aqua-pale);padding:0 0 0 20px;position:relative}
+.tl-content::before{content:"";position:absolute;left:-6px;top:6px;width:10px;height:10px;border-radius:50%;background:var(--aqua-dark)}
+.tl-content h4{margin:0 0 4px;font-size:17px}
+.tl-content p{margin:0;font-size:15px;color:var(--ink-soft)}
+
+/* ride table */
+.ride-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:15px;background:var(--white);border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.ride-table th{background:var(--aqua-mist);text-align:left;padding:12px 16px;font-family:'DM Sans',sans-serif;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:0.07em;color:var(--ink)}
+.ride-table td{padding:12px 16px;border-top:1px solid var(--line);vertical-align:top;color:var(--ink)}
+.ride-table td:first-child{font-weight:600;color:var(--aqua-dark)}
+.tag{display:inline-block;font-size:10px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:2px 7px;border-radius:3px;background:var(--aqua-pale);color:#2c5658;margin-right:4px;white-space:nowrap}
+.tag.all{background:#E4F0E2;color:#3a6b34}
+.tag.big{background:#F1E2E2;color:#8a4a4a}
+
+/* anchor nav */
+.tocnav{background:var(--sand-light);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0}
+.tocnav .wrap{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center}
+.tocnav a{font-size:13px;color:var(--aqua-dark);text-decoration:none;font-weight:500;letter-spacing:0.02em}
+.tocnav a:hover{text-decoration:underline}
+
+/* FORM */
+.form-section{background:var(--aqua-mist);padding:60px 0}
+.form-card{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:36px 34px;max-width:560px;margin:0 auto}
+.form-card h2{font-size:28px;text-align:center;margin-bottom:6px}
+.form-card .fc-sub{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink-soft);text-align:center;font-size:17px;margin-bottom:26px}
+.form-card label.fl{display:block;font-size:13px;font-weight:600;color:var(--ink);margin:16px 0 6px;letter-spacing:0.02em}
+.form-card input,.form-card textarea{width:100%;font-family:'DM Sans',sans-serif;font-size:16px;color:var(--ink);padding:13px 15px;border:1px solid var(--line);border-radius:7px;background:var(--paper)}
+.form-card input:focus,.form-card textarea:focus{outline:none;border-color:var(--aqua-dark)}
+.form-card textarea{min-height:110px;resize:vertical}
+.form-card button{width:100%;margin-top:24px;font-family:'DM Sans',sans-serif;font-size:16px;font-weight:600;color:var(--white);background:var(--aqua-dark);border:0;border-radius:7px;padding:16px;cursor:pointer;letter-spacing:0.02em;min-height:52px;transition:opacity .15s}
+.form-card button:hover{opacity:0.92}
+.btn-link{display:inline-flex;align-items:center;gap:8px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:var(--white);background:var(--aqua-dark);text-decoration:none;border-radius:7px;padding:13px 22px;letter-spacing:0.01em;transition:opacity .15s;margin:6px 0}
+.btn-link:hover{opacity:0.92}
+.btn-link svg{flex-shrink:0}
+.sec-img{width:100%;height:auto;max-height:340px;object-fit:cover;border-radius:8px;border:1px solid var(--line);margin:8px 0 22px;display:block}
+#thanksMsg{display:none;text-align:center;padding:30px}
+#thanksMsg.show{display:block}
+#thanksMsg h3{font-size:24px;margin-bottom:10px}
+#thanksMsg p{color:var(--ink-soft)}
+
+/* FOOTER */
+footer{background:var(--sand-light);padding:54px 0 40px;border-top:1px solid var(--line)}
+footer .ft-name{font-family:'Playfair Display',serif;font-size:22px;margin-bottom:4px}
+footer .ft-role{font-family:'Cormorant Garamond',serif;font-style:italic;color:var(--ink-soft);margin-bottom:18px}
+footer .ft-contact{font-size:15px;margin-bottom:6px}
+footer .ft-contact a{color:var(--aqua-dark);text-decoration:none}
+footer .ft-disclosure{font-size:12.5px;color:var(--ink-soft);line-height:1.6;margin-top:24px;max-width:680px;font-style:italic}
+footer .ft-hairline{width:50px;height:1px;background:var(--gold-whisper);margin:0 0 24px}
+
+@media(max-width:768px){
+  .overview-grid{grid-template-columns:repeat(2,1fr)}
+  .ov-item:nth-child(2){border-right:0}
+  .ov-item:nth-child(1),.ov-item:nth-child(2){border-bottom:1px solid var(--line)}
+  .hero{padding:84px 22px 60px}
+  .tl-marker{min-width:60px;font-size:13px}
+  .ride-table{font-size:13.5px}.ride-table th,.ride-table td{padding:10px 11px}
+  .card{padding:24px 22px}.form-card{padding:30px 22px}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="mark">Point Me to Paradise Travel</div>
+  <h1>Your Disneyland Guide</h1>
+  <hr class="hairline">
+  <p class="subtitle">Prepared for the Maes family — three nights in Anaheim and two days in the parks, planned around five of you, from the four-year-old to the grown-ups. The hotel, the rides, the strategy, and the small things that turn a good Disney day into a great one.</p>
+  <p class="sig">Prepared by Christina Garcia</p>
+</header>
+
+<!-- OVERVIEW -->
+<div class="overview">
+  <div class="overview-grid">
+    <div class="ov-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-6h6v6"/></svg>
+      <div class="ov-label">Your hotel</div>
+      <div class="ov-value">Courtyard, Theme Park Entrance</div>
+    </div>
+    <div class="ov-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M8 3v4M16 3v4"/></svg>
+      <div class="ov-label">Your stay</div>
+      <div class="ov-value">Jul 20–23, 2026</div>
+    </div>
+    <div class="ov-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16v10H4z"/><path d="M9 7V5h6v2"/><path d="M4 12h16"/></svg>
+      <div class="ov-label">Your tickets</div>
+      <div class="ov-value">2 days · 1 park / day</div>
+    </div>
+    <div class="ov-item">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="2.6"/><circle cx="16" cy="9" r="2"/><path d="M3.5 19a5.5 5.5 0 0111 0"/><path d="M14 19a4 4 0 016.5-3.1"/></svg>
+      <div class="ov-label">Your crew</div>
+      <div class="ov-value">2 adults, 3 kids</div>
+    </div>
+  </div>
+</div>
+
+<!-- TOC -->
+<nav class="tocnav">
+  <div class="wrap">
+    <a href="#start">Start here</a>
+    <a href="#hotel">Your hotel</a>
+    <a href="#app">The app &amp; tickets</a>
+    <a href="#lightning">Lightning Lane</a>
+    <a href="#ropedrop">Rope drop</a>
+    <a href="#hours">Park hours</a>
+    <a href="#rides-kids">Rides for the littles</a>
+    <a href="#rides-big">Bigger rides</a>
+    <a href="#riderswitch">Rider Switch</a>
+    <a href="#days">Your two days</a>
+    <a href="#food">Food</a>
+    <a href="#gems">Little extras</a>
+    <a href="#pack">What to pack</a>
+  </div>
+</nav>
+
+<!-- START HERE -->
+<section class="band" id="start">
+  <div class="wrap">
+    <div class="kicker">Start here</div>
+    <h2>The shape of your trip</h2>
+    <p class="section-sub">Three nights, two park days, five people with very different ride appetites — here's how it all fits together.</p>
+    <p class="lead">You've got a lovely setup: a family-friendly hotel a short walk from the gates, two days of park tickets, and a crew that spans a four-year-old to two adults. The single most important thing to understand up front is the rhythm of your days, because two pieces don't line up automatically — and planning around the gap is what makes the week feel easy instead of rushed.</p>
+
+    <div class="callout">
+      <span class="co-label">The one thing to plan around</span>
+      You have <strong>three hotel nights but only two days of park tickets</strong>. That's a feature, not a problem — it means you get a built-in rest day. Most families burn out trying to do Disney on back-to-back full days with little kids in summer heat. Your middle day is the secret weapon: sleep in, hit the hotel waterpark, nap, and go back into a park refreshed in the evening. More on exactly how to sequence this in "Your two days" below.
+    </div>
+
+    <p>Your tickets are <strong>2-day, one-park-per-day</strong> — so each park day you pick either Disneyland Park or Disney California Adventure and stay there (no hopping between the two on the same day). With two days, the natural move is one full day in each park. I'll lay out which park suits your crew best on which day further down.</p>
+
+    <p>A quick orientation to the two parks, since they're right across a plaza from each other:</p>
+    <ul class="brand-list">
+      <li><strong>Disneyland Park</strong> — the original. Castle, Fantasyland dark rides, the classic "Disney" feeling. This is the one your little ones will light up in — the highest concentration of gentle, no-height-requirement rides anywhere.</li>
+      <li><strong>Disney California Adventure (DCA)</strong> — the second park, just across the entrance plaza. More thrill rides, Pixar Pier, Cars Land, Avengers Campus. A bit more skewed toward bigger kids and adults, but with real gems for the littles too.</li>
+    </ul>
+    <p>Both are walkable from your hotel, and both are covered in this guide. Let's start with home base.</p>
+  </div>
+</section>
+
+<!-- HOTEL -->
+<section class="band alt" id="hotel">
+  <div class="wrap">
+    <div class="heading-flank">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-4 7 4v13"/><path d="M9 21v-6h6v6"/></svg>
+      <h2>Your home base</h2>
+    </div>
+    <p class="section-sub">Courtyard by Marriott Anaheim Theme Park Entrance — close enough to walk back for a nap, with a waterpark the kids won't stop talking about.</p>
+
+    <img class="sec-img" src="https://cache.marriott.com/is/image/marriotts7prod/cy-snadt-surfside-waterpark-34019:Feature-Hor?wid=1920&fit=constrain" alt="Surfside Waterpark at the Courtyard by Marriott Anaheim Theme Park Entrance" loading="lazy">
+
+    <p>You chose well for a family your size. The Courtyard Theme Park Entrance is a Disneyland "Good Neighbor" hotel built around exactly your situation: room to sleep five, a short walk to the gates, and an on-site waterpark that becomes its own attraction.</p>
+
+    <div class="callout warn">
+      <span class="co-label">Do you get early park entry? — the honest answer</span>
+      No — and it's worth being clear so no one's disappointed at the gate. <strong>Good Neighbor hotels like the Courtyard do not include early park entry or extra "magic hours."</strong> And here's the part that trips up returning visitors: as of <strong>January 5, 2026, Disney ended early entry even for its own three on-site hotels</strong>, replacing it with a one-time free Lightning Lane perk for those Disney-hotel guests. That perk doesn't extend to Good Neighbor hotels either. So everyone — you included — enters at the same official open time. The good news: your edge isn't early entry anyway, it's that you're a short walk away. You can be first in line at rope drop without a long drive or tram, which is its own real advantage (covered in the rope-drop and hours sections below).
+    </div>
+
+    <h3>The walk to the parks</h3>
+    <p>The hotel sits on South Harbor Boulevard, and it's roughly an <strong>8–10 minute walk</strong> to the main entrance plaza between the two parks. That's genuinely close — in some cases a shorter walk than from the Disney-owned hotels. The real value of being this close: you can walk back midday for the four-year-old's nap or a swim, then return refreshed. With little kids, that midday reset is worth more than any single ride.</p>
+
+    <h3>Surfside Waterpark</h3>
+    <p>The hotel's 20,000-square-foot waterpark — slides, a splash zone, and a large hot tub, open year-round — is a real draw and a big part of why this hotel works for your rest day. Reservations are recommended, so check at the front desk when you arrive. Knowing this is here is what makes the no-park middle day a treat rather than a wasted day.</p>
+
+    <h3>Your room</h3>
+    <p>The family rooms here are known for sleeping larger groups comfortably — many feature <strong>bunk beds</strong> (a hit with kids), dinette seating, and large bathrooms with dual sinks and a separate standalone shower in addition to the tub. Some rooms face Disney and can catch the fireworks from the window or balcony — worth asking about at check-in, though it depends on availability. The Bistro on-site serves Starbucks coffee and breakfast in the morning and dinner with cocktails in the evening.</p>
+
+    <div class="callout warn">
+      <span class="co-label">Know before you arrive</span>
+      A few honest logistics so nothing catches you off guard: parking is <strong>valet only</strong> (no self-park), running roughly $40–47 per night plus tax — but because you're walking to the parks, you skip Disney's separate parking fee entirely. There's <strong>no free breakfast</strong> and <strong>no shuttle</strong> (you won't need one — it's a walk). Hotel check-in is 4:00 PM and check-out is 11:00 AM; if you arrive before your room is ready on July 20, they'll typically hold your bags so you can head to a park or the pool.
+    </div>
+
+    <p>If you'd ever rather drive and park at the parks themselves — say for an easier load-out on a tired evening — Disney's official parking page has current rates, structure locations, and tram details. For your stay, though, the walk from the hotel will almost always be faster and cheaper.</p>
+    <a class="btn-link" href="https://disneyland.disney.go.com/tickets/parking/" target="_blank" rel="noopener">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V7h4a3 3 0 010 6H9"/></svg>
+      Disneyland Parking Info &amp; Rates
+    </a>
+
+    <h3>A money-saving move with the room</h3>
+    <p>Disneyland lets you bring in your own food and non-alcoholic drinks. A quick grocery run on arrival — breakfast items, water, snacks for the backpack — saves a surprising amount over three days, since the Courtyard doesn't include breakfast. Stock the room, eat a quick bite before you walk over, and you've sidestepped the priciest, most time-consuming meals of the day.</p>
+  </div>
+</section>
+
+<!-- APP & TICKETS -->
+<section class="band" id="app">
+  <div class="wrap">
+    <div class="kicker">Do this before you go</div>
+    <h2>The app is your command center</h2>
+    <p class="section-sub">One free download does almost everything — and a couple of setup steps now save real time later.</p>
+
+    <p>The <strong>Disneyland app</strong> (the official one, free on the App Store and Google Play) is the single most important tool for your trip. It holds your tickets, shows live wait times, runs mobile food orders, lets you buy and book Lightning Lane, and maps the parks. Download it and link your tickets before you leave home.</p>
+
+    <img class="sec-img" src="https://i.insider.com/57ffb205da177d20008b4aa7?width=1100&format=jpeg&auto=webp" alt="Using the Disneyland mobile app to plan a park day" loading="lazy">
+
+    <h3>Your pre-trip checklist</h3>
+    <div class="check">
+      <div class="ck"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <div class="ck-body"><h4>Download the Disneyland app & make an account</h4><p>One account for the family. Sign in before you go so everything's ready.</p></div>
+    </div>
+    <div class="check">
+      <div class="ck"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <div class="ck-body"><h4>Link your park tickets</h4><p>Add all five tickets to the app so you can scan in from your phone and link Lightning Lane to each person.</p></div>
+    </div>
+    <div class="check">
+      <div class="ck"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <div class="ck-body"><h4>Make park reservations if required for your dates</h4><p>Some ticket types need a park reservation in addition to the ticket. I'll confirm whether yours do — but check the app so each of your two days has a park locked in.</p></div>
+    </div>
+    <div class="check">
+      <div class="ck"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <div class="ck-body"><h4>Set a reminder for your Lightning Lane window</h4><p>You can buy and book it 3 days before your first park day (details just below). Put it in your calendar now.</p></div>
+    </div>
+    <div class="check">
+      <div class="ck"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <div class="ck-body"><h4>Pre-load a credit card in the app</h4><p>For mobile food orders and Lightning Lane purchases on the fly, so you're not fumbling at the counter.</p></div>
+    </div>
+
+    <div class="callout">
+      <span class="co-label">Bring battery</span>
+      The app runs your whole day — tickets, wait times, ordering, photos — and it drains phones fast. Pack a portable charger (or two) and a cable in your park bag. A dead phone mid-afternoon means no tickets to re-enter, no mobile orders, no Lightning Lane. This is the most-overlooked essential at Disneyland.
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTNING LANE -->
+<section class="band alt" id="lightning">
+  <div class="wrap">
+    <div class="heading-flank">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4 14h7l-2 8 9-12h-7z"/></svg>
+      <h2>Lightning Lane, explained simply</h2>
+    </div>
+    <p class="section-sub">Disney's paid skip-the-line system. It's optional — but on a summer day with three kids, it can hand you back hours.</p>
+
+    <p>Disneyland no longer has the old free FastPass. The current system is called <strong>Lightning Lane</strong>, and it's a paid, optional way to wait in a much shorter line for popular rides. Here's the plain-English version of the two types you'll actually use.</p>
+
+    <img class="sec-img" src="https://www.ocregister.com/wp-content/uploads/2026/04/OCR-L-DIS-NILES-0410-FEATURED.jpg" alt="Lightning Lane entrance at Disneyland" loading="lazy">
+
+    <div class="card">
+      <h4>Lightning Lane Multi Pass — the one most families buy</h4>
+      <p>A per-person, per-day purchase (pricing is dynamic and varies by date — it has started around <strong>$34 per person per day</strong>, and can run higher on busy summer days). It lets you reserve return times for a set of participating rides — <strong>book up to 3 in advance</strong>, and once you've used one in the park, you can keep adding more, one at a time, as the day goes on. When you buy it, your <strong>PhotoPass</strong> photos for that day are included too.</p>
+      <p style="margin-bottom:0;">Children under 3 don't need their own pass to ride with your group — so for ride purposes, Brooks (4) does need one, but a child still in arms wouldn't. All five of you would each need a Multi Pass on a day you buy it.</p>
+    </div>
+
+    <div class="card">
+      <h4>Lightning Lane Single Pass — pay-per-ride for the headliners</h4>
+      <p>A separate, one-ride purchase for a couple of the highest-demand attractions that aren't in the Multi Pass — most notably <strong>Star Wars: Rise of the Resistance</strong> at Disneyland and <strong>Radiator Springs Racers</strong> at DCA. You buy these individually, and prices vary by day. You don't have to buy these at all — but if your crew wants a specific headliner without a long standby wait, this is how.</p>
+    </div>
+
+    <div class="callout warn">
+      <span class="co-label">Your booking window — important</span>
+      Because you're staying at a Good Neighbor hotel (not a Disney-owned one), you can purchase Lightning Lane and make your advance selections <strong>3 days before your first park day</strong>, starting at <strong>7:00 AM Pacific</strong>. Disney-hotel guests get 7 days; you get 3. Set an alarm for 6:55 AM Pacific that morning — the best return times for the popular rides go quickly. (Disney-hotel guests also get a free one-time Lightning Lane perk on check-in; that one does <em>not</em> apply at the Courtyard, so plan to purchase.)
+    </div>
+
+    <h3>Is it worth it for your family?</h3>
+    <p>Honestly — on a summer day with a 4-, 6-, and 9-year-old, usually yes, at least for your busier park day. The math isn't really about money saved; it's about meltdowns avoided. Standing in a 60-minute standby line in July heat with little kids is where good days go sideways. That said, you don't have to buy it for both days. A reasonable play: buy Multi Pass for your bigger, busier park day, and rope-drop your way through the calmer day without it. I'll help you decide once we see which dates you're locked into and the crowd forecast.</p>
+
+    <h3>The golden rule of using it well</h3>
+    <p>The mistake families make is "wasting" a Lightning Lane on a ride that's a walk-on anyway. Use Lightning Lane for the rides with genuinely long lines, and use rope drop (next section) and standby for everything else. Book your next Lightning Lane the moment you tap into your current one — while you're still walking the queue. That keeps a steady drip of short-wait rides going all day.</p>
+  </div>
+</section>
+
+<!-- ROPE DROP -->
+<section class="band" id="ropedrop">
+  <div class="wrap">
+    <div class="kicker">The free strategy that beats everything</div>
+    <h2>Rope drop: the first hour is golden</h2>
+    <p class="section-sub">Being at the gate when the park opens is the single most powerful — and free — time-saver there is.</p>
+
+    <p>"Rope drop" means arriving before the park opens and being among the first in when they let guests into the lands. For roughly the first hour, wait times are a fraction of what they'll be by midday. One family rides a dozen attractions without ever feeling rushed; another arrives at 11 and waits 90 minutes for a single ride. The difference is almost entirely this.</p>
+
+    <img class="sec-img" src="https://thehappiestblogonearth.com/wp-content/uploads/2019/09/California-Adventure-Rope-Drop-Spots.jpg" alt="Guests gathered for rope drop at park opening" loading="lazy">
+
+    <div class="callout">
+      <span class="co-label">Your morning, step by step</span>
+      Aim to be walking out of the Courtyard about <strong>45–60 minutes before official park opening</strong>. Walk to the entrance plaza, have your tickets ready in the app, go through security and the turnstiles, and position yourself toward the front. When the rope drops, the first hour is yours. Yes, this means an early start on vacation — but one early morning buys you more rides than any amount of money. With kids, do this on at least your first park day.
+    </div>
+
+    <h3>A note for your crew specifically</h3>
+    <p>With little ones, you don't need to sprint to the most intense ride. The goal is to knock out the <strong>popular kid rides that build long lines</strong> — things like Peter Pan's Flight (one of the worst lines in the park all day), the Fantasyland dark rides, and the gentle headliners — while the park is quiet. Hit those first, then settle into a slower pace as the day warms up and lines grow. Save the lower-wait rides and Toontown play time for the busy afternoon hours.</p>
+
+    <p>There's no need to overthink which land to run to first. A simple, effective opening for a family in Disneyland Park: head straight to <strong>Peter Pan's Flight</strong> (its line never gets short), then sweep the nearby Fantasyland dark rides — Snow White's Enchanted Wish, Mr. Toad, Pinocchio, Alice in Wonderland — before the crowds arrive. You'll have ridden five or six things before many guests have finished their coffee.</p>
+  </div>
+</section>
+
+<!-- PARK HOURS -->
+<section class="band alt" id="hours">
+  <div class="wrap">
+    <div class="heading-flank">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+      <h2>Your exact park hours &amp; what's on</h2>
+    </div>
+    <p class="section-sub">These are the real, published hours and entertainment for your specific days — generous mornings to rope-drop and long evenings for the shows.</p>
+
+    <p>Good news: Disney has posted the official calendar for all four of your days, and it's identical across your whole stay. July is peak season, so the parks run long — which plays perfectly into the rope-drop-rest-return rhythm.</p>
+
+    <table class="ride-table">
+      <thead><tr><th>Place</th><th>Hours (Jul 20–23)</th><th>What it means for you</th></tr></thead>
+      <tbody>
+        <tr><td>Disneyland Park</td><td>8:00 AM – 12:00 AM</td><td>Open until midnight — huge days. Rope-drop at 8, rest midday, return for the evening and still have hours of park left.</td></tr>
+        <tr><td>Disney California Adventure</td><td>8:00 AM – 10:00 PM</td><td>Two hours shorter than Disneyland but still a full day. Plenty of time for Cars Land, Pixar Pier, and World of Color.</td></tr>
+        <tr><td>Downtown Disney</td><td>7:00 AM – 1:00 AM</td><td>No ticket needed. Perfect for your rest-day evening — dining, shops, and live music until late.</td></tr>
+      </tbody>
+    </table>
+
+    <p>With an 8:00 AM open, "rope drop" means being at the gate around <strong>7:00–7:15 AM</strong> — so plan to walk out of the Courtyard by about 7:00. The flip side of a midnight close at Disneyland: you do <em>not</em> need to do it all in one stretch. Your evenings are long, which is exactly what makes the midday-break rhythm work — leave when the kids fade, come back refreshed, and you'll still have the lit-up park nearly to yourselves late.</p>
+
+    <h3>What's playing while you're there</h3>
+    <p>Your trip lands during Disneyland's 70th Anniversary Celebration, and the entertainment lineup for your dates is genuinely loaded. A few your kids will especially love, with the times currently posted for your days (always double-check the app day-of, as showtimes can shift):</p>
+
+    <h4>At Disneyland Park</h4>
+    <ul class="brand-list">
+      <li><strong>Bluey's Best Day Ever!</strong> — multiple shows through the day (around 11:00 AM, 12:20, 1:40, 3:20, 4:40 PM). If your kids love Bluey, build your day around catching one.</li>
+      <li><strong>Paint the Night</strong> — the dazzling light-up parade, around 8:45 PM. A genuine highlight and very little-kid-friendly.</li>
+      <li><strong>Fire of the Rising Moons</strong> — fireworks around 9:35 PM. Find a spot on Main Street or near the castle.</li>
+      <li><strong>Fantasmic!</strong> — the big water-and-effects show at the Rivers of America, around 9:05 PM (often a second showing on busy nights).</li>
+      <li><strong>The Celebrate Happy Cavalcade</strong> — a shorter daytime procession, around 1:30 PM.</li>
+      <li><strong>Storytelling at Royal Theatre</strong> and <strong>Stitch's Interplanetary Beach Party Blast</strong> — fun daytime/evening options to weave in.</li>
+    </ul>
+
+    <h4>At Disney California Adventure</h4>
+    <ul class="brand-list">
+      <li><strong>World of Color Happiness!</strong> — DCA's signature nighttime water-and-light spectacular, around 9:00 PM. A must-see on your DCA day.</li>
+      <li><strong>Disney Jr. Mickey Mouse Clubhouse Live!</strong> — multiple daytime shows (from around 10:00 AM). Tailor-made for Brooks and Ately — singing, dancing, and characters they know.</li>
+    </ul>
+
+    <div class="callout warn">
+      <span class="co-label">One planning conflict to know</span>
+      Notice that Disneyland's two big evening shows overlap — <strong>Fantasmic! (~9:05) and the fireworks (~9:35) run close together, and the parade is at 8:45</strong>. You can't be everywhere at once, especially with tired little ones. On your Disneyland evening, pick <em>one</em> nighttime show to anchor (the parade is the easiest with small kids — you watch from a curb), and don't try to catch all three. A bonus to remember: during a big nighttime show, much of the crowd is parked watching it, so the half-hour <em>during</em> a show is one of the best windows to walk onto a popular ride.
+    </div>
+  </div>
+</section>
+
+<!-- RIDES FOR LITTLES -->
+<section class="band alt" id="rides-kids">
+  <div class="wrap">
+    <div class="heading-flank">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M5 8c0-2 2-3 3.5-2S12 8 12 8s1-1 3.5-2S19 6 19 8"/><circle cx="12" cy="3" r="1"/></svg>
+      <h2>Rides for the little ones</h2>
+    </div>
+    <p class="section-sub">With a 4- and 6-year-old, Disneyland Park is the motherlode — most of these have no height requirement and the whole family rides together.</p>
+
+    <p>This is where your trip shines. Disneyland Park has the densest collection of gentle, everyone-rides-together attractions of any Disney park. Almost everything below has <strong>no height requirement</strong>, so Brooks, Ately, and Henley can all ride with you. A note on the Fantasyland dark rides: they're charming but some have brief dark or mildly spooky moments (Snow White, Pinocchio) — usually fine, but worth knowing if Brooks startles easily.</p>
+
+    <table class="ride-table">
+      <thead><tr><th>Ride</th><th>Where</th><th>Good to know</th></tr></thead>
+      <tbody>
+        <tr><td>Peter Pan's Flight <span class="tag all">all ages</span></td><td>Fantasyland</td><td>An enchanting, gentle flight over London. <strong>Rope-drop this first</strong> — the line is brutal all day.</td></tr>
+        <tr><td>"it's a small world" <span class="tag all">all ages</span></td><td>Fantasyland</td><td>Slow boat, air-conditioned, a perfect mid-afternoon cool-down with little ones.</td></tr>
+        <tr><td>The Many Adventures of Winnie the Pooh <span class="tag all">all ages</span></td><td>Critter Country</td><td>Tucked in a back corner, so often a shorter wait. Gentle and sweet.</td></tr>
+        <tr><td>Mr. Toad's Wild Ride <span class="tag all">all ages</span></td><td>Fantasyland</td><td>A zany classic dark ride. Quick and fun.</td></tr>
+        <tr><td>Snow White's Enchanted Wish <span class="tag all">all ages</span></td><td>Fantasyland</td><td>Reimagined to be less scary than the old version, but still a couple of dim moments.</td></tr>
+        <tr><td>Alice in Wonderland <span class="tag all">all ages</span></td><td>Fantasyland</td><td>Colorful outdoor-ish dark ride the kids love.</td></tr>
+        <tr><td>Pinocchio's Daring Journey <span class="tag all">all ages</span></td><td>Fantasyland</td><td>Pretty, with one or two darker beats.</td></tr>
+        <tr><td>King Arthur Carrousel <span class="tag all">all ages</span></td><td>Fantasyland</td><td>A classic carousel — simple joy for the youngest.</td></tr>
+        <tr><td>Casey Jr. Circus Train / Storybook Land <span class="tag all">all ages</span></td><td>Fantasyland</td><td>Gentle train and canal boats past tiny storybook scenes. Lovely and low-key.</td></tr>
+        <tr><td>Jungle Cruise <span class="tag all">all ages</span></td><td>Adventureland</td><td>Skipper-narrated boat with animatronic animals and groan-worthy jokes. Great family ride.</td></tr>
+        <tr><td>Finding Nemo Submarine Voyage <span class="tag all">all ages</span></td><td>Tomorrowland</td><td>Fun for kids; note it's enclosed and a bit dark — skip if anyone's claustrophobic.</td></tr>
+        <tr><td>Buzz Lightyear Astro Blasters <span class="tag all">all ages</span></td><td>Tomorrowland</td><td>Interactive shoot-'em-up — Henley (9) especially will love competing for the high score.</td></tr>
+        <tr><td>Mickey &amp; Minnie's Runaway Railway <span class="tag all">all ages</span></td><td>Toontown</td><td>A newer, slow, visually dazzling ride. Big hit with this age range.</td></tr>
+        <tr><td>Chip 'n' Dale's GADGETcoaster <span class="tag">36" min</span></td><td>Toontown</td><td>A tiny starter coaster — a great "first roller coaster" if the kids are game.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <span class="co-label">Don't skip Toontown</span>
+      Beyond rides, the reimagined <strong>Mickey's Toontown</strong> is built for exactly your kids' ages — interactive play areas, a fountain, gnome-village and fairy-garden spaces to run and climb. With little ones, unstructured play time matters as much as rides. Plan an hour here when energy dips, and it doubles as a place the adults can sit while the kids burn off steam. Heads up: the quick-service Café Daisy there has opened late (around 11 AM) on some days, so don't count on it for early coffee.
+    </div>
+
+    <h3>Two things happening in 2026 your kids will love</h3>
+    <ul class="brand-list">
+      <li><strong>Bluey's Best Day Ever!</strong> — Bluey and Bingo debuted at Disneyland in March 2026 with a show full of the music and games from the series. If your kids know Bluey, this is a highlight; check the app for showtimes.</li>
+      <li><strong>Mickey's Park Rangers on Tom Sawyer Island</strong> — a free scavenger hunt that sends kids across the island, the river boats, and the railroad collecting stamps for a sticker prize. A genuinely fun, no-extra-cost activity that gives the day a quest.</li>
+    </ul>
+
+    <p>Pick up the <strong>free kids' maps</strong> at Guest Relations — Disney makes a dedicated one for each park, and it gives the kids their own thing to hold and follow.</p>
+  </div>
+</section>
+
+<!-- BIGGER RIDES -->
+<section class="band" id="rides-big">
+  <div class="wrap">
+    <div class="heading-flank">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-8"/><path d="M21 7v5M21 7h-5"/></svg>
+      <h2>The bigger rides</h2>
+    </div>
+    <p class="section-sub">For Henley (9) and the adults — and how to ride them when you've got a four-year-old who can't.</p>
+
+    <p>Henley, at 9, is tall enough for most of the headliners, and the grown-ups will want a few too. Here's where the bigger thrills live across both parks. Height requirements matter here — Brooks (4) won't meet several of these, which is exactly what <strong>Rider Switch</strong> (next section) is for.</p>
+
+    <table class="ride-table">
+      <thead><tr><th>Ride</th><th>Park · Height</th><th>Good to know</th></tr></thead>
+      <tbody>
+        <tr><td>Big Thunder Mountain <span class="tag big">thrill</span></td><td>Disneyland · 40"</td><td>A runaway-train coaster — moderate thrill, a great "stepping up" coaster for Henley.</td></tr>
+        <tr><td>Matterhorn Bobsleds <span class="tag big">thrill</span></td><td>Disneyland · 42"</td><td>Bumpy classic bobsled coaster with a yeti. Fun for older kids and adults.</td></tr>
+        <tr><td>Space Mountain <span class="tag big">thrill</span></td><td>Disneyland · 40"</td><td>Indoor coaster in the dark. Has a <strong>Single Rider</strong> line that can save big time.</td></tr>
+        <tr><td>Indiana Jones Adventure <span class="tag big">thrill</span></td><td>Disneyland · 46"</td><td>Bumpy jeep adventure. Note: 46" — Henley may or may not clear it depending on height. Also has Single Rider.</td></tr>
+        <tr><td>Star Wars: Rise of the Resistance <span class="tag big">thrill</span></td><td>Disneyland · 40"</td><td>An epic, immersive headliner. Uses <strong>Lightning Lane Single Pass</strong>. A bit intense but mostly awe rather than fright.</td></tr>
+        <tr><td>Millennium Falcon: Smugglers Run <span class="tag">38"</span></td><td>Disneyland · 38"</td><td>Pilot the Falcon — interactive and a thrill without being scary. Brooks may clear this one.</td></tr>
+        <tr><td>Radiator Springs Racers <span class="tag big">thrill</span></td><td>DCA · 40"</td><td>The best ride in either park for many — a gorgeous Cars race through the desert. <strong>Lightning Lane Single Pass</strong> or Single Rider.</td></tr>
+        <tr><td>Guardians of the Galaxy – Mission: BREAKOUT! <span class="tag big">thrill</span></td><td>DCA · 40"</td><td>A drop-tower ride — genuinely intense. Best for Henley and brave adults; not for the littles.</td></tr>
+        <tr><td>Incredicoaster <span class="tag big">thrill</span></td><td>DCA · 48"</td><td>DCA's big coaster with a launch and a loop. Tall requirement — adults and tall older kids.</td></tr>
+        <tr><td>Toy Story Midway Mania <span class="tag all">all ages</span></td><td>DCA · none</td><td>4D interactive carnival games — the whole family can ride and compete. A crowd-pleaser.</td></tr>
+        <tr><td>Soarin' Around the World <span class="tag">40"</span></td><td>DCA · 40"</td><td>Gentle hang-glider simulator with sweeping views. Lovely for the whole family if everyone clears 40".</td></tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <span class="co-label">Single Rider — the quiet hack</span>
+      Several big rides (Space Mountain, Indiana Jones, Radiator Springs Racers) have a <strong>Single Rider</strong> line that's free and often much faster than standby. You ride separately from your group to fill empty seats. It won't work for the kids riding alone, but it's perfect when one adult wants to hop on a thrill ride during Rider Switch, or when two adults are fine not sitting together. On Radiator Springs Racers especially, Single Rider can be dramatically faster than the standby line.
+    </div>
+  </div>
+</section>
+
+<!-- RIDER SWITCH -->
+<section class="band alt" id="riderswitch">
+  <div class="wrap">
+    <div class="heading-flank">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3l4 4-4 4"/><path d="M20 7H8"/><path d="M8 21l-4-4 4-4"/><path d="M4 17h12"/></svg>
+      <h2>Rider Switch: how the grown-ups still ride</h2>
+    </div>
+    <p class="section-sub">The single best tool for parents of a little one — it lets both adults ride the big stuff without waiting twice.</p>
+
+    <p>Here's the problem Rider Switch solves: Brooks (4) is too short for Space Mountain, but both you and your partner want to ride. Without Rider Switch, one of you waits the whole line, rides, comes back, and then the other waits the entire line all over again. <strong>Rider Switch</strong> means you only wait once.</p>
+
+    <h3>How it works</h3>
+    <ul class="brand-list">
+      <li>Tell the cast member at the ride entrance you want to use <strong>Rider Switch</strong>.</li>
+      <li>Adult A waits in line (or uses your Lightning Lane / Single Rider) and rides, while Adult B waits outside with Brooks.</li>
+      <li>When Adult A returns, Adult B can go ride <strong>without waiting in the full line again</strong> — often taking one of the older kids along who wants to re-ride.</li>
+      <li>This pairs beautifully with Lightning Lane: use your Lightning Lane return time for the first adult, and the Rider Switch pass covers the second.</li>
+    </ul>
+
+    <div class="callout">
+      <span class="co-label">The bonus most people miss</span>
+      Because Henley (9) and possibly Ately can ride the bigger attractions, Rider Switch often lets one of the older kids ride <strong>twice</strong> — once with each parent. So your 9-year-old becomes the lucky one who rides Big Thunder back-to-back while the four-year-old waits with a parent each time. Everyone wins, and no one stands in a long line more than once.
+    </div>
+  </div>
+</section>
+
+<!-- TWO DAYS -->
+<section class="band" id="days">
+  <div class="wrap">
+    <div class="heading-flank">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M8 3v4M16 3v4"/></svg>
+      <h2>Sequencing your three days</h2>
+    </div>
+    <p class="section-sub">Two park days and one rest day — here's the rhythm that keeps a little-kid summer trip from ending in tears.</p>
+
+    <p>You have flexibility in which days you use your two tickets across your July 20–23 stay. The structure I'd suggest for a family with young kids in summer heat puts a breather in the middle. Adjust the park order once we confirm crowd forecasts, but the shape holds:</p>
+
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-marker">Day 1</div>
+        <div class="tl-content">
+          <h4>Disneyland Park — your big day</h4>
+          <p>Start here while everyone's fresh. This is the park your littles will love most, and the one worth rope-dropping. Be at the gate ~45 min before opening, sweep Fantasyland's dark rides (Peter Pan first), then Toontown and the gentle classics. Consider Multi Pass for this day. Walk back midday for Brooks's nap if needed, then return for the evening — fireworks if your night has them.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-marker">Day 2</div>
+        <div class="tl-content">
+          <h4>Rest & the waterpark — no park ticket</h4>
+          <p>Your secret weapon. Sleep in, let everyone recover, spend the day at Surfside Waterpark, nap, and explore Downtown Disney in the evening (no ticket needed — shops, dining, and the atmosphere are all free to wander). This is the day that makes the other two great. Skipping it is the most common way families overdo Disney with little ones.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-marker">Day 3</div>
+        <div class="tl-content">
+          <h4>Disney California Adventure — your second day</h4>
+          <p>Refreshed and back at it. DCA leans a little bigger — Cars Land, Pixar Pier, Toy Story Mania for everyone, Radiator Springs Racers for the brave. Use Rider Switch and Single Rider so the adults and Henley get the thrills while Brooks does the gentler Pixar Pier rides. A calmer, slightly more grown-up day to close out the trip.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout warn">
+      <span class="co-label">One scheduling reality</span>
+      Your hotel and park dates give you room to arrange the two ticket days as works best — but the exact days you can enter each park depend on your specific tickets and any park-reservation requirements. I'll confirm the bookable days with you so we lock Disneyland and DCA onto the right dates, with the rest day in between. Don't finalize the order until we've checked that together.
+    </div>
+
+    <h3>A realistic daily flow with little kids</h3>
+    <p>The pattern that works: <strong>rope drop hard, rest midday, return refreshed.</strong> Mornings are cool and uncrowded — bank your big rides then. Early afternoon in July is hot and busy and exactly when a four-year-old melts down, so that's your window to walk back to the hotel for a nap and a swim. Come back around dinner for the evening's lower crowds, the lit-up castle, parades, and fireworks. Two shorter, well-timed visits beat one death-march day every time.</p>
+  </div>
+</section>
+
+<!-- FOOD -->
+<section class="band alt" id="food">
+  <div class="wrap">
+    <div class="heading-flank">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v8a2 2 0 002 2v8"/><path d="M9 3v6M5 3v6"/><path d="M16 3c-1.5 0-3 2-3 5s1.5 4 3 4v9"/></svg>
+      <h2>Eating well without the wait</h2>
+    </div>
+    <p class="section-sub">Mobile order is the move, character meals are the memory, and bringing your own snacks saves real money.</p>
+
+    <h3>Mobile order — use it every time</h3>
+    <p>The biggest food tip in the parks: order quick-service meals through the <strong>Disneyland app's mobile order</strong>. You pick a restaurant and an arrival window, order and pay in the app, tap "I'm here" when you're close, and walk up to grab your food — skipping the long order line entirely. With three kids, not standing in a counter line during the lunch rush is a genuine sanity-saver. Book your window an hour or two ahead, especially at peak meal times.</p>
+
+    <h3>Character dining — worth booking for your kids</h3>
+    <p>For a family with young children, a character meal is often the most-remembered part of the trip — the characters come to your table while you eat, so there's no separate line to wait in. These book up well in advance, so reserve as early as you can (in the app or through Disney dining). Here's the full current lineup at the Disneyland Resort:</p>
+
+    <h4>Inside the parks</h4>
+    <ul class="brand-list">
+      <li><strong>Minnie &amp; Friends – Breakfast in the Park</strong> · Plaza Inn, Disneyland Park — an all-you-care-to-enjoy breakfast buffet where you meet Minnie and other Disney pals. A lovely way to start a Disneyland morning, and it's right inside the park. (Requires valid park admission for that day.)</li>
+    </ul>
+
+    <h4>At the resort hotels (no park ticket needed)</h4>
+    <ul class="brand-list">
+      <li><strong>Goofy's Kitchen</strong> · Disneyland Hotel — the lively, beloved classic. Chef Goofy and a rotating cast of characters work the room during fun, busy <strong>breakfast and dinner</strong> buffets. The most kid-energetic of the bunch.</li>
+      <li><strong>Storytellers Cafe</strong> · Disney's Grand Californian Hotel — a bountiful buffet themed around California folklore, with character visits. A calmer, well-regarded setting that's a little less frenetic than Goofy's.</li>
+      <li><strong>Disney Princess Breakfast Adventures</strong> · Napa Rose, Grand Californian — the premium, special-occasion option: a three-course breakfast with activity time and personal visits from Disney Princesses. If Ately (6) loves the princesses, this is the showstopper — it's pricier and books up fastest, so grab it early if it appeals.</li>
+    </ul>
+
+    <div class="callout">
+      <span class="co-label">How to choose for your crew</span>
+      With a 4-, 6-, and 9-year-old, any of these lands well. For a single, easy pick that fits your park days, <strong>Minnie &amp; Friends at Plaza Inn</strong> is the most convenient — book it before rope drop on your Disneyland day and you start the morning fed and photographed. If you want one "wow" meal and Ately is princess-obsessed, <strong>Princess Breakfast Adventures</strong> is the memory-maker (reserve the moment booking opens — it sells out). <strong>Goofy's Kitchen</strong> is the all-ages crowd-pleaser if you'd rather a relaxed dinner off-park on your rest day.
+    </div>
+
+    <h3>Special dining experiences — especially the show packages</h3>
+    <p>Beyond the character meals, Disney offers a handful of bookable "dining events." A few are tailor-made for your family because they bundle a meal with <strong>reserved viewing for the big nighttime shows</strong> — which solves the hardest part of seeing them with little kids: not having to stake out a curb spot 45 minutes early with three restless children. The ones worth knowing for your trip:</p>
+    <ul class="brand-list">
+      <li><strong>Fantasmic! Dining Package</strong> (Disneyland Park) — a meal at a participating restaurant that comes with a reserved viewing area for Fantasmic! Given how crowded that show gets, this is the easy way to see it without the long stake-out.</li>
+      <li><strong>Plaza Inn Dining Package</strong> (Disneyland Park) — a meal at Plaza Inn paired with reserved seating for a show or the parade. A nice pairing with your Disneyland evening, and Plaza Inn is family-friendly.</li>
+      <li><strong>World of Color Dining Package</strong> (DCA) — a meal at a participating restaurant plus a reserved spot for World of Color. The simplest way to lock in a good view on your DCA day.</li>
+      <li><strong>World of Color Dessert Party</strong> (DCA) — a seated dessert-and-drinks experience with a premium viewing location for the show. A sweeter, slightly more special-occasion version of the above.</li>
+      <li><strong>Tomorrowland Skyline Terrace</strong> (Disneyland Park) — a reservable dining event; a calmer, elevated spot to eat in the park.</li>
+    </ul>
+    <p>One more, for the grown-ups: <strong>Trader Sam's Mixology Seminar</strong> at the Disneyland Hotel is an adults-only cocktail seminar — a fun date-night idea if you can trade off kid duty one evening, or one to file away for a future trip.</p>
+
+    <div class="callout">
+      <span class="co-label">Worth it for you?</span>
+      For a family seeing Fantasmic! or World of Color for the first time, the show dining packages are often worth it purely for the sanity — a reserved view without herding tired kids to a spot early and holding it. They book up, so if you want one, reserve it when you lock your character meal. Tell me which show nights you're leaning toward and I'll help you decide whether a package or just finding a spot makes more sense for your evening.
+    </div>
+
+    <div class="callout">
+      <span class="co-label">Bring your own — it's allowed</span>
+      Disneyland lets you bring in outside food and non-alcoholic drinks. Pack the backpack with water bottles, snacks, and a few sandwiches, and you'll save a meaningful amount over three days while keeping the kids fed on their schedule, not the park's. Refill water bottles at fountains, and grab one shared iconic treat (a churro, a Dole Whip) as the splurge rather than buying full counter meals for five every time. And one money-saver that adds up fast in July heat: <strong>you can ask for a free cup of ice water at any quick-service restaurant</strong> — no purchase required. (This works at the counter-service spots with seating and fountain drinks, not the snack carts.) Bottled water runs around $4+ each, so for a family of five, free cups and refilled bottles save real money across the trip. Some quick-service spots even have self-serve drink stations where you can fill your own.
+    </div>
+
+    <h3>A couple of treats worth seeking out</h3>
+    <p>Two genuinely good, slightly-hidden snack spots: the <strong>Tropical Hideaway</strong> behind the Tiki Room (Dole Whip and bao buns in a lovely tucked-away setting), and the classic hand-dipped <strong>corn dogs</strong> from the Little Red Wagon on Main Street — a long-running fan favorite. Neither requires a reservation.</p>
+  </div>
+</section>
+
+<!-- LITTLE EXTRAS -->
+<section class="band" id="gems">
+  <div class="wrap">
+    <div class="kicker">The part to actually read</div>
+    <h2>Little extras &amp; quiet details</h2>
+    <p class="section-sub">The small, mostly-free things that make your family feel like they're in on a secret.</p>
+
+    <div class="tip">
+      <div class="tip-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H4z"/><path d="M4 8l8 5 8-5"/></svg></div>
+      <div class="tip-body"><h4>Mail a real postcard from Main Street</h4><p>There are working vintage mailboxes on Main Street, U.S.A. Drop in a postcard and it actually gets mailed — a sweet, cheap souvenir the kids can send to themselves or grandparents.</p></div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg></div>
+      <div class="tip-body"><h4>Hunt for Hidden Mickeys</h4><p>Subtle three-circle Mickey shapes are tucked all over the parks — in ironwork, ride scenes, even the landscaping. Make it a family game; it turns waiting in any line into a treasure hunt and costs nothing.</p></div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M6 21V9l6-4 6 4v12"/><rect x="10" y="13" width="4" height="8"/></svg></div>
+      <div class="tip-body"><h4>Spot Walt's apartment above the firehouse</h4><p>Look at the window above the Main Street Fire Station — a lamp is always left lit. It marks Walt Disney's private apartment, where he stayed while overseeing the park. A small piece of history hiding in plain sight.</p></div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.5 5 5.5.8-4 3.9.9 5.5L12 16.5 7.1 18.7l.9-5.5-4-3.9 5.5-.8z"/></svg></div>
+      <div class="tip-body"><h4>Find the fortune-teller machines</h4><p>Esmeralda on Main Street and Fortune Red in New Orleans Square dispense fortune cards — a small, delightful (and cheap) moment kids love. A handful of quarters goes a long way.</p></div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18M3 6h18M3 18h18"/></svg></div>
+      <div class="tip-body"><h4>Ask about signing the secret guest book</h4><p>At some attractions, the very first guest to ride that day can sign a hidden guest book. It's elusive and rarely happens, but if you've rope-dropped and you're among the very first on a ride, ask a cast member — it's a real bit of Disney magic.</p></div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0116 0"/></svg></div>
+      <div class="tip-body"><h4>Celebrate something — get a button</h4><p>Stop by Guest Relations for a free celebration button (birthday, first visit, etc.). Cast members notice them and often add a little extra magic — an early-trip stop that pays off all week.</p></div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13a7 7 0 0114 0"/><path d="M3 13h18"/><path d="M12 13v5"/></svg></div>
+      <div class="tip-body"><h4>The pet cemetery at the Haunted Mansion</h4><p>Tucked beside the Haunted Mansion queue is a tiny pet cemetery with funny, punny headstones. A fun, not-too-spooky detail to point out to the older kids while you wait.</p></div>
+    </div>
+    <div class="tip">
+      <div class="tip-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 9.5a1.5 1.5 0 113 0c0 1-1.5 1.2-1.5 2.5"/><path d="M12 16h.01"/></svg></div>
+      <div class="tip-body"><h4>Press a souvenir coin — the $1 keepsake kids love</h4><p>Look for the pressed-coin ("penny press") machines all over the resort — there are 150+ collectible Disney designs, including 70th Anniversary ones, starting at $1 each. Heads up on a recent change: most machines now take cards or bills and supply the coin for you, so the old "bring your own pennies and quarters" routine mostly isn't needed anymore — but they're still a cheap, fun souvenir each kid can pick and crank for themselves. A little collection grows fast over a trip.</p></div>
+    </div>
+
+    <div class="callout">
+      <span class="co-label">The most important tip of all</span>
+      Slow down. With little kids, the temptation is to chase ride count, but the moments your family will actually remember are the unhurried ones — Brooks meeting a character, the kids splashing in Toontown, a churro on a bench watching the castle. Build in margin. A day with eight rides and three unhurried pauses beats a day with fourteen rides and three meltdowns.
+    </div>
+  </div>
+</section>
+
+<!-- PACK -->
+<section class="band alt" id="pack">
+  <div class="wrap">
+    <div class="kicker">Before you walk over</div>
+    <h2>What to put in the park bag</h2>
+    <p class="section-sub">Pack once, well, and you'll handle a long summer day with three kids without a single emergency store run.</p>
+
+    <div class="check">
+      <div class="ck"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <div class="ck-body"><h4>Portable charger(s) + cable</h4><p>Non-negotiable. Your phone runs the tickets, app, and photos all day.</p></div>
+    </div>
+    <div class="check">
+      <div class="ck"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <div class="ck-body"><h4>Refillable water bottles for everyone</h4><p>July in Anaheim is hot. Refill at fountains; hydration prevents most kid meltdowns.</p></div>
+    </div>
+    <div class="check">
+      <div class="ck"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <div class="ck-body"><h4>Sunscreen + hats</h4><p>Reapply at the midday break. Little ones burn fast in the open queues.</p></div>
+    </div>
+    <div class="check">
+      <div class="ck"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <div class="ck-body"><h4>Snacks (allowed in!)</h4><p>Pack the bag with your own — saves money and keeps the kids fed on their schedule.</p></div>
+    </div>
+    <div class="check">
+      <div class="ck"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <div class="ck-body"><h4>A light stroller for Brooks</h4><p>Even a four-year-old who "doesn't need one" will, by mile three. It doubles as a snack/jacket cart and a nap spot. Check current stroller size rules in the app.</p></div>
+    </div>
+    <div class="check">
+      <div class="ck"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <div class="ck-body"><h4>A change of clothes for the youngest</h4><p>Spills, splashes, accidents. A spare outfit in a zip bag saves an afternoon.</p></div>
+    </div>
+    <div class="check">
+      <div class="ck"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <div class="ck-body"><h4>A small first-aid kit + any meds</h4><p>Band-aids for little feet, plus any medications. There are first-aid stations in both parks if you need more.</p></div>
+    </div>
+    <div class="check">
+      <div class="ck"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+      <div class="ck-body"><h4>A poncho or two</h4><p>For water rides and the rare summer shower — cheaper packed than bought in the park.</p></div>
+    </div>
+
+    <div class="callout">
+      <span class="co-label">A photo trick for peace of mind</span>
+      Take a quick phone photo of each kid in the morning in what they're wearing that day. If anyone wanders off in a crowd, you've got an instant, accurate description to show a cast member. Also teach the kids to find any cast member (name tag) if they're lost — Disney's team is exceptional at reuniting families.
+    </div>
+
+    <div class="callout">
+      <span class="co-label">Tie something bright to the stroller</span>
+      Strollers get parked in big rows outside attractions, and cast members often move them to tidy the area — so you'll come off a ride to a sea of near-identical strollers, frequently not where you left it. Tie a bright ribbon, bandana, or balloon to the handle (or clip on something colorful) so you can spot yours instantly from a distance. A small piece of duct tape with your name inside the canopy helps too, and a cheap rain cover keeps the seat dry if it's moved during a surprise sprinkle.
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<div class="form-section">
+  <div class="wrap">
+    <div class="form-card">
+      <div id="formInner">
+        <h2>Questions before you go?</h2>
+        <p class="fc-sub">Lightning Lane timing, character meal bookings, which park on which day — send it my way and I'll get you set.</p>
+        <form id="tripForm">
+          <input type="hidden" name="access_key" value="7b40d437-1004-48e2-9031-171a8b0ef4f1">
+          <input type="hidden" name="subject" value="Maes — Disneyland Guide Question / Response">
+          <input type="hidden" name="from_name" value="Maes — Disneyland Guide — PMTP">
+          <input type="hidden" name="redirect" value="false">
+          <label class="fl" for="f_name">Name</label>
+          <input id="f_name" type="text" name="Name" required>
+          <label class="fl" for="f_email">Email</label>
+          <input id="f_email" type="email" name="Email" required>
+          <label class="fl" for="f_phone">Phone</label>
+          <input id="f_phone" type="tel" name="Phone">
+          <label class="fl" for="f_thoughts">What can I help with?</label>
+          <textarea id="f_thoughts" name="Thoughts" placeholder="Lightning Lane, character dining, park-day order, stroller questions, dining reservations — anything at all."></textarea>
+          <button type="submit">Send my questions</button>
+        </form>
+      </div>
+      <div id="thanksMsg">
+        <h3>Got it — thank you</h3>
+        <p>Your note is on its way to me and I'll be in touch shortly. You can always reach me directly at the number below.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <hr class="ft-hairline">
+    <div class="ft-name">Christina Garcia</div>
+    <div class="ft-role">Owner &amp; Travel Advisor · Point Me to Paradise Travel</div>
+    <div class="ft-contact"><a id="emailLink" href="#">email</a></div>
+    <div class="ft-contact">(281) 229-0862</div>
+    <p class="ft-disclosure">Individual hotels, transfers, and tours in your quote are priced at publicly available rates — and in many cases lower than what you'd find on your own. You don't have to worry about overpaying for a piece of your trip. What you're paying for is the rest: the right rooms at the right property, operators we've used for years, the trip app, and a human who answers when something doesn't go to plan.</p>
+  </div>
+</footer>
+
+<script>
+var addr = 'Christina' + '@' + 'PointMeToParadise.com';
+var el = document.getElementById('emailLink');
+el.href = 'mailto:' + addr;
+el.textContent = addr;
+document.getElementById('tripForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  var form = e.target;
+  var data = new FormData(form);
+  fetch('https://api.web3forms.com/submit', { method:'POST', body:data })
+    .then(function(res){ return res.json(); })
+    .then(function(json){
+      if(json.success){
+        document.getElementById('formInner').style.display = 'none';
+        document.getElementById('thanksMsg').classList.add('show');
+      } else { alert('Something went wrong. Please email Christina directly or text (281) 229-0862.'); }
+    })
+    .catch(function(){ alert('Something went wrong. Please email Christina directly or text (281) 229-0862.'); });
+});
+</script>
+</body>
+</html>
