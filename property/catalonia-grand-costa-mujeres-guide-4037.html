@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Catalonia Grand Costa Mujeres — Destination Guide | Point Me to Paradise</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --aqua-pale:    #C4E4E1;
+    --aqua-mist:    #EAF3F2;
+    --aqua:         #75AFB1;
+    --aqua-dark:    #4F8A8C;
+    --sand:         #ECE7DC;
+    --sand-light:   #F4F1E9;
+    --gold-whisper: #D6C8A8;
+    --white:        #FFFFFF;
+    --paper:        #FBFDFD;
+    --ink:          #2B2420;
+    --ink-soft:     #6B6359;
+    --line:         #E5E9E8;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcRJWmU0Y8Rl3WoY40cBgTuFGCQnvWiFMuI1_AI9p45M3ax1ntpLQCdlx6&s=10');
+    background-size: cover;
+    background-position: center 40%;
+    padding: 100px 32px 72px;
+    text-align: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(43,36,32,0.52) 0%, rgba(43,36,32,0.28) 60%, rgba(43,36,32,0.60) 100%);
+  }
+  .hero-inner { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; }
+  .pmtp-wordmark {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--aqua-pale);
+    margin-bottom: 24px;
+    display: block;
+  }
+  .hero-eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: var(--gold-whisper);
+    letter-spacing: 0.04em;
+    margin-bottom: 14px;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 600;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 10px;
+  }
+  .hero-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: var(--aqua-pale);
+    margin-top: 12px;
+    margin-bottom: 28px;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 40px;
+    padding: 8px 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin: 0 6px 8px;
+  }
+  .badges { margin-top: 8px; }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+  .container-wide { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+  /* ── INTRO STRIP ── */
+  .intro-strip {
+    background: var(--white);
+    padding: 52px 24px 48px;
+    text-align: center;
+    border-bottom: 1px solid var(--line);
+  }
+  .intro-strip h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.9rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+  .intro-strip p {
+    max-width: 680px;
+    margin: 0 auto 14px;
+    color: var(--ink-soft);
+    font-size: 1.02rem;
+  }
+  .star-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+  }
+  .stat-pill {
+    background: var(--aqua-mist);
+    border-radius: 8px;
+    padding: 12px 20px;
+    text-align: center;
+  }
+  .stat-pill .num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--aqua-dark);
+    display: block;
+    line-height: 1;
+  }
+  .stat-pill .lbl {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-soft);
+    margin-top: 4px;
+    display: block;
+  }
+
+  /* ── SECTION GENERIC ── */
+  section { padding: 56px 24px; }
+  section.band { background: var(--aqua-mist); }
+  section.white { background: var(--white); }
+  section.paper { background: var(--paper); }
+
+  .section-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--aqua-dark);
+    margin-bottom: 10px;
+    display: block;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+    line-height: 1.25;
+  }
+  .section-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    margin-bottom: 32px;
+  }
+
+  /* ── ROOM CARDS ── */
+  .room-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 20px;
+    margin-top: 28px;
+  }
+  .room-card {
+    background: var(--white);
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    overflow: hidden;
+    transition: box-shadow 0.2s;
+  }
+  .room-card:hover { box-shadow: 0 6px 24px rgba(43,36,32,0.10); }
+  .room-card-header {
+    background: var(--aqua-pale);
+    padding: 18px 20px 14px;
+    position: relative;
+  }
+  .room-card-header h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .room-tag {
+    display: inline-block;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--aqua-dark);
+    color: var(--white);
+    border-radius: 20px;
+    padding: 3px 10px;
+    margin-top: 6px;
+  }
+  .room-tag.priv { background: #8B6F3A; }
+  .room-tag.romance { background: #9B4E6A; }
+  .room-tag.family { background: #4A7A4F; }
+  .room-card-body { padding: 16px 20px 20px; }
+  .room-card-body p { font-size: 0.9rem; color: var(--ink-soft); line-height: 1.6; }
+  .room-size {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--aqua-dark);
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .room-highlight {
+    margin-top: 10px;
+    background: var(--aqua-mist);
+    border-left: 3px solid var(--aqua);
+    border-radius: 0 6px 6px 0;
+    padding: 8px 12px;
+    font-size: 0.83rem;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  /* ── PRIVILEGED CALLOUT ── */
+  .priv-callout {
+    background: linear-gradient(135deg, #4F8A8C 0%, #3d6d6f 100%);
+    border-radius: 14px;
+    padding: 36px 36px 32px;
+    color: var(--white);
+    margin-top: 36px;
+  }
+  .priv-callout h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  .priv-callout p { font-size: 0.93rem; opacity: 0.9; margin-bottom: 18px; }
+  .priv-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 24px;
+  }
+  .priv-list li {
+    font-size: 0.87rem;
+    opacity: 0.92;
+    padding-left: 16px;
+    position: relative;
+  }
+  .priv-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--gold-whisper);
+    font-weight: 700;
+  }
+
+  /* ── DINING ── */
+  .dining-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 18px;
+    margin-top: 28px;
+  }
+  .dining-card {
+    background: var(--white);
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    padding: 20px;
+  }
+  .dining-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .dining-type {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--aqua-dark);
+    margin-bottom: 10px;
+    display: block;
+  }
+  .dining-card p { font-size: 0.87rem; color: var(--ink-soft); line-height: 1.55; }
+  .dining-tip {
+    margin-top: 10px;
+    font-size: 0.8rem;
+    color: var(--ink);
+    font-weight: 500;
+    background: var(--sand-light);
+    border-radius: 6px;
+    padding: 7px 10px;
+  }
+  .dress-note {
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    margin-top: 6px;
+  }
+
+  /* ── INSIDER TIP BOXES ── */
+  .tip-box {
+    background: var(--aqua-pale);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 18px 0;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+  .tip-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .tip-box h4 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--aqua-dark);
+    margin-bottom: 4px;
+  }
+  .tip-box p { font-size: 0.88rem; color: var(--ink); line-height: 1.55; }
+
+  /* ── EXCURSION CARDS ── */
+  .excursion-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 28px;
+  }
+  .exc-card {
+    background: var(--white);
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    overflow: hidden;
+  }
+  .exc-top {
+    background: var(--aqua-dark);
+    color: var(--white);
+    padding: 16px 20px 14px;
+  }
+  .exc-top h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+  .exc-tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 3px 9px;
+    margin-top: 5px;
+  }
+  .exc-body { padding: 16px 20px 20px; }
+  .exc-body p { font-size: 0.87rem; color: var(--ink-soft); line-height: 1.55; }
+  .exc-detail {
+    margin-top: 12px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .exc-detail span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--ink-soft);
+    background: var(--aqua-mist);
+    border-radius: 4px;
+    padding: 3px 9px;
+  }
+
+  /* ── TIPS COLUMNS ── */
+  .tips-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 28px;
+  }
+  @media (max-width: 640px) { .tips-cols { grid-template-columns: 1fr; } }
+  .tips-col h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 14px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--aqua-pale);
+  }
+  .tips-col ul { list-style: none; }
+  .tips-col ul li {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    padding: 7px 0 7px 18px;
+    border-bottom: 1px solid var(--line);
+    position: relative;
+    line-height: 1.5;
+  }
+  .tips-col ul li:last-child { border-bottom: none; }
+  .tips-col ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--aqua);
+    font-weight: 700;
+  }
+
+  /* ── COMMITMENT STRIP ── */
+  .commitment {
+    background: var(--aqua-mist);
+    border-radius: 10px;
+    padding: 22px 24px;
+    margin: 16px 0;
+    border-left: 4px solid var(--aqua);
+  }
+  .commitment p {
+    font-size: 0.92rem;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  /* ── WHAT'S COMING ── */
+  .coming-box {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 32px 36px;
+    text-align: center;
+    margin-bottom: 36px;
+  }
+  .coming-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .coming-box p { font-size: 0.92rem; color: var(--ink-soft); max-width: 560px; margin: 0 auto; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--sand-light);
+    padding: 44px 24px 36px;
+    text-align: center;
+    border-top: 1px solid var(--gold-whisper);
+  }
+  .footer-wordmark {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--aqua-dark);
+    margin-bottom: 6px;
+  }
+  .footer-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 2px;
+  }
+  .footer-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+  }
+  .footer-contact {
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+    line-height: 1.9;
+  }
+  .footer-contact a { color: var(--aqua-dark); text-decoration: none; }
+  .footer-contact a:hover { text-decoration: underline; }
+  .footer-line { width: 48px; height: 1px; background: var(--gold-whisper); margin: 20px auto; }
+  .footer-disclaimer {
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    max-width: 560px;
+    margin: 16px auto 0;
+    line-height: 1.5;
+  }
+
+  /* ── DIVIDER ── */
+  .divider { width: 48px; height: 2px; background: var(--aqua); margin: 0 auto 28px; }
+  .divider-left { margin: 0 0 28px; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 700px) {
+    .priv-list { grid-template-columns: 1fr; }
+    .room-grid { grid-template-columns: 1fr; }
+    .dining-grid { grid-template-columns: 1fr; }
+    .excursion-grid { grid-template-columns: 1fr; }
+    .priv-callout { padding: 24px 20px; }
+    section { padding: 44px 16px; }
+  }
+
+  /* ── TOUR LINKS ── */
+  .tour-links {
+    margin-top: 16px;
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+  }
+  .tour-links-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--aqua-dark);
+    margin-bottom: 10px;
+  }
+  .tour-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: var(--aqua-mist);
+    border: 1px solid var(--aqua-pale);
+    border-radius: 7px;
+    padding: 10px 13px;
+    margin-bottom: 7px;
+    text-decoration: none;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .tour-link:last-child { margin-bottom: 0; }
+  .tour-link:hover {
+    background: var(--aqua-pale);
+    border-color: var(--aqua);
+  }
+  .tour-link-name {
+    font-size: 0.83rem;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.4;
+  }
+  .tour-link-arrow {
+    font-size: 0.9rem;
+    color: var(--aqua-dark);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* ── STICKY NAV ── */
+  .sticky-nav {
+    position: sticky;
+    top: 0;
+    background: rgba(251,253,253,0.96);
+    border-bottom: 1px solid var(--line);
+    z-index: 100;
+    padding: 0 24px;
+    backdrop-filter: blur(6px);
+  }
+  .nav-inner {
+    max-width: 920px;
+    margin: 0 auto;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav-inner::-webkit-scrollbar { display: none; }
+  .nav-inner a {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    text-decoration: none;
+    padding: 14px 14px;
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: color 0.15s, border-color 0.15s;
+    flex-shrink: 0;
+  }
+  .nav-inner a:hover {
+    color: var(--aqua-dark);
+    border-bottom-color: var(--aqua);
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <span class="pmtp-wordmark">Point Me to Paradise Travel</span>
+    <div class="hero-eyebrow">Your Destination Guide</div>
+    <h1>Catalonia Grand<br>Costa Mujeres</h1>
+    <div class="hero-sub">All-Suites & Spa · Costa Mujeres, Cancún · All-Inclusive</div>
+    <div class="badges">
+      <span class="hero-badge">⬥ AAA 4 Diamond</span>
+      <span class="hero-badge">⬥ 5-Star Resort</span>
+      <span class="hero-badge">⬥ 9.5/10 Guest Score</span>
+      <span class="hero-badge">⬥ Beachfront</span>
+    </div>
+  </div>
+</div>
+
+<!-- STICKY NAV -->
+<nav class="sticky-nav">
+  <div class="nav-inner">
+    <a href="#overview">Overview</a>
+    <a href="#rooms">Rooms</a>
+    <a href="#dining">Dining</a>
+    <a href="#resort-life">Resort Life</a>
+    <a href="#excursions">Excursions</a>
+    <a href="#insider">Insider Tips</a>
+    <a href="#logistics">Logistics</a>
+  </div>
+</nav>
+
+<!-- INTRO STRIP -->
+<div class="intro-strip" id="overview">
+  <div class="container">
+    <span class="section-label" style="display:block; text-align:center;">Where you're staying</span>
+    <h2>The Right Resort for the Right Reasons</h2>
+    <p>The Catalonia Grand Costa Mujeres sits on one of the most protected stretches of white-sand beach in the Cancún area — the Costa Mujeres coastline, just north of the hotel zone, where the water stays calm and the crowd stays manageable. This is an all-suite property, which means the smallest room is still 48.5 square meters with a furnished terrace. No shoebox rooms. No interior-facing closets masquerading as "deluxe."</p>
+    <p>The resort earned AAA's 4 Diamond certification — the same rating system that separates a genuinely well-appointed property from a polished brochure. It's family-forward without being chaotic, and the Privileged tier unlocks a meaningfully different experience if that's the direction you go.</p>
+    <div class="star-row">
+      <div class="stat-pill">
+        <span class="num">9.5</span>
+        <span class="lbl">Guest Rating</span>
+      </div>
+      <div class="stat-pill">
+        <span class="num">4◇</span>
+        <span class="lbl">AAA Diamond</span>
+      </div>
+      <div class="stat-pill">
+        <span class="num">48.5m²</span>
+        <span class="lbl">Smallest Suite</span>
+      </div>
+      <div class="stat-pill">
+        <span class="num">11+</span>
+        <span class="lbl">Restaurants & Bars</span>
+      </div>
+      <div class="stat-pill">
+        <span class="num">20 min</span>
+        <span class="lbl">Ferry to Isla Mujeres</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COMMITMENT 1 -->
+<div style="background: var(--white); padding: 8px 24px 0;">
+  <div class="container">
+    <div class="commitment">
+      <p>We don't book hotels. We build trips. Custom guides, trip app, real human when something goes sideways. The work you'd hate doing — already done.</p>
+    </div>
+  </div>
+</div>
+
+<!-- LOCATION CONTEXT -->
+<section class="white" style="padding-top: 40px; padding-bottom: 40px;">
+  <div class="container">
+    <span class="section-label">Location & access</span>
+    <div class="section-title">Costa Mujeres: What That Actually Means</div>
+    <div class="section-sub">North of Cancún's hotel zone — quieter, calmer, still connected</div>
+    <p style="color: var(--ink-soft); font-size: 0.95rem; margin-bottom: 18px;">Costa Mujeres is the stretch of coastline just north of Cancún proper, facing Isla Mujeres across the Bay of Mujeres. The bay acts as a natural windbreak, which keeps the water calmer here than on the exposed Caribbean side further south. You get Caribbean-blue color without the chop.</p>
+    <p style="color: var(--ink-soft); font-size: 0.95rem; margin-bottom: 18px;">The Catalonia is on <strong>Boulevard Vialidad Paseo Mujeres</strong> — about 30 minutes from Cancún International Airport depending on traffic. The hotel zone's restaurants and nightlife are a short taxi or Uber ride away, but you won't need them. The resort has enough on property to fill a week without feeling like you've seen everything by day two.</p>
+
+    <div class="tip-box">
+      <span class="tip-icon">📍</span>
+      <div>
+        <h4>On the ground</h4>
+        <p>Cancún International Airport (CUN) is your arrival point. Immigration and customs at CUN can be slow — plan 45–60 minutes from wheels-down to your transportation. Private transfers beat shuttle buses every time here; you're not stopping at seven resorts before yours. The ride north to Costa Mujeres is smooth and direct.</p>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <span class="tip-icon">💱</span>
+      <div>
+        <h4>Currency note</h4>
+        <p>Mexican law prohibits cash payment in USD at hotels. Bring a credit card (Visa, Mastercard, or Amex accepted) or exchange to pesos for tips and off-property purchases. The resort charges an Environmental Sanitation Tax of approximately $1.85 USD per person per night, payable locally. Budget for this separately.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROOMS -->
+<section class="band" id="rooms">
+  <div class="container">
+    <span class="section-label">Accommodations</span>
+    <div class="section-title">Your Room</div>
+    <div class="section-sub">48.5 m² with a private furnished terrace — built for families who want space to breathe</div>
+
+    <div class="room-grid" style="grid-template-columns: 1fr;">
+
+      <div class="room-card">
+        <div class="room-card-header">
+          <h3>Family Suite Superior</h3>
+          <span class="room-tag family">Family</span>
+        </div>
+        <div class="room-card-body">
+          <p>Caribbean-design aesthetic, parquet floors, 2 queen beds, separate living room with sofa bed, furnished terrace. Ceiling fan, iron, digital safe, minibar. Designed for families who want room to breathe without paying Privileged rates.</p>
+          <div class="room-size">⬡ 48.5 m²</div>
+          <div class="room-highlight">Best for: Families of 3–4 on a practical all-in budget</div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+  </div>
+</section>
+
+<!-- DINING -->
+<section class="white" id="dining">
+  <div class="container">
+    <span class="section-label">Food & drink</span>
+    <div class="section-title">The Restaurant Lineup</div>
+    <div class="section-sub">11 dining options from buffet to beachfront à la carte — here's how to navigate them</div>
+
+    <div class="tip-box">
+      <span class="tip-icon">🍽️</span>
+      <div>
+        <h4>How reservations work</h4>
+        <p>À la carte restaurant reservations open on arrival via the Catalonia app. Book your preferred restaurants the moment you check in — Steakville and Ayami fill fastest. The number of à la carte dinners included in your stay varies by room category and length of stay. Privileged guests access BLoved anytime without reservations.</p>
+      </div>
+    </div>
+
+    <div class="dining-grid">
+
+      <div class="dining-card">
+        <h3>BLoved</h3>
+        <span class="dining-type">À la carte · Privileged Exclusive · Beachfront</span>
+        <p>Breakfast, lunch, and dinner on the sand. The menu moves between Mediterranean and Mexican — paella alongside ceviche, ravioli next to tacos. The Catalan cream dessert shows up on enough reviews to be worth ordering. The best dining experience on property, full stop.</p>
+        <div class="dining-tip">⭑ Insider: tuna toasts at lunch are consistently praised. Save room.</div>
+        <div class="dress-note">Dress code: informal for breakfast/lunch, casual for dinner</div>
+      </div>
+
+      <div class="dining-card">
+        <h3>Gran Caribe</h3>
+        <span class="dining-type">Buffet · All-Inclusive · Breakfast, Lunch & Dinner</span>
+        <p>The resort's main buffet surrounds you with outdoor gardens and lake views — a better setting than a typical hotel buffet. Show cooking stations prepare dishes to order. Solid variety; reviewers call it "above average for the format." Traditional bread with tomato is a constant at breakfast.</p>
+        <div class="dress-note">Dress code: informal breakfast/lunch, casual dinner</div>
+      </div>
+
+      <div class="dining-card">
+        <h3>Steakville</h3>
+        <span class="dining-type">À la carte · Dinner Only</span>
+        <p>Grilled meats over charcoal — pichanha, entraña, New York strip — plus fish and vegetables for non-carnivores. American sides: lobster bisque, mashed potatoes, carrot cake. Multiple reviewers single this out as the best evening experience outside of BLoved. Book it first.</p>
+        <div class="dining-tip">⭑ Insider: Book Steakville the day you arrive. It fills every night.</div>
+        <div class="dress-note">Closed shoes required. No shorts or sleeveless shirts for men.</div>
+      </div>
+
+      <div class="dining-card">
+        <h3>Ayami</h3>
+        <span class="dining-type">À la carte · Teppanyaki · Dinner Only</span>
+        <p>Live teppanyaki — the chef cooks at your table on steel griddle plates. Rice, meat, seafood, and vegetables prepared to order while you watch. High on entertainment value. Mixed reviews on the food itself (some guests find it "just ok"), but the show is genuinely engaging and the portions are generous.</p>
+        <div class="dress-note">Closed shoes required. No shorts or sleeveless shirts for men.</div>
+      </div>
+
+      <div class="dining-card">
+        <h3>BO Barcelona Origens</h3>
+        <span class="dining-type">À la carte · Seafood · Dinner Only</span>
+        <p>The property's seafood-focused à la carte — a modern approach to fish and shellfish with a slight Mediterranean influence. If you want something lighter than Steakville and more refined than the buffet, this is the right call. Book early in your stay.</p>
+        <div class="dress-note">Closed shoes required. No shorts or sleeveless shirts for men.</div>
+      </div>
+
+      <div class="dining-card">
+        <h3>Adelita</h3>
+        <span class="dining-type">À la carte · Mexican · Lunch & Dinner</span>
+        <p>The resort's Mexican restaurant covers the classics: fajitas, shrimp tacos, molcajete, tarascan soup. Dessert is a sweet corn tamale with vanilla and cinnamon. Casual dress for both meals — easier to get into than the evening specialty restaurants.</p>
+        <div class="dress-note">Dress code: casual for lunch and dinner</div>
+      </div>
+
+      <div class="dining-card">
+        <h3>Siwichi</h3>
+        <span class="dining-type">À la carte · Peruvian Fusion · Lunch</span>
+        <p>One of the more unusual additions to a Mexico resort menu — ceviche, ají de gallina, arroz con mariscos served at outdoor tables. Suspiro Lima for dessert. A good midday break from the buffet; less formal than the evening options.</p>
+        <div class="dress-note">Dress code: casual</div>
+      </div>
+
+      <div class="dining-card">
+        <h3>Tao-Cat</h3>
+        <span class="dining-type">À la carte · Pan-Asian · Dinner Only</span>
+        <p>Shrimp dumplings, spring rolls, tuna sashimi, and sushi. The menu pulls from across East and Southeast Asia rather than focusing on a single country. Closed shoes required at dinner.</p>
+        <div class="dress-note">Closed shoes required. No shorts or sleeveless shirts for men.</div>
+      </div>
+
+      <div class="dining-card">
+        <h3>La Toscana</h3>
+        <span class="dining-type">À la carte · Italian · Lunch</span>
+        <p>Midday pasta and wood-fired pizzas. Casual, fast, and good for families. No reservation drama — walk in for lunch and you're generally fine.</p>
+        <div class="dress-note">Dress code: casual</div>
+      </div>
+
+      <div class="dining-card">
+        <h3>Mamma Mia</h3>
+        <span class="dining-type">À la carte · Italian · Dinner</span>
+        <p>Traditional Italian with lasagna, pasta, salads, and pizza. Available with prior reservation for stays of 3+ nights. Minimum stay requirement exists — check on arrival when you have your full reservation count.</p>
+        <div class="dress-note">Dress code: casual</div>
+      </div>
+
+      <div class="dining-card">
+        <h3>Catalonia Burgers + Quinta Avenida Trucks</h3>
+        <span class="dining-type">Casual · Throughout Day</span>
+        <p>The resort's central promenade — inspired by Playa del Carmen's 5th Avenue — runs through the property with food trucks, a burger spot (avocado, bacon, fried onion options), creperie, tropical juice bar, and sweet and savory snack stands operating all day. Good for a quick poolside break.</p>
+        <div class="dining-tip">⭑ Insider: The food trucks are the underrated option for lunch when you don't want to leave the pool area.</div>
+      </div>
+
+    </div>
+
+    <div class="tip-box" style="margin-top: 28px;">
+      <span class="tip-icon">🥂</span>
+      <div>
+        <h4>Drinking on property</h4>
+        <p>Bars are open until 2:00 a.m. The all-inclusive covers domestic and some international spirits. If you're particular about premium liquor, guests note the selection can be basic. The Pure Bar (Privileged beach section) tends to have a calmer, less crowded scene than the main pool bars.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- RESORT LIFE -->
+<section class="paper" id="resort-life">
+  <div class="container">
+    <span class="section-label">On property</span>
+    <div class="section-title">How to Actually Use the Resort</div>
+    <div class="section-sub">Pools, spa, entertainment — what's worth your time and what to know before you get there</div>
+
+    <div class="tips-cols">
+      <div class="tips-col">
+        <h3>Pools</h3>
+        <ul>
+          <li>Two main pools: one activity-focused with daily programming, one relaxation-focused with Margarita's Bar swim-up service</li>
+          <li>A third children's pool is separate — families can keep kids in their own zone</li>
+          <li>Privileged guests have exclusive pool access separate from general areas</li>
+          <li>Lounge chairs are saved early in the morning — a recurring complaint. Get to the pool by 8 a.m. if you want a prime spot</li>
+          <li>Hotel policy officially discourages chair saving, but enforcement is inconsistent. Go early or accept what's left</li>
+        </ul>
+      </div>
+      <div class="tips-col">
+        <h3>Beach</h3>
+        <ul>
+          <li>Costa Mujeres beach is protected and calmer than Caribbean-facing beaches further south — good for swimming</li>
+          <li>White sand, clear water, coconut palms. The beach lives up to what you see in photos</li>
+          <li>Privileged guests have a dedicated beach section with the Pure Bar — worth the upgrade if beach time is a priority</li>
+          <li>Sargassum (seaweed) can appear on any Mexican Caribbean beach seasonally (typically summer). The resort works to clear it but can't eliminate it entirely</li>
+          <li>Water shoes optional but useful if you plan to wade into rocky sections</li>
+        </ul>
+      </div>
+      <div class="tips-col">
+        <h3>Alegría Spa</h3>
+        <ul>
+          <li>Outdoor heated infinity pool overlooking the Caribbean — one of the more striking features on property</li>
+          <li>Full hydrotherapy circuit: sauna, steam bath, jacuzzi, plunge pool, hydro-massage shower</li>
+          <li>Beauty salon with hairdresser, manicure, and pedicure services</li>
+          <li>Gym with cardio, weights, and studios for spinning, yoga, and Pilates</li>
+          <li>No guests under 18 permitted in spa areas</li>
+          <li>Privileged guests: 10% off all treatments, one free humid-area access per stay (book ahead)</li>
+          <li>Book spa treatments on arrival — popular time slots fill within the first day</li>
+        </ul>
+      </div>
+      <div class="tips-col">
+        <h3>Entertainment & Activities</h3>
+        <ul>
+          <li>Daily pool activities run from approximately 9 a.m. through the afternoon — aerobics, volleyball, tournaments, dance classes</li>
+          <li>Kid's Club and Teen's Club run workshops and activities separately — families get genuinely parallel programming</li>
+          <li>Nightly theater performances and live entertainment rotate through the week</li>
+          <li>Cat's Night Club for late-night dancing (noise can carry to some room locations — ask for a room away from the disco if you're a light sleeper)</li>
+          <li>Scuba discovery lesson available for guests 14+ at no additional charge</li>
+          <li>Kayaking, snorkeling, and other water sports available from the beach</li>
+          <li>Excursion desk on property books off-resort experiences — compare prices with your advisor first</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tip-box" style="margin-top: 28px;">
+      <span class="tip-icon">🐾</span>
+      <div>
+        <h4>Wildlife on property</h4>
+        <p>Agoutis — the small, brown, rabbit-like mammals native to the Yucatán — roam freely through the resort grounds. Guests consistently find this charming. They're harmless, though you'll want to keep food secured. Don't feed them.</p>
+      </div>
+    </div>
+
+    <div class="tip-box">
+      <span class="tip-icon">📶</span>
+      <div>
+        <h4>Connectivity</h4>
+        <p>Wi-Fi is available throughout the resort. Speed and reliability vary by area — outdoor locations near pools and the beach tend to have weaker signal than rooms and common areas. Download anything you need before you settle in for the day poolside.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- COMMITMENT 2 -->
+<div style="background: var(--aqua-mist); padding: 24px;">
+  <div class="container">
+    <div class="commitment" style="background: var(--white);">
+      <p>We check every component against public rates and meet or beat them. You're not paying a premium for our convenience — you're paying for the rest of what we do.</p>
+    </div>
+  </div>
+</div>
+
+<!-- EXCURSIONS -->
+<section class="white" id="excursions">
+  <div class="container">
+    <span class="section-label">Off property</span>
+    <div class="section-title">Excursions Worth Building Your Week Around</div>
+    <div class="section-sub">The Costa Mujeres location gives you easy access to some of the region's best day trips</div>
+
+    <div class="excursion-grid">
+
+      <div class="exc-card">
+        <div class="exc-top">
+          <h3>Isla Mujeres</h3>
+          <span class="exc-tag">⭑ Top Priority</span>
+        </div>
+        <div class="exc-body">
+          <p>The island directly across the bay from your resort — visible from the beach. Just 4.3 miles long and less than a kilometer wide. Catamaran tours depart from Puerto Juárez (the closest ferry terminal to your resort). You can also take the ferry independently for about 20–30 minutes.</p>
+          <p style="margin-top: 8px;">On the island: golf cart rental to tour the south end, Playa Norte (flat, calm, turquoise — consistently rated one of the Caribbean's best beaches), Garrafón Reef Park for snorkeling and kayaking, the Underwater Museum of Art (MUSA) with 500+ submerged sculptures, downtown for local food and shopping.</p>
+          <div class="exc-detail">
+            <span>Ferry: ~20–30 min</span>
+            <span>Full day recommended</span>
+            <span>Bring pesos for tips</span>
+          </div>
+          <div class="tour-links">
+            <div class="tour-links-label">Book a catamaran tour</div>
+            <a class="tour-link" href="https://www.viator.com/tours/Cancun/Isla-Mujeres-Catamaran-Cruise-from-Costa-Mujeres/d631-5885P504?pid=P00199174&uid=U00547912&mcid=58086&currency=USD" target="_blank" rel="noopener">
+              <span class="tour-link-name">Catamaran Cruise from Costa Mujeres</span>
+              <span class="tour-link-arrow">→</span>
+            </a>
+            <a class="tour-link" href="https://www.viator.com/tours/Cancun/8Hr-Shared-Catamaran-Isla-Mujeres-Snorkeling-and-Premium-Open-Bar/d631-45382P37?pid=P00199174&uid=U00547912&mcid=58086&currency=USD" target="_blank" rel="noopener">
+              <span class="tour-link-name">Catamaran with Snorkeling &amp; Lunch</span>
+              <span class="tour-link-arrow">→</span>
+            </a>
+            <a class="tour-link" href="https://www.viator.com/tours/Cancun/Luxury-Catamaran-Trip-to-Isla-Mujeres-and-Private-Beach-Club/d631-25004P12?pid=P00199174&uid=U00547912&mcid=58086&currency=USD" target="_blank" rel="noopener">
+              <span class="tour-link-name">Luxury Catamaran — Premium Open Bar &amp; Private Beach Club</span>
+              <span class="tour-link-arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="exc-card">
+        <div class="exc-top">
+          <h3>Isla Contoy</h3>
+          <span class="exc-tag">National Park · Limited Access</span>
+        </div>
+        <div class="exc-body">
+          <p>A protected national park north of Isla Mujeres — officially a bird sanctuary with some of the densest frigate bird, pelican, and cormorant populations in Mexico. Daily visitor numbers are capped to preserve the ecosystem. Snorkeling in the surrounding waters is excellent. Often combined with an Isla Mujeres day in tour packages.</p>
+          <div class="exc-detail">
+            <span>Full day tour</span>
+            <span>Book in advance</span>
+            <span>Limited permits daily</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exc-card">
+        <div class="exc-top">
+          <h3>Whale Shark Swimming</h3>
+          <span class="exc-tag">Seasonal: June–September</span>
+        </div>
+        <div class="exc-body">
+          <p>One of the few places on earth where this is possible at scale — whale sharks aggregate in the waters north of Isla Mujeres each summer, feeding on fish eggs near the surface. Tours depart from Isla Mujeres and Cancún. You enter the water with a guide and swim alongside fish that can reach 30+ feet. Snorkel only (no scuba). Bucket-list tier if your dates align.</p>
+          <div class="exc-detail">
+            <span>June–September</span>
+            <span>Book weeks ahead</span>
+            <span>Departs early morning</span>
+          </div>
+          <div class="tour-links">
+            <div class="tour-links-label">Book a whale shark tour</div>
+            <a class="tour-link" href="https://www.viator.com/tours/Cancun/Whale-Shark-Swimming-in-Cancun/d631-70244P1?pid=P00199174&uid=U00547912&mcid=58086&currency=USD" target="_blank" rel="noopener">
+              <span class="tour-link-name">Whale Shark Adventure in Cancún</span>
+              <span class="tour-link-arrow">→</span>
+            </a>
+            <a class="tour-link" href="https://www.viator.com/tours/Isla-Mujeres/Amazing-Whale-Shark-Adventure/d50820-296927P4?pid=P00199174&uid=U00547912&mcid=58086&currency=USD" target="_blank" rel="noopener">
+              <span class="tour-link-name">Whale Shark Adventure in Isla Mujeres</span>
+              <span class="tour-link-arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="exc-card">
+        <div class="exc-top">
+          <h3>Chichén Itzá</h3>
+          <span class="exc-tag">UNESCO World Heritage · Day Trip</span>
+        </div>
+        <div class="exc-body">
+          <p>One of the New Seven Wonders of the World — the Temple of Kukulcán and its surrounding archaeological complex. A 2.5–3 hour drive from Cancún. Tour packages typically include a Yucatecan buffet lunch and a cenote stop for swimming. Go early; the site gets crowded and hot by midday. A guided tour is worth the cost here — context transforms what you're seeing.</p>
+          <div class="exc-detail">
+            <span>Full day</span>
+            <span>Leave by 7 a.m.</span>
+            <span>Bring sunscreen + water</span>
+          </div>
+          <div class="tour-links">
+            <div class="tour-links-label">Book a tour</div>
+            <a class="tour-link" href="https://www.viator.com/tours/Cancun/Majestic-Chichen-Itza-Cenote-Suytun-and-Ikkil/d631-406344P20?pid=P00199174&uid=U00547912&mcid=58086&currency=USD" target="_blank" rel="noopener">
+              <span class="tour-link-name">Majestic Chichén Itzá, Cenote Suytun &amp; Cenote Ikkil Journey</span>
+              <span class="tour-link-arrow">→</span>
+            </a>
+            <a class="tour-link" href="https://www.viator.com/tours/Chichen-Itza/Guided-Tour-to-Chichen-Itza-and-Cenote-and-Valladolid-with-Lunch/d50526-343065P9?pid=P00199174&uid=U00547912&mcid=58086&currency=USD" target="_blank" rel="noopener">
+              <span class="tour-link-name">Guided Tour to Chichén Itzá, Cenote &amp; Valladolid with Lunch</span>
+              <span class="tour-link-arrow">→</span>
+            </a>
+            <a class="tour-link" href="https://www.viator.com/tours/Cancun/Chichen-Itza-All-Inclusive-with-Hubiku-Cenote-and-Valladolid/d631-110604P1?pid=P00199174&uid=U00547912&mcid=58086&currency=USD" target="_blank" rel="noopener">
+              <span class="tour-link-name">Chichén Itzá Premier Tour with Cenote Xunáan, Valladolid &amp; Lunch</span>
+              <span class="tour-link-arrow">→</span>
+            </a>
+            <a class="tour-link" href="https://www.viator.com/tours/Cancun/Chichen-Itza-Valladolid-and-Hubiku-Cenote-Day-Trip/d631-110604P2?pid=P00199174&uid=U00547912&mcid=58086&currency=USD" target="_blank" rel="noopener">
+              <span class="tour-link-name">Chichén Itzá Tour with Cenote Xunáan, Valladolid &amp; Lunch</span>
+              <span class="tour-link-arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="exc-card">
+        <div class="exc-top">
+          <h3>Cenote Swimming</h3>
+          <span class="exc-tag">Natural Wonder</span>
+        </div>
+        <div class="exc-body">
+          <p>The Yucatán Peninsula sits on a vast underground river system, and cenotes — freshwater sinkholes — are the surface access points. The water is clear and cool, the geology is unlike anything in the Caribbean world above ground. Many are open for swimming, snorkeling, and even light cave diving. Often combined with Chichén Itzá or offered as standalone half-day tours.</p>
+          <div class="exc-detail">
+            <span>Half or full day</span>
+            <span>Bring biodegradable sunscreen</span>
+            <span>Required at many sites</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exc-card">
+        <div class="exc-top">
+          <h3>Ek Balam</h3>
+          <span class="exc-tag">Archaeological Site · Less Crowded</span>
+        </div>
+        <div class="exc-body">
+          <p>An alternative to Chichén Itzá that gets a fraction of the visitors — and you can still climb the main pyramid. The Sak Xok Nahh (White House of Reading) and the acropolis are remarkably well preserved. Typically combined with a cenote and local village visit. The best Mayan site choice if you've already seen Chichén Itzá.</p>
+          <div class="exc-detail">
+            <span>Full day</span>
+            <span>Often combined with cenote</span>
+            <span>Fewer crowds than Chichén Itzá</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exc-card">
+        <div class="exc-top">
+          <h3>Isla Holbox</h3>
+          <span class="exc-tag">Remote Island · Yum Balam Reserve</span>
+        </div>
+        <div class="exc-body">
+          <p>North of Cancún in the Yum Balam Ecological Reserve — a far quieter island than Isla Mujeres. No cars, sand streets, bioluminescent plankton at night, and a genuinely unhurried atmosphere. Whale sharks also pass through during summer. A longer day trip but a different experience entirely. Arrange transport and consider a guided tour for logistics.</p>
+          <div class="exc-detail">
+            <span>Long day trip</span>
+            <span>Car ferry from Chiquilá</span>
+            <span>Bring cash (limited ATMs)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exc-card">
+        <div class="exc-top">
+          <h3>Mayan Museum of Cancún</h3>
+          <span class="exc-tag">Half Day · Cultural</span>
+        </div>
+        <div class="exc-body">
+          <p>The most important Mayan artifact collection in Quintana Roo — pieces from across the peninsula plus objects from Palenque and Chichén Itzá. The building integrates with the San Miguelito archaeological site and the Nichupté Lagoon views. Good for a morning or afternoon when you want culture without a full-day commitment.</p>
+          <div class="exc-detail">
+            <span>2–3 hours</span>
+            <span>Cancún Hotel Zone</span>
+            <span>AC — good for hot days</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="tip-box" style="margin-top: 28px;">
+      <span class="tip-icon">🚌</span>
+      <div>
+        <h4>On booking excursions</h4>
+        <p>The resort's on-property excursion desk is convenient but not necessarily the best-priced option. Your travel advisor can often pre-book the same or comparable tours at better rates before you arrive. Ask before you leave — it's easier to sort this out at home than at a desk in the lobby. Private transfers to excursion departure points beat shared shuttles significantly in both time and comfort.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- INSIDER TIPS -->
+<section class="band" id="insider">
+  <div class="container">
+    <span class="section-label">From your advisor</span>
+    <div class="section-title">What to Know Before You Go</div>
+    <div class="section-sub">The details that don't make it into the brochure</div>
+
+    <div class="tips-cols" style="margin-top: 0;">
+      <div class="tips-col">
+        <h3>Booking & Check-In</h3>
+        <ul>
+          <li>Check-in is at 3:00 p.m. — early check-in is a Privileged benefit, subject to availability. Call ahead or note your arrival time when booking to request consideration</li>
+          <li>Checkout is at 12:00 p.m. — late checkout to 3:00 p.m. is a Privileged benefit (availability basis)</li>
+          <li>The credit card used to book must match the name of the guest — if it doesn't, contact the hotel before arrival or expect delays at check-in</li>
+          <li>Book restaurant reservations the moment you arrive — open the app at the front desk. Don't wait until the next morning</li>
+          <li>Dress codes at à la carte dinner restaurants are enforced — closed shoes and no sleeveless shirts for men. Pack accordingly; flip-flops and tank tops won't get you through the door</li>
+        </ul>
+      </div>
+      <div class="tips-col">
+        <h3>Packing List Additions</h3>
+        <ul>
+          <li>Closed-toe shoes (required for specialty dinner restaurants)</li>
+          <li>Reef-safe or biodegradable sunscreen — required at many cenotes and marine areas, and the right call at the resort too</li>
+          <li>Cash in pesos for off-property tips, local restaurants, and market purchases; pesos get better rates than dollars at local spots</li>
+          <li>A light layer for evenings — air conditioning at the resort and restaurants can be aggressive</li>
+          <li>Refillable water bottle — the resort provides water but a bottle makes pool days easier</li>
+          <li>Waterproof phone case if you plan to snorkel or kayak</li>
+        </ul>
+      </div>
+      <div class="tips-col">
+        <h3>Room Booking Strategy</h3>
+        <ul>
+          <li>Request a room away from the nightclub if you go to sleep before midnight — the disco runs late and sound carries in some building positions</li>
+          <li>High floors generally get better views and more breeze — worth requesting if available</li>
+          <li>The Romance Deluxe & Swim-Up room requires a 4-night minimum stay to activate the romantic dinner and couples massage inclusion — confirm your stay length qualifies before booking</li>
+          <li>Swim-up rooms are ground level — great for pool access, less ideal for privacy or view. Match the room to what you actually want from a stay</li>
+        </ul>
+      </div>
+      <div class="tips-col">
+        <h3>Making the Most of the Week</h3>
+        <ul>
+          <li>Book Steakville and Ayami in the first hour of arrival — they fill fastest every day of the week</li>
+          <li>Plan 2 resort days for every 1 full excursion day — the property has enough to keep you genuinely occupied without feeling like you're hiding from the sun</li>
+          <li>The catamaran tours to Isla Mujeres typically depart from Puerto Juárez, which is a short transfer from your resort. Depart by 9:00 a.m. to maximize island time</li>
+          <li>For Chichén Itzá: go early, go on a weekday, and bring your own snacks and water for the drive</li>
+          <li>Spa bookings should go in on day one — the infinity pool overlooking the sea is worth making the effort for</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LOGISTICS -->
+<section class="white" id="logistics">
+  <div class="container">
+    <span class="section-label">Good to know</span>
+    <div class="section-title">Practical Details</div>
+    <div class="section-sub">The quick-reference information you'll want during trip planning</div>
+
+    <div class="tips-cols">
+      <div class="tips-col">
+        <h3>Property Basics</h3>
+        <ul>
+          <li>Address: Boulevard Vialidad Paseo Mujeres 77400, Cancún, Mexico</li>
+          <li>Phone: +52 (998) 881 23 00</li>
+          <li>Check-in: 3:00 p.m. | Checkout: 12:00 p.m.</li>
+          <li>Free parking on-site (not needed if you're flying in)</li>
+          <li>No pets permitted</li>
+          <li>No extra beds available — room configuration matters, plan accordingly for families</li>
+          <li>Smoking prohibited throughout the property except designated zones</li>
+          <li>Voltage: 110V — standard US plugs work fine</li>
+        </ul>
+      </div>
+      <div class="tips-col">
+        <h3>Payments & Fees</h3>
+        <ul>
+          <li>Accepted cards: Visa, Mastercard, Amex</li>
+          <li>Cash accepted only in Mexican pesos — USD cash not accepted by law</li>
+          <li>Environmental Sanitation Tax: ~$1.85 USD per person per night, paid locally at the hotel</li>
+          <li>Groups of 5+ rooms or stays of 9+ nights require advance prepayment — the hotel will contact you to arrange this</li>
+          <li>Credit card must be in the guest's name or contact the hotel in advance</li>
+        </ul>
+      </div>
+      <div class="tips-col">
+        <h3>Getting There & Around</h3>
+        <ul>
+          <li>Nearest airport: Cancún International (CUN) — approximately 30 minutes by car</li>
+          <li>Private transfers strongly recommended over shared shuttles</li>
+          <li>Uber and local taxis available for off-property exploration</li>
+          <li>Ferry to Isla Mujeres: Gran Puerto terminal in Puerto Juárez is the closest departure point — short transfer from the resort</li>
+          <li>A rental car opens up more flexibility for self-guided Yucatán exploration, including cenotes and smaller archaeological sites</li>
+        </ul>
+      </div>
+      <div class="tips-col">
+        <h3>Weather & When to Go</h3>
+        <ul>
+          <li>Peak season: December–April. Dry, warm, and busy. Book further ahead for best room selection</li>
+          <li>Shoulder season: May–June, November. Fewer crowds, good rates, still excellent weather</li>
+          <li>Summer (July–October): Hot and humid. Hurricane season technically runs June–November, though direct hits are rare. Whale shark season (June–September) is a significant draw if that's on your list</li>
+          <li>Sargassum (seaweed) is most prevalent July–October — common to the entire Mexican Caribbean, not specific to this resort</li>
+          <li>Water temperature stays warm year-round — 78–82°F (26–28°C)</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-wordmark">Point Me to Paradise Travel</div>
+  <div class="footer-line"></div>
+  <div class="footer-name">Christina Garcia</div>
+  <div class="footer-title">Travel Advisor</div>
+  <div class="footer-contact" id="footer-contact">
+    Point Me to Paradise Travel
+  </div>
+  <div class="footer-line"></div>
+  <div class="footer-disclaimer">
+    This destination guide is prepared for informational purposes. All resort details, dining menus, hours, and amenities are subject to change by the property. Excursion availability varies by season. Your advisor will confirm current details before booking.
+  </div>
+</footer>
+
+<script>
+  // Obfuscate email
+  (function() {
+    var u = 'christina.garcia';
+    var d = 'pointmetoparadise\u002Ecom';
+    var el = document.getElementById('footer-contact');
+    if (el) {
+      el.innerHTML = 'Point Me to Paradise Travel<br>' +
+        '<a href="mailto:' + u + '\u0040' + d + '">' + u + '\u0040' + d + '</a>';
+    }
+  })();
+</script>
+
+</body>
+</html>
