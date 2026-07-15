@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cabo Guide — Point Me to Paradise Travel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --aqua-pale:#C4E4E1; --aqua-mist:#EAF3F2; --aqua:#75AFB1; --aqua-dark:#4F8A8C;
+    --sand-light:#F4F1E9; --warm-sand:#F5EFE4; --gold-whisper:#D6C8A8; --white:#FFFFFF; --paper:#F9F6F1;
+    --ink:#2B2420; --ink-soft:#6B6359; --line:#E6DFD5;
+  }
+  *{box-sizing:border-box;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'DM Sans', sans-serif;
+    font-size:16px;
+    line-height:1.75;
+    margin:0;
+    padding:48px 28px;
+  }
+  h1,h2,h3{font-family:'Fraunces', serif; font-weight:600; color:var(--ink); margin:0;}
+  h1{font-size:clamp(26px,5vw,42px);}
+  h2{font-size:clamp(20px,4vw,28px); margin-top:56px; padding-bottom:10px; border-bottom:1px solid var(--line);}
+  h3{font-size:clamp(16px,3vw,20px); margin-top:28px; margin-bottom:6px;}
+  p{margin:0 0 16px;}
+  a{color:var(--aqua-dark);}
+  .subhead{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    color:var(--ink-soft);
+    font-size:19px;
+    margin-top:6px;
+    margin-bottom:22px;
+  }
+  .entry{margin-bottom:30px;}
+  .maplink{
+    display:inline-block;
+    margin:10px 0 6px;
+    padding:9px 16px;
+    background:var(--aqua-mist);
+    border:1px solid var(--aqua-pale);
+    border-radius:6px;
+    font-size:14px;
+    font-weight:500;
+    text-decoration:none;
+    color:var(--aqua-dark);
+  }
+  .tip{
+    font-size:14.5px;
+    color:var(--ink-soft);
+    border-left:2px solid var(--gold-whisper);
+    padding-left:14px;
+    margin-top:10px;
+  }
+  .flag{
+    display:inline-block;
+    font-family:'DM Sans', sans-serif;
+    font-size:10.5px;
+    font-weight:600;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    padding:3px 9px;
+    border-radius:3px;
+    margin-bottom:10px;
+  }
+  .flag-must{background:var(--aqua-pale); color:var(--aqua-dark);}
+  .flag-local{background:var(--gold-whisper); color:var(--ink);}
+  .flag-hidden{background:var(--warm-sand); color:var(--ink-soft); border:1px solid var(--gold-whisper);}
+  .flag-avoid{background:#EFE0DC; color:#8C4A3B;}
+  .pmtp-band{
+    padding:22px 26px;
+    border-radius:10px;
+    margin:26px 0;
+  }
+  .pmtp-band h4{
+    font-family:'Fraunces', serif;
+    font-size:16px;
+    font-weight:600;
+    margin:0 0 8px;
+  }
+  .pmtp-band p{margin:0; font-size:15px;}
+  img{max-width:100%;}
+  @media(max-width:640px){
+    body{font-size:15px; padding:24px 0;}
+    .pmtp-hero{padding:44px 20px 36px;margin:-24px -20px 24px;}
+    .pmtp-band{padding:18px 16px;}
+    h2{font-size:20px;}
+    h3{font-size:17px;}
+    .pmtp-footer{border-radius:8px;padding:24px 20px;}
+  }
+</style>
+</head>
+<body>
+
+<div style="max-width:680px;margin:0 auto;padding:0 20px;">
+
+<div class="pmtp-hero" style="background-image:linear-gradient(180deg,rgba(255,255,255,0.45),rgba(196,228,225,0.55) 35%,rgba(245,239,228,0.80) 68%,rgba(249,246,240,0.97));padding:clamp(40px,8vw,78px) 32px clamp(36px,6vw,60px);text-align:center;margin:-48px -28px 32px;border-bottom:1px solid var(--line);">
+  <div style="font-family:Fraunces,serif;font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--aqua-dark);margin-bottom:22px;">Point Me to Paradise Travel</div>
+  <h1>Cabo: A Traveler's Guide to Los Cabos</h1>
+  <div style="width:60px;height:1px;background:var(--gold-whisper);margin:18px auto;"></div>
+  <p style="font-family:Cormorant Garamond,serif;font-style:italic;font-size:clamp(17px,3.5vw,21px);max-width:620px;margin:0 auto;">Two towns, one arch, and a coastline where the desert meets two different oceans.</p>
+</div>
+
+<img src="https://assets.simpleviewinc.com/sv-loscabos/image/upload/c_limit,h_1200,q_75,w_1200/v1/cms_resources/clients/loscabosmx/the_arch3_124638e8-9864-4401-8169-132999bd75fb.jpg" alt="The Arch (El Arco) at Land's End, Cabo San Lucas" style="width:100%;max-height:460px;object-fit:cover;border-radius:0;display:block;margin-bottom:32px;" loading="lazy">
+
+<p>Los Cabos is the name for the whole region sitting at the very southern tip of the Baja California peninsula, and it's really two towns pretending to be one destination. Cabo San Lucas and San José del Cabo sit about twenty miles apart, connected by the Tourist Corridor, and they could not have more different personalities. Everything below is organized so you can figure out which version of Cabo you actually want — and which parts of the other one are still worth the drive.</p>
+
+<h2>Orientation &amp; Character</h2>
+<p class="subhead">Same peninsula, two very different vacations.</p>
+
+<div class="entry">
+  <span class="flag flag-local">Local Favorite</span>
+  <h3>Cabo San Lucas</h3>
+  <p>Cabo San Lucas is the livelier, more extroverted half of the pair — a magnet for anyone looking to fold some adrenaline into a beach trip, whether that's a boat tour by day or bars that run until sunrise. The town is built around a marina that's always at full capacity, and it draws a college-aged crowd, young couples on quick getaways, and families who came for the water sports. All-inclusive properties here tend to run a little less polished than their San José counterparts, which is part of the trade for being steps from everything.</p>
+  <div class="maplink">📍 <a href="https://www.google.com/maps/search/?api=1&query=Cabo+San+Lucas+Marina" target="_blank">Cabo San Lucas Marina</a></div>
+</div>
+
+<div class="entry">
+  <span class="flag flag-local">Local Favorite</span>
+  <h3>San José del Cabo</h3>
+  <p>Twenty miles northeast, San José del Cabo trades marina nightlife for cobblestone streets, colonial architecture, and a main square — Plaza Mijares — that anchors a historic center the Mexican government has officially designated a Barrio Mágico for its preserved cultural character. El Centro is a walkable grid built around the 18th-century Misión de San José del Cabo, with bougainvillea and murals lining the way. The Gallery District along Calle Obregón runs about four blocks of galleries, boutique restaurants, and independent shops, and every Thursday night from November through June the street closes to traffic for the Art Walk, when galleries stay open until 9 p.m.</p>
+  <div class="maplink">📍 <a href="https://www.google.com/maps/search/?api=1&query=Plaza+Mijares+San+Jose+del+Cabo" target="_blank">Plaza Mijares, San José del Cabo</a></div>
+  <p class="tip">Honest caveat: San José doesn't have much going on after 10 p.m., and you'll want a car — the best beaches and restaurants aren't within walking distance of El Centro.</p>
+</div>
+
+<div class="pmtp-band" style="background:var(--aqua-mist);">
+  <h4>Which one should you base yourself in?</h4>
+  <p>Choose Cabo San Lucas if you want all-inclusive ease, quick access to nightlife, and a room a short walk from the marina. Choose San José if you'd rather have intimate design, artsy neighborhoods, and a shorter hop from the airport.</p>
+</div>
+
+<h2>Top Sights &amp; Experiences</h2>
+<p class="subhead">The landmark that gives the whole cape its name, and the water around it.</p>
+
+<div class="entry">
+  <span class="flag flag-must">Must Do</span>
+  <h3>El Arco / The Arch (Land's End)</h3>
+  <p>This granite formation towers three stories above the point where the Pacific Ocean meets the Sea of Cortés, and it's the single most recognizable symbol of Los Cabos. You can only reach it by boat — from Medano Beach or the Cabo San Lucas Marina — which is part of what keeps it feeling like an event rather than a drive-up photo stop.</p>
+  <div class="maplink">📍 <a href="https://www.google.com/maps/search/?api=1&query=El+Arco+Lands+End+Cabo+San+Lucas" target="_blank">El Arco / Land's End</a></div>
+</div>
+
+<div class="entry">
+  <span class="flag flag-must">Must Do</span>
+  <h3>Medano Beach (Playa El Médano)</h3>
+  <p>The water around Cabo San Lucas can be wild in a lot of places, but Medano is the exception — calm, safe swimming right in the middle of everything. It's a long stretch of golden sand with towels, umbrellas, volleyball games, and beach bars, backed by resorts and high-rises, and it's the launch point for most boat tours out to the Arch.</p>
+  <div class="maplink">📍 <a href="https://www.google.com/maps/search/?api=1&query=Medano+Beach+Cabo+San+Lucas" target="_blank">Medano Beach</a></div>
+</div>
+
+<img src="https://assets.simpleviewinc.com/sv-loscabos/image/upload/c_fill,f_jpg,h_819,q_65,w_640/v1/clients/loscabosmx/Lands_End_Medano_Family_lifestyle_4_97d7d9c0-90ea-4ead-b156-8dd449e8ffce.jpg" alt="Family paddleboarding at Medano Beach with a cruise ship visible at Land's End in the distance" style="width:100%;max-height:320px;object-fit:cover;border-radius:8px;display:block;margin:0 0 20px;" loading="lazy">
+
+<div class="entry">
+  <h3>Lover's Beach &amp; Divorce Beach</h3>
+  <p>These two sit on either side of the Arch and could not feel more different. Lover's Beach has calm, turquoise water and soft sand — good for swimming and snorkeling. Divorce Beach, just around the point, has rocky cliffs and intense waves that make it too dangerous to swim.</p>
+  <div class="maplink">📍 <a href="https://www.google.com/maps/search/?api=1&query=Lovers+Beach+Cabo+San+Lucas" target="_blank">Lover's Beach</a></div>
+  <div class="maplink">📍 <a href="https://www.google.com/maps/search/?api=1&query=Divorce+Beach+Cabo+San+Lucas" target="_blank">Divorce Beach</a></div>
+  <p class="tip">This is not a swimming beach — stay out of the water at Divorce Beach.</p>
+</div>
+
+<div class="entry">
+  <span class="flag flag-local">Local Favorite</span>
+  <h3>Pelican Rock</h3>
+  <p>Off the coast at Land's End, Pelican Rock is a protected spot with dramatic rock formations and a small, gravelly beach that draws snorkelers, swimmers, scuba divers, and cliff jumpers. It's known for how much wildlife shows up here, both above and below the surface.</p>
+</div>
+
+<div class="entry">
+  <span class="flag flag-must">Must Do — Seasonal</span>
+  <h3>Whale Watching</h3>
+  <p>Each winter, humpback and gray whales migrate down from the Arctic into the waters around Los Cabos, and December through April is the season for it. January through March is the peak window, with February giving you the best odds of a close encounter. Tours run out of the Cabo San Lucas Marina.</p>
+  <div class="maplink">📍 <a href="https://www.google.com/maps/search/?api=1&query=Cabo+San+Lucas+Marina" target="_blank">Cabo San Lucas Marina (tour departure point)</a></div>
+</div>
+
+<div class="entry">
+  <span class="flag flag-hidden">Hidden Gem</span>
+  <h3>Cerro del Vigía (Mt. Solmar hike)</h3>
+  <p>A short but genuinely challenging hike up to one of the best views in Cabo San Lucas — a 360-degree look over the Arch and the exact point where the Pacific gives way to the Sea of Cortés.</p>
+</div>
+
+<h2>Food &amp; Drink Highlights</h2>
+<p class="subhead">The Marlin Capital of the World, and where the tacos are actually good.</p>
+
+<p>Cabo's two signature dishes are the Baja fish taco and smoked marlin. A proper Baja-style fish taco is crispy, beer-battered white fish in a warm corn tortilla — never flour, if it's authentic — topped with shredded cabbage, pico de gallo, and a chipotle sauce. And as the self-declared Marlin Capital of the World, Cabo does smoked marlin well: typically shredded and served on tostadas, or as a savory pâté with crackers and spicy salsa.</p>
+
+<div class="entry">
+  <span class="flag flag-local">Local Favorite</span>
+  <h3>Taquería El Estadio</h3>
+  <p>A locals-first taquería built around marlín — smoked, seasoned, and served in corn tortillas with a build-it-yourself condiment bar. At 35–45 pesos a taco, this is Cabo's signature dish in its actual local form, not the version built for the marina crowd. Go at lunch — you'll be eating alongside construction workers, fishermen, and hotel staff on break. There's no English menu, so plan to point and order.</p>
+  <div class="maplink">📍 <a href="https://www.google.com/maps/search/?api=1&query=Taqueria+El+Estadio+Cabo+San+Lucas" target="_blank">Taquería El Estadio, Cabo San Lucas</a></div>
+</div>
+
+<div class="entry">
+  <span class="flag flag-local">Local Favorite</span>
+  <h3>Los Claros</h3>
+  <p>A few blocks off the main tourist strip downtown, Los Claros does Sinaloa-style seafood tacos on flour tortillas, with coleslaw, pickled onions, pico de gallo, and a salsa bar to build your own. Order the smoked marlín tacos and the lightly-breaded fish tacos.</p>
+  <div class="maplink">📍 <a href="https://www.google.com/maps/search/?api=1&query=Los+Claros+Cabo+San+Lucas" target="_blank">Los Claros, Cabo San Lucas</a></div>
+</div>
+
+<div class="entry">
+  <h3>Tacos Gardenias</h3>
+  <p>A small, mom-and-pop spot with gamefish mounted on the walls that's been a neighborhood favorite for 30 years. Go for the fish and shrimp tacos, ceviche, seafood soup, or the shrimp molcajete — a red stew of shrimp, peppers, cheese, and onion served in a stone mortar.</p>
+</div>
+
+<div class="entry">
+  <span class="flag flag-must">Must Do</span>
+  <h3>Metate</h3>
+  <p>A Michelin Bib Gourmand recipient on the tourist corridor in El Tezal, doing traditional wood-fired Mexican cooking and handmade tortillas in a rustic, tree-shaded, string-lit setting. The Baja Taco — battered fish tempura, purple cabbage slaw, avocado, cilantro — is the one to order.</p>
+  <div class="maplink">📍 <a href="https://www.google.com/maps/search/?api=1&query=Metate+Cabo+San+Lucas" target="_blank">Metate, Cabo San Lucas</a></div>
+</div>
+
+<div class="pmtp-band" style="background:var(--warm-sand);">
+  <h4>Late-night, cash-only</h4>
+  <p>Tacos El Paisa doesn't get busy until after midnight, peaking around 2–3 a.m. when the bars close. Order the tacos de suadero (slow-cooked brisket) and tacos de cabeza. Cash only, standing room only.</p>
+</div>
+
+<div class="entry">
+  <h3>Fine dining, San José del Cabo side</h3>
+  <p>Sushi Luna's omakase draws from the local tuna fishing fleet and has earned its reputation for it. Cocina de Autor, at Grand Velas Los Cabos, holds the only Michelin star in Los Cabos.</p>
+</div>
+
+<div class="entry">
+  <h3>If you need something meat-free</h3>
+  <p>Tropical Kitchen is an organic spot serving farm-to-table Buddha bowls and vegan açaí with fresh, locally sourced ingredients.</p>
+</div>
+
+<p class="tip">The better food in Cabo San Lucas is usually found one block off the water — the marina-front restaurants are built for the tourist traffic passing right in front of them, and prices and quality reflect that.</p>
+
+<h2>Outdoor &amp; Nature</h2>
+<p class="subhead">Desert mountains a world away from the marina, twenty minutes inland.</p>
+
+<div class="entry">
+  <span class="flag flag-hidden">Hidden Gem</span>
+  <h3>Sierra de la Laguna</h3>
+  <p>A UNESCO-designated biosphere reserve inland from the coast, with cool pine forests and cascading waterfalls that feel like a different country from the coastal desert. Canyon de la Zorra has become a year-round hiking destination, where freshwater flows over huge granite boulders and forms pools you can actually swim in — a genuine surprise to find in the middle of the desert.</p>
+  <div class="maplink">📍 <a href="https://www.google.com/maps/search/?api=1&query=Sierra+de+la+Laguna+Baja+California+Sur" target="_blank">Sierra de la Laguna</a></div>
+</div>
+
+<div class="entry">
+  <span class="flag flag-must">Must Do — Seasonal</span>
+  <h3>Swimming with whale sharks</h3>
+  <p>Tours run seasonally, December through April, alongside the whale watching season — peak odds are January through March.</p>
+</div>
+
+<div class="entry">
+  <span class="flag flag-must">Must Do — Day Trip</span>
+  <h3>Todos Santos</h3>
+  <p>A Pueblo Mágico worth the drive, with cobblestone streets, colonial architecture, art galleries and craft shops, regional cuisine, and white sand beaches. Activities here run from surfing and hiking to whale watching and horseback riding.</p>
+  <div class="maplink">📍 <a href="https://www.google.com/maps/search/?api=1&query=Todos+Santos+Baja+California+Sur" target="_blank">Todos Santos, Baja California Sur</a></div>
+</div>
+
+<div class="pmtp-band" style="background:var(--aqua-mist);">
+  <h4>Pacific side vs. Sea of Cortés side</h4>
+  <p>Worth factoring into where you stay: the Pacific side of the peninsula runs noticeably cooler and windier than the Sea of Cortés side.</p>
+</div>
+
+<h2>Shopping &amp; Markets</h2>
+<p class="subhead">Silver, Talavera, and a Thursday night that's worth building a dinner around.</p>
+
+<img src="https://assets.simpleviewinc.com/sv-loscabos/image/upload/c_limit,h_1200,q_75,w_1200/v1/cms_resources/clients/loscabosmx/San_Jose_del_Cabo_Plaza_0769e28b-61bc-4295-99a0-b40f0ae17d74.jpg" alt="San José del Cabo's historic Plaza Mijares" style="width:100%;max-height:320px;object-fit:cover;border-radius:8px;display:block;margin:0 0 20px;" loading="lazy">
+
+<div class="entry">
+  <span class="flag flag-must">Must Do</span>
+  <h3>Marina Mercado</h3>
+  <p>Along the waterfront in downtown Cabo San Lucas, this market has been a fixture of the community for over two decades — it started as a gathering spot for classic car enthusiasts and has since become a hub for local artisans selling ironwood carvings, ceramics, silver jewelry, and Talavera pottery.</p>
+  <div class="maplink">📍 <a href="https://www.google.com/maps/search/?api=1&query=Marina+Mercado+Cabo+San+Lucas" target="_blank">Marina Mercado, Cabo San Lucas</a></div>
+  <p class="tip">Cabo is a good place for real silver — look for pieces stamped "925," which indicates sterling silver.</p>
+</div>
+
+<div class="entry">
+  <span class="flag flag-must">Must Do — Seasonal, Thursday Evenings</span>
+  <h3>The Art District / Gallery District, San José del Cabo</h3>
+  <p>Along Calle Obregón, this is the top cultural shopping experience in the region. The Thursday Art Walk, running November through June, closes the street to traffic and fills it with local markets, textiles, silver jewelry, and handmade crafts against a backdrop of colonial architecture and cobblestone streets.</p>
+</div>
+
+<div class="entry">
+  <span class="flag flag-local">Local Favorite — Seasonal Saturdays</span>
+  <h3>San José del Cabo Organic Farmers Market</h3>
+  <p>In the Huerta María community space, running Saturdays from late October through May. Expect farm-fresh produce, handmade cheeses, natural soaps, baked goods, jewelry, crafts, and live music.</p>
+</div>
+
+<div class="entry">
+  <h3>El Merkado</h3>
+  <p>Along the tourist corridor between the two towns, this is less a street market and more a modern food hall — a two-floor space shared by different restaurants, bars, and specialty vendors, open daily.</p>
+</div>
+
+<p class="tip">Carry cash for smaller purchases and out-of-the-way shops, where card machines can be unreliable. Major credit cards work at established businesses, but many smaller vendors and artisan markets are cash-only. Pesos are preferred everywhere; some tourist-area shops take U.S. dollars, but usually at an unfavorable rate.</p>
+
+<h2>Hidden Gems &amp; Local Tips</h2>
+<p class="subhead">The version of Cabo that isn't built around the marina.</p>
+
+<ul>
+  <li><strong>Cerro del Vigía hike</strong> — the 360-degree Arch and Land's End view, without needing a boat.</li>
+  <li><strong>Canyon de la Zorra</strong> — freshwater pools in the Sierra de la Laguna that most visitors never see.</li>
+  <li><strong>Taquería El Estadio and similar no-English-menu, cash-only marlín spots</strong> — where locals actually eat, versus the marina's tourist-facing versions.</li>
+  <li><strong>The Thursday night Art Walk in San José del Cabo</strong> (November–June) — free, low-key, and a genuine mix of locals, expats, and travelers.</li>
+</ul>
+
+<h2>Practical Information</h2>
+<p class="subhead">What to know before you land.</p>
+
+<img src="https://assets.simpleviewinc.com/sv-loscabos/image/upload/c_limit,h_1200,q_75,w_1200/v1/cms_resources/clients/loscabosmx/Whale_watching_1_b8c000fe-1083-4f74-9b03-0326732ddb75.jpg" alt="Whale watching off Los Cabos" style="width:100%;max-height:320px;object-fit:cover;border-radius:8px;display:block;margin:0 0 20px;" loading="lazy">
+
+<div class="entry">
+  <h3>Getting here and around</h3>
+  <p>Cabo San Lucas and San José del Cabo are linked by the Tourist Corridor highway. You'll generally want a car or private driver to move between the two towns and to reach the better beaches and restaurants outside San José's walkable centro.</p>
+</div>
+
+<div class="entry">
+  <h3>Best time to visit</h3>
+  <p>The dry season, November through May, brings the most comfortable temperatures — low-to-mid 80s°F — very little rain, and calm ocean conditions. It's also peak season, meaning the biggest crowds and highest prices, and whale migration peaks in February. May, June, and early October tend to offer the best balance of good weather and smaller crowds.</p>
+</div>
+
+<div class="pmtp-band" style="background:var(--warm-sand);">
+  <h4>Hurricane season</h4>
+  <p>Los Cabos sits in the eastern Pacific hurricane basin. The official season runs May 15 through November 30, with activity concentrated from late June into early October and the highest risk in August and September. Most visitors traveling in this window experience no disruption at all, but travel insurance with trip-interruption coverage is worth having if you're traveling August through October. Direct hits are rare but not unheard of — Hurricane Odile made landfall here in 2014 and caused significant damage.</p>
+</div>
+
+<div class="entry">
+  <h3>Currency</h3>
+  <p>The official currency is the Mexican peso, though U.S. dollars are widely accepted. You'll generally come out ahead converting cash to pesos — the exchange rate on dollars tends to be unfavorable, and change is given in pesos regardless of what you pay with.</p>
+</div>
+
+<div class="entry">
+  <h3>Safety</h3>
+  <p>As of 2026, Baja California Sur — which includes both Cabo San Lucas and San José del Cabo — carries a U.S. State Department Level 2 "Exercise Increased Caution" advisory, the same rating currently given to France, Germany, the United Kingdom, Belgium, and Japan. That means: stay aware of your surroundings, not stay away. In February 2026, the U.S. Consulate issued a security alert noting incidents between criminal elements and law enforcement near the Los Cabos airport, outside the traditional tourist areas, and advised continued vigilance, particularly around the airport. U.S. government employees traveling here are restricted from moving between cities after dark. One practical note: Uber can drop you at the airport but isn't permitted to pick up passengers there — use a clearly identifiable, numbered taxi when you're leaving.</p>
+</div>
+
+<div class="pmtp-band" style="background:var(--aqua-mist);">
+  <h4>The real risk here is the ocean, not crime</h4>
+  <p>Water-related incidents account for the majority of serious tourist accidents and fatalities in Los Cabos. Many Pacific-facing beaches have powerful rip currents, undertow, and steep drop-offs. The reliably safe beaches for swimming are Medano Beach, Chileno Bay, Santa María Bay, and Palmilla Beach.</p>
+</div>
+
+<h2>What to Avoid</h2>
+<p class="subhead">A short list, worth reading before you land.</p>
+
+<div class="entry">
+  <span class="flag flag-avoid">Avoid</span>
+  <p>Swimming at Divorce Beach, Pacific-facing beaches, or any beach without posted flags — riptides, undertow, and rogue waves are common here. Pay attention to the color-coded flag system and stick to designated swimming beaches.</p>
+</div>
+
+<div class="entry">
+  <span class="flag flag-avoid">Avoid</span>
+  <p>Marina-front restaurants advertising "smoked marlin" and fish tacos to cruise and resort traffic. Better versions exist one block off the water at local prices.</p>
+</div>
+
+<div class="entry">
+  <span class="flag flag-avoid">Avoid</span>
+  <p>Flagging down unmarked street taxis, especially late at night. Stick to reputable transportation — official numbered taxis, pre-booked transfers, or Uber where it's permitted to operate.</p>
+</div>
+
+<div class="entry">
+  <span class="flag flag-avoid">Avoid</span>
+  <p>Leaving drinks unattended in nightlife areas. Drink spiking has been reported at some Cabo San Lucas clubs.</p>
+</div>
+
+<div class="pmtp-footer" style="background:var(--sand-light);margin-top:64px;padding:36px 28px;border-radius:12px;">
+  <div style="font-family:Fraunces,serif;font-size:20px;font-weight:600;">Andrea Gunter</div>
+  <div style="font-family:Cormorant Garamond,serif;font-style:italic;color:var(--ink-soft);font-size:15px;margin-bottom:14px;">Travel Advisor</div>
+  <div style="font-size:14px;margin-bottom:4px;"><a id="pmtpEmailLink" href="#"></a></div>
+  <div style="font-size:14px;margin-bottom:4px;">409-789-3579</div>
+  <div style="font-family:Cormorant Garamond,serif;font-style:italic;color:var(--ink-soft);font-size:14px;margin-top:14px;">Point Me to Paradise Travel</div>
+</div>
+
+<div class="pmtp-disclaimer" style="margin-top:28px;padding:22px 26px;background:var(--paper);border:1px solid var(--line);border-radius:8px;font-size:12.5px;line-height:1.7;color:var(--ink-soft);">
+  <span style="display:block;font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);margin-bottom:8px;">Important — please read</span>
+  This guide is provided for informational purposes only. Locations, hours, conditions, and recommendations can change without notice, and ocean, weather, trail, road, and travel conditions can shift quickly and unpredictably. Point Me to Paradise Travel, the advisor named in this guide, and the authors of this content are not liable for any injury, illness, loss, theft, or harm of any kind arising from your visit to any location or participation in any activity referenced here. By using this guide, you accept full personal responsibility for your own safety. Use your own judgment, verify current conditions before any activity, follow all posted warnings and local regulations, and consult qualified professionals — lifeguards, park rangers, licensed guides, medical providers — where appropriate.
+</div>
+
+</div>
+
+<script>(function(){var l="andrea",d="pointmetoparadise.com";if(!l||!d)return;var a=l+"\u0040"+d;var el=document.getElementById("pmtpEmailLink");if(el){el.href="mailto:"+a;el.textContent=a;}})()</script>
+
+</body>
+</html>
