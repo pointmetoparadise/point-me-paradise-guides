@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Yacht Club Guide — MSC Seascape | Point Me to Paradise Travel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --aqua:       #2e8b8b;
+      --aqua-soft:  #75afb1;
+      --aqua-deep:  #4f8a8c;
+      --aqua-tint:  #eaf3f2;
+      --cream:      #faf7f2;
+      --paper:      #fbfdfd;
+      --sand:       #f3ede1;
+      --gold:       #cdb87a;
+      --ink:        #2b3d3c;
+      --ink-light:  #4a5f5e;
+      --ink-faint:  #7a9190;
+    }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    .page { max-width: 800px; margin: 0 auto; background: var(--paper); }
+
+    /* HEADER */
+    .site-header { padding: 30px 48px 26px; display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; border-bottom: 1px solid var(--aqua-tint); background: var(--paper); }
+    .header-brand h1 { font-family: 'Playfair Display', serif; font-weight: 500; font-size: 1.4rem; color: var(--aqua); line-height: 1.2; }
+    .header-brand .tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.92rem; color: var(--ink-light); margin-top: 3px; }
+    .header-contact { text-align: right; font-size: 0.76rem; color: var(--ink-faint); line-height: 1.7; }
+    .header-contact a { color: var(--aqua); text-decoration: none; }
+    .header-contact strong { display: block; color: var(--ink-light); font-weight: 600; font-size: 0.8rem; margin-bottom: 1px; }
+
+    /* GOLD RULE */
+    .gold-rule { height: 1px; background: linear-gradient(90deg, transparent, var(--gold) 30%, var(--gold) 70%, transparent); opacity: 0.4; }
+
+    /* HERO */
+    .hero { background: var(--aqua-tint); padding: 56px 48px 48px; position: relative; overflow: hidden; }
+    .hero::after { content: ''; position: absolute; right: -80px; top: -80px; width: 380px; height: 380px; border-radius: 50%; background: rgba(46,139,139,0.05); pointer-events: none; }
+    .hero-kicker { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--aqua-soft); margin-bottom: 14px; }
+    .hero h2 { font-family: 'Playfair Display', serif; font-weight: 500; font-size: 2.6rem; line-height: 1.15; color: var(--ink); max-width: 580px; margin-bottom: 10px; }
+    .hero h2 em { font-style: italic; color: var(--aqua-deep); }
+    .hero-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; color: var(--ink-light); margin-bottom: 32px; max-width: 520px; line-height: 1.5; }
+    .hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(46,139,139,0.12); border-radius: 10px; overflow: hidden; max-width: 580px; }
+    .hero-stat { background: var(--paper); padding: 14px 16px; }
+    .hero-stat-label { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 4px; }
+    .hero-stat-value { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 500; color: var(--ink); line-height: 1.2; }
+
+    /* HERO IMAGE WITH FADE */
+    .hero-img-wrap { position: relative; margin: 32px -48px -48px; height: 280px; overflow: hidden; line-height: 0; }
+    .hero-img-fade { position: absolute; top: 0; left: 0; right: 0; height: 60%; background: linear-gradient(to bottom, var(--aqua-tint) 0%, transparent 100%); z-index: 1; pointer-events: none; }
+    .hero-img { width: 100%; height: 100%; object-fit: cover; object-position: center 40%; display: block; }
+
+    /* NAV */
+    .guide-nav { background: var(--paper); border-bottom: 1px solid var(--aqua-tint); padding: 16px 48px; display: flex; gap: 6px; flex-wrap: wrap; }
+    .guide-nav a { font-size: 0.74rem; font-weight: 500; color: var(--aqua); text-decoration: none; padding: 5px 12px; border: 1px solid rgba(46,139,139,0.2); border-radius: 100px; transition: background 0.15s; white-space: nowrap; }
+    .guide-nav a:hover { background: var(--aqua-tint); }
+
+    /* SECTIONS */
+    .section { padding: 48px 48px; border-bottom: 1px solid var(--aqua-tint); }
+    .section:last-of-type { border-bottom: none; }
+    .section-eyebrow { font-size: 0.66rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--aqua-soft); margin-bottom: 14px; }
+    .section h3 { font-family: 'Playfair Display', serif; font-weight: 500; font-size: 1.55rem; color: var(--ink); margin-bottom: 18px; line-height: 1.25; }
+    .section h4 { font-family: 'Playfair Display', serif; font-weight: 500; font-size: 1.1rem; color: var(--ink); margin: 28px 0 10px; }
+    .section p { font-size: 0.9rem; color: var(--ink-light); line-height: 1.7; margin-bottom: 14px; }
+    .section p:last-child { margin-bottom: 0; }
+
+    /* INTRO OPENING */
+    .opening-lead { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.18rem; color: var(--ink); line-height: 1.65; margin-bottom: 20px; }
+
+    /* DECK TABLE */
+    .deck-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; margin: 20px 0; }
+    .deck-table th { text-align: left; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); padding: 0 12px 10px 0; border-bottom: 2px solid var(--aqua-tint); }
+    .deck-table th:last-child { padding-right: 0; }
+    .deck-table td { padding: 12px 12px 12px 0; border-bottom: 1px solid var(--aqua-tint); vertical-align: top; color: var(--ink-light); line-height: 1.5; }
+    .deck-table td:last-child { padding-right: 0; }
+    .deck-table tr:last-child td { border-bottom: none; }
+    .deck-label { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 500; color: var(--ink); white-space: nowrap; font-size: 0.9rem; }
+    .deck-highlight td { background: rgba(46,139,139,0.04); }
+
+    /* CALLOUT BOX */
+    .callout { background: var(--sand); border-radius: 10px; padding: 22px 26px; margin: 20px 0; font-size: 0.875rem; color: var(--ink-light); line-height: 1.65; }
+    .callout strong { color: var(--ink); }
+    .callout-title { font-family: 'DM Sans', sans-serif; font-size: 0.66rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--aqua-deep); margin-bottom: 8px; }
+
+    /* QUOTE PULL */
+    .pull-quote { border-left: 2px solid var(--gold); padding: 10px 0 10px 22px; margin: 24px 0; }
+    .pull-quote p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15rem; color: var(--ink); line-height: 1.55; margin: 0; }
+
+    /* CABIN CARD */
+    .cabin-card { background: var(--sand); border-radius: 12px; padding: 26px 30px; margin: 20px 0; }
+    .cabin-card-title { font-family: 'Playfair Display', serif; font-weight: 500; font-size: 1.15rem; color: var(--ink); margin-bottom: 4px; }
+    .cabin-card-sub { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--ink-light); font-size: 0.98rem; margin-bottom: 18px; }
+    .cabin-specs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .spec-item { display: flex; flex-direction: column; gap: 3px; }
+    .spec-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); }
+    .spec-value { font-size: 0.88rem; font-weight: 500; color: var(--ink); }
+
+    /* BUTLER LIST */
+    .butler-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin: 14px 0; }
+    .butler-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.875rem; color: var(--ink-light); line-height: 1.5; }
+    .butler-list li::before { content: ''; display: block; width: 6px; height: 6px; min-width: 6px; border-radius: 50%; background: var(--aqua-soft); margin-top: 7px; }
+
+    /* TIP TABLE */
+    .tip-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; margin: 14px 0; }
+    .tip-table td { padding: 10px 12px 10px 0; border-bottom: 1px solid var(--aqua-tint); vertical-align: top; color: var(--ink-light); line-height: 1.5; }
+    .tip-table td:first-child { font-weight: 600; color: var(--ink); white-space: nowrap; padding-right: 20px; min-width: 200px; }
+    .tip-table tr:last-child td { border-bottom: none; }
+
+    /* PORT CARDS */
+    .port-card { border: 1px solid var(--aqua-tint); border-radius: 12px; overflow: hidden; margin: 24px 0; }
+    .port-card-header { background: var(--aqua-tint); padding: 18px 24px; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; }
+    .port-card-day { font-size: 0.66rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--aqua); margin-bottom: 5px; }
+    .port-card-name { font-family: 'Playfair Display', serif; font-weight: 500; font-size: 1.25rem; color: var(--ink); }
+    .port-card-times { text-align: right; font-size: 0.78rem; color: var(--ink-faint); line-height: 1.7; flex-shrink: 0; }
+    .port-card-times strong { display: block; font-size: 0.84rem; color: var(--ink-light); font-weight: 600; }
+    .port-card-body { padding: 20px 24px; }
+    .port-card-body p { font-size: 0.875rem; color: var(--ink-light); line-height: 1.65; margin-bottom: 12px; }
+    .port-card-body p:last-child { margin-bottom: 0; }
+    .port-flag { background: rgba(205,184,122,0.18); border-left: 3px solid var(--gold); border-radius: 0 6px 6px 0; padding: 10px 16px; font-size: 0.82rem; color: var(--ink-light); line-height: 1.5; margin-top: 12px; }
+    .port-flag strong { color: var(--ink); }
+    .port-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px; }
+    .port-tag { font-size: 0.66rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--aqua); background: rgba(46,139,139,0.1); border-radius: 4px; padding: 3px 8px; }
+
+    /* TIPS GRID */
+    .tips-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 4px; }
+    .tip-card { background: var(--sand); border-radius: 10px; padding: 18px 20px; }
+    .tip-card-title { font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 700; color: var(--aqua-deep); margin-bottom: 6px; }
+    .tip-card p { font-size: 0.82rem; color: var(--ink-light); line-height: 1.55; margin: 0; }
+
+    /* RHYTHM TABLE */
+    .rhythm-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+    .rhythm-table td { padding: 13px 14px 13px 0; border-bottom: 1px solid var(--aqua-tint); vertical-align: top; line-height: 1.55; }
+    .rhythm-table tr:last-child td { border-bottom: none; }
+    .rhythm-label { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1rem; color: var(--ink); white-space: nowrap; padding-right: 20px !important; min-width: 110px; }
+    .rhythm-content { color: var(--ink-light); }
+    .rhythm-content strong { color: var(--ink); display: block; margin-bottom: 2px; }
+
+    /* DAY TABLE (embark) */
+    .day-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; margin: 18px 0; }
+    .day-table th { text-align: left; font-size: 0.66rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-faint); padding: 0 0 10px; border-bottom: 2px solid var(--aqua-tint); }
+    .day-table td { padding: 11px 0; border-bottom: 1px solid var(--aqua-tint); vertical-align: top; color: var(--ink-light); line-height: 1.5; font-size: 0.86rem; }
+    .day-table tr:last-child td { border-bottom: none; }
+    .day-table .time-col { font-weight: 600; color: var(--ink); white-space: nowrap; padding-right: 20px; min-width: 140px; }
+
+    /* THEME NIGHTS */
+    .theme-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 4px; }
+    .theme-card { background: var(--aqua-tint); border-radius: 8px; padding: 14px 16px; }
+    .theme-card-name { font-family: 'Playfair Display', serif; font-size: 0.95rem; font-weight: 500; color: var(--ink); margin-bottom: 4px; }
+    .theme-card p { font-size: 0.78rem; color: var(--ink-faint); line-height: 1.45; margin: 0; }
+
+    /* HONEST TRADEOFFS */
+    .tradeoff-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+    .tradeoff-box { border-radius: 10px; padding: 20px 22px; }
+    .tradeoff-box.green { background: rgba(46,139,139,0.07); border: 1px solid rgba(46,139,139,0.2); }
+    .tradeoff-box.sand { background: var(--sand); border: 1px solid rgba(205,184,122,0.25); }
+    .tradeoff-box-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 12px; }
+    .tradeoff-box.green .tradeoff-box-label { color: var(--aqua-deep); }
+    .tradeoff-box.sand .tradeoff-box-label { color: var(--ink-faint); }
+    .tradeoff-list { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .tradeoff-list li { font-size: 0.82rem; color: var(--ink-light); line-height: 1.5; display: flex; gap: 8px; align-items: flex-start; }
+    .tradeoff-list li::before { content: ''; display: block; width: 5px; height: 5px; min-width: 5px; border-radius: 50%; margin-top: 7px; }
+    .tradeoff-box.green .tradeoff-list li::before { background: var(--aqua-soft); }
+    .tradeoff-box.sand .tradeoff-list li::before { background: var(--gold); }
+
+    /* PORT VIATOR LINK */
+    .port-viator { display: inline-flex; align-items: center; gap: 7px; margin: 14px 0 4px; background: var(--paper); border: 1.5px solid rgba(46,139,139,0.25); border-radius: 100px; padding: 7px 16px; font-size: 0.78rem; font-weight: 600; color: var(--aqua-deep); text-decoration: none; transition: background 0.15s, border-color 0.15s; }
+    .port-viator:hover { background: var(--aqua-tint); border-color: var(--aqua-soft); }
+    .port-viator svg { flex-shrink: 0; }
+
+    /* VIATOR CALLOUT */
+    .viator-callout { display: flex; align-items: flex-start; gap: 14px; background: var(--aqua-tint); border: 1.5px solid rgba(46,139,139,0.25); border-radius: 10px; padding: 18px 22px; margin: 20px 0; }
+    .viator-callout svg { flex-shrink: 0; margin-top: 2px; }
+    .viator-callout-text h4 { font-size: 0.84rem; font-weight: 700; color: var(--aqua-deep); margin-bottom: 4px; font-family: 'DM Sans', sans-serif; }
+    .viator-callout-text p { font-size: 0.82rem; color: var(--ink-light); line-height: 1.5; margin: 0; }
+    .viator-code { display: inline-block; font-family: 'DM Sans', monospace; font-weight: 700; background: var(--paper); border: 1px solid rgba(46,139,139,0.3); border-radius: 5px; padding: 2px 8px; color: var(--aqua-deep); letter-spacing: 0.08em; font-size: 0.88rem; margin-top: 6px; }
+
+    /* CTA SECTION */
+    .cta-section { background: var(--aqua-tint); padding: 48px 48px; text-align: center; }
+    .cta-section h3 { font-family: 'Playfair Display', serif; font-weight: 500; font-size: 1.6rem; color: var(--ink); margin-bottom: 8px; }
+    .cta-section p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.05rem; color: var(--ink-light); margin-bottom: 24px; }
+    .cta-btn { display: inline-block; background: var(--aqua); color: #fff; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.04em; padding: 13px 30px; border-radius: 100px; text-decoration: none; }
+    .cta-btn:hover { background: var(--aqua-deep); }
+
+    /* FOOTER */
+    .site-footer { background: var(--paper); border-top: 1px solid var(--aqua-tint); padding: 26px 48px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer-brand { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.92rem; color: var(--ink-faint); }
+    .footer-meta { font-size: 0.73rem; color: var(--ink-faint); text-align: right; line-height: 1.6; }
+    .footer-meta a { color: var(--aqua); text-decoration: none; }
+
+    @media (max-width: 640px) {
+      /* spacing */
+      .site-header, .section, .guide-nav, .cta-section, .site-footer { padding-left: 20px; padding-right: 20px; }
+      .hero { padding: 36px 20px 32px; }
+
+      /* hero */
+      .hero h2 { font-size: 1.75rem; }
+      .hero-tagline { font-size: 1rem; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+
+      /* header */
+      .site-header { flex-direction: column; gap: 12px; }
+      .header-contact { text-align: left; }
+
+      /* nav — horizontal scroll so pills stay on one line */
+      .guide-nav { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 12px; }
+      .guide-nav::-webkit-scrollbar { display: none; }
+
+      /* grids */
+      .cabin-specs { grid-template-columns: 1fr 1fr; }
+      .tradeoff-col, .tips-grid, .theme-grid { grid-template-columns: 1fr; }
+
+      /* tables — horizontal scroll so nothing overflows */
+      .deck-table, .tip-table, .rhythm-table, .day-table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .deck-table td, .tip-table td, .rhythm-table td, .day-table td { min-width: 120px; }
+      .day-table .time-col { min-width: 130px; }
+      .rhythm-label { min-width: 90px; }
+      .tip-table td:first-child { min-width: 150px; }
+
+      /* port cards */
+      .port-card-header { flex-direction: column; gap: 6px; }
+      .port-card-times { text-align: left; }
+      .port-card-body, .port-card-header { padding: 16px 18px; }
+
+      /* hero image */
+      .hero-img-wrap { margin: 24px -20px -36px; height: 200px; }
+
+      /* vacation contacts */
+      .vacation-contacts { grid-template-columns: 1fr !important; }
+
+      /* viator button */
+      .port-viator { font-size: 0.75rem; padding: 6px 13px; }
+
+      /* footer */
+      .site-footer { flex-direction: column; text-align: center; gap: 10px; }
+      .footer-brand { text-align: center; }
+      .footer-meta { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-brand">
+    <h1>Point Me to Paradise Travel</h1>
+    <p class="tagline">The world is your oyster. We are your pearl.</p>
+  </div>
+  <div class="header-contact">
+    <strong>Christina Garcia</strong>
+    <a href="mailto:christina@pointmetoparadise.com">christina@pointmetoparadise.com</a><br>
+    <a href="tel:2812290862">(281) 229-0862</a><br>
+    <a href="https://pointmetoparadise.com">pointmetoparadise.com</a>
+  </div>
+</header>
+
+<div class="gold-rule"></div>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-kicker">Your Yacht Club Guide</p>
+  <h2>Seven Nights in the <em>Western Caribbean</em></h2>
+  <p class="hero-tagline">Prepared for Jennifer & Jason — everything I know about the Yacht Club: the layout, the rhythm of a day, the small things that make the difference, and the parts most first-timers find out too late.</p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-label">The Enclave</div>
+      <div class="hero-stat-value">Decks 16–20</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-label">Your Suite</div>
+      <div class="hero-stat-value">19009 · Grand Suite</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-label">Your Butler</div>
+      <div class="hero-stat-value">24 hours</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-label">Sailing</div>
+      <div class="hero-stat-value">Oct 25 – Nov 1, 2026</div>
+    </div>
+  </div>
+
+  <!-- IMAGE WITH GRADIENT FADE -->
+  <div class="hero-img-wrap">
+    <div class="hero-img-fade"></div>
+    <img class="hero-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJC9Y0gjfEeImE-L6JVD-r53rOSs7JI9I70R3gxSV9QDD5L-W53-1skQE&s=10" alt="MSC Seascape" />
+  </div>
+</section>
+
+<!-- GUIDE NAV -->
+<nav class="guide-nav">
+  <a href="#start">Start here</a>
+  <a href="#layout">The layout</a>
+  <a href="#suite">Your suite</a>
+  <a href="#butler">Your butler</a>
+  <a href="#tipping">Tipping</a>
+  <a href="#dining">Dining</a>
+  <a href="#embark">Embarkation</a>
+  <a href="#rhythm">Daily rhythm</a>
+  <a href="#ports">Your ports</a>
+  <a href="#tips">Small things</a>
+  <a href="#themes">Theme nights</a>
+  <a href="#tradeoffs">Trade-offs</a>
+</nav>
+
+<!-- START HERE -->
+<section class="section" id="start">
+  <p class="section-eyebrow">Start here</p>
+  <h3>A ship within a ship</h3>
+  <p class="opening-lead">Read this before you sail — it's the difference between a great week and a week you'll talk about for years.</p>
+  <p>The Yacht Club is a gated enclave at the front of the MSC Seascape, spanning decks 16 through 20, reserved for 131 suites and the people staying in them. From the moment your wristband opens the glass doors, you're in a quieter, slower, more attended version of the same ship everyone else is on — with your own lounge, restaurant, pool deck, sundeck, and a butler who is yours for the whole sailing.</p>
+  <p>Your suite, 19009, is a Yacht Club Grand Suite right on Deck 19 — the pool deck. That's a quietly excellent spot: you're steps from the One Pool, the poolside grill, and the elevator up to the Deck 20 solarium, without a single long walk between you and the best parts of the enclave.</p>
+  <p>You keep full run of the big ship — the waterslides, the theater, the specialty restaurants, the bowling, the Robotron rollercoaster on Deck 20. What changes is that you always have somewhere calm to retreat to, and a team whose job is to remove friction before you notice it's there. One writer measured it at twenty-one minutes from the curb to a glass of champagne in the lounge. That number is the whole pitch.</p>
+</section>
+
+<!-- LAYOUT -->
+<section class="section" id="layout">
+  <p class="section-eyebrow">Knowing your way around</p>
+  <h3>Five decks, one enclave</h3>
+  <p>Here's what lives where, so you arrive already oriented. You'll spend most of your time moving between three places: the Top Sail Lounge, the Yacht Club Restaurant, and the One Pool deck.</p>
+
+  <table class="deck-table">
+    <thead>
+      <tr><th>Deck</th><th>What's there</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="deck-label">Deck 16</td>
+        <td>The glass entry doors and the first suites, including some Deluxe Grand Suites with balconies. This is where you cross over into the enclave — the keycard doors that change everything.</td>
+      </tr>
+      <tr>
+        <td class="deck-label">Deck 18</td>
+        <td>The Top Sail Lounge — the two-story heart of the Yacht Club — with floor-to-ceiling forward-facing windows, a full bar, all-day snacks, and live music in the evenings. Forward suites run from 18001 onward.</td>
+      </tr>
+      <tr>
+        <td class="deck-label">Deck 18 (upper)</td>
+        <td>The Yacht Club Restaurant, perched above the lounge and reached by the Swarovski crystal staircase. Open for breakfast, lunch, and dinner with no fixed seating times and a daily menu that reflects where you're sailing.</td>
+      </tr>
+      <tr class="deck-highlight">
+        <td class="deck-label">Deck 19 — You</td>
+        <td>The private pool deck — the One Pool — with the pool, whirlpools, and the casual One Pool Grill & Bar for breakfast and lunch. Your suite 19009 is right here. This is the daytime heart of the enclave.</td>
+      </tr>
+      <tr>
+        <td class="deck-label">Deck 20</td>
+        <td>The exclusive solarium and sundeck above the pool — swankier, quieter sun loungers and daybeds, with the panoramic whirlpool. Availability is rarely a problem up here, and it's one of the most under-used privileges in the Yacht Club.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <div class="callout-title">Worth knowing</div>
+    There is no Deck 17 on Seascape — MSC is an Italian line, and 17 is considered unlucky in Italy, so the deck numbering skips it. If the elevator buttons look like they're missing a floor, that's why, not a malfunction.
+  </div>
+</section>
+
+<!-- SUITE -->
+<section class="section" id="suite">
+  <p class="section-eyebrow">Where you'll sleep</p>
+  <h3>Your suite</h3>
+  <p>Every Yacht Club suite comes with the same core privileges: the butler, the lounge, the restaurant, the pool deck, the drink package, the Wi-Fi, and the priority everything. The Grand Suite gives you all that, plus real room to spread out.</p>
+
+  <div class="cabin-card">
+    <div class="cabin-card-title">Cabin 19009 &nbsp;·&nbsp; Yacht Club Grand Suite (YCP)</div>
+    <div class="cabin-card-sub">Deck 19 — Sir Bany Yas &nbsp;·&nbsp; MSC Seascape &nbsp;·&nbsp; Private forward enclave</div>
+    <div class="cabin-specs">
+      <div class="spec-item"><span class="spec-label">Suite Area</span><span class="spec-value">29 m² (312 sq ft)</span></div>
+      <div class="spec-item"><span class="spec-label">Balcony</span><span class="spec-value">8 m² (86 sq ft)</span></div>
+      <div class="spec-item"><span class="spec-label">Bathroom</span><span class="spec-value">4 m² — private shower</span></div>
+      <div class="spec-item"><span class="spec-label">Bed</span><span class="spec-value">King (convertible to twins)</span></div>
+      <div class="spec-item"><span class="spec-label">Dining</span><span class="spec-value">Anytime</span></div>
+      <div class="spec-item"><span class="spec-label">Check-in opens</span><span class="spec-value">1:00 PM</span></div>
+    </div>
+  </div>
+
+  <p>You'll find the Yacht Club welcome touches waiting when you arrive — chilled sparkling wine, chocolates, a fruit platter, robes and slippers, a pillow menu, and a minibar restocked daily. The Nespresso machine means no trek to the buffet for the first coffee of the day.</p>
+
+  <div class="callout">
+    <div class="callout-title">Why your suite is a sweet spot</div>
+    The Deck 19 pool-deck location is the quiet advantage. The One Pool, the grill, and the elevator up to the Deck 20 solarium are all moments from your door — no long walk between you and the best parts of the Yacht Club. Your Grand Suite gives you room to spread out and a private balcony for sea-day mornings, without stepping into the top-tier pricing.
+  </div>
+</section>
+
+<!-- BUTLER -->
+<section class="section" id="butler">
+  <p class="section-eyebrow">The single biggest upgrade</p>
+  <h3>Your butler is the whole game</h3>
+  <p>Most first-timers under-use their butler. Here's how to use them well — without feeling awkward about it.</p>
+  <p>On embarkation day they'll find you in the lounge, introduce themselves, and ask how you like things. That conversation is worth having properly — it sets the tone for the week.</p>
+
+  <h4>What to hand them on day one</h4>
+  <ul class="butler-list">
+    <li><strong>Your dining preferences.</strong> Want a standing table for two by the window at dinner? A particular breakfast time? They'll arrange it so you never wait.</li>
+    <li><strong>Your spirit of choice.</strong> Every suite gets a complimentary bottle of premium liquor — they'll offer the list. Grey Goose, Jack Daniel's, and similar are typical options.</li>
+    <li><strong>Your pillow preference.</strong> There's a pillow menu. Use it.</li>
+    <li><strong>Your coffee order.</strong> Butlers will deliver morning coffee to the suite, made the way you like it, if you ask.</li>
+    <li><strong>Any reservations you want locked in.</strong> Specialty dining, spa, shore excursions, show seating — they handle all of it so you're not standing in a line on Deck 6.</li>
+  </ul>
+
+  <h4>Things butlers do that people forget to ask for</h4>
+  <ul class="butler-list">
+    <li>Unpacking and repacking your luggage.</li>
+    <li>Escorting you off the ship ahead of the crowds on excursion mornings, and meeting you on return.</li>
+    <li>Bringing courses from the main dining rooms or specialty venues to your suite or the lounge — you are not limited to room-service menus.</li>
+    <li>Daily in-suite snacks and a restocked minibar (beer, wine, soft drinks, water) replenished without you asking.</li>
+    <li>Quietly fixing problems — a missed reservation, a wrong charge, a forgotten item — before they become your problem.</li>
+  </ul>
+
+  <div class="pull-quote">
+    <p>"It felt like I had merely to think of something or wish for it, and someone would appear at my side to serve me."</p>
+  </div>
+</section>
+
+<!-- TIPPING -->
+<section class="section" id="tipping">
+  <p class="section-eyebrow">The question everyone asks</p>
+  <h3>Tipping, handled clearly</h3>
+  <p>Gratuities are already included in your fare. This is only about the extra, and only if the service earns it.</p>
+  <p>Standard daily service charges are built into your cruise fare and shared across the crew — you do not need to tip to receive excellent service. In the Yacht Club, a cash tip to the people who personally look after you is customary and genuinely appreciated. Here's the framing experienced Yacht Club guests tend to use:</p>
+
+  <table class="tip-table">
+    <tbody>
+      <tr><td>Your butler</td><td>The largest share, given at the end of the cruise, scaled to how much you leaned on them. Many couples land somewhere in the range of a meaningful cash envelope for the week rather than a per-day figure.</td></tr>
+      <tr><td>Assistant butler</td><td>A smaller amount than the lead butler, if you've had one assisting.</td></tr>
+      <tr><td>Top Sail Lounge team</td><td>A few dollars here and there through the week, or a lump sum at the end to the ones who remembered your order.</td></tr>
+      <tr><td>Yacht Club Restaurant</td><td>If a particular waiter made your dinners, a closing tip is a kind gesture.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <div class="callout-title">My advice</div>
+    Don't overthink the math, and don't tip on day one to "set the tone" — the service is excellent regardless. Bring small bills, notice who actually makes your week, and reward them at the end based on what they did. If you'd rather not carry cash, you can add gratuity to the account — but the personal cash handoff to your butler at the end tends to mean the most.
+  </div>
+</section>
+
+<!-- DINING -->
+<section class="section" id="dining">
+  <p class="section-eyebrow">Eating well in the bubble</p>
+  <h3>Where the food is and when it's good</h3>
+
+  <h4>The Yacht Club Restaurant</h4>
+  <p>Your main dining room, perched above the Top Sail Lounge on Deck 18 and reached by the Swarovski crystal staircase. No fixed seating times — arrive when you like. The menu rotates daily and leans into the region you're sailing, with the kitchen happy to accommodate special requests with a little notice. The Yacht Club restaurant is consistently the dining highlight of the enclave.</p>
+
+  <h4>The Top Sail Lounge</h4>
+  <p>The social hub, and a quietly excellent place to eat lightly. There's a continuous spread of snacks, canapés, and small bites throughout the day, plus afternoon tea and a full bar. Light breakfast eaters can skip the buffet entirely and graze here. Nightly live entertainment makes it the natural pre-dinner gathering spot.</p>
+
+  <h4>The One Pool Grill & Bar (Deck 19)</h4>
+  <p>The casual pool-deck buffet for breakfast and lunch — right outside your door. Smaller than the main ship's buffet but covers the essentials: eggs and omelets to order, salads, hot dishes, burgers and sandwiches off the grill. Most Yacht Club guests never set foot in the main buffet, and don't miss it.</p>
+
+  <div class="callout">
+    <div class="callout-title">Insider move</div>
+    You are not confined to Yacht Club venues. Your fare includes the run of the ship, and the Seascape has genuinely good specialty restaurants — the steakhouse (Butcher's Cut), teppanyaki (Kaito), the sushi bar, and a seafood restaurant among them. These carry an extra charge, but they're worth it for a night or two. Have your butler book one or two specialty dinners mid-week so you get both worlds: the calm of the enclave most nights, and a proper night out when you want it. Ask me before you sail and I'll tell you which venues are worth it.
+  </div>
+
+  <div class="callout" style="margin-top: 12px;">
+    <div class="callout-title">Honest note on the food</div>
+    Inside the Yacht Club, the standard is meaningfully higher than the wider ship, and the service is the differentiator. If you're coming from a luxury line, calibrate to "very good big-ship dining with exceptional service," not Michelin. That's the honest trade, and at the price difference, most guests find it more than fair.
+  </div>
+</section>
+
+<!-- EMBARKATION -->
+<section class="section" id="embark">
+  <p class="section-eyebrow">Embarkation day</p>
+  <h3>Getting aboard in Galveston</h3>
+  <p>MSC Seascape sails from Galveston's Terminal 16 — a modern, spacious facility built for these large-ship sailings. Your check-in opens at <strong>1:00 PM</strong>. Here's the shape of the day.</p>
+
+  <table class="day-table">
+    <thead><tr><th>When</th><th>What's happening</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="time-col">Before 1:00 PM</td>
+        <td>Arrive in Galveston, park, and shuttle to the terminal if needed. Sunday departures can be busy — give yourself room. You won't enter the terminal before your window opens, but you can settle nearby.</td>
+      </tr>
+      <tr>
+        <td class="time-col">1:00 PM — your slot</td>
+        <td>Hand your checked luggage to the porters (a few dollars per bag is the customary tip — it keeps things moving). Enter via the Yacht Club priority lane — dedicated and significantly faster than the main line.</td>
+      </tr>
+      <tr>
+        <td class="time-col">Check-in</td>
+        <td>Passports, boarding pass, and security photo — fast if you completed the app steps in advance. Head straight through security and up to the Yacht Club. Your butler will find you in the Top Sail Lounge.</td>
+      </tr>
+      <tr>
+        <td class="time-col">Aboard</td>
+        <td>Champagne in the lounge, dining and spa reservations confirmed. Bags arrive at the suite over the next few hours. Use the time to explore the enclave or claim a Deck 20 daybed.</td>
+      </tr>
+      <tr>
+        <td class="time-col">5:00 PM</td>
+        <td>Ship departs. Sail-away from the Deck 20 solarium — or your own balcony — is the proper way to start.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4>The app & web check-in — do this now</h4>
+  <p>Download the <strong>MSC for Me app</strong> and complete web check-in before you sail. Both are free and take about fifteen minutes. Before you board they handle check-in, your security photo, and your arrival time slot. Onboard, the app becomes your deck plan, dining and show booker, account tracker, and guest-to-guest chat — and it works free without buying a Wi-Fi package.</p>
+
+  <ul class="butler-list">
+    <li><strong>Complete web check-in</strong> — enter passport details, emergency contact, and register a credit card so onboard charges run cashlessly.</li>
+    <li><strong>Take your security photo</strong> in the app before you arrive at the terminal.</li>
+    <li><strong>Download your boarding pass</strong> to the app and screenshot it — terminal Wi-Fi can be patchy.</li>
+    <li><strong>Browse and pre-book</strong> — spa slots, specialty dining, and shore excursions can all be reserved in advance and cost less than booking onboard.</li>
+  </ul>
+
+  <div class="callout">
+    <div class="callout-title">The embarkation-day backpack — the #1 tip</div>
+    Your checked bags may not reach cabin 19009 until mid-afternoon. Pack a carry-on with everything you'll want for Day 1: all medications, swimsuits and cover-ups, sunscreen, phone and charger, passports and cruise documents, a change of clothes. Board, drop the backpack, and head straight to the pool or lounge while everyone else waits on luggage. That same backpack becomes your overnight bag on the last night — set your main luggage out for the porters, keep your essentials in the pack, and walk off the ship the next morning with nothing to juggle.
+  </div>
+
+  <h4>Parking</h4>
+  <p>Official port lots near the terminal run about $25/day with shuttle and porter service; private lots nearby are often cheaper. Reserve in advance either way — snap a photo of where you parked and keep medications, documents, and a swimsuit in your carry-on, since checked bags can take hours to reach the cabin.</p>
+</section>
+
+<!-- RHYTHM -->
+<section class="section" id="rhythm">
+  <p class="section-eyebrow">How the good days flow</p>
+  <h3>A day in the Yacht Club</h3>
+  <p>Not a schedule to follow — just a picture of what a well-used Yacht Club day looks like.</p>
+
+  <table class="rhythm-table">
+    <tbody>
+      <tr>
+        <td class="rhythm-label">Morning</td>
+        <td class="rhythm-content"><strong>Coffee, delivered</strong>Butler brings your coffee the way you like it, or you wander up to the One Pool Grill for eggs to order. The Deck 20 solarium is at its quietest now — the best time to claim a daybed.</td>
+      </tr>
+      <tr>
+        <td class="rhythm-label">Midday</td>
+        <td class="rhythm-content"><strong>Pool deck or off the ship</strong>On port days, your butler escorts you off ahead of the crowds. On sea days, the One Pool deck stays uncrowded compared to the main pools — no fighting for a lounger. Lunch is steps away at the grill.</td>
+      </tr>
+      <tr>
+        <td class="rhythm-label">Afternoon</td>
+        <td class="rhythm-content"><strong>Tea & the thermal suite</strong>Afternoon tea in the Top Sail Lounge is a genuine highlight — book it through your butler. Otherwise, the Thermal Suite in the Aurea Spa is included in your fare, and a quiet hour in the sauna or salt room is the most under-used perk on the ship.</td>
+      </tr>
+      <tr>
+        <td class="rhythm-label">Evening</td>
+        <td class="rhythm-content"><strong>Drinks, show, dinner</strong>Pre-dinner drinks in the lounge with live music, then dinner whenever you like in the Yacht Club Restaurant. Yacht Club guests get reserved seating at the theater shows — have your butler confirm the booking so you walk in past the line.</td>
+      </tr>
+      <tr>
+        <td class="rhythm-label">Late</td>
+        <td class="rhythm-content"><strong>The big ship, on your terms</strong>This is when to explore — the bars, the casino, the late-night venues. You always have the quiet glass doors to retreat behind whenever you've had enough.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <div class="callout-title">Pack with the nights in mind</div>
+    Half the fun on Seascape happens after dark, and the week usually runs a few themed evenings — a dressy gala night, a white night, a tropical night, and similar. Nothing elaborate is required: one elegant outfit each, something white, and something bright covers the whole week without overpacking. See the Theme Nights section below for the full lineup.
+  </div>
+</section>
+
+<!-- PORTS -->
+<section class="section" id="ports">
+  <p class="section-eyebrow">Your three ports</p>
+  <h3>Costa Maya, Roatán & Cozumel</h3>
+  <p>Two sea days to settle in, then three port days in a row, a sea day to recover, and home. Your Yacht Club status makes every morning ashore easier than it is for everyone else.</p>
+
+  <div class="callout" style="margin-bottom: 24px;">
+    <div class="callout-title">The Yacht Club excursion advantage — every port</div>
+    On excursion mornings, you don't fight the gangway crush. Your butler escorts you off the ship ahead of the general crowd, and on return there's priority re-boarding. The single best move: have your butler confirm your tour meeting point and timing the night before, and ask them to walk you off. A few thousand people are trying to get off this ship at 8am — you won't be standing among them.
+  </div>
+
+  <div class="viator-callout">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4f8a8c" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+    <div class="viator-callout-text">
+      <h4>Shore excursion discount — Viator</h4>
+      <p>When booking independent excursions through Viator, use the code below for a discount on your tours across all three ports. Booking through MSC guarantees the ship waits for you if a tour runs late — weigh that against the savings when you're deciding.</p>
+      <span class="viator-code">JULY2550</span>
+    </div>
+  </div>
+
+  <div class="port-card">
+    <div class="port-card-header">
+      <div>
+        <div class="port-card-day">Wednesday · Oct 28</div>
+        <div class="port-card-name">Costa Maya, Mexico</div>
+      </div>
+      <div class="port-card-times">
+        <strong>8:00 AM – 6:00 PM</strong>
+        Longest port day
+      </div>
+    </div>
+    <div class="port-card-body">
+      <div class="port-tags">
+        <span class="port-tag">Beach</span>
+        <span class="port-tag">Ruins</span>
+        <span class="port-tag">Reef</span>
+        <span class="port-tag">Cultural</span>
+      </div>
+      <p>A purpose-built cruise port on Mexico's remote southern Caribbean coast — not a city, but a manicured port complex of pools, shops, swim-up bars, and a saltwater lagoon, with a very different world just inland. The pace is gentler here than Cozumel, and the water is glassy and warm. The Mesoamerican Barrier Reef runs just offshore, making snorkeling and diving excellent. Inland are the Chacchoben Mayan ruins — a beautiful, jungle-wrapped site about 45 minutes by road and the most popular cultural trip from this port.</p>
+      <p>The laid-back beach town of Mahahual sits roughly a short taxi away, with a mile-long malecón you can stroll end to end in 20 minutes. Or simply stay in the port complex itself — pools, a beach club, mariachi, and good tacos, all walkable from the ship.</p>
+      <a class="port-viator" href="https://www.viator.com/agent-trip-suggestions/W-8f4335f3-3010-4a96-ae1f-cbdd0e890206?currency=USD&allowNativeApp=false" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        Browse Costa Maya excursions on Viator
+      </a>
+      <div class="port-flag">
+        <strong>Wednesday timing note:</strong> The Bacalar lagoon boat tour is this port's showpiece — but boat tours on Bacalar pause every Wednesday for a local conservation initiative. You're calling on a Wednesday. If Bacalar appeals, ask me and I'll find the beach-and-cenote alternative that keeps you near the lagoon without the boats. Otherwise, Chacchoben ruins plus a beach club is the strong play here.
+      </div>
+    </div>
+  </div>
+
+  <div class="port-card">
+    <div class="port-card-header">
+      <div>
+        <div class="port-card-day">Thursday · Oct 29</div>
+        <div class="port-card-name">Isla de Roatán, Honduras</div>
+      </div>
+      <div class="port-card-times">
+        <strong>8:00 AM – 4:00 PM</strong>
+        Shortest port day
+      </div>
+    </div>
+    <div class="port-card-body">
+      <div class="port-tags">
+        <span class="port-tag">Beach</span>
+        <span class="port-tag">Snorkel</span>
+        <span class="port-tag">Nature</span>
+        <span class="port-tag">Wildlife</span>
+      </div>
+      <p>A lush Honduran island ringed by the same barrier reef, and a genuine highlight for snorkelers and animal lovers. MSC docks at the Port of Roatán (Coxen Hole), on the island's developed side. From there, the island's best beach — West Bay — is about a 30–35 minute drive: soft white sand, calm turquoise water, and some of the Caribbean's best shore snorkeling within wading distance.</p>
+      <p>Roatán is also famous for its sloths and monkeys. The sanctuaries and eco-parks (Gumbalimba and similar) pair easily with beach or snorkel time for a full half-day. You're back aboard by 4:00 PM, so don't over-schedule.</p>
+      <a class="port-viator" href="https://www.viator.com/agent-trip-suggestions/W-56bcf467-7f2e-4bc8-bc20-c96c6d95defb?currency=USD&allowNativeApp=false" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        Browse Roatán excursions on Viator
+      </a>
+      <div class="port-flag">
+        <strong>Timing flag:</strong> This is your shortest port day. Roatán is also a port where independent taxis and West Bay water taxis can run on island time. Given the tight window, a ship's excursion or a pre-arranged private guide who knows the all-aboard time is the safer call. One well-chosen activity — a West Bay beach-and-snorkel, or a sloth sanctuary plus beach — fits comfortably. Trying to cram two can get tight.
+      </div>
+    </div>
+  </div>
+
+  <div class="port-card">
+    <div class="port-card-header">
+      <div>
+        <div class="port-card-day">Friday · Oct 30</div>
+        <div class="port-card-name">Cozumel, Mexico</div>
+      </div>
+      <div class="port-card-times">
+        <strong>8:00 AM – 4:00 PM</strong>
+        Most DIY-friendly
+      </div>
+    </div>
+    <div class="port-card-body">
+      <div class="port-tags">
+        <span class="port-tag">Beach</span>
+        <span class="port-tag">Snorkel/Dive</span>
+        <span class="port-tag">DIY-friendly</span>
+        <span class="port-tag">Cultural</span>
+      </div>
+      <p>The most visited cruise port in the Caribbean, and for good reason — world-class reef snorkeling on the calm, clear west side, with visibility up to 60–100 feet. The signature trip is El Cielo, a shallow turquoise sandbar where starfish rest in waist-deep water, often combined with a reef stop at Palancar or Colombia (sea turtles, eagle rays). You dock right at the pier; the shops, bars, and dive shops begin where the gangway ends.</p>
+      <p>A short taxi reaches beach clubs like Paradise Beach, Mr. Sancho's, or Chankanaab for a day pass with loungers, pool, and lunch. History lovers can reach the San Gervasio Mayan ruins inland without a ferry. This is the one port where a DIY day works confidently — but still mind the 4:00 PM departure.</p>
+      <a class="port-viator" href="https://www.viator.com/agent-trip-suggestions/W-8f15928b-e6c9-4476-b949-4218be30b8fc?currency=USD&allowNativeApp=false" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        Browse Cozumel excursions on Viator
+      </a>
+      <div class="port-flag">
+        <strong>Insider note:</strong> Cozumel often has three or four ships in port at once, so the beach clubs nearest the piers get crowded fast. A short taxi south reaches quieter options. Book your snorkel or El Cielo tour in advance to beat the dockside scramble.
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">The golden rule of port days</div>
+    "All aboard" is typically 30–60 minutes before departure, and ship's clock can differ from shore time — always run on ship time. If you book through MSC, the ship waits for a late excursion. If you go independent, you alone own the risk. Build a generous cushion, especially in Roatán and Cozumel with their 4:00 PM departures.
+  </div>
+</section>
+
+<!-- SMALL THINGS -->
+<section class="section" id="tips">
+  <p class="section-eyebrow">The part to actually read</p>
+  <h3>The small things first-timers miss</h3>
+  <p>None of these cost extra. All of them make the week better.</p>
+
+  <div class="tips-grid">
+    <div class="tip-card">
+      <div class="tip-card-title">Go straight to the Top Sail Lounge when you board</div>
+      <p>Don't wait in any general line. Yacht Club guests are escorted from the curb to expedited check-in to the lounge, champagne in hand, often before the main ship has finished boarding. Your dining and spa reservations get confirmed right there.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-card-title">Your wristband is your everything — with one catch</div>
+      <p>The MSC for Me wristband opens the glass doors, unlocks your suite, and acts as your charge card. Set it up with the butler on day one. The exception: it won't work at gangway security, so carry your physical cruise card when getting off and back on in port.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-card-title">The thermal suite is included — and underused</div>
+      <p>Your fare includes access to the Aurea Spa thermal area: sauna, steam, salt room, snow room, and heated loungers. Most guests never go. It's one of the most relaxing hours you can spend on a sea day, and it's already paid for.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-card-title">Claim Deck 20, not just Deck 19</div>
+      <p>Everyone gathers at the One Pool on Deck 19. The solarium and sundeck one level up has the swankier daybeds, the panoramic whirlpool, and almost always an open lounger. It's the quiet upgrade hiding in plain sight.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-card-title">Don't miss the private Yacht Club events</div>
+      <p>The Yacht Club hosts its own happenings during the week — a captain's cocktail reception, a whiskey-and-chocolate tasting, afternoon tea, and a DJ-led pool party. They're included and they're where the week's best moments often happen. Watch the lounge's posted schedule or ask your butler.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-card-title">Book specialty dining and the spa on day one</div>
+      <p>The best dinner slots and spa times go fast. Have your butler lock them in during that first lounge conversation rather than mid-week when the prime times are gone.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-card-title">The smart elevator trick</div>
+      <p>Seascape's elevators use a destination system: press your floor on the keypad before getting in, and press once per person in your group. Two people heading to Deck 19? Press 19 twice. The panel assigns you a specific car (shown as a letter). Press once for two people and the car may fill before you both fit.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-card-title">The keycard A/C trick</div>
+      <p>Your suite's lights and A/C only run when a card sits in the slot by the door. Bring an old gift card or hotel key from home, leave it in the slot when you head out, and you'll walk back into a cool room every time — a small thing that makes a real difference on a hot Caribbean week.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-card-title">Use the app chat to find each other</div>
+      <p>On a ship this size you'll lose each other at some point. The MSC for Me app has guest-to-guest chat that works onboard without buying a Wi-Fi package — set it up on day one and you can always reach one another across the decks.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-card-title">Order off the big-ship menus, in the lounge</div>
+      <p>Your butler can bring dishes from the main dining rooms or specialty venues to the lounge or your suite. You're never limited to the room-service card — ask, and they'll make it happen.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-card-title">Pack a little heat</div>
+      <p>MSC is an Italian line, so the kitchens season milder than many of us are used to. If you like a kick, tuck a small shaker of Tony Chachere's in your bag — a dash at the table makes any dish taste a little more like home.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-card-title">Leave the bubble at least once</div>
+      <p>The one regret almost every Yacht Club reviewer shares: they got so comfortable they never explored the ship. Pick one night to wander — the theater, a hidden bar, the promenade. The enclave will still be there when you come back.</p>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top: 20px;">
+    <div class="callout-title">Bring small bills for tips</div>
+    There's no ATM onboard, and the personal cash tip to your butler and lounge team at the end of the week is the gesture that lands. Sort it before you leave home so you're not scrambling on the last night.
+  </div>
+</section>
+
+<!-- THEME NIGHTS -->
+<section class="section" id="themes">
+  <p class="section-eyebrow">After dark</p>
+  <h3>Theme nights & entertainment</h3>
+  <p>Half the fun on Seascape happens after dark. Here's the likely lineup for your sailing so you can pack a few outfits with intention — nothing elaborate is required.</p>
+
+  <div class="theme-grid">
+    <div class="theme-card">
+      <div class="theme-card-name">Gala Night</div>
+      <p>The dress-up evening — bring something elegant for a memorable dinner and photos.</p>
+    </div>
+    <div class="theme-card">
+      <div class="theme-card-name">White Night</div>
+      <p>Everyone in white, often with a deck party. Pack a crisp white outfit each.</p>
+    </div>
+    <div class="theme-card">
+      <div class="theme-card-name">Tropical Night</div>
+      <p>Bright colors and prints — lean into the Caribbean spirit.</p>
+    </div>
+    <div class="theme-card">
+      <div class="theme-card-name">Glow Party</div>
+      <p>Neon and anything that catches the light. A fun, lively evening.</p>
+    </div>
+    <div class="theme-card">
+      <div class="theme-card-name">60s / 70s / 80s Bash</div>
+      <p>Throwback music and optional costumes — as much or as little as you like.</p>
+    </div>
+    <div class="theme-card">
+      <div class="theme-card-name">Boot Scootin' Country</div>
+      <p>A Texas-friendly night — denim and boots more than earn their place.</p>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top: 20px;">
+    <div class="callout-title">Shows & reservations</div>
+    MSC doesn't allow show reservations before you sail. Once aboard, open the MSC for Me app, browse the schedule, and grab seats early — popular shows fill fast. As Yacht Club guests, you have reserved seating at the main theater regardless, so you can walk in past the general line. Have your butler confirm it.
+  </div>
+</section>
+
+<!-- TRADEOFFS -->
+<section class="section" id="tradeoffs">
+  <p class="section-eyebrow">Setting expectations</p>
+  <h3>The honest trade-offs</h3>
+  <p>What you're choosing, said plainly — because you deserve to know before you sail, not after.</p>
+
+  <div class="tradeoff-col">
+    <div class="tradeoff-box green">
+      <div class="tradeoff-box-label">The Yacht Club is brilliant if you want…</div>
+      <ul class="tradeoff-list">
+        <li>Big-ship variety — slides, shows, thrill rides, many restaurants — with a calm, attended retreat to disappear into.</li>
+        <li>To skip lines: boarding, dining, shows, excursions, disembarkation.</li>
+        <li>Service that anticipates rather than reacts.</li>
+        <li>A pool deck that never feels like a scrum.</li>
+        <li>Drinks and internet included, without tracking either.</li>
+      </ul>
+    </div>
+    <div class="tradeoff-box sand">
+      <div class="tradeoff-box-label">Good to go in knowing…</div>
+      <ul class="tradeoff-list">
+        <li>It's not adults-only. Families do book the Yacht Club, and you may see children in the lounge and pool.</li>
+        <li>The wider ship can feel busy. Thousands of guests share the general areas and main buffet — the Yacht Club is your antidote, but the contrast is real.</li>
+        <li>Food is very good, not haute cuisine. Calibrate to excellent big-ship dining with standout service.</li>
+        <li>It carries a meaningful premium. Most people who try it say it's worth it — but that answer depends on how much you value time, space, and service.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- COMING HOME -->
+<section class="section">
+  <p class="section-eyebrow">Disembarkation</p>
+  <h3>Coming home</h3>
+  <p>You return to Galveston the morning of Sunday, November 1 (ship arrives 7:00 AM). The night before, set out your tagged bags for collection — keep a carry-on with what you need for the morning. General disembarkation can take two to three hours at a port this size, but as Yacht Club guests you have priority disembarkation: escorted off ahead of the general flow rather than waiting your turn. The MSC for Me app shows your timing once onboard.</p>
+
+  <div class="callout">
+    <div class="callout-title">Last-night tip</div>
+    Settle any onboard account questions at Guest Services the evening before, not the morning of — the last-morning queue is the longest of the week. Your butler can also handle most account issues directly, so check with them first.
+  </div>
+</section>
+
+<!-- VACATION NOTE -->
+<section class="section" style="background: var(--sand);">
+  <p class="section-eyebrow">A quick heads-up</p>
+  <h3>I'll be at sea July 23 – August 5</h3>
+  <p style="margin-bottom: 18px;">I'll be sailing Alaska during that window and may be slower to respond than usual. If you have a question that needs a faster turnaround during those dates, please reach out to my co-owner <strong>Tabitha Garcia</strong> — she knows the agency, knows MSC, and is glad to help. Just let her know you're my client.</p>
+  <div class="vacation-contacts" style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+    <div style="background: var(--paper); border-radius: 10px; padding: 18px 20px;">
+      <div style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--aqua-soft); margin-bottom: 8px;">Call or text</div>
+      <a href="tel:4092567453" style="font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--aqua); text-decoration: none; font-weight: 500;">(409) 256-7453</a>
+      <div style="font-size: 0.78rem; color: var(--ink-faint); margin-top: 3px;">Tabitha Garcia</div>
+    </div>
+    <div style="background: var(--paper); border-radius: 10px; padding: 18px 20px;">
+      <div style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--aqua-soft); margin-bottom: 8px;">Email</div>
+      <a href="mailto:tabitha@pointmetoparadise.com" style="font-family: 'Playfair Display', serif; font-size: 0.95rem; color: var(--aqua); text-decoration: none; font-weight: 500;">tabitha@pointmetoparadise.com</a>
+      <div style="font-size: 0.78rem; color: var(--ink-faint); margin-top: 3px;">Co-Owner · Point Me to Paradise</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <h3>Questions before you sail?</h3>
+  <p>Reach me directly — or Tabitha if I'm on the water.</p>
+  <a href="mailto:christina@pointmetoparadise.com" class="cta-btn">Reach Christina</a>
+</section>
+
+<div class="gold-rule"></div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-brand">Point Me to Paradise Travel &nbsp;·&nbsp; Have the best week, Jennifer & Jason.</div>
+  <div class="footer-meta">
+    Booking #72394592 &nbsp;·&nbsp; MSC Seascape &nbsp;·&nbsp; Oct 2026<br>
+    <a href="https://pointmetoparadise.com">pointmetoparadise.com</a>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
