@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historical Sites & Cultural Heritage Guide: Puerto Rico</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --aqua-pale: #C4E4E1;
+      --aqua-mist: #EAF3F2;
+      --aqua: #75AFB1;
+      --aqua-dark: #4F8A8C;
+      --sand-light: #F4F1E9;
+      --warm-sand: #F5EFE4;
+      --gold-whisper: #D6C8A8;
+      --white: #FFFFFF;
+      --paper: #F9F6F1;
+      --ink: #2B2420;
+      --ink-soft: #6B6359;
+      --line: #E6DFD5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      padding: 48px 28px;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Fraunces', serif;
+      color: var(--ink);
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    h2 {
+      font-size: clamp(20px, 4vw, 28px);
+      margin-top: 48px;
+      margin-bottom: 6px;
+    }
+
+    .subhead {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: clamp(16px, 3.5vw, 19px);
+      color: var(--ink-soft);
+      margin-bottom: 24px;
+      display: block;
+    }
+
+    h3 {
+      font-size: clamp(16px, 3vw, 20px);
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      margin-bottom: 18px;
+    }
+
+    .pmtp-band {
+      padding: 24px 20px;
+      border-radius: 8px;
+      margin: 32px 0;
+      border: 1px solid var(--line);
+    }
+
+    .pmtp-band h4 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: var(--aqua-dark);
+    }
+
+    .pmtp-band p {
+      margin-bottom: 0;
+      font-size: 15px;
+    }
+
+    .site-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 24px;
+      margin-bottom: 32px;
+    }
+
+    .tag-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .tag {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: var(--sand-light);
+      color: var(--ink-soft);
+      border: 1px solid var(--line);
+    }
+
+    .map-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background-color: var(--warm-sand);
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 12px 16px;
+      border-radius: 6px;
+      border: 1px solid var(--gold-whisper);
+      margin-top: 16px;
+      margin-bottom: 16px;
+      transition: background-color 0.2s ease;
+    }
+
+    .map-btn:hover {
+      background-color: var(--gold-whisper);
+    }
+
+    .practical-tip {
+      font-size: 14.5px;
+      color: var(--ink-soft);
+      background-color: var(--paper);
+      padding: 12px 16px;
+      border-left: 3px solid var(--aqua);
+      border-radius: 0 4px 4px 0;
+      margin-top: 12px;
+    }
+
+    .practical-tip strong {
+      color: var(--ink);
+    }
+
+    a {
+      color: var(--aqua-dark);
+      text-decoration: underline;
+    }
+
+    @media(max-width:640px) {
+      body {
+        font-size: 15px;
+        padding: 24px 0;
+      }
+      .pmtp-hero {
+        padding: 44px 20px 36px !important;
+        margin: -24px -20px 24px !important;
+      }
+      .pmtp-band {
+        padding: 18px 16px;
+      }
+      h2 {
+        font-size: 20px;
+      }
+      h3 {
+        font-size: 17px;
+      }
+      .pmtp-footer {
+        border-radius: 8px;
+        padding: 24px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <div class="pmtp-hero" style="background-image:linear-gradient(180deg,rgba(255,255,255,0.45),rgba(196,228,225,0.55) 35%,rgba(245,239,228,0.80) 68%,rgba(249,246,240,0.97));padding:clamp(40px,8vw,78px) 32px clamp(36px,6vw,60px);text-align:center;margin:-48px -28px 32px;border-bottom:1px solid var(--line);">
+      <div style="font-family:Fraunces,serif;font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--aqua-dark);margin-bottom:22px;">Point Me to Paradise Travel</div>
+      <h1 style="font-size:clamp(26px,5vw,42px);">Puerto Rico's Historical Foundations</h1>
+      <div style="width:60px;height:1px;background:var(--gold-whisper);margin:18px auto;"></div>
+      <p style="font-family:Cormorant Garamond,serif;font-style:italic;font-size:clamp(17px,3.5vw,21px);max-width:620px;margin:0 auto;">A client-facing field guide to the citadels, ceremonial grounds, and historic centers across the island.</p>
+    </div>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Castillo_San_Felipe_del_Morro_San_Juan_Puerto_Rico.jpg/1280px-Castillo_San_Felipe_del_Morro_San_Juan_Puerto_Rico.jpg" alt="Hero View of Castillo San Felipe del Morro overlooking the ocean" style="width:100%;max-height:460px;object-fit:cover;border-radius:0;display:block;margin-bottom:32px;" loading="lazy">
+
+    <p>Navigating Puerto Rico's built environment requires understanding its role as a strategic military node and agricultural hub. Over more than two millennia, the island shifted from indigenous chiefdoms to nearly four centuries of Spanish defense infrastructure, a plantation economy powered by enslaved African labor, and eventual integration into the United States. This guide breaks down the core historical sites, regional districts, and operational realities you will encounter across the island.</p>
+
+    <h2>A Chronological Arc of the Island</h2>
+    <span class="subhead">Centuries of military architecture and indigenous grounds shape the physical island.</span>
+
+    <p>Before European contact, the island was known natively as <em>Borikén</em>. The Taíno people organized into chiefdoms, engineering stone ball courts and agricultural systems. Christopher Columbus claimed the land for Spain in 1493, and Juan Ponce de León established the initial European foothold at Caparra in 1508 before operations relocated to the natural harbor islet of San Juan.</p>
+
+    <p>For four centuries, Spain fortified San Juan as the gateway to its West Indies treasure fleets, building stone walls and citadels designed to block rival European powers. Alongside military fortification, an agrarian economy based on sugar cane, coffee, and tobacco emerged, heavily relying on the transatlantic slave trade. Enslaved West Africans provided the labor that built the island's economic base, embedding deep influences in local music, language, and culture. Following the Spanish-American War in 1898, Puerto Rico was ceded to the United States under the Treaty of Paris, entering its modern territorial period.</p>
+
+    <div class="pmtp-band" style="background:var(--aqua-mist);">
+      <h4>Historical Trajectory</h4>
+      <p>Understanding the transition from indigenous <em>batey</em> courts to massive 18th-century Spanish masonry provides context for how regional architecture evolved between coastal bastions and mountain plantations.</p>
+    </div>
+
+    <h2>Historic Regional Districts</h2>
+    <span class="subhead">Two distinct urban centers preserve Spanish colonial defense grids and 19th-century boomtown architecture.</span>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Castillo_de_San_Crist%C3%B3bal_San_Juan_Puerto_Rico.jpg/1280px-Castillo_de_San_Crist%C3%B3bal_San_Juan_Puerto_Rico.jpg" alt="The fortified exterior walls of Castillo San Cristóbal" style="width:100%;max-height:320px;object-fit:cover;border-radius:8px;display:block;margin:0 0 20px;" loading="lazy">
+
+    <h3>Old San Juan (Viejo San Juan)</h3>
+    <div class="tag-container">
+      <span class="tag">[HISTORIC DISTRICT]</span>
+      <span class="tag">[WALKABLE AREA]</span>
+      <span class="tag">[MAJOR HISTORICAL SITE]</span>
+      <span class="tag">[ARCHITECTURE]</span>
+    </div>
+    <p>Founded in 1521, this is the oldest city under U.S. jurisdiction. Built on a grid system strictly enforced by Spanish colonial urban law, it served as Spain's primary strategic citadel in the Caribbean. You will see 16th to 19th-century Spanish Colonial architecture featuring pastel masonry facades, wrought-iron balconies, interior courtyards, and blue cobblestone streets paved with iron slag ballast from European ships. Primary walking corridors follow Calle Norzagaray, Calle Cristo, Calle Fortaleza, and the sea walls along Paseo de la Princesa.</p>
+
+    <a href="https://www.google.com/maps/search/?api=1&query=Old+San+Juan+Puerto+Rico" class="map-btn" target="_blank" rel="noopener">Open Old San Juan on Google Maps</a>
+
+    <h3>Ponce Historic Zone (Zona Histórica de Ponce)</h3>
+    <div class="tag-container">
+      <span class="tag">[HISTORIC DISTRICT]</span>
+      <span class="tag">[ARCHITECTURE]</span>
+      <span class="tag">[LOCAL FAVORITE]</span>
+      <span class="tag">[HIDDEN GEM]</span>
+    </div>
+    <p>Ponce expanded rapidly in the 19th century through an international boom in sugar cane, rum production, and maritime shipping. The district is characterized by "Ponce Creole" architecture, a hybrid blending Neoclassical, Art Deco, Spanish Revival, and Victorian gingerbread designs built to manage the southern coastal heat. Key structures center on Plaza Las Delicias, the wood-framed Parque de Bombas, and surrounding residential estates.</p>
+
+    <a href="https://www.google.com/maps/search/?api=1&query=Ponce+Historic+Zone+Puerto+Rico" class="map-btn" target="_blank" rel="noopener">Open Ponce Historic Zone on Google Maps</a>
+
+    <div class="pmtp-band" style="background:var(--warm-sand);">
+      <h4>Architectural Differentiation</h4>
+      <p>While Old San Juan emphasizes heavy stone defensive walls and blue cobblestones, Ponce reflects 19th-century merchant wealth with lighter timber framing, shaded balconies, and decorative trim.</p>
+    </div>
+
+    <h2>Primary Historical Sites</h2>
+    <span class="subhead">Specific fortifications, indigenous grounds, and restored industrial estates across the island.</span>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Parque_de_Bombas_Ponce_Puerto_Rico.jpg/1280px-Parque_de_Bombas_Ponce_Puerto_Rico.jpg" alt="The iconic red and black wooden facade of Parque de Bombas in Ponce" style="width:100%;max-height:320px;object-fit:cover;border-radius:8px;display:block;margin:0 0 20px;" loading="lazy">
+
+    <div class="site-card">
+      <h3>Castillo San Felipe del Morro (El Morro)</h3>
+      <div class="tag-container">
+        <span class="tag">[MAJOR HISTORICAL SITE]</span>
+        <span class="tag">[ARCHITECTURE]</span>
+        <span class="tag">[CROWDED]</span>
+      </div>
+      <p>Initiated in 1539 and expanded over 250 years, this six-level fortress guarded the entrance to San Juan Bay and repelled historic attacks by Sir Francis Drake and George Clifford. Today, you will cross a broad open lawn used for flying kites before navigating multi-tiered ramparts, subterranean passages, gun decks, and stone sentry boxes. Visual highlights include thick limestone walls, sweeping views of the Atlantic entrance, dark vaulted brick tunnels, and preserved historical cannons. Give yourself 2 to 3 hours to tour the grounds.</p>
+      
+      <a href="https://www.google.com/maps/search/?api=1&query=Castillo+San+Felipe+del+Morro+Puerto%20Rico" class="map-btn" target="_blank" rel="noopener">Open Castillo San Felipe del Morro on Google Maps</a>
+
+      <div class="practical-tip">
+        <strong>Practical Tip:</strong> Expect heavy pedestrian traffic late morning into early afternoon, especially on cruise ship days. Sun protection is necessary as there is minimal shade on upper levels, and steep stone ramps present mobility challenges. Facilities include an NPS bookstore, restrooms, and water stations.
+      </div>
+    </div>
+
+    <div class="site-card">
+      <h3>Castillo San Cristóbal</h3>
+      <div class="tag-container">
+        <span class="tag">[MAJOR HISTORICAL SITE]</span>
+        <span class="tag">[ARCHITECTURE]</span>
+        <span class="tag">[WALKABLE AREA]</span>
+      </div>
+      <p>Constructed between 1765 and 1785, this is the largest Spanish fortification built in the New World, designed to protect Old San Juan against landward attacks. You will walk across open plazas, examine artillery displays, see WWII observation posts added during the 20th century, and view the Devil's Sentry Box projecting over the sea. Highlights include outer defensive walls, dry moats, underground troop tunnels, and historic graffiti drawn by 18th-century Spanish prisoners in the cells. Plan for 1.5 to 2.5 hours.</p>
+
+      <a href="https://www.google.com/maps/search/?api=1&query=Castillo+San+Cristobal+Puerto%20Rico" class="map-btn" target="_blank" rel="noopener">Open Castillo San Cristóbal on Google Maps</a>
+
+      <div class="practical-tip">
+        <strong>Practical Tip:</strong> Midday visits involve significant heat exposure across sloped stone plazas. The site typically experiences slightly fewer crowds than El Morro but stays busy between 10:00 AM and 2:00 PM. Includes an NPS visitor center, exhibits, and restrooms.
+      </div>
+    </div>
+
+    <div class="site-card">
+      <h3>Caguana Ceremonial Indigenous Heritage Center</h3>
+      <div class="tag-container">
+        <span class="tag">[MAJOR HISTORICAL SITE]</span>
+        <span class="tag">[MUSEUM]</span>
+        <span class="tag">[QUIET]</span>
+        <span class="tag">[HIDDEN GEM]</span>
+      </div>
+      <p>Dating to roughly 1200 CE, Caguana stands as one of the most important Pre-Columbian archaeological sites in the West Indies. The space was used by the Taíno for spiritual gathering, religious rites, and ceremonial ball games. You will walk through a shaded central site containing 10 carved stone ball courts set against dense mountain scenery. The main visual highlights are monoliths lined with deeply carved petroglyphs representing native deities and wildlife. A standard visit takes 1 to 1.5 hours.</p>
+
+      <a href="https://www.google.com/maps/search/?api=1&query=Caguana+Ceremonial+Indigenous+Heritage+Center+Puerto%20Rico" class="map-btn" target="_blank" rel="noopener">Open Caguana Ceremonial Center on Google Maps</a>
+
+      <div class="practical-tip">
+        <strong>Practical Tip:</strong> The site tends to be quiet and uncrowded on weekdays. Getting here requires navigating narrow, winding mountain roads in the central interior. Facilities include a small artifact museum, parking, restrooms, and shaded paths.
+      </div>
+    </div>
+
+    <div class="site-card">
+      <h3>Hacienda Buena Vista</h3>
+      <div class="tag-container">
+        <span class="tag">[HISTORIC DISTRICT]</span>
+        <span class="tag">[HIDDEN GEM]</span>
+        <span class="tag">[LOCAL FAVORITE]</span>
+      </div>
+      <p>Established in 1833, this former coffee and corn plantation serves as a preserved example of 19th-century industrial agricultural engineering. Guided tours take you through the restored estate buildings, tropical rainforest trails, and active demonstrations of water-powered machinery. Visual points of interest include the world's only operational hydraulic turbine of its kind, original manor home, corn mill, and stone water aqueducts. The structured guided tour lasts approximately 2 hours.</p>
+
+      <a href="https://www.google.com/maps/search/?api=1&query=Hacienda+Buena+Vista+Ponce+Puerto%20Rico" class="map-btn" target="_blank" rel="noopener">Open Hacienda Buena Vista on Google Maps</a>
+
+      <div class="practical-tip">
+        <strong>Practical Tip:</strong> Access is restricted strictly to scheduled reservation tours managed by Para la Naturaleza; booking in advance is mandatory. Facilities include a visitor center, interpretive store, restrooms, and gravel paths.
+      </div>
+    </div>
+
+    <div class="site-card">
+      <h3>Parque de Bombas</h3>
+      <div class="tag-container">
+        <span class="tag">[ARCHITECTURE]</span>
+        <span class="tag">[LOCAL FAVORITE]</span>
+        <span class="tag">[MAJOR HISTORICAL SITE]</span>
+      </div>
+      <p>Constructed in 1882 as the main pavilion for an exhibition trade fair, this iconic wooden structure operated as Ponce's central firehouse from 1883 until 1990. Located inside Plaza Las Delicias, you can step inside to view a compact museum documenting the history of the municipal fire brigade. The striking architectural detail is its bold wooden frame painted in horizontal black and red stripes with Gothic revival windows and Victorian gingerbread trim. Expect to spend 30 to 45 minutes here.</p>
+
+      <a href="https://www.google.com/maps/search/?api=1&query=Parque+de+Bombas+Ponce+Puerto%20Rico" class="map-btn" target="_blank" rel="noopener">Open Parque de Bombas on Google Maps</a>
+
+      <div class="practical-tip">
+        <strong>Practical Tip:</strong> Situated in a walkable public plaza surrounded by cafes. Interior space is small, meaning traffic flows continuously without major delays. Information desks and displays are indoors.
+      </div>
+    </div>
+
+    <div class="site-card">
+      <h3>Ruinas de Caparra (Caparra Archaeological Site)</h3>
+      <div class="tag-container">
+        <span class="tag">[HIDDEN GEM]</span>
+        <span class="tag">[QUIET]</span>
+        <span class="tag">[MUSEUM]</span>
+      </div>
+      <p>Founded in 1508 by Juan Ponce de León, Caparra was the original European settlement on the island before marshy conditions and illness forced a move to San Juan. Today, you can inspect the excavated stone foundations of Ponce de León's fortified residence and browse a small museum storing early colonial items. Architectural features consist of basic tapia masonry and exposed foundation footings. A typical walk-through takes 45 minutes to an hour.</p>
+
+      <a href="https://www.google.com/maps/search/?api=1&query=Ruinas+de+Caparra+Puerto%20Rico" class="map-btn" target="_blank" rel="noopener">Open Ruinas de Caparra on Google Maps</a>
+
+      <div class="practical-tip">
+        <strong>Practical Tip:</strong> It is a quiet urban location with low overall crowd numbers. Operating hours can vary due to maintenance, so verifying schedule details before driving to Guaynabo is recommended. Includes a small museum room and parking.
+      </div>
+    </div>
+
+    <div class="pmtp-band" style="background:var(--aqua-mist);">
+      <h4>Preservation and Access</h4>
+      <p>Properties managed by conservation trusts or national park services require specific entry timing. Balancing open municipal districts with scheduled site visits keeps regional drives efficient.</p>
+    </div>
+
+    <h2>Overlooked Historical Sites</h2>
+    <span class="subhead">Four additional locations that illustrate maritime defense, coastal sugar production, and early gates.</span>
+
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Caguana_Indigenous_Ceremonial_Center.jpg/1280px-Caguana_Indigenous_Ceremonial_Center.jpg" alt="Stone petroglyph monoliths at Caguana Ceremonial Center in Utuado" style="width:100%;max-height:320px;object-fit:cover;border-radius:8px;display:block;margin:0 0 20px;" loading="lazy">
+
+    <p><strong>Faro Los Morrillos (Cabo Rojo Lighthouse):</strong> Built by the Spanish in 1882 on red limestone sea cliffs, this lighthouse guided ships through the Mona Passage. It sits near historical salt flats (<em>Las Salinas</em>) harvested since the Taíno era.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Faro+Los+Morrillos+Cabo+Rojo+Puerto+Rico" class="map-btn" target="_blank" rel="noopener">Open Faro Los Morrillos on Google Maps</a>
+
+    <p><strong>Puerta de San Juan (San Juan Gate):</strong> Built around 1635, this thick wooden gate served as the ceremonial entrance into the walled city for Spanish governors, bishops, and arriving dignitaries.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Puerta+de+San+Juan+Puerto+Rico" class="map-btn" target="_blank" rel="noopener">Open Puerta de San Juan on Google Maps</a>
+
+    <p><strong>Fortín de San Jerónimo del Boquerón:</strong> Standing near the entrance to Condado Lagoon, this small coastal battery provided crucial defense against British forces during the 1797 siege of San Juan.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Fortin+de+San+Jeronimo+del+Boqueron+Puerto+Rico" class="map-btn" target="_blank" rel="noopener">Open Fortín de San Jerónimo on Google Maps</a>
+
+    <p><strong>Hacienda La Esperanza (Manatí):</strong> A major 19th-century coastal sugar plantation featuring a preserved steam engine built by the West Point Foundry, illustrating industrial sugar production and plantation labor history.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Hacienda+La+Esperanza+Manati+Puerto+Rico" class="map-btn" target="_blank" rel="noopener">Open Hacienda La Esperanza on Google Maps</a>
+
+    <div class="pmtp-band" style="background:var(--warm-sand);">
+      <h4>Secondary Sightseeing Integration</h4>
+      <p>Combining primary city walks in Old San Juan with short stops at urban gates or lagoon batteries fills gaps between larger fortress tours without extra driving hassle.</p>
+    </div>
+
+    <h2>Practical Visitor Notes</h2>
+    <span class="subhead">Essential operational rules for ticketing, photography, and logistics across locations.</span>
+
+    <p><strong>Ticketing and Park Passes:</strong> Both Castillo San Felipe del Morro and Castillo San Cristóbal are operated by the U.S. National Park Service. Single passes allow access to both fortresses within a 24-hour window. U.S. Interagency Passes (America the Beautiful) are accepted for entry.</p>
+
+    <p><strong>Guided Tour Logistics:</strong> Agricultural and environmental properties like Hacienda Buena Vista require advance online booking through local conservation organizations. Unscheduled walk-in entry is typically restricted to preserve historic grounds.</p>
+
+    <p><strong>Photography Policies:</strong> Standard non-commercial photography is permitted outdoors across all public fortresses and city plazas. Indoor museum rooms and delicate petroglyph areas at indigenous sites prohibit flash photography and stationary tripod setups.</p>
+
+    <p><strong>Comfort and Terrain:</strong> Exposed masonry walls and stone courtyards absorb intense tropical heat. Carrying water, wearing sturdy walking shoes for uneven cobblestones or stone ramps, and bringing sun protection are necessary for midday visits.</p>
+
+    <div class="pmtp-footer" style="background:var(--sand-light);margin-top:64px;padding:36px 28px;border-radius:12px;">
+      <div style="font-family:Fraunces,serif;font-size:20px;font-weight:600;">Shirley Hilton</div>
+      <div style="font-family:Cormorant Garamond,serif;font-style:italic;color:var(--ink-soft);font-size:15px;margin-bottom:14px;">Your Romance & Travel Specialist</div>
+      <div style="font-size:14px;margin-bottom:4px;"><a id="pmtpEmailLink" href="#"></a></div>
+      <div style="font-size:14px;margin-bottom:4px;">409-392-4946</div>
+      <div style="font-family:Cormorant Garamond,serif;font-style:italic;color:var(--ink-soft);font-size:14px;margin-top:14px;">Point Me to Paradise Travel</div>
+    </div>
+
+    <div class="pmtp-disclaimer" style="margin-top:28px;padding:22px 26px;background:var(--paper);border:1px solid var(--line);border-radius:8px;font-size:12.5px;line-height:1.7;color:var(--ink-soft);">
+      <span style="display:block;font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);margin-bottom:8px;">Important — please read</span>
+      This guide is provided for informational purposes only. Locations, hours, conditions, and recommendations can change without notice, and ocean, weather, trail, road, and travel conditions can shift quickly and unpredictably. Point Me to Paradise Travel, the advisor named in this guide, and the authors of this content are not liable for any injury, illness, loss, theft, or harm of any kind arising from your visit to any location or participation in any activity referenced here. By using this guide, you accept full personal responsibility for your own safety. Use your own judgment, verify current conditions before any activity, follow all posted warnings and local regulations, and consult qualified professionals — lifeguards, park rangers, licensed guides, medical providers — where appropriate.
+    </div>
+
+  </div>
+
+  <script>
+    (function(){
+      var l = "shirley", d = "pointmetoparadise.com";
+      if(!l || !d) return;
+      var a = l + "\u0040" + d;
+      var el = document.getElementById("pmtpEmailLink");
+      if(el) {
+        el.href = "mailto:" + a;
+        el.textContent = a;
+      }
+    })();
+  </script>
+
+</body>
+</html>
