@@ -1,0 +1,433 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>San Juan Travel Guide | Point Me to Paradise Travel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --aqua-pale: #C4E4E1;
+      --aqua-mist: #EAF3F2;
+      --aqua: #75AFB1;
+      --aqua-dark: #4F8A8C;
+      --sand-light: #F4F1E9;
+      --warm-sand: #F5EFE4;
+      --gold-whisper: #D6C8A8;
+      --white: #FFFFFF;
+      --paper: #F9F6F1;
+      --ink: #2B2420;
+      --ink-soft: #6B6359;
+      --line: #E6DFD5;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      background-color: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 24px 20px 48px;
+    }
+    
+    h1, h2, h3, h4 {
+      font-family: 'Fraunces', serif;
+      color: var(--ink);
+      font-weight: 600;
+    }
+    
+    h1 {
+      font-size: clamp(26px, 5vw, 42px);
+      line-height: 1.2;
+    }
+    
+    h2 {
+      font-size: clamp(20px, 4vw, 28px);
+      line-height: 1.3;
+      margin-top: 48px;
+      margin-bottom: 6px;
+    }
+    
+    .section-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 19px;
+      color: var(--ink-soft);
+      margin-bottom: 24px;
+      display: block;
+    }
+    
+    h3 {
+      font-size: clamp(16px, 3vw, 20px);
+      margin-top: 28px;
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+    
+    p {
+      margin-bottom: 16px;
+      color: var(--ink);
+    }
+    
+    .intro-line {
+      font-size: 17px;
+      color: var(--ink);
+      margin-bottom: 24px;
+    }
+    
+    .map-btn {
+      display: block;
+      width: 100%;
+      background: var(--sand-light);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 12px 16px;
+      color: var(--aqua-dark);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      text-align: center;
+      margin: 12px 0 20px;
+      transition: background-color 0.2s ease;
+    }
+    
+    .map-btn:hover {
+      background: var(--warm-sand);
+    }
+    
+    .pmtp-band {
+      border-radius: 8px;
+      padding: 22px 20px;
+      margin: 32px 0;
+      border: 1px solid var(--line);
+    }
+    
+    .pmtp-band h4 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+    
+    .pmtp-band p {
+      margin-bottom: 0;
+      font-size: 15px;
+      color: var(--ink);
+    }
+    
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+    }
+    
+    .tag-must-do { background-color: var(--aqua-pale); color: var(--aqua-dark); }
+    .tag-local { background-color: var(--warm-sand); color: var(--ink); }
+    .tag-practical { background-color: var(--sand-light); color: var(--ink-soft); }
+    .tag-avoid { background-color: #F7E3E3; color: #A83232; }
+    
+    .practical-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0 28px;
+      font-size: 15px;
+    }
+    
+    .practical-table tr {
+      border-bottom: 1px solid var(--line);
+    }
+    
+    .practical-table td {
+      padding: 12px 8px;
+      vertical-align: top;
+    }
+    
+    .practical-table td:first-child {
+      font-weight: 600;
+      width: 30%;
+      color: var(--ink);
+    }
+    
+    a {
+      color: var(--aqua-dark);
+    }
+
+    @media(max-width: 640px) {
+      body {
+        font-size: 15px;
+      }
+      .pmtp-hero {
+        padding: 44px 20px 36px !important;
+        margin: -24px -20px 24px !important;
+      }
+      .pmtp-band {
+        padding: 18px 16px;
+      }
+      h2 {
+        font-size: 20px;
+      }
+      h3 {
+        font-size: 17px;
+      }
+      .pmtp-footer {
+        border-radius: 8px;
+        padding: 24px 20px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <div class="pmtp-hero" style="background-image:linear-gradient(180deg,rgba(255,255,255,0.45),rgba(196,228,225,0.55) 35%,rgba(245,239,228,0.80) 68%,rgba(249,246,240,0.97));padding:clamp(40px,8vw,78px) 32px clamp(36px,6vw,60px);text-align:center;margin:-24px -20px 32px;border-bottom:1px solid var(--line);">
+      <div style="font-family:Fraunces,serif;font-size:11px;font-weight:600;letter-spacing:0.22em;text-transform:uppercase;color:var(--aqua-dark);margin-bottom:22px;">Point Me to Paradise Travel</div>
+      <h1 style="font-size:clamp(26px,5vw,42px);">San Juan, Puerto Rico</h1>
+      <div style="width:60px;height:1px;background:var(--gold-whisper);margin:18px auto;"></div>
+      <p style="font-family:Cormorant Garamond,serif;font-style:italic;font-size:clamp(17px,3.5vw,21px);max-width:620px;margin:0 auto;">Five centuries of Spanish colonial architecture meet Atlantic oceanfront and vibrant street life.</p>
+    </div>
+
+    <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcT3dqtsfCqFKBE_X-TRLqFiFFZND5mbhUl4dNg1pN-TwNAmSBSzQtESrC3BOjtsqAa3541bcoieiqIHf5I" alt="Historic blue cobblestones of Old San Juan" style="width:100%;max-height:460px;object-fit:cover;border-radius:0;display:block;margin-bottom:32px;" loading="lazy">
+
+    <h2>Orientation &amp; Character</h2>
+    <span class="section-tagline">Distinct coastal pockets span the islet and mainland.</span>
+    <p class="intro-line">San Juan stretches along the northern coast, transitioning from centuries-old stone fortresses to modern residential avenues and creative neighborhoods.</p>
+
+    <h3><span class="tag tag-must-do">[MUST DO]</span> Old San Juan (Viejo San Juan)</h3>
+    <p>Old San Juan occupies a 46-block historic islet defined by 16th- and 17th-century Spanish colonial architecture, blue <i>adoquín</i> cobblestone streets, stone fortresses, and shaded plazas. The district is compact and entirely walkable, bordered by thick oceanfront city walls.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Old+San+Juan+San%20Juan%2C%20Puerto%20Rico" class="map-btn" target="_blank" rel="noopener">Open Old San Juan on Google Maps</a>
+    <p style="font-size:14px;color:var(--ink-soft);"><strong>Practical Tip:</strong> Wear sturdy shoes with good traction, as the historic blue cobblestones become slick when rain passes through.</p>
+
+    <h3><span class="tag tag-local">[LOCAL FAVORITE]</span> Santurce</h3>
+    <p>Located inland from the main resort strips, Santurce serves as the creative and cultural hub of modern San Juan. The neighborhood is recognized for its street art, independent galleries, local coffee shops, and the central market square at La Placita.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Santurce+San%20Juan%2C%20Puerto%20Rico" class="map-btn" target="_blank" rel="noopener">Open Santurce on Google Maps</a>
+    <p style="font-size:14px;color:var(--ink-soft);"><strong>Practical Tip:</strong> Visit during the daytime to view the neighborhood murals along Calle Cerra clearly without evening crowds.</p>
+
+    <h3><span class="tag tag-practical">[PRACTICAL]</span> Condado &amp; Ocean Park</h3>
+    <p>Condado contains resort hotels, high-end dining, and boutique shops along its oceanfront avenue. Immediately to the east, Ocean Park offers a residential neighborhood atmosphere with a broad sandy beach frequented by windsurfers.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Condado+San%20Juan%2C%20Puerto%20Rico" class="map-btn" target="_blank" rel="noopener">Open Condado on Google Maps</a>
+
+    <h3><span class="tag tag-local">[LOCAL FAVORITE]</span> Miramar</h3>
+    <p>Miramar rests south of the Condado Lagoon, characterized by classic Spanish Revival architecture, residential avenues, fine dining establishments, and food truck courts.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Miramar+San%20Juan%2C%20Puerto%20Rico" class="map-btn" target="_blank" rel="noopener">Open Miramar on Google Maps</a>
+
+    <div class="pmtp-band" style="background:var(--aqua-mist);">
+      <h4>Navigating Between Districts</h4>
+      <p>Rideshare services operate regularly across all core neighborhoods. Walking is best reserved for within individual districts rather than traveling between them, due to highway connections and bridge crossings.</p>
+    </div>
+
+    <h2>Top Sights &amp; Experiences</h2>
+    <span class="section-tagline">Stone fortifications guard the historic entry to San Juan Bay.</span>
+    <p class="intro-line">The city's historic defenses form a massive national park complex overlooking the Atlantic Ocean.</p>
+
+    <img src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcR7bxrxeeQVBz61mkzeTGQDUoIwd7WJcmi7tfU9tYgwIgCmrKFIqwbS107BZOLDmjGXePIEPfeZLiAv0ls" alt="Castillo San Felipe del Morro overlooking the Atlantic Ocean" style="width:100%;max-height:320px;object-fit:cover;border-radius:8px;display:block;margin:0 0 20px;" loading="lazy">
+
+    <h3><span class="tag tag-must-do">[MUST DO]</span> Castillo San Felipe del Morro</h3>
+    <p>Constructed in the 16th century, this six-level citadel sits at the northwestern tip of Old San Juan overlooking the entrance to San Juan Bay. You can explore subterranean passageways, historical barracks, and stone sentry posts known as <i>garitas</i>. The expansive open lawn leading to the fort entrance serves as a traditional site for kite flying.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Castillo+San+Felipe+del+Morro+San%20Juan%2C%20Puerto%20Rico" class="map-btn" target="_blank" rel="noopener">Open Castillo San Felipe del Morro on Google Maps</a>
+
+    <h3><span class="tag tag-must-do">[MUST DO]</span> Castillo San Cristóbal</h3>
+    <p>Built to protect Old San Juan against land-based attacks from the east, San Cristóbal represents the largest fortification constructed by Spain in the Americas. The structure spans over 27 acres and includes an intricate network of tunnels and bastions.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Castillo+San+Cristobal+San%20Juan%2C%20Puerto%20Rico" class="map-btn" target="_blank" rel="noopener">Open Castillo San Cristóbal on Google Maps</a>
+    <p style="font-size:14px;color:var(--ink-soft);"><strong>Practical Tip:</strong> A single National Park Service admission ticket covers entry to both El Morro and San Cristóbal when visited on the same day.</p>
+
+    <h3><span class="tag tag-must-do">[MUST DO]</span> Paseo de la Princesa &amp; Santa Catalina Gate</h3>
+    <p>This tree-lined pedestrian promenade runs along the base of the southern city walls. The pathway leads past historical gardens to the <i>Puerta de San Juan</i>, the historic red doorway that once served as the formal entrance to the city for visitors arriving by sea.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Paseo+de+la+Princesa+San%20Juan%2C%20Puerto%20Rico" class="map-btn" target="_blank" rel="noopener">Open Paseo de la Princesa on Google Maps</a>
+
+    <h3><span class="tag tag-local">[LOCAL FAVORITE]</span> Calle Cerra Street Art Tour</h3>
+    <p>Calle Cerra in Santurce contains a dense concentration of large-scale street art and murals produced during the annual <i>Santurce es Ley</i> festival. The surrounding streets feature independent coffee shops, bars, and small art spaces.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Calle+Cerra+San%20Juan%2C%20Puerto%20Rico" class="map-btn" target="_blank" rel="noopener">Open Calle Cerra on Google Maps</a>
+
+    <div class="pmtp-band" style="background:var(--warm-sand);">
+      <h4>Preserving Fortress Access</h4>
+      <p>Sun exposure on the stone ramparts can be intense during midday hours. Bringing water and visiting early in the morning allows you to explore the open grounds before peak temperatures.</p>
+    </div>
+
+    <h2>Food &amp; Drink Highlights</h2>
+    <span class="section-tagline">Traditional cooking methods coexist with modern mixology.</span>
+    <p class="intro-line">San Juan's food and drink offerings range from traditional fried plantain dishes to historic cocktail establishments.</p>
+
+    <h3><span class="tag tag-must-do">[MUST DO]</span> Mofongo at El Jibarito</h3>
+    <p>Mofongo is a staple Puerto Rican dish made from fried green plantains mashed with garlic, butter, and pork cracklings, shaped into a bowl and filled with stewed meats or seafood. El Jibarito in Old San Juan specializes in traditional <i>cocina criolla</i> served in a casual setting.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=El+Jibarito+San%20Juan%2C%20Puerto%20Rico" class="map-btn" target="_blank" rel="noopener">Open El Jibarito on Google Maps</a>
+
+    <h3><span class="tag tag-local">[LOCAL FAVORITE]</span> La Placita de Santurce</h3>
+    <p>By day, La Placita functions as a traditional produce market square. In the evening, the surrounding streets close to traffic as locals gather outside the surrounding open-air bars and eateries for music, food, and socializing.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=La+Placita+de+Santurce+San%20Juan%2C%20Puerto%20Rico" class="map-btn" target="_blank" rel="noopener">Open La Placita de Santurce on Google Maps</a>
+
+    <h3><span class="tag tag-must-do">[MUST DO]</span> Craft Cocktails at La Factoría</h3>
+    <p>Housed behind an unmarked door on Calle San Sebastián in Old San Juan, La Factoría comprises six connected rooms, each offering a distinct bar concept, lighting setup, and musical genre ranging from house music to live salsa.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=La+Factoria+San%20Juan%2C%20Puerto%20Rico" class="map-btn" target="_blank" rel="noopener">Open La Factoría on Google Maps</a>
+
+    <h3><span class="tag tag-practical">[PRACTICAL]</span> Traditional Piña Colada at Barrachina</h3>
+    <p>Barrachina operates out of a historic courtyard building in Old San Juan and stands as one of the documented birthplaces of the Piña Colada, serving the blended rum, pineapple, and coconut drink since the mid-20th century.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Barrachina+San%20Juan%2C%20Puerto%20Rico" class="map-btn" target="_blank" rel="noopener">Open Barrachina on Google Maps</a>
+
+    <div class="pmtp-band" style="background:var(--aqua-mist);">
+      <h4>Understanding Frituras</h4>
+      <p>Street food vendors across the city prepare fried snacks known as <i>frituras</i>, including <i>alcapurrias</i> (stuffed green banana dough) and <i>bacalaítos</i> (salted cod fritters). These are typically served fresh from the fryer at roadside counters.</p>
+    </div>
+
+    <h2>Outdoor &amp; Nature</h2>
+    <span class="section-tagline">Urban beaches, coastal estuaries, and roadside mangrove trails.</span>
+    <p class="intro-line">Open water access runs along the northern edge of the city, offering varied ocean conditions.</p>
+
+    <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcQNAmHLd3T8646XEBXpnNGmnwo-MBqE-gxGKyfA_iWr81R_B1W3ysegI0IB9YQo4wr5P4coCcPHNWN9MvU" alt="Traditional beachside food kiosks in Piñones" style="width:100%;max-height:320px;object-fit:cover;border-radius:8px;display:block;margin:0 0 20px;" loading="lazy">
+
+    <h3><span class="tag tag-local">[LOCAL FAVORITE]</span> Ocean Park Beach</h3>
+    <p>Ocean Park Beach features a wide stretch of golden sand along a residential neighborhood. It is widely preferred over neighboring resort beaches for leisure, casual sports, and kite-surfing.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Ocean+Park+Beach+San%20Juan%2C%20Puerto%20Rico" class="map-btn" target="_blank" rel="noopener">Open Ocean Park Beach on Google Maps</a>
+
+    <h3><span class="tag tag-local">[LOCAL FAVORITE]</span> Piñones Coastal Trail &amp; Kiosks</h3>
+    <p>Located just east of San Juan past the airport, Piñones offers a coastal boardwalk through mangrove forests alongside open-air roadside stalls (*kioskos*). The vendors prepare traditional fritters over wood fires along the beach path.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Pinones+San%20Juan%2C%20Puerto%20Rico" class="map-btn" target="_blank" rel="noopener">Open Piñones on Google Maps</a>
+
+    <h3><span class="tag tag-local">[LOCAL FAVORITE]</span> Laguna del Condado</h3>
+    <p>This protected saltwater lagoon sits between Miramar, Condado, and San Juan Islet. The calm water provides a setting for stand-up paddleboarding and kayaking, with West Indian manatees occasionally spotted in the lagoon.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Laguna+del+Condado+San%20Juan%2C%20Puerto%20Rico" class="map-btn" target="_blank" rel="noopener">Open Laguna del Condado on Google Maps</a>
+
+    <div class="pmtp-band" style="background:var(--warm-sand);">
+      <h4>Ocean Safety Realities</h4>
+      <p>If swimming safety is your primary priority, Escambrón Beach offers a protected lagoon with barrier reefs that calm incoming waves, unlike the open swells found along exposed oceanfront stretches.</p>
+    </div>
+
+    <h2>Shopping &amp; Markets</h2>
+    <span class="section-tagline">Colonial commercial streets and traditional neighborhood markets.</span>
+    <p class="intro-line">Local crafts, fine arts, and regional produce are distributed across distinct market centers.</p>
+
+    <h3><span class="tag tag-practical">[PRACTICAL]</span> Calle Fortaleza &amp; Calle Cristo</h3>
+    <p>These two primary avenues in Old San Juan host artisan workshops, leather crafters, fine jewelry stores, Panama hat sellers, and specialty shops stocking local Puerto Rican rums.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Calle+Fortaleza+San%20Juan%2C%20Puerto%20Rico" class="map-btn" target="_blank" rel="noopener">Open Calle Fortaleza on Google Maps</a>
+
+    <h3><span class="tag tag-local">[LOCAL FAVORITE]</span> Mercado de Río Piedras</h3>
+    <p>Located in the southern district of Río Piedras, this traditional public market features stalls selling tropical fruits, native root vegetables, local spices, and fresh Caribbean produce.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Mercado+de+Rio+Piedras+San%20Juan%2C%20Puerto%20Rico" class="map-btn" target="_blank" rel="noopener">Open Mercado de Río Piedras on Google Maps</a>
+
+    <div class="pmtp-band" style="background:var(--aqua-mist);">
+      <h4>Artisan Craft Purchases</h4>
+      <p>Look for handcrafted wooden <i>santos</i> figures and traditional carnival masks made from coconut husks or papier-mâché when browsing independent artisan galleries in Old San Juan.</p>
+    </div>
+
+    <h2>Hidden Gems &amp; Local Tips</h2>
+    <span class="section-tagline">Quiet cultural collections and coastal gathering points.</span>
+    <p class="intro-line">Less frequented destinations offer insight into the island's art history and local routines.</p>
+
+    <img src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcRWnx3-XlVZLWIHtbhg3fypUJSxyVoIA2WZTXIJS_D9H1i5EFBSdbcHX8kEM26B-JrDQ6ZqGN55XI5QPN8" alt="Street art murals in La Perla, San Juan" style="width:100%;max-height:320px;object-fit:cover;border-radius:8px;display:block;margin:0 0 20px;" loading="lazy">
+
+    <h3><span class="tag tag-local">[LOCAL FAVORITE]</span> Museo de Arte de Puerto Rico (MAPR)</h3>
+    <p>Situated in Santurce, this museum holds a comprehensive collection of Puerto Rican visual art spanning from the 17th century to contemporary works. The property features a multi-level indoor gallery space and a lush five-acre botanical sculpture garden at the rear.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Museo+de+Arte+de+Puerto+Rico+San%20Juan%2C%20Puerto%20Rico" class="map-btn" target="_blank" rel="noopener">Open Museo de Arte de Puerto Rico on Google Maps</a>
+
+    <h3><span class="tag tag-local">[LOCAL FAVORITE]</span> Cementerio Santa María Magdalena de Pazzis</h3>
+    <p>This colonial-era cemetery sits on the oceanfront slope outside the stone walls of El Morro. Built in the 19th century, it is recognized for its central red-domed chapel and elaborate marble crypts overlooking the Atlantic Ocean.</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=Cementerio+Santa+Maria+Magdalena+de+Pazzis+San%20Juan%2C%20Puerto%20Rico" class="map-btn" target="_blank" rel="noopener">Open San Juan Cemetery on Google Maps</a>
+
+    <h3><span class="tag tag-local">[LOCAL FAVORITE]</span> Sunset at Punta del Morro</h3>
+    <p>Gathering on the open green grounds outside Castillo San Felipe del Morro in the late afternoon allows you to watch the sun set over the open ocean alongside local families who utilize the space for evening recreation.</p>
+
+    <div class="pmtp-band" style="background:var(--warm-sand);">
+      <h4>Museum Hours</h4>
+      <p>Many cultural institutions and smaller galleries in San Juan close on Mondays and Tuesdays. Planning museum visits between Wednesday and Sunday ensures full access to exhibits.</p>
+    </div>
+
+    <h2>Practical Information</h2>
+    <span class="section-tagline">Key logistics for planning your stay in the capital.</span>
+    <p class="intro-line">Standard travel details and seasonal conditions help set your schedule.</p>
+
+    <table class="practical-table">
+      <tr>
+        <td>Best Time to Visit</td>
+        <td>December through April provides warm temperatures with minimal rainfall. Mid-April through June offers comfortable weather alongside smaller visitor crowds.</td>
+      </tr>
+      <tr>
+        <td>Recommended Duration</td>
+        <td>Give yourself 4 to 5 days to cover San Juan's core districts, or 7 days if you intend to include day trips to El Yunque National Forest or offshore islands.</td>
+      </tr>
+      <tr>
+        <td>Transit Options</td>
+        <td>Rideshare services (Uber) operate reliably across San Juan. Driving a personal vehicle inside Old San Juan is not advised due to narrow roadways and limited parking.</td>
+      </tr>
+      <tr>
+        <td>Currency &amp; Language</td>
+        <td>US Dollar ($ USD) is the official currency. Both Spanish and English are official languages, with English widely spoken in tourist districts.</td>
+      </tr>
+    </table>
+
+    <div class="pmtp-band" style="background:var(--aqua-mist);">
+      <h4>Weather &amp; Hydration</h4>
+      <p>Tropical humidity remains consistently high throughout the year. Carrying water during walking tours of the historic fortifications is strongly recommended.</p>
+    </div>
+
+    <h2>What to Avoid</h2>
+    <span class="section-tagline">Safety considerations and travel friction points.</span>
+    <p class="intro-line">Knowing where ocean hazards and transit delays occur keeps your daily itinerary smooth.</p>
+
+    <h3><span class="tag tag-avoid">[AVOID]</span> Swimming at Condado Beach in Rough Conditions</h3>
+    <p>Condado Beach experiences strong rip currents and heavy shore breaks. This is not a safe swimming beach during rough seas — utilize Ocean Park or the protected enclosure at Escambrón Beach instead.</p>
+
+    <h3><span class="tag tag-avoid">[AVOID]</span> Renting a Vehicle Strictly for Old San Juan</h3>
+    <p>If your itinerary centers on Old San Juan, do not rent a car. Traffic stutters along narrow historic lanes during cruise arrival hours, and municipal parking garages fill early in the day.</p>
+
+    <h3><span class="tag tag-avoid">[AVOID]</span> Entering La Perla Unguided at Night</h3>
+    <p>While the oceanfront neighborhood of La Perla holds historical importance and community murals below El Morro's walls, visiting unguided late at night is discouraged for travelers.</p>
+
+    <h3><span class="tag tag-avoid">[AVOID]</span> Relying on Public Buses (AMA) for Strict Schedules</h3>
+    <p>The municipal bus system operates with unpredictable routes and extended waiting intervals. If sticking to a specific timeframe is essential, rely on rideshares or walking instead.</p>
+
+    <div class="pmtp-band" style="background:var(--warm-sand);">
+      <h4>Cruise Port Traffic</h4>
+      <p>On days when multiple cruise ships dock at Old San Juan piers, street congestion increases significantly between 9:00 AM and 3:00 PM. Schedule interior neighborhood tours during these peak hours.</p>
+    </div>
+
+    <div class="pmtp-footer" style="background:var(--sand-light);margin-top:64px;padding:36px 28px;border-radius:12px;">
+      <div style="font-family:Fraunces,serif;font-size:20px;font-weight:600;">Point Me to Paradise Travel</div>
+      <div style="font-family:Cormorant Garamond,serif;font-style:italic;color:var(--ink-soft);font-size:15px;margin-bottom:14px;">Destination Specialist</div>
+      <div style="font-size:14px;margin-bottom:4px;"><a id="pmtpEmailLink" href="#"></a></div>
+      <div style="font-size:14px;margin-bottom:4px;">1-800-555-0199</div>
+      <div style="font-family:Cormorant Garamond,serif;font-style:italic;color:var(--ink-soft);font-size:14px;margin-top:14px;">Point Me to Paradise Travel</div>
+    </div>
+
+    <div class="pmtp-disclaimer" style="margin-top:28px;padding:22px 26px;background:var(--paper);border:1px solid var(--line);border-radius:8px;font-size:12.5px;line-height:1.7;color:var(--ink-soft);">
+      <span style="display:block;font-weight:600;font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);margin-bottom:8px;">Important — please read</span>
+      This guide is provided for informational purposes only. Locations, hours, conditions, and recommendations can change without notice, and ocean, weather, trail, road, and travel conditions can shift quickly and unpredictably. Point Me to Paradise Travel, the advisor named in this guide, and the authors of this content are not liable for any injury, illness, loss, theft, or harm of any kind arising from your visit to any location or participation in any activity referenced here. By using this guide, you accept full personal responsibility for your own safety. Use your own judgment, verify current conditions before any activity, follow all posted warnings and local regulations, and consult qualified professionals — lifeguards, park rangers, licensed guides, medical providers — where appropriate.
+    </div>
+
+  </div>
+
+  <script>
+    (function(){
+      var l="concierge", d="pointmetoparadise.com";
+      if(!l||!d) return;
+      var a = l + "\u0040" + d;
+      var el = document.getElementById("pmtpEmailLink");
+      if(el) {
+        el.href = "mailto:" + a;
+        el.textContent = a;
+      }
+    })();
+  </script>
+
+</body>
+</html>
+
+```
