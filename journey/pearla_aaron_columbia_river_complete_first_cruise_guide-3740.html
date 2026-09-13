@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pearla & Aaron | Columbia River First-Cruise Guide</title>
+<style>
+  :root{
+    --aqua:#2e8b8b;
+    --aqua2:#75afb1;
+    --cream:#fbf7ee;
+    --sand:#efe7d7;
+    --gold:#cdb87a;
+    --ink:#2b3d3c;
+    --muted:#647573;
+    --white:#ffffff;
+    --shadow:0 10px 30px rgba(43,61,60,.10);
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color:var(--ink);
+    background:#f6f8f7;
+    line-height:1.65;
+  }
+  .hero{
+    min-height:560px;
+    display:flex;
+    align-items:flex-end;
+    background:
+      linear-gradient(180deg, rgba(14,41,40,.05), rgba(14,41,40,.74)),
+      url("https://traveloregon.com/wp-content/uploads/2025/05/TO_EV_Vista_House_34-2-1.jpg") center/cover no-repeat;
+    color:#fff;
+  }
+  .brand-lockup{
+    display:flex; align-items:center; gap:16px; margin-bottom:18px;
+  }
+  .brand-lockup img{
+    width:82px; height:82px; object-fit:contain;
+    background:rgba(255,255,255,.92); border-radius:50%; padding:6px;
+  }
+  .brand-name{font-weight:700; font-size:1rem; letter-spacing:.04em}
+  .hero-inner{
+    width:min(1100px,92%);
+    margin:0 auto;
+    padding:72px 0 54px;
+  }
+  .kicker{
+    text-transform:uppercase;
+    letter-spacing:.18em;
+    font-size:.82rem;
+    font-weight:700;
+  }
+  h1{
+    font-family: Georgia, "Times New Roman", serif;
+    font-size:clamp(2.7rem,5vw,5rem);
+    line-height:1.02;
+    margin:.3rem 0 1rem;
+    max-width:880px;
+  }
+  .subtitle{
+    font-size:1.2rem;
+    max-width:790px;
+    margin:0;
+  }
+  .wrap{width:min(1100px,92%); margin:0 auto;}
+  .intro-card{
+    margin:-28px auto 34px;
+    position:relative;
+    background:var(--white);
+    border-radius:22px;
+    box-shadow:var(--shadow);
+    padding:30px;
+  }
+  .intro-card strong{color:var(--aqua)}
+  .chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+  .chip{
+    padding:7px 11px;
+    border-radius:999px;
+    background:#e7f2f2;
+    color:#286f70;
+    font-size:.82rem;
+    font-weight:700;
+  }
+  h2{
+    font-family: Georgia, "Times New Roman", serif;
+    color:var(--aqua);
+    font-size:2rem;
+    margin:42px 0 16px;
+  }
+  h3{
+    margin:0 0 8px;
+    font-size:1.28rem;
+    color:var(--ink);
+  }
+  h4{
+    color:var(--aqua);
+    margin:18px 0 6px;
+    font-size:1.05rem;
+  }
+  .section-lede{color:var(--muted);max-width:900px}
+  .day{
+    background:var(--white);
+    border-left:6px solid var(--aqua2);
+    box-shadow:var(--shadow);
+    border-radius:16px;
+    margin:18px 0;
+    padding:24px 26px;
+  }
+  .day .date{
+    color:var(--aqua);
+    font-weight:800;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    font-size:.85rem;
+  }
+  .flight-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
+    gap:12px;
+    margin:14px 0;
+  }
+  .mini{
+    background:var(--cream);
+    padding:14px 16px;
+    border-radius:12px;
+  }
+  .mini b{display:block;color:var(--aqua);margin-bottom:3px}
+  .tip{
+    background:#fffaf0;
+    border:1px solid #eadfbf;
+    border-left:5px solid var(--gold);
+    padding:16px 18px;
+    border-radius:12px;
+    margin:18px 0;
+  }
+  .tip b{color:#7b6732}
+  .experience{
+    background:var(--white);
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    padding:24px 26px;
+    margin:18px 0;
+  }
+  .tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:11px}
+  .tag{
+    display:inline-block;
+    border-radius:999px;
+    padding:5px 9px;
+    font-size:.72rem;
+    font-weight:800;
+    letter-spacing:.03em;
+    background:#e8f4f4;
+    color:#276d6e;
+  }
+  .tag.gold{background:#f6efd8;color:#816f36}
+  .tag.gray{background:#eef0ef;color:#586563}
+  .facts{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(175px,1fr));
+    gap:10px;
+    margin:14px 0 10px;
+  }
+  .fact{
+    background:#f7f9f8;
+    border-radius:11px;
+    padding:12px 13px;
+    font-size:.92rem;
+  }
+  .fact b{display:block;color:var(--aqua);font-size:.8rem;text-transform:uppercase}
+  a{color:var(--aqua);text-decoration:none}
+  a:hover{text-decoration:underline}
+  ul{padding-left:1.3rem}
+  .callout{
+    background:linear-gradient(135deg,#e8f4f4,#faf7ed);
+    border-radius:18px;
+    padding:25px 27px;
+    margin:28px 0;
+  }
+  .callout h3{color:var(--aqua)}
+  .two-col{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:18px;
+  }
+  .checklist{
+    background:var(--cream);
+    border-radius:16px;
+    padding:20px 24px;
+  }
+  .footer{
+    margin-top:54px;
+    background:#2d5656;
+    color:#fff;
+    padding:38px 0;
+  }
+  .footer a{color:#fff;text-decoration:underline}
+  .source-list{
+    font-size:.86rem;
+    color:#dbe7e7;
+  }
+  .image-log{
+    background:#1f3232;
+    color:#eaf1f0;
+    margin-top:0;
+    padding:28px 0 45px;
+  }
+  .image-log code{
+    white-space:normal;
+    word-break:break-all;
+    color:#f8ecd0;
+  }
+  @media print{
+    .hero{min-height:400px}
+    body{background:#fff}
+    .experience,.day,.intro-card{box-shadow:none;border:1px solid #d8e2e1}
+    a{text-decoration:none;color:var(--ink)}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="brand-lockup">
+      <img src="data:image/png;base64,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" alt="Point Me to Paradise Travel logo">
+      <div>
+        <div class="brand-name">POINT ME TO PARADISE TRAVEL</div>
+        <div class="kicker">FIRST-CRUISE EXPERIENCE GUIDE</div>
+      </div>
+    </div>
+    <h1>Gentle Waters & Grand Views</h1>
+    <p class="subtitle">Pearla & Aaron's airport-to-airport guide to their Columbia River adventure aboard American West • October 23–29, 2026</p>
+    <div style="margin-top:24px; max-width:850px; padding:18px 22px; border:1px solid rgba(255,255,255,.45); border-radius:16px; background:rgba(25,55,54,.42); backdrop-filter:blur(3px);">
+      <div style="font-weight:800; font-size:1.08rem; margin-bottom:5px;">Created by Lisa Darling, Paradise Planner • Point Me to Paradise Travel</div>
+      <div style="font-family:Georgia,'Times New Roman',serif; font-size:1.25rem; font-weight:700; margin-bottom:7px;">We Don’t Just Book Travel. We Help You Experience It.</div>
+      <div style="font-size:.98rem; line-height:1.5;">Booking your trip is only the beginning. I want you to feel prepared and cared for from the moment you leave home until you walk back through your own front door. This guide is part of that promise: the details, experiences and first-cruise know-how that help you travel with confidence and enjoy more of the journey.</div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="intro-card">
+    <h2 style="margin-top:0">Your First Cruise, Made Easy</h2>
+    <p>Pearla and Aaron, this guide is designed to take the guesswork out of your very first cruise. You are starting with a small-ship river journey, which means a relaxed pace, intimate ports, spectacular scenery and far fewer of the crowds associated with large ocean ships.</p>
+    <p>Your trip begins with flights from Houston to Portland, an overnight near the airport, a cruise-line-arranged transfer to <strong>American West</strong>, five days of river cruising, and a cruise-line-managed transfer back to Portland International Airport for your flights home.</p>
+    <div class="chips">
+      <span class="chip">First Cruise</span>
+      <span class="chip">American West</span>
+      <span class="chip">Deluxe Balcony 2 • Stateroom 226</span>
+      <span class="chip">Columbia River Gorge</span>
+      <span class="chip">October 23–29, 2026</span>
+    </div>
+  </section>
+<h2>Before You Leave Home</h2>
+  <p class="section-lede">For a first cruise, the easiest trip is the one where you know what goes in which bag, what happens to your luggage, and what you will actually wear. This section is your practical checklist.</p>
+
+  <div class="callout">
+    <h3>The Simple Luggage Plan</h3>
+    <p><strong>Best setup for each of you:</strong> one checked suitcase plus one small carry-on or personal item. American Cruise Lines does not impose a cruise luggage limit, but it recommends bringing only what you need. Suitcases under about 10 inches high can usually slide under the bed once unpacked.</p>
+    <p>For your Southwest flights, one carry-on plus one personal item is free. For U.S. mainland travel ticketed or changed on or after April 9, 2026, Southwest's standard first checked bag fee is $45 and the second is $55 for Basic, Choice and Choice Preferred fares unless your fare, status or credit-card benefit includes checked bags.</p>
+  </div>
+
+  <div class="two-col">
+    <div class="checklist">
+      <h3>Checked Suitcase</h3>
+      <ul>
+        <li>5–6 casual daytime tops</li>
+        <li>3–4 pairs of pants or travel bottoms</li>
+        <li>1–2 nicer casual dinner outfits</li>
+        <li>Underwear, socks and sleepwear</li>
+        <li>Light sweater or fleece</li>
+        <li>Waterproof hooded rain jacket</li>
+        <li>Comfortable walking shoes</li>
+        <li>Optional second pair of shoes for dinner</li>
+        <li>Toiletries larger than TSA carry-on limits</li>
+        <li>Small foldable tote or day bag</li>
+      </ul>
+    </div>
+    <div class="checklist">
+      <h3>Carry-On / Personal Item</h3>
+      <ul>
+        <li>Government-issued photo ID</li>
+        <li>Prescription medications</li>
+        <li>Phone, charging cable and portable charger</li>
+        <li>Glasses, hearing aids and other daily essentials</li>
+        <li>Wallet, credit cards and a small amount of cash</li>
+        <li>Travel documents and confirmation information</li>
+        <li>One change of clothes</li>
+        <li>Rain shell or light layer</li>
+        <li>Anything you would be upset to lose in checked luggage</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="margin-top:28px">Complete Columbia River Packing List</h3>
+  <div class="two-col">
+    <div class="checklist">
+      <h3>Clothing</h3>
+      <ul>
+        <li>Mix-and-match layers for cool mornings and milder afternoons</li>
+        <li>Casual tops and long pants</li>
+        <li>Light sweater, cardigan or fleece</li>
+        <li>Waterproof rain shell with hood</li>
+        <li>Casual dinner outfit or two</li>
+        <li>Sleepwear and undergarments</li>
+        <li>Hat or cap</li>
+      </ul>
+    </div>
+    <div class="checklist">
+      <h3>Footwear</h3>
+      <ul>
+        <li>Broken-in walking shoes with good tread</li>
+        <li>Optional casual shoe for dinner</li>
+        <li>Avoid relying on slippery dress shoes for shore days</li>
+        <li>For the e-bike excursion, wear secure closed-toe shoes</li>
+      </ul>
+    </div>
+    <div class="checklist">
+      <h3>Health & Personal Care</h3>
+      <ul>
+        <li>Prescription medications in original or clearly labeled containers</li>
+        <li>Small first-aid basics and preferred over-the-counter medicines</li>
+        <li>Sunscreen and lip balm</li>
+        <li>Hand sanitizer</li>
+        <li>Travel-size personal toiletries; ACL provides basic toiletries onboard</li>
+      </ul>
+    </div>
+    <div class="checklist">
+      <h3>Useful Extras</h3>
+      <ul>
+        <li>Binoculars for wildlife and Gorge scenery</li>
+        <li>Reusable water bottle</li>
+        <li>Sunglasses</li>
+        <li>Small backpack or crossbody for excursions</li>
+        <li>Phone/camera with plenty of photo storage</li>
+        <li>Portable charger</li>
+        <li>Book or e-reader for balcony time</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="tip"><b>Dress code without the mystery:</b> American Cruise Lines recommends casual resort-style clothing onboard and ashore. Dinner is still relaxed: think nice slacks and a collared shirt or sweater for Aaron, and a casual dress or nice top with slacks for Pearla. There are no formal nights to pack for.</div>
+
+  <div class="tip"><b>Helpful first-cruise hint:</b> Download the Faye app before leaving home and make sure your policy appears in the app. It gives you quick access to 24/7 assistance, travel documents, flight alerts and claims support.</div>
+
+  <h2>How Your Luggage Will Work</h2>
+  <section class="day">
+    <div class="date">Airport → Hotel → Ship → Airport</div>
+    <h3>On Flight Day</h3>
+    <p>Tag checked bags with your name and mobile number, but keep identification, medicine, valuables, electronics and a change of clothes with you. Southwest's standard checked-bag size limit is 62 linear inches and 50 pounds per bag. You can also track checked bags digitally in the Southwest app.</p>
+
+    <h3>At the Portland Hotel</h3>
+    <p>Because the pre-cruise hotel stay is part of your American Cruise Lines program, the cruise line includes luggage service and transportation from the hotel to the ship. Follow the cruise-line instructions at the hotel for when and where to have luggage ready the morning of embarkation.</p>
+
+    <h3>At Embarkation</h3>
+    <p>You do not have to drag your large suitcase around the ship. American Cruise Lines crew members take your tagged luggage and deliver it to your stateroom. Keep your carry-on with you until you are settled in your cabin.</p>
+
+    <h3>Once in Stateroom 226</h3>
+    <p>Unpack fully, then store the empty suitcase under the bed if it fits. American Cruise Lines specifically recommends luggage under about 10 inches high for easy under-bed storage.</p>
+
+    <h3>On the Last Night</h3>
+    <p>Follow the ship's final luggage instructions carefully. Pack everything you will not need in the morning, but keep your ID, medications, phone, charger, travel documents and your next-day clothing accessible. Do not accidentally pack the shoes you need to walk off the ship. Yes, people do that. 😊</p>
+  </section>
+
+  <h2>Embarkation Day: What Actually Happens</h2>
+  <section class="day">
+    <div class="date">Saturday, October 24</div>
+    <h3>1. Breakfast and Cruise-Line Instructions</h3>
+    <p>Enjoy breakfast at the hotel and follow the meeting time provided by American Cruise Lines. Your hotel-to-ship transfer is included, so there is no need to arrange your own ride.</p>
+
+    <h3>2. Have Your Luggage Ready</h3>
+    <p>Attach the cruise luggage tags provided for the sailing and remove any old cruise luggage tags. The cruise line handles luggage service from the hotel program and crew members bring your larger bags to your stateroom.</p>
+
+    <h3>3. Boarding the Ship</h3>
+    <p>American Cruise Lines' normal boarding window is approximately 11:30 AM–12:30 PM, with departure generally at 2:00 PM or earlier once all guests have arrived. Because you are using their hotel-and-transfer program, follow the transfer schedule they provide rather than worrying about arriving independently.</p>
+
+    <h3>4. Keep a Small Bag With You</h3>
+    <p>Your ID, medicine, phone, glasses, valuables and anything you might want before your suitcase reaches the room should stay in your carry-on.</p>
+
+    <h3>5. Find Stateroom 226 and Settle In</h3>
+    <p>Your Deluxe Balcony 2 stateroom is about 236 square feet with floor-to-ceiling sliding doors and a private balcony. Once the bags arrive, unpack and put the suitcase away. River cruising is wonderfully simple because you unpack once.</p>
+
+    <h3>6. Learn the Ship Before You Need To</h3>
+    <p>Locate the restaurant, River Lounge, Paddlewheel Lounge, Sun Deck, elevator and gangway. Knowing your way around on day one makes the rest of the cruise effortless.</p>
+
+    <h3>7. Attend Any Welcome or Safety Briefing</h3>
+    <p>Pay attention even if it feels routine. You will learn the ship's emergency procedures plus useful information about meal times, excursions and the following day's schedule.</p>
+
+    <div class="tip"><b>First-cruise rule:</b> Do not spend sail-away unpacking socks. Step outside, take in the river, and enjoy the fact that your first cruise has officially begun.</div>
+  </section>
+<h2>Friday, October 23 • Travel Day</h2>
+  <section class="day">
+    <div class="date">Houston → Las Vegas → Portland</div>
+    <h3>Your Flights</h3>
+    <div class="flight-grid">
+      <div class="mini"><b>HOU → LAS</b>Southwest WN2054<br>5:55 AM → 7:05 AM<br>Seats 19C & 19D</div>
+      <div class="mini"><b>Las Vegas Connection</b>About 2 hours 5 minutes<br>Stay inside security</div>
+      <div class="mini"><b>LAS → PDX</b>Southwest WN2208<br>9:10 AM → 11:30 AM<br>Seats 18C & 18D</div>
+    </div>
+    <h4>At Hobby Airport</h4>
+    <p>For a 5:55 AM departure, plan to be inside the terminal roughly two hours before your flight. Go through security, locate the gate first, then grab coffee or breakfast.</p>
+    <h4>During the Las Vegas Connection</h4>
+    <p>Once you land, check the Southwest app or airport monitors for the Portland gate and head there first. Your checked luggage should continue to Portland on a through reservation, so there is no need to retrieve it in Las Vegas.</p>
+    <h4>Arriving in Portland</h4>
+    <p>After landing at PDX at 11:30 AM, follow signs to baggage claim. Your overnight stay is at the Embassy Suites by Hilton Portland Airport, with hotel transfer service noted in your itinerary. Check-in begins at 3:00 PM.</p>
+    <div class="tip"><b>Lisa's suggestion:</b> Keep the arrival afternoon easy. This is not the day to race around Portland checking off sights. Have lunch, settle in and get a good night's sleep so your first cruise begins relaxed.</div>
+  </section>
+
+  <h2>Saturday, October 24 • Your First Afternoon Onboard</h2>
+  <section class="day">
+    <div class="date">American West • Stateroom 226</div>
+    <p>Once settled, make time for the River Lounge, Paddlewheel Lounge and Sun Deck. This is also a good time to confirm excursion meeting points, learn how the daily program works and ask the crew when the most scenic river passages or lock transits are expected.</p>
+    <p><strong>Do not miss your first sail-away.</strong> Grab a drink, step outside and enjoy the moment the river journey actually begins.</p>
+  </section>
+
+  <h2>Sights & Landmarks</h2>
+  <p class="section-lede">These are the places that give the Columbia River Gorge its sense of scale, history and character.</p>
+
+  <article class="experience">
+    <div class="tags"><span class="tag">MUST DO</span><span class="tag gray">SCENIC</span></div>
+    <h3>Multnomah Falls</h3>
+    <p>At 620 feet, Multnomah Falls is the Gorge's signature waterfall. The dramatic two-tiered drop, moss-covered cliffs and Benson Bridge create one of the Pacific Northwest's most recognizable scenes.</p>
+    <div class="facts">
+      <div class="fact"><b>Time Needed</b>About 60–90 minutes at the falls</div>
+      <div class="fact"><b>Crowds</b>Popular; mornings are better</div>
+      <div class="fact"><b>Best Time</b>Your scheduled morning visit</div>
+      <div class="fact"><b>Surprise</b>You get a huge view without a strenuous hike</div>
+    </div>
+    <p><strong>Your excursion:</strong> Sunday, October 25 at 9:00 AM, approximately 2.6 hours including transportation and time at the falls.</p>
+    <p><a href="https://www.google.com/maps/search/?api=1&query=Multnomah+Falls+Oregon" target="_blank">Open Multnomah Falls in Google Maps</a></p>
+  </article>
+
+  <article class="experience">
+    <div class="tags"><span class="tag">HIDDEN GEM</span><span class="tag">FREE</span></div>
+    <h3>Crown Point & Vista House</h3>
+    <p>Perched high above the river, Vista House is both a historic landmark and one of the best places to understand the enormous scale of the Columbia River Gorge. The building itself is worth a look, but the panoramic river view is the star.</p>
+    <div class="facts">
+      <div class="fact"><b>Time Needed</b>20–40 minutes</div>
+      <div class="fact"><b>Crowds</b>Usually lighter than Multnomah Falls</div>
+      <div class="fact"><b>Best Time</b>Morning or golden hour</div>
+      <div class="fact"><b>Surprise</b>The historic building is almost as memorable as the view</div>
+    </div>
+    <p><a href="https://www.google.com/maps/search/?api=1&query=Vista+House+Crown+Point+Oregon" target="_blank">Open Vista House in Google Maps</a></p>
+  </article>
+
+  <article class="experience">
+    <div class="tags"><span class="tag">LOCAL FAVORITE</span><span class="tag">FREE</span></div>
+    <h3>The Dalles Murals</h3>
+    <p>The Dalles is where the landscape begins to feel drier and more open. Its downtown murals tell pieces of the region's Native, pioneer, transportation and agricultural history as you explore on foot.</p>
+    <div class="facts">
+      <div class="fact"><b>Time Needed</b>45–90 minutes</div>
+      <div class="fact"><b>Crowds</b>Usually light</div>
+      <div class="fact"><b>Best Time</b>Late morning</div>
+      <div class="fact"><b>Surprise</b>The climate shift from western Oregon is striking</div>
+    </div>
+    <p><a href="https://www.google.com/maps/search/?api=1&query=The+Dalles+Murals+Oregon" target="_blank">Open The Dalles Murals in Google Maps</a></p>
+  </article>
+
+  <article class="experience">
+    <div class="tags"><span class="tag">MUST DO</span><span class="tag gray">HISTORY</span></div>
+    <h3>Columbia Gorge Discovery Center</h3>
+    <p>This interpretive center gives you the backstory behind what you have been seeing from the ship: Indigenous history, Lewis and Clark, Oregon Trail settlement, geology, natural resources and the transportation routes that shaped the Gorge.</p>
+    <div class="facts">
+      <div class="fact"><b>Time Needed</b>60–90 minutes</div>
+      <div class="fact"><b>Crowds</b>Generally manageable</div>
+      <div class="fact"><b>Best Time</b>Before wandering downtown</div>
+      <div class="fact"><b>Surprise</b>Human history in the Gorge goes back thousands of years</div>
+    </div>
+    <p><a href="https://www.google.com/maps/search/?api=1&query=Columbia+Gorge+Discovery+Center+The+Dalles" target="_blank">Open in Google Maps</a></p>
+  </article>
+
+  <h2>Tours & Guided Experiences</h2>
+
+  <article class="experience">
+    <div class="tags"><span class="tag gold">BOOK AHEAD</span><span class="tag gold">SPLURGE</span></div>
+    <h3>Guided Electric Bike Exploration</h3>
+    <p>This guided ride follows the car-free Historic Columbia River Highway through classic Gorge scenery and viewpoints. Electric assistance makes the hills easier, but you still need to be comfortable steering, braking and balancing a bicycle.</p>
+    <div class="facts">
+      <div class="fact"><b>Your Time</b>Sunday at 3:10 PM</div>
+      <div class="fact"><b>Duration</b>Approximately 4 hours</div>
+      <div class="fact"><b>Activity</b>High</div>
+      <div class="fact"><b>Best For</b>Confident recreational cyclists</div>
+    </div>
+    <p><strong>What surprises people:</strong> “Electric” makes the pedaling easier, not the bike-handling. This is a real active excursion.</p>
+    <p><a href="https://www.google.com/maps/search/?api=1&query=Historic+Columbia+River+Highway+State+Trail+Hood+River" target="_blank">Open the Historic Columbia River Highway in Google Maps</a></p>
+  </article>
+
+  <article class="experience">
+    <div class="tags"><span class="tag gold">BOOK AHEAD</span><span class="tag gray">LOW ACTIVITY</span></div>
+    <h3>Maryhill Winery Exploration & Tasting</h3>
+    <p>Enjoy a guided exploration and tasting at Maryhill Winery, one of Washington State's largest wineries. The experience begins on the terrace overlooking the vineyard and Columbia River, with Mount Hood creating a dramatic backdrop. A guided walk into the vineyard introduces the winery's history, the grapes used in Maryhill varietals and the fermentation process before or alongside the tasting experience.</p>
+    <div class="facts">
+      <div class="fact"><b>Your Time</b>Monday at 2:00 PM</div>
+      <div class="fact"><b>Duration</b>About 3 hours</div>
+      <div class="fact"><b>Activity</b>Low</div>
+      <div class="fact"><b>Accessibility</b>Listed by ACL as ADA accessible</div>
+    </div>
+    <p><strong>What it feels like:</strong> relaxed, scenic and distinctly different from lush western Oregon. This is as much about the views and vineyard setting as it is about tasting wine.</p>
+    <p><a href="https://www.google.com/maps/search/?api=1&query=Maryhill+Winery+Goldendale+Washington" target="_blank">Open Maryhill Winery in Google Maps</a></p>
+  </article>
+
+  <article class="experience">
+    <div class="tags"><span class="tag">FREE</span><span class="tag">LOCAL FAVORITE</span></div>
+    <h3>The Dalles Local Loop</h3>
+    <p>Your scheduled local loop lets you explore without worrying about transportation back to the ship. American Cruise Lines' current route includes stops such as the Columbia Gorge Discovery Center and central The Dalles, allowing you to get off, explore and rejoin the loop.</p>
+    <div class="facts">
+      <div class="fact"><b>Your Time</b>Monday at 9:30 AM</div>
+      <div class="fact"><b>Duration</b>About 2.5 hours</div>
+      <div class="fact"><b>Pace</b>Easy and flexible</div>
+      <div class="fact"><b>Best Use</b>Discovery Center + downtown</div>
+    </div>
+  </article>
+
+  <h2>Nature & Outdoor</h2>
+
+  <article class="experience">
+    <div class="tags"><span class="tag">MUST DO</span><span class="tag gray">NO RESERVATION REQUIRED</span></div>
+    <h3>The Columbia River Gorge — From the Ship</h3>
+    <p>One of the best experiences on this cruise is not an excursion at all. Sit on your private balcony and watch cliffs, forest, small towns, waterfalls and changing light move past you. On a river cruise, the scenery is part of the destination.</p>
+    <div class="facts">
+      <div class="fact"><b>Time Needed</b>As much as you can spare</div>
+      <div class="fact"><b>Crowds</b>None on your private balcony</div>
+      <div class="fact"><b>Best Time</b>Early morning and late afternoon</div>
+      <div class="fact"><b>Surprise</b>The landscape changes dramatically east to west</div>
+    </div>
+  </article>
+
+  <article class="experience">
+    <div class="tags"><span class="tag">LOCAL FAVORITE</span></div>
+    <h3>Hood River Waterfront</h3>
+    <p>Hood River has an outdoorsy, lived-in feel: riverfront paths, wind sports, sailboats, local cafés and Mount Hood rising behind the valley. It feels like a real Oregon town rather than a tourist attraction.</p>
+    <div class="facts">
+      <div class="fact"><b>Time Needed</b>60–90 minutes</div>
+      <div class="fact"><b>Crowds</b>Manageable in late October</div>
+      <div class="fact"><b>Best Time</b>Midday or early afternoon</div>
+      <div class="fact"><b>Surprise</b>How close town and river recreation are to each other</div>
+    </div>
+    <p><a href="https://www.google.com/maps/search/?api=1&query=Hood+River+Waterfront+Park+Oregon" target="_blank">Open Hood River Waterfront in Google Maps</a></p>
+  </article>
+
+  <article class="experience">
+    <div class="tags"><span class="tag">HIDDEN GEM</span><span class="tag gray">SEASONAL</span></div>
+    <h3>Hood River Fruit Loop</h3>
+    <p>October is harvest season in the Hood River Valley. Orchards, cider, pears, apples and farm stands make this one of the region's most seasonal experiences. If a cruise excursion includes a harvest or orchard component, it is well worth considering.</p>
+    <p><a href="https://www.google.com/maps/search/?api=1&query=Hood+River+Fruit+Loop+Oregon" target="_blank">Open Hood River Fruit Loop in Google Maps</a></p>
+  </article>
+
+  <h2>Cultural & Immersive</h2>
+
+  <article class="experience">
+    <div class="tags"><span class="tag">HIDDEN GEM</span><span class="tag gray">ART & HISTORY</span></div>
+    <h3>Maryhill Museum of Art</h3>
+    <p>One of the Gorge's genuine surprises, Maryhill Museum combines Native American art, European and American works, Rodin pieces and the unusual Théâtre de la Mode collection in a dramatic rural setting overlooking the Columbia.</p>
+    <div class="facts">
+      <div class="fact"><b>Time Needed</b>1.5–2 hours</div>
+      <div class="fact"><b>Crowds</b>Usually light</div>
+      <div class="fact"><b>Best For</b>Art, history and curious travelers</div>
+      <div class="fact"><b>Surprise</b>The sophistication of the collection in such a remote setting</div>
+    </div>
+    <p><a href="https://www.google.com/maps/search/?api=1&query=Maryhill+Museum+of+Art+Washington" target="_blank">Open Maryhill Museum in Google Maps</a></p>
+  </article>
+
+  <article class="experience">
+    <div class="tags"><span class="tag">LOCAL FAVORITE</span></div>
+    <h3>Western Antique Aeroplane & Automobile Museum</h3>
+    <p>WAAAM is far more engaging than the word “museum” may suggest. It features an extensive collection of still-flying antique aircraft and still-driving vintage automobiles and is particularly good for anyone who enjoys machinery, aviation or transportation history.</p>
+    <p><a href="https://www.google.com/maps/search/?api=1&query=Western+Antique+Aeroplane+Automobile+Museum+Hood+River" target="_blank">Open WAAAM in Google Maps</a></p>
+  </article>
+
+  <article class="experience">
+    <div class="tags"><span class="tag">HIDDEN GEM</span><span class="tag">FREE</span></div>
+    <h3>Port of Kalama Interpretive Center</h3>
+    <p>This waterfront center tells Kalama's story through Cowlitz heritage, Oregon Trail settlement, railroads and the community's role as a Columbia River transportation hub. It is especially meaningful on a river cruise because the history connects directly to the water outside.</p>
+    <div class="facts">
+      <div class="fact"><b>Time Needed</b>30–60 minutes</div>
+      <div class="fact"><b>Crowds</b>Light</div>
+      <div class="fact"><b>Best Pairing</b>A riverfront walk</div>
+      <div class="fact"><b>Surprise</b>How important this small town was to regional transportation</div>
+    </div>
+    <p><a href="https://www.google.com/maps/search/?api=1&query=Port+of+Kalama+Interpretive+Center+Washington" target="_blank">Open in Google Maps</a></p>
+  </article>
+
+  <h2>Sunset & Special Moments</h2>
+
+  <article class="experience">
+    <div class="tags"><span class="tag">MUST DO</span></div>
+    <h3>Golden Hour on the Sun Deck</h3>
+    <p>Late afternoon can turn the Gorge's basalt walls warm gold while the river reflects the sky. Take a jacket, bring a drink and give yourselves ten quiet minutes with the phones put away.</p>
+  </article>
+
+  <article class="experience">
+    <div class="tags"><span class="tag">MUST DO</span><span class="tag gray">UNIQUE TO RIVER CRUISING</span></div>
+    <h3>Watch a Lock Transit</h3>
+    <p>If the ship enters a lock while you are awake, head outside. The vessel enters what feels like a giant concrete room, the gates close and the water level slowly rises or falls before the opposite gates open. Ask the crew when a lock transit is expected because navigation timing can shift.</p>
+  </article>
+
+  <article class="experience">
+    <div class="tags"><span class="tag">HIDDEN GEM</span></div>
+    <h3>A Rainy Gorge Morning</h3>
+    <p>Do not assume gray weather means a disappointing day. Low clouds wrapping around forested cliffs can make the Gorge feel almost cinematic, and waterfalls can look even better after rain. A hooded waterproof jacket is more useful than an umbrella when the wind picks up.</p>
+  </article>
+
+  <h2>Hidden Experiences</h2>
+
+  <article class="experience">
+    <div class="tags"><span class="tag">HIDDEN GEM</span></div>
+    <h3>Rowena Crest</h3>
+    <p>If your route or excursion passes Rowena Crest, look for the sweeping horseshoe bend in the historic highway and the wide-open Gorge views east of Hood River.</p>
+    <p><a href="https://www.google.com/maps/search/?api=1&query=Rowena+Crest+Viewpoint+Oregon" target="_blank">Open Rowena Crest in Google Maps</a></p>
+  </article>
+
+  <article class="experience">
+    <div class="tags"><span class="tag">HIDDEN GEM</span><span class="tag">LOCAL FAVORITE</span></div>
+    <h3>Historic Downtown Camas</h3>
+    <p>Camas is not a marquee tourist attraction, and that is exactly the appeal. The compact downtown has local shops, public art and a small-town Pacific Northwest feel that rewards an unhurried stroll.</p>
+    <p><a href="https://www.google.com/maps/search/?api=1&query=Downtown+Camas+Washington" target="_blank">Open Downtown Camas in Google Maps</a></p>
+  </article>
+
+  <article class="experience">
+    <div class="tags"><span class="tag">HIDDEN GEM</span><span class="tag">FREE</span></div>
+    <h3>Kalama Riverfront</h3>
+    <p>After the interpretive center, walk the waterfront instead of returning immediately to the ship. Looking back across the Columbia helps connect Kalama's railroad and river history to the geography around you.</p>
+    <p><a href="https://www.google.com/maps/search/?api=1&query=Kalama+Waterfront+Washington" target="_blank">Open Kalama Waterfront in Google Maps</a></p>
+  </article>
+
+  <h2>What's Overhyped?</h2>
+
+  <article class="experience">
+    <div class="tags"><span class="tag gray">OVERRATED — AT PEAK CROWD TIME</span></div>
+    <h3>Multnomah Falls in the Middle of a Busy Day</h3>
+    <p>The waterfall itself is absolutely worth seeing. What can be overrated is battling peak crowds for the same view. Your scheduled morning excursion is the right approach: enjoy it, get the photos, walk toward Benson Bridge and then keep exploring the Gorge.</p>
+  </article>
+
+  <article class="experience">
+    <div class="tags"><span class="tag gray">OVERRATED</span></div>
+    <h3>Trying to “See Portland” on Arrival Day</h3>
+    <p>You will have started before dawn in Houston. A packed Portland sightseeing afternoon sounds efficient but usually just makes the first day exhausting. Rest, have a good meal and begin the cruise fresh.</p>
+  </article>
+
+  <div class="callout">
+    <h3>First-Cruise Secrets Nobody Tells You</h3>
+    <ul>
+      <li><strong>Read the daily program every evening.</strong> Excursion meeting times and onboard activities can change.</li>
+      <li><strong>Take a photo of the daily schedule.</strong> Then you always have it with you.</li>
+      <li><strong>Use your balcony.</strong> On this itinerary, the scenery is part of what you paid for.</li>
+      <li><strong>You do not have to do everything.</strong> Missing an activity because you are enjoying the river is still cruising correctly.</li>
+      <li><strong>Eat with other guests at least once.</strong> Small-ship river cruising is wonderfully social.</li>
+      <li><strong>Ask the crew questions.</strong> They know when scenery, locks and important river moments are coming.</li>
+      <li><strong>Use airplane mode onboard.</strong> Connect to the ship's Wi-Fi rather than letting your phone roam unnecessarily.</li>
+    </ul>
+  </div>
+
+  
+  <h2>Thursday, October 29 • Disembarkation & Heading Home</h2>
+  <section class="day">
+    <div class="date">American West → PDX → Dallas Love Field → Houston</div>
+    <h3>The Night Before</h3>
+    <p>Read the ship's final disembarkation notice before going to bed. It will tell you when luggage should be ready, when breakfast is served and where to meet for your airport transfer. Pack almost everything, but keep out your morning toiletries, medications, ID, phone, charger, travel documents and the clothes and shoes you will wear off the ship.</p>
+
+    <h3>Morning of Disembarkation</h3>
+    <p>American Cruise Lines normally serves breakfast on the final morning. On most sailings, guests may remain onboard until about 8:30 AM. Your exact timing will be set onboard, and the cruise line is handling your transfer to PDX.</p>
+
+    <h3>Your Luggage</h3>
+    <p>Follow the crew's luggage instructions rather than carrying large suitcases off yourselves. Before leaving the ship, visually confirm that you have your correct bags and make a quick sweep of the stateroom: closet, drawers, bathroom, outlets, nightstands and under the bed.</p>
+
+    <h3>Before You Step Off the Ship</h3>
+    <ul>
+      <li>ID and wallet physically in hand or personal bag</li>
+      <li>Phone and charger accounted for</li>
+      <li>All medications packed in your carry-on</li>
+      <li>Nothing left in the room safe, drawers or bathroom</li>
+      <li>Carry-on stays with you for the airport transfer</li>
+    </ul>
+
+    <h3>Airport Transfer</h3>
+    <p>Your ship-to-airport transportation is included and coordinated by American Cruise Lines. The ship's arrival time is approximate; you do not need to manage that timing yourself. Follow the onboard transfer schedule provided by the Excursions Director and crew.</p>
+
+    <div class="flight-grid">
+      <div class="mini"><b>PDX → DAL</b>Southwest WN3311<br>3:30 PM → 9:05 PM<br>Seats 17C & 17D</div>
+      <div class="mini"><b>Dallas Connection</b>55 minutes<br>Go straight to the next gate</div>
+      <div class="mini"><b>DAL → HOU</b>Southwest WN63<br>10:00 PM → 11:15 PM<br>Seats 16C & 16D</div>
+    </div>
+
+    <div class="tip"><b>Dallas connection:</b> Fifty-five minutes is enough for a normal through connection, but do not stop for a sit-down meal. Check the gate for WN63 to Houston and head there first. Your checked luggage should continue through on the same reservation.</div>
+
+    <div class="tip"><b>Last first-cruise tip:</b> Keep a sweater or light jacket in your carry-on for the flight home. Do not pack every layer in the checked suitcase just because the cruise is over.</div>
+  </section>
+
+
+  
+
+  <div class="callout" style="margin-top:38px;">
+    <h3>We Don’t Just Book Travel. We Help You Experience It.</h3>
+    <p>Booking your trip is only the beginning. I want you to feel prepared and cared for from the moment you leave home until you walk back through your own front door.</p>
+    <p>That means helping with the details that can make a big difference: what to pack, how your luggage will be handled, what embarkation and disembarkation will feel like, which experiences are truly worth your time, what to expect along the way, and the helpful little things you may not even know to ask about, especially on your very first cruise.</p>
+    <p><strong>My job isn’t simply to get you there. It’s to help you travel with confidence, enjoy more of the experience, and spend less time worrying about the details.</strong></p>
+    <p style="margin-bottom:0;"><em>That is why I created this guide especially for your journey.</em></p>
+  </div>
+
+  <div class="callout">
+    <h3>Lisa's Five Don't-Miss Moments for Your First Cruise</h3>
+    <ol>
+      <li><strong>Multnomah Falls</strong> — one of the Pacific Northwest's signature sights.</li>
+      <li><strong>The e-bike adventure</strong> — if you are both comfortable cyclists.</li>
+      <li><strong>Columbia Gorge Discovery Center</strong> — the best context for understanding what you are seeing.</li>
+      <li><strong>Maryhill Winery</strong> — scenery, vineyard history and wine in one relaxed afternoon.</li>
+      <li><strong>The ship itself</strong> — your balcony, Sun Deck, sail-away and quiet stretches of river are part of the experience.</li>
+    </ol>
+    <p>This is a lovely way to discover cruising: no mega-ship chaos, no race to do everything, just beautiful scenery, fascinating history, little river towns, good food and time together.</p>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <p style="font-size:1.05rem; margin-top:0;"><strong>Created by Lisa Darling, Paradise Planner</strong><br>Point Me to Paradise Travel</p>
+    <h3 style="color:white">Research Notes & Sources</h3>
+    <p class="source-list">Guide built from Pearla & Aaron's trip itinerary plus current destination and cruise-line research. Key references include American Cruise Lines' official Columbia River Gorge itinerary and shore-excursion descriptions, Travel Oregon, Hood River tourism resources, National Park Service information, and destination-specific public resources.</p>
+    <p class="source-list">
+      <a href="https://www.americancruiselines.com/cruises/columbia-and-snake-river-cruises/columbia-river-gorge-cruise" target="_blank">American Cruise Lines — Columbia River Gorge Cruise</a><br>
+      <a href="https://www.americancruiselines.com/general-information/faqs" target="_blank">American Cruise Lines — FAQs: packing, luggage, embarkation and debarkation</a><br>
+      <a href="https://www.americancruiselines.com/why-american/blog/2025/february/ultimate-river-cruise-packing-list" target="_blank">American Cruise Lines — Ultimate River Cruise Packing List</a><br>
+      <a href="https://www.southwest.com/html/customer-service/travel-fees.html" target="_blank">Southwest Airlines — Baggage fees and allowances</a><br>
+      <a href="https://traveloregon.com/places-to-go/regions/columbia-river-gorge/" target="_blank">Travel Oregon — Columbia River Gorge</a><br>
+      <a href="https://traveloregon.com/places-to-go/cities/hood-river/" target="_blank">Travel Oregon — Hood River</a><br>
+      <a href="https://www.nps.gov/places/hood-river-waterfront-park-and-trail.htm" target="_blank">National Park Service — Hood River Waterfront</a>
+    </p>
+  </div>
+</footer>
+
+<section class="image-log">
+  <div class="wrap">
+    <h3 style="color:white">[IMAGE LOG]</h3>
+    <p><code>[IMAGE: https://traveloregon.com/wp-content/uploads/2025/05/TO_EV_Vista_House_34-2-1.jpg | Hero image — Vista House overlooking the Columbia River Gorge at sunset]</code></p>
+    <p><code>[IMAGE: https://travelhost.com/.image/w_3840%2Cq_auto%3Agood%2Cc_fill%2Car_4%3A3/MjU6MDAwMDAwMDAwMTA5OTY5/oregon_lead.jpg | Hood River marina and riverfront]</code></p>
+    <p><code>[IMAGE: https://s3-media0.fl.yelpcdn.com/bphoto/xkV_hG3cHqt3fJI9ZFKU5g/o.jpg | Maryhill Winery patio and tasting area]</code></p>
+    <p><code>[IMAGE: https://townsquare.media/site/1132/files/2023/01/attachment-Untitlewd-design-4.jpg?a=t&amp;format=natural&amp;h=0&amp;q=89&amp;s=0&amp;w=1200&amp;zc=1 | Hood River at sunset with Mount Hood in the distance]</code></p>
+  </div>
+</section>
+
+</body>
+</html>
